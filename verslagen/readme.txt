@@ -1,0 +1,1 @@
+Hier kunnen mappen met verslagen komen te staan. Bijvoorbeeld de map SPI met inhoud spi.tex en bijbehorende troep zoals plaatjes. 

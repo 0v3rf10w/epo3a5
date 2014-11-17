@@ -1,0 +1,2 @@
+Hier kunnen de mappen met daarin subsystemen komen te staan. Bijvoorbeeld de map SPI met daarin SPI.vhd.
+Eventueel maak je een map voor je subsysteem en wijst die aan als de working directory van modelsim en/of gowiththeflow.  
