@@ -1,0 +1,260 @@
+Library vendor : Model Technology
+Maximum unnamed designs : 3
+ENTITY control
+    Source modified time: Thu Nov 20 08:56:34 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/control.vhd
+    Source file: VHDL/control.vhd
+    Start location: VHDL/control.vhd:4
+    Version string: hV8mGg?7Y0O:KT^BBLi;K2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Thu Nov 20 08:56:48 2014
+    Depends on: E work control hV8mGg?7Y0O:KT^BBLi;K2
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/control_SYNTH.vhd
+    Source file: VHDL/control_SYNTH.vhd
+    Start location: VHDL/control_SYNTH.vhd:7
+    Version string: oBl?7_dzi1aba;H32Mzj=0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work control hV8mGg?7Y0O:KT^BBLi;K2
+    Start location: VHDL/control.vhd:16
+    Version string: ^73KM1CHjJ>J]WnMMJ^J`2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/control.vhd
+    Source modified time: Thu Nov 20 08:56:34 2014
+    HDL source file: VHDL/control.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION control_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: control
+    Depends on: A work control behavioural ^73KM1CHjJ>J]WnMMJ^J`2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work control hV8mGg?7Y0O:KT^BBLi;K2
+    Source modified time: Thu Nov 20 08:53:55 2014
+    Source directory: /GWTF
+    HDL source file: VHDL/control_behavioural_cfg.vhd
+    Source file: VHDL/control_behavioural_cfg.vhd
+    Start location: VHDL/control_behavioural_cfg.vhd:1
+    Version string: HJn]@O[]lUgJ4[=mWg_o`3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY counter
+    Source modified time: Thu Nov 20 08:52:09 2014
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/counter.vhd
+    Source file: VHDL/counter.vhd
+    Start location: VHDL/counter.vhd:5
+    Version string: 12MkP4b>^R<?N^54Lh1Sb2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work counter 12MkP4b>^R<?N^54Lh1Sb2
+    Start location: VHDL/counter.vhd:12
+    Version string: UGei>bAkBd@1Ld__CgZab3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/counter.vhd
+    Source modified time: Thu Nov 20 08:52:09 2014
+    HDL source file: VHDL/counter.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION counter_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: counter
+    Depends on: A work counter behavioural UGei>bAkBd@1Ld__CgZab3
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work counter 12MkP4b>^R<?N^54Lh1Sb2
+    Source modified time: Thu Nov 20 08:54:01 2014
+    Source directory: GWTF
+    HDL source file: VHDL/counter_behavioural_cfg.vhd
+    Source file: VHDL/counter_behavioural_cfg.vhd
+    Start location: VHDL/counter_behavioural_cfg.vhd:1
+    Version string: dcfTSNJ>?gS:Dld38W3BH3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY shift_reg
+    Source modified time: Thu Nov 20 08:53:06 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/shift_reg.vhd
+    Source file: VHDL/shift_reg.vhd
+    Start location: VHDL/shift_reg.vhd:4
+    Version string: QQjl?j`OXea3aNd5gF<Wm1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY structural
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work shift_reg QQjl?j`OXea3aNd5gF<Wm1
+    Start location: VHDL/shift_reg.vhd:15
+    Version string: noIFE>@eU0cle;8ULR3jS0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/shift_reg.vhd
+    Source modified time: Thu Nov 20 08:53:06 2014
+    HDL source file: VHDL/shift_reg.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION shift_reg_structural_cfg
+    Configuration for architecture: structural
+    Configuration for entity: shift_reg
+    Depends on: A work shift_reg structural noIFE>@eU0cle;8ULR3jS0
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work shift_reg QQjl?j`OXea3aNd5gF<Wm1
+    Source modified time: Thu Nov 20 08:54:06 2014
+    Source directory: GWTF
+    HDL source file: VHDL/shift_reg_structural_cfg.vhd
+    Source file: VHDL/shift_reg_structural_cfg.vhd
+    Start location: VHDL/shift_reg_structural_cfg.vhd:1
+    Version string: QAHc]W=lXL5YOiFzDl?F21
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY spi
+    Source modified time: Thu Nov 20 08:53:24 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/spi.vhd
+    Source file: VHDL/spi.vhd
+    Start location: VHDL/spi.vhd:4
+    Version string: Y;AV^gGj?YP0=BZEOBN;Q1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY structural
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work spi Y;AV^gGj?YP0=BZEOBN;Q1
+    Start location: VHDL/spi.vhd:17
+    Version string: =ZNQA<fUO4ma9HC6S:k<O2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/spi.vhd
+    Source modified time: Thu Nov 20 08:53:24 2014
+    HDL source file: VHDL/spi.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION spi_structural_cfg
+    Configuration for architecture: structural
+    Configuration for entity: spi
+    Depends on: E work control hV8mGg?7Y0O:KT^BBLi;K2
+    Depends on: E work shift_reg QQjl?j`OXea3aNd5gF<Wm1
+    Depends on: E work counter 12MkP4b>^R<?N^54Lh1Sb2
+    Depends on: C work control_behavioural_cfg HJn]@O[]lUgJ4[=mWg_o`3
+    Depends on: C work shift_reg_structural_cfg QAHc]W=lXL5YOiFzDl?F21
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: C work counter_behavioural_cfg dcfTSNJ>?gS:Dld38W3BH3
+    Depends on: A work spi structural =ZNQA<fUO4ma9HC6S:k<O2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work spi Y;AV^gGj?YP0=BZEOBN;Q1
+    Source modified time: Thu Nov 20 08:54:15 2014
+    Source directory: GWTF
+    HDL source file: VHDL/spi_structural_cfg.vhd
+    Source file: VHDL/spi_structural_cfg.vhd
+    Start location: VHDL/spi_structural_cfg.vhd:1
+    Version string: QS<V1ScKNhHf[lRLRUKY80
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY spi_tb
+    Source modified time: Thu Nov 20 08:53:44 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/spi_tb.vhd
+    Source file: VHDL/spi_tb.vhd
+    Start location: VHDL/spi_tb.vhd:4
+    Version string: iQJo7[_oR`H;;Y:9f`njo2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY structural
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work spi_tb iQJo7[_oR`H;;Y:9f`njo2
+    Start location: VHDL/spi_tb.vhd:7
+    Version string: Li^Z5cESmHYTg[aZaWkoH1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/spi_tb.vhd
+    Source modified time: Thu Nov 20 08:53:44 2014
+    HDL source file: VHDL/spi_tb.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION spi_tb_structural_cfg
+    Configuration for architecture: structural
+    Configuration for entity: spi_tb
+    Depends on: E work spi Y;AV^gGj?YP0=BZEOBN;Q1
+    Depends on: C work spi_structural_cfg QS<V1ScKNhHf[lRLRUKY80
+    Depends on: A work spi_tb structural Li^Z5cESmHYTg[aZaWkoH1
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work spi_tb iQJo7[_oR`H;;Y:9f`njo2
+    Source modified time: Thu Nov 20 08:54:22 2014
+    Source directory: GWTF
+    HDL source file: VHDL/spi_tb_structural_cfg.vhd
+    Source file: VHDL/spi_tb_structural_cfg.vhd
+    Start location: VHDL/spi_tb_structural_cfg.vhd:1
+    Version string: DIa[Y^`_^_Z0De6U9oIG`3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1

@@ -1,0 +1,11 @@
+I clk clk
+I reset reset
+I send send
+I count_3_0_3 count(3)
+I count_3_0_2 count(2)
+I count_3_0_1 count(1)
+I count_3_0_0 count(0)
+O shift_reset shift_reset
+O shift shift
+O sclk sclk
+O c_reset c_reset
