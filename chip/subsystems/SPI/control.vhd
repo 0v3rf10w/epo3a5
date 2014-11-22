@@ -58,6 +58,11 @@ begin
 			else
 				new_state <= shifting;
 			end if;
+		else
+			shift_reset <= '1';
+			c_reset <= '1';
+			clk_switch <= '0';
+			new_state <= reset_state;
 		end if;
 	end process;
 
