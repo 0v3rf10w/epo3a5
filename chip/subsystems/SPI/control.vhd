@@ -6,7 +6,6 @@ port(	clk:			in std_logic;
 		reset:			in std_logic;
 		send:			in std_logic;
 		count:			in std_logic_vector(3 downto 0);
-		shift_reset:	out std_logic;
 		shift:			out std_logic;
 		sclk:			out std_logic;
 		c_reset:		out std_logic
@@ -32,7 +31,6 @@ begin
 	process(state,reset,send,count)
 	begin
 		if(state=reset_state) then
-			shift_reset <= '1';
 			c_reset <= '1';
 			clk_switch <= '0';
 			if(reset = '0') then
@@ -41,7 +39,6 @@ begin
 				new_state <= reset_state;
 			end if;
 		elsif(state=idle) then
-			shift_reset <= '0';
 			c_reset <= '1';
 			clk_switch <= '0';
 			if(send = '1') then
@@ -50,7 +47,6 @@ begin
 				new_state <= idle;
 			end if;
 		elsif(state=shifting) then
-			shift_reset <= '0';
 			c_reset <= '0';
 			clk_switch <= '1';
 			if(count="1000") then
@@ -59,7 +55,6 @@ begin
 				new_state <= shifting;
 			end if;
 		else
-			shift_reset <= '1';
 			c_reset <= '1';
 			clk_switch <= '0';
 			new_state <= reset_state;

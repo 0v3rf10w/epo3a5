@@ -39,7 +39,6 @@ port(	clk:			in std_logic;
 		reset:		in std_logic;
 		send:		in std_logic;
 		count:		in std_logic_vector(3 downto 0);
-		shift_reset:	out std_logic;
 		shift:		out std_logic;
 		sclk:		out std_logic;
 		c_reset:	out std_logic
@@ -57,6 +56,6 @@ begin
 	mosi <= output(7);
 cnt1:  counter port map (switch_clk,count_reset,count);
 shft1: shift_reg port map (clk,reset,shift,miso,write_enable,write_in,output);
-ctrl1: control port map (clk,reset,send,count,shift_reset,shift,switch_clk,count_reset);
+ctrl1: control port map (clk,reset,send,count,shift,switch_clk,count_reset);
 
 end structural;
