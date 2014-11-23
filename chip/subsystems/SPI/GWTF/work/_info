@@ -4,9 +4,9 @@ K3
 cModel Technology
 dGWTF
 T_opt
-VZTb9?nB?hX0e;=5mabaYR3
+VX<jlM`c43Vfe]C4;VDNa41
 04 21 0 work spi_tb_structural_cfg 1
-=1-0050569f368d-5471ecf5-4b912-1688
+=1-0050569f368d-5471f802-c3f9e-2518
 Z0 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z1 OE;O;10.1b;51
@@ -26,8 +26,9 @@ Vi0JV?j96X1`B51M?]Na3i3
 R2
 n@_opt2
 R1
+dGWTF
 Econtrol
-Z3 w1416749726
+Z3 w1416755174
 Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z6 d/GWTF
@@ -38,7 +39,7 @@ L4
 VcD<T^8Vj`Cz4KSEb_;?k@3
 Z9 OE;C;10.1b;51
 32
-Z10 !s108 1416749757.503850
+Z10 !s108 1416755188.285080
 Z11 !s90 -lower|-explicit|-work|work|VHDL/control.vhd|-quiet|-nologo|
 Z12 !s107 VHDL/control.vhd|
 Z13 o-lower -explicit -work work -quiet -nologo
@@ -46,7 +47,7 @@ Z14 tExplicit 1
 !s100 07HkM^EE4OYgFIGK_aZ[G2
 !i10b 1
 Asynthesised
-w1416750052
+w1416755251
 Z15 DEx4 work 7 control 0 22 cD<T^8Vj`Cz4KSEb_;?k@3
 Z16 DPx8 cellslib 18 cellslib_decl_pack 0 22 QXc5jY9ngocCTOzQ`UlIE2
 R4
@@ -61,9 +62,9 @@ R9
 R13
 R14
 !s100 UGVLI[^4z:GlOGObBAKAz0
-!i10b 1
-!s108 1416750053.625093
 !s90 -lower|-explicit|-work|work|VHDL/control_SYNTH.vhd|-quiet|-nologo|
+!i10b 1
+!s108 1416755253.022215
 !s107 VHDL/control_SYNTH.vhd|
 Abehavioural
 R4
@@ -71,7 +72,7 @@ R5
 R15
 l19
 L15
-V2e]LAcgP5P9ommc0LgPoi0
+V5FEMgdUco=]WoZ:hnFEij1
 R9
 32
 R10
@@ -79,17 +80,17 @@ R11
 R12
 R13
 R14
-!s100 SLLVjHz_i]>b^<FJ11FZd0
+!s100 2Ike`EkS3JfTZjIjEdQZ^1
 !i10b 1
 Ccontrol_behavioural_cfg
 Z17 abehavioural
 Z18 econtrol
-DAx4 work 7 control 11 behavioural 22 2e]LAcgP5P9ommc0LgPoi0
+DAx4 work 7 control 11 behavioural 22 5FEMgdUco=]WoZ:hnFEij1
 R4
 R5
 R15
 w1416749774
-dGWTF
+R6
 8VHDL/control_behavioural_cfg.vhd
 FVHDL/control_behavioural_cfg.vhd
 l0
@@ -101,7 +102,7 @@ R13
 R14
 !s100 i0SMLA`>_mX23BhaV7OcL1
 !i10b 0
-!s108 1416749774.673952
+!s108 1416755189.550650
 !s90 -lower|-explicit|-work|work|VHDL/control_behavioural_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/control_behavioural_cfg.vhd|
 Ccontrol_synthesised_cfg
@@ -119,7 +120,7 @@ R4
 R5
 R15
 w1416750258
-dGWTF
+R6
 8VHDL/control_synthesised_cfg.vhd
 FVHDL/control_synthesised_cfg.vhd
 l0
@@ -131,7 +132,7 @@ R13
 R14
 !s100 5Ta3bgHe@gKS2^PPjo5WS1
 !i10b 0
-!s108 1416750258.615403
+!s108 1416755262.463998
 !s90 -lower|-explicit|-work|work|VHDL/control_synthesised_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/control_synthesised_cfg.vhd|
 Ecounter
@@ -374,7 +375,7 @@ R14
 !s100 PoJ7fBmUKOmH[5OUFCGFM3
 !i10b 1
 Aextracted
-w1416750938
+w1416755346
 Z50 DEx4 work 3 spi 0 22 Y;AV^gGj?YP0=BZEOBN;Q1
 R16
 R4
@@ -384,18 +385,18 @@ dGWTF
 FVHDL/spi_EXTR.vhd
 l33
 L13
-V]zf4=nU6e_[fNo0`ai?<j1
+V9@iF=ALgm;`3bRB4?SLnC1
 R9
 32
 R13
 R14
-!s100 U<D6DJ318JaAlFM>E=PW^2
 !s90 -lower|-explicit|-work|work|VHDL/spi_EXTR.vhd|-quiet|-nologo|
+!s100 mGj`S2b7[ae994Q[]3DcI2
 !i10b 1
-!s108 1416750939.714234
+!s108 1416755348.661222
 !s107 VHDL/spi_EXTR.vhd|
 Asynthesised
-w1416750106
+w1416755312
 R50
 R16
 R4
@@ -411,9 +412,9 @@ R9
 R13
 R14
 !s100 j7BO@GZIL_8cb8348ZFAc2
-!i10b 1
-!s108 1416750107.848831
 !s90 -lower|-explicit|-work|work|VHDL/spi_SYNTH.vhd|-quiet|-nologo|
+!i10b 1
+!s108 1416755313.417781
 !s107 VHDL/spi_SYNTH.vhd|
 Astructural
 R4
@@ -438,16 +439,16 @@ R24
 R25
 R20
 R21
-R35
-R23
 R22
+R23
+R35
 R16
-DAx4 work 3 spi 9 extracted 22 ]zf4=nU6e_[fNo0`ai?<j1
+DAx4 work 3 spi 9 extracted 22 9@iF=ALgm;`3bRB4?SLnC1
 R4
 R5
 R50
 w1416750514
-R6
+Z51 d/home/jtijhuis/epo3a5/chip/subsystems/SPI/GWTF
 8VHDL/spi_extracted_cfg.vhd
 FVHDL/spi_extracted_cfg.vhd
 l0
@@ -459,11 +460,11 @@ R13
 R14
 !s100 G0X=0NlFXM<]WX=giH>=E0
 !i10b 0
-!s108 1416750944.938478
+!s108 1416755354.321333
 !s90 -lower|-explicit|-work|work|VHDL/spi_extracted_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/spi_extracted_cfg.vhd|
 Cspi_structural_cfg
-Z51 astructural
+Z52 astructural
 espi
 R15
 R42
@@ -477,7 +478,7 @@ R4
 R5
 R50
 w1416749787
-dGWTF
+R6
 8VHDL/spi_structural_cfg.vhd
 FVHDL/spi_structural_cfg.vhd
 l0
@@ -489,7 +490,7 @@ R13
 R14
 !s100 Gg2F4[PS>L;70QBMMWR`W3
 !i10b 0
-!s108 1416749787.869544
+!s108 1416755196.846744
 !s90 -lower|-explicit|-work|work|VHDL/spi_structural_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/spi_structural_cfg.vhd|
 Cspi_synthesised_cfg
@@ -508,7 +509,7 @@ R4
 R5
 R50
 w1416750311
-dGWTF
+R6
 8VHDL/spi_synthesised_cfg.vhd
 FVHDL/spi_synthesised_cfg.vhd
 l0
@@ -520,24 +521,24 @@ R13
 R14
 !s100 ^<81mKK6@I4Th9Xo40g6=2
 !i10b 0
-!s108 1416750311.307519
+!s108 1416755267.176659
 !s90 -lower|-explicit|-work|work|VHDL/spi_synthesised_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/spi_synthesised_cfg.vhd|
 Espi_tb
-Z52 w1416752342
+Z53 w1416752342
 R4
 R5
 R6
-Z53 8VHDL/spi_tb.vhd
-Z54 FVHDL/spi_tb.vhd
+Z54 8VHDL/spi_tb.vhd
+Z55 FVHDL/spi_tb.vhd
 l0
 L4
 ViQJo7[_oR`H;;Y:9f`njo2
 R9
 32
-Z55 !s108 1416752364.059392
-Z56 !s90 -lower|-explicit|-work|work|VHDL/spi_tb.vhd|-quiet|-nologo|
-Z57 !s107 VHDL/spi_tb.vhd|
+Z56 !s108 1416752364.059392
+Z57 !s90 -lower|-explicit|-work|work|VHDL/spi_tb.vhd|-quiet|-nologo|
+Z58 !s107 VHDL/spi_tb.vhd|
 R13
 R14
 !s100 `WGD[T9[3X6ojdPT`WZJR0
@@ -545,28 +546,28 @@ R14
 Astructural
 R4
 R5
-Z58 DEx4 work 6 spi_tb 0 22 iQJo7[_oR`H;;Y:9f`njo2
+Z59 DEx4 work 6 spi_tb 0 22 iQJo7[_oR`H;;Y:9f`njo2
 l31
 L7
 VWj><;6^@ij[>HK>NGgfji0
 R9
 32
-R55
 R56
 R57
+R58
 R13
 R14
 !s100 65TbC58e682P=hYk_Q0J;0
 !i10b 1
 Cspi_tb_structural_cfg
-R51
-Z59 espi_tb
+R52
+Z60 espi_tb
 R50
 DCx4 work 18 spi_structural_cfg 0 22 dhLKADh;GOlY[gEXbKk_;3
-Z60 DAx4 work 6 spi_tb 10 structural 22 Wj><;6^@ij[>HK>NGgfji0
+Z61 DAx4 work 6 spi_tb 10 structural 22 Wj><;6^@ij[>HK>NGgfji0
 R4
 R5
-R58
+R59
 w1416749821
 R6
 8VHDL/spi_tb_structural_cfg.vhd
@@ -580,43 +581,43 @@ R13
 R14
 !s100 M3Z7WgB@61emM9We`Cn:R2
 !i10b 0
-!s108 1416752365.817384
+!s108 1416755198.736360
 !s90 -lower|-explicit|-work|work|VHDL/spi_tb_structural_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/spi_tb_structural_cfg.vhd|
 Cspi_tb_structural_ext_cfg
-R51
-R59
+R52
+R60
 R50
 DCx4 work 17 spi_extracted_cfg 0 22 :JI3k4N^W?z:9I>4:F9P82
-R60
+R61
 R4
 R5
-R58
+R59
 w1416750529
-R6
+R51
 8VHDL/spi_tb_structural_ext_cfg.vhd
 FVHDL/spi_tb_structural_ext_cfg.vhd
 l0
 L1
 VzaN_?]dkRco3N9=[Sb<Qd1
+!s100 ib55]_38V870K3BMj<hL22
 R9
 32
-R13
-R14
-!s100 ib55]_38V870K3BMj<hL22
 !i10b 0
-!s108 1416752367.097104
+!s108 1416755361.875608
 !s90 -lower|-explicit|-work|work|VHDL/spi_tb_structural_ext_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/spi_tb_structural_ext_cfg.vhd|
+R13
+R14
 Cspi_tb_structural_syn_cfg
-R51
-R59
+R52
+R60
 R50
 DCx4 work 19 spi_synthesised_cfg 0 22 fN7YTfH;]eLLG0U]lBV2R1
-R60
+R61
 R4
 R5
-R58
+R59
 w1416750324
 R6
 8VHDL/spi_tb_structural_syn_cfg.vhd
@@ -630,6 +631,6 @@ R13
 R14
 !s100 S:VhY>V_=I^X0MNcgDS6X0
 !i10b 0
-!s108 1416752368.428787
+!s108 1416755272.556170
 !s90 -lower|-explicit|-work|work|VHDL/spi_tb_structural_syn_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/spi_tb_structural_syn_cfg.vhd|

@@ -1,7 +1,7 @@
 Library vendor : Model Technology
 Maximum unnamed designs : 3
 OPTIMIZED DESIGN _opt
-    Version string: ZTb9?nB?hX0e;=5mabaYR3
+    Version string: X<jlM`c43Vfe]C4;VDNa41
     Top-level model: work spi_tb_structural_cfg 1
     Compile options: -quiet -auto_acc_if_foreign -work work
     Short name: @_opt
@@ -15,14 +15,14 @@ OPTIMIZED DESIGN _opt1
     Opcode format: 10.1b; VCOM/VLOG SE Object version 51
     Source directory: GWTF
 OPTIMIZED DESIGN _opt2
-    Version string: N]Nj71@W_6fmneR2jR<K80
+    Version string: i0JV?j96X1`B51M?]Na3i3
     Top-level model: work spi_tb_structural_ext_cfg 1
     Compile options: -quiet -auto_acc_if_foreign -work work
     Short name: @_opt2
     Opcode format: 10.1b; VCOM/VLOG SE Object version 51
     Source directory: GWTF
 ENTITY control
-    Source modified time: Sun Nov 23 14:35:26 2014
+    Source modified time: Sun Nov 23 16:06:14 2014
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Source directory: /GWTF
@@ -36,7 +36,7 @@ ENTITY control
     Compile defaults: Explicit=1
     Debug Symbol file exists
   ARCHITECTURE BODY synthesised
-    Source modified time: Sun Nov 23 14:40:52 2014
+    Source modified time: Sun Nov 23 16:07:31 2014
     Depends on: E work control cD<T^8Vj`Cz4KSEb_;?k@3
     Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
@@ -56,25 +56,25 @@ ENTITY control
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work control cD<T^8Vj`Cz4KSEb_;?k@3
     Start location: VHDL/control.vhd:15
-    Version string: 2e]LAcgP5P9ommc0LgPoi0
+    Version string: 5FEMgdUco=]WoZ:hnFEij1
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
     Source directory: /GWTF
     Source file: VHDL/control.vhd
-    Source modified time: Sun Nov 23 14:35:26 2014
+    Source modified time: Sun Nov 23 16:06:14 2014
     HDL source file: VHDL/control.vhd
     Debug Symbol file exists
 VHDL CONFIGURATION control_behavioural_cfg
     Configuration for architecture: behavioural
     Configuration for entity: control
-    Depends on: A work control behavioural 2e]LAcgP5P9ommc0LgPoi0
+    Depends on: A work control behavioural 5FEMgdUco=]WoZ:hnFEij1
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work control cD<T^8Vj`Cz4KSEb_;?k@3
     Source modified time: Sun Nov 23 14:36:14 2014
-    Source directory: GWTF
+    Source directory: /GWTF
     HDL source file: VHDL/control_behavioural_cfg.vhd
     Source file: VHDL/control_behavioural_cfg.vhd
     Start location: VHDL/control_behavioural_cfg.vhd:1
@@ -98,7 +98,7 @@ VHDL CONFIGURATION control_synthesised_cfg
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work control cD<T^8Vj`Cz4KSEb_;?k@3
     Source modified time: Sun Nov 23 14:44:18 2014
-    Source directory: GWTF
+    Source directory: /GWTF
     HDL source file: VHDL/control_synthesised_cfg.vhd
     Source file: VHDL/control_synthesised_cfg.vhd
     Start location: VHDL/control_synthesised_cfg.vhd:1
@@ -296,7 +296,7 @@ ENTITY spi
     Compile defaults: Explicit=1
     Debug Symbol file exists
   ARCHITECTURE BODY extracted
-    Source modified time: Sun Nov 23 14:55:38 2014
+    Source modified time: Sun Nov 23 16:09:06 2014
     Depends on: E work spi Y;AV^gGj?YP0=BZEOBN;Q1
     Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
@@ -305,14 +305,14 @@ ENTITY spi
     HDL source file: VHDL/spi_EXTR.vhd
     Source file: VHDL/spi_EXTR.vhd
     Start location: VHDL/spi_EXTR.vhd:13
-    Version string: ]zf4=nU6e_[fNo0`ai?<j1
+    Version string: 9@iF=ALgm;`3bRB4?SLnC1
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
     Debug Symbol file exists
   ARCHITECTURE BODY synthesised
-    Source modified time: Sun Nov 23 14:41:46 2014
+    Source modified time: Sun Nov 23 16:08:32 2014
     Depends on: E work spi Y;AV^gGj?YP0=BZEOBN;Q1
     Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
@@ -382,7 +382,7 @@ VHDL CONFIGURATION spi_structural_cfg
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work spi Y;AV^gGj?YP0=BZEOBN;Q1
     Source modified time: Sun Nov 23 14:36:27 2014
-    Source directory: GWTF
+    Source directory: /GWTF
     HDL source file: VHDL/spi_structural_cfg.vhd
     Source file: VHDL/spi_structural_cfg.vhd
     Start location: VHDL/spi_structural_cfg.vhd:1
@@ -407,7 +407,7 @@ VHDL CONFIGURATION spi_synthesised_cfg
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work spi Y;AV^gGj?YP0=BZEOBN;Q1
     Source modified time: Sun Nov 23 14:45:11 2014
-    Source directory: GWTF
+    Source directory: /GWTF
     HDL source file: VHDL/spi_synthesised_cfg.vhd
     Source file: VHDL/spi_synthesised_cfg.vhd
     Start location: VHDL/spi_synthesised_cfg.vhd:1

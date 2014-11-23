@@ -17,11 +17,11 @@ Reading image description file "/data/public/common/software/nelsis/5.4.1.1/shar
 ------ Detailed placement of (Tmp_Cell_(spi(spi(test))))...
 ------ Reading input data
 ------ Creating temporary data structures
------- Placement plane size : [104:112]
+------ Placement plane size : [108:112]
 ------ Doing placement 
 ------ Compacting  
 
-         Magnification coefficient obtained :0.811919
+         Magnification coefficient obtained :0.756242
 
 ------ Writing created layout to database
 Kissing madonna good bye...

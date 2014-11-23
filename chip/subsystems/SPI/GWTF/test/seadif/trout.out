@@ -4,9 +4,8 @@
 ------ reading placement 'Tmp_Cell_(spi(spi(test)))' ------
 ------ building data structure  ------
 ------ making grid  ------
------- routing started Sun Nov 23 14:48:09 2014
+------ routing started Sun Nov 23 16:08:49 2014
  30 nets have to be routed.
-Routing net 'clk' (3/3): ..b OK!
 Routing net 'read_out_7_0_6' (2/2): .b OK!
 Routing net 'read_out_7_0_5' (2/2): .b OK!
 Routing net 'read_out_7_0_1' (2/2): .b OK!
@@ -17,6 +16,8 @@ Routing net 'write_in_7_0_6' (2/2): .b OK!
 Routing net 'write_in_7_0_5' (2/2): .b OK!
 Routing net 'write_in_7_0_3' (2/2): .b OK!
 Routing net 'write_in_7_0_1' (2/2): .b OK!
+Routing net 'send' (2/2): .b OK!
+Routing net 'clk' (3/3): ..b OK!
 Routing net 'read_out_7_0_4' (2/2): .b OK!
 Routing net 'read_out_7_0_3' (2/2): .b OK!
 Routing net 'read_out_7_0_2' (2/2): .b OK!
@@ -25,26 +26,25 @@ Routing net 'miso' (2/2): .b OK!
 Routing net 'write_in_7_0_4' (2/2): .b OK!
 Routing net 'write_in_7_0_2' (2/2): .b OK!
 Routing net 'write_in_7_0_0' (2/2): .b OK!
-Routing net 'send' (2/2): .b OK!
-Routing net 'count_2_port' (2/2): . OK!
-Routing net 'sclk' (3/3): ..b OK!
-Routing net 'count_3_port' (2/2): . OK!
-Routing net 'shift' (2/2): . OK!
-Routing net 'count_1_port' (2/2): . OK!
-Routing net 'vss' :  (Power special)
-Routing net 'vdd' :  (Power special)
 Routing net 'count_0_port' (2/2): . OK!
 Routing net 'count_reset' (2/2): . OK!
+Routing net 'count_1_port' (2/2): . OK!
+Routing net 'sclk' (3/3): ..b OK!
+Routing net 'vss' :  (Power special)
+Routing net 'count_2_port' (2/2): . OK!
 Routing net 'reset' (3/3): ..b OK!
+Routing net 'count_3_port' (2/2): . OK!
+Routing net 'vdd' :  (Power special)
+Routing net 'shift' (2/2): . OK!
 READY
 ----- Some interesting statistics ------
 Total number of nets:                 30 (100% completion)
-Total length of routed wires:         539 grids = 4.743 mm
-No. of transistors (total / used):    1632/894 = 54.78 %
+Total length of routed wires:         634 grids = 5.579 mm
+No. of transistors (total / used):    1664/894 = 53.73 %
 CPU-time consumption:                 0.01 sec.
 Elapsed time during routing:          0.02 sec. (50.00 % of cpu)
 ------ Verifying Connectivity ------
 ------ No unconnect nor short-circuits ------
 ------ Writing 'Tmp_Cell_(spi(spi(test)))' ------
------- Trout: task completed on Sun Nov 23 14:48:09 2014
+------ Trout: task completed on Sun Nov 23 16:08:49 2014
  terminate

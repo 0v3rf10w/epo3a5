@@ -4,12 +4,12 @@ six
 ------ opening seadif ------
 ------ checking your circuit 'spi' ------
 ------ circuit 'spi' is still up-to-date ------
------- checking match with placement layout 'Tmpspi2479' ------
------- reading nelsis layout-cell 'Tmpspi2479' ------
------- writing nelsis 'Tmpspi2479' as sdflay 'Tmp_Cell_(spi(spi(test)))' ------
+------ checking match with placement layout 'Tmpspi9782' ------
+------ reading nelsis layout-cell 'Tmpspi9782' ------
+------ writing nelsis 'Tmpspi9782' as sdflay 'Tmp_Cell_(spi(spi(test)))' ------
 ------ input seems good enough: calling router ------
 calling program: trout -l test -f spi -c spi -o Tmp_Cell_ -d Tmp_Cell_ 
 ------ routing successful ------
------- converting result back into nelsis as cell 'Tmpspi2479' ------
-calling program: nelsea -rLH -f spi -c spi -l Tmp_Cell_ Tmpspi2479 
+------ converting result back into nelsis as cell 'Tmpspi9782' ------
+calling program: nelsea -rLH -f spi -c spi -l Tmp_Cell_ Tmpspi9782 
 ------ sea: task completed ------
