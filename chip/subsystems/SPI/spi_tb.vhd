@@ -31,23 +31,23 @@ signal miso: std_logic;
 begin
 spi1: spi port map (clk, send, reset, write_enable,write_in,read_out,sclk,mosi,miso);
 
-clk <= not clk after 5 ns;
+clk <= not clk after 50 ns;
 
 reset <= '1' after 0 ns,
-	 '0' after 10 ns;
+	 '0' after 100 ns;
 	 
 write_enable <= '0' after 0 ns,
-				'1' after 15 ns,
-				'0' after 30 ns;
+				'1' after 200 ns,
+				'0' after 300 ns;
 				
 write_in <= "11111111";
 
 miso <= '0';
 
 send <= '0' after 0 ns,
-		'1' after 50 ns,
-		'0' after 70 ns,
-		'1' after 160 ns,
-		'0' after 170 ns;
+		'1' after 500 ns,
+		'0' after 700 ns,
+		'1' after 2600 ns,
+		'0' after 2700 ns;
 
 end structural;
