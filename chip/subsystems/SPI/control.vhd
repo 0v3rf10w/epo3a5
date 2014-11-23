@@ -64,7 +64,7 @@ begin
 		end if;
 	end process;
 
-	sclk <= 	(not(clk and clk_switch)) when (state=shifting) else
+	sclk <= 	(not(clk and clk_switch)) after 1 ns when (state=shifting) else
 				'0';
 
 	shift <= clk_switch;
