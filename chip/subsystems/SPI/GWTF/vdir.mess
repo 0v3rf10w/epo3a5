@@ -1,5 +1,12 @@
 Library vendor : Model Technology
 Maximum unnamed designs : 3
+OPTIMIZED DESIGN _opt
+    Version string: ]J]lfS1zg=6GY_m4SP4BD1
+    Top-level model: work spi_tb_structural_cfg 1
+    Compile options: -quiet -auto_acc_if_foreign -work work
+    Short name: @_opt
+    Opcode format: 10.1b; VCOM/VLOG SE Object version 51
+    Source directory: GWTF
 ENTITY control
     Source modified time: Thu Nov 20 08:56:34 2014
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
@@ -20,7 +27,6 @@ ENTITY control
     Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: /GWTF
     HDL source file: VHDL/control_SYNTH.vhd
     Source file: VHDL/control_SYNTH.vhd
     Start location: VHDL/control_SYNTH.vhd:7
@@ -29,6 +35,7 @@ ENTITY control
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
+    Source directory: /GWTF
     Debug Symbol file exists
   ARCHITECTURE BODY behavioural
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
@@ -72,6 +79,23 @@ ENTITY counter
     Source file: VHDL/counter.vhd
     Start location: VHDL/counter.vhd:5
     Version string: 12MkP4b>^R<?N^54Lh1Sb2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Sun Nov 23 00:04:17 2014
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: E work counter 12MkP4b>^R<?N^54Lh1Sb2
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: GWTF
+    HDL source file: VHDL/counter_SYNTH.vhd
+    Source file: VHDL/counter_SYNTH.vhd
+    Start location: VHDL/counter_SYNTH.vhd:7
+    Version string: SNz3jb4`cHEHC0E]I@nB01
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo

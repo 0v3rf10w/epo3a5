@@ -10,7 +10,6 @@ V]J]lfS1zg=6GY_m4SP4BD1
 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 OE;O;10.1b;51
-dGWTF
 Econtrol
 Z0 w1416470194
 Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
@@ -33,7 +32,7 @@ Z11 tExplicit 1
 Asynthesised
 w1416470208
 Z12 DEx4 work 7 control 0 22 hV8mGg?7Y0O:KT^BBLi;K2
-Z13 DPx8 cellslib 18 cellslib_decl_pack 0 22 QXc5jY9ngocCTOzQ`UlIE2
+DPx8 cellslib 18 cellslib_decl_pack 0 22 QXc5jY9ngocCTOzQ`UlIE2
 R1
 R2
 8VHDL/control_SYNTH.vhd
@@ -67,7 +66,7 @@ R11
 !s100 j;NSgFbGbf;iziIh3VW^W3
 !i10b 1
 Ccontrol_behavioural_cfg
-Z14 abehavioural
+Z13 abehavioural
 econtrol
 DAx4 work 7 control 11 behavioural 22 ^73KM1CHjJ>J]WnMMJ^J`2
 R1
@@ -90,72 +89,50 @@ R11
 !s90 -lower|-explicit|-work|work|VHDL/control_behavioural_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/control_behavioural_cfg.vhd|
 Ecounter
-Z15 w1416469929
-Z16 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z14 w1416469929
+Z15 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 R1
 R2
 R3
-Z17 8VHDL/counter.vhd
-Z18 FVHDL/counter.vhd
+Z16 8VHDL/counter.vhd
+Z17 FVHDL/counter.vhd
 l0
 L5
 V12MkP4b>^R<?N^54Lh1Sb2
 R6
 32
-Z19 !s108 1416469929.902145
-Z20 !s90 -lower|-explicit|-work|work|VHDL/counter.vhd|-quiet|-nologo|
-Z21 !s107 VHDL/counter.vhd|
+Z18 !s108 1416469929.902145
+Z19 !s90 -lower|-explicit|-work|work|VHDL/counter.vhd|-quiet|-nologo|
+Z20 !s107 VHDL/counter.vhd|
 R10
 R11
 !s100 iK23KzZXb0zdbkBZ9>6@A0
 !i10b 1
-Asynthesised
-w1416697457
-R16
-Z22 DEx4 work 7 counter 0 22 12MkP4b>^R<?N^54Lh1Sb2
-R13
-R1
-R2
-dGWTF
-8VHDL/counter_SYNTH.vhd
-FVHDL/counter_SYNTH.vhd
-l32
-L7
-VSNz3jb4`cHEHC0E]I@nB01
-!s100 _8jS;l[RU>PmjMS8KY^T12
-R6
-32
-!i10b 1
-!s108 1416697459.521617
-!s90 -lower|-explicit|-work|work|VHDL/counter_SYNTH.vhd|-quiet|-nologo|
-!s107 VHDL/counter_SYNTH.vhd|
-R10
-R11
 Abehavioural
-R16
+R15
 R1
 R2
-R22
+Z21 DEx4 work 7 counter 0 22 12MkP4b>^R<?N^54Lh1Sb2
 l16
 L12
 VUGei>bAkBd@1Ld__CgZab3
 R6
 32
+R18
 R19
 R20
-R21
 R10
 R11
 !s100 ^gSO7O=V>YdGV@ol^=LB[0
 !i10b 1
 Ccounter_behavioural_cfg
-R14
+R13
 ecounter
 DAx4 work 7 counter 11 behavioural 22 UGei>bAkBd@1Ld__CgZab3
-R16
+R15
 R1
 R2
-R22
+R21
 w1416470041
 dGWTF
 8VHDL/counter_behavioural_cfg.vhd
@@ -173,20 +150,20 @@ R11
 !s90 -lower|-explicit|-work|work|VHDL/counter_behavioural_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/counter_behavioural_cfg.vhd|
 Eshift_reg
-Z23 w1416469986
+Z22 w1416469986
 R1
 R2
 R3
-Z24 8VHDL/shift_reg.vhd
-Z25 FVHDL/shift_reg.vhd
+Z23 8VHDL/shift_reg.vhd
+Z24 FVHDL/shift_reg.vhd
 l0
 L4
 VQQjl?j`OXea3aNd5gF<Wm1
 R6
 32
-Z26 !s108 1416469986.152950
-Z27 !s90 -lower|-explicit|-work|work|VHDL/shift_reg.vhd|-quiet|-nologo|
-Z28 !s107 VHDL/shift_reg.vhd|
+Z25 !s108 1416469986.152950
+Z26 !s90 -lower|-explicit|-work|work|VHDL/shift_reg.vhd|-quiet|-nologo|
+Z27 !s107 VHDL/shift_reg.vhd|
 R10
 R11
 !s100 l4jICMTR2JgVlL0bVagGU3
@@ -194,26 +171,26 @@ R11
 Astructural
 R1
 R2
-Z29 DEx4 work 9 shift_reg 0 22 QQjl?j`OXea3aNd5gF<Wm1
+Z28 DEx4 work 9 shift_reg 0 22 QQjl?j`OXea3aNd5gF<Wm1
 l19
 L15
 VnoIFE>@eU0cle;8ULR3jS0
 R6
 32
+R25
 R26
 R27
-R28
 R10
 R11
 !s100 zK8SW?6EnJF_g370OdAC91
 !i10b 1
 Cshift_reg_structural_cfg
-Z30 astructural
+Z29 astructural
 eshift_reg
 DAx4 work 9 shift_reg 10 structural 22 noIFE>@eU0cle;8ULR3jS0
 R1
 R2
-R29
+R28
 w1416470046
 dGWTF
 8VHDL/shift_reg_structural_cfg.vhd
@@ -231,20 +208,20 @@ R11
 !s90 -lower|-explicit|-work|work|VHDL/shift_reg_structural_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/shift_reg_structural_cfg.vhd|
 Espi
-Z31 w1416470004
+Z30 w1416470004
 R1
 R2
 R3
-Z32 8VHDL/spi.vhd
-Z33 FVHDL/spi.vhd
+Z31 8VHDL/spi.vhd
+Z32 FVHDL/spi.vhd
 l0
 L4
 VY;AV^gGj?YP0=BZEOBN;Q1
 R6
 32
-Z34 !s108 1416470004.815078
-Z35 !s90 -lower|-explicit|-work|work|VHDL/spi.vhd|-quiet|-nologo|
-Z36 !s107 VHDL/spi.vhd|
+Z33 !s108 1416470004.815078
+Z34 !s90 -lower|-explicit|-work|work|VHDL/spi.vhd|-quiet|-nologo|
+Z35 !s107 VHDL/spi.vhd|
 R10
 R11
 !s100 PoJ7fBmUKOmH[5OUFCGFM3
@@ -252,33 +229,33 @@ R11
 Astructural
 R1
 R2
-Z37 DEx4 work 3 spi 0 22 Y;AV^gGj?YP0=BZEOBN;Q1
+Z36 DEx4 work 3 spi 0 22 Y;AV^gGj?YP0=BZEOBN;Q1
 l54
 L17
 V=ZNQA<fUO4ma9HC6S:k<O2
 R6
 32
+R33
 R34
 R35
-R36
 R10
 R11
 !s100 oNUVkbUjGIKWzo`^himVQ3
 !i10b 1
 Cspi_structural_cfg
-R30
+R29
 espi
 R12
-R29
-R22
+R28
+R21
 DCx4 work 23 control_behavioural_cfg 0 22 HJn]@O[]lUgJ4[=mWg_o`3
 DCx4 work 24 shift_reg_structural_cfg 0 22 QAHc]W=lXL5YOiFzDl?F21
-R16
+R15
 DCx4 work 23 counter_behavioural_cfg 0 22 dcfTSNJ>?gS:Dld38W3BH3
 DAx4 work 3 spi 10 structural 22 =ZNQA<fUO4ma9HC6S:k<O2
 R1
 R2
-R37
+R36
 w1416470055
 dGWTF
 8VHDL/spi_structural_cfg.vhd
@@ -296,20 +273,20 @@ R11
 !s90 -lower|-explicit|-work|work|VHDL/spi_structural_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/spi_structural_cfg.vhd|
 Espi_tb
-Z38 w1416470024
+Z37 w1416470024
 R1
 R2
 R3
-Z39 8VHDL/spi_tb.vhd
-Z40 FVHDL/spi_tb.vhd
+Z38 8VHDL/spi_tb.vhd
+Z39 FVHDL/spi_tb.vhd
 l0
 L4
 ViQJo7[_oR`H;;Y:9f`njo2
 R6
 32
-Z41 !s108 1416470024.442907
-Z42 !s90 -lower|-explicit|-work|work|VHDL/spi_tb.vhd|-quiet|-nologo|
-Z43 !s107 VHDL/spi_tb.vhd|
+Z40 !s108 1416470024.442907
+Z41 !s90 -lower|-explicit|-work|work|VHDL/spi_tb.vhd|-quiet|-nologo|
+Z42 !s107 VHDL/spi_tb.vhd|
 R10
 R11
 !s100 `WGD[T9[3X6ojdPT`WZJR0
@@ -317,28 +294,28 @@ R11
 Astructural
 R1
 R2
-Z44 DEx4 work 6 spi_tb 0 22 iQJo7[_oR`H;;Y:9f`njo2
+Z43 DEx4 work 6 spi_tb 0 22 iQJo7[_oR`H;;Y:9f`njo2
 l31
 L7
 VLi^Z5cESmHYTg[aZaWkoH1
 R6
 32
+R40
 R41
 R42
-R43
 R10
 R11
 !s100 m<A=JcVSe[Dz1g;Ebf8l;2
 !i10b 1
 Cspi_tb_structural_cfg
-R30
+R29
 espi_tb
-R37
+R36
 DCx4 work 18 spi_structural_cfg 0 22 QS<V1ScKNhHf[lRLRUKY80
 DAx4 work 6 spi_tb 10 structural 22 Li^Z5cESmHYTg[aZaWkoH1
 R1
 R2
-R44
+R43
 w1416470062
 dGWTF
 8VHDL/spi_tb_structural_cfg.vhd
