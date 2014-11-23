@@ -1,0 +1,207 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Job/epo3a5/chip/subsystems/SPI/Modelsim
+Econtrol
+Z1 w1416744791
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd
+Z5 FC:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd
+l0
+L4
+V3fUoAl8Tb0]RIJD;;g_^n0
+!s100 P3n>S;bjS[501Uc6I[R7L0
+Z6 OP;C;10.3d;59
+32
+Z7 !s110 1416744802
+!i10b 1
+Z8 !s108 1416744802.128000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd|
+Z10 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+Abehavioural
+R2
+R3
+DEx4 work 7 control 0 22 3fUoAl8Tb0]RIJD;;g_^n0
+l19
+L15
+VbS06XP3mH[bd4AR[JWoCP3
+!s100 e1Dc@o<[e_JfS`eBBlg]^3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecounter
+Z13 w1416213318
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z15 8C:/Users/Job/epo3a5/chip/subsystems/SPI/counter.vhd
+Z16 FC:/Users/Job/epo3a5/chip/subsystems/SPI/counter.vhd
+l0
+L5
+VGBnQT3UPKPd5N60jgS_V;2
+!s100 QL7ObjE2NO6LY@g=JA<=13
+R6
+32
+Z17 !s110 1416744803
+!i10b 1
+Z18 !s108 1416744803.295000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/counter.vhd|
+Z20 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/counter.vhd|
+!i113 1
+R11
+R12
+Abehavioural
+R14
+R2
+R3
+DEx4 work 7 counter 0 22 GBnQT3UPKPd5N60jgS_V;2
+l16
+L12
+Vk_MR`DbSgfG7M8d_]Th;43
+!s100 j5KU9W4kll^I]5AKcKCC91
+R6
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12
+Eshift_reg
+Z21 w1416744276
+R2
+R3
+R0
+Z22 8C:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd
+Z23 FC:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd
+l0
+L4
+V50nRERKPW^J0QTe@PFU?71
+!s100 ^M22?=oz8XC>oQ5ck;Kc>0
+R6
+32
+Z24 !s110 1416744804
+!i10b 1
+Z25 !s108 1416744804.495000
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd|
+Z27 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 9 shift_reg 0 22 50nRERKPW^J0QTe@PFU?71
+l19
+L15
+Vml:oec;Im5A>SO3EZ=CoD1
+!s100 <GDBCzgl_PfI0K1Ca8IYo3
+R6
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R11
+R12
+Espi
+R21
+R2
+R3
+R0
+Z28 8C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd
+Z29 FC:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd
+l0
+L4
+VkPj``c]<8I7]GZ[HoGZRd2
+!s100 ;AHUVHo6BzNoB^P[zS_=m3
+R6
+32
+Z30 !s110 1416744805
+!i10b 1
+Z31 !s108 1416744805.651000
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd|
+Z33 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd|
+!i113 1
+R11
+R12
+Astructural
+R2
+R3
+Z34 DEx4 work 3 spi 0 22 kPj``c]<8I7]GZ[HoGZRd2
+l53
+L17
+Z35 Vg8X`X:P2P=FWS`_CE^Vzb1
+Z36 !s100 5KMU_cd@Ah4]V;0JM190Q1
+R6
+32
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R11
+R12
+Espi_tb
+Z37 w1416268485
+R2
+R3
+R0
+Z38 8C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_tb.vhd
+Z39 FC:/Users/Job/epo3a5/chip/subsystems/SPI/spi_tb.vhd
+l0
+L4
+Vibgdk8nSLU=UAQ?_BXCiY0
+!s100 7zR2zNjcS7c3FW:[dd:JF0
+R6
+32
+Z40 !s110 1416744801
+!i10b 1
+Z41 !s108 1416744801.015000
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_tb.vhd|
+Z43 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_tb.vhd|
+!i113 1
+R11
+R12
+Astructural
+R2
+R3
+DEx4 work 6 spi_tb 0 22 ibgdk8nSLU=UAQ?_BXCiY0
+l31
+L7
+VjhmYUeE92eTlPM]>[Ifm30
+!s100 gnY61:ligVLoOWc6d6bMz1
+R6
+32
+R40
+!i10b 1
+R41
+R42
+R43
+!i113 1
+R11
+R12
