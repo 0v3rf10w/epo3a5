@@ -1,0 +1,74 @@
+# Tabular Link File created on Sun 23 Nov 2014 15:21:28
+# By Program: design_flow
+# From Source: /home/jtijhuis/epo3a5/chip/subsystems/SPI/GWTF/spi.lst
+# Clock_column: 0
+INP clk;
+INP send;
+INP reset;
+INP write_enable;
+INP write_in_7_0_7;
+INP write_in_7_0_6;
+INP write_in_7_0_5;
+INP write_in_7_0_4;
+INP write_in_7_0_3;
+INP write_in_7_0_2;
+INP write_in_7_0_1;
+INP write_in_7_0_0;
+OUT read_out_7_0_7;
+OUT read_out_7_0_6;
+OUT read_out_7_0_5;
+OUT read_out_7_0_4;
+OUT read_out_7_0_3;
+OUT read_out_7_0_2;
+OUT read_out_7_0_1;
+OUT read_out_7_0_0;
+OUT sclk;
+OUT mosi;
+INP miso;
+PERIOD 100ns;
+TIME_UNIT 1.0e-10s;
+TABLE_FORMAT D<23c;
+DATA_SECTION
+             00<LLHLHHHHHHHHllllllllllL
+            500<HLHLHHHHHHHHllllllllllL
+           1000<LLLLHHHHHHHHllllllllllL
+           1500<HLLLHHHHHHHHllllllllllL
+           2000<LLLHHHHHHHHHllllllllllL
+           2500<HLLHHHHHHHHHhhhhhhhhlhL
+           3000<LLLLHHHHHHHHhhhhhhhhlhL
+           3500<HLLLHHHHHHHHhhhhhhhhlhL
+           4000<LLLLHHHHHHHHhhhhhhhhlhL
+           4500<HLLLHHHHHHHHhhhhhhhhlhL
+           5000<LHLLHHHHHHHHhhhhhhhhlhL
+           5500<HHLLHHHHHHHHhhhhhhhhlhL
+           6000<LHLLHHHHHHHHhhhhhhhhhhL
+           6500<HHLLHHHHHHHHhhhhhhhllhL
+           7000<LLLLHHHHHHHHhhhhhhhlhhL
+           7500<HLLLHHHHHHHHhhhhhhlllhL
+           8000<LLLLHHHHHHHHhhhhhhllhhL
+           8500<HLLLHHHHHHHHhhhhhllllhL
+           9000<LLLLHHHHHHHHhhhhhlllhhL
+           9500<HLLLHHHHHHHHhhhhlllllhL
+          10000<LLLLHHHHHHHHhhhhllllhhL
+          10500<HLLLHHHHHHHHhhhllllllhL
+          11000<LLLLHHHHHHHHhhhlllllhhL
+          11500<HLLLHHHHHHHHhhlllllllhL
+          12000<LLLLHHHHHHHHhhllllllhhL
+          12500<HLLLHHHHHHHHhllllllllhL
+          13000<LLLLHHHHHHHHhllllllllhL
+          13500<HLLLHHHHHHHHhllllllllhL
+          14000<LLLLHHHHHHHHhllllllllhL
+          14500<HLLLHHHHHHHHhllllllllhL
+          15000<LLLLHHHHHHHHhllllllllhL
+          15500<HLLLHHHHHHHHhllllllllhL
+          16000<LLLLHHHHHHHHhllllllllhL
+          16500<HLLLHHHHHHHHhllllllllhL
+          17000<LLLLHHHHHHHHhllllllllhL
+          17500<HLLLHHHHHHHHhllllllllhL
+          18000<LLLLHHHHHHHHhllllllllhL
+          18500<HLLLHHHHHHHHhllllllllhL
+          19000<LLLLHHHHHHHHhllllllllhL
+          19500<HLLLHHHHHHHHhllllllllhL
+          20000<LLLLHHHHHHHHhllllllllhL
+
+

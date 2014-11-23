@@ -1,5 +1,5 @@
 #*********************************************************
-#  synthesize script for cell: shift_reg                  *
+#  synthesize script for cell: spi                        *
 #*********************************************************
 set hdlin_vhdl_93 false
 set hdlin_ff_always_async_set_reset true
@@ -9,10 +9,11 @@ set vhdlout_use_packages {"ieee.std_logic_1164" "CellsLib.CellsLib_DECL_PACK"}
 set company "ontwerp_practicum"
 set designer "jtijhuis"
 set target_library  {"/data/public/common/software/opprog/synth_libs/g_digilib5_99.db"}
-set link_library [list "*" "/data/public/common/software/opprog/synth_libs/g_digilib5_99.db" "/data/public/common/software/opprog/synth_libs/g_analib8_00.db" "/data/public/common/software/opprog/synth_libs/buffers.db"]
+set link_library [list "*" "./ADB/control.ddc" "./ADB/shift_reg.ddc" "./ADB/counter.ddc" "/data/public/common/software/opprog/synth_libs/g_digilib5_99.db" "/data/public/common/software/opprog/synth_libs/g_analib8_00.db" "/data/public/common/software/opprog/synth_libs/buffers.db"]
 define_design_lib MY_LIB -path ./syn_work
 define_design_lib CELLSLIB -path /data/public/common/software/opprog/synth_libs/CellsLib
-read_file -format vhdl -work MY_LIB {VHDL/shift_reg.vhd }
+read_file -format vhdl -work MY_LIB {VHDL/spi.vhd }
+set_dont_touch {control shift_reg counter}
 set_dont_touch {g_analib8_00/*}
 # set_max_fanout 1.8 all_inputs() 
 # set_max_area 1000 
@@ -21,8 +22,8 @@ compile
 ungroup -all -flat
 report_area
 report_fsm
-write_file -f ddc shift_reg -output ./ADB/shift_reg.ddc
-write_file -f vhdl shift_reg -output ./VHDL/shift_reg_SYNTH.vhd
+write_file -f ddc spi -output ./ADB/spi.ddc
+write_file -f vhdl spi -output ./VHDL/spi_SYNTH.vhd
 quit
 
 

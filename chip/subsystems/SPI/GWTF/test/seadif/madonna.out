@@ -1,0 +1,30 @@
+
+Madonna version 3.3 (compiled Tue, 08 Jul 2008 15:50:37 for "linux-2.6-i686")
+
+reading circuit "spi(spi(test))" ...done
+
+Kissing madonna hello...
+
+Reading image description file "/data/public/common/software/nelsis/5.4.1.1/share/lib/celllibs/fishbone/image.seadif"...
+
+
+------ net distribution (total #nets = 30):
+        0..1     2     3     4     5     6     7 8..10 11..20  >20
+
+           0    24     4     2     0     0     0     0     0     0
+
+
+------ Detailed placement of (Tmp_Cell_(spi(spi(test))))...
+------ Reading input data
+------ Creating temporary data structures
+------ Placement plane size : [104:112]
+------ Doing placement 
+------ Compacting  
+
+         Magnification coefficient obtained :0.811919
+
+------ Writing created layout to database
+Kissing madonna good bye...
+
+Madonna took 0.0 seconds of your cpu
+terminate

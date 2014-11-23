@@ -12,7 +12,7 @@ port(	clk: 			in std_logic;
 	);
 end shift_reg;
 
-architecture structural of shift_reg is
+architecture behavioral of shift_reg is
 
 	signal reg_shift,shifted_reg: std_logic_vector (7 downto 0);
 
@@ -26,10 +26,10 @@ begin
 	if(reset = '1') then
 		reg_shift <= (others => '0');
 	else
-		if(reg_set = '1') then
-			reg_shift <= reg_write;
-		else
-			if(rising_edge(clk)) then
+		if(rising_edge(clk)) then
+			if(reg_set = '1') then
+				reg_shift <= reg_write;
+			else
 				if(enable = '1') then
 					reg_shift <= shifted_reg;
 				else
@@ -42,7 +42,7 @@ begin
 
 	output <= reg_shift;
 	
-end structural;
+end behavioral;
 
 
 

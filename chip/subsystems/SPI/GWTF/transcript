@@ -8,7 +8,6 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # vsim -do /data/public/common/software/opprog/do_files/init_simulator.do -lib work spi_tb_structural_cfg 
-# ** Note: (vsim-3812) Design is being optimized...
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -19,10 +18,13 @@
 # Loading work.spi(structural)#1
 # Loading work.counter_behavioural_cfg#1
 # Loading work.counter(behavioural)#1
-# Loading work.shift_reg_structural_cfg#1
-# Loading work.shift_reg(structural)#1
+# Loading work.shift_reg_behavioral_cfg#1
+# Loading work.shift_reg(behavioral)#1
 # Loading work.control_behavioural_cfg#1
 # Loading work.control(behavioural)#1
 # do /data/public/common/software/opprog/do_files/init_simulator.do 
+run 2000
+add wave -position end  sim:/spi_tb/spi1/count
+restart
 run
 run
