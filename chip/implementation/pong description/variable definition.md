@@ -10,3 +10,13 @@ Yvb     :   R7  : 007   : Richtingsvector Y bal
 ScoreA  :   R8  : 008   : Score Player A
 ScoreB  :   R9  : 009   : Score Player B
 GPU_buf :   R10 : 010   : GPU Buffer
+
+
+
+        24px
+     -----------
+    |           |
+    |           |32px
+    |           |
+    |           |
+     ------------
