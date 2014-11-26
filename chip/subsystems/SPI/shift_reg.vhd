@@ -21,7 +21,7 @@ begin
 	shifted_reg(7 downto 1) <= reg_shift(6 downto 0);
 	shifted_reg(0) <= shift_in;
 	
-	process(clk,reg_set,reset)
+	process(clk,reset)
 	begin
 	if(reset = '1') then
 		reg_shift <= (others => '0');
