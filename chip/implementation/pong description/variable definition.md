@@ -10,6 +10,7 @@ Yvb     :   R7  : 007   : Richtingsvector Y bal
 ScoreA  :   R8  : 008   : Score Player A
 ScoreB  :   R9  : 009   : Score Player B
 GPU_buf :   R10 : 010   : GPU Buffer
+IN      :   input       : input
 
 
 
@@ -20,3 +21,24 @@ GPU_buf :   R10 : 010   : GPU Buffer
     |           |
     |           |
      ------------
+
+
+
+-- INPUT VECTOR
+
+L1  R1  L2  R2  ST  -   -   -
+0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1
+
+L1 Move bar left
+R1 Move bar right
+L2 Move bar2 left
+R2 Move bar2 right
+ST start command
+
+
+-- INSTRUCTIONS
+
+ld  load constant
+lr  load register/input
+cl  clear
+xor xor operation
