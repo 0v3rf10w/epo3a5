@@ -1,0 +1,8 @@
+Layout to Postscript printer command sequence
+running getepslay -t Tmpspi26044
+makegln: Temp file compression turned off
+printing Tmpspi26044.eps
+seadif/print.command: line 1: lpr: command not found
+seadif/print.command: line 1: lpq: command not found
+terminate
+terminate
