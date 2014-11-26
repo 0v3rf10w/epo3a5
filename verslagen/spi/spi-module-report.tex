@@ -6,11 +6,12 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{listings}
+\usepackage{float}
 \title{Serial Peripheral Interface report}
 \author{
 Made by\\
 Job Tijhuis, 4275756\\
-Wietse Bouwmeester, 3456738\\
+Wietse Bouwmeester, 4300807\\
 }
 \date{26 November 2014}
 \begin{document}
@@ -21,24 +22,28 @@ Wietse Bouwmeester, 3456738\\
 \Large \bf 
 Abstract
 \end{center}
-This document describes the contents a design report for the module assignment of the EPO-3 project. 
-It can be used a template for writing this report. 
-Here you should give a summary of the report.
+This is the documentation about the SPI interface used for communicating with peripherals such as memory cards and sensors.
 \clearpage
 
 \tableofcontents
 \clearpage
 
 \section{Introduction}
-Tell something about the context of this report.
+One of the most used protocols to interface with peripherals is the Serial Peripheral Interface or SPI for short. For example, most external memory modules, which will be needed because the final chip is not large enough to fit a reasonable memory bank, use SPI for interfacing. Thus a SPI interface is key for a working final product.
 
 \section{Specification}
-Give the literal design specification of the client.
+The following specifications were determined:
+\begin{itemize}
+\item The interface should work according to the  SPI de facto-standard.
+\item The SPI interface should have a baud-rate as high as possible.
+\item It needs to be possible to write to and read from the shift register located in the interface.
+\item The interface needs to have a enable line to indicate to start sending the shift register contents to the other receiving interface.\item The slave clock needs to be low while no data is being sent.
+\end{itemize}
 
 \section{Design}
 In the specifications it is given that communication is to go according to the SPI de facto-standard. SPI does not define what the communication will be, but it does define the way the data is transferred. The SPI standard defines two communication lines: one from the master to the slave and one from the slave to the master. These lines are connected to shift registers where the outgoing line is connected to the most significant bit and the incoming to the least significant bit. The third line is a clock signal which tells the slave when to sample the line and when to shift its shift register. Since the shift register is such an integral part of SPI it was decided to separate the design in two parts: the shift register and a control system based on a Finite State Machine which controls when the register shifts and when the slave clock will be on. Because it is also important that the transmission stops after all eight bits have been transferred there is also a counter which counts the slave clock, this information is then used by the control.
 
-\begin{figure}[htp!]
+\begin{figure}[H]
 \center
 \includegraphics[width=14cm]{./spi_diagram}
 \caption{Diagram of SPI circuit}
@@ -49,7 +54,7 @@ In the specifications it is given that communication is to go according to the S
 Control is a FSM and has three states: the reset state in which it will be once it is reset, the idle state in which it is when not shifting and to which it will return once all eight bits have been shifted and the shifting state in which it will actually shift the bits out/in. The VHDL implementation is the implementation of the finite state diagram in figure \ref{control-fsm}.
 The output in the different states is as in figure \ref{control-states}.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
@@ -65,7 +70,7 @@ The output in the different states is as in figure \ref{control-states}.
 \end{minipage}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
     \begin{tabular}{ | l | l | l | l |}
     \hline
@@ -83,7 +88,7 @@ The output in the different states is as in figure \ref{control-states}.
 \subsection{Shift register}
 The way the shift register works is as followed: it will reset and do not do anything else if the reset is high, it will synchronously read in 8 new bits if the write in enable is high and it will shift on the clock if enable is high and there is no new bits being loaded in. The input and outputs are as in figure \ref{shift-register}. The VHDL description can be found in \ref{shift-reg-vhdl}.
 
-\begin{figure}[htp!]
+\begin{figure}[H]
 \center
 \includegraphics[width=5cm]{./shift_register_diagram}
 \caption{Diagram of shift register}
@@ -94,23 +99,23 @@ The way the shift register works is as followed: it will reset and do not do any
 Counter is a simple counter that goes up by one for every rising edge of the clock. It is a 4-bit counter which has a clock and reset as inputs and an output count as output. The VHDL description can be found in \ref{counter-vhdl}
 
 \section{Results}
-The results are a SPI that works an correctly shifts out all bits and stops afterwards. The specifications that you can load in values to the shift register and read out of the shift register are also filled. The circuit has been simulated on both simple logic level as wel on switch level, the results show that the switch level simulation does not differ from the logic simulation. These simulations can be seen in figure \ref{spi-modelsim} and \ref{switch-level}. The actual layout on the chip can be seen in \ref{spi-layout}.
+The results are a SPI that works and correctly shifts out all bits and stops afterwards. The specifications that you can load in values to the shift register and read out of the shift register are also fulfilled. The circuit has been simulated on both simple logic level as wel on switch level, the results show that the switch level simulation does not differ from the logic simulation. These simulations can be seen in figure \ref{spi-modelsim} and \ref{switch-level}. The actual layout on the chip can be seen in figure \ref{spi-layout}.
 
-\begin{figure}[htp!]
+\begin{figure}[H]
 \center
 \includegraphics[width=16cm]{./modelsim_sim}
 \caption{Modelsim simulation of SPI}
 \label{spi-modelsim}
 \end{figure}
 
-\begin{figure}[htp!]
+\begin{figure}[H]
 \center
 \includegraphics[width=16cm]{./switch_level}
 \caption{Switch level simulation of SPI}
 \label{switch-level}
 \end{figure}
 
-\begin{figure}[htp!]
+\begin{figure}[H]
 \center
 \includegraphics[width=7cm]{./spi_layout}
 \caption{Layout of SPI on the chip}
@@ -118,27 +123,13 @@ The results are a SPI that works an correctly shifts out all bits and stops afte
 \end{figure}
 
 \section{Conclusions}
-Does the design meet the specifications?
-Is there something that can be improved?
+The SPI interface works according to the SPI  de facto-standard. It also shifts transfers bits with the global system clock frequency, so the baud rate is as high as possible. It is possible to write data to and read data from the interface. The interface has an enable line which will indicate when the interface starts transferring data and the slave clock is low when no data is being transferred. Therefore can be concluded that the SPI interface meets the specifications. To improve the interface, slave select lines could be added. An other feature that could be added is a selectable slave clock speed since some peripherals might not support slave clock speeds up to a few MHz. The SLS and modelsim simulations of the interface are the same thus can be concluded that a working SPI interface has been designed.
 
-\begin{thebibliography}{9}
-\bibitem{labelboek1}
-Author1, 
-Book1, 
-Publisher, 
-year.
-\bibitem{labelTitel}
-Author1, 
-Title, 
-Magazine, 
-Vol. 1, 
-Nr. 1, 
-year, 
-pp. 12-15.
+\begin{thebibliography}{3}
 \bibitem{labelWeb}
-Webpages title, 
-http link, 
-accessed on 19 sep. 2013.
+Serial Peripheral Interface Bus, 
+http://en.wikipedia.org/wiki/Serial\textunderscore Peripheral\textunderscore Interface\textunderscore Bus,
+accessed in November and October. 2014.
 \end{thebibliography}
 
 \section{VHDL code}
