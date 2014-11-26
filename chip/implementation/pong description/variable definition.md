@@ -42,3 +42,4 @@ ld  load constant
 lr  load register/input
 cl  clear
 xor xor operation
+

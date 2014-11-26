@@ -22,7 +22,8 @@ init:   ld  00001100
         st  R6
         ld  00000001
         st  R7
-        gs  11111111
+        ld  11111111
+        st  R10
         jp  hold
 
 -- PRINT
