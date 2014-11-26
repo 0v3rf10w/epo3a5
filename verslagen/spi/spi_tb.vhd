@@ -29,7 +29,8 @@ signal sclk: std_logic;
 signal mosi: std_logic;
 signal miso: std_logic;
 begin
-spi1: spi port map (clk, send, reset, write_enable,write_in,read_out,sclk,mosi,miso);
+spi1: spi port map (clk, send, reset, write_enable,write_in,read_out,sclk,
+					mosi,miso);
 
 clk <= not clk after 50 ns;
 
