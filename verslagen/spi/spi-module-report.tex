@@ -80,7 +80,15 @@ The output in the different states is as in figure \ref{control-states}.
 \end{figure}
 
 \subsection{Shift register}
-Incomplete
+The way the shift register works is as followed: it will reset and do not do anything else if the reset is high, it will synchronously read in 8 new bits if the write in enable is high and it will shift on the clock if enable is high and there is no new bits being loaded in. The input and outputs are as in figure \ref{shift-register}.
+
+\begin{figure}[htp!]
+\center
+\includegraphics[width=5cm]{./shift_register_diagram}
+\caption{Diagram of shift register}
+\label{shift-register}
+\end{figure}
+
 \subsection{Counter}
 Incomplete
 \begin{itemize}
@@ -128,4 +136,21 @@ Webpages title,
 http link, 
 accessed on 19 sep. 2013.
 \end{thebibliography}
+
+\chapter{VHDL code}
+\section{Control}
+\label{control-vhdl}
+\lstinputlisting[language=VHDL]{./control.vhd} 
+\section{Counter}
+\label{counter-vhdl}
+\lstinputlisting[language=VHDL]{./counter.vhd} 
+\section{Shift register}
+\label{shift-reg-vhdl}
+\lstinputlisting[language=VHDL]{./shift_register.vhd} 
+\section{SPIr}
+\label{spi-vhdl}
+\lstinputlisting[language=VHDL]{./spi.vhd} 
+\section{Shift register}
+\label{spi-tb-vhdl}
+\lstinputlisting[language=VHDL]{./spi_tb.vhd} 
 \end{document}
