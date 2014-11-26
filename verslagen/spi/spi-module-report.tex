@@ -94,15 +94,28 @@ The way the shift register works is as followed: it will reset and do not do any
 Counter is a simple counter that goes up by one for every rising edge of the clock. It is a 4-bit counter which has a clock and reset as inputs and an output count as output. The VHDL description can be found in \ref{counter-vhdl}
 
 \section{Results}
-Tell about the results:
-\begin{itemize}
-\item
-Simulation results for the VHDL top-level description.
-\item
-Layout results.
-\item
-Switch-level/Spice simulation results for the extracted circuit.
-\end{itemize}
+The results are a SPI that works an correctly shifts out all bits and stops afterwards. The specifications that you can load in values to the shift register and read out of the shift register are also filled. The circuit has been simulated on both simple logic level as wel on switch level, the results show that the switch level simulation does not differ from the logic simulation. These simulations can be seen in figure \ref{spi-modelsim} and \ref{switch-level}. The actual layout on the chip can be seen in \ref{spi-layout}.
+
+\begin{figure}[htp!]
+\center
+\includegraphics[width=16cm]{./modelsim_sim}
+\caption{Modelsim simulation of SPI}
+\label{spi-modelsim}
+\end{figure}
+
+\begin{figure}[htp!]
+\center
+\includegraphics[width=16cm]{./switch_level}
+\caption{Switch level simulation of SPI}
+\label{switch-level}
+\end{figure}
+
+\begin{figure}[htp!]
+\center
+\includegraphics[width=7cm]{./spi_layout}
+\caption{Layout of SPI on the chip}
+\label{spi-layout}
+\end{figure}
 
 \section{Conclusions}
 Does the design meet the specifications?
