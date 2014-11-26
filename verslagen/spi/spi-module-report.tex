@@ -81,7 +81,7 @@ The output in the different states is as in figure \ref{control-states}.
 \end{figure}
 
 \subsection{Shift register}
-The way the shift register works is as followed: it will reset and do not do anything else if the reset is high, it will synchronously read in 8 new bits if the write in enable is high and it will shift on the clock if enable is high and there is no new bits being loaded in. The input and outputs are as in figure \ref{shift-register}.
+The way the shift register works is as followed: it will reset and do not do anything else if the reset is high, it will synchronously read in 8 new bits if the write in enable is high and it will shift on the clock if enable is high and there is no new bits being loaded in. The input and outputs are as in figure \ref{shift-register}. The VHDL description can be found in \ref{shift-reg-vhdl}.
 
 \begin{figure}[htp!]
 \center
@@ -91,17 +91,7 @@ The way the shift register works is as followed: it will reset and do not do any
 \end{figure}
 
 \subsection{Counter}
-Incomplete
-\begin{itemize}
-\item
-Block description with inputs and outputs.
-\item
-Possible subdivision into sub-blocks.
-\item
-One or more Finite State Diagrams, if appropriate.
-\item
-VHDL behaviour description(s).
-\end{itemize}
+Counter is a simple counter that goes up by one for every rising edge of the clock. It is a 4-bit counter which has a clock and reset as inputs and a output count as output. The VHDL description can be found in \ref{counter-vhdl}
 
 \section{Results}
 Tell about the results:
