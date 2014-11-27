@@ -8,7 +8,8 @@ port(	clk:			in std_logic;
 		count:			in std_logic_vector(3 downto 0);
 		shift:			out std_logic;
 		sclk:			out std_logic;
-		c_reset:		out std_logic
+		c_reset:		out std_logic;
+		ss:				out std_logic
 	);
 end entity control;
 
@@ -52,15 +53,19 @@ begin
 		if(state=reset_state) then
 			c_reset <= '1';
 			clk_switch <= '0';
+			ss <= '1';
 		elsif(state=idle) then
 			c_reset <= '1';
 			clk_switch <= '0';
+			ss <= '0';
 		elsif(state=shifting) then
 			c_reset <= '0';
 			clk_switch <= '1';
+			ss <= '0';
 		else
 			c_reset <= '1';
 			clk_switch <= '0';
+			ss <= '1';
 		end if;
 	end process;
 
