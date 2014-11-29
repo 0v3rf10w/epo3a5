@@ -16,7 +16,7 @@ architecture behaviour of alu is
 signal op0, op1, op2, op3: std_logic;
 begin
   with opcode select
-  alu_y <=  std_logic_vector((unsigned(alu_A) + unsigned(alu_B)))   						when "0000",     -- add
+  alu_y <=  std_logic_vector((unsigned(alu_A) + unsigned(alu_B)))   			when "0000",     -- add
             alu_A xor alu_B                                               when "0001",     -- xor
             alu_A and alu_B                                               when "0010",     -- and
             alu_A or alu_B                                                when "0011",     -- or
@@ -42,6 +42,17 @@ begin
               ((op0='0') and (op1='0') and (op2='0') and (op3='0') and
               ((unsigned(alu_A)+unsigned(alu_B)) > 255))) then
         alu_c <= '1';
+      end if;
+    end if;
+  end process;
+  
+  process(alu_clk)
+  begin
+    if (alu_clk'event and alu_clk='1') then
+      if ((alu_A and alu_B) = "00000000") then
+        alu_z <= '1';
+      else
+        alu_z <= '0';
       end if;
     end if;
   end process;
