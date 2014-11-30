@@ -39,7 +39,8 @@ ST start command
 -- INSTRUCTIONS
 
 ld  load constant
+ar  add register/input
 lr  load register/input
 cl  clear
 xor xor operation
-
+st  store in reg

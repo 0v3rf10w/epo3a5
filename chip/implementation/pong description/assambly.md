@@ -44,7 +44,7 @@ hold:   cl  carry               clear carry
 
 start:  cl  carry
         ld  input               load inputvector
-        xor 10000000            only keer L1 bit
+        xor 10000000            only keep L1 bit
         add 00000001            set carry if L1 is high
         bc  w1_left             goto set w1_left
 st1:    cl  carry
@@ -62,6 +62,16 @@ st3:    cl  carry
         xor 00010000
         add 11100000
         bc  w2_right
+st4:    cl  carry
+        lr  R4
+        ar  R6
+        st  R4
+        cl  carry
+        lr  R5
+        ar  R7
+        st  R5
+        cl  carry
+
         
 
         
