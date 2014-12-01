@@ -1,0 +1,31 @@
+SPI documentation
+
+inputs
+-clk 
+	clock signal
+-reset
+	signal that resets the spi master
+-send
+	when high and the spi is in idle it will start sending, when sending changing this signal will do nothing
+-write_enable
+	when high the shift register will read in new data on the next rising_edge
+-write_in
+	the data that will be written when write_enable is high
+	
+outputs
+-busy
+	indicates whether spi is busy sending/receiving signals
+-sclk
+	slave clock
+-mosi
+	Master Out Slave In
+-miso
+	Master In Slave Out
+-ss
+	slave select
+	
+the SPI interface is quite simple:
+-it will start sending data when send is high and it will stop after 8 bit transfers
+-it will read in new data when write_enable is high, doing this when not all of the data has been transferred 
+ is undefined
+-it will send the data over the spi ports
