@@ -36,6 +36,15 @@ R2 Move bar2 right
 ST start command
 
 
+-- INPUT VECTOR V2
+
+L   L   L   L   R   R   R   R
+
+1st 4 bits = position left bar (12 val)
+2th 4 bits = position right bar (12 val)
+
+
+
 -- INSTRUCTIONS
 
 ld  load constant
