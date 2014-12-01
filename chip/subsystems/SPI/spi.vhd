@@ -38,15 +38,17 @@ end component shift_reg;
 
 component control is
 port(	clk:			in std_logic;
-		reset:		in std_logic;
-		send:		in std_logic;
-		count:		in std_logic_vector(3 downto 0);
-		shift:		out std_logic;
-		sclk:		out std_logic;
-		c_reset:	out std_logic;
-		ss:			out std_logic
+		reset:			in std_logic;
+		send:			in std_logic;
+		count:			in std_logic_vector(3 downto 0);
+		shift:			out std_logic;
+		sclk:			out std_logic;
+		c_reset:		out std_logic;
+		ss:				out std_logic;
+		busy:			out std_logic
 	);
 end component control;
+
 
 signal count : std_logic_vector(3 downto 0);
 signal output : std_logic_vector(7 downto 0);
@@ -59,6 +61,6 @@ begin
 	mosi <= output(7);
 cnt1:  counter port map (switch_clk,count_reset,count);
 shft1: shift_reg port map (clk,reset,shift,miso,write_enable,write_in,output);
-ctrl1: control port map (clk,reset,send,count,shift,switch_clk,count_reset,ss);
+ctrl1: control port map (clk,reset,send,count,shift,switch_clk,count_reset,ss,busy);
 
 end structural;
