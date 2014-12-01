@@ -23,7 +23,6 @@ begin
             "00000000"                                                    when "0100",     -- set C
             "00000000"                                                    when "0101",     -- clr C
             alu_A                                                         when "0110",     -- input_A
-            alu_B                                                         when "0111",     -- input_B
             "00000000"                                                    when others;
   
   op0 <= opcode(0);
