@@ -19,10 +19,9 @@ begin
   alu_y <=  alu_A                                                         when "000",     -- pass input_A
             alu_A xor alu_B                                               when "001",     -- xor
             alu_A and alu_B                                               when "010",     -- and
-            alu_A or alu_B                                                when "011",     -- or
-            "00000000"                                                    when "100",     -- set C
-            "00000000"                                                    when "101",     -- clr C
-            std_logic_vector((unsigned(alu_A) + unsigned(alu_B)))         when "110",     -- add
+            "00000000"                                                    when "011",     -- set C
+            "00000000"                                                    when "100",     -- clr C
+            std_logic_vector((unsigned(alu_A) + unsigned(alu_B)))         when "101",     -- add
             "00000000"                                                    when others;
   
   op0 <= opcode(0);
@@ -32,12 +31,12 @@ begin
   process(alu_clk)
   begin
     if (alu_clk'event and alu_clk='1') then
-      if (((op0='1') and (op1='0') and (op2='1')) or
-          ((op0='0') and (op1='0') and (op2='0') and
+      if (((op0='0') and (op1='0') and (op2='1')) or
+          ((op0='1') and (op1='0') and (op2='1') and
           ((unsigned(alu_A)+unsigned(alu_B)) < 256))) then
         alu_c <= '0';
-      elsif  (((op0='0') and (op1='0') and (op2='1')) or
-              ((op0='0') and (op1='0') and (op2='0') and
+      elsif  (((op0='1') and (op1='1') and (op2='0')) or
+              ((op0='1') and (op1='0') and (op2='1') and
               ((unsigned(alu_A)+unsigned(alu_B)) > 255))) then
         alu_c <= '1';
       end if;
