@@ -34,7 +34,7 @@ architecture behavioural of spi_slave is
 	);
 	end component shift_reg;
 
-	type control_state is (reset_state,slave,read_data,restart);
+	type control_state is (slave,read_data);
 	signal state : control_state;
 	signal count : std_logic_vector(3 downto 0);
 	signal shift_output, output_buffer : std_logic_vector(7 downto 0);
@@ -50,42 +50,41 @@ shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output
 	miso <= '1'; -- we are not sending anything from the slave
 	
 	process(clk)
-		begin
-			if rising_edge(clk)  then
-				case state is 
-					when slave =>
-						if(count = "1000") then
-							state <= write_data;
-						else
-							state <= slave;
-						end if;
-					when write_data =>
+	begin
+		if falling_edge(clk)  then
+			case state is 
+				when slave =>
+					if(count = "1000") then
+						state <= read_data;
+					else
 						state <= slave;
-				end case;	
-			end if;	
-		end if;
+					end if;
+				when read_data =>
+					state <= slave;
+			end case;	
+		end if;	
 	end process;
 	
 	process(state,reset,sclk)
 	begin
 		if(reset = '1') then
-			shift_in <= '0';
 			shift <= '0';
 			count_reset <= '1';
 			output_buffer <= (others => '0');
 		else
-			if(falling_edge(sclk)) then
-				shift_in <= mosi;
-			end if;
 			case state is 
 				when slave =>
 					shift <= '1'; --should always shift because sclk determines when to shift
 					count_reset <= '0';
 					output_buffer <= output_buffer;
-				when write_data =>
+				when read_data =>
 					shift <= '0';
 					count_reset <= '1';
 					output_buffer <= shift_output;
 				end case;	
 		end if;
+	end process;
+
+	shift_in <= mosi when sclk = '0' else
+			shift_in;
 end behavioural;
