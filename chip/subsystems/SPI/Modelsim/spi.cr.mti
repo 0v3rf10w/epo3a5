@@ -15,22 +15,6 @@ Model Technology ModelSim PE Student Edition vcom 10.3d Compiler 2014.10 Oct  7 
 -- Compiling entity counter
 -- Compiling architecture behavioural of counter
 
-} {} {}} C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd
-Model Technology ModelSim PE Student Edition vcom 10.3d Compiler 2014.10 Oct  7 2014
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity spi
--- Compiling architecture structural of spi
-
-} {} {}} C:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd
-Model Technology ModelSim PE Student Edition vcom 10.3d Compiler 2014.10 Oct  7 2014
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity control
--- Compiling architecture behavioural of control
-
 } {} {}} C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_tb.vhd
 Model Technology ModelSim PE Student Edition vcom 10.3d Compiler 2014.10 Oct  7 2014
 -- Loading package STANDARD
