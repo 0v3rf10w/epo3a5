@@ -1,0 +1,49 @@
+==IN================================================================================================================
+
+-Instruction:------------------------------------------------------------------------------------------------------- 
+  The instructions are 12 bits wide and are read from the SD-card. The first 4 bits form the 
+  decoder's OPcode to make it perform a specific task, and the other 8 form the operation's argument. 
+  (E.g. constant value, memory adress, etc.)
+
+-C-flag:------------------------------------------------------------------------------------------------------------
+  The carry-flag gets set by the ALU in case of overflow when performing an ADD funtion, or 
+  when the set-carry function is performed. It can then be used in jump-if-carry-is-true operations.
+  
+-Z-flag:------------------------------------------------------------------------------------------------------------
+  The zero flag is set when an AND operation performed by the ALU returns only zeros. This value 
+  can then be used in jump-if-zero-is-true operations.
+
+
+==OUT================================================================================================================
+
+-Program-counter-load:-----------------------------------------------------------------------------------------------
+  This output gets set to high when the decoder encounters a valid jump operation. (e.g. jp Ri, bz, ...) 
+  Depending on the type of operation, the data-bus countains either the argument of the instruction or the 
+  data in the specified register as the address for the counter to jump to.
+
+-Program-counter-increment:------------------------------------------------------------------------------------------
+  This output is set to high when Program-counter-load is not, meaning the counter will simply increment 
+  to the next operation when no jump-operation is to be performed.
+  
+-Input-buffer-enable:------------------------------------------------------------------------------------------------
+  This signal opens the input-buffer, and puts the argument of the current operation on the data-bus. (E.g. ld #)
+  
+-A-register-load-enable:---------------------------------------------------------------------------------------------
+  This lets the A-register at the output of the ALU store the result of the current operation. The data 
+  can then be put on the second input of the ALU for further operations, or on the data-bus.
+  
+-A-register-buffer-enable:-------------------------------------------------------------------------------------------
+  This opens the buffer of the A-register and puts the stored data on the data-bus.
+  
+-Store-register-load-enable:-----------------------------------------------------------------------------------------
+  This 5 bit signal contains the address of one storage register, enables it and lets it store the current data 
+  on the data-bus. It is used for st Ri operations.
+  
+-Store-register-buffer-enable:---------------------------------------------------------------------------------------
+  This 5 bit signal contains the address of one storage register's buffer, and puts the data stored in the register 
+  on the data-bus. It is used for ld Ri operations.
+  
+-OPcodes:------------------------------------------------------------------------------------------------------------
+  This is a 3-bit signal that contains the OPcodes for the ALU. It controls what operation is performed 
+  by the ALU on the data at its inputs.
+=====================================================================================================================
