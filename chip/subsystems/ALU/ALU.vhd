@@ -16,13 +16,13 @@ architecture behaviour of alu is
 signal op0, op1, op2, op3: std_logic;
 begin
   with opcode select
-  alu_y <=  std_logic_vector((unsigned(alu_A) + unsigned(alu_B)))   			when "0000",     -- add
+  alu_y <=  std_logic_vector((unsigned(alu_A) + unsigned(alu_B)))         when "0000",     -- add
             alu_A xor alu_B                                               when "0001",     -- xor
             alu_A and alu_B                                               when "0010",     -- and
             alu_A or alu_B                                                when "0011",     -- or
             "00000000"                                                    when "0100",     -- set C
             "00000000"                                                    when "0101",     -- clr C
-            alu_A                                                         when "0110",     -- input_A
+            alu_A                                                         when "0110",     -- pass input_A
             "00000000"                                                    when others;
   
   op0 <= opcode(0);
