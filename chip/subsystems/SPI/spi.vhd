@@ -8,6 +8,7 @@ entity spi is
 		write_enable	: in 	std_logic;
 		write_in	: in	std_logic_vector (7 downto 0);
 		read_out	: out	std_logic_vector (7 downto 0);
+		busy		: out	std_logic;
 		sclk		: out	std_logic;
 		mosi		: out	std_logic;
 		miso		: in	std_logic;
