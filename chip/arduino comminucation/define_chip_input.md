@@ -1,0 +1,38 @@
+Vector operarion modes:
+
+
+
+Give position of sensors:
+Byte:   L   L   L   L   R   R   R   R
+        { 4 bits pos }  { 4 bits pos}
+
+
+
+
+
+L/R
+
+
+0001 pos 1
+0010 pos 2
+0011 pos 3
+0100 pos 4
+0101 pos 5
+0110 pos 6
+0111 pos 7
+1000 pos 8
+1001 pos 9
+1010 pos 10
+1011 pos 11
+1100 pos 12
+
+
+
+BUTTON OVERRIDE
+L: 1101 : BUTTON 1
+L: 1110 : BUTTON 2
+L: 1111 : BUTTON 3
+R: 1101 : BUTTON 4
+R: 1110 : BUTTON 5
+R: 1111 : BUTTON 6
+
