@@ -11,11 +11,11 @@ end entity register;
 
 architecture behaviour of register is
 begin
-  process(clk, reg_rst)
+  process(reg_clk, reg_rst)
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (rising_edge(clk) AND reg_ld='1') then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld='1') then
       reg_out <= reg_in;
     end if;
   end process;
