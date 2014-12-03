@@ -52,15 +52,15 @@ end component control;
 
 signal count : std_logic_vector(3 downto 0);
 signal output : std_logic_vector(7 downto 0);
-signal count_reset,switch_clk : std_logic;
+signal count_reset,slave_clk : std_logic;
 signal shift_reset,shift : std_logic;
 
 begin
-	sclk <= switch_clk;
+	sclk <= slave_clk;
 	read_out <= output;
 	mosi <= output(7);
-cnt1:  counter port map (switch_clk,count_reset,count);
-shft1: shift_reg port map (clk,reset,shift,miso,write_enable,write_in,output);
-ctrl1: control port map (clk,reset,send,count,shift,switch_clk,count_reset,ss,busy);
+cnt1:  counter port map (slave_clk,count_reset,count);
+shft1: shift_reg port map (slave_clk,reset,shift,miso,write_enable,write_in,output);
+ctrl1: control port map (clk,reset,send,count,shift,slave_clk,count_reset,ss,busy);
 
 end structural;
