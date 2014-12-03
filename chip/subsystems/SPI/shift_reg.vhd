@@ -19,17 +19,21 @@ architecture behavioral of shift_reg is
 begin
 
 	shifted_reg(7 downto 1) <= reg_shift(6 downto 0);
-	shifted_reg(0) <= shift_in;
 	
 	process(clk,reset)
 	begin
 	if(reset = '1') then
 		reg_shift <= (others => '0');
+		shifted_reg(0) <= '0';
 	else
-		if(rising_edge(clk)) then
-			if(reg_set = '1') then
+		if(reg_set = '1') then
+			if(rising_edge(clk)) then
 				reg_shift <= reg_write;
-			else
+			end if;
+			shifted_reg(0) <= shift_in;
+		else
+			shifted_reg(0) <= shifted_reg(0);
+			if(falling_edge(clk)) then
 				if(enable = '1') then
 					reg_shift <= shifted_reg;
 				else
