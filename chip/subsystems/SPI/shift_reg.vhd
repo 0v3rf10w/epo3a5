@@ -26,19 +26,20 @@ begin
 		reg_shift <= (others => '0');
 		shifted_reg(0) <= '0';
 	else
-		if(reg_set = '1') then
-			if(rising_edge(clk)) then
+		if(rising_edge(clk)) then
+			if(reg_set = '1') then
 				reg_shift <= reg_write;
+			else
+				reg_shift <= reg_shift;
 			end if;
 			shifted_reg(0) <= shift_in;
-		else
-			shifted_reg(0) <= shifted_reg(0);
-			if(falling_edge(clk)) then
-				if(enable = '1') then
-					reg_shift <= shifted_reg;
-				else
-					reg_shift <= reg_shift;
-				end if;
+		end if;
+		
+		if(falling_edge(clk)) then
+			if(enable = '1') then
+				reg_shift <= shifted_reg;
+			else
+				reg_shift <= reg_shift;
 			end if;
 		end if;
 	end if;
