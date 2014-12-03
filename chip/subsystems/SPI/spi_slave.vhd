@@ -65,7 +65,7 @@ shft1: shift_reg port map (sclk,reset,shift,mosi,'0',"11111111",shift_output);
 		end if;	
 	end process;
 	
-	process(state,reset,sclk)
+	process(state,reset)
 	begin
 		if(reset = '1') then
 			shift <= '0';
