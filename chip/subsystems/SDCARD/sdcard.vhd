@@ -45,13 +45,18 @@ begin
 
 spi5:	spi port map(clk,send,reset,write_enable,write_in,output,sclk,mosi_spi,miso,slave_select);
 	output <= output_reg;
-
+	
+	new_data <= '1' when (address_buf != address) else
+				new_data;
+	
 	process(clk,reset)
 		begin
 		if(reset = '1') then
 			state <= reset_state;
+			address_buf <= (others => '0');
 		else
 			if rising_edge(clk)  then
+				address_buf <= address;
 				case state is 
 					when reset_state =>
 						if(reset = '0') then
@@ -84,19 +89,24 @@ spi5:	spi port map(clk,send,reset,write_enable,write_in,output,sclk,mosi_spi,mis
 							state <= init_send;
 						end if;
 					when init_read => 
-						if(busy = '0') then
-							if(output = "00000000") then
-								state <= idle;
-							elsif(output = "11111111") then
-								state <= init_read;
-							else
-								state <= error;
-							end if;
+						if(output = "00000000") then
+							state <= idle;
+						elsif(output = "11111111") then
+							state <= init_receive;
 						else
-							state <= read_response;
+							state <= error;
 						end if;
+					when init_receive
+						if(busy = '0') then
+							state <= init_read;
+						else
+							state <= init_receive;
+						end if;
+						
+						-- TODO: set read length
+						
 					when idle =>
-						if(data_ready = '0') then
+						if(new_data = '1') then
 							state <= load_cmd;
 						else
 							state <= idle;
@@ -107,7 +117,6 @@ spi5:	spi port map(clk,send,reset,write_enable,write_in,output,sclk,mosi_spi,mis
 						else
 							state <= send_part;
 						end if;
-						state <= send_part
 					when send_part =>
 						if(busy = '0') then
 							state <= load_cmd;
@@ -115,33 +124,39 @@ spi5:	spi port map(clk,send,reset,write_enable,write_in,output,sclk,mosi_spi,mis
 							state <= send_part;
 						end if;
 					when read_response =>
-						if(busy = '0') then
-							if(output = "00000000") then
-								state <= wait_data;
-							elsif(output = "11111111") then
-								state <= read_response;
-							else
-								state <= error;
-							end if;
+						if(output = "00000000") then
+							state <= wait_data;
+						elsif(output = "11111111") then
+							state <= receive_response;
 						else
-							state <= read_response;
+							state <= error;
+						end if;
+					when receive_response =>
+						if(busy = '0') then
+							state => read_response;
+						else
+							state => receive_response;
 						end if;
 					when wait_data =>
-						if(busy = '0') then
-							if(output = "11111110") then
-								state <= read_data;
-							else
-								state <= wait_data;
-							end if;
+						if(output = "11111110") then
+							state <= read_data;
 						else
-							state <= read_response;
+							state <= read_data_part;
+						end if;
+					when read_data_part =>
+						if(busy = '0') then
+							state => wait_data;
+						else
+							state => read_data_part;
 						end if;
 					when read_data =>
 						if(busy = '0') then
-							state <= data_read;
+							state <= buffer_data;
 						else
 							state <= read_data;
 						end if;
+					when buffer_data =>
+						state <= idle;
 				end case;	
 			end if;	
 		end if;
