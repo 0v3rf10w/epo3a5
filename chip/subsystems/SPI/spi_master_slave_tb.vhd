@@ -55,7 +55,7 @@ reset <= '1' after 0 ns,
 	 
 write_enable <= '0' after 0 ns,
 				'1' after 200 ns,
-				'0' after 300 ns;
+				'0' after 350 ns;
 				
 write_in <= "01101010";
 
