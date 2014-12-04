@@ -88,19 +88,19 @@ begin
       decoder_bbufoe(1) <= argument(1);
       decoder_bbufoe(0) <= argument(0);
       decoder_alu(2) <= 
-                        (o3 AND o2 AND o1 AND o0) OR
-                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR
-                        (o3 AND (NOT o2) AND (NOT o1) AND o0);
+                        (o3 AND o2 AND o1 AND o0) OR                                      -- Clr c
+                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR                    -- ADD #
+                        (o3 AND (NOT o2) AND (NOT o1) AND o0);                            -- ADD Ri
       decoder_alu(1) <=
-                        (o3 AND o2 AND (NOT o1) AND (NOT o0)) OR
-                        (o3 AND o2 AND (NOT o1) AND o0) OR
-                        (o3 AND o2 AND o1 AND (NOT o0));
+                        (o3 AND o2 AND (NOT o1) AND (NOT o0)) OR                          -- AND #
+                        (o3 AND o2 AND (NOT o1) AND o0) OR                                -- AND Ri
+                        (o3 AND o2 AND o1 AND (NOT o0));                                  -- Set c
       decoder_alu(0) <=
-                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR
-                        (o3 AND (NOT o2) AND (NOT o1) AND o0) OR
-                        (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR
-                        (o3 AND (NOT o2) AND o1 AND o0) OR
-                        (o3 AND o2 AND o1 AND (NOT o0));
+                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR                    -- ADD #
+                        (o3 AND (NOT o2) AND (NOT o1) AND o0) OR                          -- ADD Ri
+                        (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR                          -- XOR #
+                        (o3 AND (NOT o2) AND o1 AND o0) OR                                -- XOR Ri
+                        (o3 AND o2 AND o1 AND (NOT o0));                                  -- Set c
     end if;
   end process;
   decoder_argout <= argument;
