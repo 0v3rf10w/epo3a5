@@ -17,7 +17,8 @@ component decoder
               decoder_abufoe : out std_logic;
               decoder_bregld : out std_logic_vector(4 downto 0);
               decoder_bbufoe : out std_logic_vector(4 downto 0);
-              decoder_alu : out std_logic_vector(2 downto 0));
+              decoder_alu : out std_logic_vector(2 downto 0);
+              decoder_argout  : out std_logic_vector(7 downto 0));
 end component;
 
 signal decoder_in : std_logic_vector(11 downto 0);
@@ -32,9 +33,10 @@ signal decoder_abufoe : std_logic;
 signal decoder_bregld : std_logic_vector(4 downto 0);
 signal decoder_bbufoe : std_logic_vector(4 downto 0);
 signal decoder_alu : std_logic_vector(2 downto 0);
+signal decoder_argout
 
 begin
-lbl1: decoder port map (decoder_in, decoder_c, decoder_z, decoder_en, decoder_pc_inc, decoder_pc_ld, decoder_ibufoe, decoder_aregld, decoder_abufoe, decoder_bregld, decoder_bbufoe, decoder_alu);
+lbl1: decoder port map (decoder_in, decoder_c, decoder_z, decoder_en, decoder_pc_inc, decoder_pc_ld, decoder_ibufoe, decoder_aregld, decoder_abufoe, decoder_bregld, decoder_bbufoe, decoder_alu, decoder_argout);
 decoder_in <=     "010100001100" after 50 ns,         -- load argument w1=12
                   "011100000001" after 100 ns,        -- Store to adress R1
                   "010100001100" after 150 ns,        -- load argument w2=12
@@ -53,4 +55,5 @@ decoder_in <=     "010100001100" after 50 ns,         -- load argument w1=12
                   "011100001010" after 800 ns;        -- Store to adress R10
 decoder_c <= '0' after 0 ns;
 decoder_z <= '0' after 0 ns;
+decoder_en <= '1' after 0 ns;
 end behaviour;
