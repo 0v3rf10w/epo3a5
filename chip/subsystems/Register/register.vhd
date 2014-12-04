@@ -11,7 +11,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic;
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_A;
 
 architecture behaviour of reg_A is
 begin
@@ -34,7 +34,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_1;
 
 architecture behaviour of reg_1 is
 begin
@@ -57,7 +57,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_2;
 
 architecture behaviour of reg_2 is
 begin
@@ -80,7 +80,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_3;
 
 architecture behaviour of reg_3 is
 begin
@@ -103,7 +103,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_4;
 
 architecture behaviour of reg_4 is
 begin
@@ -126,7 +126,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_5;
 
 architecture behaviour of reg_5 is
 begin
@@ -149,7 +149,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_6;
 
 architecture behaviour of reg_6 is
 begin
@@ -172,7 +172,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_7;
 
 architecture behaviour of reg_7 is
 begin
@@ -195,7 +195,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_8;
 
 architecture behaviour of reg_8 is
 begin
@@ -218,7 +218,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_9;
 
 architecture behaviour of reg_9 is
 begin
@@ -241,7 +241,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity register;
+end entity reg_10;
 
 architecture behaviour of reg_10 is
 begin
