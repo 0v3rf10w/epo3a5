@@ -30,7 +30,7 @@ begin
   o2 <= opcode(2);
   o3 <= opcode(3);
   
-  process(decoder_en)
+  process(decoder_in, decoder_c, decoder_z, decoder_en)
   begin
     if (decoder_en='0') then
       decoder_alu <= "ZZZ";
