@@ -14,7 +14,8 @@ port( decoder_in  : in std_logic_vector(11 downto 0)
       decoder_abufoe  : out std_logic;
       decoder_bregld   : out std_logic_vector(4 downto 0);
       decoder_bbufoe  : out std_logic_vector(4 downto 0);
-      decoder_alu       : out std_logic_vector(2 downto 0));
+      decoder_alu       : out std_logic_vector(2 downto 0);
+      decoder_argout    : out std_logic_vector(7 downto 0));
 end decoder;
 
 architecture behaviour of decoder is
@@ -102,4 +103,5 @@ begin
                         (o3 AND o2 AND o1 AND (NOT o0));
     end if;
   end process;
+  decoder_argout <= argument;
 end architecture;
