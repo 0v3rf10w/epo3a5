@@ -37,7 +37,7 @@ architecture behavioural of spi_slave is
 	type control_state is (slave,read_data);
 	signal state : control_state;
 	signal count : std_logic_vector(3 downto 0);
-	signal shift_output, output_buffer : std_logic_vector(7 downto 0);
+	signal shift_output, output_buffer,new_output_buffer : std_logic_vector(7 downto 0);
 	signal count_reset : std_logic;
 	signal shift,shift_in : std_logic;
 	
@@ -64,27 +64,39 @@ shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output
 			end case;	
 		end if;	
 	end process;
+
+	process(sclk)
+	begin
+		if(reset = '1') then
+			shift_in <= '0';
+			output_buffer <= (others => '0');
+		else
+			if(rising_edge(sclk)) then
+				shift_in <= mosi;
+				output_buffer <= new_output_buffer;
+			end if;
+		end if;
+	end process;
 	
 	process(state,reset,sclk)
 	begin
 		if(reset = '1') then
 			shift <= '0';
 			count_reset <= '1';
-			output_buffer <= (others => '0');
+			new_output_buffer <= (others => '0');
 		else
 			case state is 
 				when slave =>
 					shift <= '1'; --should always shift because sclk determines when to shift
 					count_reset <= '0';
-					output_buffer <= output_buffer;
+					new_output_buffer <= output_buffer;
 				when read_data =>
 					shift <= '0';
 					count_reset <= '1';
-					output_buffer <= shift_output;
+					new_output_buffer <= shift_output;
 				end case;	
 		end if;
 	end process;
 
-	shift_in <= mosi when sclk = '0' else
-			shift_in;
+
 end behavioural;
