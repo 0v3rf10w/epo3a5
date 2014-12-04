@@ -9,11 +9,11 @@ port( decoder_in  : in std_logic_vector(11 downto 0)
       decoder_en  : in  std_logic;
       decoder_pc_inc  : out std_logic;
       decoder_pc_ld   : out std_logic;
-      decoder_inbuff_oe : out std_logic;
-      decoder_areg_ld   : out std_logic;
-      decoder_abuf_oe  : out std_logic;
-      decoder_breg_ld   : out std_logic_vector(3 downto 0);
-      decoder_bbuf_oe  : out std_logic_vector(3 downto 0);
+      decoder_ibufoe : out std_logic;
+      decoder_aregld   : out std_logic;
+      decoder_abufoe  : out std_logic;
+      decoder_bregld   : out std_logic_vector(3 downto 0);
+      decoder_bbufoe  : out std_logic_vector(3 downto 0);
       decoder_alu       : out std_logic_vector(2 downto 0));
 end decoder;
 
@@ -22,8 +22,8 @@ signal  opcode : std_logic_vector(3 downto 0);
 signal  argument  : std_logic_vector(7 downto 0);
 signal  o0, o1, o2, o3: std_logic;
 begin
-  opcode <= decoder_in(3 downto 0);
-  argument <= decoder_in(11 downto 4);
+  opcode <= decoder_in(11 downto 8);
+  argument <= decoder_in(7 downto 0);
   o0 <= opcode(0);
   o1 <= opcode(1);
   o2 <= opcode(2);
@@ -35,11 +35,11 @@ begin
       decoder_alu <= "ZZZ";
       decoder_pc_inc <= 'Z';
       decoder_pc_ld <= 'Z';
-      decoder_inbuf_oe <= 'Z';
-      decoder_areg_ld <= 'Z';
-      decoder_abuff_oe <= 'Z';
-      decoder_breg_ld <= 'Z'; 
-      decoder_bbuf_oe <= 'Z';
+      decoder_ibufoe <= 'Z';
+      decoder_aregld <= 'Z';
+      decoder_abuf_oe <= 'Z';
+      decoder_bregld <= "ZZZZ"; 
+      decoder_bbufoe <= "ZZZZ";
     else
       decoder_pc_ld <=
                         ((NOT o3) AND (NOT o2) AND (NOT o1) AND o0) OR                  -- Jp #
@@ -51,7 +51,7 @@ begin
                         ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR                  -- Not Jp Ri
                         ((NOT o3) AND (NOT o2) AND o1 AND o0 AND decoder_z) OR          -- Not Bz
                         ((NOT o3) AND o2 AND (NOT o1) AND (NOT o0) AND decoder_c));     -- Not Bc
-      decoder_inbuf_oe <=
+      decoder_ibufoe <=
                         ((NOT o3) AND (NOT o2) AND (NOT o1) and o0) OR                  -- Jp #
                         ((NOT o3) AND (NOT o2) AND o1 AND o0) OR                        -- Bz
                         ((NOT o3) AND o2 AND (NOT o1) AND (NOT o0) OR                   -- Bc
@@ -59,7 +59,7 @@ begin
                         (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0) OR                   -- ADD #
                         (o3 AND (NOT o2) AND o1 AND (NOT o0) OR                         -- XOR #
                         (o3 AND o2 AND (NOT o1) AND (NOT o0);                           -- AND #
-      decoder_areg_ld <=
+      decoder_aregld <=
                         ((NOT o3) AND o2 AND (NOT o1) AND o0) OR                        -- Ld #
                         ((NOT o3) AND o2 AND o1 AND (NOT o0) OR                         -- Ld Ri
                         (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0) OR                   -- ADD #
@@ -68,11 +68,11 @@ begin
                         (o3 AND (NOT o2) AND o1 AND o0) OR                              -- XOR Ri
                         (o3 AND o2 AND (NOT o1) AND (NOT o0)) OR                        -- AND #
                         (o3 AND o2 AND (NOT o1) AND o0);                                -- AND Ri
-      decoder_abuf_oe <=
+      decoder_abufoe <=
                         ((NOT o3) AND o2 AND o1 AND o0);                                -- st Ri
-      decoder_breg_ld <=
+      decoder_bregld <=
                         ((NOT o3) AND o2 AND o1 AND o0);                                -- st Ri
-      decoder_bbuf_oe <=
+      decoder_bbufoe <=
                         ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR                  -- jp Ri
                         ((NOT o3) AND o2 AND o1 AND (NOT o0)) OR                        -- ld Ri
                         (o3 AND (NOT o2) AND (NOT o1) AND o0) OR                        -- ADD Ri
