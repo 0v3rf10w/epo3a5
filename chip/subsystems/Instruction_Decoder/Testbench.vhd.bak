@@ -33,7 +33,7 @@ signal decoder_abufoe : std_logic;
 signal decoder_bregld : std_logic_vector(4 downto 0);
 signal decoder_bbufoe : std_logic_vector(4 downto 0);
 signal decoder_alu : std_logic_vector(2 downto 0);
-signal decoder_argout: std_logic_vector(7 downto 0);
+signal decoder_argout
 
 begin
 lbl1: decoder port map (decoder_in, decoder_c, decoder_z, decoder_en, decoder_pc_inc, decoder_pc_ld, decoder_ibufoe, decoder_aregld, decoder_abufoe, decoder_bregld, decoder_bbufoe, decoder_alu, decoder_argout);

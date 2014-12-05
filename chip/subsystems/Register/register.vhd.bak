@@ -1,6 +1,6 @@
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 ----------------------------------------------------------------------------------------------------
 --Register A (RA)-----------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_1 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -46,7 +46,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND (reg_clk='1') AND (reg_ld(4)='1') AND (unsigned(reg_ld(3 downto 0))=1)) then
+    elsif (reg_clk'event AND (reg_clk='1') AND (reg_ld(4)='1') AND (unsigned(reg_ld(3 downto 0)=1)) then
       reg_out <= reg_in;
     end if;
   end process;
@@ -57,7 +57,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_2 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -73,7 +73,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0))=2)) then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0)=2)) then
       reg_out <= reg_in;
     end if;
   end process;
@@ -84,7 +84,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_3 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -100,7 +100,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0))=3)) then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0)=3)) then
       reg_out <= reg_in;
     end if;
   end process;
@@ -111,7 +111,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_4 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -127,7 +127,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0))=4)) then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0)=4)) then
       reg_out <= reg_in;
     end if;
   end process;
@@ -138,7 +138,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_5 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -154,7 +154,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0))=5)) then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0)=5)) then
       reg_out <= reg_in;
     end if;
   end process;
@@ -165,7 +165,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_6 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -181,7 +181,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0))=6)) then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0)=6)) then
       reg_out <= reg_in;
     end if;
   end process;
@@ -192,7 +192,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_7 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -208,7 +208,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0))=7)) then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0)=7)) then
       reg_out <= reg_in;
     end if;
   end process;
@@ -219,7 +219,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_8 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -235,7 +235,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0))=8)) then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0)=8)) then
       reg_out <= reg_in;
     end if;
   end process;
@@ -246,7 +246,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_9 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -262,7 +262,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0))=9)) then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0)=9)) then
       reg_out <= reg_in;
     end if;
   end process;
@@ -273,7 +273,7 @@ end architecture;
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity reg_10 is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
@@ -289,7 +289,7 @@ begin
   begin
     if (reg_rst = '1') then
       reg_out <= "00000000";
-    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0))=10)) then
+    elsif (reg_clk'event AND reg_clk='1' AND reg_ld(4)='1' AND (unsigned(reg_ld(3 downto 0)=10)) then
       reg_out <= reg_in;
     end if;
   end process;

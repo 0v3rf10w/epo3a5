@@ -17,7 +17,7 @@ begin
   process(pc_in, pc_inc, pc_ld, pc_rst)
   begin
     if (pc_rst='1') then
-      count <= "00000000";
+      count <= "0";
     else
       if (pc_clk'event AND pc_clk='1') then
         if (pc_inc='1') then
