@@ -38,14 +38,13 @@ architecture behavioural of spi_slave is
 	signal count : std_logic_vector(3 downto 0);
 	signal shift_output, output_buffer, new_output_buffer : std_logic_vector(7 downto 0);
 	signal count_reset : std_logic;
-	signal shift, shift_in, inv_sclk : std_logic;
+	signal shift, shift_in : std_logic;
 	
 begin
 
-cnt1:  counter port map (inv_sclk,count_reset,count);
+cnt1:  counter port map (sclk,count_reset,count);
 shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output);
 	
-	inv_sclk <= not sclk;
 	read_out <= output_buffer;
 	miso <= '1'; -- we are not sending anything from the slave
 	
@@ -60,19 +59,30 @@ shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output
 		end if;
 	end process;
 	
+	process(sclk,reset)
+	begin
+		if(reset = '1') then
+			output_buffer <= (others => '0');
+		else
+			if(falling_edge(sclk)) then
+				output_buffer <= new_output_buffer;
+			end if;
+		end if;
+	end process;
+
 	process(count,reset)
 	begin
 		if(reset = '1') then
 			shift <= '0';
 			count_reset <= '1';
-			output_buffer <= (others => '0');
+			new_output_buffer <= (others => '0');
 		else
 			shift <= '1';
 			if(count = "1000") then
-				output_buffer <= shift_output;
+				new_output_buffer <= shift_output;
 				count_reset <= '1';
 			else
-				output_buffer <= output_buffer;
+				new_output_buffer <= output_buffer;
 				count_reset <= '0';
 			end if;
 		end if;
