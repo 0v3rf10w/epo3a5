@@ -22,8 +22,7 @@ component spi is
 end component spi;
 
 component spi_slave is
-	port (	clk		: in	std_logic;
-		reset		: in	std_logic;
+	port (	reset		: in	std_logic;
 		read_out	: out	std_logic_vector (7 downto 0);
 		
 		sclk		: in	std_logic;
@@ -46,7 +45,7 @@ signal busy,ss: std_logic;
 begin
 spi1: spi port map (clk, send, reset, write_enable,write_in,read_out,busy,sclk,mosi,miso,ss);
 
-spi2: spi_slave port map (clk, reset, slave_out, sclk, mosi, miso, ss);
+spi2: spi_slave port map (reset, slave_out, sclk, mosi, miso, ss);
 
 clk <= not clk after 50 ns;
 
