@@ -64,28 +64,6 @@ shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output
 			end if;
 		end if;
 	end process;
-
-	process(sclk,reset)
-	begin
-		if(reset = '1') then
-			shift_in <= '0';
-		else
-			if(rising_edge(sclk)) then
-				shift_in <= mosi;
-			end if;
-		end if;
-	end process;
-
-	process(clk,reset)
-	begin
-		if(reset = '1') then
-			output_buffer <= (others => '0');
-		else
-			if(rising_edge(clk)) then
-				output_buffer <= new_output_buffer;
-			end if;
-		end if;
-	end process;
 	
 	process(sclk,reset,count)
 	begin
@@ -99,5 +77,7 @@ shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output
 			end if;
 		end if;
 	end process;
+
+
 
 end behavioural;
