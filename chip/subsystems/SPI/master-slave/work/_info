@@ -21,9 +21,9 @@ VzI==L[[PLUYh@oVd?Yfaz2
 !s100 45^N<L=DUPfj1>BAo467S2
 Z6 OP;C;10.3d;59
 32
-Z7 !s110 1417470660
+Z7 !s110 1417876156
 !i10b 1
-Z8 !s108 1417470660.866000
+Z8 !s108 1417876156.771000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd|
 Z10 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd|
 !i113 1
@@ -61,9 +61,9 @@ VGBnQT3UPKPd5N60jgS_V;2
 !s100 QL7ObjE2NO6LY@g=JA<=13
 R6
 32
-Z17 !s110 1417470661
+Z17 !s110 1417876157
 !i10b 1
-Z18 !s108 1417470661.335000
+Z18 !s108 1417876157.271000
 Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/counter.vhd|
 Z20 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/counter.vhd|
 !i113 1
@@ -89,21 +89,21 @@ R20
 R11
 R12
 Eshift_reg
-Z21 w1417031712
+Z21 w1417873757
 R2
 R3
 R0
 Z22 8C:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd
 Z23 FC:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd
 l0
-L4
-V50nRERKPW^J0QTe@PFU?71
-!s100 ^M22?=oz8XC>oQ5ck;Kc>0
+L8
+VSdnM;O9IV<8=fdZL6KeLU2
+!s100 Ae:Jd47jbgW[^ecfWiAAh3
 R6
 32
 R17
 !i10b 1
-Z24 !s108 1417470661.788000
+Z24 !s108 1417876157.712000
 Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd|
 Z26 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd|
 !i113 1
@@ -112,11 +112,11 @@ R12
 Abehavioral
 R2
 R3
-DEx4 work 9 shift_reg 0 22 50nRERKPW^J0QTe@PFU?71
-l19
-L15
-VYha5@UU:Eni8IE5]>ATNW2
-!s100 g6GUm]nTO0T<PnSXLQh7i0
+DEx4 work 9 shift_reg 0 22 SdnM;O9IV<8=fdZL6KeLU2
+l23
+L19
+Vc05Xca9>ZPBcYh93IHlnl1
+!s100 ;SD7KDQU9<aK`hi>2NOJ>3
 R6
 32
 R17
@@ -128,7 +128,7 @@ R26
 R11
 R12
 Espi
-Z27 w1417468369
+Z27 w1417876063
 R2
 R3
 R0
@@ -140,9 +140,9 @@ VW@OMk<zRY11hGDbFI>2WW1
 !s100 gn6=77U8i1Y=nmUeG9cFc1
 R6
 32
-Z30 !s110 1417470662
+Z30 !s110 1417876158
 !i10b 1
-Z31 !s108 1417470662.303000
+Z31 !s108 1417876158.197000
 Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd|
 Z33 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd|
 !i113 1
@@ -152,10 +152,10 @@ Astructural
 R2
 R3
 DEx4 work 3 spi 0 22 W@OMk<zRY11hGDbFI>2WW1
-l58
+l59
 L19
-VQjWTXi7F4ZKJCEfX3H0za1
-!s100 6KV>Y93gh=J@BY5O_]X9:0
+V^hA0iT_2RT5OgFW73R^gV0
+!s100 99LROMfZXYhTU^g[b@Dn:1
 R6
 32
 R30
@@ -167,7 +167,7 @@ R33
 R11
 R12
 Espi_slave
-Z34 w1417470574
+Z34 w1417876043
 R2
 R3
 R0
@@ -175,13 +175,13 @@ Z35 8C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_slave.vhd
 Z36 FC:/Users/Job/epo3a5/chip/subsystems/SPI/spi_slave.vhd
 l0
 L4
-Vj<C_EbJHJ<beie[CjCb;23
-!s100 KSeCPFUYI1Z:0JHQCimh22
+VKaYL3ZcDo^4NVK56:blco2
+!s100 ^Oie<oS7<2FB8]elKA<9>3
 R6
 32
 R7
 !i10b 1
-Z37 !s108 1417470660.422000
+Z37 !s108 1417876156.343000
 Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_slave.vhd|
 Z39 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_slave.vhd|
 !i113 1
@@ -190,11 +190,11 @@ R12
 Abehavioural
 R2
 R3
-DEx4 work 9 spi_slave 0 22 j<C_EbJHJ<beie[CjCb;23
-l44
-L17
-Vg5o5^<ENkUON3LEdb:KeD2
-!s100 ?<B8Kj3fGg=]04JdVQ^993
+DEx4 work 9 spi_slave 0 22 KaYL3ZcDo^4NVK56:blco2
+l43
+L16
+VB1Hzg4lZ5kVGNOI1[SOd70
+!s100 IVnNeK2:jccab`dL[B1gC0
 R6
 32
 R7
@@ -206,7 +206,7 @@ R39
 R11
 R12
 Espi_tb
-Z40 w1417470655
+Z40 w1417876149
 R2
 R3
 R0
@@ -220,7 +220,7 @@ R6
 32
 R30
 !i10b 1
-Z43 !s108 1417470662.842000
+Z43 !s108 1417876158.690000
 Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd|
 Z45 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd|
 !i113 1
@@ -230,10 +230,10 @@ Astructural
 R2
 R3
 Z46 DEx4 work 6 spi_tb 0 22 ibgdk8nSLU=UAQ?_BXCiY0
-l46
+l45
 L7
-VbeAXZ3TEgnj@RLMH`jjS52
-!s100 @ajId2o0f``z2>b[fkAF81
+V?O3mhHdc6Z803:_`z6kmB0
+!s100 KeC:4H<f1kKR<1aB@UNJW2
 R6
 32
 R30
