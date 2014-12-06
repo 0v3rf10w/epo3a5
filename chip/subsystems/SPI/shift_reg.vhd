@@ -1,6 +1,10 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
+------------------------------------------------------------------------
+-- beware this shift register shifts on the falling edge of the clock --
+------------------------------------------------------------------------
+
 entity shift_reg is
 port(	clk: 			in std_logic;
 		reset:	 		in std_logic;
@@ -19,27 +23,22 @@ architecture behavioral of shift_reg is
 begin
 
 	shifted_reg(7 downto 1) <= reg_shift(6 downto 0);
+	shifted_reg(0) <= shift_in;
 	
 	process(clk,reset)
 	begin
 	if(reset = '1') then
 		reg_shift <= (others => '0');
-		shifted_reg(0) <= '0';
 	else
-		if(rising_edge(clk)) then
+		if(falling_edge(clk)) then
 			if(reg_set = '1') then
 				reg_shift <= reg_write;
 			else
-				reg_shift <= reg_shift;
-			end if;
-			shifted_reg(0) <= shift_in;
-		end if;
-		
-		if(falling_edge(clk)) then
-			if(enable = '1') then
-				reg_shift <= shifted_reg;
-			else
-				reg_shift <= reg_shift;
+				if(enable = '1') then
+					reg_shift <= shifted_reg;
+				else
+					reg_shift <= reg_shift;
+				end if;
 			end if;
 		end if;
 	end if;
