@@ -38,12 +38,14 @@ architecture behavioural of spi_slave is
 	signal state : control_state;
 	signal count : std_logic_vector(3 downto 0);
 	signal shift_output, output_buffer, new_output_buffer : std_logic_vector(7 downto 0);
-	signal count_reset : std_logic;
+	signal count_reset,inv_sclk : std_logic;
 	signal shift, shift_in : std_logic;
 	
 begin
 
-cnt1:  counter port map (sclk,count_reset,count);
+	inv_sclk <= not sclk;
+
+cnt1:  counter port map (inv_sclk,count_reset,count);
 shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output);
 	
 	read_out <= shift_output;
@@ -63,7 +65,7 @@ shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output
 		end if;
 	end process;
 	
-	process(sclk,reset)
+	process(sclk,reset,count)
 	begin
 		if(reset = '1') then
 			count_reset <= '1';
