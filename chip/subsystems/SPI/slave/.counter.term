@@ -1,6 +1,0 @@
-I clk clk
-I reset reset
-O count_out_3_0_3 count_out(3)
-O count_out_3_0_2 count_out(2)
-O count_out_3_0_1 count_out(1)
-O count_out_3_0_0 count_out(0)
