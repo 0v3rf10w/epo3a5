@@ -63,7 +63,7 @@ begin
       decoder_aregld <=
                         ((NOT o3) AND o2 AND (NOT o1) AND o0) OR                        -- Ld #
                         ((NOT o3) AND o2 AND o1 AND (NOT o0)) OR                         -- Ld Ri
-                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR                   -- ADD #
+                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0) OR                   -- ADD #
                         (o3 AND (NOT o2) AND (NOT o1) AND o1) OR                        -- ADD Ri
                         (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR                        -- XOR #
                         (o3 AND (NOT o2) AND o1 AND o0) OR                              -- XOR Ri
