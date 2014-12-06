@@ -53,7 +53,7 @@ end component control;
 signal count : std_logic_vector(3 downto 0);
 signal output : std_logic_vector(7 downto 0);
 signal count_reset,switch_clk : std_logic;
-signal shift_reset,shift : std_logic;
+signal shift : std_logic;
 
 begin
 	sclk <= switch_clk;
