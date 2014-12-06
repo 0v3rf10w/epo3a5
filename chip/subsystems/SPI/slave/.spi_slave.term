@@ -1,0 +1,14 @@
+I reset reset
+O read_out_7_0_7 read_out(7)
+O read_out_7_0_6 read_out(6)
+O read_out_7_0_5 read_out(5)
+O read_out_7_0_4 read_out(4)
+O read_out_7_0_3 read_out(3)
+O read_out_7_0_2 read_out(2)
+O read_out_7_0_1 read_out(1)
+O read_out_7_0_0 read_out(0)
+O data_ready data_ready
+I sclk sclk
+I mosi mosi
+O miso miso
+I ss ss

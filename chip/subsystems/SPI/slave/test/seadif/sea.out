@@ -1,0 +1,15 @@
+six
+------ opening nelsis ------
+------ reading image description file '/data/public/common/software/nelsis/5.4.1.1/share/lib/celllibs/fishbone/image.seadif' ------
+------ opening seadif ------
+------ checking your circuit 'spi_slave' ------
+------ circuit 'spi_slave' is still up-to-date ------
+------ checking match with placement layout 'Tmpspi_slave29369' ------
+------ reading nelsis layout-cell 'Tmpspi_slave29369' ------
+------ writing nelsis 'Tmpspi_slave29369' as sdflay 'Tmp_Cell_(spi_slave(spi_slave(test)))' ------
+------ input seems good enough: calling router ------
+calling program: trout -l test -f spi_slave -c spi_slave -o Tmp_Cell_ -d Tmp_Cell_ 
+------ routing successful ------
+------ converting result back into nelsis as cell 'Tmpspi_slave29369' ------
+calling program: nelsea -rLH -f spi_slave -c spi_slave -l Tmp_Cell_ Tmpspi_slave29369 
+------ sea: task completed ------
