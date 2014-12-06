@@ -2,8 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity spi_slave is
-	port (	clk		: in	std_logic;
-		reset		: in	std_logic;
+	port (	reset		: in	std_logic;
 		read_out	: out	std_logic_vector (7 downto 0);
 		
 		sclk		: in	std_logic;
@@ -37,51 +36,45 @@ architecture behavioural of spi_slave is
 	type control_state is (slave,read_data);
 	signal state : control_state;
 	signal count : std_logic_vector(3 downto 0);
-	signal shift_output, output_buffer : std_logic_vector(7 downto 0);
+	signal shift_output, output_buffer, new_output_buffer : std_logic_vector(7 downto 0);
 	signal count_reset : std_logic;
-	signal shift : std_logic;
+	signal shift, shift_in, inv_sclk : std_logic;
 	
 begin
 
-cnt1:  counter port map (sclk,count_reset,count);
-shft1: shift_reg port map (sclk,reset,shift,mosi,'0',"11111111",shift_output);
+cnt1:  counter port map (inv_sclk,count_reset,count);
+shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output);
 	
+	inv_sclk <= not sclk;
 	read_out <= output_buffer;
 	miso <= '1'; -- we are not sending anything from the slave
 	
-	process(clk)
+	process(sclk,reset)
 	begin
-		if falling_edge(clk)  then
-			case state is 
-				when slave =>
-					if(count = "1000") then
-						state <= read_data;
-					else
-						state <= slave;
-					end if;
-				when read_data =>
-					state <= slave;
-			end case;	
-		end if;	
+		if(reset = '1') then
+			shift_in <= '0';
+		else
+			if(rising_edge(sclk)) then
+				shift_in <= mosi;
+			end if;
+		end if;
 	end process;
 	
-	process(state,reset)
+	process(count,reset)
 	begin
 		if(reset = '1') then
 			shift <= '0';
 			count_reset <= '1';
 			output_buffer <= (others => '0');
 		else
-			case state is 
-				when slave =>
-					shift <= '1'; --should always shift because sclk determines when to shift
-					count_reset <= '0';
-					output_buffer <= output_buffer;
-				when read_data =>
-					shift <= '0';
-					count_reset <= '1';
-					output_buffer <= shift_output;
-				end case;	
+			shift <= '1';
+			if(count = "1000") then
+				output_buffer <= shift_output;
+				count_reset <= '1';
+			else
+				output_buffer <= output_buffer;
+				count_reset <= '0';
+			end if;
 		end if;
 	end process;
 
