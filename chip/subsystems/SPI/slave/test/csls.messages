@@ -1,0 +1,4 @@
+File /home/jtijhuis/epo3a5/chip/subsystems/SPI/slave/SLS/spi_slave.sls:
+_dmRun: cpp: No such file or directory
+Parsing network: spi_slave
+Warning: network spi_slave, unconnected terminal ss

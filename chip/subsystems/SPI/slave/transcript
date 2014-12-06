@@ -1,0 +1,33 @@
+# //  ModelSim SE 10.1b Apr 26 2012 Linux 2.6.32-504.1.3.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -do /data/public/common/software/opprog/do_files/init_simulator.do -lib work spi_tb_structural_ext_cfg 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading cellslib.cellslib_decl_pack
+# Loading work.spi_tb_structural_ext_cfg#1
+# Loading work.spi_tb(structural)#1
+# Loading work.spi_extracted_cfg#1
+# Loading work.spi(extracted)#1
+# Loading cellslib.no310(dataflow)#1
+# Loading cellslib.na310(dataflow)#1
+# Loading cellslib.na210(dataflow)#1
+# Loading cellslib.no210(dataflow)#1
+# Loading cellslib.ex210(dataflow)#1
+# Loading cellslib.dfa11(dataflow)#1
+# Loading cellslib.iv110(dataflow)#1
+# Loading work.spi_slave_extracted_cfg#1
+# Loading work.spi_slave(extracted)#1
+# do /data/public/common/software/opprog/do_files/init_simulator.do 
+run
+# ** Warning: hold_violation of D
+#    Time: 9 ns  Iteration: 0  Instance: /spi_tb/spi2/cnt1_count_reg_2_inst
+run

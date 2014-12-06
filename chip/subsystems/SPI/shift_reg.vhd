@@ -1,6 +1,10 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
+------------------------------------------------------------------------
+-- beware this shift register shifts on the falling edge of the clock --
+------------------------------------------------------------------------
+
 entity shift_reg is
 port(	clk: 			in std_logic;
 		reset:	 		in std_logic;
@@ -26,7 +30,7 @@ begin
 	if(reset = '1') then
 		reg_shift <= (others => '0');
 	else
-		if(rising_edge(clk)) then
+		if(falling_edge(clk)) then
 			if(reg_set = '1') then
 				reg_shift <= reg_write;
 			else
