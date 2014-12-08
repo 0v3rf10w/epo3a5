@@ -72,7 +72,7 @@ begin
 		end if;
 	end process;
 cnt1:  counter port map (slave_clk,count_reset,count);
-shft1: shift_reg port map (inv_clk,reset,shift,miso,write_enable,write_in,output);
+shft1: shift_reg port map (inv_clk,reset,shift,shift_in,write_enable,write_in,output);
 ctrl1: control port map (clk,reset,send,count,shift,slave_clk,count_reset,ss,busy);
 
 end structural;
