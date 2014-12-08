@@ -17,7 +17,7 @@ end entity control;
 architecture behavioural of control is
 	type control_state is (reset_state,idle,shifting);
 	signal state : control_state;
-	signal clk_switch : std_logic;
+	signal clk_switch,sig_busy : std_logic;
 begin
 	process(clk,reset)
 		begin
@@ -55,24 +55,26 @@ begin
 			c_reset <= '1';
 			clk_switch <= '0';
 			ss <= '1';
-			busy <= '1';
+			sig_busy <= '1';
 		elsif(state=idle) then
 			c_reset <= '1';
 			clk_switch <= '0';
 			ss <= '0';
-			busy <= '0';
+			sig_busy <= '0';
 		elsif(state=shifting) then
 			c_reset <= '0';
 			clk_switch <= '1';
 			ss <= '0';
-			busy <= '1';
+			sig_busy <= '1';
 		else
 			c_reset <= '1';
 			clk_switch <= '0';
 			ss <= '1';
-			busy <= '1';
+			sig_busy <= '1';
 		end if;
 	end process;
+	
+	busy <= sig_busy;
 
 	sclk <= 	(not(clk and clk_switch)) after 1 ns when (state=shifting) else
 				'0';
