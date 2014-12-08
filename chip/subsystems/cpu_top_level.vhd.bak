@@ -6,6 +6,7 @@ port(	cpu_clk	:	in	std_logic;
 	cpu_rst	:	in	std_logic;
 	cpu_en	:	in	std_logic;
 	cpu_in	:	in	std_logic_vector(7 downto 0);
+	cpu_instr:	in	std_logic_vector(11 downto 0);
 	cpu_pc	:	out	std_logic_vector(7 downto 0);
 	cpu_out	:	out	std_logic_vector(7 downto 0));
 end entity cpu;
@@ -216,7 +217,7 @@ end component;
 
 -- Signals --
 
-signal cpu_instr	:	std_logic_vector(11 downto 0);	-- instruction from SPI
+signal cpu_dec_instr	:	std_logic_vector(11 downto 0);	-- instruction from SPI
 signal cpu_dec_o	:	std_logic_vector(7 downto 0);	-- operand to buf_i
 signal cpu_dec_ibufoe	:	std_logic;			-- ibuf_oe
 signal cpu_dec_pc_inc	:	std_logic;			-- program counter increment
@@ -245,9 +246,9 @@ signal cpu_buf_10	:	std_logic_vector(7 downto 0);	-- between register and buffer
 begin
 
 instrbuf:	instr_buf	port map(
-					buf_in => cpu_in,
+					buf_in => cpu_instr,
 					buf_oe => cpu_en,
-					buf_out => cpu_instr);
+					buf_out => cpu_dec_instr);
 
 cpu_decoder:	decoder		port map(
 					decoder_in => cpu_instr,
