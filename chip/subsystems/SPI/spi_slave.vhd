@@ -9,7 +9,9 @@ entity spi_slave is
 		sclk		: in	std_logic;
 		mosi		: in	std_logic;
 		miso		: out	std_logic;
-		ss			: in	std_logic
+		ss			: in	std_logic;
+		
+		debug_count		: out std_logic_vector(3 downto 0)
 	);
 end entity spi_slave;
 
@@ -43,6 +45,8 @@ architecture behavioural of spi_slave is
 	
 begin
 
+	debug_count <= count;
+
 	inv_sclk <= not sclk;
 
 cnt1:  counter port map (inv_sclk,count_reset,count);
@@ -65,7 +69,7 @@ shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output
 		end if;
 	end process;
 	
-	process(sclk,reset,count)
+	process(reset,count)
 	begin
 		if(reset = '1') then
 			count_reset <= '1';
