@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.std_logic_1164.ALL;
+
+architecture behaviour of stream is
+
+component tbuf is
+   port(A :in    std_logic;
+        Y:out   std_logic;
+        E      :in    std_logic);
+end component; 
+
+signal INs_0, INs_1, OUTs_0, OUTs_1, Es, notEs: std_logic; 
+
+begin
+tbuf0: tbuf port map (IN_0, OUT_0, notE);
+tbuf1: tbuf port map (IN_0, OUT_1, E);
+tbuf2: tbuf port map (IN_1, OUT_0, E);
+tbuf3: tbuf port map (IN_1, OUT_1, notE);
+
+INs_0 <= IN_0;
+INs_1 <= IN_1;
+OUT_0 <= OUTs_0;
+OUT_1 <= OUTs_1;
+Es <= E;
+notEs <= notE;
+end behaviour;
+
+

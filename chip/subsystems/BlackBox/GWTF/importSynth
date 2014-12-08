@@ -1,0 +1,5 @@
+rm -rf /home/wbouwmeester/Documents/BlackBox/syn_work_bak
+mv -f /home/wbouwmeester/Documents/BlackBox/syn_work /home/wbouwmeester/Documents/BlackBox/syn_work_bak
+cp -r /tmp/wbouwmeester//home/wbouwmeester/Documents/BlackBox/syn_work /home/wbouwmeester/Documents/BlackBox
+cp /tmp/wbouwmeester//home/wbouwmeester/Documents/BlackBox/ADB/blackbox.ddc /home/wbouwmeester/Documents/BlackBox/ADB/blackbox.ddc
+cp /tmp/wbouwmeester//home/wbouwmeester/Documents/BlackBox/VHDL/blackbox_SYNTH.vhd /home/wbouwmeester/Documents/BlackBox/VHDL/blackbox_SYNTH.vhd

@@ -1,0 +1,556 @@
+(Seadif "Doktor Fremdenliebe"
+   (Library "test"
+      (Alias "sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+      (Technology "fishbone")
+      (Status
+	 (Written
+	    (TimeStamp 114 12 8 17 59 16)
+	    (Author "by user; cpu sct-epo3; disk sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+	    (Program "nelsea")))
+      (Function "tbuf"
+	 (Status
+	    (Written
+	       (TimeStamp 114 12 8 17 59 16)
+	       (Author "by user; cpu sct-epo3; disk sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+	       (Program "nelsea")))
+	 (FunType "no type")
+	 (Circuit "tbuf"
+	    (Status
+	       (Written
+		  (TimeStamp 114 12 8 17 59 16)
+		  (Author "by user; cpu sct-epo3; disk sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+		  (Program "nelsea")))
+	    (CirPortList
+	       (CirPort "A")
+	       (CirPort "Y")
+	       (CirPort "E")
+	       (CirPort "vss")
+	       (CirPort "vdd"))
+	    (CirInstList
+	       (CirInst "Y_tri" (CirCellRef "tinv10" (CirFunRef "tinv10" (CirLibRef "g_digilib5_99"))) "")
+	       (CirInst "U2" (CirCellRef "iv110" (CirFunRef "iv110" (CirLibRef "g_digilib5_99"))) ""))
+	    (NetList
+	       (Net "n1"
+		  (Joined
+		     (NetPortRef "Y" (NetInstRef "U2"))
+		     (NetPortRef "A" (NetInstRef "Y_tri"))))
+	       (Net "E"
+		  (Joined
+		     (NetPortRef "E" (NetInstRef "Y_tri"))
+		     (NetPortRef "E")))
+	       (Net "Y"
+		  (Joined
+		     (NetPortRef "Y" (NetInstRef "Y_tri"))
+		     (NetPortRef "Y")))
+	       (Net "vss"
+		  (Joined
+		     (NetPortRef "vss" (NetInstRef "U2"))
+		     (NetPortRef "vss" (NetInstRef "Y_tri"))
+		     (NetPortRef "vss")))
+	       (Net "vdd"
+		  (Joined
+		     (NetPortRef "vdd" (NetInstRef "U2"))
+		     (NetPortRef "vdd" (NetInstRef "Y_tri"))
+		     (NetPortRef "vdd")))
+	       (Net "A"
+		  (Joined
+		     (NetPortRef "A" (NetInstRef "U2"))
+		     (NetPortRef "A"))))
+	    (Layout "tbuf"
+	       (Status
+		  (Written
+		     (TimeStamp 114 12 8 17 59 16)
+		     (Author "by user; cpu sct-epo3; disk sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+		     (Program "nelsea")))
+	       (LayBbx 5 29)
+	       (LayPortList
+		  (LayPort "A" (PortPos 0 21) (PortLayer 0))
+		  (LayPort "vdd" (PortPos 0 14) (PortLayer 0))
+		  (LayPort "vss" (PortPos 0 0) (PortLayer 0))
+		  (LayPort "Y" (PortPos 4 5) (PortLayer 0))
+		  (LayPort "E" (PortPos 0 4) (PortLayer 0)))
+	       (LayLabelList
+		  (LayLabel "n1" (LabelPos 3 7) (LabelLayer 0)))
+	       (LayInstList
+		  (LayInst "Y_tri"
+		     (LayCellRef "tinv10" (LayCirRef "tinv10" (LayFunRef "tinv10" (LayLibRef "g_digilib5_99"))))
+		     (Orient 1 0 0 0 1 0))
+		  (LayInst "U2"
+		     (LayCellRef "iv110" (LayCirRef "iv110" (LayFunRef "iv110" (LayLibRef "g_digilib5_99"))))
+		     (Orient 1 0 0 0 -1 28)))
+	       (WireList
+		  (Wire 101 2 2 28 28)
+		  (Wire 101 3 3 20 20)
+		  (Wire 101 3 3 8 8)
+		  (Wire 101 2 2 0 0)
+		  (Wire 1 3 3 7 8)
+		  (Wire 2 3 3 8 20)
+		  (Wire 2 2 2 0 28)
+		  (Wire 1 1 3 20 20)))))
+      (Function "stream"
+	 (Status
+	    (Written
+	       (TimeStamp 114 12 8 17 59 16)
+	       (Author "by user; cpu sct-epo3; disk sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+	       (Program "nelsea")))
+	 (FunType "no type")
+	 (Circuit "stream"
+	    (Status
+	       (Written
+		  (TimeStamp 114 12 8 17 59 16)
+		  (Author "by user; cpu sct-epo3; disk sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+		  (Program "nelsea")))
+	    (CirPortList
+	       (CirPort "IN_0")
+	       (CirPort "IN_1")
+	       (CirPort "OUT_0")
+	       (CirPort "OUT_1")
+	       (CirPort "E")
+	       (CirPort "notE")
+	       (CirPort "vss")
+	       (CirPort "vdd"))
+	    (CirInstList
+	       (CirInst "tbuf0" (CirCellRef "tbuf" (CirFunRef "tbuf" (CirLibRef "test"))) "")
+	       (CirInst "tbuf1" (CirCellRef "tbuf" (CirFunRef "tbuf" (CirLibRef "test"))) "")
+	       (CirInst "tbuf2" (CirCellRef "tbuf" (CirFunRef "tbuf" (CirLibRef "test"))) "")
+	       (CirInst "tbuf3" (CirCellRef "tbuf" (CirFunRef "tbuf" (CirLibRef "test"))) ""))
+	    (NetList
+	       (Net "IN_0"
+		  (Joined
+		     (NetPortRef "A" (NetInstRef "tbuf1"))
+		     (NetPortRef "A" (NetInstRef "tbuf0"))
+		     (NetPortRef "IN_0")))
+	       (Net "OUT_0"
+		  (Joined
+		     (NetPortRef "Y" (NetInstRef "tbuf2"))
+		     (NetPortRef "Y" (NetInstRef "tbuf0"))
+		     (NetPortRef "OUT_0")))
+	       (Net "notE"
+		  (Joined
+		     (NetPortRef "E" (NetInstRef "tbuf3"))
+		     (NetPortRef "E" (NetInstRef "tbuf0"))
+		     (NetPortRef "notE")))
+	       (Net "vss"
+		  (Joined
+		     (NetPortRef "vss" (NetInstRef "tbuf3"))
+		     (NetPortRef "vss" (NetInstRef "tbuf2"))
+		     (NetPortRef "vss" (NetInstRef "tbuf1"))
+		     (NetPortRef "vss" (NetInstRef "tbuf0"))
+		     (NetPortRef "vss")))
+	       (Net "vdd"
+		  (Joined
+		     (NetPortRef "vdd" (NetInstRef "tbuf3"))
+		     (NetPortRef "vdd" (NetInstRef "tbuf2"))
+		     (NetPortRef "vdd" (NetInstRef "tbuf1"))
+		     (NetPortRef "vdd" (NetInstRef "tbuf0"))
+		     (NetPortRef "vdd")))
+	       (Net "OUT_1"
+		  (Joined
+		     (NetPortRef "Y" (NetInstRef "tbuf3"))
+		     (NetPortRef "Y" (NetInstRef "tbuf1"))
+		     (NetPortRef "OUT_1")))
+	       (Net "E"
+		  (Joined
+		     (NetPortRef "E" (NetInstRef "tbuf2"))
+		     (NetPortRef "E" (NetInstRef "tbuf1"))
+		     (NetPortRef "E")))
+	       (Net "IN_1"
+		  (Joined
+		     (NetPortRef "A" (NetInstRef "tbuf3"))
+		     (NetPortRef "A" (NetInstRef "tbuf2"))
+		     (NetPortRef "IN_1"))))
+	    (Layout "stream"
+	       (Status
+		  (Written
+		     (TimeStamp 114 12 8 17 59 16)
+		     (Author "by user; cpu sct-epo3; disk sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+		     (Program "nelsea")))
+	       (LayBbx 20 29)
+	       (LayPortList
+		  (LayPort "IN_1" (PortPos 6 27) (PortLayer 1))
+		  (LayPort "E" (PortPos 0 4) (PortLayer 0))
+		  (LayPort "OUT_1" (PortPos 0 9) (PortLayer 0))
+		  (LayPort "vdd" (PortPos 15 14) (PortLayer 0))
+		  (LayPort "vss" (PortPos 15 0) (PortLayer 0))
+		  (LayPort "notE" (PortPos 19 4) (PortLayer 0))
+		  (LayPort "OUT_0" (PortPos 19 5) (PortLayer 0))
+		  (LayPort "IN_0" (PortPos 0 20) (PortLayer 0)))
+	       (LayInstList
+		  (LayInst "tbuf0"
+		     (LayCellRef "tbuf" (LayCirRef "tbuf" (LayFunRef "tbuf" (LayLibRef "test"))))
+		     (Orient 1 0 15 0 1 0))
+		  (LayInst "tbuf3"
+		     (LayCellRef "tbuf" (LayCirRef "tbuf" (LayFunRef "tbuf" (LayLibRef "test"))))
+		     (Orient 1 0 5 0 1 0))
+		  (LayInst "tbuf2"
+		     (LayCellRef "tbuf" (LayCirRef "tbuf" (LayFunRef "tbuf" (LayLibRef "test"))))
+		     (Orient 1 0 10 0 1 0))
+		  (LayInst "tbuf1"
+		     (LayCellRef "tbuf" (LayCirRef "tbuf" (LayFunRef "tbuf" (LayLibRef "test"))))
+		     (Orient 1 0 0 0 1 0)))
+	       (WireList
+		  (Wire 100 10 10 27 27)
+		  (Wire 100 15 15 15 15)
+		  (Wire 100 7 7 1 1)
+		  (Wire 101 6 6 25 25)
+		  (Wire 101 5 5 23 23)
+		  (Wire 101 0 0 20 20)
+		  (Wire 101 1 1 17 17)
+		  (Wire 1 19 19 8 9)
+		  (Wire 1 14 14 15 16)
+		  (Wire 1 14 14 8 9)
+		  (Wire 1 13 13 16 17)
+		  (Wire 1 13 13 3 4)
+		  (Wire 1 9 9 25 27)
+		  (Wire 1 9 9 8 9)
+		  (Wire 1 9 9 2 3)
+		  (Wire 1 8 8 3 4)
+		  (Wire 1 8 8 1 2)
+		  (Wire 1 5 5 22 23)
+		  (Wire 1 4 4 8 9)
+		  (Wire 1 4 4 3 4)
+		  (Wire 1 0 0 20 21)
+		  (Wire 2 6 6 23 27)
+		  (Wire 2 1 1 17 20)
+		  (Wire 1 9 10 27 27)
+		  (Wire 1 6 9 25 25)
+		  (Wire 1 1 13 17 17)
+		  (Wire 1 13 14 16 16)
+		  (Wire 1 14 15 15 15)
+		  (Wire 1 14 19 9 9)
+		  (Wire 1 0 9 9 9)
+		  (Wire 1 17 19 4 4)
+		  (Wire 1 13 15 4 4)
+		  (Wire 1 8 10 4 4)
+		  (Wire 1 2 4 4 4)
+		  (Wire 1 9 13 3 3)
+		  (Wire 1 4 8 3 3)
+		  (Wire 1 8 9 2 2)
+		  (Wire 1 7 8 1 1)
+		  (Wire 2 5 6 23 23)
+		  (Wire 2 0 1 20 20)))))
+      (Function "blackbox"
+	 (Status
+	    (Written
+	       (TimeStamp 114 12 8 17 59 16)
+	       (Author "by user; cpu sct-epo3; disk sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+	       (Program "nelsea")))
+	 (FunType "no type")
+	 (Circuit "blackbox"
+	    (Status
+	       (Written
+		  (TimeStamp 114 12 8 17 59 16)
+		  (Author "by user; cpu sct-epo3; disk sct-epo3:/home/wbouwmeester/Documents/BlackBox/test")
+		  (Program "sea; checked and OK")))
+	    (CirPortList
+	       (CirPort "sclk_m_0")
+	       (CirPort "mosi_m_0")
+	       (CirPort "miso_m_0")
+	       (CirPort "ss_m_0")
+	       (CirPort "sclk_m_1")
+	       (CirPort "mosi_m_1")
+	       (CirPort "miso_m_1")
+	       (CirPort "ss_m_1")
+	       (CirPort "sclk_s_0")
+	       (CirPort "mosi_s_0")
+	       (CirPort "miso_s_0")
+	       (CirPort "ss_s_0")
+	       (CirPort "sclk_s_1")
+	       (CirPort "mosi_s_1")
+	       (CirPort "miso_s_1")
+	       (CirPort "ss_s_1")
+	       (CirPort "s")
+	       (CirPort "vss")
+	       (CirPort "vdd"))
+	    (CirInstList
+	       (CirInst "stream0" (CirCellRef "stream" (CirFunRef "stream" (CirLibRef "test"))) "")
+	       (CirInst "stream1" (CirCellRef "stream" (CirFunRef "stream" (CirLibRef "test"))) "")
+	       (CirInst "stream2" (CirCellRef "stream" (CirFunRef "stream" (CirLibRef "test"))) "")
+	       (CirInst "stream3" (CirCellRef "stream" (CirFunRef "stream" (CirLibRef "test"))) "")
+	       (CirInst "U2" (CirCellRef "iv110" (CirFunRef "iv110" (CirLibRef "g_digilib5_99"))) "")
+	       (CirInst "U3" (CirCellRef "iv110" (CirFunRef "iv110" (CirLibRef "g_digilib5_99"))) "")
+	       (CirInst "U4" (CirCellRef "iv110" (CirFunRef "iv110" (CirLibRef "g_digilib5_99"))) "")
+	       (CirInst "U5" (CirCellRef "iv110" (CirFunRef "iv110" (CirLibRef "g_digilib5_99"))) ""))
+	    (NetList
+	       (Net "sclk_m_0"
+		  (Joined
+		     (NetPortRef "IN_0" (NetInstRef "stream0"))
+		     (NetPortRef "sclk_m_0")))
+	       (Net "sclk_m_1"
+		  (Joined
+		     (NetPortRef "IN_1" (NetInstRef "stream0"))
+		     (NetPortRef "sclk_m_1")))
+	       (Net "sclk_s_0"
+		  (Joined
+		     (NetPortRef "OUT_0" (NetInstRef "stream0"))
+		     (NetPortRef "sclk_s_0")))
+	       (Net "sclk_s_1"
+		  (Joined
+		     (NetPortRef "OUT_1" (NetInstRef "stream0"))
+		     (NetPortRef "sclk_s_1")))
+	       (Net "s"
+		  (Joined
+		     (NetPortRef "A" (NetInstRef "U5"))
+		     (NetPortRef "A" (NetInstRef "U4"))
+		     (NetPortRef "A" (NetInstRef "U3"))
+		     (NetPortRef "A" (NetInstRef "U2"))
+		     (NetPortRef "E" (NetInstRef "stream3"))
+		     (NetPortRef "E" (NetInstRef "stream2"))
+		     (NetPortRef "E" (NetInstRef "stream1"))
+		     (NetPortRef "E" (NetInstRef "stream0"))
+		     (NetPortRef "s")))
+	       (Net "n1"
+		  (Joined
+		     (NetPortRef "Y" (NetInstRef "U5"))
+		     (NetPortRef "notE" (NetInstRef "stream0"))))
+	       (Net "vss"
+		  (Joined
+		     (NetPortRef "vss" (NetInstRef "U5"))
+		     (NetPortRef "vss" (NetInstRef "U4"))
+		     (NetPortRef "vss" (NetInstRef "U3"))
+		     (NetPortRef "vss" (NetInstRef "U2"))
+		     (NetPortRef "vss" (NetInstRef "stream3"))
+		     (NetPortRef "vss" (NetInstRef "stream2"))
+		     (NetPortRef "vss" (NetInstRef "stream1"))
+		     (NetPortRef "vss" (NetInstRef "stream0"))
+		     (NetPortRef "vss")))
+	       (Net "vdd"
+		  (Joined
+		     (NetPortRef "vdd" (NetInstRef "U5"))
+		     (NetPortRef "vdd" (NetInstRef "U4"))
+		     (NetPortRef "vdd" (NetInstRef "U3"))
+		     (NetPortRef "vdd" (NetInstRef "U2"))
+		     (NetPortRef "vdd" (NetInstRef "stream3"))
+		     (NetPortRef "vdd" (NetInstRef "stream2"))
+		     (NetPortRef "vdd" (NetInstRef "stream1"))
+		     (NetPortRef "vdd" (NetInstRef "stream0"))
+		     (NetPortRef "vdd")))
+	       (Net "mosi_m_0"
+		  (Joined
+		     (NetPortRef "IN_0" (NetInstRef "stream1"))
+		     (NetPortRef "mosi_m_0")))
+	       (Net "mosi_m_1"
+		  (Joined
+		     (NetPortRef "IN_1" (NetInstRef "stream1"))
+		     (NetPortRef "mosi_m_1")))
+	       (Net "mosi_s_0"
+		  (Joined
+		     (NetPortRef "OUT_0" (NetInstRef "stream1"))
+		     (NetPortRef "mosi_s_0")))
+	       (Net "mosi_s_1"
+		  (Joined
+		     (NetPortRef "OUT_1" (NetInstRef "stream1"))
+		     (NetPortRef "mosi_s_1")))
+	       (Net "n4"
+		  (Joined
+		     (NetPortRef "Y" (NetInstRef "U4"))
+		     (NetPortRef "notE" (NetInstRef "stream1"))))
+	       (Net "ss_m_0"
+		  (Joined
+		     (NetPortRef "IN_0" (NetInstRef "stream2"))
+		     (NetPortRef "ss_m_0")))
+	       (Net "ss_m_1"
+		  (Joined
+		     (NetPortRef "IN_1" (NetInstRef "stream2"))
+		     (NetPortRef "ss_m_1")))
+	       (Net "ss_s_0"
+		  (Joined
+		     (NetPortRef "OUT_0" (NetInstRef "stream2"))
+		     (NetPortRef "ss_s_0")))
+	       (Net "ss_s_1"
+		  (Joined
+		     (NetPortRef "OUT_1" (NetInstRef "stream2"))
+		     (NetPortRef "ss_s_1")))
+	       (Net "n3"
+		  (Joined
+		     (NetPortRef "Y" (NetInstRef "U3"))
+		     (NetPortRef "notE" (NetInstRef "stream2"))))
+	       (Net "miso_s_0"
+		  (Joined
+		     (NetPortRef "IN_0" (NetInstRef "stream3"))
+		     (NetPortRef "miso_s_0")))
+	       (Net "miso_s_1"
+		  (Joined
+		     (NetPortRef "IN_1" (NetInstRef "stream3"))
+		     (NetPortRef "miso_s_1")))
+	       (Net "miso_m_0"
+		  (Joined
+		     (NetPortRef "OUT_0" (NetInstRef "stream3"))
+		     (NetPortRef "miso_m_0")))
+	       (Net "miso_m_1"
+		  (Joined
+		     (NetPortRef "OUT_1" (NetInstRef "stream3"))
+		     (NetPortRef "miso_m_1")))
+	       (Net "n2"
+		  (Joined
+		     (NetPortRef "Y" (NetInstRef "U2"))
+		     (NetPortRef "notE" (NetInstRef "stream3")))))
+	    (Layout "Tmp_Cell_"
+	       (Status
+		  (Written
+		     (TimeStamp 114 12 8 17 59 16)
+		     (Author "by user; sct-epo3.ewi.tudelft.nl:/home/wbouwmeester/Documents/BlackBox/test")
+		     (Program "trout")))
+	       (LayBbx 42 57)
+	       (LayPortList
+		  (LayPort "miso_m_0" (PortPos 41 5) (PortLayer 0))
+		  (LayPort "miso_s_1" (PortPos 41 25) (PortLayer 0))
+		  (LayPort "miso_s_0" (PortPos 41 17) (PortLayer 0))
+		  (LayPort "ss_s_1" (PortPos 0 37) (PortLayer 0))
+		  (LayPort "ss_s_0" (PortPos 0 38) (PortLayer 0))
+		  (LayPort "ss_m_0" (PortPos 0 48) (PortLayer 0))
+		  (LayPort "mosi_s_1" (PortPos 0 9) (PortLayer 0))
+		  (LayPort "mosi_m_1" (PortPos 0 25) (PortLayer 0))
+		  (LayPort "mosi_m_0" (PortPos 0 20) (PortLayer 0))
+		  (LayPort "vdd" (PortPos 36 42) (PortLayer 0))
+		  (LayPort "vss" (PortPos 36 28) (PortLayer 0))
+		  (LayPort "s" (PortPos 0 4) (PortLayer 0))
+		  (LayPort "sclk_s_1" (PortPos 41 38) (PortLayer 0))
+		  (LayPort "sclk_s_0" (PortPos 41 33) (PortLayer 0))
+		  (LayPort "miso_m_1" (PortPos 29 1) (PortLayer 1))
+		  (LayPort "ss_m_1" (PortPos 6 55) (PortLayer 1))
+		  (LayPort "mosi_s_0" (PortPos 20 1) (PortLayer 1))
+		  (LayPort "sclk_m_1" (PortPos 27 55) (PortLayer 1))
+		  (LayPort "sclk_m_0" (PortPos 22 55) (PortLayer 1)))
+	       (LayLabelList
+		  (LayLabel "n3" (LabelPos 19 32) (LabelLayer 0))
+		  (LayLabel "n1" (LabelPos 40 32) (LabelLayer 0))
+		  (LayLabel "n2" (LabelPos 40 4) (LabelLayer 0))
+		  (LayLabel "n4" (LabelPos 19 4) (LabelLayer 0)))
+	       (LayInstList
+		  (LayInst "stream3"
+		     (LayCellRef "stream" (LayCirRef "stream" (LayFunRef "stream" (LayLibRef "test"))))
+		     (Orient 1 0 21 0 1 0))
+		  (LayInst "stream0"
+		     (LayCellRef "stream" (LayCirRef "stream" (LayFunRef "stream" (LayLibRef "test"))))
+		     (Orient 1 0 21 0 1 28))
+		  (LayInst "U2"
+		     (LayCellRef "iv110" (LayCirRef "iv110" (LayFunRef "iv110" (LayLibRef "g_digilib5_99"))))
+		     (Orient 1 0 40 0 -1 28))
+		  (LayInst "U5"
+		     (LayCellRef "iv110" (LayCirRef "iv110" (LayFunRef "iv110" (LayLibRef "g_digilib5_99"))))
+		     (Orient 1 0 40 0 -1 56))
+		  (LayInst "stream1"
+		     (LayCellRef "stream" (LayCirRef "stream" (LayFunRef "stream" (LayLibRef "test"))))
+		     (Orient 1 0 0 0 1 0))
+		  (LayInst "stream2"
+		     (LayCellRef "stream" (LayCirRef "stream" (LayFunRef "stream" (LayLibRef "test"))))
+		     (Orient 1 0 0 0 1 28))
+		  (LayInst "U3"
+		     (LayCellRef "iv110" (LayCirRef "iv110" (LayFunRef "iv110" (LayLibRef "g_digilib5_99"))))
+		     (Orient 1 0 19 0 -1 28))
+		  (LayInst "U4"
+		     (LayCellRef "iv110" (LayCirRef "iv110" (LayFunRef "iv110" (LayLibRef "g_digilib5_99"))))
+		     (Orient 1 0 19 0 -1 56)))
+	       (WireList
+		  (Wire 100 40 40 43 43)
+		  (Wire 100 12 12 29 29)
+		  (Wire 101 19 19 48 48)
+		  (Wire 101 40 40 47 47)
+		  (Wire 101 19 19 47 47)
+		  (Wire 101 20 20 46 46)
+		  (Wire 101 16 16 42 42)
+		  (Wire 101 20 20 33 33)
+		  (Wire 101 40 40 32 32)
+		  (Wire 101 22 22 32 32)
+		  (Wire 101 20 20 32 32)
+		  (Wire 101 25 25 25 25)
+		  (Wire 101 22 22 25 25)
+		  (Wire 101 25 25 24 24)
+		  (Wire 101 20 20 24 24)
+		  (Wire 101 41 41 19 19)
+		  (Wire 101 16 16 14 14)
+		  (Wire 101 25 25 10 10)
+		  (Wire 101 29 29 5 5)
+		  (Wire 101 20 20 5 5)
+		  (Wire 101 41 41 4 4)
+		  (Wire 101 25 25 4 4)
+		  (Wire 101 19 19 4 4)
+		  (Wire 1 41 41 47 48)
+		  (Wire 1 41 41 19 20)
+		  (Wire 1 40 40 22 23)
+		  (Wire 1 39 39 43 44)
+		  (Wire 1 38 38 44 45)
+		  (Wire 1 38 38 23 24)
+		  (Wire 1 36 36 45 46)
+		  (Wire 1 35 35 16 17)
+		  (Wire 1 33 33 37 38)
+		  (Wire 1 25 25 24 25)
+		  (Wire 1 24 24 31 32)
+		  (Wire 1 23 23 31 32)
+		  (Wire 1 22 22 31 32)
+		  (Wire 1 21 21 31 32)
+		  (Wire 1 20 20 47 48)
+		  (Wire 1 20 20 23 24)
+		  (Wire 1 19 19 48 49)
+		  (Wire 1 19 19 22 25)
+		  (Wire 1 14 14 30 31)
+		  (Wire 1 13 13 29 30)
+		  (Wire 1 13 13 9 10)
+		  (Wire 1 10 10 37 38)
+		  (Wire 1 10 10 7 9)
+		  (Wire 2 41 41 4 19)
+		  (Wire 2 40 40 32 47)
+		  (Wire 2 29 29 1 5)
+		  (Wire 2 25 25 4 25)
+		  (Wire 2 22 22 48 55)
+		  (Wire 2 22 22 25 32)
+		  (Wire 2 20 20 33 48)
+		  (Wire 2 20 20 24 32)
+		  (Wire 2 20 20 1 5)
+		  (Wire 2 19 19 4 47)
+		  (Wire 2 16 16 14 42)
+		  (Wire 1 20 21 54 54)
+		  (Wire 1 40 41 47 47)
+		  (Wire 1 19 20 47 47)
+		  (Wire 1 20 36 46 46)
+		  (Wire 1 36 38 45 45)
+		  (Wire 1 38 39 44 44)
+		  (Wire 1 20 21 44 44)
+		  (Wire 1 39 40 43 43)
+		  (Wire 1 33 41 38 38)
+		  (Wire 1 0 10 38 38)
+		  (Wire 1 30 33 37 37)
+		  (Wire 1 10 14 37 37)
+		  (Wire 1 40 41 33 33)
+		  (Wire 1 20 21 33 33)
+		  (Wire 1 19 20 32 32)
+		  (Wire 1 14 25 31 31)
+		  (Wire 1 13 14 30 30)
+		  (Wire 1 12 13 29 29)
+		  (Wire 1 20 21 26 26)
+		  (Wire 1 30 41 25 25)
+		  (Wire 1 19 25 25 25)
+		  (Wire 1 0 6 25 25)
+		  (Wire 1 25 38 24 24)
+		  (Wire 1 38 40 23 23)
+		  (Wire 1 34 41 17 17)
+		  (Wire 1 20 21 16 16)
+		  (Wire 1 13 25 10 10)
+		  (Wire 1 10 13 9 9)
+		  (Wire 1 40 41 5 5)
+		  (Wire 1 29 30 5 5)
+		  (Wire 1 19 20 5 5)
+		  (Wire 1 40 41 4 4)
+		  (Wire 2 19 20 48 48)))))
+      (Function "Error_Marker_"
+	 (Status
+	    (Written
+	       (TimeStamp 114 12 8 17 59 16)
+	       (Author "me")
+	       (Program "trout")))
+	 (FunType "no type")
+	 (Circuit "Error_Marker_"
+	    (Status
+	       (Written
+		  (TimeStamp 114 12 8 17 59 16)
+		  (Author "me")
+		  (Program "trout")))
+	    (Layout "Error_Marker_"
+	       (Status
+		  (Written
+		     (TimeStamp 114 12 8 17 59 16)
+		     (Author "me")
+		     (Program "trout")))
+	       (WireList
+		  (Wire 200 0 0 0 0)))))))
