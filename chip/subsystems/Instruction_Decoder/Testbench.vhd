@@ -9,7 +9,6 @@ component decoder
       port(   decoder_in : in std_logic_vector(11 downto 0);
               decoder_c : in std_logic;
               decoder_z : in std_logic;
-              decoder_en : in std_logic;
               decoder_pc_inc : out std_logic;
               decoder_pc_ld : out std_logic;
               decoder_ibufoe : out std_logic;
@@ -24,7 +23,6 @@ end component;
 signal decoder_in : std_logic_vector(11 downto 0);
 signal decoder_c : std_logic;
 signal decoder_z : std_logic;
-signal decoder_en : std_logic;
 signal decoder_pc_inc : std_logic;
 signal decoder_pc_ld : std_logic;
 signal decoder_ibufoe : std_logic;
@@ -36,7 +34,7 @@ signal decoder_alu : std_logic_vector(2 downto 0);
 signal decoder_argout: std_logic_vector(7 downto 0);
 
 begin
-lbl1: decoder port map (decoder_in, decoder_c, decoder_z, decoder_en, decoder_pc_inc, decoder_pc_ld, decoder_ibufoe, decoder_aregld, decoder_abufoe, decoder_bregld, decoder_bbufoe, decoder_alu, decoder_argout);
+lbl1: decoder port map (decoder_in, decoder_c, decoder_z, decoder_pc_inc, decoder_pc_ld, decoder_ibufoe, decoder_aregld, decoder_abufoe, decoder_bregld, decoder_bbufoe, decoder_alu, decoder_argout);
 decoder_in <=     "010100001100" after 50 ns,         -- load argument w1=12
                   "011100000001" after 100 ns,        -- Store to adress R1
                   "010100001100" after 150 ns,        -- load argument w2=12
@@ -52,8 +50,14 @@ decoder_in <=     "010100001100" after 50 ns,         -- load argument w1=12
                   "010100000001" after 650 ns,        -- load argument yv=1
                   "011100000111" after 700 ns,        -- Store to adress R7
                   "010111111111" after 750 ns,        -- clear screen
-                  "011100001010" after 800 ns;        -- Store to adress R10
+                  "011100001010" after 800 ns,        -- Store to adress R10
+		"000100010001" after 850 ns,	-- jump to hold (17)
+		"111100000000" after 900 ns,	-- Clear c
+		"011000000110" after 950 ns,	-- load inputvector R6
+		"101000001000" after 1000 ns,	-- XOR 00001000
+		"100011111000" after 1050 ns,	-- ADD 11111000
+		"010000010111" after 1100 ns,	-- bc start
+		"000100010001" after 1150 ns;	-- jump to hold (17)
 decoder_c <= '0' after 0 ns;
 decoder_z <= '0' after 0 ns;
-decoder_en <= '1' after 0 ns;
 end behaviour;

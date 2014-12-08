@@ -28,20 +28,8 @@ begin
   o0 <= opcode(0);
   o1 <= opcode(1);
   o2 <= opcode(2);
-  o3 <= opcode(3);
-  
-  process(decoder_in, decoder_c, decoder_z, decoder_en)
-  begin
-    if (decoder_en='0') then
-      decoder_alu <= "ZZZ";
-      decoder_pc_inc <= 'Z';
-      decoder_pc_ld <= 'Z';
-      decoder_ibufoe <= 'Z';
-      decoder_aregld <= 'Z';
-      decoder_abufoe <= 'Z';
-      decoder_bregld <= "ZZZZZ"; 
-      decoder_bbufoe <= "ZZZZZ";
-    else
+  o3 <= opcode(3); 
+
       decoder_pc_ld <=
                         ((NOT o3) AND (NOT o2) AND (NOT o1) AND o0) OR                  -- Jp #
                         ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR                  -- Jp Ri
@@ -63,7 +51,7 @@ begin
       decoder_aregld <=
                         ((NOT o3) AND o2 AND (NOT o1) AND o0) OR                        -- Ld #
                         ((NOT o3) AND o2 AND o1 AND (NOT o0)) OR                         -- Ld Ri
-                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0) OR                   -- ADD #
+                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR                   -- ADD #
                         (o3 AND (NOT o2) AND (NOT o1) AND o1) OR                        -- ADD Ri
                         (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR                        -- XOR #
                         (o3 AND (NOT o2) AND o1 AND o0) OR                              -- XOR Ri
@@ -101,7 +89,5 @@ begin
                         (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR                          -- XOR #
                         (o3 AND (NOT o2) AND o1 AND o0) OR                                -- XOR Ri
                         (o3 AND o2 AND o1 AND (NOT o0));                                  -- Set c
-    end if;
-  end process;
-  decoder_argout <= argument;
+	decoder_argout <= argument;
 end architecture;
