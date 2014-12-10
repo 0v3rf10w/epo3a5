@@ -14,7 +14,7 @@ end entity pc_counter;
 architecture behaviour of pc_counter is
 signal count : std_logic_vector(7 downto 0);
 begin
-  process(pc_in, pc_inc, pc_ld, pc_rst)
+  process(pc_in, pc_inc, pc_ld, pc_rst, pc_clk)
   begin
     if (pc_rst='1') then
       count <= "00000000";

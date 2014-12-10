@@ -14,20 +14,6 @@ component cpu
 		cpu_pc	:	out	std_logic_vector(7 downto 0);
 		cpu_out	:	out	std_logic_vector(7 downto 0));
 end component;
-component decoder
-	port( decoder_in  : in std_logic_vector(11 downto 0);
-	      decoder_c   : in  std_logic;
- 	     decoder_z   : in  std_logic;
- 	     decoder_pc_inc  : out std_logic;
- 	     decoder_pc_ld   : out std_logic;
- 	     decoder_ibufoe : out std_logic;
- 	     decoder_aregld   : out std_logic;
-    	     decoder_abufoe  : out std_logic;
- 	     decoder_bregld   : out std_logic_vector(4 downto 0);
-    	     decoder_bbufoe  : out std_logic_vector(4 downto 0);
-    	     decoder_alu       : out std_logic_vector(2 downto 0);
-      	     decoder_argout    : out std_logic_vector(7 downto 0));
-end component;
 
 signal cpu_clk	:	std_logic;
 signal cpu_rst	:	std_logic;
@@ -37,23 +23,8 @@ signal cpu_instr:	std_logic_vector(11 downto 0);
 signal cpu_pc	:	std_logic_vector(7 downto 0);
 signal cpu_out	:	std_logic_vector(7 downto 0);
 
-signal decoder_in	:	std_logic_vector(11 downto 0);
-signal decoder_c	:	std_logic;
-signal decoder_z	:	std_logic;
-signal decoder_pc_inc	:	std_logic;
-signal decoder_pc_ld	:	std_logic;
-signal decoder_ibufoe	:	std_logic;
-signal decoder_aregld	:	std_logic;
-signal decoder_abufoe	:	std_logic;
-signal decoder_bregld	:	std_logic_vector(4 downto 0);
-signal decoder_bbufoe	:	std_logic_vector(4 downto 0);
-signal decoder_alu	:	std_logic_vector(2 downto 0);
-signal decoder_argout	:	std_logic_vector(7 downto 0);
-
 begin
 lbl1: cpu port map(cpu_clk, cpu_rst, cpu_en, cpu_in, cpu_instr, cpu_pc, cpu_out);
-lbl2: decoder port map(decoder_in, decoder_c, decoder_z, decoder_pc_inc, decoder_pc_ld, decoder_ibufoe, decoder_aregld, decoder_abufoe, decoder_bregld, decoder_bbufoe, decoder_alu, decoder_argout);
-
 cpu_clk <= '1' after 0 ns,
 	'0' after 50 ns when cpu_clk/= '0' else '1' after 50 ns;
 cpu_rst <= '1' after 0 ns,
