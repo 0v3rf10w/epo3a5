@@ -1,0 +1,5 @@
+rm -rf /home/ndewinter/klokdeler/syn_work_bak
+mv -f /home/ndewinter/klokdeler/syn_work /home/ndewinter/klokdeler/syn_work_bak
+cp -r /tmp/ndewinter//home/ndewinter/klokdeler/syn_work /home/ndewinter/klokdeler
+cp /tmp/ndewinter//home/ndewinter/klokdeler/ADB/dff.ddc /home/ndewinter/klokdeler/ADB/dff.ddc
+cp /tmp/ndewinter//home/ndewinter/klokdeler/VHDL/dff_SYNTH.vhd /home/ndewinter/klokdeler/VHDL/dff_SYNTH.vhd

@@ -1,0 +1,468 @@
+m255
+K3
+13
+cModel Technology
+Z0 dklokdeler
+T_opt
+V_FPln0XNkRhKjOheMiZSL3
+Z1 04 18 0 work tb_behavioural_cfg 1
+=1-5cf9dd6dec2a-5464758a-bd882-4195
+Z2 o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z3 OE;O;10.1b;51
+Z4 dklokdeler
+T_opt1
+V0<AW0B@TAmR@fk8m0<5[O3
+R1
+=1-5cf9dd6dec2a-5469c527-cf857-4e82
+R2
+n@_opt1
+R3
+T_opt2
+VMoKanGFf>TkR7N5IdEaX@3
+04 22 0 work tb_behaviouralsynt_cfg 1
+=1-5cf9dd6dec2a-5469bea9-90447-42b3
+R2
+n@_opt2
+R3
+R4
+Edff
+w1415867479
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 d/klokdeler
+8VHDL/dff2.vhd
+FVHDL/dff2.vhd
+l0
+L4
+VSH:zX[lz7^Xf1RIB=zidb2
+Z8 OE;C;10.1b;51
+32
+Z9 o-lower -explicit -work work -quiet -nologo
+Z10 tExplicit 1
+!s100 o@>8>j`Tgg4`ATJ<mR7V60
+!i10b 1
+!s108 1416215370.598677
+!s90 -lower|-explicit|-work|work|VHDL/dff2.vhd|-quiet|-nologo|
+!s107 VHDL/dff2.vhd|
+Asynthesised
+w1416215591
+Z11 DEx4 work 3 dff 0 22 SH:zX[lz7^Xf1RIB=zidb2
+Z12 DPx8 cellslib 18 cellslib_decl_pack 0 22 QXc5jY9ngocCTOzQ`UlIE2
+R5
+R6
+R4
+8VHDL/dff_SYNTH.vhd
+FVHDL/dff_SYNTH.vhd
+l19
+L7
+VLDm54Ldm1QOClP3]e^kK23
+R8
+32
+R9
+R10
+!s100 <G=;FM?<?VEmk_Ng`7RD10
+!i10b 1
+!s108 1416215595.129430
+!s90 -lower|-explicit|-work|work|VHDL/dff_SYNTH.vhd|-quiet|-nologo|
+!s107 VHDL/dff_SYNTH.vhd|
+Abehavioural
+w1416215351
+R11
+R5
+R6
+8VHDL/dff-behavioural.vhd
+FVHDL/dff-behavioural.vhd
+l8
+L4
+Vi=027o6J=1KmTG3Y4M11]0
+R8
+32
+R9
+R10
+!s100 mifjA0oDWDEM_zD1IN3aI1
+!s90 -lower|-explicit|-work|work|VHDL/dff-behavioural.vhd|-quiet|-nologo|
+!i10b 1
+!s108 1416215371.713183
+!s107 VHDL/dff-behavioural.vhd|
+Cdff_behavioural_cfg
+Z13 abehavioural
+edff
+DAx4 work 3 dff 11 behavioural 22 i=027o6J=1KmTG3Y4M11]0
+R5
+R6
+R11
+w1415614958
+R7
+8VHDL/dff_behavioural_cfg.vhd
+FVHDL/dff_behavioural_cfg.vhd
+l0
+L1
+VInA3hz5i]:`KLie[XI?ET1
+R8
+32
+R9
+R10
+!s100 K^08PNB:cRk7@?Ka]:8eT3
+!i10b 0
+!s108 1416215372.854686
+!s90 -lower|-explicit|-work|work|VHDL/dff_behavioural_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/dff_behavioural_cfg.vhd|
+Eklokdeler
+w1415867793
+R5
+R6
+R7
+8VHDL/klokdeler.vhd
+FVHDL/klokdeler.vhd
+l0
+L4
+VCgDJW1K9gajZ`DahcJn=Y0
+R8
+32
+R9
+R10
+!s100 7:`FJi[KHC==@[Tb2lmZI0
+!i10b 1
+!s108 1416215373.979547
+!s90 -lower|-explicit|-work|work|VHDL/klokdeler.vhd|-quiet|-nologo|
+!s107 VHDL/klokdeler.vhd|
+Aextracted
+w1416216172
+Z14 DEx4 work 9 klokdeler 0 22 CgDJW1K9gajZ`DahcJn=Y0
+R12
+R5
+R6
+R4
+8VHDL/klokdeler_EXTR.vhd
+FVHDL/klokdeler_EXTR.vhd
+l51
+L13
+VKZIjiV=BO[_CkaI`9kkUb3
+R8
+32
+R9
+R10
+!s100 6;BMUROTc>i8Xf6oS]Edz2
+!i10b 1
+!s108 1416216174.282247
+!s90 -lower|-explicit|-work|work|VHDL/klokdeler_EXTR.vhd|-quiet|-nologo|
+!s107 VHDL/klokdeler_EXTR.vhd|
+Asynthesised
+w1416215553
+R14
+R12
+R5
+R6
+R4
+8VHDL/klokdeler_SYNTH.vhd
+FVHDL/klokdeler_SYNTH.vhd
+l16
+L7
+VT:9U@?hKRQhCk1Wabe0cM0
+R8
+32
+R9
+R10
+!s100 XK7Pcd6MEm_VA1Z@EA=NN0
+!s90 -lower|-explicit|-work|work|VHDL/klokdeler_SYNTH.vhd|-quiet|-nologo|
+!i10b 1
+!s108 1416215561.399675
+!s107 VHDL/klokdeler_SYNTH.vhd|
+Abehavioural
+w1416212392
+R14
+R5
+R6
+8VHDL/klokdeler-behavioural.vhd
+FVHDL/klokdeler-behavioural.vhd
+l11
+L4
+V2ODGf3i=1UHB3mPM6URbn0
+R8
+32
+R9
+R10
+!s100 f9?HFolIJCf48<k?``D]a0
+!s90 -lower|-explicit|-work|work|VHDL/klokdeler-behavioural.vhd|-quiet|-nologo|
+!i10b 1
+!s108 1416215375.164582
+!s107 VHDL/klokdeler-behavioural.vhd|
+Cklokdeler_behavioural_cfg
+R13
+Z15 eklokdeler
+R11
+Z16 DCx4 work 19 dff_behavioural_cfg 0 22 InA3hz5i]:`KLie[XI?ET1
+DAx4 work 9 klokdeler 11 behavioural 22 2ODGf3i=1UHB3mPM6URbn0
+R5
+R6
+R14
+w1415614968
+Z17 d/klokdeler
+8VHDL/klokdeler_behavioural_cfg.vhd
+FVHDL/klokdeler_behavioural_cfg.vhd
+l0
+L1
+VAPg2dPbXfneeE5ji_4KLP1
+R8
+32
+R9
+R10
+!s100 4[iE<]7ENN1_6oZk6lmod1
+!i10b 0
+!s108 1416217884.453819
+!s90 -lower|-explicit|-work|work|VHDL/klokdeler_behavioural_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/klokdeler_behavioural_cfg.vhd|
+Cklokdeler_extracted_cfg
+aextracted
+R15
+DEx8 cellslib 5 dfa11 0 22 iNebJXX9fMW>MEo3akSV31
+DEx8 cellslib 5 iv110 0 22 Bdg]QV`zZkg7kCgfbQ_;e3
+R12
+DAx4 work 9 klokdeler 9 extracted 22 KZIjiV=BO[_CkaI`9kkUb3
+R5
+R6
+R14
+w1416216204
+R4
+8VHDL/klokdeler_extracted_cfg.vhd
+FVHDL/klokdeler_extracted_cfg.vhd
+l0
+L1
+V7Q?aO>M2ezE>e@CdMV7^F2
+R8
+32
+R9
+R10
+!s100 9gHJ6]F<>Lzd[NLUz4A031
+!i10b 0
+!s108 1416216205.187379
+!s90 -lower|-explicit|-work|work|VHDL/klokdeler_extracted_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/klokdeler_extracted_cfg.vhd|
+Cklokdeler_synthesised_cfg
+asynthesised
+R15
+R11
+R16
+R12
+DAx4 work 9 klokdeler 11 synthesised 22 T:9U@?hKRQhCk1Wabe0cM0
+R5
+R6
+R14
+w1416213423
+R4
+8VHDL/klokdeler_synthesised_cfg.vhd
+FVHDL/klokdeler_synthesised_cfg.vhd
+l0
+L1
+VdnIAYhaHdCR8nkbklXb=S3
+R8
+32
+R9
+R10
+!s100 R_:hoRY6S[BAC=:]a6eNn1
+!i10b 0
+!s108 1416213423.254651
+!s90 -lower|-explicit|-work|work|VHDL/klokdeler_synthesised_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/klokdeler_synthesised_cfg.vhd|
+Etb
+w1415614324
+R5
+R6
+R17
+8VHDL/tb.vhd
+FVHDL/tb.vhd
+l0
+L4
+V9FjR^fTfcc]WnClFF1A0]3
+R8
+32
+R9
+R10
+!s100 hWVF:71l8Ao:beZIRM>k;2
+!i10b 1
+!s108 1416217886.269552
+!s90 -lower|-explicit|-work|work|VHDL/tb.vhd|-quiet|-nologo|
+!s107 VHDL/tb.vhd|
+Abehavioural
+w1416217877
+Z18 DEx4 work 2 tb 0 22 9FjR^fTfcc]WnClFF1A0]3
+R5
+R6
+8VHDL/tb-behavioural.vhd
+FVHDL/tb-behavioural.vhd
+l32
+L4
+Va6`L?8E=dI0mmhK8WHVcO0
+R8
+32
+R9
+R10
+!s100 =F?XB`<cInbXOB=mB4YZS0
+!s90 -lower|-explicit|-work|work|VHDL/tb-behavioural.vhd|-quiet|-nologo|
+!i10b 1
+!s108 1416217887.362304
+!s107 VHDL/tb-behavioural.vhd|
+Ctb4_behavioural_cfg
+R13
+etb
+R14
+Z19 DCx4 work 25 klokdeler_behavioural_cfg 0 22 APg2dPbXfneeE5ji_4KLP1
+Z20 DAx4 work 2 tb 11 behavioural 22 kZYE=A9feoOOSX1KDPlL43
+R5
+R6
+R18
+w1415877483
+R4
+8VHDL/tb4_behavioural_cfg.vhd
+FVHDL/tb4_behavioural_cfg.vhd
+l0
+L1
+Vz@mnW7C`EmoMARMbhK?Yj0
+R8
+32
+R9
+R10
+!s100 >CL?bnRcF[S4hE51c<1h;1
+!i10b 0
+!s108 1415877552.077192
+!s90 -lower|-explicit|-work|work|VHDL/tb4_behavioural_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/tb4_behavioural_cfg.vhd|
+Ctb_behavioural_cfg
+R13
+etb
+R14
+R19
+R20
+R5
+R6
+R18
+w1415614977
+R7
+8VHDL/tb_behavioural_cfg.vhd
+FVHDL/tb_behavioural_cfg.vhd
+l0
+L1
+VGoA_^=nU36AfLRbYCZ2SW3
+R8
+32
+R9
+R10
+!s100 OFnY9Bb=D]A9MzT[i8o^81
+!i10b 0
+!s108 1416215400.923347
+!s90 -lower|-explicit|-work|work|VHDL/tb_behavioural_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/tb_behavioural_cfg.vhd|
+Ctb_behaviouralexta_cfg
+R13
+etb
+R14
+DCx4 work 23 klokdeler_extracted_cfg 0 22 7Q?aO>M2ezE>e@CdMV7^F2
+R20
+R5
+R6
+R18
+w1416216219
+R4
+8VHDL/tb_behaviouralexta_cfg.vhd
+FVHDL/tb_behaviouralexta_cfg.vhd
+l0
+L1
+VN5Jm<AAZ>o96Va>:bcGHi0
+R8
+32
+R9
+R10
+!s100 @b?h<C=d10`Ll5bKKl_Q^0
+!i10b 0
+!s108 1416216219.831080
+!s90 -lower|-explicit|-work|work|VHDL/tb_behaviouralexta_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/tb_behaviouralexta_cfg.vhd|
+Ctb_behaviouralsynt_cfg
+R13
+etb
+R14
+DCx4 work 25 klokdeler_synthesised_cfg 0 22 dnIAYhaHdCR8nkbklXb=S3
+R20
+R5
+R6
+R18
+w1416215616
+R4
+8VHDL/tb_behaviouralsynt_cfg.vhd
+FVHDL/tb_behaviouralsynt_cfg.vhd
+l0
+L1
+V7h1=DioTlz:4@b>]5SB]Z3
+R8
+32
+R9
+R10
+!s100 9ElbZcURY:Z8zP1VXL_F82
+!i10b 0
+!s108 1416215621.093983
+!s90 -lower|-explicit|-work|work|VHDL/tb_behaviouralsynt_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/tb_behaviouralsynt_cfg.vhd|
+Etbdff
+w1415616621
+R5
+R6
+R7
+8VHDL/tbdff.vhd
+FVHDL/tbdff.vhd
+l0
+L4
+V`[@PWCzWc5CgU:J02c1k90
+R8
+32
+R9
+R10
+!s100 AO3<;FeW1@4dn]fP6okfG3
+!i10b 1
+!s108 1415874957.156518
+!s90 -lower|-explicit|-work|work|VHDL/tbdff.vhd|-quiet|-nologo|
+!s107 VHDL/tbdff.vhd|
+Abehavioural
+w1415875243
+Z21 DEx4 work 5 tbdff 0 22 `[@PWCzWc5CgU:J02c1k90
+R5
+R6
+8VHDL/tbdff-behavioural.vhd
+FVHDL/tbdff-behavioural.vhd
+l14
+L4
+VCYGDj50mgbDdVo^WEb?>P0
+R8
+32
+R9
+R10
+!s90 -lower|-explicit|-work|work|VHDL/tbdff-behavioural.vhd|-quiet|-nologo|
+!s100 N:FnOPBDiUZ2`ZNKKT0EY3
+!i10b 1
+!s108 1415875243.525586
+!s107 VHDL/tbdff-behavioural.vhd|
+Ctbdff_behavioural_cfg
+R13
+etbdff
+DEx4 work 3 dff 0 22 C`<IkDF]4A1Q2THddMjgg0
+R16
+DAx4 work 5 tbdff 11 behavioural 22 8>0h;9=BF_Ja^0MPMBN7@2
+R5
+R6
+R21
+w1415616857
+R7
+8VHDL/tbdff_behavioural_cfg.vhd
+FVHDL/tbdff_behavioural_cfg.vhd
+l0
+L1
+VUknZKPQ8<b=@Wo]l1]BAW1
+R8
+32
+R9
+R10
+!s100 KeBV]AaUVNgh8VV`>c@Kh1
+!i10b 0
+!s108 1415616924.793716
+!s90 -lower|-explicit|-work|work|VHDL/tbdff_behavioural_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/tbdff_behavioural_cfg.vhd|
