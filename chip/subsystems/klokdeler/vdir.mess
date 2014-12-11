@@ -1,0 +1,358 @@
+Library vendor : Model Technology
+Maximum unnamed designs : 3
+OPTIMIZED DESIGN _opt
+    Version string: _FPln0XNkRhKjOheMiZSL3
+    Top-level model: work tb_behavioural_cfg 1
+    Compile options: -quiet -auto_acc_if_foreign -work work
+    Short name: @_opt
+    Opcode format: 10.1b; VCOM/VLOG SE Object version 51
+    Source directory: klokdeler
+OPTIMIZED DESIGN _opt1
+    Version string: 0<AW0B@TAmR@fk8m0<5[O3
+    Top-level model: work tb_behavioural_cfg 1
+    Compile options: -quiet -auto_acc_if_foreign -work work
+    Short name: @_opt1
+    Opcode format: 10.1b; VCOM/VLOG SE Object version 51
+    Source directory: klokdeler
+OPTIMIZED DESIGN _opt2
+    Version string: MoKanGFf>TkR7N5IdEaX@3
+    Top-level model: work tb_behaviouralsynt_cfg 1
+    Compile options: -quiet -auto_acc_if_foreign -work work
+    Short name: @_opt2
+    Opcode format: 10.1b; VCOM/VLOG SE Object version 51
+    Source directory: klokdeler
+ENTITY dff
+    Source modified time: Thu Nov 13 09:31:19 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /klokdeler
+    HDL source file: VHDL/dff2.vhd
+    Source file: VHDL/dff2.vhd
+    Start location: VHDL/dff2.vhd:4
+    Version string: SH:zX[lz7^Xf1RIB=zidb2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Mon Nov 17 10:13:11 2014
+    Depends on: E work dff SH:zX[lz7^Xf1RIB=zidb2
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: klokdeler
+    HDL source file: VHDL/dff_SYNTH.vhd
+    Source file: VHDL/dff_SYNTH.vhd
+    Start location: VHDL/dff_SYNTH.vhd:7
+    Version string: LDm54Ldm1QOClP3]e^kK23
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Source modified time: Mon Nov 17 10:09:11 2014
+    Depends on: E work dff SH:zX[lz7^Xf1RIB=zidb2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    HDL source file: VHDL/dff-behavioural.vhd
+    Source file: VHDL/dff-behavioural.vhd
+    Start location: VHDL/dff-behavioural.vhd:4
+    Version string: i=027o6J=1KmTG3Y4M11]0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /klokdeler
+    Debug Symbol file exists
+VHDL CONFIGURATION dff_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: dff
+    Depends on: A work dff behavioural i=027o6J=1KmTG3Y4M11]0
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work dff SH:zX[lz7^Xf1RIB=zidb2
+    Source modified time: Mon Nov 10 11:22:38 2014
+    Source directory: /klokdeler
+    HDL source file: VHDL/dff_behavioural_cfg.vhd
+    Source file: VHDL/dff_behavioural_cfg.vhd
+    Start location: VHDL/dff_behavioural_cfg.vhd:1
+    Version string: InA3hz5i]:`KLie[XI?ET1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY klokdeler
+    Source modified time: Thu Nov 13 09:36:33 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /klokdeler
+    HDL source file: VHDL/klokdeler.vhd
+    Source file: VHDL/klokdeler.vhd
+    Start location: VHDL/klokdeler.vhd:4
+    Version string: CgDJW1K9gajZ`DahcJn=Y0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY extracted
+    Source modified time: Mon Nov 17 10:22:52 2014
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: klokdeler
+    HDL source file: VHDL/klokdeler_EXTR.vhd
+    Source file: VHDL/klokdeler_EXTR.vhd
+    Start location: VHDL/klokdeler_EXTR.vhd:13
+    Version string: KZIjiV=BO[_CkaI`9kkUb3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Mon Nov 17 10:12:33 2014
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: klokdeler
+    HDL source file: VHDL/klokdeler_SYNTH.vhd
+    Source file: VHDL/klokdeler_SYNTH.vhd
+    Start location: VHDL/klokdeler_SYNTH.vhd:7
+    Version string: T:9U@?hKRQhCk1Wabe0cM0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Source modified time: Mon Nov 17 09:19:52 2014
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    HDL source file: VHDL/klokdeler-behavioural.vhd
+    Source file: VHDL/klokdeler-behavioural.vhd
+    Start location: VHDL/klokdeler-behavioural.vhd:4
+    Version string: 2ODGf3i=1UHB3mPM6URbn0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /klokdeler
+    Debug Symbol file exists
+VHDL CONFIGURATION klokdeler_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: klokdeler
+    Depends on: E work dff SH:zX[lz7^Xf1RIB=zidb2
+    Depends on: C work dff_behavioural_cfg InA3hz5i]:`KLie[XI?ET1
+    Depends on: A work klokdeler behavioural 2ODGf3i=1UHB3mPM6URbn0
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Source modified time: Mon Nov 10 11:22:48 2014
+    Source directory: /klokdeler
+    HDL source file: VHDL/klokdeler_behavioural_cfg.vhd
+    Source file: VHDL/klokdeler_behavioural_cfg.vhd
+    Start location: VHDL/klokdeler_behavioural_cfg.vhd:1
+    Version string: APg2dPbXfneeE5ji_4KLP1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+VHDL CONFIGURATION klokdeler_extracted_cfg
+    Configuration for architecture: extracted
+    Configuration for entity: klokdeler
+    Depends on: E cellslib dfa11 iNebJXX9fMW>MEo3akSV31
+    Depends on: E cellslib iv110 Bdg]QV`zZkg7kCgfbQ_;e3
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: A work klokdeler extracted KZIjiV=BO[_CkaI`9kkUb3
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Source modified time: Mon Nov 17 10:23:24 2014
+    Source directory: klokdeler
+    HDL source file: VHDL/klokdeler_extracted_cfg.vhd
+    Source file: VHDL/klokdeler_extracted_cfg.vhd
+    Start location: VHDL/klokdeler_extracted_cfg.vhd:1
+    Version string: 7Q?aO>M2ezE>e@CdMV7^F2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+VHDL CONFIGURATION klokdeler_synthesised_cfg
+    Configuration for architecture: synthesised
+    Configuration for entity: klokdeler
+    Depends on: E work dff SH:zX[lz7^Xf1RIB=zidb2
+    Depends on: C work dff_behavioural_cfg InA3hz5i]:`KLie[XI?ET1
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: A work klokdeler synthesised T:9U@?hKRQhCk1Wabe0cM0
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Source modified time: Mon Nov 17 09:37:03 2014
+    Source directory: klokdeler
+    HDL source file: VHDL/klokdeler_synthesised_cfg.vhd
+    Source file: VHDL/klokdeler_synthesised_cfg.vhd
+    Start location: VHDL/klokdeler_synthesised_cfg.vhd:1
+    Version string: dnIAYhaHdCR8nkbklXb=S3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY tb
+    Source modified time: Mon Nov 10 11:12:04 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /klokdeler
+    HDL source file: VHDL/tb.vhd
+    Source file: VHDL/tb.vhd
+    Start location: VHDL/tb.vhd:4
+    Version string: 9FjR^fTfcc]WnClFF1A0]3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Source modified time: Mon Nov 17 10:51:17 2014
+    Depends on: E work tb 9FjR^fTfcc]WnClFF1A0]3
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    HDL source file: VHDL/tb-behavioural.vhd
+    Source file: VHDL/tb-behavioural.vhd
+    Start location: VHDL/tb-behavioural.vhd:4
+    Version string: a6`L?8E=dI0mmhK8WHVcO0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /klokdeler
+    Debug Symbol file exists
+VHDL CONFIGURATION tb4_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: tb
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Depends on: C work klokdeler_behavioural_cfg APg2dPbXfneeE5ji_4KLP1
+    Depends on: A work tb behavioural kZYE=A9feoOOSX1KDPlL43
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work tb 9FjR^fTfcc]WnClFF1A0]3
+    Source modified time: Thu Nov 13 12:18:03 2014
+    Source directory: klokdeler
+    HDL source file: VHDL/tb4_behavioural_cfg.vhd
+    Source file: VHDL/tb4_behavioural_cfg.vhd
+    Start location: VHDL/tb4_behavioural_cfg.vhd:1
+    Version string: z@mnW7C`EmoMARMbhK?Yj0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+VHDL CONFIGURATION tb_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: tb
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Depends on: C work klokdeler_behavioural_cfg APg2dPbXfneeE5ji_4KLP1
+    Depends on: A work tb behavioural kZYE=A9feoOOSX1KDPlL43
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work tb 9FjR^fTfcc]WnClFF1A0]3
+    Source modified time: Mon Nov 10 11:22:57 2014
+    Source directory: /klokdeler
+    HDL source file: VHDL/tb_behavioural_cfg.vhd
+    Source file: VHDL/tb_behavioural_cfg.vhd
+    Start location: VHDL/tb_behavioural_cfg.vhd:1
+    Version string: GoA_^=nU36AfLRbYCZ2SW3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+VHDL CONFIGURATION tb_behaviouralexta_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: tb
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Depends on: C work klokdeler_extracted_cfg 7Q?aO>M2ezE>e@CdMV7^F2
+    Depends on: A work tb behavioural kZYE=A9feoOOSX1KDPlL43
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work tb 9FjR^fTfcc]WnClFF1A0]3
+    Source modified time: Mon Nov 17 10:23:39 2014
+    Source directory: klokdeler
+    HDL source file: VHDL/tb_behaviouralexta_cfg.vhd
+    Source file: VHDL/tb_behaviouralexta_cfg.vhd
+    Start location: VHDL/tb_behaviouralexta_cfg.vhd:1
+    Version string: N5Jm<AAZ>o96Va>:bcGHi0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+VHDL CONFIGURATION tb_behaviouralsynt_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: tb
+    Depends on: E work klokdeler CgDJW1K9gajZ`DahcJn=Y0
+    Depends on: C work klokdeler_synthesised_cfg dnIAYhaHdCR8nkbklXb=S3
+    Depends on: A work tb behavioural kZYE=A9feoOOSX1KDPlL43
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work tb 9FjR^fTfcc]WnClFF1A0]3
+    Source modified time: Mon Nov 17 10:13:36 2014
+    Source directory: klokdeler
+    HDL source file: VHDL/tb_behaviouralsynt_cfg.vhd
+    Source file: VHDL/tb_behaviouralsynt_cfg.vhd
+    Start location: VHDL/tb_behaviouralsynt_cfg.vhd:1
+    Version string: 7h1=DioTlz:4@b>]5SB]Z3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY tbdff
+    Source modified time: Mon Nov 10 11:50:21 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /klokdeler
+    HDL source file: VHDL/tbdff.vhd
+    Source file: VHDL/tbdff.vhd
+    Start location: VHDL/tbdff.vhd:4
+    Version string: `[@PWCzWc5CgU:J02c1k90
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Source modified time: Thu Nov 13 11:40:43 2014
+    Depends on: E work tbdff `[@PWCzWc5CgU:J02c1k90
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    HDL source file: VHDL/tbdff-behavioural.vhd
+    Source file: VHDL/tbdff-behavioural.vhd
+    Start location: VHDL/tbdff-behavioural.vhd:4
+    Version string: CYGDj50mgbDdVo^WEb?>P0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /klokdeler
+    Debug Symbol file exists
+VHDL CONFIGURATION tbdff_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: tbdff
+    Depends on: E work dff C`<IkDF]4A1Q2THddMjgg0
+    Depends on: C work dff_behavioural_cfg InA3hz5i]:`KLie[XI?ET1
+    Depends on: A work tbdff behavioural 8>0h;9=BF_Ja^0MPMBN7@2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work tbdff `[@PWCzWc5CgU:J02c1k90
+    Source modified time: Mon Nov 10 11:54:17 2014
+    Source directory: /klokdeler
+    HDL source file: VHDL/tbdff_behavioural_cfg.vhd
+    Source file: VHDL/tbdff_behavioural_cfg.vhd
+    Start location: VHDL/tbdff_behavioural_cfg.vhd:1
+    Version string: UknZKPQ8<b=@Wo]l1]BAW1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
