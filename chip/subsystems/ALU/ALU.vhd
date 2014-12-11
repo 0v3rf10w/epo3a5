@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
 
 entity alu is
   port ( alu_A  : in  std_logic_vector(7 downto 0);     -- input A
@@ -13,8 +13,9 @@ entity alu is
 end entity alu;
 
 architecture behaviour of alu is
-signal op0, op1, op2: std_logic;
-signal c: std_logic_vector(0 downto 0);
+signal op0, op1, op2, c: std_logic;
+signal alu_add: std_logic_vector(8 downto 0);
+
 begin
   with opcode select
   alu_y <=  alu_A                                                         	when "000",     -- pass input_A
@@ -22,23 +23,25 @@ begin
             alu_A and alu_B                                              	when "010",     -- and
             "00000000"                                                    	when "011",     -- set C
             "00000000"                                                    	when "100",     -- clr C
-            std_logic_vector(unsigned(alu_A) + unsigned(alu_B))		 	when "101",     -- add
+            alu_A + alu_B						 							when "101",     -- add
             "00000000"                                                    	when others;
   
   op0 <= opcode(0);
   op1 <= opcode(1);
   op2 <= opcode(2);
   
+  alu_add <= (("0" & (alu_A)) + (alu_B));
+  
   process(alu_clk)
   begin
     if (alu_clk'event and alu_clk='1') then
       if ((op2='1') and (op1='0') and (op0='0')) or
           ((op2='1') and (op1='0') and (op0='1') and
-          (unsigned(alu_A)+unsigned(alu_B) < 256)) then
+          ((alu_add) <= "11111111")) then
         alu_c <= '0';
       elsif  ((op2='0') and (op1='1') and (op0='1')) or
               ((op2='1') and (op1='0') and (op0='1') and
-              (unsigned(alu_A)+unsigned(alu_B) > 255)) then
+              ((alu_add) > "11111111")) then
         alu_c <= '1';
       end if;
     end if;
@@ -54,4 +57,5 @@ begin
       end if;
     end if;
   end process;
+  
 end architecture;
