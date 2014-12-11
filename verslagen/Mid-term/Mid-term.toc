@@ -1,0 +1,3 @@
+\select@language {dutch}
+\contentsline {chapter}{Samenvatting}{ii}{chapter*.2}
+\contentsfinish 
