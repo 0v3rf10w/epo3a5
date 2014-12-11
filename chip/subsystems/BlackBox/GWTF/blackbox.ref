@@ -1,0 +1,30 @@
+# Tabular Link File created on Mon 08 Dec 2014 17:52:21
+# By Program: design_flow
+# From Source: /home/wbouwmeester/Documents/BlackBox/blackbox.lst
+# Clock_column: -1
+INP sclk_m_0;
+INP mosi_m_0;
+OUT miso_m_0;
+INP ss_m_0;
+INP sclk_m_1;
+INP mosi_m_1;
+OUT miso_m_1;
+INP ss_m_1;
+OUT sclk_s_0;
+OUT mosi_s_0;
+INP miso_s_0;
+OUT ss_s_0;
+OUT sclk_s_1;
+OUT mosi_s_1;
+INP miso_s_1;
+OUT ss_s_1;
+INP s;
+PERIOD 50ns;
+TIME_UNIT 1.0e-10s;
+TABLE_FORMAT D<17c;
+DATA_SECTION
+             00<LLxLHHxHxxLxxxHxX
+            100<LLlLHHhHllLlhhHhL
+            500<LLhLHHlHhhLhllHlH
+
+

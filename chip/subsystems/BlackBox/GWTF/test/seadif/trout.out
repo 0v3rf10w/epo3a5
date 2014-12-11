@@ -1,0 +1,11 @@
+>>>>>> trout: automatic router for Sea-of-Gates           <<<<<<
+>>>>>> (c) 1995 Patrick Groeneveld, Delft Univ. of Techn. <<<<<<
+------ reading image description file '/data/public/common/software/nelsis/5.4.1.1/share/lib/celllibs/fishbone/image.seadif' ------
+------ reading placement 'Tmp_Cell_(blackbox(blackbox(test)))' ------
+------ building data structure  ------
+------ making grid  ------
+------ Verifying Connectivity ------
+------ No unconnect nor short-circuits ------
+------ Writing 'Tmp_Cell_(blackbox(blackbox(test)))' ------
+------ Trout: task completed on Mon Dec  8 17:59:16 2014
+ terminate

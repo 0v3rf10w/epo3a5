@@ -1,0 +1,17 @@
+/blackbox_tb/bb/sclk_m_0	  1	I
+/blackbox_tb/bb/mosi_m_0	  2	I
+/blackbox_tb/bb/miso_m_0	  3	O
+/blackbox_tb/bb/ss_m_0	  4	I
+/blackbox_tb/bb/sclk_m_1	  5	I
+/blackbox_tb/bb/mosi_m_1	  6	I
+/blackbox_tb/bb/miso_m_1	  7	O
+/blackbox_tb/bb/ss_m_1	  8	I
+/blackbox_tb/bb/sclk_s_0	  9	O
+/blackbox_tb/bb/mosi_s_0	 10	O
+/blackbox_tb/bb/miso_s_0	 11	I
+/blackbox_tb/bb/ss_s_0	 12	O
+/blackbox_tb/bb/sclk_s_1	 13	O
+/blackbox_tb/bb/mosi_s_1	 14	O
+/blackbox_tb/bb/miso_s_1	 15	I
+/blackbox_tb/bb/ss_s_1	 16	O
+/blackbox_tb/bb/s	 17	I
