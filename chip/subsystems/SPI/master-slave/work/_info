@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Job/epo3a5/chip/subsystems/SPI/master-slave
 Econtrol
-Z1 w1417374903
+Z1 w1417966336
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
@@ -21,9 +21,9 @@ VzI==L[[PLUYh@oVd?Yfaz2
 !s100 45^N<L=DUPfj1>BAo467S2
 Z6 OP;C;10.3d;59
 32
-Z7 !s110 1417880158
+Z7 !s110 1418042641
 !i10b 1
-Z8 !s108 1417880158.823000
+Z8 !s108 1418042641.830000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd|
 Z10 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/control.vhd|
 !i113 1
@@ -35,8 +35,8 @@ R3
 DEx4 work 7 control 0 22 zI==L[[PLUYh@oVd?Yfaz2
 l21
 L17
-Vf9Og4e5Fa4Nac`GQ9Yk?S0
-!s100 5bKN8L[CQ`nLnH@b1gBg62
+V86a^FmNaYKmo]Q7EO>?1W2
+!s100 f==^AzDIR@PzXJQ@ibag_2
 R6
 32
 R7
@@ -61,9 +61,9 @@ VGBnQT3UPKPd5N60jgS_V;2
 !s100 QL7ObjE2NO6LY@g=JA<=13
 R6
 32
-Z17 !s110 1417880159
+Z17 !s110 1418042642
 !i10b 1
-Z18 !s108 1417880159.292000
+Z18 !s108 1418042642.257000
 Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/counter.vhd|
 Z20 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/counter.vhd|
 !i113 1
@@ -89,7 +89,7 @@ R20
 R11
 R12
 Eshift_reg
-Z21 w1417873757
+Z21 w1417885118
 R2
 R3
 R0
@@ -103,7 +103,7 @@ R6
 32
 R17
 !i10b 1
-Z24 !s108 1417880159.777000
+Z24 !s108 1418042642.719000
 Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd|
 Z26 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd|
 !i113 1
@@ -128,7 +128,7 @@ R26
 R11
 R12
 Espi
-Z27 w1417876063
+Z27 w1417974868
 R2
 R3
 R0
@@ -140,9 +140,9 @@ VW@OMk<zRY11hGDbFI>2WW1
 !s100 gn6=77U8i1Y=nmUeG9cFc1
 R6
 32
-Z30 !s110 1417880160
+Z30 !s110 1418042643
 !i10b 1
-Z31 !s108 1417880160.292000
+Z31 !s108 1418042643.186000
 Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd|
 Z33 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd|
 !i113 1
@@ -154,8 +154,8 @@ R3
 DEx4 work 3 spi 0 22 W@OMk<zRY11hGDbFI>2WW1
 l59
 L19
-V^hA0iT_2RT5OgFW73R^gV0
-!s100 99LROMfZXYhTU^g[b@Dn:1
+VzoRW04Q7dR3Q@ZLUMo?AP2
+!s100 EKQT<BM]T7a_;QJS`R4BL1
 R6
 32
 R30
@@ -167,7 +167,7 @@ R33
 R11
 R12
 Espi_slave
-Z34 w1417880145
+Z34 w1417885119
 R2
 R3
 R0
@@ -181,7 +181,7 @@ R6
 32
 R7
 !i10b 1
-Z37 !s108 1417880158.370000
+Z37 !s108 1418042641.283000
 Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_slave.vhd|
 Z39 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_slave.vhd|
 !i113 1
@@ -193,8 +193,8 @@ R3
 DEx4 work 9 spi_slave 0 22 h:`U[hZN^8m1KF=VG?4;31
 l44
 L17
-V;<ZOWeC8UUb9LS?51dio_2
-!s100 :jJI_7<dQOl8J^GgEH<Me2
+VAo;NAVOMWQ=fNQ6Rd2MMT1
+!s100 bWH>3Vc?H>3^E0]@Oc4D^3
 R6
 32
 R7
@@ -206,12 +206,12 @@ R39
 R11
 R12
 Espi_tb
-Z40 w1417880023
+R34
 R2
 R3
 R0
-Z41 8C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd
-Z42 FC:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd
+Z40 8C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd
+Z41 FC:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd
 l0
 L4
 Vibgdk8nSLU=UAQ?_BXCiY0
@@ -220,27 +220,27 @@ R6
 32
 R30
 !i10b 1
-Z43 !s108 1417880160.777000
-Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd|
-Z45 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd|
+Z42 !s108 1418042643.639000
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd|
+Z44 !s107 C:/Users/Job/epo3a5/chip/subsystems/SPI/spi_master_slave_tb.vhd|
 !i113 1
 R11
 R12
 Astructural
 R2
 R3
-Z46 DEx4 work 6 spi_tb 0 22 ibgdk8nSLU=UAQ?_BXCiY0
+Z45 DEx4 work 6 spi_tb 0 22 ibgdk8nSLU=UAQ?_BXCiY0
 l46
 L7
-Z47 V]ZZ=@?;V>aJb71Z5Gle5C1
-Z48 !s100 6gHWDCEk1km;gZD^imY4P3
+Z46 V]ZZ=@?;V>aJb71Z5Gle5C1
+Z47 !s100 6gHWDCEk1km;gZD^imY4P3
 R6
 32
 R30
 !i10b 1
+R42
 R43
 R44
-R45
 !i113 1
 R11
 R12
