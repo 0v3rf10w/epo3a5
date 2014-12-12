@@ -5,7 +5,7 @@ entity cpu_tb is
 end entity cpu_tb;
 
 architecture behaviour of cpu_tb is
-component cpu
+component cpu1
 	port (	cpu_clk	:	in	std_logic;
 		cpu_rst	:	in	std_logic;
 		cpu_en	:	in	std_logic;
@@ -24,7 +24,7 @@ signal cpu_pc	:	std_logic_vector(7 downto 0);
 signal cpu_out	:	std_logic_vector(7 downto 0);
 
 begin
-lbl1: cpu port map(cpu_clk, cpu_rst, cpu_en, cpu_in, cpu_instr, cpu_pc, cpu_out);
+lbl1: cpu1 port map(cpu_clk, cpu_rst, cpu_en, cpu_in, cpu_instr, cpu_pc, cpu_out);
 cpu_clk <= '1' after 0 ns,
 	'0' after 50 ns when cpu_clk/= '0' else '1' after 50 ns;
 cpu_rst <= '1' after 0 ns,

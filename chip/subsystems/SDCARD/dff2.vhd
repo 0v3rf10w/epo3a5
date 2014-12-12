@@ -1,7 +1,15 @@
 library IEEE;
 use IEEE.std_logic_1164.ALL;
 
-architecture behavioural of dff is
+entity dff_haat is
+   port(clk :in    std_logic;
+        d   :in    std_logic;
+reset : in std_logic;
+        q   :out   std_logic;
+        qbar:out   std_logic);
+end dff_haat;
+
+architecture behavioural of dff_haat is
 type out_state is (stateoff, stateeen);
 signal state, newstate: out_state;
 
@@ -28,10 +36,17 @@ when stateeen =>
 q<= '0';
 qbar<='1';
 newstate <= stateoff;
-end if;
 end case;
 end process;
 end behavioural;
+
+
+
+
+
+
+
+
 
 
 

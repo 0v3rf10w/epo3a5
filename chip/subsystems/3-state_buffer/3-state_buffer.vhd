@@ -23,18 +23,18 @@ begin
 end architecture;
 
 ----------------------------------------------------------------------------------------------------
---Buffer In (Bin)-------------------------------------------------------------------------------------
+--Buffer argument (Barg)-------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity buf_i is
+entity buf_arg is
 port( buf_in  : in  std_logic_vector(7 downto 0);
       buf_oe  : in  std_logic;
       buf_out : out std_logic_vector(7 downto 0));
-end entity buf_i;
+end entity buf_arg;
 
-architecture behaviour of buf_i is
+architecture behaviour of buf_arg is
 begin
   process (buf_in, buf_oe)
   begin
@@ -47,19 +47,19 @@ begin
 end architecture;
 
 ----------------------------------------------------------------------------------------------------
---Buffer 1 (B1)-------------------------------------------------------------------------------------
+--Buffer in (Bin)-------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity buf_1 is
+entity buf_in is
 port( buf_in  : in  std_logic_vector(7 downto 0);
       buf_oe  : in  std_logic_vector(4 downto 0);
       buf_out : out std_logic_vector(7 downto 0));
-end entity buf_1;
+end entity buf_in;
 
-architecture behaviour of buf_1 is
+architecture behaviour of buf_in is
 begin
   process (buf_in, buf_oe)
   begin

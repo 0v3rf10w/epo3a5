@@ -1,8 +1,0 @@
-configuration klokdeler_synthesised_cfg of klokdeler is
-   for synthesised
-      for all: dff use configuration work.dff_behavioural_cfg;
-      end for;
-   end for;
-end klokdeler_synthesised_cfg;
-
-

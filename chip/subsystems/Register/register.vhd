@@ -26,21 +26,21 @@ begin
 end architecture;
 
 ----------------------------------------------------------------------------------------------------
---Register 1 (R1)-----------------------------------------------------------------------------------
+--Register out (Rout)-----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity reg_1 is
+entity reg_out is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_clk : in  std_logic;
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity reg_1;
+end entity reg_out;
 
-architecture behaviour of reg_1 is
+architecture behaviour of reg_out is
 begin
   process(reg_clk, reg_rst)
   begin

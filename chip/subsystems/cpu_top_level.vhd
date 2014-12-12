@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity cpu is
+entity cpu1 is
 port(	cpu_clk	:	in	std_logic;
 	cpu_rst	:	in	std_logic;
 	cpu_en	:	in	std_logic;
@@ -9,9 +9,9 @@ port(	cpu_clk	:	in	std_logic;
 	cpu_instr:	in	std_logic_vector(11 downto 0);
 	cpu_pc	:	out	std_logic_vector(7 downto 0);
 	cpu_out	:	out	std_logic_vector(7 downto 0));
-end entity cpu;
+end entity cpu1;
 
-architecture behaviour of cpu is
+architecture behaviour of cpu1 is
 
 -- components --
 
@@ -21,17 +21,17 @@ port( buf_in  : in  std_logic_vector(11 downto 0);
       buf_out : out std_logic_vector(11 downto 0));
 end component;
 
-component decoder
+component decoder1
 port( decoder_in  : in std_logic_vector(11 downto 0);
       decoder_c   : in  std_logic;
       decoder_z   : in  std_logic;
-      decoder_pc_inc  : out std_logic;
-      decoder_pc_ld   : out std_logic;
-      decoder_ibufoe : out std_logic;
-      decoder_aregld   : out std_logic;
-      decoder_abufoe  : out std_logic;
-      decoder_bregld   : out std_logic_vector(4 downto 0);
-      decoder_bbufoe  : out std_logic_vector(4 downto 0);
+      decoder_pc_inc  	: out std_logic;
+      decoder_pc_ld   	: out std_logic;
+      decoder_ibufoe 	: out std_logic;
+      decoder_aregld   	: out std_logic;
+      decoder_abufoe  	: out std_logic;
+      decoder_bregld  	: out std_logic_vector(4 downto 0);
+      decoder_bbufoe  	: out std_logic_vector(4 downto 0);
       decoder_alu       : out std_logic_vector(2 downto 0);
       decoder_argout    : out std_logic_vector(7 downto 0));
 end component;
@@ -55,7 +55,7 @@ port ( pc_in  : in  std_logic_vector(7 downto 0);
       pc_out  : out std_logic_vector(7 downto 0));
 end component;
 
-component buf_i
+component buf_arg
 port( buf_in  : in  std_logic_vector(7 downto 0);
       buf_oe  : in  std_logic;
       buf_out : out std_logic_vector(7 downto 0));
@@ -67,61 +67,13 @@ port( buf_in  : in  std_logic_vector(7 downto 0);
       buf_out : out std_logic_vector(7 downto 0));
 end component;
 
-component buf_1
+component buf_in
 port( buf_in  : in  std_logic_vector(7 downto 0);
       buf_oe  : in  std_logic_vector(4 downto 0);
       buf_out : out std_logic_vector(7 downto 0));
 end component;
 
-component buf_2
-port( buf_in  : in  std_logic_vector(7 downto 0);
-      buf_oe  : in  std_logic_vector(4 downto 0);
-      buf_out : out std_logic_vector(7 downto 0));
-end component;
-
-component buf_3
-port( buf_in  : in  std_logic_vector(7 downto 0);
-      buf_oe  : in  std_logic_vector(4 downto 0);
-      buf_out : out std_logic_vector(7 downto 0));
-end component;
-
-component buf_4
-port( buf_in  : in  std_logic_vector(7 downto 0);
-      buf_oe  : in  std_logic_vector(4 downto 0);
-      buf_out : out std_logic_vector(7 downto 0));
-end component;
-
-component buf_5
-port( buf_in  : in  std_logic_vector(7 downto 0);
-      buf_oe  : in  std_logic_vector(4 downto 0);
-      buf_out : out std_logic_vector(7 downto 0));
-end component;
-
-component buf_6
-port( buf_in  : in  std_logic_vector(7 downto 0);
-      buf_oe  : in  std_logic_vector(4 downto 0);
-      buf_out : out std_logic_vector(7 downto 0));
-end component;
-
-component buf_7
-port( buf_in  : in  std_logic_vector(7 downto 0);
-      buf_oe  : in  std_logic_vector(4 downto 0);
-      buf_out : out std_logic_vector(7 downto 0));
-end component;
-
-component buf_8
-port( buf_in  : in  std_logic_vector(7 downto 0);
-      buf_oe  : in  std_logic_vector(4 downto 0);
-      buf_out : out std_logic_vector(7 downto 0));
-end component;
-
-component buf_9
-port( buf_in  : in  std_logic_vector(7 downto 0);
-      buf_oe  : in  std_logic_vector(4 downto 0);
-      buf_out : out std_logic_vector(7 downto 0));
-end component;
-
-component buf_10
+component buf_top
 port( buf_in  : in  std_logic_vector(7 downto 0);
       buf_oe  : in  std_logic_vector(4 downto 0);
       buf_out : out std_logic_vector(7 downto 0));
@@ -135,7 +87,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
 end component;
 
-component reg_1
+component reg_out
 port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_clk : in  std_logic;
         reg_rst : in  std_logic;
@@ -143,71 +95,7 @@ port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
 end component;
 
-component reg_2
-port (  reg_in  : in  std_logic_vector(7 downto 0);
-        reg_clk : in  std_logic;
-        reg_rst : in  std_logic;
-        reg_ld  : in  std_logic_vector(4 downto 0);
-        reg_out : out std_logic_vector(7 downto 0));
-end component;
-
-component reg_3
-port (  reg_in  : in  std_logic_vector(7 downto 0);
-        reg_clk : in  std_logic;
-        reg_rst : in  std_logic;
-        reg_ld  : in  std_logic_vector(4 downto 0);
-        reg_out : out std_logic_vector(7 downto 0));
-end component;
-
-component reg_4
-port (  reg_in  : in  std_logic_vector(7 downto 0);
-        reg_clk : in  std_logic;
-        reg_rst : in  std_logic;
-        reg_ld  : in  std_logic_vector(4 downto 0);
-        reg_out : out std_logic_vector(7 downto 0));
-end component;
-
-component reg_5
-port (  reg_in  : in  std_logic_vector(7 downto 0);
-        reg_clk : in  std_logic;
-        reg_rst : in  std_logic;
-        reg_ld  : in  std_logic_vector(4 downto 0);
-        reg_out : out std_logic_vector(7 downto 0));
-end component;
-
-component reg_6
-port (  reg_in  : in  std_logic_vector(7 downto 0);
-        reg_clk : in  std_logic;
-        reg_rst : in  std_logic;
-        reg_ld  : in  std_logic_vector(4 downto 0);
-        reg_out : out std_logic_vector(7 downto 0));
-end component;
-
-component reg_7
-port (  reg_in  : in  std_logic_vector(7 downto 0);
-        reg_clk : in  std_logic;
-        reg_rst : in  std_logic;
-        reg_ld  : in  std_logic_vector(4 downto 0);
-        reg_out : out std_logic_vector(7 downto 0));
-end component;
-
-component reg_8
-port (  reg_in  : in  std_logic_vector(7 downto 0);
-        reg_clk : in  std_logic;
-        reg_rst : in  std_logic;
-        reg_ld  : in  std_logic_vector(4 downto 0);
-        reg_out : out std_logic_vector(7 downto 0));
-end component;
-
-component reg_9
-port (  reg_in  : in  std_logic_vector(7 downto 0);
-        reg_clk : in  std_logic;
-        reg_rst : in  std_logic;
-        reg_ld  : in  std_logic_vector(4 downto 0);
-        reg_out : out std_logic_vector(7 downto 0));
-end component;
-
-component reg_10
+component reg_top
 port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_clk : in  std_logic;
         reg_rst : in  std_logic;
@@ -218,7 +106,7 @@ end component;
 -- Signals --
 
 signal cpu_dec_instr	:	std_logic_vector(11 downto 0);	-- instruction from SPI
-signal cpu_dec_o	:	std_logic_vector(7 downto 0);	-- operand to buf_i
+signal cpu_dec_o		:	std_logic_vector(7 downto 0);	-- operand to buf_i
 signal cpu_dec_ibufoe	:	std_logic;			-- ibuf_oe
 signal cpu_dec_pc_inc	:	std_logic;			-- program counter increment
 signal cpu_dec_pc_ld	:	std_logic;			-- program counter load
@@ -233,15 +121,7 @@ signal cpu_alu_z	:	std_logic;			-- alu z-flag
 signal cpu_alu_out	:	std_logic_vector(7 downto 0);	-- alu output
 signal cpu_alu_op	:	std_logic_vector(2 downto 0);	-- alu opcode
 signal cpu_areg_out	:	std_logic_vector(7 downto 0);	-- output reg_A
-signal cpu_buf_2	:	std_logic_vector(7 downto 0);	-- between register and buffer
-signal cpu_buf_3	:	std_logic_vector(7 downto 0);	-- between register and buffer
-signal cpu_buf_4	:	std_logic_vector(7 downto 0);	-- between register and buffer
-signal cpu_buf_5	:	std_logic_vector(7 downto 0);	-- between register and buffer
-signal cpu_buf_6	:	std_logic_vector(7 downto 0);	-- between register and buffer
-signal cpu_buf_7	:	std_logic_vector(7 downto 0);	-- between register and buffer
-signal cpu_buf_8	:	std_logic_vector(7 downto 0);	-- between register and buffer
-signal cpu_buf_9	:	std_logic_vector(7 downto 0);	-- between register and buffer
-signal cpu_buf_10	:	std_logic_vector(7 downto 0);	-- between register and buffer
+signal cpu_bufregbus:	std_logic_vector(7 downto 0);	-- bus between registers and buffers
 
 begin
 
@@ -250,8 +130,8 @@ instrbuf:	instr_buf	port map(
 					buf_oe => cpu_en,
 					buf_out => cpu_dec_instr);
 
-cpu_decoder:	decoder		port map(
-					decoder_in => cpu_instr,
+lbl_decoder:decoder1	port map(
+						decoder_in => cpu_instr,
       					decoder_c => cpu_alu_c,
       					decoder_z => cpu_alu_z,
       					decoder_pc_inc => cpu_dec_pc_inc,
@@ -264,7 +144,7 @@ cpu_decoder:	decoder		port map(
       					decoder_alu => cpu_alu_op,
       					decoder_argout => cpu_dec_o);
 
-cpu_ibuf:	buf_i		port map(
+cpu_ibuf:	buf_arg		port map(
 					buf_in => cpu_dec_o,
 					buf_oe => cpu_dec_ibufoe,
 					buf_out => cpu_bus);
@@ -298,123 +178,27 @@ cpu_buf_A:	buf_A		port map(
 					buf_oe => cpu_dec_abufoe,
 					buf_out => cpu_bus);
 
-reg_out:	reg_1		port map(
+lbl_reg_out:reg_out		port map(
 					reg_in => cpu_bus,
 					reg_clk => cpu_clk,
 					reg_rst => cpu_rst,
 					reg_ld => cpu_dec_bregld,
 					reg_out => cpu_out);
 
-buf_in:		buf_1		port map(
+lbl_buf_in:	buf_in		port map(
 					buf_in => cpu_in,
 					buf_oe => cpu_dec_bbufoe,
 					buf_out => cpu_bus);
 
-cpu_reg_2:	reg_2		port map(
+cpu_regs:	reg_top		port map(
 					reg_in => cpu_bus,
 					reg_clk => cpu_clk,
 					reg_rst => cpu_rst,
 					reg_ld => cpu_dec_bregld,
-					reg_out => cpu_buf_2);
-cpu_reg_3:	reg_3		port map(
-					reg_in => cpu_bus,
-					reg_clk => cpu_clk,
-					reg_rst => cpu_rst,
-					reg_ld => cpu_dec_bregld,
-					reg_out => cpu_buf_3);
+					reg_out => cpu_bufregbus);
 
-cpu_reg_4:	reg_4		port map(
-					reg_in => cpu_bus,
-					reg_clk => cpu_clk,
-					reg_rst => cpu_rst,
-					reg_ld => cpu_dec_bregld,
-					reg_out => cpu_buf_4);
-
-cpu_reg_5:	reg_5		port map(
-					reg_in => cpu_bus,
-					reg_clk => cpu_clk,
-					reg_rst => cpu_rst,
-					reg_ld => cpu_dec_bregld,
-					reg_out => cpu_buf_5);
-
-cpu_reg_6:	reg_6		port map(
-					reg_in => cpu_bus,
-					reg_clk => cpu_clk,
-					reg_rst => cpu_rst,
-					reg_ld => cpu_dec_bregld,
-					reg_out => cpu_buf_6);
-
-cpu_reg_7:	reg_7		port map(
-					reg_in => cpu_bus,
-					reg_clk => cpu_clk,
-					reg_rst => cpu_rst,
-					reg_ld => cpu_dec_bregld,
-					reg_out => cpu_buf_7);
-
-cpu_reg_8:	reg_8		port map(
-					reg_in => cpu_bus,
-					reg_clk => cpu_clk,
-					reg_rst => cpu_rst,
-					reg_ld => cpu_dec_bregld,
-					reg_out => cpu_buf_8);
-
-cpu_reg_9:	reg_9		port map(
-					reg_in => cpu_bus,
-					reg_clk => cpu_clk,
-					reg_rst => cpu_rst,
-					reg_ld => cpu_dec_bregld,
-					reg_out => cpu_buf_9);
-
-cpu_reg_10:	reg_10		port map(
-					reg_in => cpu_bus,
-					reg_clk => cpu_clk,
-					reg_rst => cpu_rst,
-					reg_ld => cpu_dec_bregld,
-					reg_out => cpu_buf_10);
-
-cpu_buf2:	buf_2		port map(
-					buf_in => cpu_buf_2,
+cpu_bufs:	buf_top		port map(
+					buf_in => cpu_bufregbus,
 					buf_oe => cpu_dec_bbufoe,
 					buf_out => cpu_bus);
-
-cpu_buf3:	buf_3		port map(
-					buf_in => cpu_buf_3,
-					buf_oe => cpu_dec_bbufoe,
-					buf_out => cpu_bus);
-
-cpu_buf4:	buf_4		port map(
-					buf_in => cpu_buf_4,
-					buf_oe => cpu_dec_bbufoe,
-					buf_out => cpu_bus);
-
-cpu_buf5:	buf_5		port map(
-					buf_in => cpu_buf_5,
-					buf_oe => cpu_dec_bbufoe,
-					buf_out => cpu_bus);
-
-cpu_buf6:	buf_6		port map(
-					buf_in => cpu_buf_6,
-					buf_oe => cpu_dec_bbufoe,
-					buf_out => cpu_bus);
-
-cpu_buf7:	buf_7		port map(
-					buf_in => cpu_buf_7,
-					buf_oe => cpu_dec_bbufoe,
-					buf_out => cpu_bus);
-
-cpu_buf8:	buf_8		port map(
-					buf_in => cpu_buf_8,
-					buf_oe => cpu_dec_bbufoe,
-					buf_out => cpu_bus);
-
-cpu_buf9:	buf_9		port map(
-					buf_in => cpu_buf_9,
-					buf_oe => cpu_dec_bbufoe,
-					buf_out => cpu_bus);
-
-cpu_buf10:	buf_10		port map(
-					buf_in => cpu_buf_10,
-					buf_oe => cpu_dec_bbufoe,
-					buf_out => cpu_bus);
-
 end behaviour;
