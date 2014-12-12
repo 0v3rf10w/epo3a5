@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version G-2012.06 for linux -- May 30, 2012
-#@ # Date:   Mon Dec  8 17:29:57 2014
+#@ # Date:   Fri Dec 12 20:35:01 2014
 #@ # Run by: @sct-epo3.ewi.tudelft.nl
 #@ 
 
@@ -4755,33 +4755,17 @@ source /data/public/common/software/synopsys/G-2012.06/admin/setup/.synopsys_dc.
 #@ 
 #@ # -- End source /data/public/common/software/synopsys/G-2012.06/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /home/wbouwmeester/Documents/BlackBox/synthesize.tcl
-#@ # -- Starting source /home/wbouwmeester/Documents/BlackBox/synthesize.tcl
+source -echo -verbose /home/wbouwmeester/Documents/BetterBlackBox/GWTF/plot.tcl
+#@ # -- Starting source /home/wbouwmeester/Documents/BetterBlackBox/GWTF/plot.tcl
 
-#@ #*********************************************************
-#@ #  synthesize script for cell: stream                     *
-#@ #*********************************************************
-#@ set hdlin_vhdl_93 false
-#@ set hdlin_ff_always_async_set_reset true
-#@ set hdlin_ff_always_sync_set_reset true
-#@ set vhdlout_architecture_name "synthesised"
-#@ set vhdlout_use_packages {"ieee.std_logic_1164" "CellsLib.CellsLib_DECL_PACK"}
-#@ set company "ontwerp_practicum"
-#@ set designer "wbouwmeester"
-#@ set target_library  {"/data/public/common/software/opprog/synth_libs/g_digilib5_99.db"}
-#@ set link_library [list "*" "./ADB/tbuf.ddc" "/data/public/common/software/opprog/synth_libs/g_digilib5_99.db" "/data/public/common/software/opprog/synth_libs/g_analib8_00.db" "/data/public/common/software/opprog/synth_libs/buffers.db"]
-#@ define_design_lib MY_LIB -path ./syn_work
-#@ define_design_lib CELLSLIB -path /data/public/common/software/opprog/synth_libs/CellsLib
-#@ read_file -format vhdl -work MY_LIB {VHDL/stream.vhd VHDL/stream-behaviour.vhd}
-#@ set_dont_touch {tbuf}
-#@ set_dont_touch {g_analib8_00/*}
-#@ # set_max_fanout 1.8 all_inputs() 
-#@ # set_max_area 1000 
-#@ set compile_preserve_subdesign_interfaces true
-#@ compile
-#@ ungroup -all -flat
-#@ report_area
-#@ report_fsm
-#@ write_file -f ddc stream -output ./ADB/stream.ddc
-#@ write_file -f vhdl stream -output ./VHDL/stream_SYNTH.vhd
-#@ quit
+#@ read_file -f ddc ./ADB/blackbox.ddc
+#@ set designer wbouwmeester
+#@ set company TU-Delft
+#@ start_gui
+#@ gui_create_schematic
+#@ tcl::source /data/public/common/software/synopsys/G-2012.06/auxx/gui/common/misc/GuiMenuEnable.tcl
+
+#@ # To quit: click File -> Exit in Design Vision window
+#@ # or type quit in dc_shell window
+#@ # -- End source /home/wbouwmeester/Documents/BetterBlackBox/GWTF/plot.tcl
+

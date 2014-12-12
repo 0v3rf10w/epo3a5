@@ -6,16 +6,14 @@ use CellsLib.CellsLib_DECL_PACK.all;
 
 architecture synthesised of stream is
 
-   component tbuf
-      port( A : in std_logic;  Y : out std_logic;  E : in std_logic);
+   component mu111
+      port( A, B, S : in std_logic;  Y : out std_logic);
    end component;
 
 begin
    
-   tbuf0 : tbuf port map( A => IN_0, Y => OUT_0, E => notE);
-   tbuf1 : tbuf port map( A => IN_0, Y => OUT_1, E => E);
-   tbuf2 : tbuf port map( A => IN_1, Y => OUT_0, E => E);
-   tbuf3 : tbuf port map( A => IN_1, Y => OUT_1, E => notE);
+   U8 : mu111 port map( A => IN_1, B => IN_0, S => E, Y => OUT_1);
+   U9 : mu111 port map( A => IN_0, B => IN_1, S => E, Y => OUT_0);
 
 end synthesised;
 

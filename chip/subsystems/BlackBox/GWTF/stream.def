@@ -1,0 +1,5 @@
+/stream_tb/stream1/in_0	  1	I
+/stream_tb/stream1/in_1	  2	I
+/stream_tb/stream1/out_0	  3	O
+/stream_tb/stream1/out_1	  4	O
+/stream_tb/stream1/e	  5	I

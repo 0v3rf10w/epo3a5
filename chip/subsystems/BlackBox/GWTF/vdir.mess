@@ -1,31 +1,24 @@
 Library vendor : Model Technology
 Maximum unnamed designs : 3
 OPTIMIZED DESIGN _opt
-    Version string: F8m@4UJ^^cnm?zOzCh97D2
-    Top-level model: work blackbox_tb_behaviour_syn_cfg 1
+    Version string: SbPSNV;]Nb=[OLl8VDY=z2
+    Top-level model: work stream_tb_behaviour_cfg 1
     Compile options: -quiet -auto_acc_if_foreign -work work
     Short name: @_opt
     Opcode format: 10.1b; VCOM/VLOG SE Object version 51
-    Source directory: BlackBox
+    Source directory: GWTF
 OPTIMIZED DESIGN _opt1
-    Version string: igCJm@8lQ:@oo@c]jdc^D2
+    Version string: [@N>dVmSiA2OBIfB:z<aJ3
     Top-level model: work blackbox_tb_behaviour_cfg 1
     Compile options: -quiet -auto_acc_if_foreign -work work
     Short name: @_opt1
     Opcode format: 10.1b; VCOM/VLOG SE Object version 51
-    Source directory: BlackBox
-OPTIMIZED DESIGN _opt2
-    Version string: jz^7B0Om6a_4O`NY>YPZO1
-    Top-level model: work blackbox_tb_behaviour_cfg 1
-    Compile options: -quiet -auto_acc_if_foreign -work work
-    Short name: @_opt2
-    Opcode format: 10.1b; VCOM/VLOG SE Object version 51
-    Source directory: BlackBox
+    Source directory: GWTF
 ENTITY blackbox
-    Source modified time: Mon Dec  8 11:57:44 2014
+    Source modified time: Fri Dec 12 20:01:47 2014
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: /BlackBox
+    Source directory: GWTF
     HDL source file: VHDL/blackbox.vhd
     Source file: VHDL/blackbox.vhd
     Start location: VHDL/blackbox.vhd:4
@@ -35,48 +28,64 @@ ENTITY blackbox
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
     Debug Symbol file exists
-  ARCHITECTURE BODY synthesised
-    Source modified time: Mon Dec  8 17:21:30 2014
+  ARCHITECTURE BODY extracted
+    Source modified time: Fri Dec 12 20:40:42 2014
     Depends on: E work blackbox zh1o5hOMmI`EJ4VU_HSan0
     Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: BlackBox
-    HDL source file: VHDL/blackbox_SYNTH.vhd
-    Source file: VHDL/blackbox_SYNTH.vhd
-    Start location: VHDL/blackbox_SYNTH.vhd:7
-    Version string: 0h[RLzJFgEZ?3>ITHm:C^2
+    HDL source file: VHDL/blackbox_EXTR.vhd
+    Source file: VHDL/blackbox_EXTR.vhd
+    Start location: VHDL/blackbox_EXTR.vhd:13
+    Version string: 6MjcgQFW;Q8?@DQHidSiU0
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
+    Source directory: GWTF
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Fri Dec 12 20:34:56 2014
+    Depends on: E work blackbox zh1o5hOMmI`EJ4VU_HSan0
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    HDL source file: VHDL/blackbox_SYNTH.vhd
+    Source file: VHDL/blackbox_SYNTH.vhd
+    Start location: VHDL/blackbox_SYNTH.vhd:7
+    Version string: cY>M2]W`zTP24eNRd^k[20
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: GWTF
     Debug Symbol file exists
   ARCHITECTURE BODY behaviour
-    Source modified time: Mon Dec  8 12:15:32 2014
+    Source modified time: Fri Dec 12 20:03:27 2014
     Depends on: E work blackbox zh1o5hOMmI`EJ4VU_HSan0
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     HDL source file: VHDL/blackbox-behaviour.vhd
     Source file: VHDL/blackbox-behaviour.vhd
     Start location: VHDL/blackbox-behaviour.vhd:4
-    Version string: 4SYG_5mEmGZAZB0YB]R8;3
+    Version string: jR:U1hL;RH?Ci8d88FVGi1
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
-    Source directory: /BlackBox
+    Source directory: GWTF
     Debug Symbol file exists
 VHDL CONFIGURATION blackbox_behaviour_cfg
     Configuration for architecture: behaviour
     Configuration for entity: blackbox
-    Depends on: E work stream N`Egh7Gm>jA2WizZ=DeJd1
-    Depends on: C work stream_behaviour_cfg eT:oZ`WaVSH=<QzE`_zBd0
-    Depends on: A work blackbox behaviour 4SYG_5mEmGZAZB0YB]R8;3
+    Depends on: E work stream N76kMU:M5el7:FBLEV;z;0
+    Depends on: C work stream_behaviour_cfg <J82Vb^V]_XZ[aaMCGDb43
+    Depends on: A work blackbox behaviour jR:U1hL;RH?Ci8d88FVGi1
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work blackbox zh1o5hOMmI`EJ4VU_HSan0
-    Source modified time: Mon Dec  8 12:15:47 2014
-    Source directory: /BlackBox
+    Source modified time: Fri Dec 12 20:29:18 2014
+    Source directory: GWTF
     HDL source file: VHDL/blackbox_behaviour_cfg.vhd
     Source file: VHDL/blackbox_behaviour_cfg.vhd
     Start location: VHDL/blackbox_behaviour_cfg.vhd:1
@@ -85,32 +94,30 @@ VHDL CONFIGURATION blackbox_behaviour_cfg
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
-VHDL CONFIGURATION blackbox_synthesised_cfg
-    Configuration for architecture: synthesised
+VHDL CONFIGURATION blackbox_extracted_cfg
+    Configuration for architecture: extracted
     Configuration for entity: blackbox
-    Depends on: E cellslib iv110 Bdg]QV`zZkg7kCgfbQ_;e3
-    Depends on: E work stream N`Egh7Gm>jA2WizZ=DeJd1
-    Depends on: C work stream_behaviour_cfg eT:oZ`WaVSH=<QzE`_zBd0
+    Depends on: E cellslib mu111 hknW;QzWV8Je@9eJh_5o`3
     Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
-    Depends on: A work blackbox synthesised 0h[RLzJFgEZ?3>ITHm:C^2
+    Depends on: A work blackbox extracted 6MjcgQFW;Q8?@DQHidSiU0
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work blackbox zh1o5hOMmI`EJ4VU_HSan0
-    Source modified time: Mon Dec  8 17:24:21 2014
-    Source directory: BlackBox
-    HDL source file: VHDL/blackbox_synthesised_cfg.vhd
-    Source file: VHDL/blackbox_synthesised_cfg.vhd
-    Start location: VHDL/blackbox_synthesised_cfg.vhd:1
-    Version string: Mheb]9Q37Fimozh8m^g`T3
+    Source modified time: Fri Dec 12 20:41:31 2014
+    Source directory: GWTF
+    HDL source file: VHDL/blackbox_extracted_cfg.vhd
+    Source file: VHDL/blackbox_extracted_cfg.vhd
+    Start location: VHDL/blackbox_extracted_cfg.vhd:1
+    Version string: H1`Y6nIYAh:aEO1Oc=Ebh1
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
 ENTITY blackbox_tb
-    Source modified time: Mon Dec  8 12:17:22 2014
+    Source modified time: Fri Dec 12 20:02:25 2014
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: /BlackBox
+    Source directory: GWTF
     HDL source file: VHDL/blackbox_tb.vhd
     Source file: VHDL/blackbox_tb.vhd
     Start location: VHDL/blackbox_tb.vhd:4
@@ -121,7 +128,7 @@ ENTITY blackbox_tb
     Compile defaults: Explicit=1
     Debug Symbol file exists
   ARCHITECTURE BODY behaviour
-    Source modified time: Mon Dec  8 16:39:40 2014
+    Source modified time: Fri Dec 12 20:03:52 2014
     Depends on: E work blackbox_tb P6<n`=UZDZ6FehS?TCDD]0
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
@@ -133,7 +140,7 @@ ENTITY blackbox_tb
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
-    Source directory: /BlackBox
+    Source directory: GWTF
     Debug Symbol file exists
 VHDL CONFIGURATION blackbox_tb_behaviour_cfg
     Configuration for architecture: behaviour
@@ -144,8 +151,8 @@ VHDL CONFIGURATION blackbox_tb_behaviour_cfg
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work blackbox_tb P6<n`=UZDZ6FehS?TCDD]0
-    Source modified time: Mon Dec  8 12:32:45 2014
-    Source directory: /BlackBox
+    Source modified time: Fri Dec 12 20:29:26 2014
+    Source directory: GWTF
     HDL source file: VHDL/blackbox_tb_behaviour_cfg.vhd
     Source file: VHDL/blackbox_tb_behaviour_cfg.vhd
     Start location: VHDL/blackbox_tb_behaviour_cfg.vhd:1
@@ -154,156 +161,92 @@ VHDL CONFIGURATION blackbox_tb_behaviour_cfg
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
-VHDL CONFIGURATION blackbox_tb_behaviour_syn_cfg
+VHDL CONFIGURATION blackbox_tb_behaviour_extracted_cfg
     Configuration for architecture: behaviour
     Configuration for entity: blackbox_tb
     Depends on: E work blackbox zh1o5hOMmI`EJ4VU_HSan0
-    Depends on: C work blackbox_synthesised_cfg Mheb]9Q37Fimozh8m^g`T3
+    Depends on: C work blackbox_extracted_cfg H1`Y6nIYAh:aEO1Oc=Ebh1
     Depends on: A work blackbox_tb behaviour jPRR@FOWZ[ZgV4iX8eAO80
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work blackbox_tb P6<n`=UZDZ6FehS?TCDD]0
-    Source modified time: Mon Dec  8 17:24:40 2014
-    Source directory: BlackBox
-    HDL source file: VHDL/blackbox_tb_behaviour_syn_cfg.vhd
-    Source file: VHDL/blackbox_tb_behaviour_syn_cfg.vhd
-    Start location: VHDL/blackbox_tb_behaviour_syn_cfg.vhd:1
-    Version string: VILHbnRf6DzXSOS[DQS981
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-ENTITY iv
-    Source modified time: Mon Dec  8 11:01:04 2014
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: BlackBox
-    HDL source file: VHDL/iv.vhd
-    Source file: VHDL/iv.vhd
-    Start location: VHDL/iv.vhd:4
-    Version string: >DP]fM[YH24K;EQSc5E_]1
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-    Debug Symbol file exists
-  ARCHITECTURE BODY synthesised
-    Source modified time: Mon Dec  8 17:20:13 2014
-    Depends on: E work iv >DP]fM[YH24K;EQSc5E_]1
-    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    HDL source file: VHDL/iv_SYNTH.vhd
-    Source file: VHDL/iv_SYNTH.vhd
-    Start location: VHDL/iv_SYNTH.vhd:7
-    Version string: b=;[C9@USe`9gYGRjIL=B2
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-    Source directory: BlackBox
-    Debug Symbol file exists
-  ARCHITECTURE BODY behaviour
-    Source modified time: Mon Dec  8 11:01:21 2014
-    Depends on: E work iv >DP]fM[YH24K;EQSc5E_]1
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    HDL source file: VHDL/iv-behaviour.vhd
-    Source file: VHDL/iv-behaviour.vhd
-    Start location: VHDL/iv-behaviour.vhd:4
-    Version string: _V7KN<E`B:81]1QdM=?^10
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-    Source directory: BlackBox
-    Debug Symbol file exists
-VHDL CONFIGURATION iv_behaviour_cfg
-    Configuration for architecture: behaviour
-    Configuration for entity: iv
-    Depends on: A work iv behaviour _V7KN<E`B:81]1QdM=?^10
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Depends on: E work iv >DP]fM[YH24K;EQSc5E_]1
-    Source modified time: Mon Dec  8 11:01:29 2014
-    Source directory: BlackBox
-    HDL source file: VHDL/iv_behaviour_cfg.vhd
-    Source file: VHDL/iv_behaviour_cfg.vhd
-    Start location: VHDL/iv_behaviour_cfg.vhd:1
-    Version string: a=P`2F<HBf]JV>=?L[m7o0
+    Source modified time: Fri Dec 12 20:42:05 2014
+    Source directory: GWTF
+    HDL source file: VHDL/blackbox_tb_behaviour_extracted_cfg.vhd
+    Source file: VHDL/blackbox_tb_behaviour_extracted_cfg.vhd
+    Start location: VHDL/blackbox_tb_behaviour_extracted_cfg.vhd:1
+    Version string: 3oao=j6iEC;L<QFBlP^F60
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
 ENTITY stream
-    Source modified time: Mon Dec  8 11:48:28 2014
+    Source modified time: Fri Dec 12 19:56:14 2014
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: BlackBox
+    Source directory: GWTF
     HDL source file: VHDL/stream.vhd
     Source file: VHDL/stream.vhd
     Start location: VHDL/stream.vhd:4
-    Version string: N`Egh7Gm>jA2WizZ=DeJd1
+    Version string: N76kMU:M5el7:FBLEV;z;0
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
     Debug Symbol file exists
   ARCHITECTURE BODY synthesised
-    Source modified time: Mon Dec  8 17:29:58 2014
-    Depends on: E work stream N`Egh7Gm>jA2WizZ=DeJd1
+    Source modified time: Fri Dec 12 20:31:14 2014
+    Depends on: E work stream N76kMU:M5el7:FBLEV;z;0
     Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: BlackBox
     HDL source file: VHDL/stream_SYNTH.vhd
     Source file: VHDL/stream_SYNTH.vhd
     Start location: VHDL/stream_SYNTH.vhd:7
-    Version string: ZL6U7;RFPd_Io_TBRh0ch3
+    Version string: ?:Y3<_1ffd^VQ_nV[Th@V3
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
+    Source directory: GWTF
     Debug Symbol file exists
   ARCHITECTURE BODY behaviour
-    Source modified time: Mon Dec  8 17:05:05 2014
-    Depends on: E work stream N`Egh7Gm>jA2WizZ=DeJd1
+    Source modified time: Fri Dec 12 19:57:04 2014
+    Depends on: E work stream N76kMU:M5el7:FBLEV;z;0
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     HDL source file: VHDL/stream-behaviour.vhd
     Source file: VHDL/stream-behaviour.vhd
     Start location: VHDL/stream-behaviour.vhd:4
-    Version string: HjaF^GgMIjjEZ1b59ef6e3
+    Version string: HCEia]NVL][i`M_NbT[MD1
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
-    Source directory: BlackBox
+    Source directory: GWTF
     Debug Symbol file exists
 VHDL CONFIGURATION stream_behaviour_cfg
     Configuration for architecture: behaviour
     Configuration for entity: stream
-    Depends on: E work tbuf [NchW2@M9MaNzheLbP`n21
-    Depends on: C work tbuf_behaviour_cfg K66@WUW=27C;?@D1;ZWVl0
-    Depends on: A work stream behaviour HjaF^GgMIjjEZ1b59ef6e3
+    Depends on: A work stream behaviour HCEia]NVL][i`M_NbT[MD1
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Depends on: E work stream N`Egh7Gm>jA2WizZ=DeJd1
-    Source modified time: Mon Dec  8 11:51:42 2014
-    Source directory: /BlackBox
+    Depends on: E work stream N76kMU:M5el7:FBLEV;z;0
+    Source modified time: Fri Dec 12 19:57:42 2014
+    Source directory: GWTF
     HDL source file: VHDL/stream_behaviour_cfg.vhd
     Source file: VHDL/stream_behaviour_cfg.vhd
     Start location: VHDL/stream_behaviour_cfg.vhd:1
-    Version string: eT:oZ`WaVSH=<QzE`_zBd0
+    Version string: <J82Vb^V]_XZ[aaMCGDb43
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
 ENTITY stream_tb
-    Source modified time: Mon Dec  8 16:48:06 2014
+    Source modified time: Fri Dec 12 19:56:37 2014
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: /BlackBox
+    Source directory: GWTF
     HDL source file: VHDL/stream_tb.vhd
     Source file: VHDL/stream_tb.vhd
     Start location: VHDL/stream_tb.vhd:4
@@ -314,145 +257,35 @@ ENTITY stream_tb
     Compile defaults: Explicit=1
     Debug Symbol file exists
   ARCHITECTURE BODY behaviour
-    Source modified time: Mon Dec  8 16:52:45 2014
+    Source modified time: Fri Dec 12 19:57:32 2014
     Depends on: E work stream_tb MU?MV[O@`_[Y`2^XT96Pm3
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     HDL source file: VHDL/stream_tb-behaviour.vhd
     Source file: VHDL/stream_tb-behaviour.vhd
     Start location: VHDL/stream_tb-behaviour.vhd:4
-    Version string: d7c02mCR`W9Sd7R=^zVeV1
+    Version string: AOEH979=nZ]<W<DLW@L1C3
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
-    Source directory: /BlackBox
+    Source directory: GWTF
     Debug Symbol file exists
 VHDL CONFIGURATION stream_tb_behaviour_cfg
     Configuration for architecture: behaviour
     Configuration for entity: stream_tb
-    Depends on: E work stream N`Egh7Gm>jA2WizZ=DeJd1
-    Depends on: C work stream_behaviour_cfg eT:oZ`WaVSH=<QzE`_zBd0
-    Depends on: A work stream_tb behaviour d7c02mCR`W9Sd7R=^zVeV1
+    Depends on: E work stream N76kMU:M5el7:FBLEV;z;0
+    Depends on: C work stream_behaviour_cfg <J82Vb^V]_XZ[aaMCGDb43
+    Depends on: A work stream_tb behaviour AOEH979=nZ]<W<DLW@L1C3
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Depends on: E work stream_tb MU?MV[O@`_[Y`2^XT96Pm3
-    Source modified time: Mon Dec  8 16:53:08 2014
-    Source directory: /BlackBox
+    Source modified time: Fri Dec 12 19:58:55 2014
+    Source directory: GWTF
     HDL source file: VHDL/stream_tb_behaviour_cfg.vhd
     Source file: VHDL/stream_tb_behaviour_cfg.vhd
     Start location: VHDL/stream_tb_behaviour_cfg.vhd:1
     Version string: ;gcf_g`3io7IkfU6m[^^d2
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-ENTITY tbuf
-    Source modified time: Mon Dec  8 11:34:02 2014
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: BlackBox
-    HDL source file: VHDL/tbuf.vhd
-    Source file: VHDL/tbuf.vhd
-    Start location: VHDL/tbuf.vhd:4
-    Version string: [NchW2@M9MaNzheLbP`n21
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-    Debug Symbol file exists
-  ARCHITECTURE BODY synthesised
-    Source modified time: Mon Dec  8 17:20:45 2014
-    Depends on: E work tbuf [NchW2@M9MaNzheLbP`n21
-    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    HDL source file: VHDL/tbuf_SYNTH.vhd
-    Source file: VHDL/tbuf_SYNTH.vhd
-    Start location: VHDL/tbuf_SYNTH.vhd:7
-    Version string: @5QdYC=VGTz6SdnUg=b953
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-    Source directory: BlackBox
-    Debug Symbol file exists
-  ARCHITECTURE BODY behaviour
-    Source modified time: Mon Dec  8 11:35:28 2014
-    Depends on: E work tbuf [NchW2@M9MaNzheLbP`n21
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    HDL source file: VHDL/tbuf-behaviour.vhd
-    Source file: VHDL/tbuf-behaviour.vhd
-    Start location: VHDL/tbuf-behaviour.vhd:4
-    Version string: n=DnUeob7VRg;UY0X^aQb0
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-    Source directory: BlackBox
-    Debug Symbol file exists
-VHDL CONFIGURATION tbuf_behaviour_cfg
-    Configuration for architecture: behaviour
-    Configuration for entity: tbuf
-    Depends on: A work tbuf behaviour n=DnUeob7VRg;UY0X^aQb0
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Depends on: E work tbuf [NchW2@M9MaNzheLbP`n21
-    Source modified time: Mon Dec  8 11:39:03 2014
-    Source directory: BlackBox
-    HDL source file: VHDL/tbuf_behaviour_cfg.vhd
-    Source file: VHDL/tbuf_behaviour_cfg.vhd
-    Start location: VHDL/tbuf_behaviour_cfg.vhd:1
-    Version string: K66@WUW=27C;?@D1;ZWVl0
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-ENTITY tbuf_tb
-    Source modified time: Mon Dec  8 16:58:50 2014
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Source directory: BlackBox
-    HDL source file: VHDL/tbuf_tb.vhd
-    Source file: VHDL/tbuf_tb.vhd
-    Start location: VHDL/tbuf_tb.vhd:4
-    Version string: OgM_B3VZ:mEFKAZJFAK5e2
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-    Debug Symbol file exists
-  ARCHITECTURE BODY behaviour
-    Source modified time: Mon Dec  8 17:01:28 2014
-    Depends on: E work tbuf_tb OgM_B3VZ:mEFKAZJFAK5e2
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    HDL source file: VHDL/tbuf_tb-behaviour.vhd
-    Source file: VHDL/tbuf_tb-behaviour.vhd
-    Start location: VHDL/tbuf_tb-behaviour.vhd:4
-    Version string: OIPkH0@hW>3in7oNX5=oo2
-    Opcode format: 10.1b; VCOM SE Object version 51
-    VHDL language standard: 2 (VHDL-2002)
-    Compile options: -lower -explicit -work work -quiet -nologo
-    Compile defaults: Explicit=1
-    Source directory: BlackBox
-    Debug Symbol file exists
-VHDL CONFIGURATION tbuf_tb_behaviour_cfg
-    Configuration for architecture: behaviour
-    Configuration for entity: tbuf_tb
-    Depends on: E work tbuf [NchW2@M9MaNzheLbP`n21
-    Depends on: C work tbuf_behaviour_cfg K66@WUW=27C;?@D1;ZWVl0
-    Depends on: A work tbuf_tb behaviour OIPkH0@hW>3in7oNX5=oo2
-    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
-    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Depends on: E work tbuf_tb OgM_B3VZ:mEFKAZJFAK5e2
-    Source modified time: Mon Dec  8 17:01:57 2014
-    Source directory: BlackBox
-    HDL source file: VHDL/tbuf_tb_behaviour_cfg.vhd
-    Source file: VHDL/tbuf_tb_behaviour_cfg.vhd
-    Start location: VHDL/tbuf_tb_behaviour_cfg.vhd:1
-    Version string: H<1IAGH07We3k>Fb=l<K?1
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo

@@ -3,22 +3,13 @@ six
 ------ reading image description file '/data/public/common/software/nelsis/5.4.1.1/share/lib/celllibs/fishbone/image.seadif' ------
 ------ opening seadif ------
 ------ checking your circuit 'blackbox' ------
------- reading nelsis circuit-cell 'tbuf' ------
------- reading nelsis circuit-cell 'stream' ------
------- reading nelsis circuit-cell 'blackbox' ------
------- reading nelsis layout-cell 'tbuf' ------
------- reading nelsis layout-cell 'stream' ------
------- checking match with placement layout 'Tmpblackbox31694' ------
------- reading nelsis layout-cell 'Tmpblackbox31694' ------
------- writing nelsis 'Tmpblackbox31694' as sdflay 'Tmp_Cell_(blackbox(blackbox(test)))' ------
------- writing nelsis 'tbuf' as sdflay 'tbuf(tbuf(tbuf(test)))' ------
------- writing nelsis 'stream' as sdflay 'stream(stream(stream(test)))' ------
------- writing nelsis 'tbuf' as sdfcir 'tbuf(tbuf(test)) ------
------- writing nelsis 'stream' as sdfcir 'stream(stream(test)) ------
------- writing nelsis 'blackbox' as sdfcir 'blackbox(blackbox(test)) ------
+------ circuit 'blackbox' is still up-to-date ------
+------ checking match with placement layout 'Tmpblackbox31129' ------
+------ reading nelsis layout-cell 'Tmpblackbox31129' ------
+------ writing nelsis 'Tmpblackbox31129' as sdflay 'Tmp_Cell_(blackbox(blackbox(test)))' ------
 ------ input seems good enough: calling router ------
-calling program: trout -l test -f blackbox -c blackbox -o Tmp_Cell_ -v -d Tmp_Cell_ 
------- check successful ------
------- converting result back into nelsis as cell 'Tmpblackbox31694' ------
-calling program: nelsea -rLH -f blackbox -c blackbox -l Tmp_Cell_ Tmpblackbox31694 
+calling program: trout -l test -f blackbox -c blackbox -o Tmp_Cell_ -d Tmp_Cell_ 
+------ routing successful ------
+------ converting result back into nelsis as cell 'Tmpblackbox31129' ------
+calling program: nelsea -rLH -f blackbox -c blackbox -l Tmp_Cell_ Tmpblackbox31129 
 ------ sea: task completed ------
