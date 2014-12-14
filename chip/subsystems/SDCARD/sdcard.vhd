@@ -222,7 +222,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						end if;
 					when read_response =>
 						if(spi_output = "00000000") then
-							state <= wait_data;
+							state <= start_read_data_part;
 						elsif(spi_output = "11111111") then
 							state <= start_receive_response;
 						else
