@@ -2,5 +2,5 @@
 ------ reading image description file '/data/public/common/software/nelsis/5.4.1.1/share/lib/celllibs/fishbone/image.seadif' ------
 ------ opening seadif ------
 ------ reading sdf laycell 'Tmp_Cell_(blackbox(blackbox(test)))': OK ------
------- writing sdflay 'Tmp_Cell_(blackbox(blackbox(test)))' into nelsis 'Tmpblackbox31694' ------
+------ writing sdflay 'Tmp_Cell_(blackbox(blackbox(test)))' into nelsis 'Tmpblackbox31129' ------
 ------ nelsea: task completed ------

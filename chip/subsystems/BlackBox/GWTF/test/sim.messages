@@ -1,0 +1,11 @@
+cat: /data/public/common/software/opprog/opcells.spc: No such file or directory
+Warning: vs: no DC value, transient time 0 value used
+Warning: vmiso_s_1: no DC value, transient time 0 value used
+Warning: vmiso_s_0: no DC value, transient time 0 value used
+Warning: vss_m_1: no DC value, transient time 0 value used
+Warning: vmosi_m_1: no DC value, transient time 0 value used
+Warning: vsclk_m_1: no DC value, transient time 0 value used
+Warning: vss_m_0: no DC value, transient time 0 value used
+Warning: vmosi_m_0: no DC value, transient time 0 value used
+Warning: vsclk_m_0: no DC value, transient time 0 value used
+Warning: vvdd: no DC value, transient time 0 value used

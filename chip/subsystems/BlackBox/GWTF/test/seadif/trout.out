@@ -4,8 +4,36 @@
 ------ reading placement 'Tmp_Cell_(blackbox(blackbox(test)))' ------
 ------ building data structure  ------
 ------ making grid  ------
+------ routing started Fri Dec 12 20:36:24 2014
+ 19 nets have to be routed.
+Routing net 'ss_m_0' (2/2): .b OK!
+Routing net 'miso_m_0' (2/2): .b OK!
+Routing net 'miso_m_1' (2/2): .b OK!
+Routing net 'ss_m_1' (2/2): .b OK!
+Routing net 'miso_s_1' (2/2): .b OK!
+Routing net 'sclk_m_0' (2/2): .b OK!
+Routing net 'sclk_m_1' (2/2): .b OK!
+Routing net 'sclk_s_0' (2/2): .b OK!
+Routing net 'sclk_s_1' (2/2): .b OK!
+Routing net 'mosi_m_0' (2/2): .b OK!
+Routing net 'mosi_m_1' (2/2): .b OK!
+Routing net 'mosi_s_0' (2/2): .b OK!
+Routing net 'mosi_s_1' (2/2): .b OK!
+Routing net 'ss_s_0' (2/2): .b OK!
+Routing net 'ss_s_1' (2/2): .b OK!
+Routing net 'miso_s_0' (2/2): .b OK!
+Routing net 'vss' :  (Power special)
+Routing net 's' (5/5): ....b OK!
+Routing net 'vdd' :  (Power special)
+READY
+----- Some interesting statistics ------
+Total number of nets:                 19 (100% completion)
+Total length of routed wires:         47 grids = 0.414 mm
+No. of transistors (total / used):    112/112 = 100.00 %
+CPU-time consumption:                 0.00 sec.
+Elapsed time during routing:          0.00 sec. (100.00 % of cpu)
 ------ Verifying Connectivity ------
 ------ No unconnect nor short-circuits ------
 ------ Writing 'Tmp_Cell_(blackbox(blackbox(test)))' ------
------- Trout: task completed on Mon Dec  8 17:59:16 2014
+------ Trout: task completed on Fri Dec 12 20:36:24 2014
  terminate
