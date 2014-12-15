@@ -1,7 +1,6 @@
 const int outpin = 7;
 #include <SPI.h>
 int tijd1,tijd3;
-int slavepin = 10;
 int output = 7;
 int buttonpin1 = 10;
 int buttonpin2 = 11;
@@ -13,6 +12,7 @@ int pin1 = 7;
 int pin3 = A1;
 int plaatsplayer1 = 6;
 int plaatsplayer2 = 6;
+int slavepin = 13;
 int button1,button2,leftbuttonplayer2,leftbuttonplayer1,rightbuttonplayer1,rightbuttonplayer2,sumplayer1;
 void setup() {
   Serial.begin(9600);
@@ -23,11 +23,12 @@ void setup() {
   pinMode(leftbuttonplayer1pin, INPUT);
   pinMode(rightbuttonplayer2pin, INPUT);
   pinMode(rightbuttonplayer1pin, INPUT);
+  pinMode(slavepin, OUTPUT);
 }
 
 void loop()
 {
-  long duration, inches, cm; //pulse make
+ /* long duration, inches, cm; //pulse make
   button1 = 1;//digitalRead(buttonpin1);
   button2 = 0;//digitalRead(buttonpin2);
   pinMode(outpin, OUTPUT);
@@ -132,21 +133,20 @@ void loop()
       }
     }  
   }
-  
+  */
   if(plaatsplayer1 > 12)
   {
    plaatsplayer1 = 12; 
   }
   plaatsplayer2 = 6;
-   Serial.println(plaatsplayer1);
+  plaatsplayer1 = 6;
   byte test;
    test = byte(plaatsplayer1);
    test = test << 4;
    test = test | plaatsplayer2;
-   //Serial.println(test,BIN);
-   output = test;
+   Serial.println(test,BIN);
+   output = test;  
    SPI.transfer(output);
-   delay(1);
 }
 
 
