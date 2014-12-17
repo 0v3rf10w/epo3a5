@@ -1,0 +1,1272 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/heokkerman/git
+T_opt
+VPoeVidFU`hi2eS?1S32Te1
+04 6 9 work cpu_tb behaviour 1
+=1-b8ca3a76f2b3-548eb650-73654-563b
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt
+Z2 OE;O;10.1b;51
+Z3 d/home/heokkerman/git
+T_opt1
+VZbP=o:E9E3`D@=2lz?[M30
+04 13 9 work pc_counter_tb behaviour 1
+=1-b8ca3a76f2b3-548ea935-72484-40ab
+R1
+n@_opt1
+R2
+R3
+T_opt2
+VcOBQ5TT?c`IYz=1f4d6h:0
+04 6 9 work reg_tb behaviour 1
+=1-b8ca3a76f2b3-548ebde1-45237-61e1
+R1
+n@_opt2
+R2
+Ealu
+Z4 w1418632986
+Z5 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z6 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z7 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z8 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z9 d/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal
+Z10 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/ALU.vhd
+Z11 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/ALU.vhd
+l0
+L5
+Vmz^M7kW`966:DTDC9>?<D2
+Z12 OE;C;10.1b;51
+32
+Z13 !s108 1418638578.222985
+Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/ALU.vhd|
+Z15 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/ALU.vhd|
+Z16 o-work work -2002 -explicit
+Z17 tExplicit 1
+!s100 8ddLM<Tafb9cfhzF1HzG_0
+!i10b 1
+Abehaviour
+R5
+R6
+R7
+R8
+DEx4 work 3 alu 0 22 mz^M7kW`966:DTDC9>?<D2
+l19
+L15
+Vn_`i_W0ARP:ZSXMJ7zJ5k1
+R12
+32
+R13
+R14
+R15
+R16
+R17
+!s100 YWJ`6;DjC2dTXgMm?H[kC2
+!i10b 1
+Ebuf_10
+R4
+Z18 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R7
+R8
+R9
+Z19 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/3-state_buffer.vhd
+Z20 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/3-state_buffer.vhd
+l0
+L281
+VSjaR1VVY0>iF5?z2>F@:G1
+R12
+32
+Z21 !s108 1418638575.857024
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/3-state_buffer.vhd|
+Z23 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/3-state_buffer.vhd|
+R16
+R17
+!s100 IMd8OI@OO@edno83FUWGF2
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 6 buf_10 0 22 SjaR1VVY0>iF5?z2>F@:G1
+l288
+L287
+V14[zAkG`GiVn>JTI_Q]e]0
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 ]W<AgAnjEYiOO@5F3RCz42
+!i10b 1
+Ebuf_2
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L81
+VeDCFkZ?D?LY1Od]^M]CPU2
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 O3NGC]QUo81kXeZje^nCL0
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 buf_2 0 22 eDCFkZ?D?LY1Od]^M]CPU2
+l88
+L87
+VZP_6bimF5`HI_keSe=G[F0
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 4?G[4:H80jAL5;Gejl?Ge0
+!i10b 1
+Ebuf_3
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L106
+Vl0k`_C2=D@cdUP>G[C:[W3
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 5KjoOgYLEX@@<^L0c`31j1
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 buf_3 0 22 l0k`_C2=D@cdUP>G[C:[W3
+l113
+L112
+V1X]fg1OM7dC[FQRTl;m`00
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 Fd[6fP]iF>DLLE1GlHBoJ1
+!i10b 1
+Ebuf_4
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L131
+V]OD]7P0L9N]hNZS=<I9^_2
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 fKWUY`M[fz:KcAeAZhY`=3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 buf_4 0 22 ]OD]7P0L9N]hNZS=<I9^_2
+l138
+L137
+VP>VHg9F1;[>MhJLM:d4NQ3
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 eL30lo[2nXhFG66aVI[^a1
+!i10b 1
+Ebuf_5
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L156
+Vg@CID]ej49GM3nJlOR>>K3
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 IDUba1;TZZn@o6Xo4j@W21
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 buf_5 0 22 g@CID]ej49GM3nJlOR>>K3
+l163
+L162
+VzzFRS9:Obha;F><hE1D7W2
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 SZbH0mJEY:7KVUcEPJ2i[3
+!i10b 1
+Ebuf_6
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L181
+VI5zCm]`2hPkXjI]6W6k>A2
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 :V2N_YLVVD^9:IhT9`Y4F3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 buf_6 0 22 I5zCm]`2hPkXjI]6W6k>A2
+l188
+L187
+VJOS14FT]SBizndc<g>1Tk2
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 cD?PDmcNM=GA<[jdazOBM1
+!i10b 1
+Ebuf_7
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L206
+V`NZCT_`h`8E3ZYWKa[d4D2
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 mKMWDS^0lRFgAon`hNVL41
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 buf_7 0 22 `NZCT_`h`8E3ZYWKa[d4D2
+l213
+L212
+VX3glcAFj30P;h7J0EzC^f3
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 fFd2AbG;ZFEYPkcz5SO8Y2
+!i10b 1
+Ebuf_8
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L231
+VI>Rg3;?3RW<Dak_4[;;nM2
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 ?IbS4CnG6=nb1X;02`l^b3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 buf_8 0 22 I>Rg3;?3RW<Dak_4[;;nM2
+l238
+L237
+V9A>JzkWWPn^2XmVh5oBeU0
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 LM^kYS8FCA_EM6YYb;4aU2
+!i10b 1
+Ebuf_9
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L256
+V8`=oGageThznHP>;@UahF0
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 14^FR11oBGfMi=0k`OemX3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 buf_9 0 22 8`=oGageThznHP>;@UahF0
+l263
+L262
+VgJD5zl`?R=4n35W649QHk1
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 [@Q:72^BAB_mQX<fEf;fd0
+!i10b 1
+Ebuf_a
+R4
+R7
+R8
+R9
+R19
+R20
+l0
+L7
+V0n:=73Ozc<KbC4>oUR3X:3
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 gbUWaK@d_^9[gfW9XmTYi2
+!i10b 1
+Abehaviour
+R7
+R8
+DEx4 work 5 buf_a 0 22 0n:=73Ozc<KbC4>oUR3X:3
+l14
+L13
+V]agHCz<E?`mjkfl`89CYB0
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 hT8A_b8BgkALXd234;F?I0
+!i10b 1
+Ebuf_arg
+R4
+R7
+R8
+R9
+R19
+R20
+l0
+L31
+V4`32W;Bn8>aCzaf?7noBR1
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 MVl>h_GD6ZMd?C3FM[4fc2
+!i10b 1
+Abehaviour
+R7
+R8
+DEx4 work 7 buf_arg 0 22 4`32W;Bn8>aCzaf?7noBR1
+l38
+L37
+Vz0EIlHafIIVTN:z_H>5PN3
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 A1U@@hjNbXKRm3M:QOT4h0
+!i10b 1
+Ebuf_in
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L56
+VnB<L8JYGQzl7hnfmhiIN82
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 NIK@O5^?TYzolaDS`4oMg1
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 6 buf_in 0 22 nB<L8JYGQzl7hnfmhiIN82
+l63
+L62
+VM_3B>KN509BbV;86STAZ22
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 o[z40<486zgG2ZnVVTz5O2
+!i10b 1
+Ecpu
+Z24 w1418638580
+R7
+R8
+R9
+Z25 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_top_level.vhd
+Z26 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_top_level.vhd
+l0
+L4
+VMdl5@0EWWaRKL:dKjmlHL1
+R12
+32
+Z27 !s108 1418638580.544922
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_top_level.vhd|
+Z29 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_top_level.vhd|
+R16
+R17
+!s100 WQ<Gz3UmF_PPHbc1FlUG73
+!i10b 1
+Abehaviour
+R7
+R8
+DEx4 work 3 cpu 0 22 Mdl5@0EWWaRKL:dKjmlHL1
+l125
+L17
+VR0:25^N6UA@fFT2[LfMmG2
+R12
+32
+R27
+R28
+R29
+R16
+R17
+!s100 X=_=1g@BhIM:Gl7`nSEL`2
+!i10b 1
+Ecpu1
+Z30 w1418633005
+R7
+R8
+R9
+R25
+R26
+l0
+L4
+VR8m7>:h3YiE[IRGh4nb^<2
+R12
+32
+Z31 !s108 1418633552.012946
+R28
+R29
+R16
+R17
+!s100 UQQQC^Bc;dQbbnmkO2N=10
+!i10b 1
+Abehaviour
+R7
+R8
+DEx4 work 4 cpu1 0 22 R8m7>:h3YiE[IRGh4nb^<2
+l126
+L14
+VZ9TLgAzLIh1MPHGz5RYAD0
+R12
+32
+R31
+R28
+R29
+R16
+R17
+!s100 n@D7WeXV6^WW>0blT=`da2
+!i10b 1
+Ecpu_tb
+Z32 w1418638899
+R7
+R8
+R9
+Z33 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_tb.vhd
+Z34 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_tb.vhd
+l0
+L4
+VHVoYB;MU8h0LM013D7X1_3
+R12
+32
+Z35 !s108 1418638914.326202
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_tb.vhd|
+Z37 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_tb.vhd|
+R16
+R17
+!s100 7G`bi28T:Z9<lEQ@IUngj3
+!i10b 1
+Abehaviour
+R7
+R8
+DEx4 work 6 cpu_tb 0 22 HVoYB;MU8h0LM013D7X1_3
+l32
+L7
+VL74Qdj2lhdmNfbHWJT9001
+R12
+32
+R35
+R36
+R37
+R16
+R17
+!s100 ZRG[Y9e:o>l_3VIh=02f92
+!i10b 1
+Edecoder
+Z38 w1418638387
+R18
+R7
+R8
+R9
+Z39 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Instruction_decoder.vhd
+Z40 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Instruction_decoder.vhd
+l0
+L5
+VN[:gLIL@^eTHGK^g;:JXn0
+R12
+32
+Z41 !s108 1418638580.801189
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Instruction_decoder.vhd|
+Z43 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Instruction_decoder.vhd|
+R16
+R17
+!s100 <TnUcMN7?`<X95>58DKNQ3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 7 decoder 0 22 N[:gLIL@^eTHGK^g;:JXn0
+l24
+L20
+VDh@`Ml3WYS?Yi^BJRSHnL1
+R12
+32
+R41
+R42
+R43
+R16
+R17
+!s100 POdI4g<aP^3kS>W?_k@3D3
+!i10b 1
+Edecoder1
+Z44 w1418632992
+R18
+R7
+R8
+R9
+R39
+R40
+l0
+L5
+VhN6Vg[TJnRbmoJY01<M`H2
+R12
+32
+Z45 !s108 1418633552.269651
+R42
+R43
+R16
+R17
+!s100 J_5?dob?TMB`>fZ?6E]H<3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 8 decoder1 0 22 hN6Vg[TJnRbmoJY01<M`H2
+l24
+L20
+VefJHSzz?H^L5PE7NRP]FM0
+R12
+32
+R45
+R42
+R43
+R16
+R17
+!s100 EJmaZ=8d70O1]52QJJ_B40
+!i10b 1
+Einstr_buf
+R4
+R18
+R7
+R8
+R9
+R19
+R20
+l0
+L306
+VWKOOmXME_AH4Q9N;W4SDC3
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 0L`l^Y7Nk=A3S:Y;IEfR53
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 9 instr_buf 0 22 WKOOmXME_AH4Q9N;W4SDC3
+l313
+L312
+Vo_8@=lQ19l]e3jPH=o^fA3
+R12
+32
+R21
+R22
+R23
+R16
+R17
+!s100 6[2nQAZz^inLVJlGkKhdY3
+!i10b 1
+Epc_counter
+R44
+R5
+R7
+R8
+R9
+Z46 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Program_Counter.vhd
+Z47 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Program_Counter.vhd
+l0
+L5
+V]UhohB4:YgYK^l_NW>08X0
+R12
+32
+Z48 !s108 1418638581.028775
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Program_Counter.vhd|
+Z50 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Program_Counter.vhd|
+R16
+R17
+!s100 5Q;AgaR`SVecM`fIK5e@i1
+!i10b 1
+Abehaviour
+R5
+R7
+R8
+DEx4 work 10 pc_counter 0 22 ]UhohB4:YgYK^l_NW>08X0
+l16
+L14
+VU<AbbXGSno@XQa7GzCzzD1
+R12
+32
+R48
+R49
+R50
+R16
+R17
+!s100 DLmAIiKWR9JkWkMTEZ8ld3
+!i10b 1
+Epc_counter_tb
+R44
+R7
+R8
+R9
+Z51 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/pc_counter_tb.vhd
+Z52 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/pc_counter_tb.vhd
+l0
+L4
+VBgUZR1meQM0CDaMiWYOX@3
+R12
+32
+Z53 !s108 1418638584.644879
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/pc_counter_tb.vhd|
+Z55 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/pc_counter_tb.vhd|
+R16
+R17
+!s100 zDNC4SCbG0g0QIzoWh0O`2
+!i10b 1
+Abehaviour
+R7
+R8
+DEx4 work 13 pc_counter_tb 0 22 BgUZR1meQM0CDaMiWYOX@3
+l22
+L7
+V4Z7@KgejIo<BI=N:=:GjH3
+R12
+32
+R53
+R54
+R55
+R16
+R17
+!s100 D>Fmo=OQ`>Y35KRfQaZDF3
+!i10b 1
+Ereg_10
+R44
+R18
+R7
+R8
+R9
+Z56 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/register.vhd
+Z57 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/register.vhd
+l0
+L278
+V]1MAOkM?Ra=Nf:BNRIKfQ2
+R12
+32
+Z58 !s108 1418638581.489804
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/register.vhd|
+Z60 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/register.vhd|
+R16
+R17
+!s100 aSo`nS7J``_P2aP0;`?m43
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 6 reg_10 0 22 ]1MAOkM?Ra=Nf:BNRIKfQ2
+l287
+L286
+VJW`5Q:[R_P7T8KEN]?LME1
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 L>X7[ad^]81Xm[VTB6m[:2
+!i10b 1
+Ereg_2
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L62
+Vf0n6SC]0b4K4[d:5^0cEK2
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 WP?]aTf15m8SXfR4mL6jP1
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 reg_2 0 22 f0n6SC]0b4K4[d:5^0cEK2
+l71
+L70
+V1<C:7H:?36Q482W19UlQX1
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 9e8z?FIi;>m0V[ZzQO<OM1
+!i10b 1
+Ereg_3
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L89
+VX_`?YzU<BS[l20`B6K6;n1
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 FH@GWAWA<1c[36TP<iP7G1
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 reg_3 0 22 X_`?YzU<BS[l20`B6K6;n1
+l98
+L97
+VzL43C5B9HacOVP=:CToZb1
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 Lzoz`8TXJ0J9<2TgD3n<k3
+!i10b 1
+Ereg_4
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L116
+VnC;IJ1iRV^60dn`AWh_mc1
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 nK5Lil7zIK5a=akXRgDJ>3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 reg_4 0 22 nC;IJ1iRV^60dn`AWh_mc1
+l125
+L124
+V<1T8H@7JR3kN19E1SdT^B1
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 ?P3:UH3?[NMP:^^6HAQA>0
+!i10b 1
+Ereg_5
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L143
+VXP4GKM<oA3V;flTKFYZ2C0
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 >Kze[H@M14kCnnL@c?lEj3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 reg_5 0 22 XP4GKM<oA3V;flTKFYZ2C0
+l152
+L151
+VX25RdfEgHd>QPd5D:ZzZ?2
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 4L;cZhD[52S12>3j>[9KD2
+!i10b 1
+Ereg_6
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L170
+VVNH?14iggI=N_SzIYWBoK3
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 5P22@?C]8;SKIY:4Oz]Ea3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 reg_6 0 22 VNH?14iggI=N_SzIYWBoK3
+l179
+L178
+V=7IRWHXzRc;>>kUe6Yn5c3
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 LU>V7`NI`:nno;aYY7=Mm3
+!i10b 1
+Ereg_7
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L197
+VObAlcK]@YX4DA=1TQVAe00
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 R`nf]E282<OeGR[aS>JV`3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 reg_7 0 22 ObAlcK]@YX4DA=1TQVAe00
+l206
+L205
+V`=27o5if>7TfIQcFNfl?;0
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 Mdh>f4@e`^AZPk>6A<VDX0
+!i10b 1
+Ereg_8
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L224
+VX5obFI3<V:XVY>Wl5LdRP1
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 7knf963<f6H];FRHP_Hn12
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 reg_8 0 22 X5obFI3<V:XVY>Wl5LdRP1
+l233
+L232
+VT[CA;2LNUg]C`CE;f];dk3
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 D>fiMAU<ULX_;1O?GVbYQ2
+!i10b 1
+Ereg_9
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L251
+Vhke`zjm6kAVXGnab_mOPU1
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 jYHPFaWFb3lEH;:HBmPLL3
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 reg_9 0 22 hke`zjm6kAVXGnab_mOPU1
+l260
+L259
+VP3VB11EMlc0S02?Pf1g?50
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 k<W_:JfG9bz6?ZXmVBiFJ3
+!i10b 1
+Ereg_a
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L8
+V1BD=WR<OMLiB[@h^f^VHZ3
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 XoFZE@fIMiYA3JTA50ZCR2
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 5 reg_a 0 22 1BD=WR<OMLiB[@h^f^VHZ3
+l17
+L16
+V7lceFIiPfQCT?:ScDAo5i0
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 13oaEi3eTbf<RgmBVj`<[3
+!i10b 1
+Ereg_cluster
+R44
+R7
+R8
+R9
+Z61 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Register+Buffer cluster.vhd
+Z62 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Register+Buffer cluster.vhd
+l0
+L5
+VR;0M@0n93ldPz3`16J<b:1
+R12
+32
+Z63 !s108 1418638581.251565
+Z64 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Register+Buffer cluster.vhd|
+Z65 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Register+Buffer cluster.vhd|
+R16
+R17
+!s100 [`@<9j_leBACNn^>ji>eM0
+!i10b 1
+Abehavioural
+R7
+R8
+DEx4 work 11 reg_cluster 0 22 R;0M@0n93ldPz3`16J<b:1
+l163
+L17
+V:ofeEg`lFRB<h<i0TEFi<3
+R12
+32
+R63
+R64
+R65
+R16
+R17
+!s100 0AGM9Qa1Hh0H[S0^ibi4S3
+!i10b 1
+Ereg_out
+R44
+R18
+R7
+R8
+R9
+R56
+R57
+l0
+L35
+Vi@lSTD]E:md^_bhM1j35Q0
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 iMf3HD4TlmhB:@kg<R`TV1
+!i10b 1
+Abehaviour
+R18
+R7
+R8
+DEx4 work 7 reg_out 0 22 i@lSTD]E:md^_bhM1j35Q0
+l44
+L43
+VnL>fC>dMg3SKj@LG5fZzY0
+R12
+32
+R58
+R59
+R60
+R16
+R17
+!s100 VejnE`0^9=]>a1<1>WkbV3
+!i10b 1
+Ereg_tb
+Z66 w1418640855
+R7
+R8
+R9
+Z67 8/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/reg_tb.vhd
+Z68 F/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/reg_tb.vhd
+l0
+L4
+VInL[gHIZElVO[IJS>gClV2
+R12
+32
+Z69 !s108 1418640856.147247
+Z70 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/reg_tb.vhd|
+Z71 !s107 /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/reg_tb.vhd|
+R16
+R17
+!s100 ;4J?VEhE0aLO^oPhJH<1[2
+!i10b 1
+Abehaviour
+R7
+R8
+DEx4 work 6 reg_tb 0 22 InL[gHIZElVO[IJS>gClV2
+l24
+L7
+VP:nU5A?Cg@OD]N`Q33cM;1
+R12
+32
+R69
+R70
+R71
+R16
+R17
+!s100 7hlgR4g3o4^>0eeg^Zojz1
+!i10b 1
