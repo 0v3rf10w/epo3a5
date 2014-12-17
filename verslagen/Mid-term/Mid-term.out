@@ -1,9 +1,23 @@
 \BOOKMARK [0][-]{chapter*.1}{Samenvatting}{}% 1
+<<<<<<< HEAD
 \BOOKMARK [0][-]{chapter.1}{Inleiding}{}% 2
 \BOOKMARK [0][-]{chapter.2}{Probleemstelling}{}% 3
-\BOOKMARK [0][-]{chapter.3}{Systeem overzicht}{}% 4
-\BOOKMARK [0][-]{chapter.4}{Besturing}{}% 5
-\BOOKMARK [0][-]{chapter.5}{ALU/PC}{}% 6
-\BOOKMARK [0][-]{chapter.6}{VGA}{}% 7
-\BOOKMARK [0][-]{chapter.7}{SD-kaart/SPI}{}% 8
-\BOOKMARK [0][-]{chapter.8}{Game: Pong}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Projectopgave}{chapter.2}% 4
+\BOOKMARK [0][-]{chapter.3}{Systeem overzicht}{}% 5
+\BOOKMARK [0][-]{chapter.4}{Besturing}{}% 6
+\BOOKMARK [0][-]{chapter.5}{ALU/PC}{}% 7
+\BOOKMARK [0][-]{chapter.6}{VGA}{}% 8
+\BOOKMARK [0][-]{chapter.7}{SD-kaart/SPI}{}% 9
+\BOOKMARK [0][-]{chapter.8}{Game: Pong}{}% 10
+=======
+\BOOKMARK [0][-]{chapter*.2}{Inleiding}{}% 2
+\BOOKMARK [0][-]{chapter*.3}{Probleemstelling}{}% 3
+\BOOKMARK [0][-]{chapter*.4}{Systeem overzicht}{}% 4
+\BOOKMARK [0][-]{chapter*.5}{Besturing}{}% 5
+\BOOKMARK [1][-]{subsection.0.0.1}{Ultrasone}{chapter*.5}% 6
+\BOOKMARK [0][-]{chapter*.6}{Blackbox}{}% 7
+\BOOKMARK [0][-]{chapter*.7}{ALU/PC}{}% 8
+\BOOKMARK [0][-]{chapter*.8}{VGA}{}% 9
+\BOOKMARK [0][-]{chapter*.9}{SD-kaart/SPI}{}% 10
+\BOOKMARK [0][-]{chapter*.10}{Game: Pong}{}% 11
+>>>>>>> origin/master

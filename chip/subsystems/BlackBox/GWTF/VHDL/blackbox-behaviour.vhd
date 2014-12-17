@@ -8,21 +8,19 @@ component stream is
         IN_1 :in    std_logic;
         OUT_0:out   std_logic;
         OUT_1:out   std_logic;
-        E    :in    std_logic;
-	notE :in	   std_logic);
+        E    :in    std_logic);
 end component;
 
 signal scm0, mom0, mim0, ssm0, scm1, mom1, mim1, ssm1: std_logic;
 signal scs0, mos0, mis0, sss0, scs1, mos1, mis1, sss1: std_logic; 
-signal ss, notss: std_logic;
+signal ss: std_logic;
 
 begin
-stream0: stream port map(scm0, scm1, scs0, scs1, ss, notss);
-stream1: stream port map(mom0, mom1, mos0, mos1, ss, notss);
-stream2: stream port map(ssm0, ssm1, sss0, sss1, ss, notss);
-stream3: stream port map(mis0, mis1, mim0, mim1, ss, notss);
+stream0: stream port map(scm0, scm1, scs0, scs1, ss);
+stream1: stream port map(mom0, mom1, mos0, mos1, ss);
+stream2: stream port map(ssm0, ssm1, sss0, sss1, ss);
+stream3: stream port map(mis0, mis1, mim0, mim1, ss);
 
-notss <= not s;
 ss <= s;
 
 scm0 <= sclk_m_0;

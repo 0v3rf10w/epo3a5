@@ -2,6 +2,6 @@
               0llxlhhxhxxlxxxhxx
               0llxlhhxhxxlxxxhxx
             100llxlhhxhxxlxxxhxl
-            105llllhhxhllllxxhxl
-            106llllhhhhllllhhhhl
+            104llxlhhhhxxlxhhhhl
+            105llllhhhhllllhhhhl
             499llllhhhhllllhhhhl

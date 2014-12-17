@@ -1,28 +1,60 @@
+\documentclass[oneside,dutch]{tudelft-report}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg}
+%\usepackage[numbered, framed]{mcode}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[dutch]{babel}
+\usepackage{calc}  
+\usepackage{enumitem}  
+\usepackage{tabto}
+\usepackage{adjustbox}
+\usepackage{blindtext}
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
 \begin{document}
 
 \frontmatter
 
 \title{Mid-term report}
-\author{Projectgroep A5}
+\author{Projectgroep A2}
 \affiliation{TU Delft}
 \maketitle
+
 \chapter{Samenvatting}
 
+\tableofcontents
+\mainmatter
 
 \chapter{Inleiding}
-\newpage
+EPO-3 is het derde project uit de propedeuse van de bachelor opleiding Electrical Engineeringaan de TU delft. Het doel van dit project is het ontwerpen van een chip, deze chip kan bijvoorbeeld een spelletje bevatten of als besturingsdoel dienen. Als project groep A5 is er gekozen voor het bouwen van een spelcomputer, hierop kunnen meerdere games gespeeld worden. De verschillende games moeten van een SD-kaart worden geladen voordat ze gespeeld kunnen worden. Het eerste spel dat ontworpen wordt is Pong, mocht er aan het eind van dit project nog tijd overblijven zullen er meerdere spellen volgen. De besturing loopt via ultrasone sensoren die de locatie van iemands hand bepalen. In dit tussentijdse ontwerp rapport zullen al deze onderdelen aanbod komen, daarbij moet vermeld worden dat ze nog niet geheel voltooid en getest zijn.  
 
 \chapter{Probleemstelling}
-\newpage
+\section{Projectopgave}
+De opdracht meegegeven door de TU is het ontwerpen van een chip. 
 
 \chapter{Systeem overzicht}
 \newpage
 
 \chapter{Besturing}
+Ons systeem wordt gespeeld doormiddel van 2 soorten besturing. De Ultrasone en de Button. De speler kan de modus selecteren doormiddel van een switch. Deze data van de buttons en de ultrasone worden verwerkt door een Arduino. Er is gekozen voor deze optie omdat de Arduino via SPI werkt. Hierdoor kan de SPI code getest worden en kunnen we het aantal pinnen dat gebruikt wordt laag houden. 
+
+\subsection{Ultrasone}
+Een unieke uitdaging van ons project is de Ultrasone besturing, de besturing werkt door middel van een (ultrasone)sensor aan de rechterzijde van de speler. Deze sensor meet met een speel ruimte van 75cm elke 11 milliseconde. Het aansturen van de ultrasone sensoren gaat doormiddel van een 2ms lange pulse op de IN-pin. Dit is de trigger van de SRF-04(de door ons gekozen ultrasone sensor). Hierna verzend de sensor zijn pulse, op dat moment wordt de OUT-pin ook hoog. Deze blijft hoog tot de gereflecteerde pulse weer binnen komt. Deze tijd wordt gedeeld door 2 omdat het geluid zowel de afstand heen als terug moet afleggen. Deze tijd wordt vervolgens geschaald naar afstand door hem door 29m/s(de snelheid van geluid in lucht) te delen. Hierna wordt de tijd teruggemapt(alles tussen de 0 en de 75 wordt terug geschaald naar 0 en 12). Deze waarde wordt voor player 2 4 bits geschoven naar links. En vervolgens wordt het signaal via de hierbovengenoemende SPI verstuurd naar de chip.
+
+\subsection{Buttons}
+Bij de buttons wordt een andere manier van werken gehanteerd, hier wordt de waarde van de plaatsvector onthouden(als integer). En naar gelang welke button geactiveerd wordt, wordt het signaal 1 verhoogd/verlaagd. Dit getal kan maximaal 12 bereiken en minimaal 0. Vervolgens wordt dit signaal voor player 2 ook verschoven, en daarna verzonden via SPI.
+
+De getallen 0->12 voor player 1/2 zijn in gebruik, dit geeft ruimte om 13,14,15 te gebruiken voor andere doeleinde. 13 dient als getal om de Start van systeem aan te geven. 15 is de Reset van het systeem.
 \newpage
 
+<<<<<<< HEAD
+=======
+\chapter{Blackbox}
+\newpage
 
+>>>>>>> origin/master
 \chapter{ALU/PC}
 \newpage
 

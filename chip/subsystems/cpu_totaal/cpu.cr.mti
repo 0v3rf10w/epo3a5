@@ -1,0 +1,131 @@
+/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/reg_tb.vhd {1 {vcom -work work -2002 -explicit -vopt /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/reg_tb.vhd
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity reg_tb
+-- Compiling architecture behaviour of reg_tb
+
+} {} {}} /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/pc_counter_tb.vhd {1 {vcom -work work -2002 -explicit -vopt /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/pc_counter_tb.vhd
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity pc_counter_tb
+-- Compiling architecture behaviour of pc_counter_tb
+
+} {} {}} /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Instruction_decoder.vhd {1 {vcom -work work -2002 -explicit -vopt /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Instruction_decoder.vhd
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity decoder
+-- Compiling architecture behaviour of decoder
+
+} {} {}} /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Program_Counter.vhd {1 {vcom -work work -2002 -explicit -vopt /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Program_Counter.vhd
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity pc_counter
+-- Compiling architecture behaviour of pc_counter
+
+} {} {}} {/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Register+Buffer cluster.vhd} {1 {vcom -work work -2002 -explicit -vopt {/home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/Register+Buffer cluster.vhd}
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity reg_cluster
+-- Compiling architecture behavioural of reg_cluster
+
+} {} {}} /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_tb.vhd {1 {vcom -work work -2002 -explicit -vopt /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_tb.vhd
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity cpu_tb
+-- Compiling architecture behaviour of cpu_tb
+
+} {} {}} /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_top_level.vhd {1 {vcom -work work -2002 -explicit -vopt /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/cpu_top_level.vhd
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity cpu
+-- Compiling architecture behaviour of cpu
+
+} {} {}} /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/register.vhd {1 {vcom -work work -2002 -explicit -vopt /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/register.vhd
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity reg_A
+-- Compiling architecture behaviour of reg_A
+-- Compiling entity reg_out
+-- Compiling architecture behaviour of reg_out
+-- Compiling entity reg_2
+-- Compiling architecture behaviour of reg_2
+-- Compiling entity reg_3
+-- Compiling architecture behaviour of reg_3
+-- Compiling entity reg_4
+-- Compiling architecture behaviour of reg_4
+-- Compiling entity reg_5
+-- Compiling architecture behaviour of reg_5
+-- Compiling entity reg_6
+-- Compiling architecture behaviour of reg_6
+-- Compiling entity reg_7
+-- Compiling architecture behaviour of reg_7
+-- Compiling entity reg_8
+-- Compiling architecture behaviour of reg_8
+-- Compiling entity reg_9
+-- Compiling architecture behaviour of reg_9
+-- Compiling entity reg_10
+-- Compiling architecture behaviour of reg_10
+
+} {} {}} /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/ALU.vhd {1 {vcom -work work -2002 -explicit -vopt /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/ALU.vhd
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity alu
+-- Compiling architecture behaviour of alu
+
+} {} {}} /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/3-state_buffer.vhd {1 {vcom -work work -2002 -explicit -vopt /home/heokkerman/git/epo3a5/chip/subsystems/cpu_totaal/3-state_buffer.vhd
+Model Technology ModelSim SE vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity buf_A
+-- Compiling architecture behaviour of buf_A
+-- Compiling entity buf_arg
+-- Compiling architecture behaviour of buf_arg
+-- Loading package NUMERIC_STD
+-- Compiling entity buf_in
+-- Compiling architecture behaviour of buf_in
+-- Compiling entity buf_2
+-- Compiling architecture behaviour of buf_2
+-- Compiling entity buf_3
+-- Compiling architecture behaviour of buf_3
+-- Compiling entity buf_4
+-- Compiling architecture behaviour of buf_4
+-- Compiling entity buf_5
+-- Compiling architecture behaviour of buf_5
+-- Compiling entity buf_6
+-- Compiling architecture behaviour of buf_6
+-- Compiling entity buf_7
+-- Compiling architecture behaviour of buf_7
+-- Compiling entity buf_8
+-- Compiling architecture behaviour of buf_8
+-- Compiling entity buf_9
+-- Compiling architecture behaviour of buf_9
+-- Compiling entity buf_10
+-- Compiling architecture behaviour of buf_10
+-- Compiling entity instr_buf
+-- Compiling architecture behaviour of instr_buf
+
+} {} {}}

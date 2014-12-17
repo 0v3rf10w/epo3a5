@@ -7,20 +7,55 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-# vsim -do /data/public/common/software/opprog/do_files/init_simulator.do -lib work blackbox_tb_behaviour_syn_cfg 
+# vsim -do /data/public/common/software/opprog/do_files/init_simulator.do -lib work stream_tb_behaviour_cfg 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.stream_tb_behaviour_cfg#1
+# Loading work.stream_tb(behaviour)#1
+# Loading work.stream_behaviour_cfg#1
+# Loading work.stream(behaviour)#1
+# do /data/public/common/software/opprog/do_files/init_simulator.do 
+run
+run
+# reading modelsim.ini
+# vsim -lib work blackbox_tb_behaviour_cfg 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.blackbox_tb_behaviour_cfg#1
+# Loading work.blackbox_tb(behaviour)#1
+# Loading work.blackbox_behaviour_cfg#1
+# Loading work.blackbox(behaviour)#1
+# Loading work.stream_behaviour_cfg#1
+# Loading work.stream(behaviour)#1
+run
+run
+# reading modelsim.ini
+# vsim -lib work blackbox_tb_behaviour_cfg 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.blackbox_tb_behaviour_cfg#1
+# Loading work.blackbox_tb(behaviour)#1
+# Loading work.blackbox_behaviour_cfg#1
+# Loading work.blackbox(behaviour)#1
+# Loading work.stream_behaviour_cfg#1
+# Loading work.stream(behaviour)#1
+run
+run
+# reading modelsim.ini
+# vsim -lib work blackbox_tb_behaviour_extracted_cfg 
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading cellslib.cellslib_decl_pack
-# Loading work.blackbox_tb_behaviour_syn_cfg#1
+# Loading work.blackbox_tb_behaviour_extracted_cfg#1
 # Loading work.blackbox_tb(behaviour)#1
-# Loading work.blackbox_synthesised_cfg#1
-# Loading work.blackbox(synthesised)#1
-# Loading work.stream_behaviour_cfg#1
-# Loading work.stream(behaviour)#1
-# Loading work.tbuf_behaviour_cfg#1
-# Loading work.tbuf(behaviour)#1
-# Loading cellslib.iv110(dataflow)#1
-# do /data/public/common/software/opprog/do_files/init_simulator.do 
+# Loading work.blackbox_extracted_cfg#1
+# Loading work.blackbox(extracted)#1
+# Loading cellslib.mu111(dataflow)#1
 run

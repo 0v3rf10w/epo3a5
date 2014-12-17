@@ -1,0 +1,17 @@
+I sclk_m_0 sclk_m_0
+I mosi_m_0 mosi_m_0
+O miso_m_0 miso_m_0
+I ss_m_0 ss_m_0
+I sclk_m_1 sclk_m_1
+I mosi_m_1 mosi_m_1
+O miso_m_1 miso_m_1
+I ss_m_1 ss_m_1
+O sclk_s_0 sclk_s_0
+O mosi_s_0 mosi_s_0
+I miso_s_0 miso_s_0
+O ss_s_0 ss_s_0
+O sclk_s_1 sclk_s_1
+O mosi_s_1 mosi_s_1
+I miso_s_1 miso_s_1
+O ss_s_1 ss_s_1
+I s s

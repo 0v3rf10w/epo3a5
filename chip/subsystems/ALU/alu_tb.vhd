@@ -32,18 +32,23 @@ alu_A <= "00000000" after 0 ns,
 	"00000110" after 50 ns,
 	"00001000" after 70 ns,
 	"11111000" after 90 ns,
-	"11111111" after 150 ns;
+	"11111111" after 150 ns,
+	"00110011" after 170 ns,
+	"10101010" after 190 ns;
 alu_B <= "00000000" after 0 ns,
 	"00000110" after 65 ns,
 	"00001110" after 90 ns,
 	"11111000" after 110 ns,
-	"00000001" after 150 ns;
+	"00000001" after 150 ns,
+	"11001100" after 170 ns,
+	"10101010" after 190 ns;
 opcode <= "000" after 0 ns,
 	"100" after 10 ns,
 	"011" after 20 ns,
 	"100" after 30 ns,
 	"001" after 70 ns,
 	"101" after 90 ns,
-	"101" after 150 ns;
+	"101" after 150 ns,
+	"010" after 170 ns;
 
 end architecture;
