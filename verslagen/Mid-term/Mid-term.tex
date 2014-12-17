@@ -35,10 +35,10 @@
 \chapter{Besturing}
 Ons systeem wordt gespeeld doormiddel van 2 soorten besturing. De Ultrasone en de Button. De speler kan de modus selecteren doormiddel van een switch. Deze data van de buttons en de ultrasone worden verwerkt door een Arduino. Er is gekozen voor deze optie omdat de Arduino via SPI werkt. Hierdoor kan de SPI code getest worden en kunnen we het aantal pinnen dat gebruikt wordt laag houden. 
 
-\subsection{Ultrasone}
+\section{Ultrasone}
 Een unieke uitdaging van ons project is de Ultrasone besturing, de besturing werkt door middel van een (ultrasone)sensor aan de rechterzijde van de speler. Deze sensor meet met een speel ruimte van 75cm elke 11 milliseconde. Het aansturen van de ultrasone sensoren gaat doormiddel van een 2ms lange pulse op de IN-pin. Dit is de trigger van de SRF-04(de door ons gekozen ultrasone sensor). Hierna verzend de sensor zijn pulse, op dat moment wordt de OUT-pin ook hoog. Deze blijft hoog tot de gereflecteerde pulse weer binnen komt. Deze tijd wordt gedeeld door 2 omdat het geluid zowel de afstand heen als terug moet afleggen. Deze tijd wordt vervolgens geschaald naar afstand door hem door 29m/s(de snelheid van geluid in lucht) te delen. Hierna wordt de tijd teruggemapt(alles tussen de 0 en de 75 wordt terug geschaald naar 0 en 12). Deze waarde wordt voor player 2 4 bits geschoven naar links. En vervolgens wordt het signaal via de hierbovengenoemende SPI verstuurd naar de chip.
 
-\subsection{Buttons}
+\section{Buttons}
 Bij de buttons wordt een andere manier van werken gehanteerd, hier wordt de waarde van de plaatsvector onthouden(als integer). En naar gelang welke button geactiveerd wordt, wordt het signaal 1 verhoogd/verlaagd. Dit getal kan maximaal 12 bereiken en minimaal 0. Vervolgens wordt dit signaal voor player 2 ook verschoven, en daarna verzonden via SPI.
 
 De getallen 0->12 voor player 1/2 zijn in gebruik, dit geeft ruimte om 13,14,15 te gebruiken voor andere doeleinde. 13 dient als getal om de Start van systeem aan te geven. 15 is de Reset van het systeem.
@@ -100,7 +100,7 @@ Deze drie subsystemen zijn aan elkaar verbonden volgens het schema in figuur \re
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=9cm]{./control_diagram}
+  \includegraphics[width=7.8cm]{./control_diagram}
   \captionof{figure}{Diagram van Control} 
   \label{control-diagram}
 \end{minipage}
@@ -116,6 +116,35 @@ Deze drie subsystemen zijn aan elkaar verbonden volgens het schema in figuur \re
 \newpage
 
 \chapter{SD-kaart}
+Voor het opslaan van de instructies voor de CPU is gekozen voor een SD-kaart. Voor het uitlezen van een SD-kaart zijn er drie verschillende modes, twee hiervan zijn echter gebaseerd op een zelf ontworpen systeem van SanDisk. De derde mode is echter gebaseerd op SPI waarvan al een module is die al ontworpen is, daarom is hier ook voor gekozen. 
+\section{SD communicatie}
+Aangezien SPI niets zegt over hoe de communicatie verloopt of wat de betekenis van de overgebrachte data is, definieert SanDisk in de SD specificatie een aantal commando’s die naar de SD-kaart gestuurd kunnen worden. Er zal niet specifiek in worden gegaan op wat deze commando’s zijn, je moet denken aan: reset, lezen en schrijven commando’s, er zal wel ingegaan worden op hoe deze commando’s worden gestuurd en wat de reacties hier op zijn.
+\section{SD commando's \& responses}
+De communicatie met de SD-kaart verloopt als volgt: er wordt een commando naar de SD-kaart verstuurt, de SD-kaart geeft antwoordt of het een correct commando is en of het commando verwerkt kan worden, daarna komt eventueel nog, bij het lezen, data van de SD-kaart of, bij het schrijven, data naar de SD-kaart. Zodra alles is afgehandeld kan er een nieuw commando gestuurd worden.
+\section{Functionele omschrijving}
+De SD module is zo ontworpen dat deze een adres binnen krijgt van de program counter van de CPU deze uitleest vanaf de SD-kaart en deze vervolgens aanbiedt aan de CPU. Zolang de SD module nog bezig is met het uitlezen van het adres zal het busy signaal hoog zijn.
+\section{Inputs en outputs}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{./sd_diagram}
+\caption{Diagram of SD circuit}
+\label{sd-diagram}
+\end{figure}
+
+\begin{itemize}
+\item Clock: het kloksignaal waar de SD module op draait, dit is ook het kloksignaal waar de SPI na initialisatie op zal draaien
+\item Setup clock: het kloksignaal dat tijdens de initialisatie gebruikt zal worden, deze moet tussen de 100 en 400 kHz liggen
+\item Reset: het algemene reset signaal 
+\item Address: het adres dat van de SD-kaart zal worden afgelezen
+\item Output(8): dit zal de waarde zijn die op het adres staat zodra deze is uitgelezen
+\item Busy: dit signaal geeft aan of de SD module bezig is
+\item Slave clock: het slave kloksignaal dat de SD-kaart aanstuurd
+\item MOSI: de datalijn van de SD module naar de SD-kaart
+\item MISO: de datalijn van de SD-kaart naar de SD module
+\item SS: het slave select signaal, dit signaal wordt gebruikt om de SD-kaart in SPI mode te krijgen en om aan te geven dat de SD-kaart geselecteerd is.
+\end{itemize}
+
 \newpage
 
 \chapter{Game: Pong}
