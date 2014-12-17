@@ -10,18 +10,30 @@
 \usepackage{adjustbox}
 \usepackage{blindtext}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> origin/master
 \begin{document}
+=======
+\usepackage{listings}
+\usepackage{caption}
 
-\frontmatter
+>>>>>>> origin/master
+
 
 \title{Mid-term report}
 \author{Projectgroep A2}
 \affiliation{TU Delft}
+
+\begin{document}
 \maketitle
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
 \chapter{Samenvatting}
 
 \tableofcontents
@@ -40,18 +52,44 @@ De opdracht meegegeven door de TU is het ontwerpen van een chip.
 \chapter{Besturing}
 Ons systeem wordt gespeeld doormiddel van 2 soorten besturing. De Ultrasone en de Button. De speler kan de modus selecteren doormiddel van een switch. Deze data van de buttons en de ultrasone worden verwerkt door een Arduino. Er is gekozen voor deze optie omdat de Arduino via SPI werkt. Hierdoor kan de SPI code getest worden en kunnen we het aantal pinnen dat gebruikt wordt laag houden. 
 
+<<<<<<< HEAD
 \subsection{Ultrasone}
 Een unieke uitdaging van ons project is de Ultrasone besturing, de besturing werkt door middel van een (ultrasone)sensor aan de rechterzijde van de speler. Deze sensor meet met een speel ruimte van 75cm elke 11 milliseconde. Het aansturen van de ultrasone sensoren gaat doormiddel van een 2ms lange pulse op de IN-pin. Dit is de trigger van de SRF-04(de door ons gekozen ultrasone sensor). Hierna verzend de sensor zijn pulse, op dat moment wordt de OUT-pin ook hoog. Deze blijft hoog tot de gereflecteerde pulse weer binnen komt. Deze tijd wordt gedeeld door 2 omdat het geluid zowel de afstand heen als terug moet afleggen. Deze tijd wordt vervolgens geschaald naar afstand door hem door 29m/s(de snelheid van geluid in lucht) te delen. Hierna wordt de tijd teruggemapt(alles tussen de 0 en de 75 wordt terug geschaald naar 0 en 12). Deze waarde wordt voor player 2 4 bits geschoven naar links. En vervolgens wordt het signaal via de hierbovengenoemende SPI verstuurd naar de chip.
 
 \subsection{Buttons}
+=======
+\section{Ultrasone}
+Een unieke uitdaging van ons project is de Ultrasone besturing, de besturing werkt door middel van een (ultrasone)sensor aan de rechterzijde van de speler. Deze sensor meet met een speel ruimte van 75cm elke 11 milliseconde. Het aansturen van de ultrasone sensoren gaat doormiddel van een 2ms lange pulse op de IN-pin. Dit is de trigger van de SRF-04(de door ons gekozen ultrasone sensor). Hierna verzend de sensor zijn pulse, op dat moment wordt de OUT-pin ook hoog. Deze blijft hoog tot de gereflecteerde pulse weer binnen komt. Deze tijd wordt gedeeld door 2 omdat het geluid zowel de afstand heen als terug moet afleggen. Deze tijd wordt vervolgens geschaald naar afstand door hem door 29m/s(de snelheid van geluid in lucht) te delen. Hierna wordt de tijd teruggemapt(alles tussen de 0 en de 75 wordt terug geschaald naar 0 en 12). Deze waarde wordt voor player 2 4 bits geschoven naar links. En vervolgens wordt het signaal via de hierbovengenoemende SPI verstuurd naar de chip.
+
+\section{Buttons}
+>>>>>>> origin/master
 Bij de buttons wordt een andere manier van werken gehanteerd, hier wordt de waarde van de plaatsvector onthouden(als integer). En naar gelang welke button geactiveerd wordt, wordt het signaal 1 verhoogd/verlaagd. Dit getal kan maximaal 12 bereiken en minimaal 0. Vervolgens wordt dit signaal voor player 2 ook verschoven, en daarna verzonden via SPI.
 
 De getallen 0->12 voor player 1/2 zijn in gebruik, dit geeft ruimte om 13,14,15 te gebruiken voor andere doeleinde. 13 dient als getal om de Start van systeem aan te geven. 15 is de Reset van het systeem.
 \newpage
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 \chapter{Blackbox}
+=======
+\chapter{Blackbox}
+\section{Functionele beschrijving}
+Voor het genereren van de beelden worden twee SRAM chips gebruikt. De ene chip wordt uitgelezen door de VGA generator en er wordt naar de andere chip geschreven door de GPU. Als een frame geschreven is naar de SRAM chip wordt de chip waar net naar geschreven is verbonden met de VGA generator zodat deze uitgelezen kan worden. De chip die voorheen verbonden was met de VGA wordt doorverbonden met de GPU zodat daar vervolgens naar geschreven kan worden. Door deze techniek toe te passen blijft het beeld op het scherm stabiel. De BlackBox is de schakeling die dat mogelijk maakt.
+\section{Inputs en outputs}
+De SRAM chips, de VGA en de GPU communiceren met elkaar met behulp van SPI. De schakeling heeft dus twee SPI master aansluitingen voor VGA en de GPU en twee SPI slave aansluitingen voor de twee SRAM chips. Een SPI aansluiting bestaat uit vier signaallijnen. Dit zijn de serial clock (SCLK), master in slave out (MISO), master out slave in (MOSI) en slave select (SS). Ook heeft de schakeling nog een ingang om te selecteren welke SRAM chip verbonden is met de VGA generator en welke met de GPU.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{./BlackBox_Circuit}
+\caption{Subschakeling van de blackbox}
+\label{sub-blackbox}
+\end{figure}
+
+\section{Implementatie}
+De schakeling bestaat uit vier subschakelingen. De subschakeling bestaat uit twee twee naar 1 lijn multiplexers zoals weergegeven in figuur 1. Door de S laag te maken, wordt IN\_0 verbonden met OUT\_0 en IN\_1 met OUT\_1. Als S hoog is, is IN\_0 verbonden met OUT\_1 en vice versa. Vervolgens worden de SCLK lijnen van de GPU en VGA generator verbonden met de ingangen van de subschakeling en de uitgangen met de SCLK lijnen van de twee SRAM chips. Hetzelfde gebeurt ook voor de MOSI en de SS lijnen van de masters en de slaves. Bij de MISO lijnen is het omgekeerd omdat dit een inputlijn is voor de masters en een outputlijn voor de slaves. Hier worden dus de SRAM chips verbonden met de ingangen en de VGA generator en de GPU aan de uitgangen. De BlackBox bestaat nu uit vier subcircuits. Door de select (S) ingangen van de subschakelingen met elkaar te verbinden is de BlackBox nu compleet.
+
+>>>>>>> origin/master
 \newpage
 
 >>>>>>> origin/master
@@ -61,7 +99,102 @@ De getallen 0->12 voor player 1/2 zijn in gebruik, dit geeft ruimte om 13,14,15 
 \chapter{VGA}
 \newpage
 
-\chapter{SD-kaart/SPI}
+\chapter{SPI}
+Serial Peripheral Interface in het kort ook SPI genoemd is een de facto-standaard die ooit door Motorola bedacht is voor het communiceren met randapparatuur, zoals embedded systems, sensors en memory cards. Bij SPI heb je de master en de slave deze communiceren met elkaar via twee seriële datalijnen daarnaast is er nog een kloklijn die aangeeft wanneer er data overgedragen wordt. De kloklijn wordt aangestuurd door de master, dit houdt in dat de slave niet kan pauzeren en altijd data aan de master aan moet bieden. De standaard definieert enkel hoe de data van de master naar de slave en vice versa over wordt gedragen, niet hoe de data verwerkt wordt, dit heeft als gevolgd dat randapparatuur zelf nog moet definiëren hoe de communicatie verloopt.
+
+\section{Functionele beschrijving}
+De SPI module begint met zenden/ontvangen zodra het send signaal hoog is en stopt zodra er acht bits zijn verzonden/ontvangen, daarna kunnen de ontvangen bits uitgelezen worden en nieuwe bits in worden geladen om te verzenden. Het overbrengen van het shift register dat in de master zit naar de slave en vice versa deze shift registers zijn in een kring op elkaar aangesloten, waarbij altijd de meest significante bit wordt verzonden. Voor de communicatie met de slave wordt een slave klok signaal gegenereerd, de data overdracht is gesynchroniseerd ten opzicht van dit signaal. Data wordt gesampled op de opgaande klokflank en de data wordt geshift op de neergaande klokflank.
+
+\section{Inputs en outputs}
+Hieronder een beschrijving van alle in- en outputs van de SPI module zoals te zien in figuur \ref{spi-diagram}.
+\begin{itemize}
+\item Clock: het kloksignaal waarop de SPI draait, het slave clock signaal zal dezelfde frequency hebben als dit kloksignaal
+\item Reset: de hoofd reset van de SPI
+\item Send: de input die aangeeft wanneer er begonnen moet worden met zenden/ontvangen
+\item Write\_enable: als deze hoog is zal write\_in(8) in het shift register geladen worden
+\item Write\_in(8): de bits die naar het shift register worden geschreven als write\_enable hoog is
+\item Read\_out(8): de waarde die in het shift register staat
+\item Slave clock: het slave kloksignaal die de communicatie met de slave aanstuurt
+\item MOSI: de datalijn van de master naar de slave
+\item MISO: de datalijn van de slave naar de master
+\end{itemize}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{./spi_diagram}
+\caption{Diagram of SPI circuit}
+\label{spi-diagram}
+\end{figure}
+
+\section{Implementatie}
+Voor de implementatie van de SPI is er voor gekozen om het in drie subsystemen op te delen:
+\begin{itemize}
+\item Counter: een simpele teller die de opgaande klokslagen van het slave clock signaal telt. 
+\item Shift register: een shift register van acht bits die shift op de neergaande klokflank als het enable signaal hoog is en nieuwe waardes inlaad als de write enable hoog is. Het blokschema van het shift register is te zien in figuur \ref{shift-register-diagram}.
+\item Control: een statemachine die er voor zorgt dat de SPI stopt met shiften na 8 klokslagen van de slave klok, zodat er tijd is om het register uit te lezen of nieuwe waarden in te laden. Het blokschema van Control is te zien in figuur \ref{control-diagram}.
+\end{itemize}
+
+Deze drie subsystemen zijn aan elkaar verbonden volgens het schema in figuur \ref{spi-system-diagram}.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=5.4cm]{./shift_register_diagram}
+  \captionof{figure}{Diagram van Shift regiser}
+  \label{shift-register-diagram}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=7.8cm]{./control_diagram}
+  \captionof{figure}{Diagram van Control} 
+  \label{control-diagram}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=11.4cm]{./spi_system_diagram}
+\caption{Diagram van de verbinding van de componenten}
+\label{spi-system-diagram}
+\end{figure}
+
+\newpage
+
+\chapter{SD-kaart}
+Voor het opslaan van de instructies voor de CPU is gekozen voor een SD-kaart. Voor het uitlezen van een SD-kaart zijn er drie verschillende modes, twee hiervan zijn echter gebaseerd op een zelf ontworpen systeem van SanDisk. De derde mode is echter gebaseerd op SPI waarvan al een module is die al ontworpen is, daarom is hier ook voor gekozen. 
+\section{SD communicatie}
+Aangezien SPI niets zegt over hoe de communicatie verloopt of wat de betekenis van de overgebrachte data is, definieert SanDisk in de SD specificatie een aantal commando’s die naar de SD-kaart gestuurd kunnen worden. Er zal niet specifiek in worden gegaan op wat deze commando’s zijn, je moet denken aan: reset, lezen en schrijven commando’s, er zal wel ingegaan worden op hoe deze commando’s worden gestuurd en wat de reacties hier op zijn.
+\section{SD commando's \& responses}
+De communicatie met de SD-kaart verloopt als volgt: er wordt een commando naar de SD-kaart verstuurt, de SD-kaart geeft antwoordt of het een correct commando is en of het commando verwerkt kan worden, daarna komt eventueel nog, bij het lezen, data van de SD-kaart of, bij het schrijven, data naar de SD-kaart. Zodra alles is afgehandeld kan er een nieuw commando gestuurd worden.
+\section{Functionele omschrijving}
+De SD module is zo ontworpen dat deze een adres binnen krijgt van de program counter van de CPU deze uitleest vanaf de SD-kaart en deze vervolgens aanbiedt aan de CPU. Zolang de SD module nog bezig is met het uitlezen van het adres zal het busy signaal hoog zijn.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{./sd_diagram}
+\caption{Diagram of SD circuit}
+\label{sd-diagram}
+\end{figure}
+
+\newpage
+
+\section{Inputs en outputs}
+Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zien in figuur \ref{sd-diagram}.
+
+\begin{itemize}
+\item Clock: het kloksignaal waar de SD module op draait, dit is ook het kloksignaal waar de SPI na initialisatie op zal draaien
+\item Setup clock: het kloksignaal dat tijdens de initialisatie gebruikt zal worden, deze moet tussen de 100 en 400 kHz liggen
+\item Reset: het algemene reset signaal 
+\item Address: het adres dat van de SD-kaart zal worden afgelezen
+\item Output(8): dit zal de waarde zijn die op het adres staat zodra deze is uitgelezen
+\item Busy: dit signaal geeft aan of de SD module bezig is
+\item Slave clock: het slave kloksignaal dat de SD-kaart aanstuurd
+\item MOSI: de datalijn van de SD module naar de SD-kaart
+\item MISO: de datalijn van de SD-kaart naar de SD module
+\item SS: het slave select signaal, dit signaal wordt gebruikt om de SD-kaart in SPI mode te krijgen en om aan te geven dat de SD-kaart geselecteerd is.
+\end{itemize}
+
 \newpage
 
 \chapter{Game: Pong}

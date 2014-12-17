@@ -1,5 +1,6 @@
 \BOOKMARK [0][-]{chapter*.1}{Samenvatting}{}% 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 \BOOKMARK [0][-]{chapter.1}{Inleiding}{}% 2
 \BOOKMARK [0][-]{chapter.2}{Probleemstelling}{}% 3
 \BOOKMARK [1][-]{section.2.1}{Projectopgave}{chapter.2}% 4
@@ -10,6 +11,8 @@
 \BOOKMARK [0][-]{chapter.7}{SD-kaart/SPI}{}% 9
 \BOOKMARK [0][-]{chapter.8}{Game: Pong}{}% 10
 =======
+=======
+>>>>>>> origin/master
 \BOOKMARK [0][-]{chapter*.2}{Inleiding}{}% 2
 \BOOKMARK [0][-]{chapter*.3}{Probleemstelling}{}% 3
 \BOOKMARK [0][-]{chapter*.4}{Systeem overzicht}{}% 4
@@ -20,4 +23,7 @@
 \BOOKMARK [0][-]{chapter*.8}{VGA}{}% 9
 \BOOKMARK [0][-]{chapter*.9}{SD-kaart/SPI}{}% 10
 \BOOKMARK [0][-]{chapter*.10}{Game: Pong}{}% 11
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
