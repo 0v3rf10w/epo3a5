@@ -1,12 +1,32 @@
 \select@language {dutch}
-\contentsline {chapter}{Samenvatting}{i}{chapter*.1}
-\contentsline {chapter}{\numberline {1}Inleiding}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Probleemstelling}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}Projectopgave}{2}{section.2.1}
-\contentsline {chapter}{\numberline {3}Systeem overzicht}{3}{chapter.3}
-\contentsline {chapter}{\numberline {4}Besturing}{4}{chapter.4}
-\contentsline {chapter}{\numberline {5}ALU/PC}{5}{chapter.5}
-\contentsline {chapter}{\numberline {6}VGA}{6}{chapter.6}
-\contentsline {chapter}{\numberline {7}SD-kaart/SPI}{7}{chapter.7}
-\contentsline {chapter}{\numberline {8}Game: Pong}{8}{chapter.8}
+\contentsline {chapter}{\numberline {1}Samenvatting}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Inleiding}{1}{chapter.2}
+\contentsline {chapter}{\numberline {3}Probleemstelling}{2}{chapter.3}
+\contentsline {section}{\numberline {3.1}Projectopgave: 'Ontwerp een chip'}{2}{section.3.1}
+\contentsline {section}{\numberline {3.2}Beschikbare infrastructuur}{2}{section.3.2}
+\contentsline {section}{\numberline {3.3}Functionele eisen}{2}{section.3.3}
+\contentsline {section}{\numberline {3.4}Randvoorwaarden}{2}{section.3.4}
+\contentsline {section}{\numberline {3.5}Plan van aanpak}{2}{section.3.5}
+\contentsline {chapter}{\numberline {4}Besturing}{3}{chapter.4}
+\contentsline {subsection}{\numberline {4.0.1}Ultrasone}{3}{subsection.4.0.1}
+\contentsline {section}{\numberline {4.1}Ultrasone}{3}{section.4.1}
+\contentsline {section}{\numberline {4.2}Buttons}{3}{section.4.2}
+\contentsline {chapter}{\numberline {5}Blackbox}{4}{chapter.5}
+\contentsline {section}{\numberline {5.1}Functionele beschrijving}{4}{section.5.1}
+\contentsline {section}{\numberline {5.2}Inputs en outputs}{4}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementatie}{5}{section.5.3}
+\contentsline {chapter}{\numberline {6}ALU/PC}{6}{chapter.6}
+\contentsline {chapter}{\numberline {7}GPU}{7}{chapter.7}
+\contentsline {chapter}{\numberline {8}VGA}{8}{chapter.8}
+\contentsline {chapter}{\numberline {9}SPI}{9}{chapter.9}
+\contentsline {section}{\numberline {9.1}Functionele beschrijving}{9}{section.9.1}
+\contentsline {section}{\numberline {9.2}Inputs en outputs}{9}{section.9.2}
+\contentsline {section}{\numberline {9.3}Implementatie}{10}{section.9.3}
+\contentsline {chapter}{\numberline {10}SD-kaart}{11}{chapter.10}
+\contentsline {section}{\numberline {10.1}SD communicatie}{11}{section.10.1}
+\contentsline {section}{\numberline {10.2}SD commando's \& responses}{11}{section.10.2}
+\contentsline {section}{\numberline {10.3}Functionele omschrijving}{11}{section.10.3}
+\contentsline {section}{\numberline {10.4}Inputs en outputs}{12}{section.10.4}
+\contentsline {chapter}{\numberline {11}Game: Pong}{13}{chapter.11}
+\contentsline {chapter}{\numberline {12}Discussie}{14}{chapter.12}
 \contentsfinish 
