@@ -15,7 +15,9 @@ port(	clk:			in std_logic;
 		miso:			in std_logic;
 		ss:				out std_logic;
 		
-		state_debug:	out std_logic_vector(4 downto 0)
+		state_debug:	out std_logic_vector(4 downto 0);
+		next_state:		in std_logic
+		
 	);
 end entity sdcard;
 
@@ -58,9 +60,22 @@ architecture behavioural of sdcard is
 	signal send_cnt,new_send_cnt : unsigned(3 downto 0);
 	signal address_change,data_read : std_logic;
 	signal sd_clk,divide_clock : std_logic;
+	signal went_to_next, go_to_text : std_logic;
 begin
 
 spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,sclk,mosi_spi,miso,dummy_signal);
+
+	process(next_state)
+	begin
+	if(went_to_next = '1') then
+		go_to_next <= '0';
+	else
+		if(rising_edge(next_state)) then
+			go_to_next <= '1';
+		end if;
+	end if;
+	end process;
+
 	output <= output_reg;
 	
 	sd_clk <= div_clk when (divide_clock = '1') else clk;
