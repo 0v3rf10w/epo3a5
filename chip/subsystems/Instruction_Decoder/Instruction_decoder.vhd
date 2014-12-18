@@ -2,22 +2,22 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity decoder is
+entity decoder1 is
 port( decoder_in  : in std_logic_vector(11 downto 0);
       decoder_c   : in  std_logic;
       decoder_z   : in  std_logic;
-      decoder_pc_inc  : out std_logic;
-      decoder_pc_ld   : out std_logic;
-      decoder_ibufoe : out std_logic;
-      decoder_aregld   : out std_logic;
-      decoder_abufoe  : out std_logic;
-      decoder_bregld   : out std_logic_vector(4 downto 0);
-      decoder_bbufoe  : out std_logic_vector(4 downto 0);
+      decoder_pc_inc  	: out std_logic;
+      decoder_pc_ld   	: out std_logic;
+      decoder_ibufoe 	: out std_logic;
+      decoder_aregld   	: out std_logic;
+      decoder_abufoe  	: out std_logic;
+      decoder_bregld  	: out std_logic_vector(4 downto 0);
+      decoder_bbufoe  	: out std_logic_vector(4 downto 0);
       decoder_alu       : out std_logic_vector(2 downto 0);
       decoder_argout    : out std_logic_vector(7 downto 0));
-end decoder;
+end decoder1;
 
-architecture behaviour of decoder is
+architecture behaviour of decoder1 is
 signal  opcode : std_logic_vector(3 downto 0);
 signal  argument  : std_logic_vector(7 downto 0);
 signal  o0, o1, o2, o3: std_logic;

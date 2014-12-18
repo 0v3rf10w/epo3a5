@@ -1,11 +1,36 @@
 \select@language {dutch}
-\contentsline {chapter}{Samenvatting}{i}{chapter*.1}
 \contentsline {chapter}{\numberline {1}Inleiding}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Probleemstelling}{2}{chapter.2}
-\contentsline {chapter}{\numberline {3}Systeem overzicht}{3}{chapter.3}
-\contentsline {chapter}{\numberline {4}Besturing}{4}{chapter.4}
-\contentsline {chapter}{\numberline {5}ALU/PC}{5}{chapter.5}
-\contentsline {chapter}{\numberline {6}VGA}{6}{chapter.6}
-\contentsline {chapter}{\numberline {7}SD-kaart/SPI}{7}{chapter.7}
-\contentsline {chapter}{\numberline {8}Game: Pong}{8}{chapter.8}
+\contentsline {section}{\numberline {2.1}Projectopgave: 'Ontwerp een chip'}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2}Beschikbare infrastructuur}{2}{section.2.2}
+\contentsline {section}{\numberline {2.3}Functionele eisen}{2}{section.2.3}
+\contentsline {section}{\numberline {2.4}Randvoorwaarden}{2}{section.2.4}
+\contentsline {section}{\numberline {2.5}Plan van aanpak}{2}{section.2.5}
+\contentsline {chapter}{\numberline {3}Besturing}{3}{chapter.3}
+\contentsline {section}{\numberline {3.1}Ultrasone}{3}{section.3.1}
+\contentsline {section}{\numberline {3.2}Buttons}{3}{section.3.2}
+\contentsline {chapter}{\numberline {4}Blackbox}{4}{chapter.4}
+\contentsline {section}{\numberline {4.1}Functionele beschrijving}{4}{section.4.1}
+\contentsline {section}{\numberline {4.2}Inputs en outputs}{4}{section.4.2}
+\contentsline {section}{\numberline {4.3}Implementatie}{5}{section.4.3}
+\contentsline {chapter}{\numberline {5}CPU}{6}{chapter.5}
+\contentsline {section}{\numberline {5.1}Functionele beschrijving}{6}{section.5.1}
+\contentsline {section}{\numberline {5.2}Inputs en outputs}{6}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementatie}{7}{section.5.3}
+\contentsline {chapter}{\numberline {6}GPU}{8}{chapter.6}
+\contentsline {chapter}{\numberline {7}VGA}{10}{chapter.7}
+\contentsline {section}{\numberline {7.1}RGB}{10}{section.7.1}
+\contentsline {section}{\numberline {7.2}H-Sync}{10}{section.7.2}
+\contentsline {section}{\numberline {7.3}V-Sync}{11}{section.7.3}
+\contentsline {section}{\numberline {7.4}Implementatie}{11}{section.7.4}
+\contentsline {chapter}{\numberline {8}SPI}{12}{chapter.8}
+\contentsline {section}{\numberline {8.1}Functionele beschrijving}{12}{section.8.1}
+\contentsline {section}{\numberline {8.2}Inputs en outputs}{12}{section.8.2}
+\contentsline {section}{\numberline {8.3}Implementatie}{13}{section.8.3}
+\contentsline {chapter}{\numberline {9}SD-kaart}{14}{chapter.9}
+\contentsline {section}{\numberline {9.1}SD communicatie}{14}{section.9.1}
+\contentsline {section}{\numberline {9.2}SD commando's \& responses}{14}{section.9.2}
+\contentsline {section}{\numberline {9.3}Functionele omschrijving}{14}{section.9.3}
+\contentsline {section}{\numberline {9.4}Inputs en outputs}{15}{section.9.4}
+\contentsline {chapter}{\numberline {10}Discussie}{16}{chapter.10}
 \contentsfinish 

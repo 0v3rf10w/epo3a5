@@ -1,6 +1,6 @@
-# Tabular Link File created on Mon 08 Dec 2014 17:52:21
+# Tabular Link File created on Fri 12 Dec 2014 20:44:48
 # By Program: design_flow
-# From Source: /home/wbouwmeester/Documents/BlackBox/blackbox.lst
+# From Source: /home/wbouwmeester/Documents/BetterBlackBox/GWTF/blackbox.lst
 # Clock_column: -1
 INP sclk_m_0;
 INP mosi_m_0;
@@ -23,7 +23,7 @@ PERIOD 50ns;
 TIME_UNIT 1.0e-10s;
 TABLE_FORMAT D<17c;
 DATA_SECTION
-             00<LLxLHHxHxxLxxxHxX
+             00<LLhLHHlHhhLhllHlX
             100<LLlLHHhHllLlhhHhL
             500<LLhLHHlHhhLhllHlH
 
