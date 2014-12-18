@@ -45,6 +45,8 @@ architecture behavioural of sdcard is
 				init_read,start_init_receive,init_receive,
 				load_cmd16,start_send_cmd16,send_cmd16,
 				read_response_cmd16,start_receive_response_cmd16,receive_response_cmd16,
+				load_cmd1,start_send_cmd1,send_cmd1,
+				read_response_cmd1,start_receive_response_cmd1,receive_response_cmd1,
 				idle,
 				load_cmd,start_send_part,send_part,
 				read_response,start_receive_response,receive_response,
@@ -199,9 +201,11 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						else
 							state <= send_cmd1;
 						end if;
-					when read_response_cmd16 =>
-						if(spi_output = "00000000") then
-							state <= start_load_cmd16;
+					when read_response_cmd1 =>
+						if(spi_output = "00000001") then
+							state <= load_cmd1;
+						elsif(spi_output = "00000000") then
+							state <= load_cmd16
 						elsif(spi_output = "11111111") then
 							state <= start_receive_response_cmd1;
 						else
