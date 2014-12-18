@@ -16,7 +16,8 @@ port(	clk:			in std_logic;
 		ss:				out std_logic;
 		
 		state_debug:	out std_logic_vector(4 downto 0);
-		next_state:		in std_logic
+		next_state:		in std_logic;
+		spi_output_debug: out std_logic_vector(7 downto 0)
 		
 	);
 end entity sdcard;
@@ -63,18 +64,9 @@ architecture behavioural of sdcard is
 	signal went_to_next, go_to_next : std_logic;
 begin
 
-spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,sclk,mosi_spi,miso,dummy_signal);
+	spi_output_debug <= spi_output;
 
-	process(next_state)
-	begin
-	if(went_to_next = '1') then
-		go_to_next <= '0';
-	else
-		if(rising_edge(next_state)) then
-			go_to_next <= '1';
-		end if;
-	end if;
-	end process;
+spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,sclk,mosi_spi,miso,dummy_signal);
 
 	output <= output_reg;
 	
@@ -123,13 +115,30 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 		end if;
 	end process;
 	
-	process(sd_clk,reset)
+	process(next_state,went_to_next)
+	begin
+	if(went_to_next = '1') then
+		go_to_next <= '0';
+	else
+		if(rising_edge(next_state)) then
+			go_to_next <= '1';
+		end if;
+	end if;
+	end process;
+	
+	process(sd_clk,reset,go_to_next)
 		begin
 		if(reset = '1') then
 			state <= reset_state;
 			address_buf <= (others => '0');
+			went_to_next <= '0';
+		else
+		if(go_to_next = '0') then
+			state <= state;
+			went_to_next <= '0';
 		else
 			if rising_edge(sd_clk)  then
+				went_to_next <= '1';
 				address_buf <= address;
 				case state is 
 					when reset_state =>
@@ -139,7 +148,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 							state <= reset_state;
 						end if;
 					when dummy_count =>
-						if(send_cnt = "1000") then 
+						if(send_cnt = "1010") then 
 							state <= start_init_count;
 						else
 							state <= start_dummy_send;
@@ -281,6 +290,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						state <= error;
 				end case;	
 			end if;	
+		end if;
 		end if;
 	end process;
 	
@@ -748,7 +758,9 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 			send_cnt <= (others => '0');
 		else
 			if(rising_edge(sd_clk)) then
+			if(go_to_next = '1') then
 				send_cnt <= new_send_cnt;
+			end if;
 			end if;
 		end if;
 	end process;
