@@ -60,7 +60,7 @@ architecture behavioural of sdcard is
 	signal send_cnt,new_send_cnt : unsigned(3 downto 0);
 	signal address_change,data_read : std_logic;
 	signal sd_clk,divide_clock : std_logic;
-	signal went_to_next, go_to_text : std_logic;
+	signal went_to_next, go_to_next : std_logic;
 begin
 
 spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,sclk,mosi_spi,miso,dummy_signal);
