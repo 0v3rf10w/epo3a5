@@ -15,25 +15,35 @@
 
 
 \title{Mid-term report}
-\author{Projectgroep A5}
+\author{Projectgroep A2}
 \affiliation{TU Delft}
 
 \begin{document}
 \maketitle
 
-
-
-\chapter{Samenvatting}
-
+\tableofcontents
+\mainmatter
 
 \chapter{Inleiding}
-\newpage
+EPO-3 is het derde project uit de propedeuse van de bachelor opleiding Electrical Engineeringaan de TU delft. Het doel van dit project is het ontwerpen van een chip, deze chip kan bijvoorbeeld een spelletje bevatten of als besturingsdoel dienen. Als project groep A5 is er gekozen voor het bouwen van een spelcomputer, hierop kunnen meerdere games gespeeld worden. De verschillende games moeten van een SD-kaart worden geladen voordat ze gespeeld kunnen worden. Het eerste spel dat ontworpen wordt is Pong, mocht er aan het eind van dit project nog tijd overblijven zullen er meerdere spellen volgen. De besturing loopt via ultrasone sensoren die de locatie van iemands hand bepalen. In dit tussentijdse ontwerp rapport zullen al deze onderdelen aanbod komen, daarbij moet vermeld worden dat ze nog niet geheel voltooid en getest zijn.  
 
 \chapter{Probleemstelling}
-\newpage
+\section{Projectopgave: 'Ontwerp een chip'}
+De opdracht meegegeven door de TU is het ontwerpen van een chip. Hiermee is de gehele opdracht eigenlijk al beschreven, de studenten mogen verder in alle vrijheid de opdracht verder bepalen. Er wordt natuurlijk wel eerst grondig gecontroleerd door de tutoren of de opdrachten aan de eisen voldoen en haalbaar zijn.  Naast het ontwerpen van de chip mogen er extern onderdelen worden toegevoegd, bijvoorbeeld een beeldscherm of onderdelen voor de besturing. 
 
-\chapter{Systeem overzicht}
-\newpage
+Als project groep A5 is er gekozen om van de chip een spelcomputer te maken, hierop moeten meerdere spellen gespeeld kunnen worden. Als eerst moet het spelletje 'Pong' te spelen zijn op deze spelcomputer. Aan het einde van het project kunnen eventueel andere spellen ontworpen worden. Extern moet er gezorgd worden voor besturing, weergave en opslag van de spellen. Dit laatste wordt door middel van een SD-kaart gerealiseerd. De besturing vind plaats via ultrasone sensoren of mocht dit niet naar behoren werken door middel van drukknoppen.
+
+\section{Beschikbare infrastructuur}
+In het 4e semester wordt de chip geproduceerd en getest, deze chip wordt door twee projectgroepen gebruikt. Elke groep heeft dus een halve chip voor zijn ontwerp, dit zijn ongeveer 200-250 flipflops. Daarnaast kan iedere groep wel gebruik maken van alle aansluitpinnen op de chip, dit zijn er 32. Voor het testen tussen door is er hardware beschikbaar, in de vorm van een Altera FPGA bord. Op dit Altera bord is veel randapparatuur aanwezig, daarnaast kunnen er nog andere externe onderdelen aan dit bord worden gekoppeld. 
+
+\section{Functionele eisen}
+Als functionele eisen kan er kortom gezegd worden dat er op de chip meerdere spellen gespeeld kunnen worden. Deze spellen moeten bestuurd kunnen worden door middel van ultrasone sensoren. Om te beginnen wordt 'Pong' ontworpen, andere spellen volgen als de projecttijd dit toelaat.
+
+\section{Randvoorwaarden}
+Aan het eindresultaat zitten een aantal randvoorwaarden verbonden. De externe onderdelen mogen maximaal 30 á 40 euro kosten, mochten deze niet voorhanden zijn. Er moet rekening worden gehouden met de grote van de chip. Tot slot dient aan alle tijdschema's te worden voldaan.
+
+\section{Plan van aanpak}
+Het plan van aanpak is een beschrijving van de aanpak van dit project, hierin staan onder andere de doelstellingen en wegen daar naar toe beschreven. Het plan van aanpak is te vinden in appendix A.
 
 \chapter{Besturing}
 Ons systeem wordt gespeeld doormiddel van 2 soorten besturing. De Ultrasone en de Button. De speler kan de modus selecteren doormiddel van een switch. Deze data van de buttons en de ultrasone worden verwerkt door een Arduino. Er is gekozen voor deze optie omdat de Arduino via SPI werkt. Hierdoor kan de SPI code getest worden en kunnen we het aantal pinnen dat gebruikt wordt laag houden. 
@@ -65,11 +75,92 @@ De schakeling bestaat uit vier subschakelingen. De subschakeling bestaat uit twe
 
 \newpage
 
-\chapter{ALU/PC}
-\newpage
+\chapter{CPU}
+\section{Functionele beschrijving}
+Om programma’s uit te kunnen voeren wordt gebruik gemaakt van een door de Delta-1 [INSERT BRON HIER] geïnspireerde microprocessor. Deze 8-bits processor krijgt instructies binnen die via SPI van een SD-kaart worden afgelezen. Vervolgens voert de processor bewerkingen uit, waarvan de resultaten doorgestuurd wordt naar de overige componenten op de chip. De data die uit de processor komt wordt hierna door de VGA-controller omgezet naar beelden op het scherm.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{CPU-toplevel}
+\caption{Toplevel beschrijving}
+\label{CPU}
+\end{figure}
+
+\section{Inputs en outputs}
+De processor heeft in totaal 5 ingangen. Dit zijn de 12-bits instructie-bus waarop de instructies staan die vanaf de SD kaart worden afgelezen, een 8-bits signaal waar alle externe inputs op komen te staan, de klok, de reset en het CPU-enable signaal. Het CPU-enable signaal geeft door aan de processor dat een nieuwe instructie klaar staat om uitgevoerd te worden. Op het 8-bits signaal waar alle inputsinformatie op staat, staat bijvoorbeeld de positie van de aansturing.
+Verder beschikt de CPU over 2 uitgangen: Eén 8-bits signaal dat data naar de VGA controller stuurt en een 8-bits signaal dat het adres van de volgende instructie doorgeeft aan de SD-kaart uitlezer. 
+
+\section{Implementatie}
+De totale processor is opgebouwd uit 5 verschillende sub-schakelingen: Registers, buffers, een rekenkern, een program-counter en een instructie-decoder.
+
+De processor beschikt in totaal over 11 registers. Wanneer het enable-signaal vanaf de decoder van een register hoog is, slaat deze de waarde die op dat moment aan zijn ingang staat op en kan deze data bij een later bewerking weer uitgelezen worden. Hiervan worden er 9 gebruikt om waarden op te slaan voor volgende bewerkingen, één om data aan de data-uitgang van de processor te zetten en één aan de uitgang van de rekenkern om direct een volgende bewerking op uit te kunnen voeren.
+
+Verder zijn er 13 buffers aanwezig. Deze buffers laten data van hun ingang door naar hun uitgang wanneer hun enable-signaal vanaf de decoder hoog is, en geven 'high-Z' door wanneer dit niet zo is. Negen van deze 8-bits buffers staan tussen de uitgangen van de opslag-registers en de databus, één aan de controller-input, één tussen het rekenkern-register en de databus, één die vanuit de decoder een numerieke waarde op de databus kan zetten en één 12-bits buffer aan de instructie-ingang van de CPU.
+
+De rekenkern heeft één 3-bits instructie-ingang vanuit de decoder, twee 8-bits data ingangen waarvan er een van de databus komt en een het resultaat van de vorige bewerking bevat, een 1-bit carry uitgang die aangeeft wanneer er een overflow optreedt bij een optel-operatie, een 1-bit zero uitgang die aangeeft wanneer een 'AND' operatie enkel nullen oplevert en een 8-bits uitgang waar het resultaat van de bewerkingen op staat. Afhankelijk van het instructie-signaal wordt een andere operatie uitgevoerd met de data op de twee ingangen. 
+
+De program counter krijgt na elke instructie van de decoder een signaal om ofwel één instructie verder te gaan, of om naar een specifieke instructie te 'springen'. Dit wordt gedaan met behulp van een 1-bit increment en -jump signaal. Zolang de increment ingang hoog is wordt er telkens één opgeteld bij iedere instructie, en als het jump signaal hoog is wordt het nieuwe instructie-nummer vanaf de databus uitgelezen. Het 8-bits uitgangssignaal bevat het adres van de volgende instructie en wordt doorgegeven naar de SD-kaart uitlezer.
+
+Aan de kern van de processor bevindt zich de instructie decoder. Deze decoder stuurt naar aanleiding van een 12-bits instructie de overige componenten binnen de CPU aan. Dit wordt gedaan door eerst het 12-bits signaal op te delen in een 4-bits instructie en een 8-bits argument. Hierna wordt afhankelijk van de instructie een enable-signaal naar een relevant register of buffer, een instructie-code naar de rekenkern en een increment of jump signaal naar de program counter gestuurd. Het 8-bits argument kan ofwel als waarde op de databus gezet worden of als enable-signaal omgezet worden voor een register of buffer. De mogelijke instructies met bijbehorende uitgangssignalen van de decoder zijn te zien in tabel [figuur 6.2]
+
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{tabel}
+\caption{Instructies met bijbehorende uitgangssignalen}
+\label{CPU}
+\end{figure}
+
+
+\chapter{GPU}
+De GPU is een component dat via de outputbuffer van de CPU 2 8 bit commando’s zal ontvangen met daarom achtereenvolgens de X en Y positie van de in te kleuren pixel op het scherm. Tevens zal er een commando bestaan om het volledige scherm schoon te vegen (Alle pixels uitzetten). De GPU ontvangt deze coördinaten en rekent dit om naar het adres waar de waarde ‘1’ of ‘0’ ingevuld zal moeten worden in het SRAM. Tevens bevind zich in de GPU de aansturing van het SRAM, via SPI. Deze zal bestaan uit een 8 bits instructiecode voor de schrijf handeling, gevolgd door een 16 bits adres waar de waarde geschreven zal moeten worden en uiteindelijk de waarde zelf. Op deze manier kan het SRAM geschreven worden vanuit de CPU en is het mogelijk om beeld te genereren.
+
+De GPU is ontworpen aan de hand van een FSM, deze bevat 5 states en staat hieronder weergegeven.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{FSM_GPU}
+\caption{Final State Machine van de GPU}
+\label{sub-GPU}
+\end{figure}
+
+In de eerste state kan de GPU drie richtingen op gaan. Als de eerste twee bits van de 8-bits vector '11' zijn gaat de GPU naar Clr-screen,hier zal de VGA zijn scherm leeg maken. De GPU gaat zijn X-data inlezen en springt naar de volgende state (Y-Hold) als de eerste twee bits van de 8-bits vector '01' is. Voor iedere andere waarde op de eerste twee bits van de 8-bits vector blijft de GPU in de int state. Vanuit de Clr-screen state kan de GPU alleen nog maar terug naar de int state en begint de FSM opnieuw. In de Y-Hold state wacht de GPU op Y-Data, de GPU blijft in deze state totdat de eerste twee bits van de 8-bits vector '10' aangeven (Duurt 20 klokslagen). Op dat moment leest de GPU de Y-Data in en stapt over naar de Calc. state. In deze state wordt het adres berekend voor de VGA, dit gebeurd met de formule $32*Y+X =$ adres. Als deze berekening voor het bepalen van zijn adres is voltooid springt de GPU automatisch naar de volgende state, de Write state. In de Write state schrijft de GPU data uit de buffers weg via SPI. Automatisch zal de GPU terug springen naar zijn eerste state, het proces begint dan opnieuw. 
 
 \chapter{VGA}
-\newpage
+Functionele beschrijving
+Om een monitor met een VGA aansluiting aan te sturen, zijn er eigenlijk 5 pinnen nodig die aangestuurd moeten worden. Drie pinnen voor rood, groen en blauw, een voor H-Sync en een voor V-Sync. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{VGA-1}
+\caption{Layout VGA-stekker}
+\label{VGA}
+\end{figure}
+
+Dit is de layout van de een VGA-stekker. 
+
+\section{RGB}
+Op de pinnen voor rood, groen en blauw, staat een analoog signaal tussen de 0 en de 0.7 volt. Hoe hoger de spanning, hoe feller de kleur. Door middel van verschillende spanningsniveaus kan de kleur per pixel worden bepaald. Wij maken echter alleen gebruik van zwart en wit. Daarom wordt er slechts een signaal naar de alle RGB pinnen verstuurd. Hierdoor ontstaat een witte pixel. Wanneer dit niet gebeurt, is de pixel zwart. 
+
+\section{H-Sync}
+H-Sync vertelt de monitor wanneer een regel klaar. Als H-Sync laag is, betekent dit voor de monitor dat er een nieuwe regel pixels geschreven kan worden. Het is echter niet zo dat wanneer H-Sync weer hoog is, dat er gelijk pixels geschreven kunnen worden. Er zit nogal enige vertragingstijd ingebouwd. Deze tijd was bij CRT-monitoren nodig om elektronenstraal terug naar het begin te richten.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{VGA-2}
+\caption{}
+\label{VGA}
+\end{figure}
+
+Video Line is het RGB signaal. Zoals te zien is in figuur 8.2, zit er tijd voor en na de dip van de H-sync. Deze tijd heet de front-porch en de back-porch. 
+
+\section{V-Sync}
+V-Sync is het signaal dat aan de monitor vertelt dat een volledig scherm is volgeschreven. Als V-Sync laag wordt, begint het scherm weer links bovenin met pixels vullen. Net als bij de H-Sync is er sprake van een Front-porch en een back-porch. Deze zijn bij de V-Sync een stuk langer dan bij de H-sync. Dit komt omdat de monitor de elektronenstraal van rechts onderin naar links bovenin moet sturen. Deze afstand is een stuk groter dan terug van rechts naar links. 
+
+\section{Implementatie}
+De VGA zet een serieel signaal om in een signaal dat voor een monitor te begrijpen is. Hiervoor zijn H-Sync, V-Sync en Von nodig. Von is eigenlijk hetzelfde signaal als H-sync. Het verschil is echter dat bij V-on de frontporch en de backporch zijn meegerekend. Von geeft aan de blackbox aan dat er een serieel signaal geschreven mag worden per 5 klokslagen.  Iedere vijf klokslagen wordt er een nieuwe pixel geschreven (eigenlijk zijn dat 20 pixels op het scherm). 
+
+H-Sync wordt bepaald door een kloksignaal te tellen. Vervolgens wordt op basis van H-Sync de V-Sync bepaald. Dit gebeurd door te tellen hoe vaak H-Sync naar nul gaat. 
 
 \chapter{SPI}
 Serial Peripheral Interface in het kort ook SPI genoemd is een de facto-standaard die ooit door Motorola bedacht is voor het communiceren met randapparatuur, zoals embedded systems, sensors en memory cards. Bij SPI heb je de master en de slave deze communiceren met elkaar via twee seriële datalijnen daarnaast is er nog een kloklijn die aangeeft wanneer er data overgedragen wordt. De kloklijn wordt aangestuurd door de master, dit houdt in dat de slave niet kan pauzeren en altijd data aan de master aan moet bieden. De standaard definieert enkel hoe de data van de master naar de slave en vice versa over wordt gedragen, niet hoe de data verwerkt wordt, dit heeft als gevolgd dat randapparatuur zelf nog moet definiëren hoe de communicatie verloopt.
@@ -167,8 +258,8 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 \item SS: het slave select signaal, dit signaal wordt gebruikt om de SD-kaart in SPI mode te krijgen en om aan te geven dat de SD-kaart geselecteerd is.
 \end{itemize}
 
-\newpage
 
-\chapter{Game: Pong}
+\chapter{Discussie}
+Over het eindontwerp is nog geen discussie mogelijk. Voor het schrijven van dit tussentijdse ontwerprapport zijn er nog wel een aantal dingen naar voren gekomen. Voorop staat het feit dat alles minder snel en soepel verloopt als dat we gehoopt hadden. Het testen van de hardware op het FPGA bord bracht veel oponthoud met zich mee. Ook bleken de stappen die tot het eindproduct moesten lijden niet compleet bedacht, tijdens het ontwerpproces kwamen er extra stappen naar voren die veel tijd hebben gekost. Ondanks dat de einddatum steeds dichterbij komt denken we dat alles binnen de tijd realiseerbaar is.
 
 \end{document}

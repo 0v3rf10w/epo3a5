@@ -1,11 +1,34 @@
-\BOOKMARK [0][-]{chapter*.1}{Samenvatting}{}% 1
-\BOOKMARK [0][-]{chapter*.2}{Inleiding}{}% 2
-\BOOKMARK [0][-]{chapter*.3}{Probleemstelling}{}% 3
-\BOOKMARK [0][-]{chapter*.4}{Systeem overzicht}{}% 4
-\BOOKMARK [0][-]{chapter*.5}{Besturing}{}% 5
-\BOOKMARK [1][-]{subsection.0.0.1}{Ultrasone}{chapter*.5}% 6
-\BOOKMARK [0][-]{chapter*.6}{Blackbox}{}% 7
-\BOOKMARK [0][-]{chapter*.7}{ALU/PC}{}% 8
-\BOOKMARK [0][-]{chapter*.8}{VGA}{}% 9
-\BOOKMARK [0][-]{chapter*.9}{SD-kaart/SPI}{}% 10
-\BOOKMARK [0][-]{chapter*.10}{Game: Pong}{}% 11
+\BOOKMARK [0][-]{chapter.1}{Inleiding}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Probleemstelling}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Projectopgave: 'Ontwerp een chip'}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Beschikbare infrastructuur}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Functionele eisen}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Randvoorwaarden}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.5}{Plan van aanpak}{chapter.2}% 7
+\BOOKMARK [0][-]{chapter.3}{Besturing}{}% 8
+\BOOKMARK [1][-]{section.3.1}{Ultrasone}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.2}{Buttons}{chapter.3}% 10
+\BOOKMARK [0][-]{chapter.4}{Blackbox}{}% 11
+\BOOKMARK [1][-]{section.4.1}{Functionele beschrijving}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.2}{Inputs en outputs}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.3}{Implementatie}{chapter.4}% 14
+\BOOKMARK [0][-]{chapter.5}{CPU}{}% 15
+\BOOKMARK [1][-]{section.5.1}{Functionele beschrijving}{chapter.5}% 16
+\BOOKMARK [1][-]{section.5.2}{Inputs en outputs}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.3}{Implementatie}{chapter.5}% 18
+\BOOKMARK [0][-]{chapter.6}{GPU}{}% 19
+\BOOKMARK [0][-]{chapter.7}{VGA}{}% 20
+\BOOKMARK [1][-]{section.7.1}{RGB}{chapter.7}% 21
+\BOOKMARK [1][-]{section.7.2}{H-Sync}{chapter.7}% 22
+\BOOKMARK [1][-]{section.7.3}{V-Sync}{chapter.7}% 23
+\BOOKMARK [1][-]{section.7.4}{Implementatie}{chapter.7}% 24
+\BOOKMARK [0][-]{chapter.8}{SPI}{}% 25
+\BOOKMARK [1][-]{section.8.1}{Functionele beschrijving}{chapter.8}% 26
+\BOOKMARK [1][-]{section.8.2}{Inputs en outputs}{chapter.8}% 27
+\BOOKMARK [1][-]{section.8.3}{Implementatie}{chapter.8}% 28
+\BOOKMARK [0][-]{chapter.9}{SD-kaart}{}% 29
+\BOOKMARK [1][-]{section.9.1}{SD communicatie}{chapter.9}% 30
+\BOOKMARK [1][-]{section.9.2}{SD commando's \046 responses}{chapter.9}% 31
+\BOOKMARK [1][-]{section.9.3}{Functionele omschrijving}{chapter.9}% 32
+\BOOKMARK [1][-]{section.9.4}{Inputs en outputs}{chapter.9}% 33
+\BOOKMARK [0][-]{chapter.10}{Discussie}{}% 34
