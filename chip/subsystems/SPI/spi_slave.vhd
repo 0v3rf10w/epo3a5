@@ -54,7 +54,7 @@ shft1: shift_reg port map (sclk,reset,shift,shift_in,'0',"11111111",shift_output
 	
 	read_out <= shift_output;
 	miso <= '1'; -- we are not sending anything from the slave
-	shift <= '1'; -- always shift because sclk determines when to shift
+	shift <= ss; -- always shift because sclk determines when to shift
 	
 	data_ready <= '1' when (count = "0000") else '0';
 	
