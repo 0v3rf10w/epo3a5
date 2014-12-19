@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.507 ns
+From           : miso_in
+To             : sdcard:inst10|spi:spi5|shift_in
+From Clock     : --
+To Clock       : clock_50mhz
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 24.654 ns
+From           : sdcard:inst10|state.idle
+To             : debug_out[3]
+From Clock     : clock_50mhz
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.820 ns
+From           : switch[1]
+To             : sdcard:inst10|address_buf[1]
+From Clock     : --
+To Clock       : clock_50mhz
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock_50mhz'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 88.11 MHz ( period = 11.350 ns )
+From           : sdcard:inst10|spi:spi5|counter:cnt1|count[1]
+To             : sdcard:inst10|spi:spi5|control:ctrl1|state.shifting
+From Clock     : clock_50mhz
+To Clock       : clock_50mhz
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clock_50mhz'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : sdcard:inst10|spi:spi5|counter:cnt1|count[1]
+To             : sdcard:inst10|spi:spi5|counter:cnt1|count[1]
+From Clock     : clock_50mhz
+To Clock       : clock_50mhz
+Failed Paths   : 393
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 393
+
+--------------------------------------------------------------------------------------
+

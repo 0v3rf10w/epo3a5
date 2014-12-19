@@ -1,0 +1,66 @@
+m255
+K3
+13
+cModel Technology
+dGWTF
+Esdcard
+Z0 w1418285416
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 d/GWTF
+Z5 8VHDL/sdcard.vhd
+Z6 FVHDL/sdcard.vhd
+l0
+L5
+VXImmP4D`CL47X0J^bh`KT2
+Z7 OE;C;10.1b;51
+32
+Z8 !s108 1418285466.347196
+Z9 !s90 -lower|-explicit|-work|work|VHDL/sdcard.vhd|-quiet|-nologo|
+Z10 !s107 VHDL/sdcard.vhd|
+Z11 o-lower -explicit -work work -quiet -nologo
+Z12 tExplicit 1
+!s100 ichAcE=oAlVmeJU6>LI6N0
+!i10b 1
+Abehavioural
+R1
+R2
+R3
+Z13 DEx4 work 6 sdcard 0 22 XImmP4D`CL47X0J^bh`KT2
+l59
+L20
+VPDhno0J]`ff`@@2Oz4Di90
+!s100 KTgbcUKMQ2fJ@UWRXZk:=3
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!i10b 1
+Csdcard_behavioural_cfg
+abehavioural
+esdcard
+DAx4 work 6 sdcard 11 behavioural 22 PDhno0J]`ff`@@2Oz4Di90
+R1
+R2
+R3
+R13
+w1418046721
+dGWTF
+8VHDL/sdcard_behavioural_cfg.vhd
+FVHDL/sdcard_behavioural_cfg.vhd
+l0
+L1
+VUQM7PA8RJ_AVgo]C@^9^32
+!s100 <Y2D?7C`UZLz@h]6;RoGb2
+R7
+32
+!i10b 0
+!s108 1418285469.877649
+!s90 -lower|-explicit|-work|work|VHDL/sdcard_behavioural_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/sdcard_behavioural_cfg.vhd|
+R11
+R12

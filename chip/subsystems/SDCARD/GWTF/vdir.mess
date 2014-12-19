@@ -1,0 +1,51 @@
+Library vendor : Model Technology
+Maximum unnamed designs : 3
+ENTITY sdcard
+    Source modified time: Thu Dec 11 09:10:16 2014
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/sdcard.vhd
+    Source file: VHDL/sdcard.vhd
+    Start location: VHDL/sdcard.vhd:5
+    Version string: XImmP4D`CL47X0J^bh`KT2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work sdcard XImmP4D`CL47X0J^bh`KT2
+    Start location: VHDL/sdcard.vhd:20
+    Version string: PDhno0J]`ff`@@2Oz4Di90
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/sdcard.vhd
+    Source modified time: Thu Dec 11 09:10:16 2014
+    HDL source file: VHDL/sdcard.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION sdcard_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: sdcard
+    Depends on: A work sdcard behavioural PDhno0J]`ff`@@2Oz4Di90
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work sdcard XImmP4D`CL47X0J^bh`KT2
+    Source modified time: Mon Dec  8 14:52:01 2014
+    Source directory: GWTF
+    HDL source file: VHDL/sdcard_behavioural_cfg.vhd
+    Source file: VHDL/sdcard_behavioural_cfg.vhd
+    Start location: VHDL/sdcard_behavioural_cfg.vhd:1
+    Version string: UQM7PA8RJ_AVgo]C@^9^32
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1

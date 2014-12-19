@@ -1,0 +1,423 @@
+|top_de1
+slave_clk <= sdcard:inst10.sclk
+clock_50mhz => gen6mhz:inst1.clk50mhz
+reset_button => inst4.IN0
+reset_button => inst4.IN1
+miso_in => sdcard:inst10.miso
+go_next => inst.IN0
+go_next => inst.IN1
+switch[0] => sdcard:inst10.address[0]
+switch[1] => sdcard:inst10.address[1]
+switch[2] => sdcard:inst10.address[2]
+switch[3] => sdcard:inst10.address[3]
+switch[4] => sdcard:inst10.address[4]
+switch[5] => sdcard:inst10.address[5]
+switch[6] => sdcard:inst10.address[6]
+switch[7] => sdcard:inst10.address[7]
+mosi_out <= sdcard:inst10.mosi
+slave_select <= sdcard:inst10.ss
+busy_out <= sdcard:inst10.busy
+debug_out[0] <= sdcard:inst10.state_debug[0]
+debug_out[1] <= sdcard:inst10.state_debug[1]
+debug_out[2] <= sdcard:inst10.state_debug[2]
+debug_out[3] <= sdcard:inst10.state_debug[3]
+debug_out[4] <= sdcard:inst10.state_debug[4]
+debug_out[5] <= sdcard:inst10.state_debug[5]
+leds[0] <= sdcard:inst10.spi_output_debug[0]
+leds[1] <= sdcard:inst10.spi_output_debug[1]
+leds[2] <= sdcard:inst10.spi_output_debug[2]
+leds[3] <= sdcard:inst10.spi_output_debug[3]
+leds[4] <= sdcard:inst10.spi_output_debug[4]
+leds[5] <= sdcard:inst10.spi_output_debug[5]
+leds[6] <= sdcard:inst10.spi_output_debug[6]
+leds[7] <= sdcard:inst10.spi_output_debug[7]
+
+
+|top_de1|sdcard:inst10
+clk => sd_clk.DATAA
+div_clk => sd_clk.DATAB
+reset => state.DATAB
+reset => spi:spi5.reset
+reset => send_cnt[0].ACLR
+reset => send_cnt[1].ACLR
+reset => send_cnt[2].ACLR
+reset => send_cnt[3].ACLR
+reset => went_to_next.IN1
+reset => address_buf[0].ACLR
+reset => address_buf[1].ACLR
+reset => address_buf[2].ACLR
+reset => address_buf[3].ACLR
+reset => address_buf[4].ACLR
+reset => address_buf[5].ACLR
+reset => address_buf[6].ACLR
+reset => address_buf[7].ACLR
+reset => output_reg[0].ACLR
+reset => output_reg[1].ACLR
+reset => output_reg[2].ACLR
+reset => output_reg[3].ACLR
+reset => output_reg[4].ACLR
+reset => output_reg[5].ACLR
+reset => output_reg[6].ACLR
+reset => output_reg[7].ACLR
+reset => state~4.DATAIN
+reset => Selector0.IN1
+address[0] => address_change.IN1
+address[0] => Equal0.IN15
+address[0] => Mux31.IN15
+address[0] => address_buf[0].DATAIN
+address[1] => address_change.IN1
+address[1] => Equal0.IN14
+address[1] => Mux30.IN15
+address[1] => address_buf[1].DATAIN
+address[2] => address_change.IN1
+address[2] => Equal0.IN13
+address[2] => Mux29.IN15
+address[2] => address_buf[2].DATAIN
+address[3] => address_change.IN1
+address[3] => Equal0.IN12
+address[3] => Mux28.IN15
+address[3] => address_buf[3].DATAIN
+address[4] => address_change.IN1
+address[4] => Equal0.IN11
+address[4] => Mux27.IN15
+address[4] => address_buf[4].DATAIN
+address[5] => address_change.IN1
+address[5] => Equal0.IN10
+address[5] => Mux26.IN15
+address[5] => address_buf[5].DATAIN
+address[6] => address_change.IN1
+address[6] => Equal0.IN9
+address[6] => Mux25.IN15
+address[6] => address_buf[6].DATAIN
+address[7] => address_change.IN1
+address[7] => Equal0.IN8
+address[7] => Mux24.IN15
+address[7] => address_buf[7].DATAIN
+output[0] <= output_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= output_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= output_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= output_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+output[7] <= output_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+busy <= busy.DB_MAX_OUTPUT_PORT_TYPE
+sclk <= spi:spi5.sclk
+mosi <= mosi.DB_MAX_OUTPUT_PORT_TYPE
+miso => spi:spi5.miso
+ss <= WideOr23.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[0] <= WideOr46.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[1] <= WideOr45.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[2] <= WideOr44.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[3] <= WideOr43.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[4] <= WideOr42.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[5] <= WideOr41.DB_MAX_OUTPUT_PORT_TYPE
+next_state => go_to_next.CLK
+spi_output_debug[0] <= spi:spi5.read_out[0]
+spi_output_debug[1] <= spi:spi5.read_out[1]
+spi_output_debug[2] <= spi:spi5.read_out[2]
+spi_output_debug[3] <= spi:spi5.read_out[3]
+spi_output_debug[4] <= spi:spi5.read_out[4]
+spi_output_debug[5] <= spi:spi5.read_out[5]
+spi_output_debug[6] <= spi:spi5.read_out[6]
+spi_output_debug[7] <= spi:spi5.read_out[7]
+
+
+|top_de1|sdcard:inst10|spi:spi5
+clk => control:ctrl1.clk
+clk => shift_reg:shft1.clk
+send => control:ctrl1.send
+reset => shift_reg:shft1.reset
+reset => shift_in.ACLR
+reset => control:ctrl1.reset
+write_enable => shift_reg:shft1.reg_set
+write_in[0] => shift_reg:shft1.reg_write[0]
+write_in[1] => shift_reg:shft1.reg_write[1]
+write_in[2] => shift_reg:shft1.reg_write[2]
+write_in[3] => shift_reg:shft1.reg_write[3]
+write_in[4] => shift_reg:shft1.reg_write[4]
+write_in[5] => shift_reg:shft1.reg_write[5]
+write_in[6] => shift_reg:shft1.reg_write[6]
+write_in[7] => shift_reg:shft1.reg_write[7]
+read_out[0] <= shift_reg:shft1.output[0]
+read_out[1] <= shift_reg:shft1.output[1]
+read_out[2] <= shift_reg:shft1.output[2]
+read_out[3] <= shift_reg:shft1.output[3]
+read_out[4] <= shift_reg:shft1.output[4]
+read_out[5] <= shift_reg:shft1.output[5]
+read_out[6] <= shift_reg:shft1.output[6]
+read_out[7] <= shift_reg:shft1.output[7]
+busy <= control:ctrl1.busy
+sclk <= control:ctrl1.sclk
+mosi <= shift_reg:shft1.output[7]
+miso => shift_in.DATAIN
+ss <= control:ctrl1.ss
+
+
+|top_de1|sdcard:inst10|spi:spi5|counter:cnt1
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+reset => count[0].ACLR
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+count_out[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|sdcard:inst10|spi:spi5|shift_reg:shft1
+clk => reg_shift[0].CLK
+clk => reg_shift[1].CLK
+clk => reg_shift[2].CLK
+clk => reg_shift[3].CLK
+clk => reg_shift[4].CLK
+clk => reg_shift[5].CLK
+clk => reg_shift[6].CLK
+clk => reg_shift[7].CLK
+reset => reg_shift[0].ACLR
+reset => reg_shift[1].ACLR
+reset => reg_shift[2].ACLR
+reset => reg_shift[3].ACLR
+reset => reg_shift[4].ACLR
+reset => reg_shift[5].ACLR
+reset => reg_shift[6].ACLR
+reset => reg_shift[7].ACLR
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+shift_in => reg_shift.DATAB
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_write[0] => reg_shift.DATAB
+reg_write[1] => reg_shift.DATAB
+reg_write[2] => reg_shift.DATAB
+reg_write[3] => reg_shift.DATAB
+reg_write[4] => reg_shift.DATAB
+reg_write[5] => reg_shift.DATAB
+reg_write[6] => reg_shift.DATAB
+reg_write[7] => reg_shift.DATAB
+output[0] <= reg_shift[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= reg_shift[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= reg_shift[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= reg_shift[3].DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= reg_shift[4].DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= reg_shift[5].DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= reg_shift[6].DB_MAX_OUTPUT_PORT_TYPE
+output[7] <= reg_shift[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|sdcard:inst10|spi:spi5|control:ctrl1
+clk => sclk.IN1
+clk => state~2.DATAIN
+reset => state.DATAB
+reset => state~4.DATAIN
+reset => Selector0.IN0
+send => Selector1.IN2
+send => Selector0.IN1
+count[0] => Equal0.IN2
+count[1] => Equal0.IN1
+count[2] => Equal0.IN0
+count[3] => Equal0.IN3
+shift <= clk_switch.DB_MAX_OUTPUT_PORT_TYPE
+sclk <= sclk.DB_MAX_OUTPUT_PORT_TYPE
+c_reset <= c_reset.DB_MAX_OUTPUT_PORT_TYPE
+ss <= ss.DB_MAX_OUTPUT_PORT_TYPE
+busy <= sig_busy.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|gen6mhz:inst1
+clk50mhz => count[0].CLK
+clk50mhz => count[1].CLK
+clk50mhz => count[2].CLK
+clk6mhz <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9
+clk => dff_haat:lbl1.clk
+f2 <= dff_haat:lbl1.q
+f4 <= dff_haat:lbl2.q
+f8 <= dff_haat:lbl3.q
+f16 <= dff_haat:lbl4.q
+f32 <= dff_haat:lbl5.q
+f64 <= dff_haat:lbl6.q
+f128 <= dff_haat:lbl7.q
+f256 <= dff_haat:lbl8.q
+f512 <= dff_haat:lbl9.q
+f1024 <= dff_haat:lbl10.q
+f2048 <= dff_haat:lbl11.q
+f4096 <= dff_haat:lbl12.q
+f8192 <= dff_haat:lbl13.q
+f16384 <= dff_haat:lbl14.q
+f32768 <= dff_haat:lbl15.q
+f65536 <= dff_haat:lbl16.q
+f131072 <= dff_haat:lbl17.q
+reset => dff_haat:lbl1.reset
+reset => dff_haat:lbl2.reset
+reset => dff_haat:lbl3.reset
+reset => dff_haat:lbl4.reset
+reset => dff_haat:lbl5.reset
+reset => dff_haat:lbl6.reset
+reset => dff_haat:lbl7.reset
+reset => dff_haat:lbl8.reset
+reset => dff_haat:lbl9.reset
+reset => dff_haat:lbl10.reset
+reset => dff_haat:lbl11.reset
+reset => dff_haat:lbl12.reset
+reset => dff_haat:lbl13.reset
+reset => dff_haat:lbl14.reset
+reset => dff_haat:lbl15.reset
+reset => dff_haat:lbl16.reset
+reset => dff_haat:lbl17.reset
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl1
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl2
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl3
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl4
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl5
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl6
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl7
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl8
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl9
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl10
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl11
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl12
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl13
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl14
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl15
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl16
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|klokdeler:inst9|dff_haat:lbl17
+clk => state.CLK
+d => ~NO_FANOUT~
+reset => state.ACLR
+q <= state.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+

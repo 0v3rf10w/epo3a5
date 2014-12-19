@@ -1,0 +1,5 @@
+rm -rf /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/syn_work_bak
+mv -f /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/syn_work /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/syn_work_bak
+cp -r /tmp/jtijhuis//home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/syn_work /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF
+cp /tmp/jtijhuis//home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/ADB/sdcard.ddc /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/ADB/sdcard.ddc
+cp /tmp/jtijhuis//home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/VHDL/sdcard_SYNTH.vhd /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/VHDL/sdcard_SYNTH.vhd
