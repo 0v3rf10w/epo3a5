@@ -15,7 +15,7 @@ port(	clk:			in std_logic;
 		miso:			in std_logic;
 		ss:				out std_logic;
 		
-		state_debug:	out std_logic_vector(5 downto 0);
+		state_debug:	out std_logic_vector(6 downto 0);
 		next_state:		in std_logic;
 		spi_output_debug: out std_logic_vector(7 downto 0)
 		
@@ -44,10 +44,15 @@ architecture behavioural of sdcard is
 				dummy_count,start_dummy_send,dummy_send,
 				start_init_count,init_cmd,start_init_send,init_send,
 				init_read,start_init_receive,init_receive,
+				load_cmd8,start_send_cmd8,send_cmd8,
+				read_response_cmd8,start_receive_response_cmd8,receive_response_cmd8,
+				read_r7,start_receive_r7,receive_r7,
+				load_cmd55,start_send_cmd55,send_cmd55,
+				read_response_cmd55,start_receive_response_cmd55,receive_response_cmd55,
+				load_acmd41,start_send_acmd41,send_acmd41,
+				read_response_acmd41,start_receive_response_acmd41,receive_response_acmd41,
 				load_cmd16,start_send_cmd16,send_cmd16,
 				read_response_cmd16,start_receive_response_cmd16,receive_response_cmd16,
-				load_cmd1,start_send_cmd1,send_cmd1,
-				read_response_cmd1,start_receive_response_cmd1,receive_response_cmd1,
 				idle,
 				load_cmd,start_send_part,send_part,
 				read_response,start_receive_response,receive_response,
@@ -180,8 +185,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 							state <= init_send;
 						end if;
 					when init_read => 
-						if(spi_output = "00000001") then
-							state <= load_cmd1;
+						if(spi_output = "00000000") then
+							state <= load_cmd8;
 						elsif(spi_output = "11111111") then
 							state <= start_init_receive;
 						else
@@ -196,37 +201,124 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 							state <= init_receive;
 						end if;
 						
-					when load_cmd1 =>
-						if(send_cnt = "0101") then
-							state <= read_response_cmd1;
+					when load_cmd8 =>
+						if(send_cnt = "0110") then
+							state <= read_response_cmd8;
 						else
-							state <= start_send_cmd1;
+							state <= start_send_cmd8;
 						end if;
-					when start_send_cmd1 =>
-						state <= send_cmd1;
-					when send_cmd1 =>
+					when start_send_cmd8 =>
+						state <= send_cmd8;
+					when send_cmd8 =>
 						if(busy_spi = '0') then
-							state <= load_cmd1;
+							state <= load_cmd8;
 						else
-							state <= send_cmd1;
+							state <= send_cmd8;
 						end if;
-					when read_response_cmd1 =>
-						if(spi_output = "00000001") then
-							state <= load_cmd1;
-						elsif(spi_output = "00000000") then
-							state <= load_cmd16;
+					when read_response_cmd8 =>
+						if(spi_output = "00000000") then
+							state <= read_r7;
 						elsif(spi_output = "11111111") then
-							state <= start_receive_response_cmd1;
+							state <= start_receive_response_cmd8;
 						else
 							state <= error;
 						end if;
-					when start_receive_response_cmd1 =>
-						state <= receive_response_cmd1;
-					when receive_response_cmd1 =>
+					when start_receive_response_cmd8 =>
+						state <= receive_response_cmd8;
+					when receive_response_cmd8 =>
 						if(busy_spi = '0') then
-							state <= read_response_cmd1;
+							state <= read_response_cmd8;
 						else
-							state <= receive_response_cmd1;
+							state <= receive_response_cmd8;
+						end if;
+					
+					when read_r7 =>
+						if(send_cnt = "0011") then
+							if(spi_output = "00000001") then
+								state <= start_receive_r7;
+							else
+								state <= error;
+							end if;
+						elsif(send_cnt = "0100") then
+							if(spi_output = "10101010") then
+								state <= load_cmd55;
+							else
+								state <= error;
+							end if;
+						else
+							state <= start_receive_r7;
+						end if;
+					when start_receive_r7 =>
+						state <= receive_r7;
+					when receive_r7 =>
+						if(busy_spi = '0') then
+							state <= read_r7;
+						else
+							state <= receive_r7;
+						end if;
+						
+					when load_cmd55 =>
+						if(send_cnt = "0101") then
+							state <= read_response_cmd55;
+						else
+							state <= start_send_cmd55;
+						end if;
+					when start_send_cmd55 =>
+						state <= send_cmd55;
+					when send_cmd55 =>
+						if(busy_spi = '0') then
+							state <= load_cmd55;
+						else
+							state <= send_cmd55;
+						end if;
+					when read_response_cmd55 =>
+						if(spi_output = "00000000") then
+							state <= load_cmd55;
+						elsif(spi_output = "11111111") then
+							state <= start_receive_response_cmd55;
+						else
+							state <= error;
+						end if;
+					when start_receive_response_cmd55 =>
+						state <= receive_response_cmd55;
+					when receive_response_cmd55 =>
+						if(busy_spi = '0') then
+							state <= read_response_cmd55;
+						else
+							state <= receive_response_cmd55;
+						end if;
+						
+					when load_acmd41 =>
+						if(send_cnt = "0101") then
+							state <= read_response_acmd41;
+						else
+							state <= start_send_acmd41;
+						end if;
+					when start_send_acmd41 =>
+						state <= send_acmd41;
+					when send_acmd41 =>
+						if(busy_spi = '0') then
+							state <= load_acmd41;
+						else
+							state <= send_acmd41;
+						end if;
+					when read_response_acmd41 =>
+						if(spi_output = "00000001") then
+							state <= load_acmd41;
+						elsif(spi_output = "00000000") then
+							state <= load_cmd16;
+						elsif(spi_output = "11111111") then
+							state <= start_receive_response_acmd41;
+						else
+							state <= error;
+						end if;
+					when start_receive_response_acmd41 =>
+						state <= receive_response_acmd41;
+					when receive_response_acmd41 =>
+						if(busy_spi = '0') then
+							state <= read_response_acmd41;
+						else
+							state <= receive_response_acmd41;
 						end if;
 						
 					when load_cmd16 =>
@@ -345,7 +437,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "000001";
+				state_debug <= "0000001";
 			when dummy_count =>
 				slave_select <= '1';
 				mosi_high <= '1';
@@ -358,7 +450,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "000010";
+				state_debug <= "0000010";
 			when start_dummy_send =>
 				slave_select <= '1';
 				mosi_high <= '1';
@@ -371,7 +463,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "000011";
+				state_debug <= "0000011";
 			when dummy_send =>
 				slave_select <= '1';
 				mosi_high <= '1';
@@ -384,7 +476,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "000100";
+				state_debug <= "0000100";
 			when start_init_count =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -397,7 +489,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "000101";
+				state_debug <= "0000101";
 			when init_cmd =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -427,7 +519,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "000110";
+				state_debug <= "0000110";
 			when start_init_send =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -440,7 +532,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "000111";
+				state_debug <= "0000111";
 			when init_send =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -453,7 +545,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "001000";
+				state_debug <= "0001000";
 			when init_read =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -466,7 +558,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "001001";
+				state_debug <= "0001001";
 			when start_init_receive =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -479,7 +571,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "001010";
+				state_debug <= "0001010";
 			when init_receive =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -492,9 +584,9 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= (others => '0');
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "001011";
-			
-			when load_cmd1 =>
+				state_debug <= "0001011";
+
+			when load_cmd8 =>
 				slave_select <= '0';
 				mosi_high <= '1';
 				sig_send <= '0';
@@ -503,7 +595,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_send_cnt <= send_cnt + 1;
 				case send_cnt is
 					when "0000" =>
-						write_in <= "01000001";
+						write_in <= "01110111";
 					when "0001" =>
 						write_in <= "00000000";
 					when "0010" =>
@@ -521,8 +613,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "101100";
-			when start_send_cmd1 =>
+				state_debug <= "0001100";
+			when start_send_cmd8 =>
 				slave_select <= '0';
 				mosi_high <= '0';
 				sig_send <= '1';
@@ -534,8 +626,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "101101";
-			when send_cmd1 =>
+				state_debug <= "0001101";
+			when send_cmd8 =>
 				slave_select <= '0';
 				mosi_high <= '0';
 				sig_send <= '1';
@@ -547,8 +639,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "101110";
-			when read_response_cmd1 =>
+				state_debug <= "0001110";
+			when read_response_cmd8 =>
 				slave_select <= '0';
 				mosi_high <= '1';
 				sig_send <= '0';
@@ -560,8 +652,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "101111";
-			when start_receive_response_cmd1 =>
+				state_debug <= "0001111";
+			when start_receive_response_cmd8 =>
 				slave_select <= '0';
 				mosi_high <= '1';
 				sig_send <= '1';
@@ -573,8 +665,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "110000";
-			when receive_response_cmd1 =>
+				state_debug <= "0010000";
+			when receive_response_cmd8 =>
 				slave_select <= '0';
 				mosi_high <= '1';
 				sig_send <= '1';
@@ -586,7 +678,235 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "110001";
+				state_debug <= "0010001";
+				
+			when read_r7 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '0';
+				send_reset <= '1';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt + 1;
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0010010";
+			when start_receive_r7 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt;
+				write_in <= "11111111";	
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0010011";
+			when receive_r7 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt;
+				write_in <= "11111111";	
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0010100";
+			
+			when load_cmd55 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '0';
+				send_reset <= '1';
+				write_enable <= '1';
+				new_send_cnt <= send_cnt + 1;
+				case send_cnt is
+					when "0000" =>
+						write_in <= "01110111";
+					when "0001" =>
+						write_in <= "00000000";
+					when "0010" =>
+						write_in <= "00000000";
+					when "0011" =>
+						write_in <= "00000000";
+					when "0100" =>
+						write_in <= "00000000";
+					when "0101" =>
+						write_in <= "11111111";
+					when others =>
+						write_in <= "01000010";
+				end case;
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0010101";
+			when start_send_cmd55 =>
+				slave_select <= '0';
+				mosi_high <= '0';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt;
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0010110";
+			when send_cmd55 =>
+				slave_select <= '0';
+				mosi_high <= '0';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt;
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0010111";
+			when read_response_cmd55 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '0';
+				send_reset <= '1';
+				write_enable <= '0';
+				new_send_cnt <= (others => '0');
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0011000";
+			when start_receive_response_cmd55 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= (others => '0');
+				write_in <= "11111111";	
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0011001";
+			when receive_response_cmd55 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= (others => '0');
+				write_in <= "11111111";	
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0011010";
+				
+			when load_acmd41 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '0';
+				send_reset <= '1';
+				write_enable <= '1';
+				new_send_cnt <= send_cnt + 1;
+				case send_cnt is
+					when "0000" =>
+						write_in <= "01101001";
+					when "0001" =>
+						write_in <= "01000000";
+					when "0010" =>
+						write_in <= "00000000";
+					when "0011" =>
+						write_in <= "00000000";
+					when "0100" =>
+						write_in <= "00000000";
+					when "0101" =>
+						write_in <= "11111111";
+					when others =>
+						write_in <= "01000010";
+				end case;
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0011011";
+			when start_send_acmd41 =>
+				slave_select <= '0';
+				mosi_high <= '0';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt;
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0011100";
+			when send_acmd41 =>
+				slave_select <= '0';
+				mosi_high <= '0';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt;
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0011101";
+			when read_response_acmd41 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '0';
+				send_reset <= '1';
+				write_enable <= '0';
+				new_send_cnt <= (others => '0');
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0011110";
+			when start_receive_response_acmd41 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= (others => '0');
+				write_in <= "11111111";	
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0011111";
+			when receive_response_acmd41 =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= (others => '0');
+				write_in <= "11111111";	
+				busy <= '1';
+				new_output_reg <= output_reg;
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug <= "0100000";
 			
 			when load_cmd16 =>
 				slave_select <= '0';
@@ -615,7 +935,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "001100";
+				state_debug <= "0100001";
 			when start_send_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -628,7 +948,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "001101";
+				state_debug <= "0100010";
 			when send_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -641,7 +961,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "001110";
+				state_debug <= "0100011";
 			when read_response_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -654,7 +974,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "001111";
+				state_debug <= "0100100";
 			when start_receive_response_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -667,7 +987,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "010000";
+				state_debug <= "0100101";
 			when receive_response_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -680,7 +1000,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "010001";
+				state_debug <= "0100110";
 				
 			when idle =>
 				slave_select <= '0';
@@ -694,7 +1014,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "010010";
+				state_debug <= "1000001";
 			when load_cmd =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -722,7 +1042,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "010011";
+				state_debug <= "1000010";
 			when start_send_part =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -735,7 +1055,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "010100";
+				state_debug <= "1000011";
 			when send_part =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -748,7 +1068,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "010101";
+				state_debug <= "1000100";
 			when read_response =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -761,7 +1081,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "010110";
+				state_debug <= "1000101";
 			when start_receive_response =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -774,7 +1094,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "010111";
+				state_debug <= "1000110";
 			when receive_response =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -787,7 +1107,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "011000";
+				state_debug <= "1000111";
 			when wait_data =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -800,7 +1120,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "011001";
+				state_debug <= "1001000";
 			when start_read_data_part =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -813,7 +1133,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "011010";
+				state_debug <= "1001001";
 			when read_data_part =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -826,7 +1146,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "011011";
+				state_debug <= "1001010";
 			when start_read_data =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -839,7 +1159,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "011100";
+				state_debug <= "1001011";
 			when read_data =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -852,7 +1172,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= output_reg;
 				data_read <= '0';
 				divide_clock <= '0';
-				state_debug <= "011101";
+				state_debug <= "1001100";
 			when buffer_data =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -865,7 +1185,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= spi_output;
 				data_read <= '1';
 				divide_clock <= '0';
-				state_debug <= "011110";
+				state_debug <= "1001101";
 			when error =>
 				slave_select <= '1';
 				mosi_high <= '0';
@@ -878,7 +1198,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg <= spi_output;
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug <= "011111";
+				state_debug <= "1111111";
 		end case;
 	end process;
 	
