@@ -1,5 +1,5 @@
 Fitter report for top_de1
-Tue Dec 23 20:40:58 2014
+Fri Dec 26 18:13:38 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Tue Dec 23 20:40:58 2014           ;
+; Fitter Status                      ; Successful - Fri Dec 26 18:13:38 2014           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; top_de1                                         ;
 ; Top-level Entity Name              ; top_de1                                         ;
@@ -134,22 +134,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------------------+--------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ; < 0.1%      ;
-;     Processors 5-8         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
 +----------------------------------------------+
@@ -158,8 +151,8 @@ applicable agreement for further details.
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 301 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 301 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 302 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 302 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -182,7 +175,7 @@ applicable agreement for further details.
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 299     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 300     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 2       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -222,13 +215,13 @@ The pin-out file can be found in C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF
 ; I/O pins                                    ; 31 / 315 ( 10 % )     ;
 ;     -- Clock pins                           ; 6 / 8 ( 75 % )        ;
 ;                                             ;                       ;
-; Global signals                              ; 2                     ;
+; Global signals                              ; 3                     ;
 ; M4Ks                                        ; 0 / 52 ( 0 % )        ;
 ; Total block memory bits                     ; 0 / 239,616 ( 0 % )   ;
 ; Total block memory implementation bits      ; 0 / 239,616 ( 0 % )   ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )        ;
 ; PLLs                                        ; 0 / 4 ( 0 % )         ;
-; Global clocks                               ; 2 / 16 ( 13 % )       ;
+; Global clocks                               ; 3 / 16 ( 19 % )       ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )         ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
@@ -236,8 +229,8 @@ The pin-out file can be found in C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF
 ; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%          ;
 ; Maximum fan-out                             ; 71                    ;
 ; Highest non-global fan-out                  ; 71                    ;
-; Total fan-out                               ; 888                   ;
-; Average fan-out                             ; 2.89                  ;
+; Total fan-out                               ; 886                   ;
+; Average fan-out                             ; 2.90                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -275,7 +268,7 @@ The pin-out file can be found in C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF
 ; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )       ; 0 / 52 ( 0 % )                 ;
 ; Total memory bits                           ; 0                    ; 0                              ;
 ; Total RAM block bits                        ; 0                    ; 0                              ;
-; Clock control block                         ; 2 / 20 ( 10 % )      ; 0 / 20 ( 0 % )                 ;
+; Clock control block                         ; 3 / 20 ( 15 % )      ; 0 / 20 ( 0 % )                 ;
 ;                                             ;                      ;                                ;
 ; Connections                                 ;                      ;                                ;
 ;     -- Input Connections                    ; 0                    ; 0                              ;
@@ -284,7 +277,7 @@ The pin-out file can be found in C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 888                  ; 0                              ;
+;     -- Total Connections                    ; 886                  ; 0                              ;
 ;     -- Registered Connections               ; 398                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
@@ -317,7 +310,7 @@ The pin-out file can be found in C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF
 +--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; clock_50mhz  ; L1    ; 2        ; 0            ; 13           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; clock_50mhz  ; L1    ; 2        ; 0            ; 13           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; go_next      ; T21   ; 6        ; 50           ; 9            ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; miso_in      ; W20   ; 6        ; 50           ; 2            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; reset_button ; R22   ; 6        ; 50           ; 10           ; 1           ; 71                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
@@ -974,77 +967,77 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; go_next                                                      ;                   ;         ;
 ; switch[7]                                                    ;                   ;         ;
 ; reset_button                                                 ;                   ;         ;
-;      - sdcard:inst7|send_cnt[0]                              ; 1                 ; 6       ;
-;      - sdcard:inst7|send_cnt[1]                              ; 1                 ; 6       ;
-;      - sdcard:inst7|send_cnt[2]                              ; 1                 ; 6       ;
-;      - sdcard:inst7|send_cnt[3]                              ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0]    ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3]    ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4]    ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5]    ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6]    ; 1                 ; 6       ;
-;      - sdcard:inst7|state.dummy_count                        ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_dummy_send                   ; 1                 ; 6       ;
-;      - sdcard:inst7|state.dummy_send                         ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_init_count                   ; 1                 ; 6       ;
-;      - sdcard:inst7|state.init_cmd                           ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_init_send                    ; 1                 ; 6       ;
-;      - sdcard:inst7|state.init_send                          ; 1                 ; 6       ;
-;      - sdcard:inst7|state.init_read                          ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_init_receive                 ; 1                 ; 6       ;
-;      - sdcard:inst7|state.init_receive                       ; 1                 ; 6       ;
-;      - sdcard:inst7|state.load_cmd55                         ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_send_cmd55                   ; 1                 ; 6       ;
-;      - sdcard:inst7|state.send_cmd55                         ; 1                 ; 6       ;
-;      - sdcard:inst7|state.read_response_cmd55                ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_receive_response_cmd55       ; 1                 ; 6       ;
-;      - sdcard:inst7|state.receive_response_cmd55             ; 1                 ; 6       ;
-;      - sdcard:inst7|state.load_acmd41                        ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_send_acmd41                  ; 1                 ; 6       ;
-;      - sdcard:inst7|state.send_acmd41                        ; 1                 ; 6       ;
-;      - sdcard:inst7|state.read_response_acmd41               ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_receive_response_acmd41      ; 1                 ; 6       ;
-;      - sdcard:inst7|state.receive_response_acmd41            ; 1                 ; 6       ;
-;      - sdcard:inst7|state.load_cmd16                         ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_send_cmd16                   ; 1                 ; 6       ;
-;      - sdcard:inst7|state.send_cmd16                         ; 1                 ; 6       ;
-;      - sdcard:inst7|state.read_response_cmd16                ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_receive_response_cmd16       ; 1                 ; 6       ;
-;      - sdcard:inst7|state.receive_response_cmd16             ; 1                 ; 6       ;
-;      - sdcard:inst7|state.idle                               ; 1                 ; 6       ;
-;      - sdcard:inst7|state.load_cmd                           ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_send_part                    ; 1                 ; 6       ;
-;      - sdcard:inst7|state.send_part                          ; 1                 ; 6       ;
-;      - sdcard:inst7|state.read_response                      ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_receive_response             ; 1                 ; 6       ;
-;      - sdcard:inst7|state.receive_response                   ; 1                 ; 6       ;
-;      - sdcard:inst7|state.wait_data                          ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_read_data_part               ; 1                 ; 6       ;
-;      - sdcard:inst7|state.read_data_part                     ; 1                 ; 6       ;
-;      - sdcard:inst7|state.start_read_data                    ; 1                 ; 6       ;
-;      - sdcard:inst7|state.read_data                          ; 1                 ; 6       ;
-;      - sdcard:inst7|state.buffer_data                        ; 1                 ; 6       ;
-;      - sdcard:inst7|state.error                              ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|control:ctrl1|state.reset_state ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|control:ctrl1|state.shifting    ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7]    ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2]    ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1]    ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|shift_in                        ; 1                 ; 6       ;
-;      - klokdeler:inst9|dff_haat:lbl5|state                   ; 1                 ; 6       ;
-;      - sdcard:inst7|spi:spi5|control:ctrl1|state.idle        ; 1                 ; 6       ;
-;      - sdcard:inst7|address_buf[0]                           ; 1                 ; 6       ;
-;      - sdcard:inst7|address_buf[1]                           ; 1                 ; 6       ;
-;      - sdcard:inst7|address_buf[2]                           ; 1                 ; 6       ;
-;      - sdcard:inst7|address_buf[3]                           ; 1                 ; 6       ;
-;      - sdcard:inst7|address_buf[4]                           ; 1                 ; 6       ;
-;      - sdcard:inst7|address_buf[5]                           ; 1                 ; 6       ;
-;      - sdcard:inst7|address_buf[6]                           ; 1                 ; 6       ;
-;      - sdcard:inst7|address_buf[7]                           ; 1                 ; 6       ;
-;      - klokdeler:inst9|dff_haat:lbl4|state                   ; 1                 ; 6       ;
-;      - klokdeler:inst9|dff_haat:lbl3|state                   ; 1                 ; 6       ;
-;      - klokdeler:inst9|dff_haat:lbl2|state                   ; 1                 ; 6       ;
-;      - klokdeler:inst9|dff_haat:lbl1|state                   ; 1                 ; 6       ;
+;      - sdcard:inst7|send_cnt[0]                              ; 0                 ; 6       ;
+;      - sdcard:inst7|send_cnt[1]                              ; 0                 ; 6       ;
+;      - sdcard:inst7|send_cnt[2]                              ; 0                 ; 6       ;
+;      - sdcard:inst7|send_cnt[3]                              ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0]    ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3]    ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4]    ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5]    ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6]    ; 0                 ; 6       ;
+;      - sdcard:inst7|state.dummy_count                        ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_dummy_send                   ; 0                 ; 6       ;
+;      - sdcard:inst7|state.dummy_send                         ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_init_count                   ; 0                 ; 6       ;
+;      - sdcard:inst7|state.init_cmd                           ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_init_send                    ; 0                 ; 6       ;
+;      - sdcard:inst7|state.init_send                          ; 0                 ; 6       ;
+;      - sdcard:inst7|state.init_read                          ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_init_receive                 ; 0                 ; 6       ;
+;      - sdcard:inst7|state.init_receive                       ; 0                 ; 6       ;
+;      - sdcard:inst7|state.load_cmd55                         ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_send_cmd55                   ; 0                 ; 6       ;
+;      - sdcard:inst7|state.send_cmd55                         ; 0                 ; 6       ;
+;      - sdcard:inst7|state.read_response_cmd55                ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_receive_response_cmd55       ; 0                 ; 6       ;
+;      - sdcard:inst7|state.receive_response_cmd55             ; 0                 ; 6       ;
+;      - sdcard:inst7|state.load_acmd41                        ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_send_acmd41                  ; 0                 ; 6       ;
+;      - sdcard:inst7|state.send_acmd41                        ; 0                 ; 6       ;
+;      - sdcard:inst7|state.read_response_acmd41               ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_receive_response_acmd41      ; 0                 ; 6       ;
+;      - sdcard:inst7|state.receive_response_acmd41            ; 0                 ; 6       ;
+;      - sdcard:inst7|state.load_cmd16                         ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_send_cmd16                   ; 0                 ; 6       ;
+;      - sdcard:inst7|state.send_cmd16                         ; 0                 ; 6       ;
+;      - sdcard:inst7|state.read_response_cmd16                ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_receive_response_cmd16       ; 0                 ; 6       ;
+;      - sdcard:inst7|state.receive_response_cmd16             ; 0                 ; 6       ;
+;      - sdcard:inst7|state.idle                               ; 0                 ; 6       ;
+;      - sdcard:inst7|state.load_cmd                           ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_send_part                    ; 0                 ; 6       ;
+;      - sdcard:inst7|state.send_part                          ; 0                 ; 6       ;
+;      - sdcard:inst7|state.read_response                      ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_receive_response             ; 0                 ; 6       ;
+;      - sdcard:inst7|state.receive_response                   ; 0                 ; 6       ;
+;      - sdcard:inst7|state.wait_data                          ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_read_data_part               ; 0                 ; 6       ;
+;      - sdcard:inst7|state.read_data_part                     ; 0                 ; 6       ;
+;      - sdcard:inst7|state.start_read_data                    ; 0                 ; 6       ;
+;      - sdcard:inst7|state.read_data                          ; 0                 ; 6       ;
+;      - sdcard:inst7|state.buffer_data                        ; 0                 ; 6       ;
+;      - sdcard:inst7|state.error                              ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|control:ctrl1|state.reset_state ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|control:ctrl1|state.shifting    ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7]    ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2]    ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1]    ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_in                        ; 0                 ; 6       ;
+;      - klokdeler:inst9|dff_haat:lbl5|state                   ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|control:ctrl1|state.idle        ; 0                 ; 6       ;
+;      - sdcard:inst7|address_buf[0]                           ; 0                 ; 6       ;
+;      - sdcard:inst7|address_buf[1]                           ; 0                 ; 6       ;
+;      - sdcard:inst7|address_buf[2]                           ; 0                 ; 6       ;
+;      - sdcard:inst7|address_buf[3]                           ; 0                 ; 6       ;
+;      - sdcard:inst7|address_buf[4]                           ; 0                 ; 6       ;
+;      - sdcard:inst7|address_buf[5]                           ; 0                 ; 6       ;
+;      - sdcard:inst7|address_buf[6]                           ; 0                 ; 6       ;
+;      - sdcard:inst7|address_buf[7]                           ; 0                 ; 6       ;
+;      - klokdeler:inst9|dff_haat:lbl4|state                   ; 0                 ; 6       ;
+;      - klokdeler:inst9|dff_haat:lbl3|state                   ; 0                 ; 6       ;
+;      - klokdeler:inst9|dff_haat:lbl2|state                   ; 0                 ; 6       ;
+;      - klokdeler:inst9|dff_haat:lbl1|state                   ; 0                 ; 6       ;
 ; switch[6]                                                    ;                   ;         ;
 ; switch[5]                                                    ;                   ;         ;
 ; switch[4]                                                    ;                   ;         ;
@@ -1053,7 +1046,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; switch[1]                                                    ;                   ;         ;
 ; switch[0]                                                    ;                   ;         ;
 ; miso_in                                                      ;                   ;         ;
-;      - sdcard:inst7|spi:spi5|shift_in~feeder                 ; 0                 ; 6       ;
+;      - sdcard:inst7|spi:spi5|shift_in~feeder                 ; 1                 ; 6       ;
 ; clock_50mhz                                                  ;                   ;         ;
 +--------------------------------------------------------------+-------------------+---------+
 
@@ -1063,22 +1056,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                  ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; clock_50mhz                                           ; PIN_L1             ; 3       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; gen6mhz:inst1|count[2]                                ; LCFF_X40_Y19_N17   ; 3       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; klokdeler:inst9|dff_haat:lbl1|state                   ; LCFF_X39_Y19_N1    ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; klokdeler:inst9|dff_haat:lbl2|state                   ; LCFF_X39_Y19_N17   ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; klokdeler:inst9|dff_haat:lbl3|state                   ; LCFF_X39_Y18_N15   ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; klokdeler:inst9|dff_haat:lbl4|state                   ; LCFF_X40_Y18_N13   ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; clock_50mhz                                           ; PIN_L1             ; 3       ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; gen6mhz:inst1|count[2]                                ; LCFF_X42_Y19_N9    ; 3       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; klokdeler:inst9|dff_haat:lbl1|state                   ; LCFF_X40_Y19_N1    ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; klokdeler:inst9|dff_haat:lbl2|state                   ; LCFF_X40_Y19_N15   ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; klokdeler:inst9|dff_haat:lbl3|state                   ; LCFF_X39_Y19_N21   ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; klokdeler:inst9|dff_haat:lbl4|state                   ; LCFF_X38_Y19_N27   ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
 ; reset_button                                          ; PIN_R22            ; 71      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; sdcard:inst7|WideOr32~0                               ; LCCOMB_X39_Y17_N12 ; 13      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; sdcard:inst7|WideOr33~0                               ; LCCOMB_X40_Y17_N8  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sdcard:inst7|sd_clk                                   ; LCCOMB_X40_Y18_N30 ; 4       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; sdcard:inst7|sd_clk                                   ; LCCOMB_X40_Y18_N30 ; 63      ; Clock        ; yes    ; Global Clock         ; GCLK7            ; --                        ;
-; sdcard:inst7|send~4                                   ; LCCOMB_X42_Y18_N30 ; 3       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; sdcard:inst7|spi:spi5|control:ctrl1|busy              ; LCCOMB_X42_Y18_N24 ; 27      ; Clock        ; no     ; --                   ; --               ; --                        ;
-; sdcard:inst7|spi:spi5|control:ctrl1|sclk              ; LCCOMB_X42_Y18_N20 ; 5       ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting    ; LCFF_X42_Y18_N11   ; 12      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6]~12 ; LCCOMB_X42_Y17_N2  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sdcard:inst7|WideOr32~0                               ; LCCOMB_X38_Y16_N0  ; 13      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; sdcard:inst7|WideOr33~0                               ; LCCOMB_X40_Y17_N6  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sdcard:inst7|sd_clk                                   ; LCCOMB_X38_Y19_N30 ; 4       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; sdcard:inst7|sd_clk                                   ; LCCOMB_X38_Y19_N30 ; 63      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; sdcard:inst7|send~4                                   ; LCCOMB_X37_Y19_N10 ; 3       ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; sdcard:inst7|spi:spi5|control:ctrl1|busy              ; LCCOMB_X37_Y19_N14 ; 27      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; sdcard:inst7|spi:spi5|control:ctrl1|sclk              ; LCCOMB_X37_Y19_N16 ; 5       ; Clock        ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting    ; LCFF_X37_Y19_N7    ; 12      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6]~12 ; LCCOMB_X40_Y16_N12 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1087,8 +1080,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
 ; Name                                     ; Location           ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
-; sdcard:inst7|sd_clk                      ; LCCOMB_X40_Y18_N30 ; 63      ; Global Clock         ; GCLK7            ; --                        ;
-; sdcard:inst7|spi:spi5|control:ctrl1|sclk ; LCCOMB_X42_Y18_N20 ; 5       ; Global Clock         ; GCLK6            ; --                        ;
+; clock_50mhz                              ; PIN_L1             ; 3       ; Global Clock         ; GCLK2            ; --                        ;
+; sdcard:inst7|sd_clk                      ; LCCOMB_X38_Y19_N30 ; 63      ; Global Clock         ; GCLK6            ; --                        ;
+; sdcard:inst7|spi:spi5|control:ctrl1|sclk ; LCCOMB_X37_Y19_N16 ; 5       ; Global Clock         ; GCLK7            ; --                        ;
 +------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1157,7 +1151,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sdcard:inst7|state.start_send_cmd16                          ; 4       ;
 ; sdcard:inst7|state.start_send_acmd41                         ; 4       ;
 ; sdcard:inst7|state.start_send_cmd55                          ; 4       ;
-; clock_50mhz                                                  ; 3       ;
 ; switch[0]                                                    ; 3       ;
 ; switch[1]                                                    ; 3       ;
 ; switch[2]                                                    ; 3       ;
@@ -1383,14 +1376,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 238 / 54,004 ( < 1 % ) ;
-; C16 interconnects           ; 13 / 2,100 ( < 1 % )   ;
-; C4 interconnects            ; 107 / 36,000 ( < 1 % ) ;
-; Direct links                ; 51 / 54,004 ( < 1 % )  ;
-; Global clocks               ; 2 / 16 ( 13 % )        ;
-; Local interconnects         ; 121 / 18,752 ( < 1 % ) ;
-; R24 interconnects           ; 15 / 1,900 ( < 1 % )   ;
-; R4 interconnects            ; 164 / 46,920 ( < 1 % ) ;
+; Block interconnects         ; 252 / 54,004 ( < 1 % ) ;
+; C16 interconnects           ; 10 / 2,100 ( < 1 % )   ;
+; C4 interconnects            ; 165 / 36,000 ( < 1 % ) ;
+; Direct links                ; 60 / 54,004 ( < 1 % )  ;
+; Global clocks               ; 3 / 16 ( 19 % )        ;
+; Local interconnects         ; 91 / 18,752 ( < 1 % )  ;
+; R24 interconnects           ; 17 / 1,900 ( < 1 % )   ;
+; R4 interconnects            ; 122 / 46,920 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
@@ -1402,30 +1395,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 1                                           ; 0                            ;
 ; 2                                           ; 1                            ;
 ; 3                                           ; 1                            ;
-; 4                                           ; 1                            ;
-; 5                                           ; 0                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 1                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
+; 10                                          ; 0                            ;
 ; 11                                          ; 0                            ;
 ; 12                                          ; 0                            ;
 ; 13                                          ; 0                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 2                            ;
-; 16                                          ; 9                            ;
+; 14                                          ; 3                            ;
+; 15                                          ; 3                            ;
+; 16                                          ; 6                            ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.80) ; Number of LABs  (Total = 15) ;
+; LAB-wide Signals  (Average = 1.67) ; Number of LABs  (Total = 15) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 13                           ;
+; 1 Async. clear                     ; 12                           ;
 ; 1 Clock                            ; 11                           ;
-; 1 Sync. load                       ; 1                            ;
 ; 2 Clocks                           ; 2                            ;
 +------------------------------------+------------------------------+
 
@@ -1433,7 +1425,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 18.13) ; Number of LABs  (Total = 15) ;
+; Number of Signals Sourced  (Average = 17.93) ; Number of LABs  (Total = 15) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
@@ -1443,48 +1435,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 5                                            ; 0                            ;
 ; 6                                            ; 1                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 0                            ;
+; 8                                            ; 0                            ;
+; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 1                            ;
-; 18                                           ; 2                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 2                            ;
+; 18                                           ; 0                            ;
 ; 19                                           ; 0                            ;
 ; 20                                           ; 0                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 4                            ;
-; 25                                           ; 0                            ;
+; 21                                           ; 2                            ;
+; 22                                           ; 2                            ;
+; 23                                           ; 1                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 1                            ;
 ; 26                                           ; 1                            ;
-; 27                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.80) ; Number of LABs  (Total = 15) ;
+; Number of Signals Sourced Out  (Average = 8.27) ; Number of LABs  (Total = 15) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 2                            ;
+; 1                                               ; 3                            ;
 ; 2                                               ; 0                            ;
 ; 3                                               ; 0                            ;
-; 4                                               ; 1                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 3                            ;
-; 7                                               ; 1                            ;
-; 8                                               ; 0                            ;
+; 4                                               ; 0                            ;
+; 5                                               ; 0                            ;
+; 6                                               ; 0                            ;
+; 7                                               ; 2                            ;
+; 8                                               ; 2                            ;
 ; 9                                               ; 1                            ;
 ; 10                                              ; 1                            ;
-; 11                                              ; 2                            ;
-; 12                                              ; 0                            ;
-; 13                                              ; 2                            ;
+; 11                                              ; 3                            ;
+; 12                                              ; 1                            ;
+; 13                                              ; 1                            ;
 ; 14                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
@@ -1492,7 +1483,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 13.87) ; Number of LABs  (Total = 15) ;
+; Number of Distinct Inputs  (Average = 13.60) ; Number of LABs  (Total = 15) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 1                            ;
@@ -1501,26 +1492,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
+; 7                                            ; 1                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 1                            ;
 ; 14                                           ; 1                            ;
-; 15                                           ; 0                            ;
+; 15                                           ; 1                            ;
 ; 16                                           ; 2                            ;
-; 17                                           ; 0                            ;
-; 18                                           ; 2                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 0                            ;
+; 17                                           ; 2                            ;
+; 18                                           ; 0                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 0                            ;
+; 21                                           ; 1                            ;
 ; 22                                           ; 0                            ;
 ; 23                                           ; 1                            ;
 ; 24                                           ; 0                            ;
 ; 25                                           ; 0                            ;
-; 26                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1558,7 +1553,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clk,clock_5mhz  ; clock_5mhz           ; 1.7               ;
+; clk,clock_5mhz  ; clock_5mhz           ; 1.6               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
@@ -1569,27 +1564,27 @@ This will disable optimization of problematic paths and expose them for further 
 +-------------------------------------------------+----------------------+-------------------+
 ; Source Register                                 ; Destination Register ; Delay Added in ns ;
 +-------------------------------------------------+----------------------+-------------------+
-; gen6mhz:inst1|count[2]                          ; debug_out[1]         ; 1.651             ;
-; klokdeler:inst9|dff_haat:lbl5|state             ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.read_response_cmd16          ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.idle                         ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.start_receive_response       ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.receive_response             ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.read_response                ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.start_read_data_part         ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.read_data_part               ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.wait_data                    ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.start_send_cmd16             ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.send_cmd16                   ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.load_cmd16                   ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.start_read_data              ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.read_data                    ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.buffer_data                  ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.send_part                    ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.load_cmd                     ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.start_send_part              ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.start_receive_response_cmd16 ; debug_out[1]         ; 1.651             ;
-; sdcard:inst7|state.receive_response_cmd16       ; debug_out[1]         ; 1.651             ;
+; gen6mhz:inst1|count[2]                          ; debug_out[1]         ; 1.592             ;
+; klokdeler:inst9|dff_haat:lbl5|state             ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.read_response_cmd16          ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.idle                         ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.start_receive_response       ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.receive_response             ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.read_response                ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.start_read_data_part         ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.read_data_part               ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.wait_data                    ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.start_send_cmd16             ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.send_cmd16                   ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.load_cmd16                   ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.start_read_data              ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.read_data                    ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.buffer_data                  ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.send_part                    ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.load_cmd                     ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.start_send_part              ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.start_receive_response_cmd16 ; debug_out[1]         ; 1.592             ;
+; sdcard:inst7|state.receive_response_cmd16       ; debug_out[1]         ; 1.592             ;
 +-------------------------------------------------+----------------------+-------------------+
 Note: This table only shows the top 21 path(s) that have the largest delay added for hold.
 
@@ -1597,11 +1592,12 @@ Note: This table only shows the top 21 path(s) that have the largest delay added
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device EP2C20F484C7 for design "top_de1"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
     Info (176445): Device EP2C15AF484C7 is compatible
     Info (176445): Device EP2C35F484C7 is compatible
@@ -1616,16 +1612,14 @@ Warning (332060): Node: klokdeler:inst9|dff_haat:lbl4|state was determined to be
 Warning (332060): Node: klokdeler:inst9|dff_haat:lbl3|state was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: klokdeler:inst9|dff_haat:lbl2|state was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: klokdeler:inst9|dff_haat:lbl1|state was determined to be a clock but was found without an associated clock assignment.
-Warning (332191): Clock target inst1|count[2]~0|combout of clock clock_5mhz is fed by another target of the same clock.
-Warning (332088): No paths exist between clock target "inst1|count[2]~0|combout" of clock "clock_5mhz" and its clock source. Assuming zero source clock latency.
-Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: inst1|count[2]~0  from: datab  to: combout
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
 Info (332111): Found 2 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):   20.000          clk
     Info (332111):  200.000   clock_5mhz
+Info (176353): Automatically promoted node clock_50mhz (placed in PIN L1 (CLK0, LVDSCLK0p, Input))
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
 Info (176353): Automatically promoted node sdcard:inst7|sd_clk 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
@@ -1652,7 +1646,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.53 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.42 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 19 output pins without output pin load capacitance assignment
     Info (306007): Pin "slave_clk" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1677,14 +1671,14 @@ Warning (306006): Found 19 output pins without output pin load capacitance assig
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/top_de1.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 1099 megabytes
-    Info: Processing ended: Tue Dec 23 20:40:58 2014
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:05
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 664 megabytes
+    Info: Processing ended: Fri Dec 26 18:13:38 2014
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +----------------------------+
