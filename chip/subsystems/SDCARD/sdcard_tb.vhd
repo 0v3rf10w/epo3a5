@@ -17,9 +17,12 @@ port(	clk:			in std_logic;
 		sclk:			out std_logic;
 		mosi:			out std_logic;
 		miso:			in std_logic;
-		ss:			out std_logic;
-
-		state_debug:		out std_logic_vector(4 downto 0)
+		ss:				out std_logic;
+		
+		state_debug:	out std_logic_vector(6 downto 0);
+		next_state:		in std_logic;
+		spi_output_debug: out std_logic_vector(7 downto 0)
+		
 	);
 end component sdcard;
 
@@ -33,9 +36,11 @@ signal sclk: std_logic;
 signal mosi: std_logic;
 signal miso: std_logic;
 signal ss: std_logic;
-signal debug_state: std_logic_vector(4 downto 0);
+signal debug_state: std_logic_vector(6 downto 0);
+signal state_next: std_logic;
+signal spi_debug_output: std_logic_vector(7 downto 0);
 begin
-sd1: sdcard port map (clk, div_clk, reset, address, output, busy, sclk, mosi, miso, ss, debug_state);
+sd1: sdcard port map (clk, div_clk, reset, address, output, busy, sclk, mosi, miso, ss, debug_state,state_next,spi_debug_output);
 
 clk <= not clk after 50 ns;
 
@@ -47,13 +52,13 @@ reset <= '1' after 0 ns,
 address <= "00000010";
 
 miso <= '1' after 0 ns,
-	'0' after 398750 ns,
-	'1' after 423750 ns,
-	'0' after 432050 ns,
-	'1' after 433050 ns,
-	'0' after 435050 ns,
-	'1' after 435150 ns,
-	'0' after 435950 ns,
-	'1' after 436050 ns;
+	'0' after 508750 ns,
+	'1' after 527500 ns,
+	'0' after 733750 ns,
+	'1' after 755000 ns,
+	'0' after 958750 ns,
+	'1' after 980000 ns,
+	'0' after 994150 ns,
+	'1' after 995000 ns;
 				
 end structural;
