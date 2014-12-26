@@ -54,13 +54,11 @@ signal count : std_logic_vector(3 downto 0);
 signal output : std_logic_vector(7 downto 0);
 signal count_reset,slave_clk : std_logic;
 signal shift_reset,shift,shift_in : std_logic;
-signal inv_clk : std_logic;
 
 begin
 	sclk <= slave_clk;
 	read_out <= output;
 	mosi <= output(7);
-	inv_clk <= not clk;
 	process(slave_clk,reset)
 	begin
 		if(reset = '1') then
@@ -72,7 +70,7 @@ begin
 		end if;
 	end process;
 cnt1:  counter port map (slave_clk,count_reset,count);
-shft1: shift_reg port map (inv_clk,reset,shift,shift_in,write_enable,write_in,output);
+shft1: shift_reg port map (clk,reset,shift,shift_in,write_enable,write_in,output);
 ctrl1: control port map (clk,reset,send,count,shift,slave_clk,count_reset,ss,busy);
 
 end structural;

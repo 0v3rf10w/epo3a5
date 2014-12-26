@@ -76,8 +76,6 @@ begin
 	
 	busy <= sig_busy;
 
-	sclk <= 	(not(clk and clk_switch)) after 1 ns when (state=shifting) else
-				'0';
-
+	sclk <= 	(clk and clk_switch) after 1 ns;
 	shift <= clk_switch;
 end behavioural;
