@@ -1,0 +1,152 @@
+|top_de1
+busy_led <= spi:inst.busy
+clock_50mhz => gen6mhz:inst1.clk50mhz
+send_button => inst9.IN0
+send_button => inst9.IN1
+reset_button => inst8.IN0
+reset_button => inst8.IN1
+write_button => inst7.IN0
+write_button => inst7.IN1
+leds[0] <= spi:inst.read_out[0]
+leds[1] <= spi:inst.read_out[1]
+leds[2] <= spi:inst.read_out[2]
+leds[3] <= spi:inst.read_out[3]
+leds[4] <= spi:inst.read_out[4]
+leds[5] <= spi:inst.read_out[5]
+leds[6] <= spi:inst.read_out[6]
+leds[7] <= spi:inst.read_out[7]
+
+
+|top_de1|spi:inst
+clk => control:ctrl1.clk
+clk => shift_reg:shft1.clk
+send => control:ctrl1.send
+reset => shift_reg:shft1.reset
+reset => shift_in.ACLR
+reset => control:ctrl1.reset
+write_enable => shift_reg:shft1.reg_set
+write_in[0] => shift_reg:shft1.reg_write[0]
+write_in[1] => shift_reg:shft1.reg_write[1]
+write_in[2] => shift_reg:shft1.reg_write[2]
+write_in[3] => shift_reg:shft1.reg_write[3]
+write_in[4] => shift_reg:shft1.reg_write[4]
+write_in[5] => shift_reg:shft1.reg_write[5]
+write_in[6] => shift_reg:shft1.reg_write[6]
+write_in[7] => shift_reg:shft1.reg_write[7]
+read_out[0] <= shift_reg:shft1.output[0]
+read_out[1] <= shift_reg:shft1.output[1]
+read_out[2] <= shift_reg:shft1.output[2]
+read_out[3] <= shift_reg:shft1.output[3]
+read_out[4] <= shift_reg:shft1.output[4]
+read_out[5] <= shift_reg:shft1.output[5]
+read_out[6] <= shift_reg:shft1.output[6]
+read_out[7] <= shift_reg:shft1.output[7]
+busy <= control:ctrl1.busy
+sclk <= control:ctrl1.sclk
+mosi <= shift_reg:shft1.output[7]
+miso => shift_in.DATAIN
+ss <= control:ctrl1.ss
+
+
+|top_de1|spi:inst|counter:cnt1
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+reset => count[0].ACLR
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+count_out[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|spi:inst|shift_reg:shft1
+clk => reg_shift[0].CLK
+clk => reg_shift[1].CLK
+clk => reg_shift[2].CLK
+clk => reg_shift[3].CLK
+clk => reg_shift[4].CLK
+clk => reg_shift[5].CLK
+clk => reg_shift[6].CLK
+clk => reg_shift[7].CLK
+reset => reg_shift[0].ACLR
+reset => reg_shift[1].ACLR
+reset => reg_shift[2].ACLR
+reset => reg_shift[3].ACLR
+reset => reg_shift[4].ACLR
+reset => reg_shift[5].ACLR
+reset => reg_shift[6].ACLR
+reset => reg_shift[7].ACLR
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+enable => reg_shift.OUTPUTSELECT
+shift_in => reg_shift.DATAB
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_set => reg_shift.OUTPUTSELECT
+reg_write[0] => reg_shift.DATAB
+reg_write[1] => reg_shift.DATAB
+reg_write[2] => reg_shift.DATAB
+reg_write[3] => reg_shift.DATAB
+reg_write[4] => reg_shift.DATAB
+reg_write[5] => reg_shift.DATAB
+reg_write[6] => reg_shift.DATAB
+reg_write[7] => reg_shift.DATAB
+output[0] <= reg_shift[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= reg_shift[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= reg_shift[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= reg_shift[3].DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= reg_shift[4].DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= reg_shift[5].DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= reg_shift[6].DB_MAX_OUTPUT_PORT_TYPE
+output[7] <= reg_shift[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|spi:inst|control:ctrl1
+clk => sclk.IN1
+clk => state~2.DATAIN
+reset => state.DATAB
+reset => state~4.DATAIN
+reset => Selector0.IN0
+send => Selector1.IN2
+send => Selector0.IN1
+count[0] => Equal0.IN2
+count[1] => Equal0.IN1
+count[2] => Equal0.IN0
+count[3] => Equal0.IN3
+shift <= clk_switch.DB_MAX_OUTPUT_PORT_TYPE
+sclk <= sclk.DB_MAX_OUTPUT_PORT_TYPE
+c_reset <= c_reset.DB_MAX_OUTPUT_PORT_TYPE
+ss <= ss.DB_MAX_OUTPUT_PORT_TYPE
+busy <= sig_busy.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|gen6mhz:inst1
+clk50mhz => count[0].CLK
+clk50mhz => count[1].CLK
+clk50mhz => count[2].CLK
+clk6mhz <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|pulse_2:inst11
+clk => pulse_delay.CLK
+clk => delay2.CLK
+clk => delay1.CLK
+input => output.IN1
+input => delay1.DATAIN
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,6 @@
+
+State Machine - |top_de1|spi:inst|control:ctrl1|state
+Name state.shifting state.idle state.reset_state 
+state.reset_state 0 0 0 
+state.idle 0 1 1 
+state.shifting 1 0 1 
