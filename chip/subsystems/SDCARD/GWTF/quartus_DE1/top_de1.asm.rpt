@@ -1,6 +1,6 @@
 Assembler report for top_de1
-Thu Dec 18 10:55:21 2014
-Quartus II Version 10.0 Build 262 08/18/2010 Service Pack 1 SJ Full Version
+Tue Dec 23 20:41:02 2014
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II Version 10.0 Build 262 08/18/2010 Service Pack 1 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: top_de1.sof
-  6. Assembler Device Options: top_de1.pof
+  5. Assembler Device Options: C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/top_de1.sof
+  6. Assembler Device Options: C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/top_de1.pof
   7. Assembler Messages
 
 
@@ -19,7 +19,7 @@ Quartus II Version 10.0 Build 262 08/18/2010 Service Pack 1 SJ Full Version
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2010 Altera Corporation
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Dec 18 10:55:21 2014 ;
+; Assembler Status      ; Successful - Tue Dec 23 20:41:02 2014 ;
 ; Revision Name         ; top_de1                               ;
 ; Top-level Entity Name ; top_de1                               ;
 ; Family                ; Cyclone II                            ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 ; Clock source for configuration device                                       ; Internal ; Internal      ;
 ; Clock frequency of the configuration device                                 ; 10 MHZ   ; 10 MHz        ;
 ; Divide clock frequency by                                                   ; 1        ; 1             ;
-; Auto user code                                                              ; Off      ; Off           ;
+; Auto user code                                                              ; On       ; On            ;
 ; Use configuration device                                                    ; On       ; On            ;
 ; Configuration device                                                        ; Auto     ; Auto          ;
 ; Configuration device auto user code                                         ; Off      ; Off           ;
@@ -78,53 +78,53 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------+
-; Assembler Generated Files ;
-+---------------------------+
-; File Name                 ;
-+---------------------------+
-; top_de1.sof               ;
-; top_de1.pof               ;
-+---------------------------+
++-------------------------------------------------------------------------+
+; Assembler Generated Files                                               ;
++-------------------------------------------------------------------------+
+; File Name                                                               ;
++-------------------------------------------------------------------------+
+; C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/top_de1.sof ;
+; C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/top_de1.pof ;
++-------------------------------------------------------------------------+
 
 
-+---------------------------------------+
-; Assembler Device Options: top_de1.sof ;
-+----------------+----------------------+
-; Option         ; Setting              ;
-+----------------+----------------------+
-; Device         ; EP2C20F484C7         ;
-; JTAG usercode  ; 0xFFFFFFFF           ;
-; Checksum       ; 0x001D0900           ;
-+----------------+----------------------+
++---------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/top_de1.sof ;
++----------------+----------------------------------------------------------------------------------+
+; Option         ; Setting                                                                          ;
++----------------+----------------------------------------------------------------------------------+
+; Device         ; EP2C20F484C7                                                                     ;
+; JTAG usercode  ; 0x001D15D7                                                                       ;
+; Checksum       ; 0x001D15D7                                                                       ;
++----------------+----------------------------------------------------------------------------------+
 
 
-+---------------------------------------+
-; Assembler Device Options: top_de1.pof ;
-+--------------------+------------------+
-; Option             ; Setting          ;
-+--------------------+------------------+
-; Device             ; EPCS16           ;
-; JTAG usercode      ; 0x00000000       ;
-; Checksum           ; 0x1DD674BF       ;
-; Compression Ratio  ; 3                ;
-+--------------------+------------------+
++---------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/top_de1.pof ;
++--------------------+------------------------------------------------------------------------------+
+; Option             ; Setting                                                                      ;
++--------------------+------------------------------------------------------------------------------+
+; Device             ; EPCS16                                                                       ;
+; JTAG usercode      ; 0x00000000                                                                   ;
+; Checksum           ; 0x1DD63D60                                                                   ;
+; Compression Ratio  ; 3                                                                            ;
++--------------------+------------------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II Assembler
-    Info: Version 10.0 Build 262 08/18/2010 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Dec 18 10:55:16 2014
+Info: Running Quartus II 64-Bit Assembler
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Dec 23 20:41:00 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off de1 -c top_de1
-Info: Writing out detailed assembly data for power analysis
-Info: Assembler is generating device programming files
-Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 245 megabytes
-    Info: Processing ended: Thu Dec 18 10:55:22 2014
-    Info: Elapsed time: 00:00:06
+Info (115031): Writing out detailed assembly data for power analysis
+Info (115030): Assembler is generating device programming files
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 434 megabytes
+    Info: Processing ended: Tue Dec 23 20:41:02 2014
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

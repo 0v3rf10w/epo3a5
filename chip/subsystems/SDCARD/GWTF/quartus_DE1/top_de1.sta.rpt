@@ -1,0 +1,1560 @@
+TimeQuest Timing Analyzer report for top_de1
+Tue Dec 23 20:41:04 2014
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Setup: 'clock_5mhz'
+ 14. Slow Model Hold: 'clk'
+ 15. Slow Model Hold: 'clock_5mhz'
+ 16. Slow Model Recovery: 'clock_5mhz'
+ 17. Slow Model Removal: 'clock_5mhz'
+ 18. Slow Model Minimum Pulse Width: 'clk'
+ 19. Slow Model Minimum Pulse Width: 'clock_5mhz'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Fast Model Setup Summary
+ 25. Fast Model Hold Summary
+ 26. Fast Model Recovery Summary
+ 27. Fast Model Removal Summary
+ 28. Fast Model Minimum Pulse Width Summary
+ 29. Fast Model Setup: 'clk'
+ 30. Fast Model Setup: 'clock_5mhz'
+ 31. Fast Model Hold: 'clk'
+ 32. Fast Model Hold: 'clock_5mhz'
+ 33. Fast Model Recovery: 'clock_5mhz'
+ 34. Fast Model Removal: 'clock_5mhz'
+ 35. Fast Model Minimum Pulse Width: 'clk'
+ 36. Fast Model Minimum Pulse Width: 'clock_5mhz'
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Multicorner Timing Analysis Summary
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Setup Transfers
+ 47. Hold Transfers
+ 48. Recovery Transfers
+ 49. Removal Transfers
+ 50. Report TCCS
+ 51. Report RSKM
+ 52. Unconstrained Paths
+ 53. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; top_de1                                                           ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; top_de1.sdc   ; OK     ; Tue Dec 23 20:41:03 2014 ;
++---------------+--------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                 ;
++------------+-----------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+-------------+----------------------------------------------------+
+; Clock Name ; Type      ; Period  ; Frequency ; Rise  ; Fall    ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source      ; Targets                                            ;
++------------+-----------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+-------------+----------------------------------------------------+
+; clk        ; Base      ; 20.000  ; 50.0 MHz  ; 0.000 ; 10.000  ;            ;           ;             ;       ;        ;           ;            ;          ;        ;             ; { clock_50mhz }                                    ;
+; clock_5mhz ; Generated ; 200.000 ; 5.0 MHz   ; 0.000 ; 100.000 ;            ; 10        ; 1           ;       ;        ;           ;            ; false    ; clk    ; clock_50mhz ; { inst1|count[2]~0|combout inst1|count[2]|regout } ;
++------------+-----------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+-------------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                    ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; 81.09 MHz   ; 81.09 MHz       ; clock_5mhz ;                                                               ;
+; 1145.48 MHz ; 380.08 MHz      ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------+
+; Slow Model Setup Summary            ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; clk        ; 19.127 ; 0.000         ;
+; clock_5mhz ; 93.834 ; 0.000         ;
++------------+--------+---------------+
+
+
++-------------------------------------+
+; Slow Model Hold Summary             ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; clk        ; -3.959 ; -3.959        ;
+; clock_5mhz ; -1.531 ; -33.694       ;
++------------+--------+---------------+
+
+
++--------------------------------------+
+; Slow Model Recovery Summary          ;
++------------+---------+---------------+
+; Clock      ; Slack   ; End Point TNS ;
++------------+---------+---------------+
+; clock_5mhz ; 201.239 ; 0.000         ;
++------------+---------+---------------+
+
+
++-------------------------------------+
+; Slow Model Removal Summary          ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; clock_5mhz ; -1.487 ; -5.948        ;
++------------+--------+---------------+
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++------------+--------+------------------+
+; Clock      ; Slack  ; End Point TNS    ;
++------------+--------+------------------+
+; clk        ; 8.889  ; 0.000            ;
+; clock_5mhz ; 98.889 ; 0.000            ;
++------------+--------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                          ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 19.127 ; gen6mhz:inst1|count[0]   ; gen6mhz:inst1|count[1] ; clk          ; clk         ; 20.000       ; 0.000      ; 0.911      ;
+; 19.307 ; gen6mhz:inst1|count[0]   ; gen6mhz:inst1|count[0] ; clk          ; clk         ; 20.000       ; 0.000      ; 0.731      ;
+; 19.307 ; gen6mhz:inst1|count[1]   ; gen6mhz:inst1|count[1] ; clk          ; clk         ; 20.000       ; 0.000      ; 0.731      ;
+; 23.711 ; inst1|count[2]~0|combout ; gen6mhz:inst1|count[2] ; clock_5mhz   ; clk         ; 20.000       ; 3.769      ; 0.096      ;
+; 23.711 ; inst1|count[2]~0|combout ; gen6mhz:inst1|count[2] ; clock_5mhz   ; clk         ; 20.000       ; 3.769      ; 0.096      ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock_5mhz'                                                                                                                                                         ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 93.834 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 6.210      ;
+; 94.131 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.913      ;
+; 94.140 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.904      ;
+; 94.215 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.829      ;
+; 94.245 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.799      ;
+; 94.304 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 5.739      ;
+; 94.355 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.689      ;
+; 94.516 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 5.517      ;
+; 94.534 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.510      ;
+; 94.539 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 5.494      ;
+; 94.555 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.489      ;
+; 94.609 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.435      ;
+; 94.667 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 5.366      ;
+; 94.674 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.370      ;
+; 94.722 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 5.327      ;
+; 94.749 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.295      ;
+; 94.782 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.262      ;
+; 94.802 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.242      ;
+; 94.814 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 5.219      ;
+; 94.824 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.220      ;
+; 94.836 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 5.207      ;
+; 94.844 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.200      ;
+; 94.973 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.071      ;
+; 95.004 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 5.023      ;
+; 95.019 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 5.030      ;
+; 95.027 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 5.000      ;
+; 95.041 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 5.003      ;
+; 95.050 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 4.993      ;
+; 95.072 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.972      ;
+; 95.081 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.963      ;
+; 95.083 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.966      ;
+; 95.092 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.952      ;
+; 95.100 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.933      ;
+; 95.112 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.932      ;
+; 95.114 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.930      ;
+; 95.155 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 4.872      ;
+; 95.158 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.886      ;
+; 95.178 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.866      ;
+; 95.206 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 4.837      ;
+; 95.223 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.821      ;
+; 95.270 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 4.773      ;
+; 95.280 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.753      ;
+; 95.302 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 4.725      ;
+; 95.303 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.730      ;
+; 95.306 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.738      ;
+; 95.343 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 4.700      ;
+; 95.350 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.683      ;
+; 95.392 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.657      ;
+; 95.394 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.650      ;
+; 95.401 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 4.644      ;
+; 95.427 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.617      ;
+; 95.431 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.602      ;
+; 95.465 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 4.580      ;
+; 95.489 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.544      ;
+; 95.513 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.520      ;
+; 95.553 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.496      ;
+; 95.557 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.476      ;
+; 95.578 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.455      ;
+; 95.590 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 4.437      ;
+; 95.594 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 4.449      ;
+; 95.596 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.448      ;
+; 95.612 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.437      ;
+; 95.624 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.409      ;
+; 95.647 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 4.396      ;
+; 95.674 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.370      ;
+; 95.703 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.346      ;
+; 95.708 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.336      ;
+; 95.727 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.306      ;
+; 95.778 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.271      ;
+; 95.785 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.264      ;
+; 95.848 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 4.196      ;
+; 95.866 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.167      ;
+; 95.871 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 4.162      ;
+; 95.887 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 4.156      ;
+; 95.924 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.125      ;
+; 95.936 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 4.109      ;
+; 95.956 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.093      ;
+; 95.961 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.088      ;
+; 95.978 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 4.049      ;
+; 95.985 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 4.064      ;
+; 96.005 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 4.040      ;
+; 96.025 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 4.020      ;
+; 96.079 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 3.948      ;
+; 96.085 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 3.948      ;
+; 96.092 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 3.951      ;
+; 96.112 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 3.915      ;
+; 96.112 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 3.931      ;
+; 96.130 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 3.913      ;
+; 96.130 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 3.913      ;
+; 96.149 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.start_receive_response_acmd41   ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 3.884      ;
+; 96.153 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.start_receive_response_cmd16    ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 3.880      ;
+; 96.154 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.start_receive_response          ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 3.879      ;
+; 96.160 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 3.885      ;
+; 96.165 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 3.884      ;
+; 96.193 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.start_receive_response_acmd41   ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 3.840      ;
+; 96.197 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.start_receive_response_cmd16    ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 3.836      ;
+; 96.198 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.start_receive_response          ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 3.835      ;
+; 96.254 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.005     ; 3.779      ;
+; 96.282 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.005      ; 3.761      ;
+; 96.294 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.idle                            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 3.733      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                           ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -3.959 ; inst1|count[2]~0|combout ; gen6mhz:inst1|count[2] ; clock_5mhz   ; clk         ; 0.000        ; 3.769      ; 0.096      ;
+; -3.959 ; inst1|count[2]~0|combout ; gen6mhz:inst1|count[2] ; clock_5mhz   ; clk         ; 0.000        ; 3.769      ; 0.096      ;
+; 0.445  ; gen6mhz:inst1|count[0]   ; gen6mhz:inst1|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; gen6mhz:inst1|count[1]   ; gen6mhz:inst1|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.625  ; gen6mhz:inst1|count[0]   ; gen6mhz:inst1|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.911      ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock_5mhz'                                                                                                                                                          ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.531 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.304      ;
+; -1.531 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.send_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.304      ;
+; -1.518 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_response                   ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.543      ; 2.311      ;
+; -1.481 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.load_cmd                        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.543      ; 2.348      ;
+; -1.480 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.send_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.543      ; 2.349      ;
+; -1.479 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.543      ; 2.350      ;
+; -1.478 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.send_part                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.543      ; 2.351      ;
+; -1.478 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.receive_response                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.543      ; 2.351      ;
+; -1.360 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_response_acmd41            ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.547      ; 2.473      ;
+; -1.302 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.wait_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.533      ;
+; -1.296 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.buffer_data                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.539      ;
+; -1.214 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_response_cmd16             ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.621      ;
+; -1.209 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.626      ;
+; -1.208 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.init_cmd                        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.627      ;
+; -1.203 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.receive_response_acmd41         ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.632      ;
+; -1.202 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_data_part                  ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.633      ;
+; -1.192 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.load_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.547      ; 2.641      ;
+; -1.189 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.init_read                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.646      ;
+; -1.184 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.receive_response_cmd16          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.651      ;
+; -1.180 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.init_receive                    ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.655      ;
+; -1.179 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.init_send                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.656      ;
+; -1.177 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.receive_response_cmd55          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.549      ; 2.658      ;
+; -1.165 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_response_cmd55             ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.547      ; 2.668      ;
+; -1.161 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.send_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.547      ; 2.672      ;
+; -1.152 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.dummy_count                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.548      ; 2.682      ;
+; -1.145 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.dummy_send                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 3.548      ; 2.689      ;
+; 0.445  ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|send_cnt[0]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.error                           ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; klokdeler:inst9|dff_haat:lbl1|state                ; klokdeler:inst9|dff_haat:lbl1|state                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.send_cmd16                      ; sdcard:inst7|state.send_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.send_cmd55                      ; sdcard:inst7|state.send_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.send_part                       ; sdcard:inst7|state.send_part                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.receive_response                ; sdcard:inst7|state.receive_response                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.read_data                       ; sdcard:inst7|state.read_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.receive_response_acmd41         ; sdcard:inst7|state.receive_response_acmd41         ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.read_data_part                  ; sdcard:inst7|state.read_data_part                  ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.receive_response_cmd16          ; sdcard:inst7|state.receive_response_cmd16          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.init_receive                    ; sdcard:inst7|state.init_receive                    ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.init_send                       ; sdcard:inst7|state.init_send                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.receive_response_cmd55          ; sdcard:inst7|state.receive_response_cmd55          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.send_acmd41                     ; sdcard:inst7|state.send_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|state.dummy_send                      ; sdcard:inst7|state.dummy_send                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.731      ;
+; 0.623  ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.909      ;
+; 0.625  ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|state.start_send_cmd55                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.911      ;
+; 0.629  ; sdcard:inst7|state.init_receive                    ; sdcard:inst7|state.init_read                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.915      ;
+; 0.629  ; sdcard:inst7|state.start_init_send                 ; sdcard:inst7|state.init_send                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.915      ;
+; 0.629  ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.915      ;
+; 0.630  ; sdcard:inst7|state.start_dummy_send                ; sdcard:inst7|state.dummy_send                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.916      ;
+; 0.633  ; sdcard:inst7|state.receive_response_cmd16          ; sdcard:inst7|state.read_response_cmd16             ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.919      ;
+; 0.637  ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.923      ;
+; 0.639  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.925      ;
+; 0.643  ; sdcard:inst7|state.read_data_part                  ; sdcard:inst7|state.wait_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.929      ;
+; 0.643  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.929      ;
+; 0.645  ; sdcard:inst7|state.read_data                       ; sdcard:inst7|state.buffer_data                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.931      ;
+; 0.645  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.931      ;
+; 0.648  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.934      ;
+; 0.650  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.936      ;
+; 0.651  ; sdcard:inst7|state.start_send_part                 ; sdcard:inst7|state.send_part                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.937      ;
+; 0.657  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.943      ;
+; 0.660  ; sdcard:inst7|state.send_part                       ; sdcard:inst7|state.load_cmd                        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.946      ;
+; 0.669  ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|state.read_response_acmd41            ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.955      ;
+; 0.686  ; sdcard:inst7|state.dummy_send                      ; sdcard:inst7|state.dummy_count                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.972      ;
+; 0.690  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|state.start_init_count                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.976      ;
+; 0.695  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|state.start_dummy_send                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.981      ;
+; 0.695  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|send_cnt[0]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.981      ;
+; 0.701  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|send_cnt[1]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.987      ;
+; 0.702  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|send_cnt[2]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.988      ;
+; 0.702  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|send_cnt[3]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.988      ;
+; 0.779  ; sdcard:inst7|state.receive_response                ; sdcard:inst7|state.read_response                   ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.065      ;
+; 0.779  ; sdcard:inst7|state.send_acmd41                     ; sdcard:inst7|state.load_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.065      ;
+; 0.788  ; sdcard:inst7|state.send_cmd16                      ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.074      ;
+; 0.793  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.079      ;
+; 0.803  ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|state.read_response_cmd16             ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.089      ;
+; 0.814  ; sdcard:inst7|state.start_init_receive              ; sdcard:inst7|state.init_receive                    ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.100      ;
+; 0.850  ; sdcard:inst7|state.start_receive_response_cmd55    ; sdcard:inst7|state.receive_response_cmd55          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.136      ;
+; 0.858  ; sdcard:inst7|state.start_receive_response_cmd16    ; sdcard:inst7|state.receive_response_cmd16          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.144      ;
+; 0.871  ; sdcard:inst7|state.start_read_data                 ; sdcard:inst7|state.read_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.157      ;
+; 0.875  ; sdcard:inst7|state.start_read_data_part            ; sdcard:inst7|state.read_data_part                  ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.161      ;
+; 0.882  ; sdcard:inst7|state.start_send_acmd41               ; sdcard:inst7|state.send_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; -0.006     ; 1.162      ;
+; 0.891  ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|state.start_send_part                 ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.177      ;
+; 0.891  ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|state.read_response                   ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.177      ;
+; 0.900  ; sdcard:inst7|state.wait_data                       ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.186      ;
+; 0.984  ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.270      ;
+; 0.986  ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.272      ;
+; 1.010  ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.296      ;
+; 1.020  ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.306      ;
+; 1.024  ; sdcard:inst7|state.read_response_cmd55             ; sdcard:inst7|state.load_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.310      ;
+; 1.033  ; sdcard:inst7|state.send_cmd55                      ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.319      ;
+; 1.036  ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|state.init_read                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.322      ;
+; 1.046  ; sdcard:inst7|state.read_response_cmd16             ; sdcard:inst7|state.start_receive_response_cmd16    ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.332      ;
+; 1.046  ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.332      ;
+; 1.092  ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|state.start_send_cmd16                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.004      ; 1.382      ;
+; 1.129  ; sdcard:inst7|state.start_receive_response_acmd41   ; sdcard:inst7|state.receive_response_acmd41         ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 1.415      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'clock_5mhz'                                                                                                                                                ;
++---------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                          ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 201.239 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[0] ; clock_5mhz   ; clock_5mhz  ; 200.000      ; 2.892      ; 1.691      ;
+; 201.239 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[1] ; clock_5mhz   ; clock_5mhz  ; 200.000      ; 2.892      ; 1.691      ;
+; 201.239 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[2] ; clock_5mhz   ; clock_5mhz  ; 200.000      ; 2.892      ; 1.691      ;
+; 201.239 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[3] ; clock_5mhz   ; clock_5mhz  ; 200.000      ; 2.892      ; 1.691      ;
++---------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'clock_5mhz'                                                                                                                                                ;
++--------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.487 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[0] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 2.892      ; 1.691      ;
+; -1.487 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[1] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 2.892      ; 1.691      ;
+; -1.487 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[2] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 2.892      ; 1.691      ;
+; -1.487 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[3] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 2.892      ; 1.691      ;
++--------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; 8.889  ; 10.000       ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gen6mhz:inst1|count[0] ;
+; 8.889  ; 10.000       ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gen6mhz:inst1|count[0] ;
+; 8.889  ; 10.000       ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gen6mhz:inst1|count[1] ;
+; 8.889  ; 10.000       ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gen6mhz:inst1|count[1] ;
+; 8.889  ; 10.000       ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gen6mhz:inst1|count[2] ;
+; 8.889  ; 10.000       ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gen6mhz:inst1|count[2] ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clock_50mhz|combout    ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_50mhz|combout    ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|count[0]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|count[0]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|count[1]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|count[1]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|count[2]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|count[2]|clk     ;
+; 17.369 ; 20.000       ; 2.631          ; Port Rate        ; clk   ; Rise       ; clock_50mhz            ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock_5mhz'                                                                                                ;
++--------+--------------+----------------+------------------+------------+------------+-------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock      ; Clock Edge ; Target                                                ;
++--------+--------------+----------------+------------------+------------+------------+-------------------------------------------------------+
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; klokdeler:inst9|dff_haat:lbl1|state                   ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; klokdeler:inst9|dff_haat:lbl1|state                   ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[0]                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[0]                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[1]                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[1]                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[2]                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[2]                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[3]                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[3]                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[4]                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[4]                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[5]                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[5]                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[6]                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[6]                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[7]                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[7]                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[0]                              ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[0]                              ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[1]                              ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[1]                              ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[2]                              ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[2]                              ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[3]                              ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[3]                              ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle        ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle        ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.reset_state ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.reset_state ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting    ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting    ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|shift_in                        ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|shift_in                        ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0]    ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0]    ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1]    ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1]    ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2]    ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2]    ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3]    ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3]    ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4]    ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4]    ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5]    ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5]    ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6]    ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6]    ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7]    ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7]    ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.buffer_data                        ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.buffer_data                        ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.dummy_count                        ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.dummy_count                        ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.dummy_send                         ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.dummy_send                         ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.error                              ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.error                              ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.idle                               ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.idle                               ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_cmd                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_cmd                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_read                          ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_read                          ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_receive                       ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_receive                       ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_send                          ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_send                          ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_acmd41                        ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_acmd41                        ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd                           ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd                           ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd16                         ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd16                         ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd55                         ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd55                         ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_data                          ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_data                          ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_data_part                     ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_data_part                     ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response                      ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response                      ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_acmd41               ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_acmd41               ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_cmd16                ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_cmd16                ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_cmd55                ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_cmd55                ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.receive_response                   ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.receive_response                   ;
+; 98.889 ; 100.000      ; 1.111          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.receive_response_acmd41            ;
+; 98.889 ; 100.000      ; 1.111          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.receive_response_acmd41            ;
++--------+--------------+----------------+------------------+------------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; miso_in    ; clk        ; -1.714 ; -1.714 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; -6.214 ; -6.214 ; Rise       ; clock_5mhz      ;
+;  switch[0] ; clk        ; -7.420 ; -7.420 ; Rise       ; clock_5mhz      ;
+;  switch[1] ; clk        ; -6.946 ; -6.946 ; Rise       ; clock_5mhz      ;
+;  switch[2] ; clk        ; -7.410 ; -7.410 ; Rise       ; clock_5mhz      ;
+;  switch[3] ; clk        ; -6.296 ; -6.296 ; Rise       ; clock_5mhz      ;
+;  switch[4] ; clk        ; -6.214 ; -6.214 ; Rise       ; clock_5mhz      ;
+;  switch[5] ; clk        ; -6.858 ; -6.858 ; Rise       ; clock_5mhz      ;
+;  switch[6] ; clk        ; -6.816 ; -6.816 ; Rise       ; clock_5mhz      ;
+;  switch[7] ; clk        ; -6.654 ; -6.654 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; -1.819 ; -1.819 ; Fall       ; clock_5mhz      ;
+;  switch[0] ; clk        ; -3.483 ; -3.483 ; Fall       ; clock_5mhz      ;
+;  switch[1] ; clk        ; -3.957 ; -3.957 ; Fall       ; clock_5mhz      ;
+;  switch[2] ; clk        ; -5.167 ; -5.167 ; Fall       ; clock_5mhz      ;
+;  switch[3] ; clk        ; -3.107 ; -3.107 ; Fall       ; clock_5mhz      ;
+;  switch[4] ; clk        ; -1.819 ; -1.819 ; Fall       ; clock_5mhz      ;
+;  switch[5] ; clk        ; -3.795 ; -3.795 ; Fall       ; clock_5mhz      ;
+;  switch[6] ; clk        ; -3.264 ; -3.264 ; Fall       ; clock_5mhz      ;
+;  switch[7] ; clk        ; -4.423 ; -4.423 ; Fall       ; clock_5mhz      ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Hold Times                                                             ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; miso_in    ; clk        ; 1.962 ; 1.962 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; 7.668 ; 7.668 ; Rise       ; clock_5mhz      ;
+;  switch[0] ; clk        ; 7.668 ; 7.668 ; Rise       ; clock_5mhz      ;
+;  switch[1] ; clk        ; 7.194 ; 7.194 ; Rise       ; clock_5mhz      ;
+;  switch[2] ; clk        ; 7.658 ; 7.658 ; Rise       ; clock_5mhz      ;
+;  switch[3] ; clk        ; 6.544 ; 6.544 ; Rise       ; clock_5mhz      ;
+;  switch[4] ; clk        ; 6.462 ; 6.462 ; Rise       ; clock_5mhz      ;
+;  switch[5] ; clk        ; 7.106 ; 7.106 ; Rise       ; clock_5mhz      ;
+;  switch[6] ; clk        ; 7.064 ; 7.064 ; Rise       ; clock_5mhz      ;
+;  switch[7] ; clk        ; 6.902 ; 6.902 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; 5.415 ; 5.415 ; Fall       ; clock_5mhz      ;
+;  switch[0] ; clk        ; 3.731 ; 3.731 ; Fall       ; clock_5mhz      ;
+;  switch[1] ; clk        ; 4.205 ; 4.205 ; Fall       ; clock_5mhz      ;
+;  switch[2] ; clk        ; 5.415 ; 5.415 ; Fall       ; clock_5mhz      ;
+;  switch[3] ; clk        ; 3.355 ; 3.355 ; Fall       ; clock_5mhz      ;
+;  switch[4] ; clk        ; 2.067 ; 2.067 ; Fall       ; clock_5mhz      ;
+;  switch[5] ; clk        ; 4.043 ; 4.043 ; Fall       ; clock_5mhz      ;
+;  switch[6] ; clk        ; 3.512 ; 3.512 ; Fall       ; clock_5mhz      ;
+;  switch[7] ; clk        ; 4.671 ; 4.671 ; Fall       ; clock_5mhz      ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; busy_out      ; clk        ; 15.787 ; 15.787 ; Rise       ; clock_5mhz      ;
+; debug_out[*]  ; clk        ; 19.822 ; 19.822 ; Rise       ; clock_5mhz      ;
+;  debug_out[0] ; clk        ; 19.822 ; 19.822 ; Rise       ; clock_5mhz      ;
+;  debug_out[1] ; clk        ; 19.292 ; 19.292 ; Rise       ; clock_5mhz      ;
+;  debug_out[2] ; clk        ; 19.508 ; 19.508 ; Rise       ; clock_5mhz      ;
+;  debug_out[3] ; clk        ; 19.362 ; 19.362 ; Rise       ; clock_5mhz      ;
+;  debug_out[4] ; clk        ; 19.336 ; 19.336 ; Rise       ; clock_5mhz      ;
+;  debug_out[5] ; clk        ; 19.447 ; 19.447 ; Rise       ; clock_5mhz      ;
+;  debug_out[6] ; clk        ; 18.347 ; 18.347 ; Rise       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 19.669 ; 19.669 ; Rise       ; clock_5mhz      ;
+; slave_clk     ; clk        ; 20.975 ; 20.975 ; Rise       ; clock_5mhz      ;
+; slave_select  ; clk        ; 17.816 ; 17.816 ; Rise       ; clock_5mhz      ;
+; leds[*]       ; clk        ; 15.935 ; 15.935 ; Fall       ; clock_5mhz      ;
+;  leds[0]      ; clk        ; 14.867 ; 14.867 ; Fall       ; clock_5mhz      ;
+;  leds[1]      ; clk        ; 15.118 ; 15.118 ; Fall       ; clock_5mhz      ;
+;  leds[2]      ; clk        ; 15.573 ; 15.573 ; Fall       ; clock_5mhz      ;
+;  leds[3]      ; clk        ; 15.592 ; 15.592 ; Fall       ; clock_5mhz      ;
+;  leds[4]      ; clk        ; 15.608 ; 15.608 ; Fall       ; clock_5mhz      ;
+;  leds[5]      ; clk        ; 15.323 ; 15.323 ; Fall       ; clock_5mhz      ;
+;  leds[6]      ; clk        ; 15.284 ; 15.284 ; Fall       ; clock_5mhz      ;
+;  leds[7]      ; clk        ; 15.935 ; 15.935 ; Fall       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 16.835 ; 16.835 ; Fall       ; clock_5mhz      ;
+; slave_clk     ; clk        ;        ; 11.482 ; Fall       ; clock_5mhz      ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; busy_out      ; clk        ; 15.787 ; 15.787 ; Rise       ; clock_5mhz      ;
+; debug_out[*]  ; clk        ; 16.314 ; 16.314 ; Rise       ; clock_5mhz      ;
+;  debug_out[0] ; clk        ; 17.281 ; 17.281 ; Rise       ; clock_5mhz      ;
+;  debug_out[1] ; clk        ; 17.061 ; 17.061 ; Rise       ; clock_5mhz      ;
+;  debug_out[2] ; clk        ; 16.968 ; 16.968 ; Rise       ; clock_5mhz      ;
+;  debug_out[3] ; clk        ; 17.302 ; 17.302 ; Rise       ; clock_5mhz      ;
+;  debug_out[4] ; clk        ; 16.352 ; 16.352 ; Rise       ; clock_5mhz      ;
+;  debug_out[5] ; clk        ; 17.029 ; 17.029 ; Rise       ; clock_5mhz      ;
+;  debug_out[6] ; clk        ; 16.314 ; 16.314 ; Rise       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 17.317 ; 17.317 ; Rise       ; clock_5mhz      ;
+; slave_clk     ; clk        ; 11.482 ; 12.569 ; Rise       ; clock_5mhz      ;
+; slave_select  ; clk        ; 16.687 ; 16.687 ; Rise       ; clock_5mhz      ;
+; leds[*]       ; clk        ; 14.867 ; 14.867 ; Fall       ; clock_5mhz      ;
+;  leds[0]      ; clk        ; 14.867 ; 14.867 ; Fall       ; clock_5mhz      ;
+;  leds[1]      ; clk        ; 15.118 ; 15.118 ; Fall       ; clock_5mhz      ;
+;  leds[2]      ; clk        ; 15.573 ; 15.573 ; Fall       ; clock_5mhz      ;
+;  leds[3]      ; clk        ; 15.592 ; 15.592 ; Fall       ; clock_5mhz      ;
+;  leds[4]      ; clk        ; 15.608 ; 15.608 ; Fall       ; clock_5mhz      ;
+;  leds[5]      ; clk        ; 15.323 ; 15.323 ; Fall       ; clock_5mhz      ;
+;  leds[6]      ; clk        ; 15.284 ; 15.284 ; Fall       ; clock_5mhz      ;
+;  leds[7]      ; clk        ; 15.935 ; 15.935 ; Fall       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 16.835 ; 16.835 ; Fall       ; clock_5mhz      ;
+; slave_clk     ; clk        ;        ; 11.482 ; Fall       ; clock_5mhz      ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------+
+; Fast Model Setup Summary            ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; clk        ; 19.637 ; 0.000         ;
+; clock_5mhz ; 97.741 ; 0.000         ;
++------------+--------+---------------+
+
+
++-------------------------------------+
+; Fast Model Hold Summary             ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; clk        ; -1.912 ; -1.912        ;
+; clock_5mhz ; -1.120 ; -27.008       ;
++------------+--------+---------------+
+
+
++--------------------------------------+
+; Fast Model Recovery Summary          ;
++------------+---------+---------------+
+; Clock      ; Slack   ; End Point TNS ;
++------------+---------+---------------+
+; clock_5mhz ; 200.838 ; 0.000         ;
++------------+---------+---------------+
+
+
++-------------------------------------+
+; Fast Model Removal Summary          ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; clock_5mhz ; -0.958 ; -3.832        ;
++------------+--------+---------------+
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++------------+--------+------------------+
+; Clock      ; Slack  ; End Point TNS    ;
++------------+--------+------------------+
+; clk        ; 9.000  ; 0.000            ;
+; clock_5mhz ; 99.000 ; 0.000            ;
++------------+--------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                          ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 19.637 ; gen6mhz:inst1|count[0]   ; gen6mhz:inst1|count[1] ; clk          ; clk         ; 20.000       ; 0.000      ; 0.395      ;
+; 19.665 ; gen6mhz:inst1|count[0]   ; gen6mhz:inst1|count[0] ; clk          ; clk         ; 20.000       ; 0.000      ; 0.367      ;
+; 19.665 ; gen6mhz:inst1|count[1]   ; gen6mhz:inst1|count[1] ; clk          ; clk         ; 20.000       ; 0.000      ; 0.367      ;
+; 21.792 ; inst1|count[2]~0|combout ; gen6mhz:inst1|count[2] ; clock_5mhz   ; clk         ; 20.000       ; 1.802      ; 0.042      ;
+; 21.792 ; inst1|count[2]~0|combout ; gen6mhz:inst1|count[2] ; clock_5mhz   ; clk         ; 20.000       ; 1.802      ; 0.042      ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock_5mhz'                                                                                                                                                         ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 97.741 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.297      ;
+; 97.805 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.233      ;
+; 97.840 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.198      ;
+; 97.849 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.189      ;
+; 97.891 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.147      ;
+; 97.891 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 2.145      ;
+; 97.923 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.115      ;
+; 97.955 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 2.073      ;
+; 97.967 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 2.061      ;
+; 97.981 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.057      ;
+; 97.985 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.053      ;
+; 97.988 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.050      ;
+; 97.994 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.044      ;
+; 97.999 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.039      ;
+; 98.000 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.038      ;
+; 98.011 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.027      ;
+; 98.012 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 2.031      ;
+; 98.033 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 2.005      ;
+; 98.036 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.992      ;
+; 98.062 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.976      ;
+; 98.065 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.971      ;
+; 98.068 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.970      ;
+; 98.070 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 1.951      ;
+; 98.074 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.964      ;
+; 98.078 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.960      ;
+; 98.082 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 1.939      ;
+; 98.089 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.939      ;
+; 98.090 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.948      ;
+; 98.100 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.938      ;
+; 98.102 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.936      ;
+; 98.121 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.917      ;
+; 98.147 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.891      ;
+; 98.151 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 1.870      ;
+; 98.154 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.889      ;
+; 98.160 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.876      ;
+; 98.161 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.867      ;
+; 98.162 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.881      ;
+; 98.176 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.852      ;
+; 98.181 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.857      ;
+; 98.188 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.840      ;
+; 98.202 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.834      ;
+; 98.204 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 1.817      ;
+; 98.207 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.831      ;
+; 98.218 ; sdcard:inst7|send_cnt[2]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.820      ;
+; 98.220 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.818      ;
+; 98.241 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.795      ;
+; 98.253 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.775      ;
+; 98.257 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.771      ;
+; 98.262 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.766      ;
+; 98.270 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.768      ;
+; 98.273 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.763      ;
+; 98.278 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 1.743      ;
+; 98.279 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.749      ;
+; 98.282 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.761      ;
+; 98.291 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 1.748      ;
+; 98.299 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 1.740      ;
+; 98.301 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.742      ;
+; 98.301 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.742      ;
+; 98.301 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.742      ;
+; 98.310 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.718      ;
+; 98.327 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.701      ;
+; 98.329 ; sdcard:inst7|send_cnt[3]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.709      ;
+; 98.331 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.697      ;
+; 98.342 ; sdcard:inst7|send_cnt[1]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.696      ;
+; 98.351 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.685      ;
+; 98.352 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.684      ;
+; 98.358 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.680      ;
+; 98.373 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.655      ;
+; 98.384 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.644      ;
+; 98.398 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.645      ;
+; 98.399 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.629      ;
+; 98.404 ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.006      ; 1.634      ;
+; 98.424 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.612      ;
+; 98.428 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 1.611      ;
+; 98.428 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.608      ;
+; 98.428 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.608      ;
+; 98.428 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.608      ;
+; 98.431 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.612      ;
+; 98.431 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.612      ;
+; 98.436 ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.600      ;
+; 98.440 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 1.599      ;
+; 98.447 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 1.574      ;
+; 98.449 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.594      ;
+; 98.451 ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.007      ; 1.588      ;
+; 98.460 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.583      ;
+; 98.463 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.580      ;
+; 98.478 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.550      ;
+; 98.489 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 1.532      ;
+; 98.502 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.011     ; 1.519      ;
+; 98.503 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.540      ;
+; 98.503 ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.540      ;
+; 98.511 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.start_receive_response_acmd41   ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.517      ;
+; 98.513 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.start_receive_response_cmd16    ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.515      ;
+; 98.514 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|state.start_receive_response          ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.514      ;
+; 98.514 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.522      ;
+; 98.514 ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.004      ; 1.522      ;
+; 98.525 ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 100.000      ; 0.011      ; 1.518      ;
+; 98.528 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.start_receive_response_acmd41   ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.500      ;
+; 98.530 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.start_receive_response_cmd16    ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.498      ;
+; 98.531 ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|state.start_receive_response          ; clock_5mhz   ; clock_5mhz  ; 100.000      ; -0.004     ; 1.497      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                           ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -1.912 ; inst1|count[2]~0|combout ; gen6mhz:inst1|count[2] ; clock_5mhz   ; clk         ; 0.000        ; 1.802      ; 0.042      ;
+; -1.912 ; inst1|count[2]~0|combout ; gen6mhz:inst1|count[2] ; clock_5mhz   ; clk         ; 0.000        ; 1.802      ; 0.042      ;
+; 0.215  ; gen6mhz:inst1|count[0]   ; gen6mhz:inst1|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; gen6mhz:inst1|count[1]   ; gen6mhz:inst1|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.243  ; gen6mhz:inst1|count[0]   ; gen6mhz:inst1|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
++--------+--------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock_5mhz'                                                                                                                                                          ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.120 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.910      ; 0.942      ;
+; -1.119 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.send_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.910      ; 0.943      ;
+; -1.113 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_response                   ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.903      ; 0.942      ;
+; -1.112 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.load_cmd                        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.903      ; 0.943      ;
+; -1.111 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.903      ; 0.944      ;
+; -1.110 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.receive_response                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.903      ; 0.945      ;
+; -1.109 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.send_part                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.903      ; 0.946      ;
+; -1.107 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.send_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.903      ; 0.948      ;
+; -1.061 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_response_acmd41            ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.907      ; 0.998      ;
+; -1.027 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_response_cmd16             ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.910      ; 1.035      ;
+; -1.014 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.wait_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.909      ; 1.047      ;
+; -1.013 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.909      ; 1.048      ;
+; -1.008 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.receive_response_acmd41         ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.909      ; 1.053      ;
+; -1.007 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_data_part                  ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.909      ; 1.054      ;
+; -1.007 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.buffer_data                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.909      ; 1.054      ;
+; -1.003 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.receive_response_cmd16          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.910      ; 1.059      ;
+; -1.003 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.init_read                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.910      ; 1.059      ;
+; -1.000 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.dummy_count                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.908      ; 1.060      ;
+; -1.000 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.init_receive                    ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.910      ; 1.062      ;
+; -0.998 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.init_send                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.910      ; 1.064      ;
+; -0.998 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.receive_response_cmd55          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.910      ; 1.064      ;
+; -0.997 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.init_cmd                        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.910      ; 1.065      ;
+; -0.995 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.dummy_send                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.908      ; 1.065      ;
+; -0.993 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.load_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.907      ; 1.066      ;
+; -0.992 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.read_response_cmd55             ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.907      ; 1.067      ;
+; -0.991 ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|state.send_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.907      ; 1.068      ;
+; 0.215  ; sdcard:inst7|send_cnt[0]                           ; sdcard:inst7|send_cnt[0]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.error                           ; sdcard:inst7|state.error                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; klokdeler:inst9|dff_haat:lbl1|state                ; klokdeler:inst9|dff_haat:lbl1|state                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.send_cmd16                      ; sdcard:inst7|state.send_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.receive_response                ; sdcard:inst7|state.receive_response                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.send_part                       ; sdcard:inst7|state.send_part                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.send_cmd55                      ; sdcard:inst7|state.send_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.read_data                       ; sdcard:inst7|state.read_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.receive_response_acmd41         ; sdcard:inst7|state.receive_response_acmd41         ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.read_data_part                  ; sdcard:inst7|state.read_data_part                  ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.receive_response_cmd16          ; sdcard:inst7|state.receive_response_cmd16          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.init_receive                    ; sdcard:inst7|state.init_receive                    ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.init_send                       ; sdcard:inst7|state.init_send                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.receive_response_cmd55          ; sdcard:inst7|state.receive_response_cmd55          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.dummy_send                      ; sdcard:inst7|state.dummy_send                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|state.send_acmd41                     ; sdcard:inst7|state.send_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.367      ;
+; 0.241  ; sdcard:inst7|state.load_cmd55                      ; sdcard:inst7|state.start_send_cmd55                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241  ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.393      ;
+; 0.243  ; sdcard:inst7|state.start_init_send                 ; sdcard:inst7|state.init_send                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243  ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.395      ;
+; 0.245  ; sdcard:inst7|state.init_receive                    ; sdcard:inst7|state.init_read                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246  ; sdcard:inst7|state.receive_response_cmd16          ; sdcard:inst7|state.read_response_cmd16             ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.398      ;
+; 0.247  ; sdcard:inst7|state.start_dummy_send                ; sdcard:inst7|state.dummy_send                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.399      ;
+; 0.247  ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.399      ;
+; 0.249  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.401      ;
+; 0.250  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.402      ;
+; 0.252  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.404      ;
+; 0.253  ; sdcard:inst7|state.read_data                       ; sdcard:inst7|state.buffer_data                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.405      ;
+; 0.254  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.406      ;
+; 0.255  ; sdcard:inst7|state.read_data_part                  ; sdcard:inst7|state.wait_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.407      ;
+; 0.255  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.407      ;
+; 0.259  ; sdcard:inst7|state.start_send_part                 ; sdcard:inst7|state.send_part                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.411      ;
+; 0.260  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.412      ;
+; 0.261  ; sdcard:inst7|state.send_part                       ; sdcard:inst7|state.load_cmd                        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.413      ;
+; 0.265  ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|state.read_response_acmd41            ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.417      ;
+; 0.274  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|state.start_init_count                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.426      ;
+; 0.275  ; sdcard:inst7|state.dummy_send                      ; sdcard:inst7|state.dummy_count                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.427      ;
+; 0.279  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|state.start_dummy_send                ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.431      ;
+; 0.279  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|send_cnt[0]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.431      ;
+; 0.285  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|send_cnt[1]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.437      ;
+; 0.286  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|send_cnt[2]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.438      ;
+; 0.286  ; sdcard:inst7|state.dummy_count                     ; sdcard:inst7|send_cnt[3]                           ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.438      ;
+; 0.293  ; sdcard:inst7|state.receive_response                ; sdcard:inst7|state.read_response                   ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.445      ;
+; 0.293  ; sdcard:inst7|state.send_acmd41                     ; sdcard:inst7|state.load_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.445      ;
+; 0.300  ; sdcard:inst7|state.send_cmd16                      ; sdcard:inst7|state.load_cmd16                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.452      ;
+; 0.304  ; sdcard:inst7|state.load_cmd16                      ; sdcard:inst7|state.read_response_cmd16             ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.456      ;
+; 0.305  ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5] ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.457      ;
+; 0.323  ; sdcard:inst7|state.start_init_receive              ; sdcard:inst7|state.init_receive                    ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.475      ;
+; 0.323  ; sdcard:inst7|state.start_receive_response_cmd55    ; sdcard:inst7|state.receive_response_cmd55          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.475      ;
+; 0.326  ; sdcard:inst7|state.start_receive_response_cmd16    ; sdcard:inst7|state.receive_response_cmd16          ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.478      ;
+; 0.331  ; sdcard:inst7|state.start_read_data_part            ; sdcard:inst7|state.read_data_part                  ; clock_5mhz   ; clock_5mhz  ; 0.000        ; -0.001     ; 0.482      ;
+; 0.334  ; sdcard:inst7|state.start_read_data                 ; sdcard:inst7|state.read_data                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; -0.001     ; 0.485      ;
+; 0.341  ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|state.start_send_part                 ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.493      ;
+; 0.341  ; sdcard:inst7|state.start_send_acmd41               ; sdcard:inst7|state.send_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; -0.006     ; 0.487      ;
+; 0.342  ; sdcard:inst7|state.load_cmd                        ; sdcard:inst7|state.read_response                   ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.494      ;
+; 0.348  ; sdcard:inst7|state.wait_data                       ; sdcard:inst7|state.start_read_data_part            ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.001      ; 0.501      ;
+; 0.365  ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.517      ;
+; 0.366  ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.518      ;
+; 0.373  ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]        ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]        ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.525      ;
+; 0.375  ; sdcard:inst7|state.read_response_cmd55             ; sdcard:inst7|state.load_acmd41                     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376  ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.528      ;
+; 0.387  ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle     ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.539      ;
+; 0.392  ; sdcard:inst7|state.send_cmd55                      ; sdcard:inst7|state.load_cmd55                      ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.544      ;
+; 0.393  ; sdcard:inst7|state.init_cmd                        ; sdcard:inst7|state.init_read                       ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.545      ;
+; 0.422  ; sdcard:inst7|state.read_response_cmd16             ; sdcard:inst7|state.start_receive_response_cmd16    ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.000      ; 0.574      ;
+; 0.427  ; sdcard:inst7|state.start_receive_response_acmd41   ; sdcard:inst7|state.receive_response_acmd41         ; clock_5mhz   ; clock_5mhz  ; 0.000        ; -0.001     ; 0.578      ;
+; 0.435  ; sdcard:inst7|state.load_acmd41                     ; sdcard:inst7|state.start_send_acmd41               ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 0.006      ; 0.593      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'clock_5mhz'                                                                                                                                                ;
++---------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                          ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 200.838 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[0] ; clock_5mhz   ; clock_5mhz  ; 200.000      ; 1.623      ; 0.817      ;
+; 200.838 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[1] ; clock_5mhz   ; clock_5mhz  ; 200.000      ; 1.623      ; 0.817      ;
+; 200.838 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[2] ; clock_5mhz   ; clock_5mhz  ; 200.000      ; 1.623      ; 0.817      ;
+; 200.838 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[3] ; clock_5mhz   ; clock_5mhz  ; 200.000      ; 1.623      ; 0.817      ;
++---------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'clock_5mhz'                                                                                                                                                ;
++--------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.958 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[0] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.623      ; 0.817      ;
+; -0.958 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[1] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.623      ; 0.817      ;
+; -0.958 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[2] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.623      ; 0.817      ;
+; -0.958 ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting ; sdcard:inst7|spi:spi5|counter:cnt1|count[3] ; clock_5mhz   ; clock_5mhz  ; 0.000        ; 1.623      ; 0.817      ;
++--------+----------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; 9.000  ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gen6mhz:inst1|count[0] ;
+; 9.000  ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gen6mhz:inst1|count[0] ;
+; 9.000  ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gen6mhz:inst1|count[1] ;
+; 9.000  ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gen6mhz:inst1|count[1] ;
+; 9.000  ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gen6mhz:inst1|count[2] ;
+; 9.000  ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gen6mhz:inst1|count[2] ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clock_50mhz|combout    ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_50mhz|combout    ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|count[0]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|count[0]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|count[1]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|count[1]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|count[2]|clk     ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|count[2]|clk     ;
+; 17.620 ; 20.000       ; 2.380          ; Port Rate        ; clk   ; Rise       ; clock_50mhz            ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock_5mhz'                                                                                                ;
++--------+--------------+----------------+------------------+------------+------------+-------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock      ; Clock Edge ; Target                                                ;
++--------+--------------+----------------+------------------+------------+------------+-------------------------------------------------------+
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; klokdeler:inst9|dff_haat:lbl1|state                   ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; klokdeler:inst9|dff_haat:lbl1|state                   ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[0]                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[0]                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[1]                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[1]                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[2]                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[2]                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[3]                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[3]                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[4]                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[4]                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[5]                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[5]                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[6]                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[6]                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[7]                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|address_buf[7]                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[0]                              ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[0]                              ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[1]                              ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[1]                              ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[2]                              ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[2]                              ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[3]                              ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|send_cnt[3]                              ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle        ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.idle        ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.reset_state ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.reset_state ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting    ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|control:ctrl1|state.shifting    ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[0]           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[1]           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[2]           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|counter:cnt1|count[3]           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|shift_in                        ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|spi:spi5|shift_in                        ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0]    ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0]    ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1]    ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[1]    ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2]    ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[2]    ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3]    ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3]    ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4]    ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[4]    ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5]    ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[5]    ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6]    ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6]    ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7]    ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Fall       ; sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[7]    ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.buffer_data                        ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.buffer_data                        ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.dummy_count                        ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.dummy_count                        ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.dummy_send                         ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.dummy_send                         ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.error                              ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.error                              ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.idle                               ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.idle                               ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_cmd                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_cmd                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_read                          ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_read                          ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_receive                       ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_receive                       ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_send                          ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.init_send                          ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_acmd41                        ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_acmd41                        ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd                           ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd                           ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd16                         ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd16                         ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd55                         ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.load_cmd55                         ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_data                          ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_data                          ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_data_part                     ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_data_part                     ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response                      ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response                      ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_acmd41               ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_acmd41               ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_cmd16                ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_cmd16                ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_cmd55                ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.read_response_cmd55                ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.receive_response                   ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.receive_response                   ;
+; 99.000 ; 100.000      ; 1.000          ; High Pulse Width ; clock_5mhz ; Rise       ; sdcard:inst7|state.receive_response_acmd41            ;
+; 99.000 ; 100.000      ; 1.000          ; Low Pulse Width  ; clock_5mhz ; Rise       ; sdcard:inst7|state.receive_response_acmd41            ;
++--------+--------------+----------------+------------------+------------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; miso_in    ; clk        ; -0.601 ; -0.601 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; -3.131 ; -3.131 ; Rise       ; clock_5mhz      ;
+;  switch[0] ; clk        ; -3.699 ; -3.699 ; Rise       ; clock_5mhz      ;
+;  switch[1] ; clk        ; -3.460 ; -3.460 ; Rise       ; clock_5mhz      ;
+;  switch[2] ; clk        ; -3.689 ; -3.689 ; Rise       ; clock_5mhz      ;
+;  switch[3] ; clk        ; -3.171 ; -3.171 ; Rise       ; clock_5mhz      ;
+;  switch[4] ; clk        ; -3.131 ; -3.131 ; Rise       ; clock_5mhz      ;
+;  switch[5] ; clk        ; -3.437 ; -3.437 ; Rise       ; clock_5mhz      ;
+;  switch[6] ; clk        ; -3.413 ; -3.413 ; Rise       ; clock_5mhz      ;
+;  switch[7] ; clk        ; -3.304 ; -3.304 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; -1.601 ; -1.601 ; Fall       ; clock_5mhz      ;
+;  switch[0] ; clk        ; -2.297 ; -2.297 ; Fall       ; clock_5mhz      ;
+;  switch[1] ; clk        ; -2.424 ; -2.424 ; Fall       ; clock_5mhz      ;
+;  switch[2] ; clk        ; -2.843 ; -2.843 ; Fall       ; clock_5mhz      ;
+;  switch[3] ; clk        ; -2.069 ; -2.069 ; Fall       ; clock_5mhz      ;
+;  switch[4] ; clk        ; -1.601 ; -1.601 ; Fall       ; clock_5mhz      ;
+;  switch[5] ; clk        ; -2.325 ; -2.325 ; Fall       ; clock_5mhz      ;
+;  switch[6] ; clk        ; -2.165 ; -2.165 ; Fall       ; clock_5mhz      ;
+;  switch[7] ; clk        ; -2.501 ; -2.501 ; Fall       ; clock_5mhz      ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Hold Times                                                             ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; miso_in    ; clk        ; 0.721 ; 0.721 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; 3.819 ; 3.819 ; Rise       ; clock_5mhz      ;
+;  switch[0] ; clk        ; 3.819 ; 3.819 ; Rise       ; clock_5mhz      ;
+;  switch[1] ; clk        ; 3.580 ; 3.580 ; Rise       ; clock_5mhz      ;
+;  switch[2] ; clk        ; 3.809 ; 3.809 ; Rise       ; clock_5mhz      ;
+;  switch[3] ; clk        ; 3.291 ; 3.291 ; Rise       ; clock_5mhz      ;
+;  switch[4] ; clk        ; 3.251 ; 3.251 ; Rise       ; clock_5mhz      ;
+;  switch[5] ; clk        ; 3.557 ; 3.557 ; Rise       ; clock_5mhz      ;
+;  switch[6] ; clk        ; 3.533 ; 3.533 ; Rise       ; clock_5mhz      ;
+;  switch[7] ; clk        ; 3.424 ; 3.424 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; 2.963 ; 2.963 ; Fall       ; clock_5mhz      ;
+;  switch[0] ; clk        ; 2.417 ; 2.417 ; Fall       ; clock_5mhz      ;
+;  switch[1] ; clk        ; 2.544 ; 2.544 ; Fall       ; clock_5mhz      ;
+;  switch[2] ; clk        ; 2.963 ; 2.963 ; Fall       ; clock_5mhz      ;
+;  switch[3] ; clk        ; 2.189 ; 2.189 ; Fall       ; clock_5mhz      ;
+;  switch[4] ; clk        ; 1.721 ; 1.721 ; Fall       ; clock_5mhz      ;
+;  switch[5] ; clk        ; 2.445 ; 2.445 ; Fall       ; clock_5mhz      ;
+;  switch[6] ; clk        ; 2.285 ; 2.285 ; Fall       ; clock_5mhz      ;
+;  switch[7] ; clk        ; 2.621 ; 2.621 ; Fall       ; clock_5mhz      ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; busy_out      ; clk        ; 7.459 ; 7.459 ; Rise       ; clock_5mhz      ;
+; debug_out[*]  ; clk        ; 9.061 ; 9.061 ; Rise       ; clock_5mhz      ;
+;  debug_out[0] ; clk        ; 9.061 ; 9.061 ; Rise       ; clock_5mhz      ;
+;  debug_out[1] ; clk        ; 8.764 ; 8.764 ; Rise       ; clock_5mhz      ;
+;  debug_out[2] ; clk        ; 8.932 ; 8.932 ; Rise       ; clock_5mhz      ;
+;  debug_out[3] ; clk        ; 8.878 ; 8.878 ; Rise       ; clock_5mhz      ;
+;  debug_out[4] ; clk        ; 8.866 ; 8.866 ; Rise       ; clock_5mhz      ;
+;  debug_out[5] ; clk        ; 8.866 ; 8.866 ; Rise       ; clock_5mhz      ;
+;  debug_out[6] ; clk        ; 8.453 ; 8.453 ; Rise       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 8.918 ; 8.918 ; Rise       ; clock_5mhz      ;
+; slave_clk     ; clk        ; 9.452 ; 9.452 ; Rise       ; clock_5mhz      ;
+; slave_select  ; clk        ; 8.220 ; 8.220 ; Rise       ; clock_5mhz      ;
+; leds[*]       ; clk        ; 7.642 ; 7.642 ; Fall       ; clock_5mhz      ;
+;  leds[0]      ; clk        ; 7.120 ; 7.120 ; Fall       ; clock_5mhz      ;
+;  leds[1]      ; clk        ; 7.268 ; 7.268 ; Fall       ; clock_5mhz      ;
+;  leds[2]      ; clk        ; 7.408 ; 7.408 ; Fall       ; clock_5mhz      ;
+;  leds[3]      ; clk        ; 7.432 ; 7.432 ; Fall       ; clock_5mhz      ;
+;  leds[4]      ; clk        ; 7.503 ; 7.503 ; Fall       ; clock_5mhz      ;
+;  leds[5]      ; clk        ; 7.332 ; 7.332 ; Fall       ; clock_5mhz      ;
+;  leds[6]      ; clk        ; 7.316 ; 7.316 ; Fall       ; clock_5mhz      ;
+;  leds[7]      ; clk        ; 7.642 ; 7.642 ; Fall       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 7.857 ; 7.857 ; Fall       ; clock_5mhz      ;
+; slave_clk     ; clk        ;       ; 5.185 ; Fall       ; clock_5mhz      ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; busy_out      ; clk        ; 7.459 ; 7.459 ; Rise       ; clock_5mhz      ;
+; debug_out[*]  ; clk        ; 7.700 ; 7.700 ; Rise       ; clock_5mhz      ;
+;  debug_out[0] ; clk        ; 8.028 ; 8.028 ; Rise       ; clock_5mhz      ;
+;  debug_out[1] ; clk        ; 7.982 ; 7.982 ; Rise       ; clock_5mhz      ;
+;  debug_out[2] ; clk        ; 7.902 ; 7.902 ; Rise       ; clock_5mhz      ;
+;  debug_out[3] ; clk        ; 8.052 ; 8.052 ; Rise       ; clock_5mhz      ;
+;  debug_out[4] ; clk        ; 7.700 ; 7.700 ; Rise       ; clock_5mhz      ;
+;  debug_out[5] ; clk        ; 7.983 ; 7.983 ; Rise       ; clock_5mhz      ;
+;  debug_out[6] ; clk        ; 7.733 ; 7.733 ; Rise       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 8.036 ; 8.036 ; Rise       ; clock_5mhz      ;
+; slave_clk     ; clk        ; 5.185 ; 5.711 ; Rise       ; clock_5mhz      ;
+; slave_select  ; clk        ; 7.793 ; 7.793 ; Rise       ; clock_5mhz      ;
+; leds[*]       ; clk        ; 7.120 ; 7.120 ; Fall       ; clock_5mhz      ;
+;  leds[0]      ; clk        ; 7.120 ; 7.120 ; Fall       ; clock_5mhz      ;
+;  leds[1]      ; clk        ; 7.268 ; 7.268 ; Fall       ; clock_5mhz      ;
+;  leds[2]      ; clk        ; 7.408 ; 7.408 ; Fall       ; clock_5mhz      ;
+;  leds[3]      ; clk        ; 7.432 ; 7.432 ; Fall       ; clock_5mhz      ;
+;  leds[4]      ; clk        ; 7.503 ; 7.503 ; Fall       ; clock_5mhz      ;
+;  leds[5]      ; clk        ; 7.332 ; 7.332 ; Fall       ; clock_5mhz      ;
+;  leds[6]      ; clk        ; 7.316 ; 7.316 ; Fall       ; clock_5mhz      ;
+;  leds[7]      ; clk        ; 7.642 ; 7.642 ; Fall       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 7.857 ; 7.857 ; Fall       ; clock_5mhz      ;
+; slave_clk     ; clk        ;       ; 5.185 ; Fall       ; clock_5mhz      ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+--------+---------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+---------+----------+---------+---------------------+
+; Worst-case Slack ; 19.127 ; -3.959  ; 200.838  ; -1.487  ; 8.889               ;
+;  clk             ; 19.127 ; -3.959  ; N/A      ; N/A     ; 8.889               ;
+;  clock_5mhz      ; 93.834 ; -1.531  ; 200.838  ; -1.487  ; 98.889              ;
+; Design-wide TNS  ; 0.0    ; -37.653 ; 0.0      ; -5.948  ; 0.0                 ;
+;  clk             ; 0.000  ; -3.959  ; N/A      ; N/A     ; 0.000               ;
+;  clock_5mhz      ; 0.000  ; -33.694 ; 0.000    ; -5.948  ; 0.000               ;
++------------------+--------+---------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; miso_in    ; clk        ; -0.601 ; -0.601 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; -3.131 ; -3.131 ; Rise       ; clock_5mhz      ;
+;  switch[0] ; clk        ; -3.699 ; -3.699 ; Rise       ; clock_5mhz      ;
+;  switch[1] ; clk        ; -3.460 ; -3.460 ; Rise       ; clock_5mhz      ;
+;  switch[2] ; clk        ; -3.689 ; -3.689 ; Rise       ; clock_5mhz      ;
+;  switch[3] ; clk        ; -3.171 ; -3.171 ; Rise       ; clock_5mhz      ;
+;  switch[4] ; clk        ; -3.131 ; -3.131 ; Rise       ; clock_5mhz      ;
+;  switch[5] ; clk        ; -3.437 ; -3.437 ; Rise       ; clock_5mhz      ;
+;  switch[6] ; clk        ; -3.413 ; -3.413 ; Rise       ; clock_5mhz      ;
+;  switch[7] ; clk        ; -3.304 ; -3.304 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; -1.601 ; -1.601 ; Fall       ; clock_5mhz      ;
+;  switch[0] ; clk        ; -2.297 ; -2.297 ; Fall       ; clock_5mhz      ;
+;  switch[1] ; clk        ; -2.424 ; -2.424 ; Fall       ; clock_5mhz      ;
+;  switch[2] ; clk        ; -2.843 ; -2.843 ; Fall       ; clock_5mhz      ;
+;  switch[3] ; clk        ; -2.069 ; -2.069 ; Fall       ; clock_5mhz      ;
+;  switch[4] ; clk        ; -1.601 ; -1.601 ; Fall       ; clock_5mhz      ;
+;  switch[5] ; clk        ; -2.325 ; -2.325 ; Fall       ; clock_5mhz      ;
+;  switch[6] ; clk        ; -2.165 ; -2.165 ; Fall       ; clock_5mhz      ;
+;  switch[7] ; clk        ; -2.501 ; -2.501 ; Fall       ; clock_5mhz      ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Hold Times                                                             ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; miso_in    ; clk        ; 1.962 ; 1.962 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; 7.668 ; 7.668 ; Rise       ; clock_5mhz      ;
+;  switch[0] ; clk        ; 7.668 ; 7.668 ; Rise       ; clock_5mhz      ;
+;  switch[1] ; clk        ; 7.194 ; 7.194 ; Rise       ; clock_5mhz      ;
+;  switch[2] ; clk        ; 7.658 ; 7.658 ; Rise       ; clock_5mhz      ;
+;  switch[3] ; clk        ; 6.544 ; 6.544 ; Rise       ; clock_5mhz      ;
+;  switch[4] ; clk        ; 6.462 ; 6.462 ; Rise       ; clock_5mhz      ;
+;  switch[5] ; clk        ; 7.106 ; 7.106 ; Rise       ; clock_5mhz      ;
+;  switch[6] ; clk        ; 7.064 ; 7.064 ; Rise       ; clock_5mhz      ;
+;  switch[7] ; clk        ; 6.902 ; 6.902 ; Rise       ; clock_5mhz      ;
+; switch[*]  ; clk        ; 5.415 ; 5.415 ; Fall       ; clock_5mhz      ;
+;  switch[0] ; clk        ; 3.731 ; 3.731 ; Fall       ; clock_5mhz      ;
+;  switch[1] ; clk        ; 4.205 ; 4.205 ; Fall       ; clock_5mhz      ;
+;  switch[2] ; clk        ; 5.415 ; 5.415 ; Fall       ; clock_5mhz      ;
+;  switch[3] ; clk        ; 3.355 ; 3.355 ; Fall       ; clock_5mhz      ;
+;  switch[4] ; clk        ; 2.067 ; 2.067 ; Fall       ; clock_5mhz      ;
+;  switch[5] ; clk        ; 4.043 ; 4.043 ; Fall       ; clock_5mhz      ;
+;  switch[6] ; clk        ; 3.512 ; 3.512 ; Fall       ; clock_5mhz      ;
+;  switch[7] ; clk        ; 4.671 ; 4.671 ; Fall       ; clock_5mhz      ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; busy_out      ; clk        ; 15.787 ; 15.787 ; Rise       ; clock_5mhz      ;
+; debug_out[*]  ; clk        ; 19.822 ; 19.822 ; Rise       ; clock_5mhz      ;
+;  debug_out[0] ; clk        ; 19.822 ; 19.822 ; Rise       ; clock_5mhz      ;
+;  debug_out[1] ; clk        ; 19.292 ; 19.292 ; Rise       ; clock_5mhz      ;
+;  debug_out[2] ; clk        ; 19.508 ; 19.508 ; Rise       ; clock_5mhz      ;
+;  debug_out[3] ; clk        ; 19.362 ; 19.362 ; Rise       ; clock_5mhz      ;
+;  debug_out[4] ; clk        ; 19.336 ; 19.336 ; Rise       ; clock_5mhz      ;
+;  debug_out[5] ; clk        ; 19.447 ; 19.447 ; Rise       ; clock_5mhz      ;
+;  debug_out[6] ; clk        ; 18.347 ; 18.347 ; Rise       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 19.669 ; 19.669 ; Rise       ; clock_5mhz      ;
+; slave_clk     ; clk        ; 20.975 ; 20.975 ; Rise       ; clock_5mhz      ;
+; slave_select  ; clk        ; 17.816 ; 17.816 ; Rise       ; clock_5mhz      ;
+; leds[*]       ; clk        ; 15.935 ; 15.935 ; Fall       ; clock_5mhz      ;
+;  leds[0]      ; clk        ; 14.867 ; 14.867 ; Fall       ; clock_5mhz      ;
+;  leds[1]      ; clk        ; 15.118 ; 15.118 ; Fall       ; clock_5mhz      ;
+;  leds[2]      ; clk        ; 15.573 ; 15.573 ; Fall       ; clock_5mhz      ;
+;  leds[3]      ; clk        ; 15.592 ; 15.592 ; Fall       ; clock_5mhz      ;
+;  leds[4]      ; clk        ; 15.608 ; 15.608 ; Fall       ; clock_5mhz      ;
+;  leds[5]      ; clk        ; 15.323 ; 15.323 ; Fall       ; clock_5mhz      ;
+;  leds[6]      ; clk        ; 15.284 ; 15.284 ; Fall       ; clock_5mhz      ;
+;  leds[7]      ; clk        ; 15.935 ; 15.935 ; Fall       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 16.835 ; 16.835 ; Fall       ; clock_5mhz      ;
+; slave_clk     ; clk        ;        ; 11.482 ; Fall       ; clock_5mhz      ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; busy_out      ; clk        ; 7.459 ; 7.459 ; Rise       ; clock_5mhz      ;
+; debug_out[*]  ; clk        ; 7.700 ; 7.700 ; Rise       ; clock_5mhz      ;
+;  debug_out[0] ; clk        ; 8.028 ; 8.028 ; Rise       ; clock_5mhz      ;
+;  debug_out[1] ; clk        ; 7.982 ; 7.982 ; Rise       ; clock_5mhz      ;
+;  debug_out[2] ; clk        ; 7.902 ; 7.902 ; Rise       ; clock_5mhz      ;
+;  debug_out[3] ; clk        ; 8.052 ; 8.052 ; Rise       ; clock_5mhz      ;
+;  debug_out[4] ; clk        ; 7.700 ; 7.700 ; Rise       ; clock_5mhz      ;
+;  debug_out[5] ; clk        ; 7.983 ; 7.983 ; Rise       ; clock_5mhz      ;
+;  debug_out[6] ; clk        ; 7.733 ; 7.733 ; Rise       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 8.036 ; 8.036 ; Rise       ; clock_5mhz      ;
+; slave_clk     ; clk        ; 5.185 ; 5.711 ; Rise       ; clock_5mhz      ;
+; slave_select  ; clk        ; 7.793 ; 7.793 ; Rise       ; clock_5mhz      ;
+; leds[*]       ; clk        ; 7.120 ; 7.120 ; Fall       ; clock_5mhz      ;
+;  leds[0]      ; clk        ; 7.120 ; 7.120 ; Fall       ; clock_5mhz      ;
+;  leds[1]      ; clk        ; 7.268 ; 7.268 ; Fall       ; clock_5mhz      ;
+;  leds[2]      ; clk        ; 7.408 ; 7.408 ; Fall       ; clock_5mhz      ;
+;  leds[3]      ; clk        ; 7.432 ; 7.432 ; Fall       ; clock_5mhz      ;
+;  leds[4]      ; clk        ; 7.503 ; 7.503 ; Fall       ; clock_5mhz      ;
+;  leds[5]      ; clk        ; 7.332 ; 7.332 ; Fall       ; clock_5mhz      ;
+;  leds[6]      ; clk        ; 7.316 ; 7.316 ; Fall       ; clock_5mhz      ;
+;  leds[7]      ; clk        ; 7.642 ; 7.642 ; Fall       ; clock_5mhz      ;
+; mosi_out      ; clk        ; 7.857 ; 7.857 ; Fall       ; clock_5mhz      ;
+; slave_clk     ; clk        ;       ; 5.185 ; Fall       ; clock_5mhz      ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------+
+; Setup Transfers                                                     ;
++------------+------------+----------+----------+----------+----------+
+; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------+----------+----------+----------+----------+
+; clk        ; clk        ; 3        ; 0        ; 0        ; 0        ;
+; clock_5mhz ; clk        ; 1        ; 1        ; 0        ; 0        ;
+; clock_5mhz ; clock_5mhz ; 338      ; 134      ; 298      ; 10       ;
++------------+------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------+
+; Hold Transfers                                                      ;
++------------+------------+----------+----------+----------+----------+
+; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------+----------+----------+----------+----------+
+; clk        ; clk        ; 3        ; 0        ; 0        ; 0        ;
+; clock_5mhz ; clk        ; 1        ; 1        ; 0        ; 0        ;
+; clock_5mhz ; clock_5mhz ; 338      ; 134      ; 298      ; 10       ;
++------------+------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------+
+; Recovery Transfers                                                  ;
++------------+------------+----------+----------+----------+----------+
+; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------+----------+----------+----------+----------+
+; clock_5mhz ; clock_5mhz ; 4        ; 0        ; 0        ; 0        ;
++------------+------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------+
+; Removal Transfers                                                   ;
++------------+------------+----------+----------+----------+----------+
+; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------+----------+----------+----------+----------+
+; clock_5mhz ; clock_5mhz ; 4        ; 0        ; 0        ; 0        ;
++------------+------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 5     ; 5    ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 96    ; 96   ;
+; Unconstrained Output Ports      ; 19    ; 19   ;
+; Unconstrained Output Port Paths ; 163   ; 163  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Dec 23 20:41:02 2014
+Info: Command: quartus_sta de1 -c top_de1
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 1 combinational loops as latches.
+Info (332104): Reading SDC File: 'top_de1.sdc'
+Warning (332060): Node: sdcard:inst7|spi:spi5|control:ctrl1|state.idle was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: klokdeler:inst9|dff_haat:lbl4|state was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: klokdeler:inst9|dff_haat:lbl3|state was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: klokdeler:inst9|dff_haat:lbl2|state was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: klokdeler:inst9|dff_haat:lbl1|state was determined to be a clock but was found without an associated clock assignment.
+Warning (332191): Clock target inst1|count[2]~0|combout of clock clock_5mhz is fed by another target of the same clock.
+Warning (332088): No paths exist between clock target "inst1|count[2]~0|combout" of clock "clock_5mhz" and its clock source. Assuming zero source clock latency.
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst1|count[2]~0  from: datac  to: combout
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 19.127
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    19.127         0.000 clk 
+    Info (332119):    93.834         0.000 clock_5mhz 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -3.959
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.959        -3.959 clk 
+    Info (332119):    -1.531       -33.694 clock_5mhz 
+Info (332146): Worst-case recovery slack is 201.239
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   201.239         0.000 clock_5mhz 
+Info (332146): Worst-case removal slack is -1.487
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.487        -5.948 clock_5mhz 
+Info (332146): Worst-case minimum pulse width slack is 8.889
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.889         0.000 clk 
+    Info (332119):    98.889         0.000 clock_5mhz 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Warning (332060): Node: sdcard:inst7|spi:spi5|control:ctrl1|state.idle was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: klokdeler:inst9|dff_haat:lbl4|state was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: klokdeler:inst9|dff_haat:lbl3|state was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: klokdeler:inst9|dff_haat:lbl2|state was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: klokdeler:inst9|dff_haat:lbl1|state was determined to be a clock but was found without an associated clock assignment.
+Warning (332191): Clock target inst1|count[2]~0|combout of clock clock_5mhz is fed by another target of the same clock.
+Warning (332088): No paths exist between clock target "inst1|count[2]~0|combout" of clock "clock_5mhz" and its clock source. Assuming zero source clock latency.
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst1|count[2]~0  from: datac  to: combout
+Info (332146): Worst-case setup slack is 19.637
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    19.637         0.000 clk 
+    Info (332119):    97.741         0.000 clock_5mhz 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -1.912
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.912        -1.912 clk 
+    Info (332119):    -1.120       -27.008 clock_5mhz 
+Info (332146): Worst-case recovery slack is 200.838
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   200.838         0.000 clock_5mhz 
+Info (332146): Worst-case removal slack is -0.958
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.958        -3.832 clock_5mhz 
+Info (332146): Worst-case minimum pulse width slack is 9.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     9.000         0.000 clk 
+    Info (332119):    99.000         0.000 clock_5mhz 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 427 megabytes
+    Info: Processing ended: Tue Dec 23 20:41:04 2014
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

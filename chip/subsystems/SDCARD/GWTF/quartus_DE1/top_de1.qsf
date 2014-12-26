@@ -37,15 +37,15 @@
 
 
 set_global_assignment -name FAMILY "Cyclone II"
-set_global_assignment -name DEVICE EP2C20F484C7 
+set_global_assignment -name DEVICE EP2C20F484C7
 set_global_assignment -name TOP_LEVEL_ENTITY top_de1
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "10.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:29:41  SEPTEMBER 18, 2012"
-set_global_assignment -name LAST_QUARTUS_VERSION "10.0 SP1"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_location_assignment PIN_L1 -to clock_50mhz                                                                               
+set_location_assignment PIN_L1 -to clock_50mhz
 
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
@@ -69,16 +69,6 @@ set_location_assignment PIN_V20 -to slave_clk
 set_location_assignment PIN_Y20 -to mosi_out
 set_location_assignment PIN_U20 -to slave_select
 set_location_assignment PIN_W20 -to miso_in
-set_global_assignment -name VHDL_FILE ../../dff2.vhd
-set_global_assignment -name VHDL_FILE ../../klokdeler.vhd
-set_global_assignment -name VHDL_FILE ../../../SPI/spi.vhd
-set_global_assignment -name VHDL_FILE ../../../SPI/shift_reg.vhd
-set_global_assignment -name VHDL_FILE ../../../SPI/counter.vhd
-set_global_assignment -name VHDL_FILE ../../../SPI/control.vhd
-set_global_assignment -name VHDL_FILE ../../sdcard.vhd
-set_global_assignment -name BDF_FILE top_de1.bdf
-set_global_assignment -name VHDL_FILE pre_vga_dac_4.vhd
-set_global_assignment -name VHDL_FILE gen6mhz.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -98,4 +88,20 @@ set_location_assignment PIN_U21 -to debug_out[1]
 set_location_assignment PIN_U22 -to debug_out[0]
 set_location_assignment PIN_T21 -to go_next
 set_location_assignment PIN_W21 -to debug_out[5]
+set_location_assignment PIN_Y22 -to debug_out[6]
+set_global_assignment -name ENABLE_SIGNALTAP OFF
+set_global_assignment -name USE_SIGNALTAP_FILE "sd-spi.stp"
+set_global_assignment -name SLD_FILE "C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/sd-spi_auto_stripped.stp"
+set_global_assignment -name SDC_FILE top_de1.sdc
+set_global_assignment -name VHDL_FILE ../../dff2.vhd
+set_global_assignment -name VHDL_FILE ../../klokdeler.vhd
+set_global_assignment -name VHDL_FILE ../../../SPI/spi.vhd
+set_global_assignment -name VHDL_FILE ../../../SPI/shift_reg.vhd
+set_global_assignment -name VHDL_FILE ../../../SPI/counter.vhd
+set_global_assignment -name VHDL_FILE ../../../SPI/control.vhd
+set_global_assignment -name VHDL_FILE ../../sdcard.vhd
+set_global_assignment -name BDF_FILE top_de1.bdf
+set_global_assignment -name VHDL_FILE pre_vga_dac_4.vhd
+set_global_assignment -name VHDL_FILE gen6mhz.vhd
+set_global_assignment -name SIGNALTAP_FILE "sd-spi.stp"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

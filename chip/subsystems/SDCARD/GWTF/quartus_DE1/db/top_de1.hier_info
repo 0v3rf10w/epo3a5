@@ -1,48 +1,44 @@
 |top_de1
-slave_clk <= sdcard:inst10.sclk
+slave_clk <= sdcard:inst7.sclk
 clock_50mhz => gen6mhz:inst1.clk50mhz
 reset_button => inst4.IN0
 reset_button => inst4.IN1
-miso_in => sdcard:inst10.miso
+miso_in => sdcard:inst7.miso
 go_next => inst.IN0
 go_next => inst.IN1
-switch[0] => sdcard:inst10.address[0]
-switch[1] => sdcard:inst10.address[1]
-switch[2] => sdcard:inst10.address[2]
-switch[3] => sdcard:inst10.address[3]
-switch[4] => sdcard:inst10.address[4]
-switch[5] => sdcard:inst10.address[5]
-switch[6] => sdcard:inst10.address[6]
-switch[7] => sdcard:inst10.address[7]
-mosi_out <= sdcard:inst10.mosi
-slave_select <= sdcard:inst10.ss
-busy_out <= sdcard:inst10.busy
-debug_out[0] <= sdcard:inst10.state_debug[0]
-debug_out[1] <= sdcard:inst10.state_debug[1]
-debug_out[2] <= sdcard:inst10.state_debug[2]
-debug_out[3] <= sdcard:inst10.state_debug[3]
-debug_out[4] <= sdcard:inst10.state_debug[4]
-debug_out[5] <= sdcard:inst10.state_debug[5]
-leds[0] <= sdcard:inst10.spi_output_debug[0]
-leds[1] <= sdcard:inst10.spi_output_debug[1]
-leds[2] <= sdcard:inst10.spi_output_debug[2]
-leds[3] <= sdcard:inst10.spi_output_debug[3]
-leds[4] <= sdcard:inst10.spi_output_debug[4]
-leds[5] <= sdcard:inst10.spi_output_debug[5]
-leds[6] <= sdcard:inst10.spi_output_debug[6]
-leds[7] <= sdcard:inst10.spi_output_debug[7]
+switch[0] => sdcard:inst7.address[0]
+switch[1] => sdcard:inst7.address[1]
+switch[2] => sdcard:inst7.address[2]
+switch[3] => sdcard:inst7.address[3]
+switch[4] => sdcard:inst7.address[4]
+switch[5] => sdcard:inst7.address[5]
+switch[6] => sdcard:inst7.address[6]
+switch[7] => sdcard:inst7.address[7]
+mosi_out <= sdcard:inst7.mosi
+slave_select <= sdcard:inst7.ss
+busy_out <= sdcard:inst7.busy
+debug_out[0] <= sdcard:inst7.state_debug[0]
+debug_out[1] <= sdcard:inst7.state_debug[1]
+debug_out[2] <= sdcard:inst7.state_debug[2]
+debug_out[3] <= sdcard:inst7.state_debug[3]
+debug_out[4] <= sdcard:inst7.state_debug[4]
+debug_out[5] <= sdcard:inst7.state_debug[5]
+debug_out[6] <= sdcard:inst7.state_debug[6]
+leds[0] <= sdcard:inst7.spi_output_debug[0]
+leds[1] <= sdcard:inst7.spi_output_debug[1]
+leds[2] <= sdcard:inst7.spi_output_debug[2]
+leds[3] <= sdcard:inst7.spi_output_debug[3]
+leds[4] <= sdcard:inst7.spi_output_debug[4]
+leds[5] <= sdcard:inst7.spi_output_debug[5]
+leds[6] <= sdcard:inst7.spi_output_debug[6]
+leds[7] <= sdcard:inst7.spi_output_debug[7]
 
 
-|top_de1|sdcard:inst10
+|top_de1|sdcard:inst7
 clk => sd_clk.DATAA
 div_clk => sd_clk.DATAB
 reset => state.DATAB
 reset => spi:spi5.reset
-reset => send_cnt[0].ACLR
-reset => send_cnt[1].ACLR
-reset => send_cnt[2].ACLR
-reset => send_cnt[3].ACLR
-reset => went_to_next.IN1
 reset => address_buf[0].ACLR
 reset => address_buf[1].ACLR
 reset => address_buf[2].ACLR
@@ -51,6 +47,10 @@ reset => address_buf[4].ACLR
 reset => address_buf[5].ACLR
 reset => address_buf[6].ACLR
 reset => address_buf[7].ACLR
+reset => send_cnt[0].ACLR
+reset => send_cnt[1].ACLR
+reset => send_cnt[2].ACLR
+reset => send_cnt[3].ACLR
 reset => output_reg[0].ACLR
 reset => output_reg[1].ACLR
 reset => output_reg[2].ACLR
@@ -63,35 +63,35 @@ reset => state~4.DATAIN
 reset => Selector0.IN1
 address[0] => address_change.IN1
 address[0] => Equal0.IN15
-address[0] => Mux31.IN15
+address[0] => Mux39.IN15
 address[0] => address_buf[0].DATAIN
 address[1] => address_change.IN1
 address[1] => Equal0.IN14
-address[1] => Mux30.IN15
+address[1] => Mux38.IN15
 address[1] => address_buf[1].DATAIN
 address[2] => address_change.IN1
 address[2] => Equal0.IN13
-address[2] => Mux29.IN15
+address[2] => Mux37.IN15
 address[2] => address_buf[2].DATAIN
 address[3] => address_change.IN1
 address[3] => Equal0.IN12
-address[3] => Mux28.IN15
+address[3] => Mux36.IN15
 address[3] => address_buf[3].DATAIN
 address[4] => address_change.IN1
 address[4] => Equal0.IN11
-address[4] => Mux27.IN15
+address[4] => Mux35.IN15
 address[4] => address_buf[4].DATAIN
 address[5] => address_change.IN1
 address[5] => Equal0.IN10
-address[5] => Mux26.IN15
+address[5] => Mux34.IN15
 address[5] => address_buf[5].DATAIN
 address[6] => address_change.IN1
 address[6] => Equal0.IN9
-address[6] => Mux25.IN15
+address[6] => Mux33.IN15
 address[6] => address_buf[6].DATAIN
 address[7] => address_change.IN1
 address[7] => Equal0.IN8
-address[7] => Mux24.IN15
+address[7] => Mux32.IN15
 address[7] => address_buf[7].DATAIN
 output[0] <= output_reg[0].DB_MAX_OUTPUT_PORT_TYPE
 output[1] <= output_reg[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -105,14 +105,15 @@ busy <= busy.DB_MAX_OUTPUT_PORT_TYPE
 sclk <= spi:spi5.sclk
 mosi <= mosi.DB_MAX_OUTPUT_PORT_TYPE
 miso => spi:spi5.miso
-ss <= WideOr23.DB_MAX_OUTPUT_PORT_TYPE
-state_debug[0] <= WideOr46.DB_MAX_OUTPUT_PORT_TYPE
-state_debug[1] <= WideOr45.DB_MAX_OUTPUT_PORT_TYPE
-state_debug[2] <= WideOr44.DB_MAX_OUTPUT_PORT_TYPE
-state_debug[3] <= WideOr43.DB_MAX_OUTPUT_PORT_TYPE
-state_debug[4] <= WideOr42.DB_MAX_OUTPUT_PORT_TYPE
-state_debug[5] <= WideOr41.DB_MAX_OUTPUT_PORT_TYPE
-next_state => go_to_next.CLK
+ss <= WideOr27.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[0] <= WideOr51.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[1] <= WideOr50.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[2] <= WideOr49.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[3] <= WideOr48.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[4] <= WideOr47.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[5] <= WideOr46.DB_MAX_OUTPUT_PORT_TYPE
+state_debug[6] <= WideOr45.DB_MAX_OUTPUT_PORT_TYPE
+next_state => ~NO_FANOUT~
 spi_output_debug[0] <= spi:spi5.read_out[0]
 spi_output_debug[1] <= spi:spi5.read_out[1]
 spi_output_debug[2] <= spi:spi5.read_out[2]
@@ -123,9 +124,9 @@ spi_output_debug[6] <= spi:spi5.read_out[6]
 spi_output_debug[7] <= spi:spi5.read_out[7]
 
 
-|top_de1|sdcard:inst10|spi:spi5
-clk => control:ctrl1.clk
+|top_de1|sdcard:inst7|spi:spi5
 clk => shift_reg:shft1.clk
+clk => control:ctrl1.clk
 send => control:ctrl1.send
 reset => shift_reg:shft1.reset
 reset => shift_in.ACLR
@@ -154,7 +155,7 @@ miso => shift_in.DATAIN
 ss <= control:ctrl1.ss
 
 
-|top_de1|sdcard:inst10|spi:spi5|counter:cnt1
+|top_de1|sdcard:inst7|spi:spi5|counter:cnt1
 clk => count[0].CLK
 clk => count[1].CLK
 clk => count[2].CLK
@@ -169,7 +170,7 @@ count_out[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
 count_out[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|sdcard:inst10|spi:spi5|shift_reg:shft1
+|top_de1|sdcard:inst7|spi:spi5|shift_reg:shft1
 clk => reg_shift[0].CLK
 clk => reg_shift[1].CLK
 clk => reg_shift[2].CLK
@@ -221,7 +222,7 @@ output[6] <= reg_shift[6].DB_MAX_OUTPUT_PORT_TYPE
 output[7] <= reg_shift[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|sdcard:inst10|spi:spi5|control:ctrl1
+|top_de1|sdcard:inst7|spi:spi5|control:ctrl1
 clk => sclk.IN1
 clk => state~2.DATAIN
 reset => state.DATAB
