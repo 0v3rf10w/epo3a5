@@ -1,0 +1,196 @@
+
+type trans_state is (
+				--load_cmd8,start_send_cmd8,send_cmd8,
+				--read_response_cmd8,start_receive_response_cmd8,receive_response_cmd8,
+				--read_r7,start_receive_r7,receive_r7,
+	signal state : trans_state;
+	
+				--	when load_cmd8 =>
+				--		if(send_cnt = "0110") then
+				--			state <= read_response_cmd8;
+				--		else
+				--			state <= start_send_cmd8;
+				--		end if;
+				--	when start_send_cmd8 =>
+				--		state <= send_cmd8;
+				--	when send_cmd8 =>
+				--		if(busy_spi = '0') then
+				--			state <= load_cmd8;
+				--		else
+				--			state <= send_cmd8;
+				--		end if;
+				--	when read_response_cmd8 =>
+				--		if(spi_output = "00000000") then
+				--			state <= read_r7;
+				--		elsif(spi_output = "11111111") then
+				--			state <= start_receive_response_cmd8;
+				--		else
+				--			state <= error;
+				--		end if;
+				--	when start_receive_response_cmd8 =>
+				--		state <= receive_response_cmd8;
+				--	when receive_response_cmd8 =>
+				--		if(busy_spi = '0') then
+				--			state <= read_response_cmd8;
+				--		else
+				--			state <= receive_response_cmd8;
+				--		end if;
+					
+				--	when read_r7 =>
+				--		if(send_cnt = "0011") then
+				--			if(spi_output = "00000001") then
+				--				state <= start_receive_r7;
+				--			else
+				--				state <= error;
+				--			end if;
+				--		elsif(send_cnt = "0100") then
+				--			if(spi_output = "10101010") then
+				--				state <= load_cmd55;
+				--			else
+				--				state <= error;
+				--			end if;
+				--		else
+				--			state <= start_receive_r7;
+				--		end if;
+				--	when start_receive_r7 =>
+				--		state <= receive_r7;
+				--	when receive_r7 =>
+				--		if(busy_spi = '0') then
+				--			state <= read_r7;
+				--		else
+				--			state <= receive_r7;
+				--		end if;
+				
+			--when load_cmd8 =>
+			--	slave_select <= '0';
+			--	mosi_high <= '1';
+			--	sig_send <= '0';
+			--	send_reset <= '1';
+			--	write_enable <= '1';
+			--	new_send_cnt <= send_cnt + 1;
+			--	case send_cnt is
+			--		when "0000" =>
+			--			write_in <= "01000001";
+			--		when "0001" =>
+			--			write_in <= "00000000";
+			--		when "0010" =>
+			--			write_in <= "00000000";
+			--		when "0011" =>
+			--			write_in <= "00000000";
+			--		when "0100" =>
+			--			write_in <= "00000000";
+			--		when "0101" =>
+			--			write_in <= "11111111";
+			--		when others =>
+			--			write_in <= "01000010";
+			--	end case;
+			--	busy <= '1';
+			--	new_output_reg <= output_reg;
+			--	data_read <= '0';
+			--	divide_clock <= '0';
+			--	state_debug_sig <= "0001100";
+			--when start_send_cmd8 =>
+			--	slave_select <= '0';
+			--	mosi_high <= '0';
+			--	sig_send <= '1';
+			--	send_reset <= '0';
+			--	write_enable <= '0';
+			--	new_send_cnt <= send_cnt;
+			--	write_in <= "11111111";
+			--	busy <= '1';
+			--	new_output_reg <= output_reg;
+			--	data_read <= '0';
+			--	divide_clock <= '0';
+			--	state_debug_sig <= "0001101";
+			--when send_cmd8 =>
+			--	slave_select <= '0';
+			--	mosi_high <= '0';
+			--	sig_send <= '1';
+			--	send_reset <= '0';
+			--	write_enable <= '0';
+			--	new_send_cnt <= send_cnt;
+			--	write_in <= "11111111";
+			--	busy <= '1';
+			--	new_output_reg <= output_reg;
+			--	data_read <= '0';
+			--	divide_clock <= '0';
+			--	state_debug_sig <= "0001110";
+			--when read_response_cmd8 =>
+			--	slave_select <= '0';
+			--	mosi_high <= '1';
+			--	sig_send <= '0';
+			--	send_reset <= '1';
+			--	write_enable <= '0';
+			--	new_send_cnt <= (others => '0');
+			--	write_in <= "11111111";
+			--	busy <= '1';
+			--	new_output_reg <= output_reg;
+			--	data_read <= '0';
+			--	divide_clock <= '0';
+			--	state_debug_sig <= "0001111";
+			--when start_receive_response_cmd8 =>
+			--	slave_select <= '0';
+			--	mosi_high <= '1';
+			--	sig_send <= '1';
+			--	send_reset <= '0';
+			--	write_enable <= '0';
+			--	new_send_cnt <= (others => '0');
+			--	write_in <= "11111111";	
+			--	busy <= '1';
+			--	new_output_reg <= output_reg;
+			--	data_read <= '0';
+			--	divide_clock <= '0';
+			--	state_debug_sig <= "0010000";
+			--when receive_response_cmd8 =>
+			--	slave_select <= '0';
+			--	mosi_high <= '1';
+			--	sig_send <= '1';
+			--	send_reset <= '0';
+			--	write_enable <= '0';
+			--	new_send_cnt <= (others => '0');
+			--	write_in <= "11111111";	
+			--	busy <= '1';
+			--	new_output_reg <= output_reg;
+			--	data_read <= '0';
+			--	divide_clock <= '0';
+			--	state_debug_sig <= "0010001";
+			--	
+			--when read_r7 =>
+			--	slave_select <= '0';
+			--	mosi_high <= '1';
+			--	sig_send <= '0';
+			--	send_reset <= '1';
+			--	write_enable <= '0';
+			--	new_send_cnt <= send_cnt + 1;
+			--	write_in <= "11111111";
+			--	busy <= '1';
+			--	new_output_reg <= output_reg;
+			--	data_read <= '0';
+			--	divide_clock <= '0';
+			--	state_debug_sig <= "0010010";
+			--when start_receive_r7 =>
+			--	slave_select <= '0';
+			--	mosi_high <= '1';
+			--	sig_send <= '1';
+			--	send_reset <= '0';
+			--	write_enable <= '0';
+			--	new_send_cnt <= send_cnt;
+			--	write_in <= "11111111";	
+			--	busy <= '1';
+			--	new_output_reg <= output_reg;
+			--	data_read <= '0';
+			--	divide_clock <= '0';
+			--	state_debug_sig <= "0010011";
+			--when receive_r7 =>
+			--	slave_select <= '0';
+			--	mosi_high <= '1';
+			--	sig_send <= '1';
+			--	send_reset <= '0';
+			--	write_enable <= '0';
+			--	new_send_cnt <= send_cnt;
+			--	write_in <= "11111111";	
+			--	busy <= '1';
+			--	new_output_reg <= output_reg;
+			--	data_read <= '0';
+			--	divide_clock <= '0';
+			--	state_debug_sig <= "0010100";
