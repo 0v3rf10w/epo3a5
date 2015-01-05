@@ -138,8 +138,8 @@ void loop()
   {
    plaatsplayer1 = 12; 
   }
-  plaatsplayer2 = 6;
-  plaatsplayer1 = 6;
+      plaatsplayer2 = 2;
+  plaatsplayer1 = 9;
   byte test;
    test = byte(plaatsplayer1);
    test = test << 4;

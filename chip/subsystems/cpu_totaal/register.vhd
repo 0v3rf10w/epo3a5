@@ -32,15 +32,15 @@ library IEEE;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity reg_out is
+entity reg_o is
 port (  reg_in  : in  std_logic_vector(7 downto 0);
         reg_clk : in  std_logic;
         reg_rst : in  std_logic;
         reg_ld  : in  std_logic_vector(4 downto 0);
         reg_out : out std_logic_vector(7 downto 0));
-end entity reg_out;
+end entity reg_o;
 
-architecture behaviour of reg_out is
+architecture behaviour of reg_o is
 begin
   process(reg_clk, reg_rst)
   begin

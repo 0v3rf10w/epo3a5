@@ -8,17 +8,24 @@ port (  reg_in      : in std_logic_vector(7 downto 0);
         reg_rst     : in std_logic;
         reg_select  : in std_logic_vector(4 downto 0);
         buf_select  : in std_logic_vector(4 downto 0);
-        buf_out     : out std_logic_vector(7 downto 0));
+        buf_in      : in std_logic_vector(7 downto 0);
+        buf_out     : out std_logic_vector(7 downto 0);
+        reg_out     : out std_logic_vector(7 downto 0));
 end entity reg_cluster;
-
-
-
 
 architecture behavioural of reg_cluster is
 
 --components--
 
 --registers--
+
+component reg_o
+port (  reg_in  : in  std_logic_vector(7 downto 0);
+        reg_clk : in  std_logic;
+        reg_rst : in  std_logic;
+        reg_ld  : in  std_logic_vector(4 downto 0);
+        reg_out : out std_logic_vector(7 downto 0));
+end component;
 
 component reg_2
 port (  reg_in  : in std_logic_vector(7 downto 0);
@@ -94,6 +101,12 @@ end component;
 
 --buffers--
 
+component buf_i
+port  ( buf_in  : in  std_logic_vector(7 downto 0);
+        buf_oe  : in  std_logic_vector(4 downto 0);
+        buf_out : out std_logic_vector(7 downto 0));
+end component;
+
 component buf_2
 port( buf_in  : in std_logic_vector(7 downto 0);
       buf_oe  : in std_logic_vector(4 downto 0);
@@ -164,6 +177,12 @@ begin
 
 --registers--
 
+r_o:          reg_o port map (
+                              reg_in => reg_in,
+                              reg_clk => reg_clk,
+                              reg_rst => reg_rst,
+                              reg_ld => reg_select,
+                              reg_out => reg_out);
 
 r2:           reg_2 port map (
                               reg_in => reg_in,
@@ -227,7 +246,12 @@ r10:          reg_10 port map (
                               reg_ld => reg_select,
                               reg_out => reg_buf_10);
                               
---buffers--              
+--buffers--           
+
+bin:          buf_i port map (
+                              buf_in => buf_in,
+                              buf_oe => buf_select,
+                              buf_out => buf_out); 
                               
 b2:           buf_2 port map (
                               buf_in => reg_buf_2,

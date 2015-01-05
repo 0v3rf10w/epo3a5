@@ -33,7 +33,7 @@ begin
 lbl1: cpu port map(cpu_clk, cpu_rst, cpu_en, cpu_in, cpu_instr, cpu_pc, cpu_out, cpu_test_inc, cpu_test_ld, cpu_test_data);
   
 cpu_clk <= '1' after 0 ns,
-	'0' after 50 ns when cpu_clk/= '0' else '1' after 50 ns;
+	'0' after 25 ns when cpu_clk/= '0' else '1' after 25 ns;
 cpu_rst <= '1' after 0 ns,
 	'0' after 50 ns;
 cpu_en <= '0' after 0 ns,
@@ -44,18 +44,18 @@ cpu_instr <= "000000000000" after 0 ns,
 	"010100001100" after 50 ns,         -- load argument w1=12
         "011100000001" after 100 ns,        -- Store to adress R1
         "010100001100" after 150 ns,        -- load argument w2=12
-        "011100000010" after 200 ns,        -- Store to adress R2
+        "011100000011" after 200 ns,        -- Store to adress R3
         "010100000110" after 250 ns,        -- load argument barw=6
-        "011100000011" after 300 ns,        -- Store to adress R3
+        "011100000100" after 300 ns,        -- Store to adress R4
         "010100001100" after 350 ns,        -- load argument x=12
-        "011100000100" after 400 ns,        -- Store to adress R4
+        "011100000101" after 400 ns,        -- Store to adress R5
         "010100010000" after 450 ns,        -- load argument y=16
-        "011100000101" after 500 ns,        -- Store to adress R5
+        "011100000110" after 500 ns,        -- Store to adress R6
         "010100000001" after 550 ns,        -- load argument xv=1
-        "011100000110" after 600 ns,        -- Store to adress R6
+        "011100000111" after 600 ns,        -- Store to adress R7
         "010100000001" after 650 ns,        -- load argument yv=1
-        "011100000111" after 700 ns,        -- Store to adress R7
-        "010111111111" after 750 ns,        -- clear screen
+        "011100001000" after 700 ns,        -- Store to adress R8
+        "010111111111" after 750 ns,        -- ld 11111111 (clear screen)
         "011100001010" after 800 ns,        -- Store to adress R10
 	"000100010001" after 850 ns,	-- jump to hold (18)
 	"111100000000" after 900 ns,	-- Clear c
