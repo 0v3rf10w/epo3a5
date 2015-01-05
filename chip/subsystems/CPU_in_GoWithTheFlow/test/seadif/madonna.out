@@ -1,0 +1,127 @@
+
+Madonna version 3.3 (compiled Tue, 08 Jul 2008 15:50:37 for "linux-2.6-i686")
+
+WARNING: Seadif file "/home/bmeekes/CPU/test/seadif/sealib.sdf" is not a magic cookie (skipped).
+
+reading circuit "cpu(cpu(test))" ...done
+
+Kissing madonna hello...
+
+Reading image description file "/data/public/common/software/nelsis/5.4.1.1/share/lib/celllibs/fishbone/image.seadif"...
+
+
+------ net distribution (total #nets = 105):
+        0..1     2     3     4     5     6     7 8..10 11..20  >20
+
+           0    71    22     1     1     0     8     0     0     2
+
+------ partitioning 20 cells into (hor x vert) = (3 x 2) partitions
+
+------ requested grid points = (369, 392)
+
+------ cost@start = 388, cost@end = 352, moves = 10
+------ s, w, b = 133, 192, 132; perm = 1 4 2 6 5 3 
+------ cost@start = 398, cost@end = 383, moves = 13
+------ cost@start = 383, cost@end = 383, moves = 11
+------ s, w, b = 159, 205, 146; perm = 1 4 2 5 6 3 
+------ 55 nets have to be routed on a 5 x 3 global grid
+     + routing net cpu_test_inc (2 terminals):  weight = 200
+     + routing net cpu_test_ld (2 terminals):  weight = 200
+     + routing net cpu_test_data_7_0_7 (3 terminals):  weight = 404
+     + routing net cpu_test_data_7_0_6 (3 terminals):  weight = 404
+     + routing net cpu_test_data_7_0_5 (3 terminals):  weight = 404
+     + routing net cpu_test_data_7_0_4 (3 terminals):  weight = 404
+     + routing net cpu_test_data_7_0_3 (3 terminals):  weight = 404
+     + routing net cpu_test_data_7_0_2 (3 terminals):  weight = 404
+     + routing net cpu_test_data_7_0_1 (3 terminals):  weight = 404
+     + routing net cpu_test_data_7_0_0 (3 terminals):  weight = 404
+     + routing net cpu_instr_11_0_11 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_10 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_9 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_8 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_7 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_6 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_5 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_4 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_3 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_2 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_1 (2 terminals):  weight = 202
+     + routing net cpu_instr_11_0_0 (2 terminals):  weight = 202
+     + routing net cpu_alu_c (2 terminals):  weight = 202
+     + routing net cpu_alu_z (2 terminals):  weight = 202
+     + routing net cpu_dec_ibufoe (2 terminals):  weight = 200
+     + routing net cpu_dec_aregld (2 terminals):  weight = 202
+     + routing net cpu_dec_bregld_3_port (2 terminals):  weight = 200
+     + routing net cpu_dec_bregld_2_port (2 terminals):  weight = 200
+     + routing net cpu_dec_bregld_1_port (2 terminals):  weight = 200
+     + routing net cpu_dec_bregld_0_port (2 terminals):  weight = 200
+     + routing net cpu_dec_bbufoe_3_port (2 terminals):  weight = 200
+     + routing net cpu_dec_bbufoe_2_port (2 terminals):  weight = 200
+     + routing net cpu_dec_bbufoe_1_port (2 terminals):  weight = 200
+     + routing net cpu_dec_bbufoe_0_port (2 terminals):  weight = 200
+     + routing net cpu_alu_op_2_port (2 terminals):  weight = 202
+     + routing net cpu_alu_op_1_port (2 terminals):  weight = 202
+     + routing net cpu_alu_op_0_port (2 terminals):  weight = 202
+     + routing net cpu_dec_o_7_port (2 terminals):  weight = 200
+     + routing net cpu_dec_o_6_port (2 terminals):  weight = 200
+     + routing net cpu_dec_o_5_port (2 terminals):  weight = 200
+     + routing net cpu_dec_o_4_port (2 terminals):  weight = 200
+     + routing net cpu_dec_o_3_port (2 terminals):  weight = 200
+     + routing net cpu_dec_o_2_port (2 terminals):  weight = 200
+     + routing net cpu_dec_o_1_port (2 terminals):  weight = 200
+     + routing net cpu_dec_o_0_port (2 terminals):  weight = 200
+     + routing net cpu_rst (3 terminals):  weight = 404
+     + routing net cpu_clk (3 terminals):  weight = 404
+     + routing net n4 (2 terminals):  weight = 200
+     + routing net n7 (2 terminals):  weight = 204
+     + routing net n11 (2 terminals):  weight = 204
+     + routing net n10 (2 terminals):  weight = 204
+     + routing net n8 (2 terminals):  weight = 204
+     + routing net n2 (2 terminals):  weight = 200
+     + routing net n1 (2 terminals):  weight = 200
+     + routing net n3 (2 terminals):  weight = 200
+
+------ Routed 55 nets, total weight = 13092
+
+
+
+------ Detailed placement of (Tmp_Cell_(cpu(cpu(test))))...
+------ Reading input data
+------ Creating temporary data structures
+------ Placement plane size : [369:392]
+------ Doing placement 
+ Can't place cell :lbl_bregs  in window at (0,0)
+
+ Apparently the magnification coefficient is too small. 
+ Let's try to run the algorithm for bigger magn. coefficient. 
+------ Placement plane size : [369:509]
+------ Doing placement 
+ Can't place cell :lbl_bregs  in window at (0,0)
+
+ Apparently the magnification coefficient is too small. 
+ Let's try to run the algorithm for bigger magn. coefficient. 
+------ Placement plane size : [369:661]
+------ Doing placement 
+ Can't place cell :lbl_bregs  in window at (0,0)
+
+ Apparently the magnification coefficient is too small. 
+ Let's try to run the algorithm for bigger magn. coefficient. 
+------ Placement plane size : [369:859]
+------ Doing placement 
+ Can't place cell :lbl_bregs  in window at (0,0)
+
+ Apparently the magnification coefficient is too small. 
+ Let's try to run the algorithm for bigger magn. coefficient. 
+------ Placement plane size : [369:1116]
+------ Doing placement 
+------ Compacting  
+
+         9  row[s] deleted.
+
+         Magnification coefficient obtained :1.83547
+
+------ Writing created layout to database
+Kissing madonna good bye...
+
+Madonna took 0.4 seconds of your cpu
+terminate

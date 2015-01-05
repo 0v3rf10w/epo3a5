@@ -1,0 +1,634 @@
+cpu_test_data_7_0_7 (terminals = 3, weight = 404):
+
++ ._x_. +
+  |   |  
+. . . . .
+  |   |  
+x_. + ._x
+
+
+
+cpu_test_data_7_0_6 (terminals = 3, weight = 404):
+
++ ._x_. +
+  |   |  
+. . . . .
+  |   |  
+x_. + ._x
+
+
+
+cpu_test_data_7_0_5 (terminals = 3, weight = 404):
+
++ ._x_. +
+  |   |  
+. . . . .
+  |   |  
+x_. + ._x
+
+
+
+cpu_test_data_7_0_4 (terminals = 3, weight = 404):
+
++ ._x_. +
+  |   |  
+. . . . .
+  |   |  
+x_. + ._x
+
+
+
+cpu_test_data_7_0_3 (terminals = 3, weight = 404):
+
++ ._x_. +
+  |   |  
+. . . . .
+  |   |  
+x_. + ._x
+
+
+
+cpu_test_data_7_0_2 (terminals = 3, weight = 404):
+
++ ._x_. +
+  |   |  
+. . . . .
+  |   |  
+x_. + ._x
+
+
+
+cpu_test_data_7_0_1 (terminals = 3, weight = 404):
+
++ ._x_. +
+  |   |  
+. . . . .
+  |   |  
+x_. + ._x
+
+
+
+cpu_test_data_7_0_0 (terminals = 3, weight = 404):
+
++ ._x_. +
+  |   |  
+. . . . .
+  |   |  
+x_. + ._x
+
+
+
+cpu_instr_11_0_11 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_10 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_9 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_8 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_7 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_6 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_5 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_4 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_3 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_2 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_1 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_instr_11_0_0 (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_c (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_z (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_dec_abufoe (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_dec_bregld_3_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_dec_bregld_2_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_dec_bregld_1_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_dec_bregld_0_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_dec_bbufoe_3_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_dec_bbufoe_2_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_dec_bbufoe_1_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_dec_bbufoe_0_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_alu_op_2_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_op_1_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_op_0_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_rst (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. ._. . .
+  |      
+x_. + . +
+
+
+
+cpu_clk (terminals = 3, weight = 404):
+
++ ._x_. +
+  |   |  
+. . . . .
+  |   |  
+x_. + ._x
+
+
+
+cpu_areg_out_7_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_areg_out_6_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_areg_out_5_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_areg_out_4_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_areg_out_3_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_areg_out_2_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_areg_out_1_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_areg_out_0_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_out_7_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_out_6_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_out_5_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_out_4_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_out_3_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_out_2_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_out_1_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+cpu_alu_out_0_port (terminals = 2, weight = 202):
+
++ . x . +
+    |    
+. . ._. .
+      |  
++ . + ._x
+
+
+
+n7 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+n12 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+n6 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+n11 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+n5 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+n10 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+n8 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+n2 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+n1 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+n3 (terminals = 2, weight = 202):
+
++ ._x . +
+  |      
+. . . . .
+  |      
+x_. + . +
+
+
+
+Global routing summary:
+
+Horizontal channel heights [channel, nwires, ncells]:
+[0 33 2] 
+
+Vertical channel widths [channel, nwires, ncells]:
+[0 29 29] [1 42 42] 
+
+Local channels [x, y, hor.nwires, ver.nwires]:
+[0 1 0 19] [1 1 0 9] [2 1 0 0] 
+[0 0 0 29] [1 0 33 42] [2 0 0 0] 
+
+
+
