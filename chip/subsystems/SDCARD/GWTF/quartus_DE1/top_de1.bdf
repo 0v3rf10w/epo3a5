@@ -55,23 +55,6 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 392 304 560 320)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "miso_in" (rect 5 0 42 12)(font "Arial" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 92 12)(pt 117 12))
-		(line (pt 92 4)(pt 117 4))
-		(line (pt 121 8)(pt 168 8))
-		(line (pt 92 12)(pt 92 4))
-		(line (pt 117 4)(pt 121 8))
-		(line (pt 117 12)(pt 121 8))
-	)
-	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 328 320 392 336))
-)
-(pin
-	(input)
 	(rect 304 232 472 248)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "switch[7..0]" (rect 5 0 61 12)(font "Arial" ))
@@ -103,6 +86,23 @@ applicable agreement for further details.
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
 	(annotation_block (location)(rect 280 400 336 416))
+)
+(pin
+	(input)
+	(rect 392 304 560 320)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "miso_in" (rect 5 0 43 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 168 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "GND" (rect 136 7 157 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 328 320 392 336))
 )
 (pin
 	(output)
@@ -205,6 +205,39 @@ applicable agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 	(annotation_block (location)(rect 1504 304 1568 320))
+)
+(pin
+	(output)
+	(rect 968 328 1144 344)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "test_out" (rect 90 0 130 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1144 344 1200 360))
+)
+(pin
+	(output)
+	(rect 1328 352 1504 368)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "clock_test" (rect 90 0 140 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
 )
 (symbol
 	(rect 512 -48 672 48)
@@ -535,10 +568,6 @@ applicable agreement for further details.
 	)
 )
 (connector
-	(pt 464 -16)
-	(pt 512 -16)
-)
-(connector
 	(pt 736 160)
 	(pt 736 -16)
 )
@@ -573,25 +602,13 @@ applicable agreement for further details.
 	(pt 560 312)
 )
 (connector
-	(pt 792 224)
-	(pt 792 312)
-)
-(connector
 	(pt 472 240)
 	(pt 768 240)
 	(bus)
 )
 (connector
-	(pt 688 160)
-	(pt 736 160)
-)
-(connector
 	(pt 736 160)
 	(pt 856 160)
-)
-(connector
-	(pt 688 160)
-	(pt 688 368)
 )
 (connector
 	(pt 688 368)
@@ -730,20 +747,8 @@ applicable agreement for further details.
 	(pt 832 312)
 )
 (connector
-	(pt 888 432)
-	(pt 864 432)
-)
-(connector
-	(pt 888 312)
-	(pt 888 432)
-)
-(connector
 	(pt 1320 256)
 	(pt 1272 256)
-)
-(connector
-	(pt 1320 184)
-	(pt 1248 184)
 )
 (connector
 	(pt 1248 184)
@@ -765,6 +770,72 @@ applicable agreement for further details.
 	(pt 1096 192)
 	(pt 1248 192)
 )
-(junction (pt 736 160))
+(connector
+	(pt 688 72)
+	(pt 688 368)
+)
+(connector
+	(pt 688 72)
+	(pt 488 72)
+)
+(connector
+	(pt 488 72)
+	(pt 488 -16)
+)
+(connector
+	(pt 464 -16)
+	(pt 488 -16)
+)
+(connector
+	(pt 488 -16)
+	(pt 512 -16)
+)
+(connector
+	(pt 888 480)
+	(pt 864 480)
+)
+(connector
+	(pt 888 312)
+	(pt 888 480)
+)
+(connector
+	(pt 792 328)
+	(pt 944 328)
+)
+(connector
+	(pt 792 224)
+	(pt 792 312)
+)
+(connector
+	(pt 792 312)
+	(pt 792 328)
+)
+(connector
+	(pt 944 328)
+	(pt 944 336)
+)
+(connector
+	(pt 944 336)
+	(pt 968 336)
+)
+(connector
+	(pt 1264 184)
+	(pt 1264 360)
+)
+(connector
+	(pt 1264 360)
+	(pt 1328 360)
+)
+(connector
+	(pt 1320 184)
+	(pt 1264 184)
+)
+(connector
+	(pt 1264 184)
+	(pt 1248 184)
+)
 (junction (pt 672 200))
 (junction (pt 568 200))
+(junction (pt 488 -16))
+(junction (pt 792 312))
+(junction (pt 1264 184))

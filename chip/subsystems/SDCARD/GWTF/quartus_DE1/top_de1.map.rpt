@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top_de1
-Fri Dec 26 18:13:27 2014
+Mon Jan 05 11:19:24 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -48,16 +48,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 26 18:13:27 2014           ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 05 11:19:23 2015           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; top_de1                                         ;
 ; Top-level Entity Name              ; top_de1                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 197                                             ;
-;     Total combinational functions  ; 186                                             ;
-;     Dedicated logic registers      ; 79                                              ;
-; Total registers                    ; 79                                              ;
-; Total pins                         ; 31                                              ;
+; Total logic elements               ; 202                                             ;
+;     Total combinational functions  ; 190                                             ;
+;     Dedicated logic registers      ; 84                                              ;
+; Total registers                    ; 84                                              ;
+; Total pins                         ; 33                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -150,15 +150,21 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -166,7 +172,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                            ; Library ;
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
-; ../../dff2.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Job/epo3a5/chip/subsystems/SDCARD/dff2.vhd                     ;         ;
+; ../../dff_capabel.vhd            ; yes             ; User VHDL File                     ; C:/Users/Job/epo3a5/chip/subsystems/SDCARD/dff_capabel.vhd              ;         ;
 ; ../../klokdeler.vhd              ; yes             ; User VHDL File                     ; C:/Users/Job/epo3a5/chip/subsystems/SDCARD/klokdeler.vhd                ;         ;
 ; ../../../SPI/spi.vhd             ; yes             ; User VHDL File                     ; C:/Users/Job/epo3a5/chip/subsystems/SPI/spi.vhd                         ;         ;
 ; ../../../SPI/shift_reg.vhd       ; yes             ; User VHDL File                     ; C:/Users/Job/epo3a5/chip/subsystems/SPI/shift_reg.vhd                   ;         ;
@@ -183,28 +189,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 197          ;
+; Estimated Total logic elements              ; 202          ;
 ;                                             ;              ;
-; Total combinational functions               ; 186          ;
+; Total combinational functions               ; 190          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 95           ;
-;     -- 3 input functions                    ; 59           ;
-;     -- <=2 input functions                  ; 32           ;
+;     -- 4 input functions                    ; 94           ;
+;     -- 3 input functions                    ; 58           ;
+;     -- <=2 input functions                  ; 38           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 186          ;
+;     -- normal mode                          ; 190          ;
 ;     -- arithmetic mode                      ; 0            ;
 ;                                             ;              ;
-; Total registers                             ; 79           ;
-;     -- Dedicated logic registers            ; 79           ;
+; Total registers                             ; 84           ;
+;     -- Dedicated logic registers            ; 84           ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 31           ;
+; I/O pins                                    ; 33           ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ; Maximum fan-out node                        ; reset_button ;
-; Maximum fan-out                             ; 71           ;
-; Total fan-out                               ; 879          ;
-; Average fan-out                             ; 2.97         ;
+; Maximum fan-out                             ; 76           ;
+; Total fan-out                               ; 949          ;
+; Average fan-out                             ; 3.09         ;
 +---------------------------------------------+--------------+
 
 
@@ -213,17 +219,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
-; |top_de1                   ; 186 (0)           ; 79 (0)       ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |top_de1                                       ; work         ;
+; |top_de1                   ; 190 (0)           ; 84 (0)       ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |top_de1                                       ; work         ;
 ;    |gen6mhz:inst1|         ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|gen6mhz:inst1                         ; work         ;
-;    |klokdeler:inst9|       ; 5 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9                       ; work         ;
-;       |dff_haat:lbl1|      ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_haat:lbl1         ; work         ;
-;       |dff_haat:lbl2|      ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_haat:lbl2         ; work         ;
-;       |dff_haat:lbl3|      ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_haat:lbl3         ; work         ;
-;       |dff_haat:lbl4|      ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_haat:lbl4         ; work         ;
-;       |dff_haat:lbl5|      ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_haat:lbl5         ; work         ;
-;    |sdcard:inst7|          ; 178 (132)         ; 71 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|sdcard:inst7                          ; work         ;
-;       |spi:spi5|           ; 46 (0)            ; 16 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|sdcard:inst7|spi:spi5                 ; work         ;
-;          |control:ctrl1|   ; 7 (7)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|sdcard:inst7|spi:spi5|control:ctrl1   ; work         ;
+;    |klokdeler:inst9|       ; 8 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9                       ; work         ;
+;       |dff_capabel:lbl1|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_capabel:lbl1      ; work         ;
+;       |dff_capabel:lbl2|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_capabel:lbl2      ; work         ;
+;       |dff_capabel:lbl3|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_capabel:lbl3      ; work         ;
+;       |dff_capabel:lbl4|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_capabel:lbl4      ; work         ;
+;       |dff_capabel:lbl5|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_capabel:lbl5      ; work         ;
+;       |dff_capabel:lbl6|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_capabel:lbl6      ; work         ;
+;       |dff_capabel:lbl7|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_capabel:lbl7      ; work         ;
+;       |dff_capabel:lbl8|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|klokdeler:inst9|dff_capabel:lbl8      ; work         ;
+;    |sdcard:inst7|          ; 179 (135)         ; 73 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|sdcard:inst7                          ; work         ;
+;       |spi:spi5|           ; 44 (0)            ; 15 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|sdcard:inst7|spi:spi5                 ; work         ;
+;          |control:ctrl1|   ; 5 (5)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|sdcard:inst7|spi:spi5|control:ctrl1   ; work         ;
 ;          |counter:cnt1|    ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|sdcard:inst7|spi:spi5|counter:cnt1    ; work         ;
 ;          |shift_reg:shft1| ; 35 (35)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_de1|sdcard:inst7|spi:spi5|shift_reg:shft1 ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
@@ -305,14 +314,14 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                        ;
-+---------------------------------------+-------------------------------------------------------------------+
-; Register name                         ; Reason for Removal                                                ;
-+---------------------------------------+-------------------------------------------------------------------+
-; sdcard:inst7|state.reset_state        ; Merged with sdcard:inst7|spi:spi5|control:ctrl1|state.reset_state ;
-; Total Number of Removed Registers = 1 ;                                                                   ;
-+---------------------------------------+-------------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                         ;
++-------------------------------------------------------+--------------------+
+; Register name                                         ; Reason for Removal ;
++-------------------------------------------------------+--------------------+
+; sdcard:inst7|spi:spi5|control:ctrl1|state.reset_state ; Lost fanout        ;
+; Total Number of Removed Registers = 1                 ;                    ;
++-------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -320,12 +329,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 79    ;
+; Total registers                              ; 84    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 3     ;
-; Number of registers using Asynchronous Clear ; 76    ;
+; Number of registers using Synchronous Load   ; 4     ;
+; Number of registers using Asynchronous Clear ; 81    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 9     ;
+; Number of registers using Clock Enable       ; 59    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -335,7 +344,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; sdcard:inst7|send_switch               ; 2       ;
+; sdcard:inst7|send_switch               ; 1       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -345,9 +354,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |top_de1|sdcard:inst7|send_cnt[2]                           ;
-; 23:1               ; 3 bits    ; 45 LEs        ; 21 LEs               ; 24 LEs                 ; Yes        ; |top_de1|sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[6] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |top_de1|sdcard:inst7|send_cnt[1]                           ;
+; 23:1               ; 3 bits    ; 45 LEs        ; 21 LEs               ; 24 LEs                 ; Yes        ; |top_de1|sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[3] ;
 ; 23:1               ; 2 bits    ; 30 LEs        ; 16 LEs               ; 14 LEs                 ; Yes        ; |top_de1|sdcard:inst7|spi:spi5|shift_reg:shft1|reg_shift[0] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_de1|sdcard:inst7|state.start_init_count                ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top_de1|sdcard:inst7|spi:spi5|control:ctrl1|c_reset        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 
@@ -376,12 +386,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Dec 26 18:13:20 2014
+    Info: Processing started: Mon Jan 05 11:19:21 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de1 -c top_de1
-Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file /users/job/epo3a5/chip/subsystems/sdcard/dff2.vhd
-    Info (12022): Found design unit 1: dff_haat-behavioural
-    Info (12023): Found entity 1: dff_haat
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file /users/job/epo3a5/chip/subsystems/sdcard/dff_capabel.vhd
+    Info (12022): Found design unit 1: dff_capabel-behavioural
+    Info (12023): Found entity 1: dff_capabel
 Info (12021): Found 2 design units, including 1 entities, in source file /users/job/epo3a5/chip/subsystems/sdcard/klokdeler.vhd
     Info (12022): Found design unit 1: klokdeler-behavioural
     Info (12023): Found entity 1: klokdeler
@@ -411,9 +421,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file gen6mhz
 Info (12127): Elaborating entity "top_de1" for the top level hierarchy
 Info (12128): Elaborating entity "sdcard" for hierarchy "sdcard:inst7"
 Warning (10036): Verilog HDL or VHDL warning at sdcard.vhd(60): object "dummy_signal" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at sdcard.vhd(68): used implicit default value for signal "went_to_next" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at sdcard.vhd(68): object "go_to_next" assigned a value but never read
 Warning (10631): VHDL Process Statement warning at sdcard.vhd(84): inferring latch(es) for signal or variable "new_data", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at sdcard.vhd(157): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (10041): Inferred latch for "new_data" at sdcard.vhd(84)
 Info (12128): Elaborating entity "spi" for hierarchy "sdcard:inst7|spi:spi5"
 Info (12128): Elaborating entity "counter" for hierarchy "sdcard:inst7|spi:spi5|counter:cnt1"
@@ -421,25 +430,24 @@ Info (12128): Elaborating entity "shift_reg" for hierarchy "sdcard:inst7|spi:spi
 Info (12128): Elaborating entity "control" for hierarchy "sdcard:inst7|spi:spi5|control:ctrl1"
 Info (12128): Elaborating entity "gen6mhz" for hierarchy "gen6mhz:inst1"
 Info (12128): Elaborating entity "klokdeler" for hierarchy "klokdeler:inst9"
-Info (12128): Elaborating entity "dff_haat" for hierarchy "klokdeler:inst9|dff_haat:lbl1"
+Info (12128): Elaborating entity "dff_capabel" for hierarchy "klokdeler:inst9|dff_capabel:lbl1"
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer sdcard:inst7|sd_clk
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "sdcard:inst7|spi:spi5|control:ctrl1|busy"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "go_next"
-Info (21057): Implemented 230 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 237 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 199 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 499 megabytes
-    Info: Processing ended: Fri Dec 26 18:13:27 2014
-    Info: Elapsed time: 00:00:07
+    Info (21059): Implemented 21 output pins
+    Info (21061): Implemented 204 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 502 megabytes
+    Info: Processing ended: Mon Jan 05 11:19:24 2015
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 

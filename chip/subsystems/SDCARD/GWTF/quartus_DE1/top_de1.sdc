@@ -40,11 +40,20 @@ set_time_format -unit ns -decimal_places 3
 
 create_clock -name {clk} -period 20.000 -waveform { 0.000 10.000 } [get_ports {clock_50mhz}]
 
+
 #**************************************************************
 # Create Generated Clock
 #**************************************************************
 
 create_generated_clock -name clock_5mhz -source [get_ports {clock_50mhz}] -divide_by 10 [get_nets {inst1|count[2]}]
+create_generated_clock -source [get_ports {clock_50mhz}] -divide_by 2 [get_nets {inst9|lbl1|sig_q}]
+create_generated_clock -source [get_ports {clock_50mhz}] -divide_by 4 [get_nets {inst9|lbl2|sig_q}]
+create_generated_clock -source [get_ports {clock_50mhz}] -divide_by 8 [get_nets {inst9|lbl3|sig_q}]
+create_generated_clock -source [get_ports {clock_50mhz}] -divide_by 16 [get_nets {inst9|lbl4|sig_q}]
+create_generated_clock -source [get_ports {clock_50mhz}] -divide_by 32 [get_nets {inst9|lbl5|sig_q}]
+create_generated_clock -source [get_ports {clock_50mhz}] -divide_by 64 [get_nets {inst9|lbl6|sig_q}]
+create_generated_clock -source [get_ports {clock_50mhz}] -divide_by 128 [get_nets {inst9|lbl7|sig_q}]
+create_generated_clock -name div_clock -source [get_ports {clock_50mhz}] -divide_by 256 [get_nets {inst9|lbl8|sig_q}]
 
 #**************************************************************
 # Set Clock Latency
@@ -62,13 +71,18 @@ create_generated_clock -name clock_5mhz -source [get_ports {clock_50mhz}] -divid
 # Set Input Delay
 #**************************************************************
 
-
+set_input_delay -clock { clock_5mhz } -max 5 [get_ports {miso_in}]
+set_input_delay -clock { clock_5mhz } -min 5 [get_ports {miso_in}]
 
 #**************************************************************
 # Set Output Delay
 #**************************************************************
 
+set_output_delay -clock { clock_5mhz } -max 5 [get_ports {mosi_out}]
+set_output_delay -clock { clock_5mhz } -min -5 [get_ports {mosi_out}]
 
+set_output_delay -clock { clock_5mhz } -max 5 [get_ports {slave_select}]
+set_output_delay -clock { clock_5mhz } -min -5 [get_ports {slave_select}]
 
 #**************************************************************
 # Set Clock Groups

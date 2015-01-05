@@ -1,9 +1,11 @@
 |top_de1
 slave_clk <= sdcard:inst7.sclk
 clock_50mhz => gen6mhz:inst1.clk50mhz
+clock_50mhz => klokdeler:inst9.clk
 reset_button => inst4.IN0
 reset_button => inst4.IN1
 miso_in => sdcard:inst7.miso
+miso_in => test_out.DATAIN
 go_next => inst.IN0
 go_next => inst.IN1
 switch[0] => sdcard:inst7.address[0]
@@ -17,6 +19,8 @@ switch[7] => sdcard:inst7.address[7]
 mosi_out <= sdcard:inst7.mosi
 slave_select <= sdcard:inst7.ss
 busy_out <= sdcard:inst7.busy
+test_out <= miso_in.DB_MAX_OUTPUT_PORT_TYPE
+clock_test <= sdcard:inst7.sclk
 debug_out[0] <= sdcard:inst7.state_debug[0]
 debug_out[1] <= sdcard:inst7.state_debug[1]
 debug_out[2] <= sdcard:inst7.state_debug[2]
@@ -39,6 +43,7 @@ clk => sd_clk.DATAA
 div_clk => sd_clk.DATAB
 reset => state.DATAB
 reset => spi:spi5.reset
+reset => went_to_next.IN1
 reset => address_buf[0].ACLR
 reset => address_buf[1].ACLR
 reset => address_buf[2].ACLR
@@ -113,7 +118,7 @@ state_debug[3] <= WideOr48.DB_MAX_OUTPUT_PORT_TYPE
 state_debug[4] <= WideOr47.DB_MAX_OUTPUT_PORT_TYPE
 state_debug[5] <= WideOr46.DB_MAX_OUTPUT_PORT_TYPE
 state_debug[6] <= WideOr45.DB_MAX_OUTPUT_PORT_TYPE
-next_state => ~NO_FANOUT~
+next_state => go_to_next.CLK
 spi_output_debug[0] <= spi:spi5.read_out[0]
 spi_output_debug[1] <= spi:spi5.read_out[1]
 spi_output_debug[2] <= spi:spi5.read_out[2]
@@ -249,176 +254,176 @@ clk6mhz <= count[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_de1|klokdeler:inst9
-clk => dff_haat:lbl1.clk
-f2 <= dff_haat:lbl1.q
-f4 <= dff_haat:lbl2.q
-f8 <= dff_haat:lbl3.q
-f16 <= dff_haat:lbl4.q
-f32 <= dff_haat:lbl5.q
-f64 <= dff_haat:lbl6.q
-f128 <= dff_haat:lbl7.q
-f256 <= dff_haat:lbl8.q
-f512 <= dff_haat:lbl9.q
-f1024 <= dff_haat:lbl10.q
-f2048 <= dff_haat:lbl11.q
-f4096 <= dff_haat:lbl12.q
-f8192 <= dff_haat:lbl13.q
-f16384 <= dff_haat:lbl14.q
-f32768 <= dff_haat:lbl15.q
-f65536 <= dff_haat:lbl16.q
-f131072 <= dff_haat:lbl17.q
-reset => dff_haat:lbl1.reset
-reset => dff_haat:lbl2.reset
-reset => dff_haat:lbl3.reset
-reset => dff_haat:lbl4.reset
-reset => dff_haat:lbl5.reset
-reset => dff_haat:lbl6.reset
-reset => dff_haat:lbl7.reset
-reset => dff_haat:lbl8.reset
-reset => dff_haat:lbl9.reset
-reset => dff_haat:lbl10.reset
-reset => dff_haat:lbl11.reset
-reset => dff_haat:lbl12.reset
-reset => dff_haat:lbl13.reset
-reset => dff_haat:lbl14.reset
-reset => dff_haat:lbl15.reset
-reset => dff_haat:lbl16.reset
-reset => dff_haat:lbl17.reset
+clk => dff_capabel:lbl1.clk
+f2 <= dff_capabel:lbl1.q
+f4 <= dff_capabel:lbl2.q
+f8 <= dff_capabel:lbl3.q
+f16 <= dff_capabel:lbl4.q
+f32 <= dff_capabel:lbl5.q
+f64 <= dff_capabel:lbl6.q
+f128 <= dff_capabel:lbl7.q
+f256 <= dff_capabel:lbl8.q
+f512 <= dff_capabel:lbl9.q
+f1024 <= dff_capabel:lbl10.q
+f2048 <= dff_capabel:lbl11.q
+f4096 <= dff_capabel:lbl12.q
+f8192 <= dff_capabel:lbl13.q
+f16384 <= dff_capabel:lbl14.q
+f32768 <= dff_capabel:lbl15.q
+f65536 <= dff_capabel:lbl16.q
+f131072 <= dff_capabel:lbl17.q
+reset => dff_capabel:lbl1.reset
+reset => dff_capabel:lbl2.reset
+reset => dff_capabel:lbl3.reset
+reset => dff_capabel:lbl4.reset
+reset => dff_capabel:lbl5.reset
+reset => dff_capabel:lbl6.reset
+reset => dff_capabel:lbl7.reset
+reset => dff_capabel:lbl8.reset
+reset => dff_capabel:lbl9.reset
+reset => dff_capabel:lbl10.reset
+reset => dff_capabel:lbl11.reset
+reset => dff_capabel:lbl12.reset
+reset => dff_capabel:lbl13.reset
+reset => dff_capabel:lbl14.reset
+reset => dff_capabel:lbl15.reset
+reset => dff_capabel:lbl16.reset
+reset => dff_capabel:lbl17.reset
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl1
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl1
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl2
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl2
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl3
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl3
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl4
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl4
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl5
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl5
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl6
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl6
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl7
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl7
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl8
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl8
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl9
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl9
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl10
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl10
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl11
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl11
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl12
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl12
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl13
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl13
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl14
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl14
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl15
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl15
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl16
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl16
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_de1|klokdeler:inst9|dff_haat:lbl17
-clk => state.CLK
-d => ~NO_FANOUT~
-reset => state.ACLR
-q <= state.DB_MAX_OUTPUT_PORT_TYPE
-qbar <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_de1|klokdeler:inst9|dff_capabel:lbl17
+clk => sig_q.CLK
+d => sig_q.DATAIN
+reset => sig_q.ACLR
+q <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
+qbar <= sig_q.DB_MAX_OUTPUT_PORT_TYPE
 
 

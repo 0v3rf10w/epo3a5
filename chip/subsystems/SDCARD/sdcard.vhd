@@ -139,9 +139,9 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 			send_cnt <= (others => '0');
 		else
 			if(rising_edge(sd_clk)) then
-			--if(go_to_next = '1') then
+			if(go_to_next = '1') then
 				send_cnt <= new_send_cnt;
-			--end if;
+			end if;
 			end if;
 		end if;
 	end process;
@@ -151,14 +151,14 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 		if(reset = '1') then
 			state <= reset_state;
 			address_buf <= (others => '0');
-			--went_to_next <= '0';
+			went_to_next <= '0';
 		else
-		--if(go_to_next = '0') then
-			--state <= state;
-			--went_to_next <= '0';
-		--else
+		if(go_to_next = '0') then
+			state <= state;
+			went_to_next <= '0';
+		else
 			if rising_edge(sd_clk)  then
-				--went_to_next <= '1';
+				went_to_next <= '1';
 				address_buf <= address;
 				case state is 
 					when reset_state =>
@@ -377,7 +377,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						state <= error;
 				end case;	
 			end if;	
-		--end if;
+		end if;
 		end if;
 	end process;
 	
