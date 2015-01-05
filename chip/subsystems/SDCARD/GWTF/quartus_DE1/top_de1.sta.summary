@@ -2,36 +2,144 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow Model Setup 'div_clock'
+Slack : 12.250
+TNS   : 0.000
+
+Type  : Slow Model Setup 'clock_5mhz'
+Slack : 17.101
+TNS   : 0.000
+
 Type  : Slow Model Setup 'clk'
 Slack : 18.791
 TNS   : 0.000
 
-Type  : Slow Model Setup 'clock_5mhz'
-Slack : 93.223
+Type  : Slow Model Setup 'inst9|lbl1|sig_q|regout'
+Slack : 23.372
+TNS   : 0.000
+
+Type  : Slow Model Setup 'inst9|lbl2|sig_q|regout'
+Slack : 40.677
+TNS   : 0.000
+
+Type  : Slow Model Setup 'inst9|lbl3|sig_q|regout'
+Slack : 80.511
+TNS   : 0.000
+
+Type  : Slow Model Setup 'inst9|lbl4|sig_q|regout'
+Slack : 160.677
+TNS   : 0.000
+
+Type  : Slow Model Setup 'inst9|lbl5|sig_q|regout'
+Slack : 320.511
+TNS   : 0.000
+
+Type  : Slow Model Setup 'inst9|lbl6|sig_q|regout'
+Slack : 641.103
+TNS   : 0.000
+
+Type  : Slow Model Setup 'inst9|lbl7|sig_q|regout'
+Slack : 1280.509
 TNS   : 0.000
 
 Type  : Slow Model Hold 'clock_5mhz'
-Slack : -2.087
-TNS   : -48.190
+Slack : -4.597
+TNS   : -163.963
+
+Type  : Slow Model Hold 'div_clock'
+Slack : -1.690
+TNS   : -32.063
 
 Type  : Slow Model Hold 'clk'
 Slack : 0.445
 TNS   : 0.000
 
+Type  : Slow Model Hold 'inst9|lbl1|sig_q|regout'
+Slack : 16.380
+TNS   : 0.000
+
+Type  : Slow Model Hold 'inst9|lbl2|sig_q|regout'
+Slack : 39.075
+TNS   : 0.000
+
+Type  : Slow Model Hold 'inst9|lbl3|sig_q|regout'
+Slack : 79.241
+TNS   : 0.000
+
+Type  : Slow Model Hold 'inst9|lbl4|sig_q|regout'
+Slack : 159.075
+TNS   : 0.000
+
+Type  : Slow Model Hold 'inst9|lbl5|sig_q|regout'
+Slack : 319.241
+TNS   : 0.000
+
+Type  : Slow Model Hold 'inst9|lbl6|sig_q|regout'
+Slack : 638.649
+TNS   : 0.000
+
+Type  : Slow Model Hold 'inst9|lbl7|sig_q|regout'
+Slack : 1279.243
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'div_clock'
+Slack : 38.268
+TNS   : 0.000
+
 Type  : Slow Model Recovery 'clock_5mhz'
-Slack : 201.577
+Slack : 44.082
 TNS   : 0.000
 
 Type  : Slow Model Removal 'clock_5mhz'
-Slack : -1.825
-TNS   : -7.300
+Slack : -4.330
+TNS   : -17.320
+
+Type  : Slow Model Removal 'div_clock'
+Slack : -1.423
+TNS   : -5.692
 
 Type  : Slow Model Minimum Pulse Width 'clk'
 Slack : 8.889
 TNS   : 0.000
 
+Type  : Slow Model Minimum Pulse Width 'inst9|lbl1|sig_q|regout'
+Slack : 18.889
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'inst9|lbl2|sig_q|regout'
+Slack : 38.889
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'inst9|lbl3|sig_q|regout'
+Slack : 78.889
+TNS   : 0.000
+
 Type  : Slow Model Minimum Pulse Width 'clock_5mhz'
 Slack : 98.889
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'inst9|lbl4|sig_q|regout'
+Slack : 158.889
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'inst9|lbl5|sig_q|regout'
+Slack : 318.889
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'inst9|lbl6|sig_q|regout'
+Slack : 638.889
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'inst9|lbl7|sig_q|regout'
+Slack : 1278.889
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'div_clock'
+Slack : 2558.889
+TNS   : 0.000
+
+Type  : Fast Model Setup 'div_clock'
+Slack : 16.362
 TNS   : 0.000
 
 Type  : Fast Model Setup 'clk'
@@ -39,31 +147,131 @@ Slack : 19.525
 TNS   : 0.000
 
 Type  : Fast Model Setup 'clock_5mhz'
-Slack : 97.404
+Slack : 19.602
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst9|lbl1|sig_q|regout'
+Slack : 22.070
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst9|lbl2|sig_q|regout'
+Slack : 40.342
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst9|lbl3|sig_q|regout'
+Slack : 80.274
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst9|lbl4|sig_q|regout'
+Slack : 160.342
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst9|lbl5|sig_q|regout'
+Slack : 320.274
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst9|lbl6|sig_q|regout'
+Slack : 640.504
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst9|lbl7|sig_q|regout'
+Slack : 1280.272
 TNS   : 0.000
 
 Type  : Fast Model Hold 'clock_5mhz'
-Slack : -1.351
-TNS   : -32.903
+Slack : -2.979
+TNS   : -113.789
+
+Type  : Fast Model Hold 'div_clock'
+Slack : -1.148
+TNS   : -25.748
 
 Type  : Fast Model Hold 'clk'
 Slack : 0.215
 TNS   : 0.000
 
+Type  : Fast Model Hold 'inst9|lbl1|sig_q|regout'
+Slack : 17.810
+TNS   : 0.000
+
+Type  : Fast Model Hold 'inst9|lbl2|sig_q|regout'
+Slack : 39.538
+TNS   : 0.000
+
+Type  : Fast Model Hold 'inst9|lbl3|sig_q|regout'
+Slack : 79.606
+TNS   : 0.000
+
+Type  : Fast Model Hold 'inst9|lbl4|sig_q|regout'
+Slack : 159.538
+TNS   : 0.000
+
+Type  : Fast Model Hold 'inst9|lbl5|sig_q|regout'
+Slack : 319.606
+TNS   : 0.000
+
+Type  : Fast Model Hold 'inst9|lbl6|sig_q|regout'
+Slack : 639.376
+TNS   : 0.000
+
+Type  : Fast Model Hold 'inst9|lbl7|sig_q|regout'
+Slack : 1279.608
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'div_clock'
+Slack : 38.954
+TNS   : 0.000
+
 Type  : Fast Model Recovery 'clock_5mhz'
-Slack : 200.911
+Slack : 42.616
 TNS   : 0.000
 
 Type  : Fast Model Removal 'clock_5mhz'
-Slack : -1.031
-TNS   : -4.124
+Slack : -2.736
+TNS   : -10.944
+
+Type  : Fast Model Removal 'div_clock'
+Slack : -0.905
+TNS   : -3.620
 
 Type  : Fast Model Minimum Pulse Width 'clk'
 Slack : 9.000
 TNS   : 0.000
 
+Type  : Fast Model Minimum Pulse Width 'inst9|lbl1|sig_q|regout'
+Slack : 19.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'inst9|lbl2|sig_q|regout'
+Slack : 39.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'inst9|lbl3|sig_q|regout'
+Slack : 79.000
+TNS   : 0.000
+
 Type  : Fast Model Minimum Pulse Width 'clock_5mhz'
 Slack : 99.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'inst9|lbl4|sig_q|regout'
+Slack : 159.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'inst9|lbl5|sig_q|regout'
+Slack : 319.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'inst9|lbl6|sig_q|regout'
+Slack : 639.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'inst9|lbl7|sig_q|regout'
+Slack : 1279.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'div_clock'
+Slack : 2559.000
 TNS   : 0.000
 
 ------------------------------------------------------------

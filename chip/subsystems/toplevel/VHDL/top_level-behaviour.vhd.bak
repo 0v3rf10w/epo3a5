@@ -8,7 +8,7 @@ signal playerdata : std_logic_vector(7 downto 0);
 signal cpu_pc: std_logic_vector(7 downto 0);
 signal gpu_in : std_logic_vector(7 downto 0);
 signal cpu_instr : std_logic_vector(11 downto 0);
-signal gpu_out : std_logic;
+signal gpu_out : std_logic_vector(7 downto 0);
 signal uitleesselect : std_logic;
 signal von : std_logic;
 signal output : std_logic_vector(11 downto 0);
@@ -108,7 +108,7 @@ gp1u: gpu port map(
  clk => clk,
  gpu_in => gpu_in,
  reset => reset,
- gpu_out => gpu_out); -- wachten op gpu fix
+ gpu_out => gpu_out); -- dit is een vector, de bb verwacht dit niet
 
 blackbox1: blackbox port map(
 	sclk_m_0 => sclk_sram_0,
@@ -134,9 +134,9 @@ blackbox1: blackbox port map(
 	s => uitleesselect); --wachten op gpu fix
 
 vga1: vga port map (
-vga_in => miso_m_0,
-clk => clk,
-reset => reset,
+vga_in => --output van bb die konden we niet vinden...
+ clk => clk,
+ reset => reset,
 von => von,
 hsync_out => h_sync,
 vsync_out => v_sync,
