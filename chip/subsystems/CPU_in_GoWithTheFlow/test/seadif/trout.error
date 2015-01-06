@@ -1,0 +1,53 @@
+This is the file 'seadif/trout.error' which was created by
+the program 'trout' on Mon Jan  5 11:42:22 2015
+Trout was verifying the netlist description of
+your circuit circuit 'cpu' with the current layout in seadali.
+The following nets in the layout are not according to
+the netlist description of circuit 'cpu'. They are also
+marked in the layout.
+------------------------- list of errors -------------------------
+##### suspected short-circuit no. 1:
+  > net 'cpu_dec_o_2_port' (1 terms, e.g. terminal  'decoder_argout_7_0_2')
+  > net 'cpu_dec_bregld_2_port' (2 terms, e.g. terminal 'decoder_bregld_4_0_2')
+  > net 'cpu_dec_bbufoe_2_port' (2 terms, e.g. terminal 'decoder_bbufoe_4_0_2')
+  > net 'cpu_instr_11_0_2' (3 terms, e.g. terminal 'decoder_in_11_0_2')
+##### suspected short-circuit no. 2:
+  > net 'cpu_dec_bregld_4_port' (1 terms, e.g. terminal  'A')
+  > net 'cpu_dec_abufoe' (2 terms, e.g. terminal 'decoder_abufoe')
+##### suspected short-circuit no. 3:
+  > net 'cpu_dec_o_6_port' (1 terms, e.g. terminal  'decoder_argout_7_0_6')
+  > net 'cpu_instr_11_0_6' (3 terms, e.g. terminal 'decoder_in_11_0_6')
+##### suspected short-circuit no. 4:
+  > net 'cpu_dec_o_5_port' (1 terms, e.g. terminal  'decoder_argout_7_0_5')
+  > net 'cpu_instr_11_0_5' (3 terms, e.g. terminal 'decoder_in_11_0_5')
+##### suspected short-circuit no. 5:
+  > net 'cpu_dec_o_1_port' (1 terms, e.g. terminal  'decoder_argout_7_0_1')
+  > net 'cpu_dec_bregld_1_port' (2 terms, e.g. terminal 'reg_select_4_0_1')
+  > net 'cpu_dec_bbufoe_1_port' (2 terms, e.g. terminal 'decoder_bbufoe_4_0_1')
+  > net 'cpu_instr_11_0_1' (3 terms, e.g. terminal 'decoder_in_11_0_1')
+##### suspected short-circuit no. 6:
+  > net 'cpu_dec_o_4_port' (1 terms, e.g. terminal  'decoder_argout_7_0_4')
+  > net 'cpu_instr_11_0_4' (3 terms, e.g. terminal 'decoder_in_11_0_4')
+##### suspected short-circuit no. 7:
+  > net 'cpu_dec_o_3_port' (1 terms, e.g. terminal  'decoder_argout_7_0_3')
+  > net 'cpu_dec_bregld_3_port' (2 terms, e.g. terminal 'reg_select_4_0_3')
+  > net 'cpu_dec_bbufoe_3_port' (2 terms, e.g. terminal 'decoder_bbufoe_4_0_3')
+  > net 'cpu_instr_11_0_3' (3 terms, e.g. terminal 'decoder_in_11_0_3')
+##### suspected short-circuit no. 8:
+  > net 'cpu_dec_o_7_port' (1 terms, e.g. terminal  'decoder_argout_7_0_7')
+  > net 'cpu_instr_11_0_7' (3 terms, e.g. terminal 'decoder_in_11_0_7')
+##### suspected short-circuit no. 9:
+  > net 'cpu_dec_o_0_port' (1 terms, e.g. terminal  'decoder_argout_7_0_0')
+  > net 'cpu_dec_bregld_0_port' (2 terms, e.g. terminal 'reg_select_4_0_0')
+  > net 'cpu_dec_bbufoe_0_port' (2 terms, e.g. terminal 'decoder_bbufoe_4_0_0')
+  > net 'cpu_instr_11_0_0' (3 terms, e.g. terminal 'decoder_in_11_0_0')
+
+WARNING: 9 short-circuit(s) were detected among the 105 nets.
+         These nets were separatedly specified in the circuit
+         but are connected in the layout.  This may occur because of
+         feed-throughs in sub-cells and it doesn't necessarily
+         imply an error.
+         In the layout each short-circuit is indicated by a marker
+         which indicates a position on the pattern: <=-SHORT_<no>
+------------------------------------------------------------------
+lock
