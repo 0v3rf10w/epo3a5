@@ -1,0 +1,14 @@
+------ opening nelsis ------
+------ reading image description file '/data/public/common/software/nelsis/5.4.1.1/share/lib/celllibs/fishbone/image.seadif' ------
+------ opening seadif ------
+WARNING: Seadif file "/home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/test/seadif/sealib.sdf" is not a magic cookie (skipped).
+
+WARNING: Seadif file "/home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/test/seadif/sealib2.sdf" is not a magic cookie (skipped).
+
+WARNING: Seadif file "/home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/test/seadif/sealib3.sdf" is not a magic cookie (skipped).
+
+WARNING: Seadif file "/home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/test/seadif/sealib4.sdf" is not a magic cookie (skipped).
+
+------ reading sdf laycell 'Tmp_Cell_(sdcard(sdcard(test)))': OK ------
+------ writing sdflay 'Tmp_Cell_(sdcard(sdcard(test)))' into nelsis 'Tmpsdcard22851' ------
+------ nelsea: task completed ------

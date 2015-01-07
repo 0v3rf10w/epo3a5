@@ -1,0 +1,618 @@
+extern network dfa11 (terminal D, CK, R, Q, vss, vdd)
+extern network spi (terminal clk, send, reset, write_enable, write_in_7_0_7, 
+                             write_in_7_0_6, write_in_7_0_5, write_in_7_0_4, 
+                             write_in_7_0_3, write_in_7_0_2, write_in_7_0_1, 
+                             write_in_7_0_0, read_out_7_0_7, read_out_7_0_6, 
+                             read_out_7_0_5, read_out_7_0_4, read_out_7_0_3, 
+                             read_out_7_0_2, read_out_7_0_1, read_out_7_0_0, 
+                             busy, sclk, mosi, miso, ss, vss, vdd)
+extern network buf40 (terminal A, Y, vss, vdd)
+extern network mu111 (terminal A, B, S, Y, vss, vdd)
+extern network no210 (terminal A, B, Y, vss, vdd)
+extern network na310 (terminal A, B, C, Y, vss, vdd)
+extern network no310 (terminal A, B, C, Y, vss, vdd)
+extern network na210 (terminal A, B, Y, vss, vdd)
+extern network ex210 (terminal A, B, Y, vss, vdd)
+extern network iv110 (terminal A, Y, vss, vdd)
+network sdcard (terminal clk, div_clk, reset, address_7_0_7, address_7_0_6, 
+                         address_7_0_5, address_7_0_4, address_7_0_3, 
+                         address_7_0_2, address_7_0_1, address_7_0_0, 
+                         output_11_0_11, output_11_0_10, output_11_0_9, 
+                         output_11_0_8, output_11_0_7, output_11_0_6, 
+                         output_11_0_5, output_11_0_4, output_11_0_3, 
+                         output_11_0_2, output_11_0_1, output_11_0_0, busy, 
+                         sclk, mosi, miso, ss, state_debug_6_0_6, 
+                         state_debug_6_0_5, state_debug_6_0_4, 
+                         state_debug_6_0_3, state_debug_6_0_2, 
+                         state_debug_6_0_1, state_debug_6_0_0, next_state, 
+                         spi_output_debug_7_0_7, spi_output_debug_7_0_6, 
+                         spi_output_debug_7_0_5, spi_output_debug_7_0_4, 
+                         spi_output_debug_7_0_3, spi_output_debug_7_0_2, 
+                         spi_output_debug_7_0_1, spi_output_debug_7_0_0, vss, 
+                         vdd)
+{
+   net {output_11_0_11, output_11_port};
+   net {output_11_0_10, output_10_port};
+   net {output_11_0_9, output_9_port};
+   net {output_11_0_8, output_8_port};
+   net {output_11_0_7, output_7_port};
+   net {output_11_0_6, output_6_port};
+   net {output_11_0_5, output_5_port};
+   net {output_11_0_4, output_4_port};
+   net {output_11_0_3, output_3_port};
+   net {output_11_0_2, output_2_port};
+   net {output_11_0_1, output_1_port};
+   net {output_11_0_0, output_0_port};
+   net {state_debug_6_0_6, state_debug_6_port};
+   net {state_debug_6_0_5, state_debug_5_port};
+   net {state_debug_6_0_4, state_debug_4_port};
+   net {state_debug_6_0_3, state_debug_3_port};
+   net {state_debug_6_0_2, state_debug_2_port};
+   net {state_debug_6_0_1, state_debug_1_port};
+   net {state_debug_6_0_0, state_debug_0_port};
+   net {spi_output_debug_7_0_7, spi_output_debug_7_port};
+   net {spi_output_debug_7_0_6, spi_output_debug_6_port};
+   net {spi_output_debug_7_0_5, spi_output_debug_5_port};
+   net {spi_output_debug_7_0_4, spi_output_debug_4_port};
+   net {spi_output_debug_7_0_3, spi_output_debug_3_port};
+   net {spi_output_debug_7_0_2, spi_output_debug_2_port};
+   net {spi_output_debug_7_0_1, spi_output_debug_1_port};
+   net {spi_output_debug_7_0_0, spi_output_debug_0_port};
+   net {X_Logic1_port, vdd};
+   {address_buf_reg_0_inst} dfa11 (address_7_0_0, n515, reset, 
+                                   address_buf_0_port, vss, vdd);
+   {new_data_reg} dfa11 (N128, n515, n967, new_data, vss, vdd);
+   {state_reg_1_inst} dfa11 (N468, n515, reset, state_1_port, vss, vdd);
+   {state_reg_2_inst} dfa11 (N469, n515, reset, state_2_port, vss, vdd);
+   {state_reg_0_inst} dfa11 (N467, n515, reset, state_0_port, vss, vdd);
+   {state_reg_4_inst} dfa11 (N471, n515, reset, state_4_port, vss, vdd);
+   {state_reg_5_inst} dfa11 (N472, n515, reset, state_5_port, vss, vdd);
+   {state_reg_3_inst} dfa11 (N470, n515, reset, state_3_port, vss, vdd);
+   {send_cnt_reg_0_inst} dfa11 (n514, n515, reset, send_cnt_0_port, vss, vdd);
+   {send_cnt_reg_1_inst} dfa11 (n513, n515, reset, send_cnt_1_port, vss, vdd);
+   {send_cnt_reg_2_inst} dfa11 (n512, n515, reset, send_cnt_2_port, vss, vdd);
+   {send_cnt_reg_3_inst} dfa11 (n511, n515, reset, send_cnt_3_port, vss, vdd);
+   {send_switch_reg} dfa11 (X_Logic1_port, busy_spi, send_reset, send_switch, 
+                            vss, vdd);
+   {output_reg_reg_7_inst} dfa11 (n499, n515, reset, output_7_port, vss, vdd);
+   {output_reg_reg_6_inst} dfa11 (n500, n515, reset, output_6_port, vss, vdd);
+   {output_reg_reg_5_inst} dfa11 (n501, n515, reset, output_5_port, vss, vdd);
+   {output_reg_reg_4_inst} dfa11 (n502, n515, reset, output_4_port, vss, vdd);
+   {output_reg_reg_3_inst} dfa11 (n503, n515, reset, output_3_port, vss, vdd);
+   {output_reg_reg_2_inst} dfa11 (n504, n515, reset, output_2_port, vss, vdd);
+   {output_reg_reg_1_inst} dfa11 (n505, n515, reset, output_1_port, vss, vdd);
+   {output_reg_reg_0_inst} dfa11 (n506, n515, reset, output_0_port, vss, vdd);
+   {output_reg_reg_8_inst} dfa11 (n510, n515, reset, output_8_port, vss, vdd);
+   {output_reg_reg_9_inst} dfa11 (n509, n515, reset, output_9_port, vss, vdd);
+   {output_reg_reg_10_inst} dfa11 (n508, n515, reset, output_10_port, vss, vdd);
+   {output_reg_reg_11_inst} dfa11 (n507, n515, reset, output_11_port, vss, vdd);
+   {address_buf_reg_7_inst} dfa11 (address_7_0_7, n515, reset, 
+                                   address_buf_7_port, vss, vdd);
+   {address_buf_reg_6_inst} dfa11 (address_7_0_6, n515, reset, 
+                                   address_buf_6_port, vss, vdd);
+   {address_buf_reg_5_inst} dfa11 (address_7_0_5, n515, reset, 
+                                   address_buf_5_port, vss, vdd);
+   {address_buf_reg_4_inst} dfa11 (address_7_0_4, n515, reset, 
+                                   address_buf_4_port, vss, vdd);
+   {address_buf_reg_3_inst} dfa11 (address_7_0_3, n515, reset, 
+                                   address_buf_3_port, vss, vdd);
+   {address_buf_reg_2_inst} dfa11 (address_7_0_2, n515, reset, 
+                                   address_buf_2_port, vss, vdd);
+   {address_buf_reg_1_inst} dfa11 (address_7_0_1, n515, reset, 
+                                   address_buf_1_port, vss, vdd);
+   {spi5} spi (n515, send, reset, write_enable, write_in_7_port, 
+               write_in_6_port, write_in_5_port, write_in_4_port, 
+               write_in_3_port, write_in_2_port, write_in_1_port, 
+               write_in_0_port, spi_output_debug_7_port, 
+               spi_output_debug_6_port, spi_output_debug_5_port, 
+               spi_output_debug_4_port, spi_output_debug_3_port, 
+               spi_output_debug_2_port, spi_output_debug_1_port, 
+               spi_output_debug_0_port, busy_spi, sclk, mosi_spi, miso, n_1000, 
+               vss, vdd);
+   {U551} buf40 (sd_clk, n515, vss, vdd);
+   {U552} na310 (n516, n517, n518, write_in_7_port, vss, vdd);
+   {U553} iv110 (n519, n518, vss, vdd);
+   {U554} na210 (n520, n521, n519, vss, vdd);
+   {U555} na210 (n522, address_7_0_7, n521, vss, vdd);
+   {U556} na210 (n523, write_enable, n517, vss, vdd);
+   {U557} na310 (n524, n525, n526, write_in_6_port, vss, vdd);
+   {U558} no210 (n527, n528, n526, vss, vdd);
+   {U559} no210 (n529, n530, n528, vss, vdd);
+   {U560} no210 (send_cnt_1_port, n531, n527, vss, vdd);
+   {U561} no210 (n532, n533, n531, vss, vdd);
+   {U562} no210 (n534, n535, n533, vss, vdd);
+   {U563} no310 (n536, n537, n538, n532, vss, vdd);
+   {U564} iv110 (address_7_0_6, n536, vss, vdd);
+   {U565} na210 (n539, n540, n525, vss, vdd);
+   {U566} na310 (n541, n542, n543, write_in_5_port, vss, vdd);
+   {U567} na210 (address_7_0_5, n522, n542, vss, vdd);
+   {U568} na310 (n544, n516, n545, write_in_4_port, vss, vdd);
+   {U569} no310 (n546, n547, n548, n545, vss, vdd);
+   {U570} no210 (n549, n550, n548, vss, vdd);
+   {U571} no210 (n551, n552, n547, vss, vdd);
+   {U572} na310 (n543, n553, n554, write_in_3_port, vss, vdd);
+   {U573} iv110 (n555, n554, vss, vdd);
+   {U574} na210 (n520, n556, n555, vss, vdd);
+   {U575} na210 (n522, address_7_0_3, n556, vss, vdd);
+   {U576} iv110 (n549, n522, vss, vdd);
+   {U577} na210 (n557, n523, n553, vss, vdd);
+   {U578} na310 (n544, n516, n558, write_in_2_port, vss, vdd);
+   {U579} no210 (n559, n560, n558, vss, vdd);
+   {U580} no210 (n561, n562, n560, vss, vdd);
+   {U581} no210 (n549, n563, n559, vss, vdd);
+   {U582} iv110 (address_7_0_2, n563, vss, vdd);
+   {U583} na310 (n564, n565, n524, write_in_1_port, vss, vdd);
+   {U584} iv110 (n566, n524, vss, vdd);
+   {U585} na310 (n567, n568, n516, n566, vss, vdd);
+   {U586} iv110 (n569, n516, vss, vdd);
+   {U587} na210 (n570, n571, n568, vss, vdd);
+   {U588} na210 (n572, n573, n571, vss, vdd);
+   {U589} na210 (send_cnt_1_port, send_cnt_2_port, n573, vss, vdd);
+   {U590} na210 (n557, n539, n567, vss, vdd);
+   {U591} na210 (n574, n530, n539, vss, vdd);
+   {U592} na210 (send_cnt_2_port, n575, n565, vss, vdd);
+   {U593} na210 (n576, n577, n575, vss, vdd);
+   {U594} na210 (address_7_0_1, n578, n577, vss, vdd);
+   {U595} na210 (n579, n540, n564, vss, vdd);
+   {U596} iv110 (n574, n579, vss, vdd);
+   {U597} no210 (send_cnt_3_port, n580, n574, vss, vdd);
+   {U598} no210 (n537, n581, n580, vss, vdd);
+   {U599} na310 (n544, n543, n582, write_in_0_port, vss, vdd);
+   {U600} no210 (n583, n584, n582, vss, vdd);
+   {U601} no210 (n549, n585, n584, vss, vdd);
+   {U602} na310 (n586, n587, n578, n549, vss, vdd);
+   {U603} no310 (n588, n589, n538, n583, vss, vdd);
+   {U604} no210 (n590, n581, n589, vss, vdd);
+   {U605} na210 (n537, n572, n588, vss, vdd);
+   {U606} iv110 (send_cnt_3_port, n572, vss, vdd);
+   {U607} no310 (n591, n592, n569, n543, vss, vdd);
+   {U608} na310 (n593, n594, n595, n569, vss, vdd);
+   {U609} no210 (n562, n551, n592, vss, vdd);
+   {U610} no210 (n535, n552, n591, vss, vdd);
+   {U611} iv110 (n596, n544, vss, vdd);
+   {U612} na210 (n541, n597, n596, vss, vdd);
+   {U613} na210 (n523, n570, n597, vss, vdd);
+   {U614} no210 (n598, n599, n541, vss, vdd);
+   {U615} no210 (n600, n552, n599, vss, vdd);
+   {U616} no210 (n523, n601, n552, vss, vdd);
+   {U617} no210 (n530, send_cnt_3_port, n601, vss, vdd);
+   {U618} na210 (n581, n537, n530, vss, vdd);
+   {U619} no210 (send_cnt_0_port, send_cnt_1_port, n581, vss, vdd);
+   {U620} iv110 (n520, n598, vss, vdd);
+   {U621} na310 (n602, n538, n603, state_debug_6_port, vss, vdd);
+   {U622} no210 (n604, n605, n603, vss, vdd);
+   {U623} na310 (n606, n607, n608, state_debug_5_port, vss, vdd);
+   {U624} no210 (n609, n610, n608, vss, vdd);
+   {U625} na310 (n611, n612, n613, state_debug_2_port, vss, vdd);
+   {U626} no310 (n614, n615, n616, n613, vss, vdd);
+   {U627} na310 (n602, n617, n618, n614, vss, vdd);
+   {U628} na210 (n619, n620, n618, vss, vdd);
+   {U629} no310 (n621, n622, n570, n612, vss, vdd);
+   {U630} no210 (n623, n624, n611, vss, vdd);
+   {U631} iv110 (n625, n623, vss, vdd);
+   {U632} na310 (n626, n627, n628, state_debug_1_port, vss, vdd);
+   {U633} no310 (n629, n624, n630, n628, vss, vdd);
+   {U634} na310 (n535, n529, n631, n629, vss, vdd);
+   {U635} no310 (n632, n633, n634, n627, vss, vdd);
+   {U636} no210 (n635, n636, n626, vss, vdd);
+   {U637} na310 (n637, n638, n639, state_debug_0_port, vss, vdd);
+   {U638} no310 (n640, n616, n641, n639, vss, vdd);
+   {U639} na310 (n642, n643, n644, n616, vss, vdd);
+   {U640} no310 (n645, n646, n647, n644, vss, vdd);
+   {U641} na210 (n648, n649, n645, vss, vdd);
+   {U642} no210 (n650, n632, n643, vss, vdd);
+   {U643} no210 (n651, n652, n642, vss, vdd);
+   {U644} na210 (n653, n654, n640, vss, vdd);
+   {U645} iv110 (n655, n654, vss, vdd);
+   {U646} no310 (n656, n657, n658, n638, vss, vdd);
+   {U647} iv110 (n659, n657, vss, vdd);
+   {U648} no210 (n660, n661, n637, vss, vdd);
+   {U649} na210 (n662, n607, ss, vss, vdd);
+   {U650} na310 (n663, n664, n665, send_reset, vss, vdd);
+   {U651} iv110 (n666, n665, vss, vdd);
+   {U652} na310 (n667, n668, n669, n666, vss, vdd);
+   {U653} no210 (n670, n661, n667, vss, vdd);
+   {U654} no210 (n604, n671, n663, vss, vdd);
+   {U655} no210 (send_switch, n672, send, vss, vdd);
+   {U656} no310 (n673, n674, n675, n672, vss, vdd);
+   {U657} na210 (n676, n677, n675, vss, vdd);
+   {U658} iv110 (n678, n673, vss, vdd);
+   {U659} no310 (n679, n680, n681, n678, vss, vdd);
+   {U660} na210 (n682, n683, n681, vss, vdd);
+   {U661} mu111 (div_clk, clk, n684, sd_clk, vss, vdd);
+   {U662} no310 (n685, n686, n687, n684, vss, vdd);
+   {U663} na210 (n688, n689, n687, vss, vdd);
+   {U664} iv110 (n690, n689, vss, vdd);
+   {U665} na310 (n691, n529, n692, n685, vss, vdd);
+   {U666} na310 (n693, n595, n694, state_debug_4_port, vss, vdd);
+   {U667} no310 (n695, n624, n696, n694, vss, vdd);
+   {U668} iv110 (n686, n693, vss, vdd);
+   {U669} na310 (n697, n698, n699, n686, vss, vdd);
+   {U670} no210 (n622, n557, n699, vss, vdd);
+   {U671} mu111 (n700, n674, send_cnt_0_port, n514, vss, vdd);
+   {U672} mu111 (n701, n702, send_cnt_1_port, n513, vss, vdd);
+   {U673} no210 (n664, n534, n701, vss, vdd);
+   {U674} iv110 (n703, n512, vss, vdd);
+   {U675} mu111 (n704, n705, send_cnt_2_port, n703, vss, vdd);
+   {U676} na210 (n700, n590, n704, vss, vdd);
+   {U677} na210 (n706, n707, n511, vss, vdd);
+   {U678} na310 (n586, n700, n590, n707, vss, vdd);
+   {U679} no210 (n534, n587, n590, vss, vdd);
+   {U680} na210 (send_cnt_3_port, n708, n706, vss, vdd);
+   {U681} na210 (n705, n709, n708, vss, vdd);
+   {U682} na210 (n700, n537, n709, vss, vdd);
+   {U683} iv110 (n664, n700, vss, vdd);
+   {U684} no210 (n702, n710, n705, vss, vdd);
+   {U685} no210 (n664, send_cnt_1_port, n710, vss, vdd);
+   {U686} iv110 (n711, n702, vss, vdd);
+   {U687} no210 (n674, n712, n711, vss, vdd);
+   {U688} no210 (n664, send_cnt_0_port, n712, vss, vdd);
+   {U689} no210 (n713, write_enable, n664, vss, vdd);
+   {U690} na210 (n594, n714, n674, vss, vdd);
+   {U691} na210 (n619, n715, n714, vss, vdd);
+   {U692} no310 (n716, n717, n718, n594, vss, vdd);
+   {U693} na310 (n719, n720, n692, n718, vss, vdd);
+   {U694} na210 (n602, n653, n716, vss, vdd);
+   {U695} na210 (n721, n722, n510, vss, vdd);
+   {U696} na210 (output_8_port, n723, n722, vss, vdd);
+   {U697} na210 (spi_output_debug_0_port, n670, n721, vss, vdd);
+   {U698} na210 (n724, n725, n509, vss, vdd);
+   {U699} na210 (output_9_port, n723, n725, vss, vdd);
+   {U700} na210 (spi_output_debug_1_port, n670, n724, vss, vdd);
+   {U701} na210 (n726, n727, n508, vss, vdd);
+   {U702} na210 (output_10_port, n723, n727, vss, vdd);
+   {U703} na210 (spi_output_debug_2_port, n670, n726, vss, vdd);
+   {U704} na210 (n728, n729, n507, vss, vdd);
+   {U705} na210 (output_11_port, n723, n729, vss, vdd);
+   {U706} na210 (n730, n731, n723, vss, vdd);
+   {U707} iv110 (n732, n730, vss, vdd);
+   {U708} na210 (spi_output_debug_3_port, n670, n728, vss, vdd);
+   {U709} iv110 (n649, n670, vss, vdd);
+   {U710} na210 (n733, n734, n506, vss, vdd);
+   {U711} na210 (output_0_port, n732, n734, vss, vdd);
+   {U712} na210 (spi_output_debug_0_port, n735, n733, vss, vdd);
+   {U713} na210 (n736, n737, n505, vss, vdd);
+   {U714} na210 (output_1_port, n732, n737, vss, vdd);
+   {U715} na210 (spi_output_debug_1_port, n735, n736, vss, vdd);
+   {U716} na210 (n738, n739, n504, vss, vdd);
+   {U717} na210 (output_2_port, n732, n739, vss, vdd);
+   {U718} na210 (spi_output_debug_2_port, n735, n738, vss, vdd);
+   {U719} na210 (n740, n741, n503, vss, vdd);
+   {U720} na210 (output_3_port, n732, n741, vss, vdd);
+   {U721} na210 (spi_output_debug_3_port, n735, n740, vss, vdd);
+   {U722} na210 (n742, n743, n502, vss, vdd);
+   {U723} na210 (output_4_port, n732, n743, vss, vdd);
+   {U724} na210 (spi_output_debug_4_port, n735, n742, vss, vdd);
+   {U725} na210 (n744, n745, n501, vss, vdd);
+   {U726} na210 (output_5_port, n732, n745, vss, vdd);
+   {U727} na210 (spi_output_debug_5_port, n735, n744, vss, vdd);
+   {U728} na210 (n746, n747, n500, vss, vdd);
+   {U729} na210 (output_6_port, n732, n747, vss, vdd);
+   {U730} na210 (spi_output_debug_6_port, n735, n746, vss, vdd);
+   {U731} na210 (n748, n749, n499, vss, vdd);
+   {U732} na210 (output_7_port, n732, n749, vss, vdd);
+   {U733} na210 (n750, n751, n732, vss, vdd);
+   {U734} no310 (n752, n680, n753, n751, vss, vdd);
+   {U735} na210 (n754, n755, n752, vss, vdd);
+   {U736} no310 (n756, n757, n758, n750, vss, vdd);
+   {U737} na210 (spi_output_debug_7_port, n735, n748, vss, vdd);
+   {U738} na310 (n593, n731, n759, mosi, vss, vdd);
+   {U739} no210 (mosi_spi, write_enable, n759, vss, vdd);
+   {U740} na310 (n600, n529, n561, write_enable, vss, vdd);
+   {U741} iv110 (n540, n561, vss, vdd);
+   {U742} na210 (n551, n535, n540, vss, vdd);
+   {U743} no210 (n578, n760, n551, vss, vdd);
+   {U744} iv110 (n761, n593, vss, vdd);
+   {U745} na210 (n762, n763, n761, vss, vdd);
+   {U746} no310 (n764, n765, n757, n763, vss, vdd);
+   {U747} na310 (n683, n766, n668, n757, vss, vdd);
+   {U748} na210 (n677, n682, n764, vss, vdd);
+   {U749} no310 (n767, n768, n690, n762, vss, vdd);
+   {U750} iv110 (n669, n768, vss, vdd);
+   {U751} na210 (n769, n770, n767, vss, vdd);
+   {U752} na310 (n771, n772, n773, busy, vss, vdd);
+   {U753} no310 (n756, n774, n690, n773, vss, vdd);
+   {U754} na210 (n662, n648, n690, vss, vdd);
+   {U755} no310 (n775, n661, n634, n662, vss, vdd);
+   {U756} iv110 (n776, n634, vss, vdd);
+   {U757} no210 (n660, n713, n776, vss, vdd);
+   {U758} no210 (n777, n778, n661, vss, vdd);
+   {U759} no210 (n779, n780, n775, vss, vdd);
+   {U760} na310 (n781, n782, n783, n756, vss, vdd);
+   {U761} no310 (n609, n784, n633, n783, vss, vdd);
+   {U762} iv110 (n653, n633, vss, vdd);
+   {U763} no210 (state_debug_3_port, n967, n772, vss, vdd);
+   {U764} iv110 (n731, n967, vss, vdd);
+   {U765} na310 (n688, n769, n697, state_debug_3_port, vss, vdd);
+   {U766} iv110 (n758, n697, vss, vdd);
+   {U767} na310 (n535, n720, n677, n758, vss, vdd);
+   {U768} no210 (n630, n785, n677, vss, vdd);
+   {U769} no210 (n786, n787, n785, vss, vdd);
+   {U770} no310 (n788, n765, n632, n688, vss, vdd);
+   {U771} na210 (n607, n683, n632, vss, vdd);
+   {U772} no210 (n570, n647, n771, vss, vdd);
+   {U773} iv110 (n692, n647, vss, vdd);
+   {U774} na310 (n789, n790, n791, N472, vss, vdd);
+   {U775} no310 (n605, n792, n793, n791, vss, vdd);
+   {U776} no210 (n538, n562, n793, vss, vdd);
+   {U777} no210 (n602, n794, n792, vss, vdd);
+   {U778} na310 (n769, n653, n795, n605, vss, vdd);
+   {U779} no210 (n796, n646, n795, vss, vdd);
+   {U780} na210 (n797, n798, n653, vss, vdd);
+   {U781} no310 (n753, n680, n799, n769, vss, vdd);
+   {U782} na210 (n755, n649, n799, vss, vdd);
+   {U783} na310 (n625, n659, n631, n680, vss, vdd);
+   {U784} na210 (n800, n801, n790, vss, vdd);
+   {U785} na210 (n802, n803, n800, vss, vdd);
+   {U786} na210 (n804, n805, n803, vss, vdd);
+   {U787} iv110 (n806, n789, vss, vdd);
+   {U788} na210 (n607, n807, n806, vss, vdd);
+   {U789} na310 (n808, n809, n810, N471, vss, vdd);
+   {U790} no310 (n811, n695, n812, n810, vss, vdd);
+   {U791} no210 (n813, n814, n812, vss, vdd);
+   {U792} no210 (n815, n816, n814, vss, vdd);
+   {U793} iv110 (n804, n813, vss, vdd);
+   {U794} na210 (n617, n817, n804, vss, vdd);
+   {U795} na210 (n624, n818, n817, vss, vdd);
+   {U796} na310 (n720, n731, n819, n811, vss, vdd);
+   {U797} na210 (n619, n820, n720, vss, vdd);
+   {U798} na210 (n821, n822, n820, vss, vdd);
+   {U799} no310 (n609, n823, n824, n809, vss, vdd);
+   {U800} no210 (n794, n825, n824, vss, vdd);
+   {U801} no210 (n826, n827, n823, vss, vdd);
+   {U802} no210 (n815, n828, n826, vss, vdd);
+   {U803} iv110 (n770, n609, vss, vdd);
+   {U804} no210 (n679, n621, n770, vss, vdd);
+   {U805} na210 (n691, n829, n679, vss, vdd);
+   {U806} no210 (n641, n830, n808, vss, vdd);
+   {U807} na310 (n831, n606, n832, n641, vss, vdd);
+   {U808} iv110 (n833, n832, vss, vdd);
+   {U809} na310 (n766, n535, n576, n833, vss, vdd);
+   {U810} na210 (n797, n834, n831, vss, vdd);
+   {U811} na310 (n835, n836, n837, N470, vss, vdd);
+   {U812} no310 (n838, n655, n650, n837, vss, vdd);
+   {U813} na310 (n649, n520, n625, n838, vss, vdd);
+   {U814} na210 (n570, n839, n520, vss, vdd);
+   {U815} iv110 (n529, n570, vss, vdd);
+   {U816} no310 (n610, n840, n841, n836, vss, vdd);
+   {U817} no210 (n794, n606, n841, vss, vdd);
+   {U818} no210 (n816, n842, n840, vss, vdd);
+   {U819} no210 (n843, n844, n842, vss, vdd);
+   {U820} no210 (n845, n755, n844, vss, vdd);
+   {U821} no210 (n815, n846, n843, vss, vdd);
+   {U822} no210 (n646, n624, n846, vss, vdd);
+   {U823} iv110 (n847, n646, vss, vdd);
+   {U824} na310 (n576, n819, n617, n610, vss, vdd);
+   {U825} iv110 (n848, n819, vss, vdd);
+   {U826} iv110 (n760, n576, vss, vdd);
+   {U827} no210 (n636, n849, n835, vss, vdd);
+   {U828} iv110 (n676, n636, vss, vdd);
+   {U829} no310 (n753, n621, n765, n676, vss, vdd);
+   {U830} iv110 (n850, n765, vss, vdd);
+   {U831} no210 (n851, n658, n850, vss, vdd);
+   {U832} no210 (n779, n852, n658, vss, vdd);
+   {U833} na310 (n853, n854, n855, n753, vss, vdd);
+   {U834} iv110 (n656, n854, vss, vdd);
+   {U835} no310 (n780, n856, n857, n656, vss, vdd);
+   {U836} na210 (state_5_port, state_1_port, n857, vss, vdd);
+   {U837} na310 (n858, n859, n860, N469, vss, vdd);
+   {U838} no310 (n861, n546, n862, n860, vss, vdd);
+   {U839} no210 (n828, n754, n862, vss, vdd);
+   {U840} iv110 (n818, n828, vss, vdd);
+   {U841} no210 (n562, n535, n546, vss, vdd);
+   {U842} na310 (n863, n807, n864, n861, vss, vdd);
+   {U843} na210 (n774, n801, n864, vss, vdd);
+   {U844} na310 (n818, n801, n655, n807, vss, vdd);
+   {U845} na210 (n865, n713, n863, vss, vdd);
+   {U846} no210 (n777, n780, n713, vss, vdd);
+   {U847} iv110 (n866, n865, vss, vdd);
+   {U848} no310 (n867, n671, n849, n859, vss, vdd);
+   {U849} na310 (n868, n869, n870, n849, vss, vdd);
+   {U850} no310 (n604, n622, n871, n870, vss, vdd);
+   {U851} iv110 (n802, n871, vss, vdd);
+   {U852} na310 (n805, n818, n696, n802, vss, vdd);
+   {U853} na210 (n595, n766, n604, vss, vdd);
+   {U854} iv110 (n735, n595, vss, vdd);
+   {U855} iv110 (n651, n869, vss, vdd);
+   {U856} na210 (n600, n829, n651, vss, vdd);
+   {U857} na210 (n798, n619, n829, vss, vdd);
+   {U858} iv110 (n557, n600, vss, vdd);
+   {U859} iv110 (n872, n858, vss, vdd);
+   {U860} na210 (n873, n874, n872, vss, vdd);
+   {U861} mu111 (n855, n875, busy_spi, n874, vss, vdd);
+   {U862} na310 (n876, n877, n878, N468, vss, vdd);
+   {U863} no210 (n879, n880, n878, vss, vdd);
+   {U864} na310 (n881, n873, n882, n880, vss, vdd);
+   {U865} mu111 (n875, n883, busy_spi, n882, vss, vdd);
+   {U866} no310 (n867, n884, n652, n883, vss, vdd);
+   {U867} na310 (n885, n855, n886, n652, vss, vdd);
+   {U868} na210 (n887, n620, n886, vss, vdd);
+   {U869} na210 (n888, n619, n885, vss, vdd);
+   {U870} no310 (n779, state_4_port, n889, n884, vss, vdd);
+   {U871} iv110 (n890, n889, vss, vdd);
+   {U872} na310 (n631, n691, n719, n867, vss, vdd);
+   {U873} na210 (n797, n891, n691, vss, vdd);
+   {U874} na310 (n892, state_1_port, n893, n631, vss, vdd);
+   {U875} no210 (n856, n894, n893, vss, vdd);
+   {U876} no210 (n650, n621, n875, vss, vdd);
+   {U877} no210 (n895, n896, n621, vss, vdd);
+   {U878} iv110 (n698, n650, vss, vdd);
+   {U879} no310 (n897, n898, n899, n873, vss, vdd);
+   {U880} na310 (n692, n659, n683, n899, vss, vdd);
+   {U881} iv110 (n695, n683, vss, vdd);
+   {U882} no210 (n822, n896, n695, vss, vdd);
+   {U883} na210 (n900, n620, n659, vss, vdd);
+   {U884} no210 (n529, n839, n898, vss, vdd);
+   {U885} iv110 (n901, n839, vss, vdd);
+   {U886} na310 (n586, n534, send_cnt_1_port, n901, vss, vdd);
+   {U887} iv110 (send_cnt_0_port, n534, vss, vdd);
+   {U888} na210 (n902, n620, n529, vss, vdd);
+   {U889} no210 (n606, busy_spi, n897, vss, vdd);
+   {U890} mu111 (n535, n781, n523, n881, vss, vdd);
+   {U891} iv110 (n562, n523, vss, vdd);
+   {U892} no210 (n760, n557, n781, vss, vdd);
+   {U893} no210 (n779, n787, n557, vss, vdd);
+   {U894} no210 (n822, n786, n760, vss, vdd);
+   {U895} iv110 (n888, n822, vss, vdd);
+   {U896} na210 (n888, n903, n535, vss, vdd);
+   {U897} no310 (n904, state_3_port, n905, n888, vss, vdd);
+   {U898} na310 (n868, n906, n907, n879, vss, vdd);
+   {U899} no210 (n908, n909, n907, vss, vdd);
+   {U900} no210 (n766, n910, n909, vss, vdd);
+   {U901} no210 (n754, n805, n908, vss, vdd);
+   {U902} iv110 (n815, n805, vss, vdd);
+   {U903} no210 (n911, spi_output_debug_0_port, n815, vss, vdd);
+   {U904} iv110 (n615, n906, vss, vdd);
+   {U905} na310 (n912, n853, n913, n615, vss, vdd);
+   {U906} na210 (n892, n887, n913, vss, vdd);
+   {U907} na210 (n891, n619, n912, vss, vdd);
+   {U908} no210 (n830, n914, n868, vss, vdd);
+   {U909} no210 (n825, busy_spi, n914, vss, vdd);
+   {U910} iv110 (n630, n825, vss, vdd);
+   {U911} no210 (n777, n821, n630, vss, vdd);
+   {U912} iv110 (n891, n821, vss, vdd);
+   {U913} na210 (n915, n916, n830, vss, vdd);
+   {U914} na210 (n784, n794, n916, vss, vdd);
+   {U915} iv110 (busy_spi, n794, vss, vdd);
+   {U916} iv110 (n602, n784, vss, vdd);
+   {U917} na210 (n917, n892, n602, vss, vdd);
+   {U918} na210 (n578, n562, n915, vss, vdd);
+   {U919} na310 (n586, n587, send_cnt_0_port, n562, vss, vdd);
+   {U920} iv110 (send_cnt_1_port, n587, vss, vdd);
+   {U921} no210 (n537, send_cnt_3_port, n586, vss, vdd);
+   {U922} iv110 (send_cnt_2_port, n537, vss, vdd);
+   {U923} no310 (n918, n851, n660, n877, vss, vdd);
+   {U924} no210 (n779, n778, n660, vss, vdd);
+   {U925} no210 (n777, n787, n851, vss, vdd);
+   {U926} iv110 (n834, n787, vss, vdd);
+   {U927} na210 (n919, n649, n918, vss, vdd);
+   {U928} na210 (n917, n834, n649, vss, vdd);
+   {U929} na310 (n866, n905, n920, n919, vss, vdd);
+   {U930} no210 (n904, n777, n920, vss, vdd);
+   {U931} na310 (send_cnt_3_port, send_cnt_1_port, n921, n866, vss, vdd);
+   {U932} no210 (send_cnt_2_port, send_cnt_0_port, n921, vss, vdd);
+   {U933} no310 (n922, n923, n924, n876, vss, vdd);
+   {U934} no210 (n669, n818, n924, vss, vdd);
+   {U935} na210 (n925, spi_output_debug_0_port, n818, vss, vdd);
+   {U936} iv110 (n911, n925, vss, vdd);
+   {U937} na310 (n926, n927, n928, n911, vss, vdd);
+   {U938} no310 (spi_output_debug_1_port, spi_output_debug_3_port, 
+                 spi_output_debug_2_port, n928, vss, vdd);
+   {U939} no210 (spi_output_debug_7_port, spi_output_debug_6_port, n927, vss, 
+                 vdd);
+   {U940} no210 (spi_output_debug_5_port, spi_output_debug_4_port, n926, vss, 
+                 vdd);
+   {U941} no310 (n755, spi_output_debug_0_port, n929, n923, vss, vdd);
+   {U942} iv110 (n845, n929, vss, vdd);
+   {U943} no210 (n668, n801, n922, vss, vdd);
+   {U944} no210 (n774, n696, n668, vss, vdd);
+   {U945} iv110 (n827, n696, vss, vdd);
+   {U946} na210 (n847, n617, n774, vss, vdd);
+   {U947} na310 (n930, n931, n932, N467, vss, vdd);
+   {U948} no310 (n933, n671, n934, n932, vss, vdd);
+   {U949} iv110 (n935, n934, vss, vdd);
+   {U950} mu111 (n625, n855, busy_spi, n935, vss, vdd);
+   {U951} na210 (n887, n834, n855, vss, vdd);
+   {U952} na210 (n917, n936, n625, vss, vdd);
+   {U953} na210 (n648, n755, n671, vss, vdd);
+   {U954} na210 (n892, n900, n755, vss, vdd);
+   {U955} na210 (n892, n902, n648, vss, vdd);
+   {U956} iv110 (n937, n933, vss, vdd);
+   {U957} no310 (n788, n735, n635, n937, vss, vdd);
+   {U958} na210 (n782, n692, n635, vss, vdd);
+   {U959} na210 (n797, n892, n692, vss, vdd);
+   {U960} no310 (n578, n796, n717, n782, vss, vdd);
+   {U961} na310 (n698, n606, n938, n717, vss, vdd);
+   {U962} no210 (n622, n848, n938, vss, vdd);
+   {U963} no210 (n777, n895, n848, vss, vdd);
+   {U964} no210 (n852, n896, n622, vss, vdd);
+   {U965} iv110 (n902, n896, vss, vdd);
+   {U966} na210 (n903, n798, n606, vss, vdd);
+   {U967} na210 (n834, n902, n698, vss, vdd);
+   {U968} iv110 (n682, n796, vss, vdd);
+   {U969} na210 (n887, n715, n682, vss, vdd);
+   {U970} na210 (n778, n780, n715, vss, vdd);
+   {U971} iv110 (n620, n780, vss, vdd);
+   {U972} iv110 (n538, n578, vss, vdd);
+   {U973} na210 (n797, n939, n538, vss, vdd);
+   {U974} na210 (n607, n731, n735, vss, vdd);
+   {U975} na210 (n936, n900, n731, vss, vdd);
+   {U976} na210 (n834, n900, n607, vss, vdd);
+   {U977} no310 (n856, state_1_port, n894, n900, vss, vdd);
+   {U978} no210 (n890, state_4_port, n834, vss, vdd);
+   {U979} na310 (n719, n827, n669, n788, vss, vdd);
+   {U980} no210 (n624, n655, n669, vss, vdd);
+   {U981} no210 (n777, n852, n655, vss, vdd);
+   {U982} iv110 (n903, n777, vss, vdd);
+   {U983} no210 (n940, state_2_port, n903, vss, vdd);
+   {U984} iv110 (n754, n624, vss, vdd);
+   {U985} na210 (n891, n902, n754, vss, vdd);
+   {U986} no310 (state_0_port, state_3_port, n905, n891, vss, vdd);
+   {U987} na210 (n797, n936, n827, vss, vdd);
+   {U988} na210 (n797, n620, n719, vss, vdd);
+   {U989} iv110 (n786, n797, vss, vdd);
+   {U990} na310 (state_2_port, n894, state_1_port, n786, vss, vdd);
+   {U991} iv110 (n941, n931, vss, vdd);
+   {U992} na310 (n942, n853, n617, n941, vss, vdd);
+   {U993} na210 (n619, n939, n617, vss, vdd);
+   {U994} iv110 (n895, n939, vss, vdd);
+   {U995} na310 (state_3_port, n904, state_4_port, n895, vss, vdd);
+   {U996} iv110 (n779, n619, vss, vdd);
+   {U997} na210 (n887, n936, n853, vss, vdd);
+   {U998} iv110 (n852, n936, vss, vdd);
+   {U999} na310 (n904, n905, state_3_port, n852, vss, vdd);
+   {U1000} no310 (n894, state_2_port, n943, n887, vss, vdd);
+   {U1001} iv110 (n944, n942, vss, vdd);
+   {U1002} no310 (n778, reset, n940, n944, vss, vdd);
+   {U1003} iv110 (n892, n778, vss, vdd);
+   {U1004} no310 (state_3_port, state_4_port, state_0_port, n892, vss, vdd);
+   {U1005} no310 (n945, n946, n947, n930, vss, vdd);
+   {U1006} no210 (n816, n847, n947, vss, vdd);
+   {U1007} na210 (n917, n620, n847, vss, vdd);
+   {U1008} no310 (state_3_port, state_4_port, n904, n620, vss, vdd);
+   {U1009} iv110 (state_0_port, n904, vss, vdd);
+   {U1010} no310 (state_1_port, state_2_port, n894, n917, vss, vdd);
+   {U1011} iv110 (n801, n816, vss, vdd);
+   {U1012} na210 (n845, spi_output_debug_0_port, n801, vss, vdd);
+   {U1013} no210 (n948, n949, n845, vss, vdd);
+   {U1014} na310 (n950, spi_output_debug_3_port, spi_output_debug_4_port, n949, 
+                  vss, vdd);
+   {U1015} iv110 (n951, n950, vss, vdd);
+   {U1016} na210 (spi_output_debug_2_port, spi_output_debug_1_port, n951, vss, 
+                  vdd);
+   {U1017} na310 (spi_output_debug_7_port, spi_output_debug_5_port, 
+                  spi_output_debug_6_port, n948, vss, vdd);
+   {U1018} no210 (new_data, n766, n946, vss, vdd);
+   {U1019} na210 (n798, n902, n766, vss, vdd);
+   {U1020} no210 (n856, n940, n902, vss, vdd);
+   {U1021} na210 (n943, n894, n940, vss, vdd);
+   {U1022} iv110 (state_1_port, n943, vss, vdd);
+   {U1023} no210 (n905, n890, n798, vss, vdd);
+   {U1024} na210 (state_3_port, state_0_port, n890, vss, vdd);
+   {U1025} iv110 (state_4_port, n905, vss, vdd);
+   {U1026} no210 (state_3_port, n779, n945, vss, vdd);
+   {U1027} na310 (n856, n894, state_1_port, n779, vss, vdd);
+   {U1028} iv110 (state_5_port, n894, vss, vdd);
+   {U1029} iv110 (state_2_port, n856, vss, vdd);
+   {U1030} na210 (n952, n953, N128, vss, vdd);
+   {U1031} no310 (n954, n955, n956, n953, vss, vdd);
+   {U1032} ex210 (address_buf_3_port, address_7_0_3, n956, vss, vdd);
+   {U1033} ex210 (address_buf_2_port, address_7_0_2, n955, vss, vdd);
+   {U1034} na310 (n957, n910, n958, n954, vss, vdd);
+   {U1035} ex210 (n585, address_buf_0_port, n958, vss, vdd);
+   {U1036} iv110 (address_7_0_0, n585, vss, vdd);
+   {U1037} iv110 (new_data, n910, vss, vdd);
+   {U1038} ex210 (n959, address_buf_1_port, n957, vss, vdd);
+   {U1039} iv110 (address_7_0_1, n959, vss, vdd);
+   {U1040} no310 (n960, n961, n962, n952, vss, vdd);
+   {U1041} ex210 (address_buf_7_port, address_7_0_7, n962, vss, vdd);
+   {U1042} ex210 (address_buf_6_port, address_7_0_6, n961, vss, vdd);
+   {U1043} na210 (n963, n964, n960, vss, vdd);
+   {U1044} ex210 (n550, address_buf_4_port, n964, vss, vdd);
+   {U1045} iv110 (address_7_0_4, n550, vss, vdd);
+   {U1046} ex210 (n965, address_buf_5_port, n963, vss, vdd);
+   {U1047} iv110 (address_7_0_5, n965, vss, vdd);
+}
+
+
+

@@ -1,0 +1,23 @@
+six
+------ opening nelsis ------
+------ reading image description file '/data/public/common/software/nelsis/5.4.1.1/share/lib/celllibs/fishbone/image.seadif' ------
+------ opening seadif ------
+WARNING: Seadif file "/home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/test/seadif/sealib.sdf" is not a magic cookie (skipped).
+
+WARNING: Seadif file "/home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/test/seadif/sealib2.sdf" is not a magic cookie (skipped).
+
+WARNING: Seadif file "/home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/test/seadif/sealib3.sdf" is not a magic cookie (skipped).
+
+WARNING: Seadif file "/home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/test/seadif/sealib4.sdf" is not a magic cookie (skipped).
+
+------ checking your circuit 'sdcard' ------
+------ circuit 'sdcard' is still up-to-date ------
+------ checking match with placement layout 'Tmpsdcard22851' ------
+------ reading nelsis layout-cell 'Tmpsdcard22851' ------
+------ writing nelsis 'Tmpsdcard22851' as sdflay 'Tmp_Cell_(sdcard(sdcard(test)))' ------
+------ input seems good enough: calling router ------
+calling program: trout -l test -f sdcard -c sdcard -o Tmp_Cell_ -d Tmp_Cell_ 
+WARNING: routing is not 100% successful
+------ converting result back into nelsis as cell 'Tmpsdcard22851' ------
+calling program: nelsea -rLH -f sdcard -c sdcard -l Tmp_Cell_ Tmpsdcard22851 
+------ sea: task completed ------

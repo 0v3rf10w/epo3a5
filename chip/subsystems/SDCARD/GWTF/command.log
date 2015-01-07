@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version G-2012.06 for linux -- May 30, 2012
-#@ # Date:   Mon Dec  8 14:52:10 2014
+#@ # Date:   Wed Jan  7 01:47:10 2015
 #@ # Run by: @sct-epo3.ewi.tudelft.nl
 #@ 
 
@@ -4759,7 +4759,7 @@ source -echo -verbose /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/synthesi
 #@ # -- Starting source /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/synthesize.tcl
 
 #@ #*********************************************************
-#@ #  synthesize script for cell: sdcard                     *
+#@ #  synthesize script for cell: control                    *
 #@ #*********************************************************
 #@ set hdlin_vhdl_93 false
 #@ set hdlin_ff_always_async_set_reset true
@@ -4772,7 +4772,7 @@ source -echo -verbose /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/synthesi
 #@ set link_library [list "*" "/data/public/common/software/opprog/synth_libs/g_digilib5_99.db" "/data/public/common/software/opprog/synth_libs/g_analib8_00.db" "/data/public/common/software/opprog/synth_libs/buffers.db"]
 #@ define_design_lib MY_LIB -path ./syn_work
 #@ define_design_lib CELLSLIB -path /data/public/common/software/opprog/synth_libs/CellsLib
-#@ read_file -format vhdl -work MY_LIB {VHDL/sdcard.vhd }
+#@ read_file -format vhdl -work MY_LIB {VHDL/control.vhd }
 #@ set_dont_touch {g_analib8_00/*}
 #@ # set_max_fanout 1.8 all_inputs() 
 #@ # set_max_area 1000 
@@ -4781,6 +4781,6 @@ source -echo -verbose /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/synthesi
 #@ ungroup -all -flat
 #@ report_area
 #@ report_fsm
-#@ write_file -f ddc sdcard -output ./ADB/sdcard.ddc
-#@ write_file -f vhdl sdcard -output ./VHDL/sdcard_SYNTH.vhd
+#@ write_file -f ddc control -output ./ADB/control.ddc
+#@ write_file -f vhdl control -output ./VHDL/control_SYNTH.vhd
 #@ quit
