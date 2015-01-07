@@ -58,7 +58,7 @@ architecture behavioural of sdcard is
 				buffer_data,
 				start_read_data2,read_data2,
 				buffer_data2,
-				error);
+				failure_state);
 	signal state : trans_state;
 	signal send,write_enable,busy_spi,mosi_spi,slave_select,dummy_signal : std_logic;
 	signal write_in, spi_output : std_logic_vector(7 downto 0);
@@ -84,28 +84,31 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 	
 	address_change <= '0' when (((address_buf and address) = address) and ((not address_buf and not address) = not address)) else
 				'1';
-	process(address_change,data_read,new_data)
+
+	process(data_read,new_data)
 	begin
-	if(address_change = '1') then
-		new_data <= '1';
+	if(data_read = '1') then
+		new_data <= '0';
 	else
-		if(data_read = '1') then
-			new_data <= '0';
-		else
-			new_data <= new_data;
+		if(rising_edge(sd_clk)) then
+			if(address_change = '1') then
+				new_data <= '1';
+			else
+				new_data <= new_data;
+			end if;
 		end if;
 	end if;
 	end process;
 	
-	send <= sig_send and send_switch;
+	send <= sig_send and (not send_switch);
 	
 	process(busy_spi,send_reset)
 	begin
 		if(send_reset = '1') then
-			send_switch <= '1';
+			send_switch <= '0';
 		else	
 			if(rising_edge(busy_spi)) then
-				send_switch <= '0';
+				send_switch <= '1';
 			end if;
 		end if;
 	end process;
@@ -125,16 +128,16 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 		end if;
 	end process;
 	
-	process(next_state,went_to_next)
-	begin
-	if(went_to_next = '1') then
-		go_to_next <= '0';
-	else
-		if(rising_edge(next_state)) then
-			go_to_next <= '1';
-		end if;
-	end if;
-	end process;
+	--process(next_state,went_to_next)
+	--begin
+	--if(went_to_next = '1') then
+	--	go_to_next <= '0';
+	--else
+	--	if(rising_edge(next_state)) then
+	--		go_to_next <= '1';
+	--	end if;
+	--end if;
+	--end process;
 	
 	process(sd_clk,reset)
 	begin
@@ -206,7 +209,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						elsif(spi_output = "11111111") then
 							state <= start_init_receive;
 						else
-							state <= error;
+							state <= failure_state;
 						end if;
 					when start_init_receive =>
 						state <= init_receive;
@@ -239,7 +242,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						elsif(spi_output = "11111111") then
 							state <= start_receive_response_cmd55;
 						else
-							state <= error;
+							state <= failure_state;
 						end if;
 					when start_receive_response_cmd55 =>
 						state <= receive_response_cmd55;
@@ -272,7 +275,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						elsif(spi_output = "11111111") then
 							state <= start_receive_response_acmd41;
 						else
-							state <= error;
+							state <= failure_state;
 						end if;
 					when start_receive_response_acmd41 =>
 						state <= receive_response_acmd41;
@@ -303,7 +306,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						elsif(spi_output = "11111111") then
 							state <= start_receive_response_cmd16;
 						else
-							state <= error;
+							state <= failure_state;
 						end if;
 					when start_receive_response_cmd16 =>
 						state <= receive_response_cmd16;
@@ -340,7 +343,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						elsif(spi_output = "11111111") then
 							state <= start_receive_response;
 						else
-							state <= error;
+							state <= failure_state;
 						end if;
 					when start_receive_response =>
 						state <= receive_response;
@@ -356,7 +359,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						elsif(spi_output = "11111111") then
 							state <= start_read_data_part;
 						else
-							state <= error;
+							state <= failure_state;
 						end if;
 					when start_read_data_part =>
 						state <= read_data_part;
@@ -386,8 +389,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						end if;
 					when buffer_data2 =>
 						state <= idle;
-					when error =>
-						state <= error;
+					when failure_state =>
+						state <= failure_state;
 				end case;	
 			end if;	
 		--end if;
@@ -1022,7 +1025,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				busy <= '1';
 				new_output_reg(11 downto 8) <= spi_output(3 downto 0);
 				new_output_reg(7 downto 0) <= (others => '0');
-				data_read <= '1';
+				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1001101";
 			when start_read_data2 =>
@@ -1065,7 +1068,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '1';
 				divide_clock <= '0';
 				state_debug_sig <= "1010000";
-			when error =>
+			when failure_state =>
 				slave_select <= '1';
 				mosi_high <= '0';
 				sig_send <= '0';
