@@ -62,6 +62,14 @@ Alle variable die berekent worden in de arduino worden via SPI verzonden. SPI is
 \section{Detectie SPI}
 De chip detecteerd op de opgaande flank van draad 1(klok) de waarde van draad 2(signaal). Deze waarde wordt in een Flip-flop(geheugen) gezet. Op de neergaande flank wordt de waarde geshift. Dit moet om te zorden dat de data in de goede volgorde aankomt bij de CPU.
 
+\section{Simulatie}
+Na de ontwikkeling via Go-with-the-flow is het systeem getest. Hierbij is gebruik gemaakt van een dubbele 6 als positie. Het resultaat ziet u in: 
+%image
+
+Vervolgens is het systeem gedownload op de FPGA, hierop is de arduino aangesloten. Het signaal van de arduino was %check image
+Deze waarde kwam precies zoals verwacht op de ledjes op de FPGA. Echter na ongeveer 5 seconde begon de waarde te shiften. Dit kwam door dat beide systemen geen gecombineerde aarde had. Dit hebben wij gefixt door een draad tussen beide aarde te zetten.
+
+
 \newpage
 
 
