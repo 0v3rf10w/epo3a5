@@ -1,0 +1,41 @@
+\select@language {dutch}
+\contentsline {chapter}{\numberline {1}Samenvatting}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Inleiding}{1}{chapter.2}
+\contentsline {chapter}{\numberline {3}Probleemstelling}{2}{chapter.3}
+\contentsline {section}{\numberline {3.1}Projectopgave: 'Ontwerp een chip'}{2}{section.3.1}
+\contentsline {section}{\numberline {3.2}Beschikbare infrastructuur}{2}{section.3.2}
+\contentsline {section}{\numberline {3.3}Functionele eisen}{2}{section.3.3}
+\contentsline {section}{\numberline {3.4}Randvoorwaarden}{2}{section.3.4}
+\contentsline {section}{\numberline {3.5}Plan van aanpak}{2}{section.3.5}
+\contentsline {chapter}{\numberline {4}Systeemoverzicht}{3}{chapter.4}
+\contentsline {section}{\numberline {4.1}Toplevel}{3}{section.4.1}
+\contentsline {section}{\numberline {4.2}Externe componenten}{3}{section.4.2}
+\contentsline {chapter}{\numberline {5}Besturing}{4}{chapter.5}
+\contentsline {section}{\numberline {5.1}Ultrasone}{4}{section.5.1}
+\contentsline {section}{\numberline {5.2}Buttons}{4}{section.5.2}
+\contentsline {chapter}{\numberline {6}Blackbox}{5}{chapter.6}
+\contentsline {section}{\numberline {6.1}Functionele beschrijving}{5}{section.6.1}
+\contentsline {section}{\numberline {6.2}Inputs en outputs}{5}{section.6.2}
+\contentsline {section}{\numberline {6.3}Implementatie}{6}{section.6.3}
+\contentsline {chapter}{\numberline {7}CPU}{7}{chapter.7}
+\contentsline {section}{\numberline {7.1}Functionele beschrijving}{7}{section.7.1}
+\contentsline {section}{\numberline {7.2}Inputs en outputs}{7}{section.7.2}
+\contentsline {section}{\numberline {7.3}Implementatie}{8}{section.7.3}
+\contentsline {chapter}{\numberline {8}GPU}{9}{chapter.8}
+\contentsline {chapter}{\numberline {9}VGA}{11}{chapter.9}
+\contentsline {section}{\numberline {9.1}RGB}{11}{section.9.1}
+\contentsline {section}{\numberline {9.2}H-Sync}{11}{section.9.2}
+\contentsline {section}{\numberline {9.3}V-Sync}{12}{section.9.3}
+\contentsline {section}{\numberline {9.4}Implementatie}{12}{section.9.4}
+\contentsline {chapter}{\numberline {10}SPI}{13}{chapter.10}
+\contentsline {section}{\numberline {10.1}Functionele beschrijving}{13}{section.10.1}
+\contentsline {section}{\numberline {10.2}Inputs en outputs}{13}{section.10.2}
+\contentsline {section}{\numberline {10.3}Implementatie}{14}{section.10.3}
+\contentsline {chapter}{\numberline {11}SD-kaart}{15}{chapter.11}
+\contentsline {section}{\numberline {11.1}SD communicatie}{15}{section.11.1}
+\contentsline {section}{\numberline {11.2}SD commando's \& responses}{15}{section.11.2}
+\contentsline {section}{\numberline {11.3}Functionele omschrijving}{15}{section.11.3}
+\contentsline {section}{\numberline {11.4}Inputs en outputs}{16}{section.11.4}
+\contentsline {chapter}{\numberline {12}Conclusie}{17}{chapter.12}
+\contentsline {chapter}{\numberline {13}Discussie}{18}{chapter.13}
+\contentsfinish 

@@ -6,13 +6,13 @@ entity decoder is
 port( decoder_in  : in std_logic_vector(11 downto 0);
       decoder_c   : in  std_logic;
       decoder_z   : in  std_logic;
-      decoder_pc_inc  : out std_logic;
-      decoder_pc_ld   : out std_logic;
-      decoder_ibufoe : out std_logic;
-      decoder_aregld   : out std_logic;
-      decoder_abufoe  : out std_logic;
-      decoder_bregld   : out std_logic_vector(4 downto 0);
-      decoder_bbufoe  : out std_logic_vector(4 downto 0);
+      decoder_pc_inc  	: out std_logic;
+      decoder_pc_ld   	: out std_logic;
+      decoder_ibufoe 	: out std_logic;
+      decoder_aregld   	: out std_logic;
+      decoder_abufoe  	: out std_logic;
+      decoder_bregld  	: out std_logic_vector(4 downto 0);
+      decoder_bbufoe  	: out std_logic_vector(4 downto 0);
       decoder_alu       : out std_logic_vector(2 downto 0);
       decoder_argout    : out std_logic_vector(7 downto 0));
 end decoder;
@@ -34,6 +34,7 @@ begin
                         ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR                  -- Jp Ri
                         ((NOT o3) AND (NOT o2) AND o1 AND o0 AND decoder_z) OR          -- Bz
                         ((NOT o3) AND o2 AND (NOT o1) AND (NOT o0) AND decoder_c);      -- Bc
+                        
       decoder_pc_inc <= NOT(
                         ((NOT o3) AND (NOT o2) AND (NOT o1) AND o0) OR                  -- Not Jp #
                         ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR                  -- Not Jp Ri
@@ -90,3 +91,5 @@ begin
                         (o3 AND o2 AND o1 AND (NOT o0));                                  -- Set c
 	decoder_argout <= argument;
 end architecture;
+
+

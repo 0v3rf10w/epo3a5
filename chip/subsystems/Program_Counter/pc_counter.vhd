@@ -32,3 +32,5 @@ begin
   pc_out <= count;
   
 end architecture;
+
+
