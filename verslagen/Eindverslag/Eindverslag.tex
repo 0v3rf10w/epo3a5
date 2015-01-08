@@ -14,18 +14,21 @@
 
 
 
-\title{Mid-term report}
-\author{Projectgroep A2}
-\affiliation{TU Delft}
+\title{\sffamily\Huge Final report}
+\author{\sffamily\Large Projectgroep A5}
+\affiliation{\sffamily TU Delft}
+\date{\sffamily 14-01-2015}
 
 \begin{document}
 \maketitle
+
+\chapter{Samenvatting}
 
 \tableofcontents
 \mainmatter
 
 \chapter{Inleiding}
-EPO-3 is het derde project uit de propedeuse van de bachelor opleiding Electrical Engineeringaan de TU delft. Het doel van dit project is het ontwerpen van een chip, deze chip kan bijvoorbeeld een spelletje bevatten of als besturingsdoel dienen. Als project groep A5 is er gekozen voor het bouwen van een spelcomputer, hierop kunnen meerdere games gespeeld worden. De verschillende games moeten van een SD-kaart worden geladen voordat ze gespeeld kunnen worden. Het eerste spel dat ontworpen wordt is Pong, mocht er aan het eind van dit project nog tijd overblijven zullen er meerdere spellen volgen. De besturing loopt via ultrasone sensoren die de locatie van iemands hand bepalen. In dit tussentijdse ontwerp rapport zullen al deze onderdelen aanbod komen, daarbij moet vermeld worden dat ze nog niet geheel voltooid en getest zijn.  
+EPO-3 is het derde project uit de propedeuse van de bachelor opleiding Electrical Engineeringaan de TU delft. Het doel van dit project is het ontwerpen van een chip, deze chip kan bijvoorbeeld een spelletje bevatten of als besturingsdoel dienen. Als project groep A5 is er gekozen voor het bouwen van een spelcomputer, hierop kunnen meerdere games gespeeld worden. De verschillende games moeten van een SD-kaart worden geladen voordat ze gespeeld kunnen worden. Het eerste spel dat ontworpen wordt is Pong, mocht er aan het eind van dit project nog tijd overblijven zullen er meerdere spellen volgen. De besturing loopt via ultrasone sensoren die de locatie van iemands hand bepalen. In dit ontwerp rapport zullen alle onderdelen van ons systeem aanbod komen.
 
 \chapter{Probleemstelling}
 \section{Projectopgave: 'Ontwerp een chip'}
@@ -45,6 +48,14 @@ Aan het eindresultaat zitten een aantal randvoorwaarden verbonden. De externe on
 \section{Plan van aanpak}
 Het plan van aanpak is een beschrijving van de aanpak van dit project, hierin staan onder andere de doelstellingen en wegen daar naar toe beschreven. Het plan van aanpak is te vinden in appendix A.
 
+\chapter{Systeemoverzicht}
+De spelcomputer ontworpen en gebouwd door EPO-3 groep A5 bestaat uit veel verschillende losse onderdelen. Om te voorkomen dat we het overzicht kwijt raken, wordt er in dit hoofdstuk het totale systeemoverzicht beschreven. Er zal dus vooral worden gekeken naar de toplevel beschrijving, hierin worden alle onderdelen samengevoegd en gekoppeld tot een geheel.
+
+\section{Toplevel}
+De toplevel beschrijving bestaat uit een entity en een behaviour. In de code van de entity staan alle poorten beschreven die de chip verbinden met alle losse componenten 
+
+\section{Externe componenten}
+
 \chapter{Besturing}
 Ons systeem wordt gespeeld doormiddel van 2 soorten besturing. De Ultrasone en de Button. De speler kan de modus selecteren doormiddel van een switch. Deze data van de buttons en de ultrasone worden verwerkt door een Arduino. Er is gekozen voor deze optie omdat de Arduino via SPI werkt. Hierdoor kan de SPI code getest worden en kunnen we het aantal pinnen dat gebruikt wordt laag houden. 
 
@@ -55,7 +66,23 @@ Een unieke uitdaging van ons project is de Ultrasone besturing, de besturing wer
 Bij de buttons wordt een andere manier van werken gehanteerd, hier wordt de waarde van de plaatsvector onthouden(als integer). En naar gelang welke button geactiveerd wordt, wordt het signaal 1 verhoogd/verlaagd. Dit getal kan maximaal 12 bereiken en minimaal 0. Vervolgens wordt dit signaal voor player 2 ook verschoven, en daarna verzonden via SPI.
 
 De getallen 0->12 voor player 1/2 zijn in gebruik, dit geeft ruimte om 13,14,15 te gebruiken voor andere doeleinde. 13 dient als getal om de Start van systeem aan te geven. 15 is de Reset van het systeem.
+
+\section{SPI-communicatie}
+Alle variable die berekent worden in de arduino worden via SPI verzonden. SPI is een protocol over het verzenden van de data. Dit werkt doormiddel van 2 draden. Draad 1 verzend een klok van 8 pulse lang en een default low. Draad 2 verzend de waarde van 8 bits lang.
+
+\section{Detectie SPI}
+De chip detecteerd op de opgaande flank van draad 1(klok) de waarde van draad 2(signaal). Deze waarde wordt in een Flip-flop(geheugen) gezet. Op de neergaande flank wordt de waarde geshift. Dit moet om te zorden dat de data in de goede volgorde aankomt bij de CPU.
+
+\section{Simulatie}
+Na de ontwikkeling via Go-with-the-flow is het systeem getest. Hierbij is gebruik gemaakt van een dubbele 6 als positie. Het resultaat ziet u in: 
+%image
+
+Vervolgens is het systeem gedownload op de FPGA, hierop is de arduino aangesloten. Het signaal van de arduino was %check image
+Deze waarde kwam precies zoals verwacht op de ledjes op de FPGA. Echter na ongeveer 5 seconde begon de waarde te shiften. Dit kwam door dat beide systemen geen gecombineerde aarde had. Dit hebben wij gefixt door een draad tussen beide aarde te zetten.
+
+
 \newpage
+
 
 \chapter{Blackbox}
 \section{Functionele beschrijving}
@@ -258,6 +285,7 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 \item SS: het slave select signaal, dit signaal wordt gebruikt om de SD-kaart in SPI mode te krijgen en om aan te geven dat de SD-kaart geselecteerd is.
 \end{itemize}
 
+\chapter{Conclusie}
 
 \chapter{Discussie}
 Over het eindontwerp is nog geen discussie mogelijk. Voor het schrijven van dit tussentijdse ontwerprapport zijn er nog wel een aantal dingen naar voren gekomen. Voorop staat het feit dat alles minder snel en soepel verloopt als dat we gehoopt hadden. Het testen van de hardware op het FPGA bord bracht veel oponthoud met zich mee. Ook bleken de stappen die tot het eindproduct moesten lijden niet compleet bedacht, tijdens het ontwerpproces kwamen er extra stappen naar voren die veel tijd hebben gekost. Ondanks dat de einddatum steeds dichterbij komt denken we dat alles binnen de tijd realiseerbaar is.

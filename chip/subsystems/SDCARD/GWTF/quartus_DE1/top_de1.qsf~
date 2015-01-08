@@ -1,0 +1,111 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 10.0 Build 262 08/18/2010 Service Pack 1 SJ Full Version
+# Date created = 16:29:41  September 18, 2012
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		top_de1_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C20F484C7
+set_global_assignment -name TOP_LEVEL_ENTITY top_de1
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "10.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:29:41  SEPTEMBER 18, 2012"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_location_assignment PIN_L1 -to clock_50mhz
+
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_R22 -to reset_button
+set_location_assignment PIN_M2 -to switch[7]
+set_location_assignment PIN_U11 -to switch[6]
+set_location_assignment PIN_U12 -to switch[5]
+set_location_assignment PIN_W12 -to switch[4]
+set_location_assignment PIN_V12 -to switch[3]
+set_location_assignment PIN_M22 -to switch[2]
+set_location_assignment PIN_L22 -to switch[0]
+set_location_assignment PIN_U18 -to leds[7]
+set_location_assignment PIN_Y18 -to leds[6]
+set_location_assignment PIN_V19 -to leds[5]
+set_location_assignment PIN_T18 -to leds[4]
+set_location_assignment PIN_Y19 -to leds[3]
+set_location_assignment PIN_U19 -to leds[2]
+set_location_assignment PIN_R19 -to leds[1]
+set_location_assignment PIN_R20 -to leds[0]
+set_location_assignment PIN_V20 -to slave_clk
+set_location_assignment PIN_Y20 -to mosi_out
+set_location_assignment PIN_U20 -to slave_select
+set_location_assignment PIN_W20 -to miso_in
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_location_assignment PIN_L21 -to switch[1]
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name MISC_FILE /home/jtijhuis/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/top_de1.dpf
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_location_assignment PIN_R17 -to busy_out
+set_location_assignment PIN_W22 -to debug_out[4]
+set_location_assignment PIN_V21 -to debug_out[3]
+set_location_assignment PIN_V22 -to debug_out[2]
+set_location_assignment PIN_U21 -to debug_out[1]
+set_location_assignment PIN_U22 -to debug_out[0]
+set_location_assignment PIN_T21 -to go_next
+set_location_assignment PIN_W21 -to debug_out[5]
+set_location_assignment PIN_Y22 -to debug_out[6]
+set_global_assignment -name ENABLE_SIGNALTAP OFF
+set_global_assignment -name USE_SIGNALTAP_FILE "sd-spi.stp"
+set_global_assignment -name SLD_FILE "C:/Users/Job/epo3a5/chip/subsystems/SDCARD/GWTF/quartus_DE1/sd-spi_auto_stripped.stp"
+set_global_assignment -name VHDL_FILE ../../dff_capabel.vhd
+set_global_assignment -name SDC_FILE top_de1.sdc
+set_global_assignment -name VHDL_FILE ../../klokdeler.vhd
+set_global_assignment -name VHDL_FILE ../../../SPI/spi.vhd
+set_global_assignment -name VHDL_FILE ../../../SPI/shift_reg.vhd
+set_global_assignment -name VHDL_FILE ../../../SPI/counter.vhd
+set_global_assignment -name VHDL_FILE ../../../SPI/control.vhd
+set_global_assignment -name VHDL_FILE ../../sdcard.vhd
+set_global_assignment -name BDF_FILE top_de1.bdf
+set_global_assignment -name VHDL_FILE pre_vga_dac_4.vhd
+set_global_assignment -name VHDL_FILE gen6mhz.vhd
+set_global_assignment -name SIGNALTAP_FILE "sd-spi.stp"
+set_global_assignment -name TIMEQUEST_DO_REPORT_TIMING ON
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_location_assignment PIN_A13 -to test_out
+set_location_assignment PIN_H12 -to clock_test
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

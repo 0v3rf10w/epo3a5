@@ -3,64 +3,405 @@ K3
 13
 cModel Technology
 dGWTF
-Esdcard
-Z0 w1418285416
-Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z4 d/GWTF
-Z5 8VHDL/sdcard.vhd
-Z6 FVHDL/sdcard.vhd
+Econtrol
+Z0 w1420591618
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z3 d/GWTF
+Z4 8VHDL/control.vhd
+Z5 FVHDL/control.vhd
 l0
-L5
-VXImmP4D`CL47X0J^bh`KT2
-Z7 OE;C;10.1b;51
+L4
+VIV^fmW3CMRFN9U:7Q>=DR0
+Z6 OE;C;10.1b;51
 32
-Z8 !s108 1418285466.347196
-Z9 !s90 -lower|-explicit|-work|work|VHDL/sdcard.vhd|-quiet|-nologo|
-Z10 !s107 VHDL/sdcard.vhd|
-Z11 o-lower -explicit -work work -quiet -nologo
-Z12 tExplicit 1
-!s100 ichAcE=oAlVmeJU6>LI6N0
+Z7 !s108 1420591618.098312
+Z8 !s90 -lower|-explicit|-work|work|VHDL/control.vhd|-quiet|-nologo|
+Z9 !s107 VHDL/control.vhd|
+Z10 o-lower -explicit -work work -quiet -nologo
+Z11 tExplicit 1
+!s100 Zz[BEANc1;NW:oH@To6Ji2
 !i10b 1
+Asynthesised
+w1420591632
+Z12 DEx4 work 7 control 0 22 IV^fmW3CMRFN9U:7Q>=DR0
+Z13 DPx8 cellslib 18 cellslib_decl_pack 0 22 QXc5jY9ngocCTOzQ`UlIE2
+R1
+R2
+dGWTF
+8VHDL/control_SYNTH.vhd
+FVHDL/control_SYNTH.vhd
+l41
+L7
+V1S_T9bVmY=RWzI=APNiV>2
+!s100 RTMdfAOA3AoBO0Yc^M?391
+R6
+32
+!i10b 1
+!s108 1420591633.273347
+!s90 -lower|-explicit|-work|work|VHDL/control_SYNTH.vhd|-quiet|-nologo|
+!s107 VHDL/control_SYNTH.vhd|
+R10
+R11
 Abehavioural
 R1
 R2
-R3
-Z13 DEx4 work 6 sdcard 0 22 XImmP4D`CL47X0J^bh`KT2
-l59
-L20
-VPDhno0J]`ff`@@2Oz4Di90
-!s100 KTgbcUKMQ2fJ@UWRXZk:=3
-R7
+R12
+l21
+L17
+VOif=?K[K4F5TP3d1DCgjn2
+R6
 32
+R7
 R8
 R9
 R10
 R11
-R12
+!s100 :Hn[mO5A^R66N;fR>b3IK0
 !i10b 1
-Csdcard_behavioural_cfg
-abehavioural
-esdcard
-DAx4 work 6 sdcard 11 behavioural 22 PDhno0J]`ff`@@2Oz4Di90
+Ccontrol_behavioural_cfg
+Z14 abehavioural
+econtrol
+DAx4 work 7 control 11 behavioural 22 Oif=?K[K4F5TP3d1DCgjn2
+R1
+R2
+R12
+w1420591623
+dGWTF
+8VHDL/control_behavioural_cfg.vhd
+FVHDL/control_behavioural_cfg.vhd
+l0
+L1
+VHJn]@O[]lUgJ4[=mWg_o`3
+R6
+32
+R10
+R11
+!s100 i0SMLA`>_mX23BhaV7OcL1
+!i10b 0
+!s108 1420591623.979145
+!s90 -lower|-explicit|-work|work|VHDL/control_behavioural_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/control_behavioural_cfg.vhd|
+Ecounter
+Z15 w1420591570
+Z16 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 R1
 R2
 R3
+Z17 8VHDL/counter.vhd
+Z18 FVHDL/counter.vhd
+l0
+L5
+V12MkP4b>^R<?N^54Lh1Sb2
+R6
+32
+Z19 !s108 1420591570.340722
+Z20 !s90 -lower|-explicit|-work|work|VHDL/counter.vhd|-quiet|-nologo|
+Z21 !s107 VHDL/counter.vhd|
+R10
+R11
+!s100 iK23KzZXb0zdbkBZ9>6@A0
+!i10b 1
+Asynthesised
+w1420591591
+R16
+Z22 DEx4 work 7 counter 0 22 12MkP4b>^R<?N^54Lh1Sb2
 R13
-w1418046721
+R1
+R2
 dGWTF
+8VHDL/counter_SYNTH.vhd
+FVHDL/counter_SYNTH.vhd
+l32
+L7
+VSNz3jb4`cHEHC0E]I@nB01
+R6
+32
+R10
+R11
+!s100 _8jS;l[RU>PmjMS8KY^T12
+!i10b 1
+!s108 1420591592.693911
+!s90 -lower|-explicit|-work|work|VHDL/counter_SYNTH.vhd|-quiet|-nologo|
+!s107 VHDL/counter_SYNTH.vhd|
+Abehavioural
+R16
+R1
+R2
+R22
+l16
+L12
+VUGei>bAkBd@1Ld__CgZab3
+R6
+32
+R19
+R20
+R21
+R10
+R11
+!s100 ^gSO7O=V>YdGV@ol^=LB[0
+!i10b 1
+Ccounter_behavioural_cfg
+R14
+ecounter
+DAx4 work 7 counter 11 behavioural 22 UGei>bAkBd@1Ld__CgZab3
+R16
+R1
+R2
+R22
+w1420591581
+dGWTF
+8VHDL/counter_behavioural_cfg.vhd
+FVHDL/counter_behavioural_cfg.vhd
+l0
+L1
+VdcfTSNJ>?gS:Dld38W3BH3
+R6
+32
+R10
+R11
+!s100 =A0IKDZJ3B42984YSI;S?3
+!i10b 0
+!s108 1420591581.837920
+!s90 -lower|-explicit|-work|work|VHDL/counter_behavioural_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/counter_behavioural_cfg.vhd|
+Esdcard
+Z23 w1420591231
+R16
+R1
+R2
+R3
+Z24 8VHDL/sdcard.vhd
+Z25 FVHDL/sdcard.vhd
+l0
+L5
+VkS[fBAM5``Q62WfIPm=IH2
+R6
+32
+Z26 !s108 1420591239.837609
+Z27 !s90 -lower|-explicit|-work|work|VHDL/sdcard.vhd|-quiet|-nologo|
+Z28 !s107 VHDL/sdcard.vhd|
+R10
+R11
+!s100 ZJ]1ZQf_c8cPE=l?NIOLj3
+!i10b 1
+Asynthesised
+w1420591378
+R16
+Z29 DEx4 work 6 sdcard 0 22 kS[fBAM5``Q62WfIPm=IH2
+R13
+R1
+R2
+8VHDL/sdcard_SYNTH.vhd
+FVHDL/sdcard_SYNTH.vhd
+l110
+L7
+VRlTbH@h9RH@8T>l>Nf6_80
+R6
+32
+R10
+R11
+!s100 mX2;Kz@QbT@HZEX6:P?Ch0
+!i10b 1
+!s108 1420591380.451582
+!s90 -lower|-explicit|-work|work|VHDL/sdcard_SYNTH.vhd|-quiet|-nologo|
+!s107 VHDL/sdcard_SYNTH.vhd|
+Abehavioural
+R16
+R1
+R2
+R29
+l73
+L25
+V=78cgB?N]dTL<b:31F5gR1
+R6
+32
+R26
+R27
+R28
+R10
+R11
+!s100 b8URIZl1<cKVb;5aLEIOY1
+!i10b 1
+Csdcard_behavioural_cfg
+R14
+esdcard
+DAx4 work 6 sdcard 11 behavioural 22 =78cgB?N]dTL<b:31F5gR1
+R16
+R1
+R2
+R29
+w1418046721
+R3
 8VHDL/sdcard_behavioural_cfg.vhd
 FVHDL/sdcard_behavioural_cfg.vhd
 l0
 L1
 VUQM7PA8RJ_AVgo]C@^9^32
-!s100 <Y2D?7C`UZLz@h]6;RoGb2
-R7
+R6
 32
+R10
+R11
+!s100 <Y2D?7C`UZLz@h]6;RoGb2
 !i10b 0
-!s108 1418285469.877649
+!s108 1420591244.963528
 !s90 -lower|-explicit|-work|work|VHDL/sdcard_behavioural_cfg.vhd|-quiet|-nologo|
 !s107 VHDL/sdcard_behavioural_cfg.vhd|
+Eshift_reg
+Z30 w1420591505
+R1
+R2
+R3
+Z31 8VHDL/shift_reg.vhd
+Z32 FVHDL/shift_reg.vhd
+l0
+L8
+VQQjl?j`OXea3aNd5gF<Wm1
+R6
+32
+Z33 !s108 1420591505.145915
+Z34 !s90 -lower|-explicit|-work|work|VHDL/shift_reg.vhd|-quiet|-nologo|
+Z35 !s107 VHDL/shift_reg.vhd|
+R10
 R11
-R12
+!s100 jh3QoD7BomhRmj_h;UiB_3
+!i10b 1
+Asynthesised
+w1420591521
+Z36 DEx4 work 9 shift_reg 0 22 QQjl?j`OXea3aNd5gF<Wm1
+R13
+R1
+R2
+dGWTF
+8VHDL/shift_reg_SYNTH.vhd
+FVHDL/shift_reg_SYNTH.vhd
+l35
+L7
+VSYRLl;Wa@1B6JaYKJ=PbT3
+R6
+32
+R10
+R11
+!s100 1[7dmiV^1J=R=R?[@96PC1
+!i10b 1
+!s108 1420591522.562936
+!s90 -lower|-explicit|-work|work|VHDL/shift_reg_SYNTH.vhd|-quiet|-nologo|
+!s107 VHDL/shift_reg_SYNTH.vhd|
+Abehavioral
+R1
+R2
+R36
+l23
+L19
+VYzdS:L^ZA9<H_=2jZzf9N0
+R6
+32
+R33
+R34
+R35
+R10
+R11
+!s100 0z5FS[hVBf^fF?ASWlW2d2
+!i10b 1
+Cshift_reg_behavioral_cfg
+abehavioral
+eshift_reg
+DAx4 work 9 shift_reg 10 behavioral 22 YzdS:L^ZA9<H_=2jZzf9N0
+R1
+R2
+R36
+w1420591512
+dGWTF
+8VHDL/shift_reg_behavioral_cfg.vhd
+FVHDL/shift_reg_behavioral_cfg.vhd
+l0
+L1
+V1lmG<;7eaBi7Wk7g7OYZL3
+R6
+32
+R10
+R11
+!s100 66f]a0LV]bCOV]nP6PJFP1
+!i10b 0
+!s108 1420591512.100678
+!s90 -lower|-explicit|-work|work|VHDL/shift_reg_behavioral_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/shift_reg_behavioral_cfg.vhd|
+Espi
+Z37 w1420591442
+R1
+R2
+R3
+Z38 8VHDL/spi.vhd
+Z39 FVHDL/spi.vhd
+l0
+L4
+V>4a2:`bT_eP2XDCiE9aVW2
+R6
+32
+Z40 !s108 1420591442.105938
+Z41 !s90 -lower|-explicit|-work|work|VHDL/spi.vhd|-quiet|-nologo|
+Z42 !s107 VHDL/spi.vhd|
+R10
+R11
+!s100 []G4T8bdON]^51_=nozXC1
+!i10b 1
+Asynthesised
+w1420591461
+Z43 DEx4 work 3 spi 0 22 >4a2:`bT_eP2XDCiE9aVW2
+R13
+R1
+R2
+dGWTF
+8VHDL/spi_SYNTH.vhd
+FVHDL/spi_SYNTH.vhd
+l34
+L7
+VQOHB;K?oE<WOZWZFhbO0Z0
+R6
+32
+R10
+R11
+!s100 fEkS^;o:amTN6MEhNJLzc3
+!i10b 1
+!s108 1420591462.770258
+!s90 -lower|-explicit|-work|work|VHDL/spi_SYNTH.vhd|-quiet|-nologo|
+!s107 VHDL/spi_SYNTH.vhd|
+Astructural
+R1
+R2
+R43
+l58
+L19
+VP_9j[R3_aEVz:oUb8iNm<3
+R6
+32
+R40
+R41
+R42
+R10
+R11
+!s100 28F8LWZ[gnN`F]OoE@FBW0
+!i10b 1
+Cspi_structural_cfg
+astructural
+espi
+DAx4 work 3 spi 10 structural 22 P_9j[R3_aEVz:oUb8iNm<3
+R1
+R2
+R43
+w1420591452
+dGWTF
+8VHDL/spi_structural_cfg.vhd
+FVHDL/spi_structural_cfg.vhd
+l0
+L1
+V=^G@B>MBkL3h8N1KAB]J<1
+R6
+32
+R10
+R11
+!s100 ?^MeN^Yof2_1BC8Mh0mFX2
+!i10b 0
+!s108 1420591452.304365
+!s90 -lower|-explicit|-work|work|VHDL/spi_structural_cfg.vhd|-quiet|-nologo|
+!s107 VHDL/spi_structural_cfg.vhd|

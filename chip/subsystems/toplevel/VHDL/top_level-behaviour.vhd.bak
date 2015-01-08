@@ -8,7 +8,7 @@ signal playerdata : std_logic_vector(7 downto 0);
 signal cpu_pc: std_logic_vector(7 downto 0);
 signal gpu_in : std_logic_vector(7 downto 0);
 signal cpu_instr : std_logic_vector(11 downto 0);
-signal gpu_out : std_logic_vector(7 downto 0);
+signal gpu_out : std_logic;
 signal uitleesselect : std_logic;
 signal von : std_logic;
 signal output : std_logic_vector(11 downto 0);
@@ -65,9 +65,10 @@ end component blackbox;
 component gpu 
 port (
 clk : in std_logic;
-gpu_in : std_logic_vector(7 downto 0);
+gpu_in : in std_logic_vector(7 downto 0);
 reset : in std_logic;
-gpu_out : out std_logic_vector(7 downto 0)
+sclk : out std_logic;
+mosi : out std_logic;
 );
 end component gpu;
 
@@ -84,62 +85,62 @@ end component vga;
 begin
 
 Sdkaart: sdcard port map(
- clk => clk,
- div_clk => div_clk,
- reset => reset,
- address => cpu_pc,
- output => cpu_instr,
- busy => busy,
- sclk => sclk_sd,
- mosi => mosi_sd,
- miso => miso_sd,
+ clk => clk;
+ div_clk => div_clk;
+ reset => reset;
+ address => cpu_pc;
+ output => cpu_instr;
+ busy => busy;
+ sclk => sclk_sd;
+ mosi => mosi_sd;
+ miso => miso_sd;
  ss => ss_sd); 
 
 cpu1: cpu port map(
- cpu_clk => clk,
- cpu_rst => reset,
- cpu_en => busy,
- cpu_in => playerdata,
- cpu_instr => cpu_instr,
- cpu_pc => cpu_pc,
+ cpu_clk => clk;
+ cpu_rst => reset;
+ cpu_en => busy;
+ cpu_in => playerdata;
+ cpu_instr => cpu_instr;
+ cpu_pc => cpu_pc;
  cpu_out => gpu_in);
 
 gp1u: gpu port map(
- clk => clk,
- gpu_in => gpu_in,
- reset => reset,
- gpu_out => gpu_out); -- dit is een vector, de bb verwacht dit niet
+ clk => clk;
+ gpu_in => gpu_in;
+ reset => reset;
+ mosi => mosi_m_1); -- wachten op gpu fix
 
 blackbox1: blackbox port map(
-	sclk_m_0 => sclk_sram_0,
-        mosi_m_0 => mosi_sram_0,
-        miso_m_0 => miso_sram_0,
-        ss_m_0  => ss_sram_0,
+	sclk_m_0 => sclk_vga;-- controleren met vga spi
+        mosi_m_0 => mosi_vga;
+        miso_m_0 => miso_vga;
+        ss_m_0  => ss_vga;
 	
-	sclk_m_1 => sclk_sram_1,
-        mosi_m_1 => mosi_sram_1,
-        miso_m_1 => miso_sram_1,
-        ss_m_1  => ss_sram_1,
+	sclk_m_1 => sclk;
+        mosi_m_1 => mosi;
+        miso_m_1 => '1';
+        ss_m_1  => '1';
 
-	sclk_s_0 => sclk_sram_0,
-        mosi_s_0 => mosi_sram_0,
-        miso_s_0 => miso_sram_0,
-        ss_s_0  => ss_sram_0,
+	sclk_s_0 => sclk_sram_0;
+        mosi_s_0 => mosi_sram_0;
+        miso_s_0 => miso_sram_0;
+        ss_s_0  => ss_sram_0;
 
-	sclk_s_1 => sclk_sram_1,
-        mosi_s_1 => mosi_sram_1,
-        miso_s_1 => miso_sram_1,
-        ss_s_1  => ss_sram_1,
+	sclk_s_1 => sclk_sram_1;
+        mosi_s_1 => mosi_sram_1;
+        miso_s_1 => miso_sram_1;
+        ss_s_1  => ss_sram_1;
 
-	s => uitleesselect); --wachten op gpu fix
+	s => sclk); 
 
 vga1: vga port map (
-vga_in => --output van bb die konden we niet vinden...
- clk => clk,
- reset => reset,
-von => von,
-hsync_out => h_sync,
-vsync_out => v_sync,
+vga_in => miso_m_0;
+clk => clk;
+reset => reset;
+von => von;
+hsync_out => h_sync;
+vsync_out => v_sync;
 rgb_out => rgb);
 
 end behaviour;

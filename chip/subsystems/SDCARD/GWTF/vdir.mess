@@ -1,15 +1,94 @@
 Library vendor : Model Technology
 Maximum unnamed designs : 3
-ENTITY sdcard
-    Source modified time: Thu Dec 11 09:10:16 2014
+ENTITY control
+    Source modified time: Wed Jan  7 01:46:58 2015
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/control.vhd
+    Source file: VHDL/control.vhd
+    Start location: VHDL/control.vhd:4
+    Version string: IV^fmW3CMRFN9U:7Q>=DR0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Wed Jan  7 01:47:12 2015
+    Depends on: E work control IV^fmW3CMRFN9U:7Q>=DR0
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: GWTF
+    HDL source file: VHDL/control_SYNTH.vhd
+    Source file: VHDL/control_SYNTH.vhd
+    Start location: VHDL/control_SYNTH.vhd:7
+    Version string: 1S_T9bVmY=RWzI=APNiV>2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work control IV^fmW3CMRFN9U:7Q>=DR0
+    Start location: VHDL/control.vhd:17
+    Version string: Oif=?K[K4F5TP3d1DCgjn2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/control.vhd
+    Source modified time: Wed Jan  7 01:46:58 2015
+    HDL source file: VHDL/control.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION control_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: control
+    Depends on: A work control behavioural Oif=?K[K4F5TP3d1DCgjn2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work control IV^fmW3CMRFN9U:7Q>=DR0
+    Source modified time: Wed Jan  7 01:47:03 2015
+    Source directory: GWTF
+    HDL source file: VHDL/control_behavioural_cfg.vhd
+    Source file: VHDL/control_behavioural_cfg.vhd
+    Start location: VHDL/control_behavioural_cfg.vhd:1
+    Version string: HJn]@O[]lUgJ4[=mWg_o`3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY counter
+    Source modified time: Wed Jan  7 01:46:10 2015
     Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
     Source directory: /GWTF
-    HDL source file: VHDL/sdcard.vhd
-    Source file: VHDL/sdcard.vhd
-    Start location: VHDL/sdcard.vhd:5
-    Version string: XImmP4D`CL47X0J^bh`KT2
+    HDL source file: VHDL/counter.vhd
+    Source file: VHDL/counter.vhd
+    Start location: VHDL/counter.vhd:5
+    Version string: 12MkP4b>^R<?N^54Lh1Sb2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Wed Jan  7 01:46:31 2015
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: E work counter 12MkP4b>^R<?N^54Lh1Sb2
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: GWTF
+    HDL source file: VHDL/counter_SYNTH.vhd
+    Source file: VHDL/counter_SYNTH.vhd
+    Start location: VHDL/counter_SYNTH.vhd:7
+    Version string: SNz3jb4`cHEHC0E]I@nB01
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
@@ -19,32 +98,222 @@ ENTITY sdcard
     Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Depends on: E work sdcard XImmP4D`CL47X0J^bh`KT2
-    Start location: VHDL/sdcard.vhd:20
-    Version string: PDhno0J]`ff`@@2Oz4Di90
+    Depends on: E work counter 12MkP4b>^R<?N^54Lh1Sb2
+    Start location: VHDL/counter.vhd:12
+    Version string: UGei>bAkBd@1Ld__CgZab3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/counter.vhd
+    Source modified time: Wed Jan  7 01:46:10 2015
+    HDL source file: VHDL/counter.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION counter_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: counter
+    Depends on: A work counter behavioural UGei>bAkBd@1Ld__CgZab3
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work counter 12MkP4b>^R<?N^54Lh1Sb2
+    Source modified time: Wed Jan  7 01:46:21 2015
+    Source directory: GWTF
+    HDL source file: VHDL/counter_behavioural_cfg.vhd
+    Source file: VHDL/counter_behavioural_cfg.vhd
+    Start location: VHDL/counter_behavioural_cfg.vhd:1
+    Version string: dcfTSNJ>?gS:Dld38W3BH3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY sdcard
+    Source modified time: Wed Jan  7 01:40:31 2015
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/sdcard.vhd
+    Source file: VHDL/sdcard.vhd
+    Start location: VHDL/sdcard.vhd:5
+    Version string: kS[fBAM5``Q62WfIPm=IH2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Wed Jan  7 01:42:58 2015
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: E work sdcard kS[fBAM5``Q62WfIPm=IH2
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    HDL source file: VHDL/sdcard_SYNTH.vhd
+    Source file: VHDL/sdcard_SYNTH.vhd
+    Start location: VHDL/sdcard_SYNTH.vhd:7
+    Version string: RlTbH@h9RH@8T>l>Nf6_80
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work sdcard kS[fBAM5``Q62WfIPm=IH2
+    Start location: VHDL/sdcard.vhd:25
+    Version string: =78cgB?N]dTL<b:31F5gR1
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
     Compile defaults: Explicit=1
     Source directory: /GWTF
     Source file: VHDL/sdcard.vhd
-    Source modified time: Thu Dec 11 09:10:16 2014
+    Source modified time: Wed Jan  7 01:40:31 2015
     HDL source file: VHDL/sdcard.vhd
     Debug Symbol file exists
 VHDL CONFIGURATION sdcard_behavioural_cfg
     Configuration for architecture: behavioural
     Configuration for entity: sdcard
-    Depends on: A work sdcard behavioural PDhno0J]`ff`@@2Oz4Di90
+    Depends on: A work sdcard behavioural =78cgB?N]dTL<b:31F5gR1
     Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
     Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
     Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
-    Depends on: E work sdcard XImmP4D`CL47X0J^bh`KT2
+    Depends on: E work sdcard kS[fBAM5``Q62WfIPm=IH2
     Source modified time: Mon Dec  8 14:52:01 2014
-    Source directory: GWTF
+    Source directory: /GWTF
     HDL source file: VHDL/sdcard_behavioural_cfg.vhd
     Source file: VHDL/sdcard_behavioural_cfg.vhd
     Start location: VHDL/sdcard_behavioural_cfg.vhd:1
     Version string: UQM7PA8RJ_AVgo]C@^9^32
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY shift_reg
+    Source modified time: Wed Jan  7 01:45:05 2015
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/shift_reg.vhd
+    Source file: VHDL/shift_reg.vhd
+    Start location: VHDL/shift_reg.vhd:8
+    Version string: QQjl?j`OXea3aNd5gF<Wm1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Wed Jan  7 01:45:21 2015
+    Depends on: E work shift_reg QQjl?j`OXea3aNd5gF<Wm1
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: GWTF
+    HDL source file: VHDL/shift_reg_SYNTH.vhd
+    Source file: VHDL/shift_reg_SYNTH.vhd
+    Start location: VHDL/shift_reg_SYNTH.vhd:7
+    Version string: SYRLl;Wa@1B6JaYKJ=PbT3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioral
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work shift_reg QQjl?j`OXea3aNd5gF<Wm1
+    Start location: VHDL/shift_reg.vhd:19
+    Version string: YzdS:L^ZA9<H_=2jZzf9N0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/shift_reg.vhd
+    Source modified time: Wed Jan  7 01:45:05 2015
+    HDL source file: VHDL/shift_reg.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION shift_reg_behavioral_cfg
+    Configuration for architecture: behavioral
+    Configuration for entity: shift_reg
+    Depends on: A work shift_reg behavioral YzdS:L^ZA9<H_=2jZzf9N0
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work shift_reg QQjl?j`OXea3aNd5gF<Wm1
+    Source modified time: Wed Jan  7 01:45:12 2015
+    Source directory: GWTF
+    HDL source file: VHDL/shift_reg_behavioral_cfg.vhd
+    Source file: VHDL/shift_reg_behavioral_cfg.vhd
+    Start location: VHDL/shift_reg_behavioral_cfg.vhd:1
+    Version string: 1lmG<;7eaBi7Wk7g7OYZL3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY spi
+    Source modified time: Wed Jan  7 01:44:02 2015
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /GWTF
+    HDL source file: VHDL/spi.vhd
+    Source file: VHDL/spi.vhd
+    Start location: VHDL/spi.vhd:4
+    Version string: >4a2:`bT_eP2XDCiE9aVW2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY synthesised
+    Source modified time: Wed Jan  7 01:44:21 2015
+    Depends on: E work spi >4a2:`bT_eP2XDCiE9aVW2
+    Depends on: P cellslib cellslib_decl_pack QXc5jY9ngocCTOzQ`UlIE2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: GWTF
+    HDL source file: VHDL/spi_SYNTH.vhd
+    Source file: VHDL/spi_SYNTH.vhd
+    Start location: VHDL/spi_SYNTH.vhd:7
+    Version string: QOHB;K?oE<WOZWZFhbO0Z0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY structural
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work spi >4a2:`bT_eP2XDCiE9aVW2
+    Start location: VHDL/spi.vhd:19
+    Version string: P_9j[R3_aEVz:oUb8iNm<3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /GWTF
+    Source file: VHDL/spi.vhd
+    Source modified time: Wed Jan  7 01:44:02 2015
+    HDL source file: VHDL/spi.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION spi_structural_cfg
+    Configuration for architecture: structural
+    Configuration for entity: spi
+    Depends on: A work spi structural P_9j[R3_aEVz:oUb8iNm<3
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work spi >4a2:`bT_eP2XDCiE9aVW2
+    Source modified time: Wed Jan  7 01:44:12 2015
+    Source directory: GWTF
+    HDL source file: VHDL/spi_structural_cfg.vhd
+    Source file: VHDL/spi_structural_cfg.vhd
+    Start location: VHDL/spi_structural_cfg.vhd:1
+    Version string: =^G@B>MBkL3h8N1KAB]J<1
     Opcode format: 10.1b; VCOM SE Object version 51
     VHDL language standard: 2 (VHDL-2002)
     Compile options: -lower -explicit -work work -quiet -nologo
