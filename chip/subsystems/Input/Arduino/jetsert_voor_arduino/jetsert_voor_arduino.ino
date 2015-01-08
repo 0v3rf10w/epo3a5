@@ -138,8 +138,9 @@ void loop()
   {
    plaatsplayer1 = 12; 
   }
-      plaatsplayer2 = 2;
-  plaatsplayer1 = 9;
+  for( plaatsplayer1 = 0; plaatsplayer1 < 256; plaatsplayer1++)
+  {
+  plaatsplayer2 = 6;
   byte test;
    test = byte(plaatsplayer1);
    test = test << 4;
@@ -147,6 +148,7 @@ void loop()
    Serial.println(test,BIN);
    output = test;  
    SPI.transfer(output);
+  }
 }
 
 
