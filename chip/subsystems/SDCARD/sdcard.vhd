@@ -113,8 +113,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 		end if;
 	end process;
 
-	mosi <= '1' when (mosi_high = '1') else
-		mosi_spi;
+	mosi <= '1' when (mosi_high = '1') else	mosi_spi;
+	--mosi <= '1' when (mosi_high = '1') else sd_clk;
 	ss <= slave_select;
 	
 	process(sd_clk,reset)
@@ -128,16 +128,16 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 		end if;
 	end process;
 	
-	--process(next_state,went_to_next)
-	--begin
-	--if(went_to_next = '1') then
-	--	go_to_next <= '0';
-	--else
-	--	if(rising_edge(next_state)) then
-	--		go_to_next <= '1';
-	--	end if;
-	--end if;
-	--end process;
+	process(next_state,went_to_next)
+	begin
+	if(went_to_next = '1') then
+		go_to_next <= '0';
+	else
+		if(rising_edge(next_state)) then
+			go_to_next <= '1';
+		end if;
+	end if;
+	end process;
 	
 	process(sd_clk,reset)
 	begin
@@ -145,9 +145,9 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 			send_cnt <= (others => '0');
 		else
 			if(rising_edge(sd_clk)) then
-			--if(go_to_next = '1') then
+			if(go_to_next = '1') then
 				send_cnt <= new_send_cnt;
-			--end if;
+			end if;
 			end if;
 		end if;
 	end process;
@@ -159,10 +159,10 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 			address_buf <= (others => '0');
 			went_to_next <= '0';
 		else
-		--if(go_to_next = '0') then
-		--	state <= state;
-		--	went_to_next <= '0';
-		--else
+		if(go_to_next = '0') then
+			state <= state;
+			went_to_next <= '0';
+		else
 			if rising_edge(sd_clk)  then
 				went_to_next <= '1';
 				address_buf <= address;
@@ -393,7 +393,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						state <= failure_state;
 				end case;	
 			end if;	
-		--end if;
+		end if;
 		end if;
 	end process;
 	
@@ -420,7 +420,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				send_reset <= '1';
 				write_enable <= '0';
 				new_send_cnt <= send_cnt + 1;
-				write_in <= "11111111";
+				write_in <= "01000100";
 				busy <= '1';
 				new_output_reg <= (others => '0');
 				data_read <= '0';
