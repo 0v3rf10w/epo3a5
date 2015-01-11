@@ -98,7 +98,18 @@ De SRAM chips, de VGA en de GPU communiceren met elkaar met behulp van SPI. De s
 \end{figure}
 
 \section{Implementatie}
-De schakeling bestaat uit vier subschakelingen. De subschakeling bestaat uit twee twee naar 1 lijn multiplexers zoals weergegeven in figuur 1. Door de S laag te maken, wordt IN\_0 verbonden met OUT\_0 en IN\_1 met OUT\_1. Als S hoog is, is IN\_0 verbonden met OUT\_1 en vice versa. Vervolgens worden de SCLK lijnen van de GPU en VGA generator verbonden met de ingangen van de subschakeling en de uitgangen met de SCLK lijnen van de twee SRAM chips. Hetzelfde gebeurt ook voor de MOSI en de SS lijnen van de masters en de slaves. Bij de MISO lijnen is het omgekeerd omdat dit een inputlijn is voor de masters en een outputlijn voor de slaves. Hier worden dus de SRAM chips verbonden met de ingangen en de VGA generator en de GPU aan de uitgangen. De BlackBox bestaat nu uit vier subcircuits. Door de select (S) ingangen van de subschakelingen met elkaar te verbinden is de BlackBox nu compleet.
+De schakeling bestaat uit vier subschakelingen. De subschakeling bestaat uit twee twee naar 1 lijn multiplexers zoals weergegeven in figuur \ref{sub-blackbox}. Door de S laag te maken, wordt IN\_0 verbonden met OUT\_0 en IN\_1 met OUT\_1. Als S hoog is, is IN\_0 verbonden met OUT\_1 en vice versa. Vervolgens worden de SCLK lijnen van de GPU en VGA generator verbonden met de ingangen van de subschakeling en de uitgangen met de SCLK lijnen van de twee SRAM chips. Hetzelfde gebeurt ook voor de MOSI en de SS lijnen van de masters en de slaves. Bij de MISO lijnen is het omgekeerd omdat dit een inputlijn is voor de masters en een outputlijn voor de slaves. Hier worden dus de SRAM chips verbonden met de ingangen en de VGA generator en de GPU aan de uitgangen. De BlackBox bestaat nu uit vier subcircuits. Door de select (S) ingangen van de subschakelingen met elkaar te verbinden is de BlackBox nu compleet.
+\section{Simulatie}
+Om de werking van de schakeling te verifiëren is een switch-level simulatie gedaan zoals te zien is in figuur \ref{bbsls}. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{./BlackBox_SLS}
+\caption{Switch-Level Simulation van de blackbox}
+\label{bbsls}
+\end{figure}
+
+Er valt te zien dat voordat het signaal s hoog wordt de SPI signalen van master 0 en slave 0 overeenkomen. Ook de spi signalen van master 1 en slave 1 komen overeen. Nadat s laag wordt zien we dat de signalen van master 0 nu overeenkomen met de signalen van slave 1 en vice versa. Hieruit kan geconcludeerd worden dat de schakeling naar behoren zou moeten werken wanneer deze geïmplementeerd is in de chip. De schakeling kan getest worden door de signalen op de bijbehorende pinnen te bekijken en deze te vergelijken met de verwachte signalen van de SPI van de GPU en VGA circuits. 
 
 \newpage
 
