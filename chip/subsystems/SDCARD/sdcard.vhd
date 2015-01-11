@@ -15,7 +15,7 @@ port(	clk:			in std_logic;
 		miso:			in std_logic;
 		ss:				out std_logic;
 		
-		state_debug:	out std_logic_vector(6 downto 0);
+		state_debug:	out std_logic_vector(7 downto 0);
 		next_state:		in std_logic;
 		spi_output_debug: out std_logic_vector(7 downto 0)
 		
@@ -70,9 +70,12 @@ architecture behavioural of sdcard is
 	signal sd_clk,divide_clock : std_logic;
 	signal went_to_next, go_to_next : std_logic;
 	signal state_debug_sig : std_logic_vector(6 downto 0);
+	signal in_failure : std_logic;
 begin
 
-	state_debug <= state_debug_sig;
+	state_debug(7) <= in_failure;
+
+	state_debug(6 downto 0) <= state_debug_sig;
 
 	spi_output_debug <= spi_output;
 
@@ -85,7 +88,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 	address_change <= '0' when (((address_buf and address) = address) and ((not address_buf and not address) = not address)) else
 				'1';
 
-	process(data_read,new_data)
+	process(data_read,sd_clk)
 	begin
 	if(data_read = '1') then
 		new_data <= '0';
@@ -133,8 +136,12 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 	if(went_to_next = '1') then
 		go_to_next <= '0';
 	else
+		if(state_debug_sig(6) = '0') then
+			go_to_next <= '1';
+		else
 		if(rising_edge(next_state)) then
 			go_to_next <= '1';
+		end if;
 		end if;
 	end if;
 	end process;
@@ -145,9 +152,9 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 			send_cnt <= (others => '0');
 		else
 			if(rising_edge(sd_clk)) then
-			if(go_to_next = '1') then
+			--if(go_to_next = '1') then
 				send_cnt <= new_send_cnt;
-			end if;
+			--end if;
 			end if;
 		end if;
 	end process;
@@ -159,10 +166,10 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 			address_buf <= (others => '0');
 			went_to_next <= '0';
 		else
-		if(go_to_next = '0') then
-			state <= state;
-			went_to_next <= '0';
-		else
+		--if(go_to_next = '0') then
+		--	state <= state;
+		--	went_to_next <= '0';
+		--else
 			if rising_edge(sd_clk)  then
 				went_to_next <= '1';
 				address_buf <= address;
@@ -393,7 +400,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						state <= failure_state;
 				end case;	
 			end if;	
-		end if;
+		--end if;
 		end if;
 	end process;
 	
@@ -413,6 +420,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0000001";
+				in_failure <= '0';
 			when dummy_count =>
 				slave_select <= '1';
 				mosi_high <= '1';
@@ -426,6 +434,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0000010";
+				in_failure <= '0';
 			when start_dummy_send =>
 				slave_select <= '1';
 				mosi_high <= '1';
@@ -439,6 +448,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0000011";
+				in_failure <= '0';
 			when dummy_send =>
 				slave_select <= '1';
 				mosi_high <= '1';
@@ -452,6 +462,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0000100";
+				in_failure <= '0';
 			when start_init_count =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -465,6 +476,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0000101";
+				in_failure <= '0';
 			when init_cmd =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -495,6 +507,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0000110";
+				in_failure <= '0';
 			when start_init_send =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -508,6 +521,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0000111";
+				in_failure <= '0';
 			when init_send =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -521,6 +535,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0001000";
+				in_failure <= '0';
 			when init_read =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -534,6 +549,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0001001";
+				in_failure <= '0';
 			when start_init_receive =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -547,6 +563,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0001010";
+				in_failure <= '0';
 			when init_receive =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -560,7 +577,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0001011";
-			
+				in_failure <= '0';
+				
 			when load_cmd55 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -589,6 +607,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0010101";
+				in_failure <= '0';
 			when start_send_cmd55 =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -602,6 +621,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0010110";
+				in_failure <= '0';
 			when send_cmd55 =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -615,6 +635,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0010111";
+				in_failure <= '0';
 			when read_response_cmd55 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -628,6 +649,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0011000";
+				in_failure <= '0';
 			when start_receive_response_cmd55 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -641,6 +663,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0011001";
+				in_failure <= '0';
 			when receive_response_cmd55 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -654,6 +677,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0011010";
+				in_failure <= '0';
 				
 			when load_acmd41 =>
 				slave_select <= '0';
@@ -683,6 +707,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0011011";
+				in_failure <= '0';
 			when start_send_acmd41 =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -696,6 +721,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0011100";
+				in_failure <= '0';
 			when send_acmd41 =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -709,6 +735,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0011101";
+				in_failure <= '0';
 			when read_response_acmd41 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -722,6 +749,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0011110";
+				in_failure <= '0';
 			when start_receive_response_acmd41 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -735,6 +763,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0011111";
+				in_failure <= '0';
 			when receive_response_acmd41 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -748,7 +777,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '1';
 				state_debug_sig <= "0100000";
-			
+				in_failure <= '0';
+				
 			when load_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -777,6 +807,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "0100001";
+				in_failure <= '0';
 			when start_send_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -790,6 +821,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "0100010";
+				in_failure <= '0';
 			when send_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -803,6 +835,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "0100011";
+				in_failure <= '0';
 			when read_response_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -816,6 +849,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "0100100";
+				in_failure <= '0';
 			when start_receive_response_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -829,6 +863,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "0100101";
+				in_failure <= '0';
 			when receive_response_cmd16 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -842,6 +877,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "0100110";
+				in_failure <= '0';
 				
 			when idle =>
 				slave_select <= '0';
@@ -856,6 +892,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1000001";
+				in_failure <= '0';
 			when load_cmd =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -884,6 +921,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1000010";
+				in_failure <= '0';
 			when start_send_part =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -897,6 +935,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1000011";
+				in_failure <= '0';
 			when send_part =>
 				slave_select <= '0';
 				mosi_high <= '0';
@@ -910,6 +949,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1000100";
+				in_failure <= '0';
 			when read_response =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -923,6 +963,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1000101";
+				in_failure <= '0';
 			when start_receive_response =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -936,6 +977,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1000110";
+				in_failure <= '0';
 			when receive_response =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -949,6 +991,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1000111";
+				in_failure <= '0';
 			when wait_data =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -962,6 +1005,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1001000";
+				in_failure <= '0';
 			when start_read_data_part =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -975,6 +1019,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1001001";
+				in_failure <= '0';
 			when read_data_part =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -988,6 +1033,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1001010";
+				in_failure <= '0';
 			when start_read_data =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -1001,6 +1047,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1001011";
+				in_failure <= '0';
 			when read_data =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -1014,6 +1061,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1001100";
+				in_failure <= '0';
 			when buffer_data =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -1028,6 +1076,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1001101";
+				in_failure <= '0';
 			when start_read_data2 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -1041,6 +1090,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1001110";
+				in_failure <= '0';
 			when read_data2 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -1054,6 +1104,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '0';
 				divide_clock <= '0';
 				state_debug_sig <= "1001111";
+				in_failure <= '0';
 			when buffer_data2 =>
 				slave_select <= '0';
 				mosi_high <= '1';
@@ -1068,6 +1119,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				data_read <= '1';
 				divide_clock <= '0';
 				state_debug_sig <= "1010000";
+				in_failure <= '0';
 			when failure_state =>
 				slave_select <= '1';
 				mosi_high <= '0';
@@ -1081,7 +1133,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				new_output_reg(7 downto 0) <= spi_output;
 				data_read <= '0';
 				divide_clock <= '1';
-				state_debug_sig <= "1111111";
+				state_debug_sig <= state_debug_sig;
+				in_failure <= '1';
 		end case;
 	end process;
 
