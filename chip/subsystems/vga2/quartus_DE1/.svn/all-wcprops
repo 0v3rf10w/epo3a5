@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/OPsoftware/!svn/ver/61/quartus/quartus_DE1
+END
+top_de1.qsf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/OPsoftware/!svn/ver/61/quartus/quartus_DE1/top_de1.qsf
+END
+top_de1.bdf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/OPsoftware/!svn/ver/61/quartus/quartus_DE1/top_de1.bdf
+END
+pre_vga_dac_4.bsf
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/OPsoftware/!svn/ver/61/quartus/quartus_DE1/pre_vga_dac_4.bsf
+END
+gen6mhz.bsf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/OPsoftware/!svn/ver/61/quartus/quartus_DE1/gen6mhz.bsf
+END
+top_de1.vhd
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/OPsoftware/!svn/ver/61/quartus/quartus_DE1/top_de1.vhd
+END
+pre_vga_dac_4.vhd
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/OPsoftware/!svn/ver/61/quartus/quartus_DE1/pre_vga_dac_4.vhd
+END
+de1.qpf
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/OPsoftware/!svn/ver/61/quartus/quartus_DE1/de1.qpf
+END
+gen6mhz.vhd
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/OPsoftware/!svn/ver/61/quartus/quartus_DE1/gen6mhz.vhd
+END
