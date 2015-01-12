@@ -1,0 +1,15 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Specification}{3}
+\contentsline {section}{\numberline {3}Design}{3}
+\contentsline {subsection}{\numberline {3.1}Control}{4}
+\contentsline {subsection}{\numberline {3.2}Shift register}{5}
+\contentsline {subsection}{\numberline {3.3}Counter}{5}
+\contentsline {section}{\numberline {4}Results}{5}
+\contentsline {section}{\numberline {5}Conclusions}{7}
+\contentsline {section}{\numberline {6}VHDL code}{7}
+\contentsline {subsection}{\numberline {6.1}Control}{7}
+\contentsline {subsection}{\numberline {6.2}Counter}{9}
+\contentsline {subsection}{\numberline {6.3}Shift register}{10}
+\contentsline {subsection}{\numberline {6.4}SPI}{11}
+\contentsline {subsection}{\numberline {6.5}Shift register}{12}
