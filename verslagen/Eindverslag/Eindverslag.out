@@ -19,24 +19,39 @@
 \BOOKMARK [1][-]{section.6.1}{Functionele beschrijving}{chapter.6}% 19
 \BOOKMARK [1][-]{section.6.2}{Inputs en outputs}{chapter.6}% 20
 \BOOKMARK [1][-]{section.6.3}{Implementatie}{chapter.6}% 21
-\BOOKMARK [0][-]{chapter.7}{CPU}{}% 22
-\BOOKMARK [1][-]{section.7.1}{Functionele beschrijving}{chapter.7}% 23
-\BOOKMARK [1][-]{section.7.2}{Inputs en outputs}{chapter.7}% 24
-\BOOKMARK [1][-]{section.7.3}{Implementatie}{chapter.7}% 25
-\BOOKMARK [0][-]{chapter.8}{GPU}{}% 26
-\BOOKMARK [0][-]{chapter.9}{VGA}{}% 27
-\BOOKMARK [1][-]{section.9.1}{RGB}{chapter.9}% 28
-\BOOKMARK [1][-]{section.9.2}{H-Sync}{chapter.9}% 29
-\BOOKMARK [1][-]{section.9.3}{V-Sync}{chapter.9}% 30
-\BOOKMARK [1][-]{section.9.4}{Implementatie}{chapter.9}% 31
-\BOOKMARK [0][-]{chapter.10}{SPI}{}% 32
-\BOOKMARK [1][-]{section.10.1}{Functionele beschrijving}{chapter.10}% 33
-\BOOKMARK [1][-]{section.10.2}{Inputs en outputs}{chapter.10}% 34
-\BOOKMARK [1][-]{section.10.3}{Implementatie}{chapter.10}% 35
-\BOOKMARK [0][-]{chapter.11}{SD-kaart}{}% 36
-\BOOKMARK [1][-]{section.11.1}{SD communicatie}{chapter.11}% 37
-\BOOKMARK [1][-]{section.11.2}{SD commando's \046 responses}{chapter.11}% 38
-\BOOKMARK [1][-]{section.11.3}{Functionele omschrijving}{chapter.11}% 39
-\BOOKMARK [1][-]{section.11.4}{Inputs en outputs}{chapter.11}% 40
-\BOOKMARK [0][-]{chapter.12}{Conclusie}{}% 41
-\BOOKMARK [0][-]{chapter.13}{Discussie}{}% 42
+\BOOKMARK [1][-]{section.6.4}{Simulatie}{chapter.6}% 22
+\BOOKMARK [0][-]{chapter.7}{CPU}{}% 23
+\BOOKMARK [1][-]{section.7.1}{Functionele beschrijving}{chapter.7}% 24
+\BOOKMARK [1][-]{section.7.2}{Inputs en outputs}{chapter.7}% 25
+\BOOKMARK [1][-]{section.7.3}{Implementatie}{chapter.7}% 26
+\BOOKMARK [0][-]{chapter.8}{GPU}{}% 27
+\BOOKMARK [0][-]{chapter.9}{VGA}{}% 28
+\BOOKMARK [1][-]{section.9.1}{RGB}{chapter.9}% 29
+\BOOKMARK [1][-]{section.9.2}{H-Sync}{chapter.9}% 30
+\BOOKMARK [1][-]{section.9.3}{V-Sync}{chapter.9}% 31
+\BOOKMARK [1][-]{section.9.4}{Timing}{chapter.9}% 32
+\BOOKMARK [2][-]{subsection.9.4.1}{H-Sync}{section.9.4}% 33
+\BOOKMARK [2][-]{subsection.9.4.2}{V-Sync}{section.9.4}% 34
+\BOOKMARK [1][-]{section.9.5}{VHDL}{chapter.9}% 35
+\BOOKMARK [2][-]{subsection.9.5.1}{Deler}{section.9.5}% 36
+\BOOKMARK [2][-]{subsection.9.5.2}{Counter}{section.9.5}% 37
+\BOOKMARK [2][-]{subsection.9.5.3}{H-Sync}{section.9.5}% 38
+\BOOKMARK [2][-]{subsection.9.5.4}{Vidcounter}{section.9.5}% 39
+\BOOKMARK [2][-]{subsection.9.5.5}{V-Sync}{section.9.5}% 40
+\BOOKMARK [2][-]{subsection.9.5.6}{RGB}{section.9.5}% 41
+\BOOKMARK [1][-]{section.9.6}{Videosignaal}{chapter.9}% 42
+\BOOKMARK [2][-]{subsection.9.6.1}{S-synccounter}{section.9.6}% 43
+\BOOKMARK [2][-]{subsection.9.6.2}{S-Sync}{section.9.6}% 44
+\BOOKMARK [1][-]{section.9.7}{Conclusie}{chapter.9}% 45
+\BOOKMARK [1][-]{section.9.8}{Resultaten}{chapter.9}% 46
+\BOOKMARK [0][-]{chapter.10}{SPI}{}% 47
+\BOOKMARK [1][-]{section.10.1}{Functionele beschrijving}{chapter.10}% 48
+\BOOKMARK [1][-]{section.10.2}{Inputs en outputs}{chapter.10}% 49
+\BOOKMARK [1][-]{section.10.3}{Implementatie}{chapter.10}% 50
+\BOOKMARK [0][-]{chapter.11}{SD-kaart}{}% 51
+\BOOKMARK [1][-]{section.11.1}{SD communicatie}{chapter.11}% 52
+\BOOKMARK [1][-]{section.11.2}{SD commando's \046 responses}{chapter.11}% 53
+\BOOKMARK [1][-]{section.11.3}{Functionele omschrijving}{chapter.11}% 54
+\BOOKMARK [1][-]{section.11.4}{Inputs en outputs}{chapter.11}% 55
+\BOOKMARK [0][-]{chapter.12}{Conclusie}{}% 56
+\BOOKMARK [0][-]{chapter.13}{Discussie}{}% 57

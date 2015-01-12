@@ -165,40 +165,169 @@ De GPU is ontworpen aan de hand van een FSM, deze bevat 5 states en staat hieron
 In de eerste state kan de GPU drie richtingen op gaan. Als de eerste twee bits van de 8-bits vector '11' zijn gaat de GPU naar Clr-screen,hier zal de VGA zijn scherm leeg maken. De GPU gaat zijn X-data inlezen en springt naar de volgende state (Y-Hold) als de eerste twee bits van de 8-bits vector '01' is. Voor iedere andere waarde op de eerste twee bits van de 8-bits vector blijft de GPU in de int state. Vanuit de Clr-screen state kan de GPU alleen nog maar terug naar de int state en begint de FSM opnieuw. In de Y-Hold state wacht de GPU op Y-Data, de GPU blijft in deze state totdat de eerste twee bits van de 8-bits vector '10' aangeven (Duurt 20 klokslagen). Op dat moment leest de GPU de Y-Data in en stapt over naar de Calc. state. In deze state wordt het adres berekend voor de VGA, dit gebeurd met de formule $32*Y+X =$ adres. Als deze berekening voor het bepalen van zijn adres is voltooid springt de GPU automatisch naar de volgende state, de Write state. In de Write state schrijft de GPU data uit de buffers weg via SPI. Automatisch zal de GPU terug springen naar zijn eerste state, het proces begint dan opnieuw. 
 
 \chapter{VGA}
-Functionele beschrijving
-Om een monitor met een VGA aansluiting aan te sturen, zijn er eigenlijk 5 pinnen nodig die aangestuurd moeten worden. Drie pinnen voor rood, groen en blauw, een voor H-Sync en een voor V-Sync. 
+De VGA-controller zorgt ervoor dat een beeldscherm van de juiste signalen wordt voorzien om een beeld te kunnen opbouwen. Hierbij wordt een serieel signaal vanuit het SRAM omgezet naar een signaal dat voor een monitor is te begrijpen. Hiervoor zijn vijf signalen nodig. Drie signalen voor respectievelijk rood, groen en blauw, een voor H-Sync en een voor V-Sync. 
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{VGA-1}
+\includegraphics[width=9cm]{vga2arcade}
 \caption{Layout VGA-stekker}
 \label{VGA}
 \end{figure}
 
-Dit is de layout van de een VGA-stekker. 
+Kortom, de VGA controller zorgt voor een H-sync, een V-Sync en dat het RGB signaal op de juiste manier aan het scherm wordt doorgegeven. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{totaal-overzicht}
+\caption{Grafische omschrijving blackbox}
+\label{VGA}
+\end{figure}
 
 \section{RGB}
-Op de pinnen voor rood, groen en blauw, staat een analoog signaal tussen de 0 en de 0.7 volt. Hoe hoger de spanning, hoe feller de kleur. Door middel van verschillende spanningsniveaus kan de kleur per pixel worden bepaald. Wij maken echter alleen gebruik van zwart en wit. Daarom wordt er slechts een signaal naar de alle RGB pinnen verstuurd. Hierdoor ontstaat een witte pixel. Wanneer dit niet gebeurt, is de pixel zwart. 
+Op de pinnen voor rood, groen en blauw, staat een analoog signaal tussen de 0 en de 0.7 volt. Hoe hoger de spanning, hoe feller de kleur. Door middel van verschillende spanningsniveaus kan de kleur per pixel worden bepaald. Wij maken echter alleen gebruik van zwart en wit. Daarom wordt er slechts een signaal naar de alle RGB pinnen verstuurd. Hierdoor ontstaat een witte pixel. Wanneer dit niet gebeurt, is de pixel zwart. Op de FPGA wordt een digitaal signaal omgezet naar een analoog signaal tussen de 0 en 0.7 volt. Op de uiteindelijke chip zal er echter nog een schakeling nodig zijn om dit voor elkaar te krijgen. 
 
 \section{H-Sync}
 H-Sync vertelt de monitor wanneer een regel klaar. Als H-Sync laag is, betekent dit voor de monitor dat er een nieuwe regel pixels geschreven kan worden. Het is echter niet zo dat wanneer H-Sync weer hoog is, dat er gelijk pixels geschreven kunnen worden. Er zit nogal enige vertragingstijd ingebouwd. Deze tijd was bij CRT-monitoren nodig om elektronenstraal terug naar het begin te richten.
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{VGA-2}
+\includegraphics[width=9cm]{VGA_signal_format}
 \caption{}
 \label{VGA}
 \end{figure}
 
-Video Line is het RGB signaal. Zoals te zien is in figuur 8.2, zit er tijd voor en na de dip van de H-sync. Deze tijd heet de front-porch en de back-porch. 
+Video Line is het RGB signaal. Zoals te zien is in figuur 2, zit er tijd voor en na de dip van de H-sync. Deze tijd heet de front-porch en de back-porch. 
 
 \section{V-Sync}
-V-Sync is het signaal dat aan de monitor vertelt dat een volledig scherm is volgeschreven. Als V-Sync laag wordt, begint het scherm weer links bovenin met pixels vullen. Net als bij de H-Sync is er sprake van een Front-porch en een back-porch. Deze zijn bij de V-Sync een stuk langer dan bij de H-sync. Dit komt omdat de monitor de elektronenstraal van rechts onderin naar links bovenin moet sturen. Deze afstand is een stuk groter dan terug van rechts naar links. 
+V-Sync is het signaal dat aan de monitor vertelt dat een volledig scherm is volgeschreven. Als V-Sync laag wordt, begint het scherm weer links bovenin met pixels vullen. Net als bij de H-Sync is er sprake van een Front-porch en een Back-porch. Deze zijn bij de V-Sync een stuk langer dan bij de H-sync. Dit komt omdat de monitor de elektronenstraal van rechts onderin naar links bovenin moet sturen. Deze afstand is een stuk groter dan terug van rechts naar links. 
 
-\section{Implementatie}
-De VGA zet een serieel signaal om in een signaal dat voor een monitor te begrijpen is. Hiervoor zijn H-Sync, V-Sync en Von nodig. Von is eigenlijk hetzelfde signaal als H-sync. Het verschil is echter dat bij V-on de frontporch en de backporch zijn meegerekend. Von geeft aan de blackbox aan dat er een serieel signaal geschreven mag worden per 5 klokslagen.  Iedere vijf klokslagen wordt er een nieuwe pixel geschreven (eigenlijk zijn dat 20 pixels op het scherm). 
+\section{Timing}
+De klok van de chip is 6.177 Mhz. Op de FPGA wordt echter een klok gebruikt van 6 Mhz. Deze wordt ook aangehouden in de VHDL code. Om de counters in de VGA-controller niet te groot te maken, wordt de klok eerst gedeeld door vijf. Hierdoor is de nieuwe klok 1.2 Mhz. Wanneer er wordt gesproken van een kloksignaal, wordt er gesproken over de klok van 1.2 Mhz.
 
-H-Sync wordt bepaald door een kloksignaal te tellen. Vervolgens wordt op basis van H-Sync de V-Sync bepaald. Dit gebeurd door te tellen hoe vaak H-Sync naar nul gaat. 
+\subsection{H-Sync}
+De Front-porch van de H-sync is precies één klok slag. Na de Front-porch is de H-sync vijf klokslagen laag. Daarna is de H-sync 34 klokslagen hoog. Het videosignaal naar de monitor is echter iets later pas beschikbaar. Dit komt doordat er nog een Back-porch is van twee klokslagen. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{tabel-VGA-1}
+\caption{Timing voor de H-Sync}
+\label{VGA}
+\end{figure}
+
+\subsection{V-Sync}
+De V-sync werkt eigenlijk op een zelfde manier als de H-Sync. Hier wordt echter niet de klok geteld, maar het aantal regels. Omdat het aantal regels een stuk minder is dan het aantal klokslagen, wordt de counter voor de V-sync (vidcounter) een stuk kleiner. Iedere keer dat het signaal voor de H-sync weer opnieuw begint, krijgt de vidcounter een signaal. Dit signaal heet nline-out. De Front-porch voor de V-Sync is 11 regels. De V-sync dip is 2 regels en de Back-porch is 31 regels. Vervolgens zijn er 480 regels beschikbaar om een videosignaal uit te zenden.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{tabel-VGA-2}
+\caption{Timing voor de V-Sync}
+\label{VGA}
+\end{figure}
+
+Er wordt echter maar een keer per twintig regels een nieuw signaal op het videosignaal gezet. Hierdoor zijn er dus twintig maal zo weinig regels beschikbaar. De resolutie wordt hierdoor 32 bij 24 pixels.
+
+\section{VHDL}
+Om alle signalen op het juiste moment naar de monitor te sturen, is de VGA-controller in delen opgedeeld. 
+Deler
+Counter
+H-sync
+Vidcounter
+V-sync
+RGB
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{schema-zonder-SRAM}
+\caption{Schema van de componenten}
+\label{VGA}
+\end{figure}
+
+\subsection{Deler}
+Dit component deelt de klok door vijf. Hierdoor is de klok 1.2 Mhz. Wanneer er over een klok gesproken wordt binnen de VGA-controller, gaat het over de klok van 1.2 Mhz.
+
+\subsection{Counter}
+Dit component telt klokslagen. Bij een resolutie van 32 bij 24 pixels, is de pixelklok gelijk aan de gedeelde klok van 1.2 Mhz. Iedere 1/1.2e6 seconde (mits von en line-on hoog zijn) komt er een nieuwe pixel op het scherm. De counter telt tot en met 40 en gaat daarna weer terug naar nul.
+
+\subsection{H-Sync}
+Dit component is een FSM. De input is de counter-vector (6 bit). De outputs zijn: Von, N-line en H-sync. Von en N-line blijven binnen de chip en H-sync wordt op de VGA uitgang gezet.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{FSM-H-sync}
+\caption{FSM H-Sync}
+\label{VGA}
+\end{figure}
+
+\subsection{Vidcounter}
+Dit component werkt hetzelfde als de counter. Het enige verschil is dat nu niet de klok wordt geteld, maar het signaal N-line. N-line is 1 op het moment dat er een nieuwe regel begint. De vidcounter is de counter voor de V-sync. De counter telt tot en met 524 en gaat daarna weer terug naar nul.
+
+\subsection{V-Sync}
+Dit is een FSM. De input is vid-counter-vector (10 bit). De outputs zijn V-sync, line-on en Ssync. Ssync en line-on blijven binnen de chip en V-sync wordt op de VGA uitgang gezet.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{FSM-V-sync}
+\caption{FSM V-Sync}
+\label{VGA}
+\end{figure}
+
+\subsection{RGB}
+Dit component zorgt ervoor dat er pixels op het scherm ingekleurd kunnen worden. Op het moment dat Von en Line-on beide 1 zijn, zit video-in aan de uitgang RGB. Dit signaal wordt de op VGA poort gezet en daarmee rechtstreeks naar het scherm gestuurd. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{FSM-rgb}
+\caption{FSM RGB}
+\label{VGA}
+\end{figure}
+
+\section{Videosignaal}
+Het videosignaal komt uit het SRAM. Om het SRAM de juiste waarden naar de VGA-controller te laten sturen, zijn er een aantal dingen nodig.
+Adres
+Leescommando
+Sklok.
+De Sklok is vrij eenvoudig. Dit is namelijk de klok waarop het SRAM bits moet gaan sturen. Aangezien er binnen de VGA controller wordt gewerkt met een klok van 1.2 Mhz, hoeft dit signaal alleen te worden doorgestuurd. Het leescommando voor het SRAM is 0000 0011. Na het leescommando, moet het adres worden gegeven. Dit adres is 0000 0000 0000 0000. Kortom, er dient een signaal van 24 bit te worden verstuurd op de klok naar het SRAM. Na dit signaal, gaat het SRAM direct waarden gegeven. Het is dus belangrijk dat op de laatste regel de 24 bits worden verstuurd zodat er op de eerste regel direct kan worden uitgelezen. Hiervoor is het signaal Ssync. Dit komt uit de V-sync. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{schema-met-SRAM}
+\caption{Schema van de componenten}
+\label{VGA}
+\end{figure}
+
+\subsection{S-synccounter}
+Deze counter begint met tellen als Ssync hoog is. Vervolgens telt de counter tot 40. Daarna begint hij weer opnieuw.
+
+\subsection{S-Sync}
+Net als de H-Sync en V-Sync is dit een FSM met ongeveer dezelfde werking. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{FSM-Ssync}
+\caption{FSM Ssync}
+\label{VGA}
+\end{figure}
+
+\section{Conclusie}
+Om alle signalen op het juiste moment naar de monitor te sturen, is de VGA-controller in zes delen opgedeeld. Daarnaast zijn er nog twee componenten nodig om het SSRAM aan te sturen. Hierdoor komt het totaal op acht componenten uit. 
+Deler
+Counter
+H-sync
+Vidcounter
+V-sync
+RGB
+Ssync-counter
+Ssync
+
+\section{Resultaten}
+Op de foto is een testscherm te zien. Hierbij zijn enkele pixels te zien in verschillende kleuren.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{resultaat}
+\caption{Testscherm vanaf de FPGA}
+\label{VGA}
+\end{figure}
 
 \chapter{SPI}
 Serial Peripheral Interface in het kort ook SPI genoemd is een de facto-standaard die ooit door Motorola bedacht is voor het communiceren met randapparatuur, zoals embedded systems, sensors en memory cards. Bij SPI heb je de master en de slave deze communiceren met elkaar via twee seriële datalijnen daarnaast is er nog een kloklijn die aangeeft wanneer er data overgedragen wordt. De kloklijn wordt aangestuurd door de master, dit houdt in dat de slave niet kan pauzeren en altijd data aan de master aan moet bieden. De standaard definieert enkel hoe de data van de master naar de slave en vice versa over wordt gedragen, niet hoe de data verwerkt wordt, dit heeft als gevolgd dat randapparatuur zelf nog moet definiëren hoe de communicatie verloopt.
