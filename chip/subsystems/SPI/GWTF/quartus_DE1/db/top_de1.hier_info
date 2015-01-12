@@ -1,25 +1,24 @@
 |top_de1
-busy_led <= spi:inst.busy
-clock_50mhz => gen6mhz:inst1.clk50mhz
-send_button => inst9.IN0
-send_button => inst9.IN1
-reset_button => inst8.IN0
-reset_button => inst8.IN1
-write_button => inst7.IN0
-write_button => inst7.IN1
-leds[0] <= spi:inst.read_out[0]
-leds[1] <= spi:inst.read_out[1]
-leds[2] <= spi:inst.read_out[2]
-leds[3] <= spi:inst.read_out[3]
-leds[4] <= spi:inst.read_out[4]
-leds[5] <= spi:inst.read_out[5]
-leds[6] <= spi:inst.read_out[6]
-leds[7] <= spi:inst.read_out[7]
+LEDG[7] <= spi:inst.read_out[7]
+CLOCK_50 => gen6mhz:inst1.clk50mhz
+KEY[1] => inst9.IN0
+KEY[1] => inst9.IN1
+KEY[2] => inst7.IN0
+KEY[2] => inst7.IN1
+SW[9] => spi:inst.reset
+LEDG[6] <= spi:inst.read_out[6]
+LEDG[5] <= spi:inst.read_out[5]
+LEDG[4] <= spi:inst.read_out[4]
+LEDG[3] <= spi:inst.read_out[3]
+LEDG[2] <= spi:inst.read_out[2]
+LEDG[1] <= spi:inst.read_out[1]
+LEDG[0] <= spi:inst.read_out[0]
+LEDG[9] <= spi:inst.busy
 
 
 |top_de1|spi:inst
-clk => control:ctrl1.clk
 clk => shift_reg:shft1.clk
+clk => control:ctrl1.clk
 send => control:ctrl1.send
 reset => shift_reg:shft1.reset
 reset => shift_in.ACLR
