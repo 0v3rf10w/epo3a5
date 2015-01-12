@@ -54,6 +54,24 @@
 \contentsline {section}{\numberline {11.2}SD commando's \& responses}{20}{section.11.2}
 \contentsline {section}{\numberline {11.3}Functionele omschrijving}{20}{section.11.3}
 \contentsline {section}{\numberline {11.4}Inputs en outputs}{21}{section.11.4}
-\contentsline {chapter}{\numberline {12}Conclusie}{22}{chapter.12}
+\contentsline {chapter}{\numberline {12}Conclusie en Aanbevelingen}{22}{chapter.12}
+\contentsline {section}{\numberline {12.1}Conclusie}{22}{section.12.1}
+\contentsline {section}{\numberline {12.2}Aanbevelingen}{22}{section.12.2}
 \contentsline {chapter}{\numberline {13}Discussie}{23}{chapter.13}
+\contentsline {section}{\numberline {13.1}Reflectie op het eindontwerp}{23}{section.13.1}
+\contentsline {section}{\numberline {13.2}Reflectie op het groepsproces}{23}{section.13.2}
+\contentsline {chapter}{\numberline {A}Plan van aanpak}{24}{appendix.A}
+\contentsline {section}{\numberline {A.1}Achtergronden}{24}{section.A.1}
+\contentsline {section}{\numberline {A.2}Projectresultaat}{24}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Doelstellingen van het project}{24}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Eindresultaat}{24}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}Projectactiviteiten}{25}{section.A.3}
+\contentsline {section}{\numberline {A.4}Projectgrenzen}{25}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Tussenresultaten}{25}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}Kwaliteitsbewaking}{26}{subsection.A.4.2}
+\contentsline {section}{\numberline {A.5}Projectorganisatie}{26}{section.A.5}
+\contentsline {subsection}{\numberline {A.5.1}Planning}{27}{subsection.A.5.1}
+\contentsline {subsection}{\numberline {A.5.2}Risicoanalyse}{27}{subsection.A.5.2}
+\contentsline {section}{\numberline {A.6}Bijlage}{28}{section.A.6}
+\contentsline {chapter}{\numberline {B}Bijlage}{29}{appendix.B}
 \contentsfinish 

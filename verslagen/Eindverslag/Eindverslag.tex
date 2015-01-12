@@ -23,12 +23,18 @@
 \maketitle
 
 \chapter{Samenvatting}
+Dit ontwerprapport is geschreven naar aanleiding van het project EPO-3 van het tweede jaar van de bacheloropleiding Electrical Engineering. In dit project staat het beschrijven van hardware centraal, met als doel het ontwerpen van een chip. In de keuze van een ontwerp zijn de studenten door de TU geheel vrij gelaten, er moest natuurlijk wel rekening worden gehouden met de grootte van de chip en het tijdsbestek waarin het ontwerp gerealiseerd kon worden. Er is hier door de EPO-3 groep A5 gekozen voor het ontwerpen van een spelcomputer, hierop kunnen meerdere spellen gespeeld worden. Om binnen het tijdsbestek te blijven is gekozen voor 'Pong', meerdere spellen kunnen eventueel achteraf simpel toegevoegd worden.\\
+
+Van het uiteindelijke ontwerp wordt in de laatste periode van dit jaar een chip gemaakt, tijdens het ontwerpproces is er daarom met een FPGA development board gewerkt. Deze is geleverd door de TU Delft. Het grootste deel van het systeem bevindt zich op de chip zelf, toch zijn er nog drie losse componenten gebruikt om dit ontwerp te realiseren. Het idee achter de spelcomputer is dat hij meerdere spellen kan spelen, deze moeten extern aangeleverd worden. Er is hier gekozen voor een SD-kaart uitlezing met SPI, het spel is in assembly geschreven. Ook de besturing moest extern geregeld worden, met ultrasone sensoren bleek dit systeem het best te controleren. Als back-up plan is er hiernaast voor gekozen om ook enkele knoppen te implementeren. Om het spel te kunnen spelen is er tot slot ook een beeldscherm nodig.\\
+
+Het belangrijkste deel van dit ontwerp bevindt zich op de chip.
+
 
 \tableofcontents
 \mainmatter
 
 \chapter{Inleiding}
-EPO-3 is het derde project uit de propedeuse van de bachelor opleiding Electrical Engineeringaan de TU delft. Het doel van dit project is het ontwerpen van een chip, deze chip kan bijvoorbeeld een spelletje bevatten of als besturingsdoel dienen. Als project groep A5 is er gekozen voor het bouwen van een spelcomputer, hierop kunnen meerdere games gespeeld worden. De verschillende games moeten van een SD-kaart worden geladen voordat ze gespeeld kunnen worden. Het eerste spel dat ontworpen wordt is Pong, mocht er aan het eind van dit project nog tijd overblijven zullen er meerdere spellen volgen. De besturing loopt via ultrasone sensoren die de locatie van iemands hand bepalen. In dit ontwerp rapport zullen alle onderdelen van ons systeem aanbod komen.
+EPO-3 is het derde project uit de propedeuse van de bachelor opleiding Electrical Engineering aan de TU delft. Het doel van dit project is het ontwerpen van een chip, deze chip kan bijvoorbeeld een spelletje bevatten of als besturingsdoel dienen. Als project groep A5 is er gekozen voor het bouwen van een spelcomputer, hierop kunnen meerdere games gespeeld worden. De verschillende games moeten van een SD-kaart worden geladen voordat ze gespeeld kunnen worden. Het eerste spel dat ontworpen wordt is Pong, mocht er aan het eind van dit project nog tijd overblijven zullen er meerdere spellen volgen. De besturing loopt via ultrasone sensoren die de locatie van iemands hand bepalen. Het ontwerpen van een simpele spelcomputer sluit nauw aan met de bachelor opleiding Electrical Engineering. De toekomst van de elektrotechniek ligt dan ook in dit werkgebied. Chips zijn in de loop der jaren de basis gaan vormen voor bijna elk systeem. In dit ontwerprapport zal eerst het doel van dit project verder toe worden gelicht. Vervolgens zal er na het geven van het systeemoverzicht, wordt ieder individueel onderdeel beschreven. Testresultaten en codes zullen voornamelijk terug te vinden zijn in de appendices, tenzij anders aangegeven. 
 
 \chapter{Probleemstelling}
 \section{Projectopgave: 'Ontwerp een chip'}
@@ -49,12 +55,20 @@ Aan het eindresultaat zitten een aantal randvoorwaarden verbonden. De externe on
 Het plan van aanpak is een beschrijving van de aanpak van dit project, hierin staan onder andere de doelstellingen en wegen daar naar toe beschreven. Het plan van aanpak is te vinden in appendix A.
 
 \chapter{Systeemoverzicht}
-De spelcomputer ontworpen en gebouwd door EPO-3 groep A5 bestaat uit veel verschillende losse onderdelen. Om te voorkomen dat we het overzicht kwijt raken, wordt er in dit hoofdstuk het totale systeemoverzicht beschreven. Er zal dus vooral worden gekeken naar de toplevel beschrijving, hierin worden alle onderdelen samengevoegd en gekoppeld tot een geheel.
+De spelcomputer ontworpen en gebouwd door EPO-3 groep A5 bestaat uit veel verschillende losse onderdelen. Om te voorkomen dat we het overzicht kwijt raken, wordt er in dit hoofdstuk het totale systeem beschreven. Er zal dus vooral worden gekeken naar de toplevel beschrijving, hierin worden alle onderdelen samengevoegd en gekoppeld tot een geheel. Ook wordt er in het kort even ingegaan op de externe componenten die ons systeem bevat.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{hele-systeem}
+\caption{Totale systeem weergave}
+\label{Systeemoverzicht}
+\end{figure}
 
 \section{Toplevel}
-De toplevel beschrijving bestaat uit een entity en een behaviour. In de code van de entity staan alle poorten beschreven die de chip verbinden met alle losse componenten 
+De toplevel beschrijving bestaat uit een entity en een behaviour. In de code van de entity staan alle poorten beschreven die de chip verbinden met de externe componenten die het systeem bevat. In de behaviour worden alle interne componenten aan elkaar verbonden. In figuur 4.1 staat schematisch weergegeven op welke manier dit gebeurd. De losse onderdelen van dit systeem worden individueel beschreven in dit verslag.
 
 \section{Externe componenten}
+Het systeem dat ontworpen is door EPO-3 groep A5 bevat kort gezegd drie aparte externe componenten, twee daarvan zijn inputs en een is een output. De inputs van dit systeem zijn de besturing en de opslag van het spel. Dit laatste gebeurd door middel van SD uitlezing met SPI. De output van dit systeem wordt aangestuurd door de VGA en kan een beeld produceren op een willekeurig beeldscherm.
 
 \chapter{Besturing}
 Ons systeem wordt gespeeld doormiddel van 2 soorten besturing. De Ultrasone en de Button. De speler kan de modus selecteren doormiddel van een switch. Deze data van de buttons en de ultrasone worden verwerkt door een Arduino. Er is gekozen voor deze optie omdat de Arduino via SPI werkt. Hierdoor kan de SPI code getest worden en kunnen we het aantal pinnen dat gebruikt wordt laag houden. 
@@ -436,9 +450,154 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 \item SS: het slave select signaal, dit signaal wordt gebruikt om de SD-kaart in SPI mode te krijgen en om aan te geven dat de SD-kaart geselecteerd is.
 \end{itemize}
 
-\chapter{Conclusie}
+\chapter{Conclusie en Aanbevelingen}
+\section{Conclusie}
+Het EPO-3 project van de bachelor opleiding Electrical Engineering begon in tegen stelling tot eerder projecten vrij soepel. Als groep waren we het snel met elkaar eens, het zou een spelcomputer worden met een ultrasone besturing. Gaande weg liepen we tegen steeds meer dingen aan. 
+
+\section{Aanbevelingen}
+
+
 
 \chapter{Discussie}
+\section{Reflectie op het eindontwerp}
+
+\section{Reflectie op het groepsproces}
+
+
+xxxxxx
+
 Over het eindontwerp is nog geen discussie mogelijk. Voor het schrijven van dit tussentijdse ontwerprapport zijn er nog wel een aantal dingen naar voren gekomen. Voorop staat het feit dat alles minder snel en soepel verloopt als dat we gehoopt hadden. Het testen van de hardware op het FPGA bord bracht veel oponthoud met zich mee. Ook bleken de stappen die tot het eindproduct moesten lijden niet compleet bedacht, tijdens het ontwerpproces kwamen er extra stappen naar voren die veel tijd hebben gekost. Ondanks dat de einddatum steeds dichterbij komt denken we dat alles binnen de tijd realiseerbaar is.
+
+\appendix
+\chapter{Plan van aanpak}
+\section{Achtergronden}
+Door onze aanmelding bij de studie Electrical Engineering aan de TU-Delft hebben wij van deze organisatie opdracht gekregen om een eigen chip te ontwerpen, verder is alles geheel voor eigen keuze. De opdracht zal door de opdrachtgevers gekozen naam 'Ontwerp een chip' benoemd worden. Dit project is aangenomen door alle leden van de projectgroep A5, tevens zal dit project worden begeleid door Dr. R. Ishihara. Dr. R. Ishihara zal hiernaast fungeren als onze tutor. Deze opdracht zal binnen de Technische Universiteit Delft worden verwerkt. Dit project speelt in op de in college naar voren gekomen onderdelen, waaronder 'Programmeren in C' en 'Digitale systemen'. Het dient als doel onze kennis te verdiepen en te verbreden in de elektrotechniek. De uiteindelijke stakeholders zijn behalve de opdrachtgevers, daardoor ook de projectnemers. Deze opdracht is een onderdeel en vereiste voor het behalen van de Bachelor opleiding 'Electrical Engineering'.
+
+\section{Projectresultaat}
+Tijdens het EPO-3 project 'Ontwerp een chip' dient een chip ontworpen te worden, dit kan bijvoorbeeld het implementeren van een spelletje of een Infrarood-Besturing op een chip zijn. Deze opdracht mag door de projectgroep gekozen worden. Bij het ontwerp van de chip dient gebruik gemaakt te worden van Sea-of-gates technologie.
+
+\subsection{Doelstellingen van het project}
+Allereerst is het doel van het project, het succesvol uitvoeren van de opdracht gekregen van de opdrachtgever. Belangrijk hierbij is het ontwerpen aan de hand van globale productspecificaties met randvoorwaarden. Daarnaast, zeker niet onbelangrijk, zijn de vaardigheden die universiteit ons mee wilt geven. Deze vaardigheden komen gaandeweg het project steeds meer naar voren.  Hierbij speelt projectmatig werken in een groep een grote rol. Ook worden de projectnemers middels dit project getraind in vergaderen, overleggen en plannen. Als laatst worden verschillende technische vaardigheden in de praktijk getraind waaronder programmeren, simuleren en het bouwen van verschillende schakelingen. Er moet tijdens dit EPO-3 project strikt worden gelet op het combineren en testen van de verschillende ontwerpen, hierbij kan worden gebruik gemaakt van moderne computerhulpmiddelen. De projectleden zullen gaande weg dit project hierin gesteund en getest worden.  
+
+\subsection{Eindresultaat}
+Als eindresultaat zal er een chip moeten worden ontworpen, daarnaast moet er een verslag worden geschreven.
+De chip moet aan een aantal eisen voldoen, namelijk:
+\begin{enumerate}
+\item Op de chip moet een spelcomputer gebouwd worden, deze spelcomputer dient spelletjes van een SD-kaart te kunnen weergeven op een beeldscherm.
+\item Ultrasone sensoren moeten de besturing vormen voor de spelcomputer.
+\item Er moet minimaal een spel ontworpen worden (Pong). Mocht er tijd over zijn dan kunnen er meer spelletjes ontworpen worden.
+\item Het beeld dient te worden weergegeven met VGA op een beeldscherm.
+\end{enumerate}
+Ook het verslag moet aan een aantal eisen voldoen:
+\begin{enumerate}
+\item Het verslag bestaat uit twee delen, het technische verslag en het procesverslag.
+\item Het technisch verslag documenteert de ontwerpkeuzes en de prestaties van de chip.
+\item De weekverslagen/notulen vormen een basis voor het procesverslag.
+\item Het verslag dient te worden geschreven volgens het format van de projecthandleiding.
+\end{enumerate}
+
+\section{Projectactiviteiten}
+Het project kan worden opgedeeld in het uitvoeren van de volgende taken:
+\begin{enumerate}
+\item Opstellen plan van aanpak
+\begin{itemize}
+\item verzamelen en bestuderen informatie
+\item maken van concept plan van aanpak
+\item bespreken plan van aanpak met opdrachtgever
+\end{itemize}
+\item Ontwerpen en bouwen besturing
+\item Ontwerpen microprocessor
+\item Ontwerpen en bouwen geheugenelement (SD)
+\item Ontwerpen VGA + SRAM module
+\item Schrijven Pong (spelletje)
+\end{enumerate}
+
+\section{Projectgrenzen}
+In dit project is veel vrijheid gegeven door de opdrachtgever. Dat neemt niet weg dat er aan een aantal eisen moet worden voldaan, voornamelijk de beperkingen die de chip met zich mee brengt. Deze eisen staan beschreven in de projecthandleiding, en zijn hieronder even kort samengevat.
+\begin{enumerate}
+\item Het ontwerp dient klaar te zijn binnen het 2e kwartaal.
+\item De schakeling dient te werken op een klokfrequentie van 6.144 MHz.
+\item Elke projectgroep heeft 0.4 $cm^2$ ruimte op de chip, dit komt overeen met 40.000 transistor paren.
+\item Per groep zijn er 32 aansluitpinnen beschikbaar.
+\item Voor de FSM's mogen alleen die van het type Moore gebruikt worden, daarnaast moet er altijd een reset aanwezig zijn.
+\item Het streven is om zo weinig mogelijk componenten extern te gebruiken.
+\end{enumerate}
+
+\subsection{Tussenresultaten}
+De tussenresultaten van dit project worden uitgebreid beschreven in het gehele tussentijdse ontwerprapport en dus niet verder behandeld in het plan van aanpak.
+
+\subsection{Kwaliteitsbewaking}
+\textbf{Eindproduct}\\
+Het eindproduct van het derde project van de bachelor Electrical Engineering moet een goed werkende chip zijn die aan enkelen eisen voldoet, deze eisen zijn door de projectgroep zelf opgesteld:\
+\begin{itemize}
+\item Op de chip moet een spelcomputer gebouwd worden, deze spelcomputer dient spelletjes van een SD-kaart te kunnen weergeven op een beeldscherm.
+\item Ultrasone sensoren moeten de besturing vormen voor de spelcomputer.
+\item Er moet minimaal een spel ontworpen worden (Pong). Mocht er tijd over zijn dan kunnen er meer spelletjes ontworpen worden.
+\item Het beeld dient te worden weergegeven met VGA op een beeldscherm.
+\end{itemize}
+\textbf{Controles}\\
+Tussendoor zullen er een aantal controles worden uitgevoerd om de kwaliteit te blijven bewaken, namelijk:
+\begin{itemize}
+\item Is het haalbaar om spelletjes extern te laden?
+\item Werkt de uitlees module van de SD-kaart?
+\item Is de ultrasone sensor besturing bruikbaar voor het eindresultaat?
+\item Lukt het om met de VGA een beeld op een scherm te printen? 
+\end{itemize}
+Deze punten zullen voornamelijk worden gecontroleerd door de groep zelf. Hierbij is er duidelijk een leider aangewezen die het overzicht behoud en zo de voortgang van het project controleert. Daarnaast vindt er nog een docentcontrole gaande weg tijdens het project plaats om de kwaliteit te bewaken, deze kan worden gedaan door de hoofddocent of door een van zijn assistenten.
+
+\section{Projectorganisatie}
+\textbf{Organisatie}\\
+De projectgroep EPO-3 A5 bestaat uit acht leden. Om het overzicht te behouden is er een voorzitter benoemd. De voorzitter is Ern\'e Bronkhorst.
+Verder bestaat de projectgroep uit:
+\begin{itemize}
+\item Marc Zwalua (Notulist)
+\item Niels de Winter
+\item Wietse Bouwmeester
+\item Bauke Meekes
+\item Job Tijhuis
+\item Hans Okkerman
+\item Jordy van der Horst
+\end{itemize}
+\textbf{Onderlinge afspraken:}
+\begin{itemize}
+\item Om de voortgang te bewaken zal er wekelijks een evaluatie plaatsvinden waarin dit wordt bekeken. Hierin wordt zo nodig de planning voor de komende weken bijgesteld.
+\item Als groepsleden horen wij altijd op tijd en verplicht aanwezig te zijn bij elke geplande bijeenkomst. Als dit onverwachts niet mogelijk is, zal hier zo snel mogelijk melding van gemaakt moeten worden. 
+\item Als er onderlinge geschillen zijn, dan worden deze besproken met de hoofddocent. Dit zorgt ervoor dat de voortgang niet in gevaar komt.
+\item Alle groepsleden moeten garant staan voor een gelijke bijdrage aan het project.
+\end{itemize}
+\textbf{Verantwoording}\\
+Er zal constant tijdens de project middagen mondeling gerapporteerd worden over de voortgang van het project. Schriftelijk wordt er halverwege de periode een mid-term rapport geschreven, hierin wordt de voortgang opgenomen. De verantwoording zal bij Dr. R. Ishihara worden gedaan. 
+
+\subsection{Planning}
+Een duidelijk schema van onze planning is toegevoegd als bijlage.
+
+\subsection{Risicoanalyse}
+Hier volgt een overzicht van de eventuele risico's die we tijdens EPO-3 tegen zouden kunnen komen. Door middel van deze analyse worden deze risico's zoveel mogelijk vermeden.
+\textbf{Externe risico's:}
+\begin{itemize}
+\item Onduidelijke informatie voorziening.
+\item Onvoldoende feedback vanuit de docenten
+\end{itemize}
+\textbf{Interne risico's:}
+\begin{itemize}
+\item Verliezen van meetresultaten.
+\item Botsing tussen de groepsleden.
+\item Het eventueel ontbreken van kennis of inzet onder de groepsleden.
+\item Het project niet af kunnen ronden door een tekort aan tijd.
+\end{itemize}
+Een aantal interne risico's kunnen worden vermeden door het aanstellen van de voorzitter, deze zal de voortgang bewaken en alle resultaten netjes beheren. Voor de externe risico's zal er vooral zelf moeten worden gezocht naar oplossingen in combinatie met de docenten.
+
+\newpage
+\section{Bijlage}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15.5cm,  angle=-90]{Planning}
+    \caption{Planning A5} 
+\end{figure}
+
+
+\chapter{Bijlage}
+
+
 
 \end{document}
