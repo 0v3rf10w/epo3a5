@@ -75,10 +75,21 @@ De chip detecteerd op de opgaande flank van draad 1(klok) de waarde van draad 2(
 
 \section{Simulatie}
 Na de ontwikkeling via Go-with-the-flow is het systeem getest. Hierbij is gebruik gemaakt van een dubbele 6 als positie. Het resultaat ziet u in: 
-%image
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{Screenshot.png}
+\caption{Twee maal de positie 6 gemeten met Modelsim}
+\label{CPU}
+\end{figure}
 
-Vervolgens is het systeem gedownload op de FPGA, hierop is de arduino aangesloten. Het signaal van de arduino was %check image
-Deze waarde kwam precies zoals verwacht op de ledjes op de FPGA. Echter na ongeveer 5 seconde begon de waarde te shiften. Dit kwam door dat beide systemen geen gecombineerde aarde had. Dit hebben wij gefixt door een draad tussen beide aarde te zetten.
+Vervolgens is het systeem gedownload op de FPGA, hierop is de arduino aangesloten. Het signaal van de arduino was:
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{TEK0001.JPG}
+\caption{De positie 13(start) en 6}
+\label{CPU}
+\end{figure}
+Deze waarde kwam precies zoals verwacht op de ledjes op de FPGA. Echter na ongeveer 5 seconde begon de waarde te shiften. Dit kwam door dat beide systemen geen gecombineerde aarde had. Dit is opgelost door een draad tussen beide aarde te zetten.
 
 
 \newpage

@@ -19,24 +19,25 @@
 \BOOKMARK [1][-]{section.6.1}{Functionele beschrijving}{chapter.6}% 19
 \BOOKMARK [1][-]{section.6.2}{Inputs en outputs}{chapter.6}% 20
 \BOOKMARK [1][-]{section.6.3}{Implementatie}{chapter.6}% 21
-\BOOKMARK [0][-]{chapter.7}{CPU}{}% 22
-\BOOKMARK [1][-]{section.7.1}{Functionele beschrijving}{chapter.7}% 23
-\BOOKMARK [1][-]{section.7.2}{Inputs en outputs}{chapter.7}% 24
-\BOOKMARK [1][-]{section.7.3}{Implementatie}{chapter.7}% 25
-\BOOKMARK [0][-]{chapter.8}{GPU}{}% 26
-\BOOKMARK [0][-]{chapter.9}{VGA}{}% 27
-\BOOKMARK [1][-]{section.9.1}{RGB}{chapter.9}% 28
-\BOOKMARK [1][-]{section.9.2}{H-Sync}{chapter.9}% 29
-\BOOKMARK [1][-]{section.9.3}{V-Sync}{chapter.9}% 30
-\BOOKMARK [1][-]{section.9.4}{Implementatie}{chapter.9}% 31
-\BOOKMARK [0][-]{chapter.10}{SPI}{}% 32
-\BOOKMARK [1][-]{section.10.1}{Functionele beschrijving}{chapter.10}% 33
-\BOOKMARK [1][-]{section.10.2}{Inputs en outputs}{chapter.10}% 34
-\BOOKMARK [1][-]{section.10.3}{Implementatie}{chapter.10}% 35
-\BOOKMARK [0][-]{chapter.11}{SD-kaart}{}% 36
-\BOOKMARK [1][-]{section.11.1}{SD communicatie}{chapter.11}% 37
-\BOOKMARK [1][-]{section.11.2}{SD commando's \046 responses}{chapter.11}% 38
-\BOOKMARK [1][-]{section.11.3}{Functionele omschrijving}{chapter.11}% 39
-\BOOKMARK [1][-]{section.11.4}{Inputs en outputs}{chapter.11}% 40
-\BOOKMARK [0][-]{chapter.12}{Conclusie}{}% 41
-\BOOKMARK [0][-]{chapter.13}{Discussie}{}% 42
+\BOOKMARK [1][-]{section.6.4}{Simulatie}{chapter.6}% 22
+\BOOKMARK [0][-]{chapter.7}{CPU}{}% 23
+\BOOKMARK [1][-]{section.7.1}{Functionele beschrijving}{chapter.7}% 24
+\BOOKMARK [1][-]{section.7.2}{Inputs en outputs}{chapter.7}% 25
+\BOOKMARK [1][-]{section.7.3}{Implementatie}{chapter.7}% 26
+\BOOKMARK [0][-]{chapter.8}{GPU}{}% 27
+\BOOKMARK [0][-]{chapter.9}{VGA}{}% 28
+\BOOKMARK [1][-]{section.9.1}{RGB}{chapter.9}% 29
+\BOOKMARK [1][-]{section.9.2}{H-Sync}{chapter.9}% 30
+\BOOKMARK [1][-]{section.9.3}{V-Sync}{chapter.9}% 31
+\BOOKMARK [1][-]{section.9.4}{Implementatie}{chapter.9}% 32
+\BOOKMARK [0][-]{chapter.10}{SPI}{}% 33
+\BOOKMARK [1][-]{section.10.1}{Functionele beschrijving}{chapter.10}% 34
+\BOOKMARK [1][-]{section.10.2}{Inputs en outputs}{chapter.10}% 35
+\BOOKMARK [1][-]{section.10.3}{Implementatie}{chapter.10}% 36
+\BOOKMARK [0][-]{chapter.11}{SD-kaart}{}% 37
+\BOOKMARK [1][-]{section.11.1}{SD communicatie}{chapter.11}% 38
+\BOOKMARK [1][-]{section.11.2}{SD commando's \046 responses}{chapter.11}% 39
+\BOOKMARK [1][-]{section.11.3}{Functionele omschrijving}{chapter.11}% 40
+\BOOKMARK [1][-]{section.11.4}{Inputs en outputs}{chapter.11}% 41
+\BOOKMARK [0][-]{chapter.12}{Conclusie}{}% 42
+\BOOKMARK [0][-]{chapter.13}{Discussie}{}% 43

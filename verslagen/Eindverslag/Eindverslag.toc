@@ -20,6 +20,7 @@
 \contentsline {section}{\numberline {6.1}Functionele beschrijving}{6}{section.6.1}
 \contentsline {section}{\numberline {6.2}Inputs en outputs}{6}{section.6.2}
 \contentsline {section}{\numberline {6.3}Implementatie}{7}{section.6.3}
+\contentsline {section}{\numberline {6.4}Simulatie}{7}{section.6.4}
 \contentsline {chapter}{\numberline {7}CPU}{8}{chapter.7}
 \contentsline {section}{\numberline {7.1}Functionele beschrijving}{8}{section.7.1}
 \contentsline {section}{\numberline {7.2}Inputs en outputs}{8}{section.7.2}
