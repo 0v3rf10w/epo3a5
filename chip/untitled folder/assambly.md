@@ -14,6 +14,11 @@ ms_sate     clr     c
             jp      ms_state
 add_state   clr     c
             ld      input
+            xor     00101111
+            add     00000001
+            bc      add_state
+            clr     c
+            ld      input
             and     00001111
             st      R2
             ld      input
@@ -44,6 +49,11 @@ calc_state  ld      R2
             st      R1
             jp      ms_state
 sub_state   clr     c
+            ld      input
+            xor     00011111
+            add     00000001
+            bc      sub_state
+            clr     c
             ld      input
             and     00001111
             st      R2
@@ -76,7 +86,13 @@ calc_state1 ld      R3
             add     R2
             st      R1
             clr     c
-mul_state   ld      input
+            jmp     ms_state
+mul_state   clr     c
+            ld      input
+            xor     00001111
+            add     00000001
+            bc      mul_state
+            ld      input
             and     00001111
             st      R2
             ld      input
@@ -144,6 +160,18 @@ calc_mul    ld      R4
             add     R9
             st      R1
             jmp     ms_state
+ref1        ld      00000000
+            st      R4
+            jmp     bit_42
+ref2        ld      00000000
+            st      R5
+            jmp     bit_43
+ref3        ld      00000000
+            st      R6
+            jmp     bit_44
+ref4        ld      00000000
+            st      R7
+            jmp     calc_mul
 
 
             
