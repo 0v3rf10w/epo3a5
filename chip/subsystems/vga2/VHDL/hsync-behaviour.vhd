@@ -1,0 +1,62 @@
+library IEEE;
+use IEEE.std_logic_1164.ALL;
+
+entity hsync is
+port(
+hsync_in: in std_logic_vector(5 downto 0); --Komt van de counter
+deler_out_in : in std_logic; --vertraagde klok van de deler
+reset : in std_logic; --algemene reset
+line_on_in : in std_logic; --er mag pixel geschreven worden van vidcounter
+hsync_out : out std_logic; --hsync naar buiten
+nline_out : out std_logic; --nline naar vidcounter om regels te tellen
+von : out std_logic --signaal naar rgb om aan te geven dat er vid geschreven mag worden
+);
+end hsync;
+architecture behaviour of hsync is
+begin
+process(hsync_in, deler_out_in, reset)
+begin
+if(rising_edge(deler_out_in)) then
+
+if(reset = '1') then
+	hsync_out <='0';
+	nline_out <='0';
+	von <='0';
+else
+
+if (hsync_in = "000000") then
+	hsync_out <= '1';
+	nline_out <= '1';
+elsif (hsync_in = "000001") then
+	hsync_out <= '0';
+	nline_out <= '0';
+elsif (hsync_in = "000110") then
+	hsync_out <= '1';
+elsif (hsync_in = "001000") then
+	if (line_on_in = '1') then --Kijken of je ook mag schrijven van de Vsync
+	von <= '1';
+	else
+	von <= '0';
+	end if;
+elsif (hsync_in = "101000") then
+	if (line_on_in = '1') then -- Ifje voor synthese
+	von <= '0';
+	else
+	von <= '0';
+	end if;
+end if;
+end if;
+end if;
+
+end process;
+end behaviour;
+
+
+
+
+
+
+
+
+
+

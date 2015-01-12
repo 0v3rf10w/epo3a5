@@ -1,0 +1,401 @@
+Library vendor : Model Technology
+Maximum unnamed designs : 3
+OPTIMIZED DESIGN _opt
+    Version string: :@3E3>Lo:l^deJ6I@:0n:2
+    Top-level model: work vga_tb_behaviour_cfg 1
+    Compile options: -quiet -auto_acc_if_foreign -work work
+    Short name: @_opt
+    Opcode format: 10.1b; VCOM/VLOG SE Object version 51
+    Source directory: vga2
+ENTITY counter
+    Source modified time: Thu Dec 11 10:12:40 2014
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /vga2
+    HDL source file: VHDL/counter-behaviour.vhd
+    Source file: VHDL/counter-behaviour.vhd
+    Start location: VHDL/counter-behaviour.vhd:5
+    Version string: 58:hJz_BFB0DWAl>nf=H^1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work counter 58:hJz_BFB0DWAl>nf=H^1
+    Start location: VHDL/counter-behaviour.vhd:13
+    Version string: 4nzeW5=?fz^fiI<`gZn400
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /vga2
+    Source file: VHDL/counter-behaviour.vhd
+    Source modified time: Thu Dec 11 10:12:40 2014
+    HDL source file: VHDL/counter-behaviour.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION counter_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: counter
+    Depends on: A work counter behavioural 4nzeW5=?fz^fiI<`gZn400
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work counter 58:hJz_BFB0DWAl>nf=H^1
+    Source modified time: Mon Dec  8 10:21:15 2014
+    Source directory: /vga2
+    HDL source file: VHDL/counter_behavioural_cfg.vhd
+    Source file: VHDL/counter_behavioural_cfg.vhd
+    Start location: VHDL/counter_behavioural_cfg.vhd:1
+    Version string: dcfTSNJ>?gS:Dld38W3BH3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY deler
+    Source modified time: Thu Dec 11 11:22:50 2014
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /vga2
+    HDL source file: VHDL/deler-behaviour.vhd
+    Source file: VHDL/deler-behaviour.vhd
+    Start location: VHDL/deler-behaviour.vhd:5
+    Version string: ]eWo7mlgR0kmHOmGaHVe;2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behaviour
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work deler ]eWo7mlgR0kmHOmGaHVe;2
+    Start location: VHDL/deler-behaviour.vhd:11
+    Version string: icC8z_<NMHb:YZ>?T4d`22
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /vga2
+    Source file: VHDL/deler-behaviour.vhd
+    Source modified time: Thu Dec 11 11:22:50 2014
+    HDL source file: VHDL/deler-behaviour.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION deler_behaviour_cfg
+    Configuration for architecture: behaviour
+    Configuration for entity: deler
+    Depends on: A work deler behaviour icC8z_<NMHb:YZ>?T4d`22
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work deler ]eWo7mlgR0kmHOmGaHVe;2
+    Source modified time: Mon Dec  8 10:20:18 2014
+    Source directory: /vga2
+    HDL source file: VHDL/deler_behaviour_cfg.vhd
+    Source file: VHDL/deler_behaviour_cfg.vhd
+    Start location: VHDL/deler_behaviour_cfg.vhd:1
+    Version string: ggLScKKSEe9hH2ZbUY[2o0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY hsync
+    Source modified time: Thu Dec 11 10:11:29 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /vga2
+    HDL source file: VHDL/hsync-behaviour.vhd
+    Source file: VHDL/hsync-behaviour.vhd
+    Start location: VHDL/hsync-behaviour.vhd:4
+    Version string: I2E@HJ>^5UczOh^R8U;iQ0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behaviour
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work hsync I2E@HJ>^5UczOh^R8U;iQ0
+    Start location: VHDL/hsync-behaviour.vhd:15
+    Version string: `L4LZS0jY2_LHi_zYk?BJ3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /vga2
+    Source file: VHDL/hsync-behaviour.vhd
+    Source modified time: Thu Dec 11 10:11:29 2014
+    HDL source file: VHDL/hsync-behaviour.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION hsync_behaviour_cfg
+    Configuration for architecture: behaviour
+    Configuration for entity: hsync
+    Depends on: A work hsync behaviour `L4LZS0jY2_LHi_zYk?BJ3
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work hsync I2E@HJ>^5UczOh^R8U;iQ0
+    Source modified time: Mon Dec  8 12:09:37 2014
+    Source directory: /vga2
+    HDL source file: VHDL/hsync_behaviour_cfg.vhd
+    Source file: VHDL/hsync_behaviour_cfg.vhd
+    Start location: VHDL/hsync_behaviour_cfg.vhd:1
+    Version string: n2Z;gYQKIgeGS6@Rj@k170
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY rgb
+    Source modified time: Thu Dec 11 12:27:19 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /vga2
+    HDL source file: VHDL/rgb-behaviour.vhd
+    Source file: VHDL/rgb-behaviour.vhd
+    Start location: VHDL/rgb-behaviour.vhd:4
+    Version string: VlVeAfb3h15;e;jaIMjJm1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behaviour
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work rgb VlVeAfb3h15;e;jaIMjJm1
+    Start location: VHDL/rgb-behaviour.vhd:15
+    Version string: oFV3XMg=S5igY8060?S0Q1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /vga2
+    Source file: VHDL/rgb-behaviour.vhd
+    Source modified time: Thu Dec 11 12:27:19 2014
+    HDL source file: VHDL/rgb-behaviour.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION rgb_behaviour_cfg
+    Configuration for architecture: behaviour
+    Configuration for entity: rgb
+    Depends on: A work rgb behaviour KH3;Lk7<;BkXnOnGT6nMM1
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work rgb VlVeAfb3h15;e;jaIMjJm1
+    Source modified time: Thu Dec 11 08:52:56 2014
+    Source directory: /vga2
+    HDL source file: VHDL/rgb_behaviour_cfg.vhd
+    Source file: VHDL/rgb_behaviour_cfg.vhd
+    Start location: VHDL/rgb_behaviour_cfg.vhd:1
+    Version string: emlaRDkDUTm^T8[M<N8B20
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY vga
+    Source modified time: Thu Dec 11 12:14:50 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /vga2
+    HDL source file: VHDL/vga.vhd
+    Source file: VHDL/vga.vhd
+    Start location: VHDL/vga.vhd:4
+    Version string: TbL7gzQ[YBVgm5HW_cdMU3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behaviour
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work vga TbL7gzQ[YBVgm5HW_cdMU3
+    Start location: VHDL/vga.vhd:17
+    Version string: jaiV9NP=]BzB>G^DE`Uo_0
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /vga2
+    Source file: VHDL/vga.vhd
+    Source modified time: Thu Dec 11 12:14:50 2014
+    HDL source file: VHDL/vga.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION vga_behaviour_cfg
+    Configuration for architecture: behaviour
+    Configuration for entity: vga
+    Depends on: E work rgb VlVeAfb3h15;e;jaIMjJm1
+    Depends on: E work vsync @N56Bg=WFRAa[Wb:9iD7=3
+    Depends on: E work vidcounter _kQ<5ahW@>m;Wk7QI]RBK3
+    Depends on: E work hsync I2E@HJ>^5UczOh^R8U;iQ0
+    Depends on: E work counter 58:hJz_BFB0DWAl>nf=H^1
+    Depends on: E work deler ]eWo7mlgR0kmHOmGaHVe;2
+    Depends on: C work rgb_behaviour_cfg emlaRDkDUTm^T8[M<N8B20
+    Depends on: C work vsync_behaviour_cfg F8AieM3]IFOM[19iz4^653
+    Depends on: C work vidcounter_behavioural_cfg i17Sm4WDg7CMci<JIUfzZ3
+    Depends on: C work hsync_behaviour_cfg n2Z;gYQKIgeGS6@Rj@k170
+    Depends on: C work counter_behavioural_cfg dcfTSNJ>?gS:Dld38W3BH3
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: C work deler_behaviour_cfg ggLScKKSEe9hH2ZbUY[2o0
+    Depends on: A work vga behaviour jaiV9NP=]BzB>G^DE`Uo_0
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work vga TbL7gzQ[YBVgm5HW_cdMU3
+    Source modified time: Thu Dec 11 09:46:47 2014
+    Source directory: /vga2
+    HDL source file: VHDL/vga_behaviour_cfg.vhd
+    Source file: VHDL/vga_behaviour_cfg.vhd
+    Start location: VHDL/vga_behaviour_cfg.vhd:1
+    Version string: aUoaQ[kP2?IK]oi:CQc@Q1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY vga_tb
+    Source modified time: Thu Dec 11 09:48:02 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: vga2
+    HDL source file: VHDL/vga_tb.vhd
+    Source file: VHDL/vga_tb.vhd
+    Start location: VHDL/vga_tb.vhd:4
+    Version string: :3Z[dM2TQJX7V>Q2J3?Ko3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behaviour
+    Depends on: E work vga_tb :3Z[dM2TQJX7V>Q2J3?Ko3
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /vga2
+    HDL source file: VHDL/vga_tb-behaviour.vhd
+    Source file: VHDL/vga_tb-behaviour.vhd
+    Start location: VHDL/vga_tb-behaviour.vhd:4
+    Version string: R@lh]n0Hik1MI1kS<1K1D1
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source modified time: Thu Dec 11 09:48:02 2014
+    Debug Symbol file exists
+VHDL CONFIGURATION vga_tb_behaviour_cfg
+    Configuration for architecture: behaviour
+    Configuration for entity: vga_tb
+    Depends on: E work vga TbL7gzQ[YBVgm5HW_cdMU3
+    Depends on: C work vga_behaviour_cfg aUoaQ[kP2?IK]oi:CQc@Q1
+    Depends on: A work vga_tb behaviour R@lh]n0Hik1MI1kS<1K1D1
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work vga_tb :3Z[dM2TQJX7V>Q2J3?Ko3
+    Source modified time: Thu Dec 11 09:38:30 2014
+    Source directory: /vga2
+    HDL source file: VHDL/vga_tb_behaviour_cfg.vhd
+    Source file: VHDL/vga_tb_behaviour_cfg.vhd
+    Start location: VHDL/vga_tb_behaviour_cfg.vhd:1
+    Version string: Q<E4_ohL2aMeS:Ie_[i<93
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY vidcounter
+    Source modified time: Thu Dec 11 10:12:01 2014
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /vga2
+    HDL source file: VHDL/vidcounter-behaviour.vhd
+    Source file: VHDL/vidcounter-behaviour.vhd
+    Start location: VHDL/vidcounter-behaviour.vhd:5
+    Version string: _kQ<5ahW@>m;Wk7QI]RBK3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behavioural
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work vidcounter _kQ<5ahW@>m;Wk7QI]RBK3
+    Start location: VHDL/vidcounter-behaviour.vhd:12
+    Version string: 9;G4<23M0NJGgn>Db;OA=3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /vga2
+    Source file: VHDL/vidcounter-behaviour.vhd
+    Source modified time: Thu Dec 11 10:12:01 2014
+    HDL source file: VHDL/vidcounter-behaviour.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION vidcounter_behavioural_cfg
+    Configuration for architecture: behavioural
+    Configuration for entity: vidcounter
+    Depends on: A work vidcounter behavioural 9;G4<23M0NJGgn>Db;OA=3
+    Depends on: P ieee numeric_std O3PF8EB`?j9=z7KT`fn941
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work vidcounter _kQ<5ahW@>m;Wk7QI]RBK3
+    Source modified time: Mon Dec  8 12:10:11 2014
+    Source directory: /vga2
+    HDL source file: VHDL/vidcounter_behavioural_cfg.vhd
+    Source file: VHDL/vidcounter_behavioural_cfg.vhd
+    Start location: VHDL/vidcounter_behavioural_cfg.vhd:1
+    Version string: i17Sm4WDg7CMci<JIUfzZ3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+ENTITY vsync
+    Source modified time: Thu Dec 11 10:12:15 2014
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Source directory: /vga2
+    HDL source file: VHDL/vsync-behaviour.vhd
+    Source file: VHDL/vsync-behaviour.vhd
+    Start location: VHDL/vsync-behaviour.vhd:4
+    Version string: @N56Bg=WFRAa[Wb:9iD7=3
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Debug Symbol file exists
+  ARCHITECTURE BODY behaviour
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work vsync @N56Bg=WFRAa[Wb:9iD7=3
+    Start location: VHDL/vsync-behaviour.vhd:13
+    Version string: 7I>e>6ekai`63hi048W8J2
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1
+    Source directory: /vga2
+    Source file: VHDL/vsync-behaviour.vhd
+    Source modified time: Thu Dec 11 10:12:15 2014
+    HDL source file: VHDL/vsync-behaviour.vhd
+    Debug Symbol file exists
+VHDL CONFIGURATION vsync_behaviour_cfg
+    Configuration for architecture: behaviour
+    Configuration for entity: vsync
+    Depends on: A work vsync behaviour 7I>e>6ekai`63hi048W8J2
+    Depends on: P std textio 5>J:;AW>W0[[dW0I6EN1Q0
+    Depends on: P ieee std_logic_1164 5=aWaoGZSMWIcH0i^f`XF1
+    Depends on: E work vsync @N56Bg=WFRAa[Wb:9iD7=3
+    Source modified time: Mon Dec  8 12:10:16 2014
+    Source directory: /vga2
+    HDL source file: VHDL/vsync_behaviour_cfg.vhd
+    Source file: VHDL/vsync_behaviour_cfg.vhd
+    Start location: VHDL/vsync_behaviour_cfg.vhd:1
+    Version string: F8AieM3]IFOM[19iz4^653
+    Opcode format: 10.1b; VCOM SE Object version 51
+    VHDL language standard: 2 (VHDL-2002)
+    Compile options: -lower -explicit -work work -quiet -nologo
+    Compile defaults: Explicit=1

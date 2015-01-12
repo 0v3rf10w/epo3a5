@@ -8,10 +8,7 @@ port(	cpu_clk	:	in	std_logic;
 	cpu_in	:	in	std_logic_vector(7 downto 0);
 	cpu_instr:	in	std_logic_vector(11 downto 0);
 	cpu_pc	:	out	std_logic_vector(7 downto 0);
-	cpu_out	:	out	std_logic_vector(7 downto 0);
-	cpu_test_inc : out std_logic;
-	cpu_test_ld : out std_logic;
-	cpu_test_data : out std_logic_vector(7 downto 0));
+	cpu_out	:	out	std_logic_vector(7 downto 0));
 end entity cpu;
 
 architecture behaviour of cpu is
@@ -173,8 +170,5 @@ lbl_bregs:      reg_cluster port map(
                     buf_out     => cpu_bus,
                     reg_out     => cpu_out);
                     
-lbl_tests:          cpu_test_inc <= cpu_dec_pc_inc;
-                    cpu_test_ld  <= cpu_dec_pc_ld;
-                    cpu_test_data <= cpu_bus;
 
 end behaviour;

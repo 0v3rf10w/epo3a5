@@ -1,3 +1,4 @@
+
 \documentclass[oneside,dutch]{tudelft-report}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg}
 %\usepackage[numbered, framed]{mcode}
@@ -23,12 +24,18 @@
 \maketitle
 
 \chapter{Samenvatting}
+Dit ontwerprapport is geschreven naar aanleiding van het project EPO-3 van het tweede jaar van de bacheloropleiding Electrical Engineering. In dit project staat het beschrijven van hardware centraal, met als doel het ontwerpen van een chip. In de keuze van een ontwerp zijn de studenten door de TU geheel vrij gelaten, er moest natuurlijk wel rekening worden gehouden met de grootte van de chip en het tijdsbestek waarin het ontwerp gerealiseerd kon worden. Er is hier door de EPO-3 groep A5 gekozen voor het ontwerpen van een spelcomputer, hierop kunnen meerdere spellen gespeeld worden. Om binnen het tijdsbestek te blijven is gekozen voor 'Pong', meerdere spellen kunnen eventueel achteraf simpel toegevoegd worden.\\
+
+Van het uiteindelijke ontwerp wordt in de laatste periode van dit jaar een chip gemaakt, tijdens het ontwerpproces is er daarom met een FPGA development board gewerkt. Deze is geleverd door de TU Delft. Het grootste deel van het systeem bevindt zich op de chip zelf, toch zijn er nog drie losse componenten gebruikt om dit ontwerp te realiseren. Het idee achter de spelcomputer is dat hij meerdere spellen kan spelen, deze moeten extern aangeleverd worden. Er is hier gekozen voor een SD-kaart uitlezing met SPI, het spel is in assembly geschreven. Ook de besturing moest extern geregeld worden, met ultrasone sensoren bleek dit systeem het best te controleren. Als back-up plan is er hiernaast voor gekozen om ook enkele knoppen te implementeren. Om het spel te kunnen spelen is er tot slot ook een beeldscherm nodig.\\
+
+Het belangrijkste deel van dit ontwerp bevindt zich op de chip. In de CPU wordt de informatie verwerkt die via SPI van de SD-kaart binnen komt. In de CPU wordt daarnaast ook de besturing van het spel verwerkt. De CPU kan dus gezien worden als het brein van de chip, alles wordt hier verwerkt en doorgegeven aan de GPU. Deze maakt er vervolgens een beeld van. Om vertraging op het scherm te voorkomen is er een 'Blackbox' geïmplementeerd, de zorgt ervoor dat er gewisseld kan worden tussen twee SRAM geheugens. Hierdoor kan er op de ene SRAM geschreven worden door de GPU en kan de ander worden uit gelezen door de VGA. De VGA produceert vervolgens het beeld op een beeldscherm. Alleen beide SRAM geheugen bevinden zich niet op de chip, maar ziten extern in het systeem verwerkt.
+
 
 \tableofcontents
 \mainmatter
 
 \chapter{Inleiding}
-EPO-3 is het derde project uit de propedeuse van de bachelor opleiding Electrical Engineeringaan de TU delft. Het doel van dit project is het ontwerpen van een chip, deze chip kan bijvoorbeeld een spelletje bevatten of als besturingsdoel dienen. Als project groep A5 is er gekozen voor het bouwen van een spelcomputer, hierop kunnen meerdere games gespeeld worden. De verschillende games moeten van een SD-kaart worden geladen voordat ze gespeeld kunnen worden. Het eerste spel dat ontworpen wordt is Pong, mocht er aan het eind van dit project nog tijd overblijven zullen er meerdere spellen volgen. De besturing loopt via ultrasone sensoren die de locatie van iemands hand bepalen. In dit ontwerp rapport zullen alle onderdelen van ons systeem aanbod komen.
+EPO-3 is het derde project uit de propedeuse van de bachelor opleiding Electrical Engineering aan de TU delft. Het doel van dit project is het ontwerpen van een chip, deze chip kan bijvoorbeeld een spelletje bevatten of als besturingsdoel dienen. Als project groep A5 is er gekozen voor het bouwen van een spelcomputer, hierop kunnen meerdere games gespeeld worden. De verschillende games moeten van een SD-kaart worden geladen voordat ze gespeeld kunnen worden. Het eerste spel dat ontworpen wordt is Pong, mocht er aan het eind van dit project nog tijd overblijven zullen er meerdere spellen volgen. De besturing loopt via ultrasone sensoren die de locatie van iemands hand bepalen. Het ontwerpen van een simpele spelcomputer sluit nauw aan met de bachelor opleiding Electrical Engineering. De toekomst van de elektrotechniek ligt dan ook in dit werkgebied. Chips zijn in de loop der jaren de basis gaan vormen voor bijna elk systeem. In dit ontwerprapport zal eerst het doel van dit project verder toe worden gelicht. Vervolgens zal er na het geven van het systeemoverzicht, wordt ieder individueel onderdeel beschreven. Testresultaten en codes zullen voornamelijk terug te vinden zijn in de appendices, tenzij anders aangegeven. 
 
 \chapter{Probleemstelling}
 \section{Projectopgave: 'Ontwerp een chip'}
@@ -49,40 +56,60 @@ Aan het eindresultaat zitten een aantal randvoorwaarden verbonden. De externe on
 Het plan van aanpak is een beschrijving van de aanpak van dit project, hierin staan onder andere de doelstellingen en wegen daar naar toe beschreven. Het plan van aanpak is te vinden in appendix A.
 
 \chapter{Systeemoverzicht}
-De spelcomputer ontworpen en gebouwd door EPO-3 groep A5 bestaat uit veel verschillende losse onderdelen. Om te voorkomen dat we het overzicht kwijt raken, wordt er in dit hoofdstuk het totale systeemoverzicht beschreven. Er zal dus vooral worden gekeken naar de toplevel beschrijving, hierin worden alle onderdelen samengevoegd en gekoppeld tot een geheel.
+De spelcomputer ontworpen en gebouwd door EPO-3 groep A5 bestaat uit veel verschillende losse onderdelen. Om te voorkomen dat we het overzicht kwijt raken, wordt er in dit hoofdstuk het totale systeem beschreven. Er zal dus vooral worden gekeken naar de toplevel beschrijving, hierin worden alle onderdelen samengevoegd en gekoppeld tot een geheel. Ook wordt er in het kort even ingegaan op de externe componenten die ons systeem bevat.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{hele-systeem}
+\caption{Totale systeem weergave}
+\label{Systeemoverzicht}
+\end{figure}
 
 \section{Toplevel}
-De toplevel beschrijving bestaat uit een entity en een behaviour. In de code van de entity staan alle poorten beschreven die de chip verbinden met alle losse componenten 
+De toplevel beschrijving bestaat uit een entity en een behaviour. In de code van de entity staan alle poorten beschreven die de chip verbinden met de externe componenten die het systeem bevat. In de behaviour worden alle interne componenten aan elkaar verbonden. In figuur 4.1 staat schematisch weergegeven op welke manier dit gebeurd. De losse onderdelen van dit systeem worden individueel beschreven in dit verslag.
 
 \section{Externe componenten}
+Het systeem dat ontworpen is door EPO-3 groep A5 bevat kort gezegd drie aparte externe componenten, twee daarvan zijn inputs en een is een output. De inputs van dit systeem zijn de besturing en de opslag van het spel. Dit laatste gebeurd door middel van SD uitlezing met SPI. De output van dit systeem wordt aangestuurd door de VGA en kan een beeld produceren op een willekeurig beeldscherm.
 
 \chapter{Besturing}
-Ons systeem wordt gespeeld doormiddel van 2 soorten besturing. De Ultrasone en de Button. De speler kan de modus selecteren doormiddel van een switch. Deze data van de buttons en de ultrasone worden verwerkt door een Arduino. Er is gekozen voor deze optie omdat de Arduino via SPI werkt. Hierdoor kan de SPI code getest worden en kunnen we het aantal pinnen dat gebruikt wordt laag houden. 
+Ons systeem wordt gespeeld doormiddel van 2 soorten besturing. De Ultrasone en de Button. De speler kan de modus selecteren doormiddel van een switch. Deze data van de buttons en de ultrasone worden verwerkt door een Arduino. Door gebruik te maken van de Arduino kunnen we het aantal pinnen laag houden.(ipv 8 gebruiken we nu 2 pinnen) De data vanaf de arduino wordt verzonden via SPI.
 
 \section{Ultrasone}
-Een unieke uitdaging van ons project is de Ultrasone besturing, de besturing werkt door middel van een (ultrasone)sensor aan de rechterzijde van de speler. Deze sensor meet met een speel ruimte van 75cm elke 11 milliseconde. Het aansturen van de ultrasone sensoren gaat doormiddel van een 2ms lange pulse op de IN-pin. Dit is de trigger van de SRF-04(de door ons gekozen ultrasone sensor). Hierna verzend de sensor zijn pulse, op dat moment wordt de OUT-pin ook hoog. Deze blijft hoog tot de gereflecteerde pulse weer binnen komt. Deze tijd wordt gedeeld door 2 omdat het geluid zowel de afstand heen als terug moet afleggen. Deze tijd wordt vervolgens geschaald naar afstand door hem door 29m/s(de snelheid van geluid in lucht) te delen. Hierna wordt de tijd teruggemapt(alles tussen de 0 en de 75 wordt terug geschaald naar 0 en 12). Deze waarde wordt voor player 2 4 bits geschoven naar links. En vervolgens wordt het signaal via de hierbovengenoemende SPI verstuurd naar de chip.
+Een unieke uitdaging van ons project is de Ultrasone besturing, de besturing werkt door middel van een (ultrasone)sensor aan de rechterzijde van de speler. Deze sensor meet met de afstand tot de hand, de speler zijn speel ruimte van 75cm. Deze afstand wordt maximaal elke 11 milliseconde uitgelezen. Het aansturen van de ultrasone sensoren gaat doormiddel van een 2ms lange pulse op de IN-pin. Dit is de trigger van de SRF-04(de door ons gekozen ultrasone sensor). Hierna verzend de sensor zijn pulse, op dat moment wordt de OUT-pin ook hoog. Deze blijft hoog tot de gereflecteerde pulse weer binnen komt. Deze tijd wordt gedeeld door 2 omdat het geluid zowel de afstand heen als terug moet afleggen. Deze tijd wordt vervolgens geschaald naar afstand door hem door 29m/s(de snelheid van geluid in lucht) te delen. Hierna wordt de tijd teruggemapt(alles tussen de 0 en de 75 wordt terug geschaald naar 0 en 12). 
 
 \section{Buttons}
-Bij de buttons wordt een andere manier van werken gehanteerd, hier wordt de waarde van de plaatsvector onthouden(als integer). En naar gelang welke button geactiveerd wordt, wordt het signaal 1 verhoogd/verlaagd. Dit getal kan maximaal 12 bereiken en minimaal 0. Vervolgens wordt dit signaal voor player 2 ook verschoven, en daarna verzonden via SPI.
+Bij de buttons wordt een andere manier van werken gehanteerd, hier wordt de waarde van de plaatsvector onthouden(als integer). En naar gelang welke button geactiveerd wordt, wordt het signaal 1 verhoogd/verlaagd. Dit getal kan maximaal 12 bereiken en minimaal 0.
 
 De getallen 0->12 voor player 1/2 zijn in gebruik, dit geeft ruimte om 13,14,15 te gebruiken voor andere doeleinde. 13 dient als getal om de Start van systeem aan te geven. 15 is de Reset van het systeem.
 
 \section{SPI-communicatie}
-Alle variable die berekent worden in de arduino worden via SPI verzonden. SPI is een protocol over het verzenden van de data. Dit werkt doormiddel van 2 draden. Draad 1 verzend een klok van 8 pulse lang en een default low. Draad 2 verzend de waarde van 8 bits lang.
+Alle variable die berekent worden in de arduino worden via SPI verzonden.
+De waarde van speler 1 wordt 4 bit naar rechts verschoven waardoor een 8 bits signaal ontstaat. Dit signaal kan via SPI verzonden worden.
+SPI is een protocol over het verzenden van de data. Dit werkt doormiddel van 2 draden. Draad 1 verzend een klok van 8 pulse lang en een default low. Draad 2 verzend de waarde van 8 bits lang.
 
 \section{Detectie SPI}
 De chip detecteerd op de opgaande flank van draad 1(klok) de waarde van draad 2(signaal). Deze waarde wordt in een Flip-flop(geheugen) gezet. Op de neergaande flank wordt de waarde geshift. Dit moet om te zorden dat de data in de goede volgorde aankomt bij de CPU.
 
 \section{Simulatie}
 Na de ontwikkeling via Go-with-the-flow is het systeem getest. Hierbij is gebruik gemaakt van een dubbele 6 als positie. Het resultaat ziet u in: 
-%image
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{Screenshot.png}
+\caption{Twee maal de positie 6 gemeten met Modelsim}
+\label{CPU}
+\end{figure}
 
-Vervolgens is het systeem gedownload op de FPGA, hierop is de arduino aangesloten. Het signaal van de arduino was %check image
-Deze waarde kwam precies zoals verwacht op de ledjes op de FPGA. Echter na ongeveer 5 seconde begon de waarde te shiften. Dit kwam door dat beide systemen geen gecombineerde aarde had. Dit hebben wij gefixt door een draad tussen beide aarde te zetten.
+Vervolgens is het systeem gedownload op de FPGA, hierop is de arduino aangesloten. Het signaal van de arduino was:
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{TEK0001.JPG}
+\caption{De positie 13(start) en 6}
+\label{CPU}
+\end{figure}
+Deze waarde kwam precies zoals verwacht op de ledjes op de FPGA. Echter na ongeveer 5 seconde begon de waarde te shiften. Dit kwam door dat beide systemen geen gecombineerde aarde had. Dit is opgelost door een draad tussen beide aarde te zetten.
 
 
 \newpage
-
 
 \chapter{Blackbox}
 \section{Functionele beschrijving}
@@ -165,40 +192,169 @@ De GPU is ontworpen aan de hand van een FSM, deze bevat 5 states en staat hieron
 In de eerste state kan de GPU drie richtingen op gaan. Als de eerste twee bits van de 8-bits vector '11' zijn gaat de GPU naar Clr-screen,hier zal de VGA zijn scherm leeg maken. De GPU gaat zijn X-data inlezen en springt naar de volgende state (Y-Hold) als de eerste twee bits van de 8-bits vector '01' is. Voor iedere andere waarde op de eerste twee bits van de 8-bits vector blijft de GPU in de int state. Vanuit de Clr-screen state kan de GPU alleen nog maar terug naar de int state en begint de FSM opnieuw. In de Y-Hold state wacht de GPU op Y-Data, de GPU blijft in deze state totdat de eerste twee bits van de 8-bits vector '10' aangeven (Duurt 20 klokslagen). Op dat moment leest de GPU de Y-Data in en stapt over naar de Calc. state. In deze state wordt het adres berekend voor de VGA, dit gebeurd met de formule $32*Y+X =$ adres. Als deze berekening voor het bepalen van zijn adres is voltooid springt de GPU automatisch naar de volgende state, de Write state. In de Write state schrijft de GPU data uit de buffers weg via SPI. Automatisch zal de GPU terug springen naar zijn eerste state, het proces begint dan opnieuw. 
 
 \chapter{VGA}
-Functionele beschrijving
-Om een monitor met een VGA aansluiting aan te sturen, zijn er eigenlijk 5 pinnen nodig die aangestuurd moeten worden. Drie pinnen voor rood, groen en blauw, een voor H-Sync en een voor V-Sync. 
+De VGA-controller zorgt ervoor dat een beeldscherm van de juiste signalen wordt voorzien om een beeld te kunnen opbouwen. Hierbij wordt een serieel signaal vanuit het SRAM omgezet naar een signaal dat voor een monitor is te begrijpen. Hiervoor zijn vijf signalen nodig. Drie signalen voor respectievelijk rood, groen en blauw, een voor H-Sync en een voor V-Sync. 
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{VGA-1}
+\includegraphics[width=9cm]{vga2arcade}
 \caption{Layout VGA-stekker}
 \label{VGA}
 \end{figure}
 
-Dit is de layout van de een VGA-stekker. 
+Kortom, de VGA controller zorgt voor een H-sync, een V-Sync en dat het RGB signaal op de juiste manier aan het scherm wordt doorgegeven. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{totaal-overzicht}
+\caption{Grafische omschrijving blackbox}
+\label{VGA}
+\end{figure}
 
 \section{RGB}
-Op de pinnen voor rood, groen en blauw, staat een analoog signaal tussen de 0 en de 0.7 volt. Hoe hoger de spanning, hoe feller de kleur. Door middel van verschillende spanningsniveaus kan de kleur per pixel worden bepaald. Wij maken echter alleen gebruik van zwart en wit. Daarom wordt er slechts een signaal naar de alle RGB pinnen verstuurd. Hierdoor ontstaat een witte pixel. Wanneer dit niet gebeurt, is de pixel zwart. 
+Op de pinnen voor rood, groen en blauw, staat een analoog signaal tussen de 0 en de 0.7 volt. Hoe hoger de spanning, hoe feller de kleur. Door middel van verschillende spanningsniveaus kan de kleur per pixel worden bepaald. Wij maken echter alleen gebruik van zwart en wit. Daarom wordt er slechts een signaal naar de alle RGB pinnen verstuurd. Hierdoor ontstaat een witte pixel. Wanneer dit niet gebeurt, is de pixel zwart. Op de FPGA wordt een digitaal signaal omgezet naar een analoog signaal tussen de 0 en 0.7 volt. Op de uiteindelijke chip zal er echter nog een schakeling nodig zijn om dit voor elkaar te krijgen. 
 
 \section{H-Sync}
 H-Sync vertelt de monitor wanneer een regel klaar. Als H-Sync laag is, betekent dit voor de monitor dat er een nieuwe regel pixels geschreven kan worden. Het is echter niet zo dat wanneer H-Sync weer hoog is, dat er gelijk pixels geschreven kunnen worden. Er zit nogal enige vertragingstijd ingebouwd. Deze tijd was bij CRT-monitoren nodig om elektronenstraal terug naar het begin te richten.
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{VGA-2}
+\includegraphics[width=9cm]{VGA_signal_format}
 \caption{}
 \label{VGA}
 \end{figure}
 
-Video Line is het RGB signaal. Zoals te zien is in figuur 8.2, zit er tijd voor en na de dip van de H-sync. Deze tijd heet de front-porch en de back-porch. 
+Video Line is het RGB signaal. Zoals te zien is in figuur 2, zit er tijd voor en na de dip van de H-sync. Deze tijd heet de front-porch en de back-porch. 
 
 \section{V-Sync}
-V-Sync is het signaal dat aan de monitor vertelt dat een volledig scherm is volgeschreven. Als V-Sync laag wordt, begint het scherm weer links bovenin met pixels vullen. Net als bij de H-Sync is er sprake van een Front-porch en een back-porch. Deze zijn bij de V-Sync een stuk langer dan bij de H-sync. Dit komt omdat de monitor de elektronenstraal van rechts onderin naar links bovenin moet sturen. Deze afstand is een stuk groter dan terug van rechts naar links. 
+V-Sync is het signaal dat aan de monitor vertelt dat een volledig scherm is volgeschreven. Als V-Sync laag wordt, begint het scherm weer links bovenin met pixels vullen. Net als bij de H-Sync is er sprake van een Front-porch en een Back-porch. Deze zijn bij de V-Sync een stuk langer dan bij de H-sync. Dit komt omdat de monitor de elektronenstraal van rechts onderin naar links bovenin moet sturen. Deze afstand is een stuk groter dan terug van rechts naar links. 
 
-\section{Implementatie}
-De VGA zet een serieel signaal om in een signaal dat voor een monitor te begrijpen is. Hiervoor zijn H-Sync, V-Sync en Von nodig. Von is eigenlijk hetzelfde signaal als H-sync. Het verschil is echter dat bij V-on de frontporch en de backporch zijn meegerekend. Von geeft aan de blackbox aan dat er een serieel signaal geschreven mag worden per 5 klokslagen.  Iedere vijf klokslagen wordt er een nieuwe pixel geschreven (eigenlijk zijn dat 20 pixels op het scherm). 
+\section{Timing}
+De klok van de chip is 6.177 Mhz. Op de FPGA wordt echter een klok gebruikt van 6 Mhz. Deze wordt ook aangehouden in de VHDL code. Om de counters in de VGA-controller niet te groot te maken, wordt de klok eerst gedeeld door vijf. Hierdoor is de nieuwe klok 1.2 Mhz. Wanneer er wordt gesproken van een kloksignaal, wordt er gesproken over de klok van 1.2 Mhz.
 
-H-Sync wordt bepaald door een kloksignaal te tellen. Vervolgens wordt op basis van H-Sync de V-Sync bepaald. Dit gebeurd door te tellen hoe vaak H-Sync naar nul gaat. 
+\subsection{H-Sync}
+De Front-porch van de H-sync is precies één klok slag. Na de Front-porch is de H-sync vijf klokslagen laag. Daarna is de H-sync 34 klokslagen hoog. Het videosignaal naar de monitor is echter iets later pas beschikbaar. Dit komt doordat er nog een Back-porch is van twee klokslagen. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{tabel-VGA-1}
+\caption{Timing voor de H-Sync}
+\label{VGA}
+\end{figure}
+
+\subsection{V-Sync}
+De V-sync werkt eigenlijk op een zelfde manier als de H-Sync. Hier wordt echter niet de klok geteld, maar het aantal regels. Omdat het aantal regels een stuk minder is dan het aantal klokslagen, wordt de counter voor de V-sync (vidcounter) een stuk kleiner. Iedere keer dat het signaal voor de H-sync weer opnieuw begint, krijgt de vidcounter een signaal. Dit signaal heet nline-out. De Front-porch voor de V-Sync is 11 regels. De V-sync dip is 2 regels en de Back-porch is 31 regels. Vervolgens zijn er 480 regels beschikbaar om een videosignaal uit te zenden.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{tabel-VGA-2}
+\caption{Timing voor de V-Sync}
+\label{VGA}
+\end{figure}
+
+Er wordt echter maar een keer per twintig regels een nieuw signaal op het videosignaal gezet. Hierdoor zijn er dus twintig maal zo weinig regels beschikbaar. De resolutie wordt hierdoor 32 bij 24 pixels.
+
+\section{VHDL}
+Om alle signalen op het juiste moment naar de monitor te sturen, is de VGA-controller in delen opgedeeld. 
+Deler
+Counter
+H-sync
+Vidcounter
+V-sync
+RGB
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{schema-zonder-SRAM}
+\caption{Schema van de componenten}
+\label{VGA}
+\end{figure}
+
+\subsection{Deler}
+Dit component deelt de klok door vijf. Hierdoor is de klok 1.2 Mhz. Wanneer er over een klok gesproken wordt binnen de VGA-controller, gaat het over de klok van 1.2 Mhz.
+
+\subsection{Counter}
+Dit component telt klokslagen. Bij een resolutie van 32 bij 24 pixels, is de pixelklok gelijk aan de gedeelde klok van 1.2 Mhz. Iedere 1/1.2e6 seconde (mits von en line-on hoog zijn) komt er een nieuwe pixel op het scherm. De counter telt tot en met 40 en gaat daarna weer terug naar nul.
+
+\subsection{H-Sync}
+Dit component is een FSM. De input is de counter-vector (6 bit). De outputs zijn: Von, N-line en H-sync. Von en N-line blijven binnen de chip en H-sync wordt op de VGA uitgang gezet.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{FSM-H-sync}
+\caption{FSM H-Sync}
+\label{VGA}
+\end{figure}
+
+\subsection{Vidcounter}
+Dit component werkt hetzelfde als de counter. Het enige verschil is dat nu niet de klok wordt geteld, maar het signaal N-line. N-line is 1 op het moment dat er een nieuwe regel begint. De vidcounter is de counter voor de V-sync. De counter telt tot en met 524 en gaat daarna weer terug naar nul.
+
+\subsection{V-Sync}
+Dit is een FSM. De input is vid-counter-vector (10 bit). De outputs zijn V-sync, line-on en Ssync. Ssync en line-on blijven binnen de chip en V-sync wordt op de VGA uitgang gezet.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{FSM-V-sync}
+\caption{FSM V-Sync}
+\label{VGA}
+\end{figure}
+
+\subsection{RGB}
+Dit component zorgt ervoor dat er pixels op het scherm ingekleurd kunnen worden. Op het moment dat Von en Line-on beide 1 zijn, zit video-in aan de uitgang RGB. Dit signaal wordt de op VGA poort gezet en daarmee rechtstreeks naar het scherm gestuurd. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{FSM-rgb}
+\caption{FSM RGB}
+\label{VGA}
+\end{figure}
+
+\section{Videosignaal}
+Het videosignaal komt uit het SRAM. Om het SRAM de juiste waarden naar de VGA-controller te laten sturen, zijn er een aantal dingen nodig.
+Adres
+Leescommando
+Sklok.
+De Sklok is vrij eenvoudig. Dit is namelijk de klok waarop het SRAM bits moet gaan sturen. Aangezien er binnen de VGA controller wordt gewerkt met een klok van 1.2 Mhz, hoeft dit signaal alleen te worden doorgestuurd. Het leescommando voor het SRAM is 0000 0011. Na het leescommando, moet het adres worden gegeven. Dit adres is 0000 0000 0000 0000. Kortom, er dient een signaal van 24 bit te worden verstuurd op de klok naar het SRAM. Na dit signaal, gaat het SRAM direct waarden gegeven. Het is dus belangrijk dat op de laatste regel de 24 bits worden verstuurd zodat er op de eerste regel direct kan worden uitgelezen. Hiervoor is het signaal Ssync. Dit komt uit de V-sync. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{schema-met-SRAM}
+\caption{Schema van de componenten}
+\label{VGA}
+\end{figure}
+
+\subsection{S-synccounter}
+Deze counter begint met tellen als Ssync hoog is. Vervolgens telt de counter tot 40. Daarna begint hij weer opnieuw.
+
+\subsection{S-Sync}
+Net als de H-Sync en V-Sync is dit een FSM met ongeveer dezelfde werking. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{FSM-Ssync}
+\caption{FSM Ssync}
+\label{VGA}
+\end{figure}
+
+\section{Conclusie}
+Om alle signalen op het juiste moment naar de monitor te sturen, is de VGA-controller in zes delen opgedeeld. Daarnaast zijn er nog twee componenten nodig om het SSRAM aan te sturen. Hierdoor komt het totaal op acht componenten uit. 
+Deler
+Counter
+H-sync
+Vidcounter
+V-sync
+RGB
+Ssync-counter
+Ssync
+
+\section{Resultaten}
+Op de foto is een testscherm te zien. Hierbij zijn enkele pixels te zien in verschillende kleuren.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{resultaat}
+\caption{Testscherm vanaf de FPGA}
+\label{VGA}
+\end{figure}
 
 \chapter{SPI}
 Serial Peripheral Interface in het kort ook SPI genoemd is een de facto-standaard die ooit door Motorola bedacht is voor het communiceren met randapparatuur, zoals embedded systems, sensors en memory cards. Bij SPI heb je de master en de slave deze communiceren met elkaar via twee seriële datalijnen daarnaast is er nog een kloklijn die aangeeft wanneer er data overgedragen wordt. De kloklijn wordt aangestuurd door de master, dit houdt in dat de slave niet kan pauzeren en altijd data aan de master aan moet bieden. De standaard definieert enkel hoe de data van de master naar de slave en vice versa over wordt gedragen, niet hoe de data verwerkt wordt, dit heeft als gevolgd dat randapparatuur zelf nog moet definiëren hoe de communicatie verloopt.
@@ -296,9 +452,154 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 \item SS: het slave select signaal, dit signaal wordt gebruikt om de SD-kaart in SPI mode te krijgen en om aan te geven dat de SD-kaart geselecteerd is.
 \end{itemize}
 
-\chapter{Conclusie}
+\chapter{Conclusie en Aanbevelingen}
+\section{Conclusie}
+Het EPO-3 project van de bachelor opleiding Electrical Engineering begon in tegen stelling tot eerder projecten vrij soepel. Als groep waren we het snel met elkaar eens, het zou een spelcomputer worden met een ultrasone besturing. Gaande weg liepen we tegen steeds meer dingen aan. 
+
+\section{Aanbevelingen}
+
+
 
 \chapter{Discussie}
+\section{Reflectie op het eindontwerp}
+
+\section{Reflectie op het groepsproces}
+
+
+xxxxxx
+
 Over het eindontwerp is nog geen discussie mogelijk. Voor het schrijven van dit tussentijdse ontwerprapport zijn er nog wel een aantal dingen naar voren gekomen. Voorop staat het feit dat alles minder snel en soepel verloopt als dat we gehoopt hadden. Het testen van de hardware op het FPGA bord bracht veel oponthoud met zich mee. Ook bleken de stappen die tot het eindproduct moesten lijden niet compleet bedacht, tijdens het ontwerpproces kwamen er extra stappen naar voren die veel tijd hebben gekost. Ondanks dat de einddatum steeds dichterbij komt denken we dat alles binnen de tijd realiseerbaar is.
+
+\appendix
+\chapter{Plan van aanpak}
+\section{Achtergronden}
+Door onze aanmelding bij de studie Electrical Engineering aan de TU-Delft hebben wij van deze organisatie opdracht gekregen om een eigen chip te ontwerpen, verder is alles geheel voor eigen keuze. De opdracht zal door de opdrachtgevers gekozen naam 'Ontwerp een chip' benoemd worden. Dit project is aangenomen door alle leden van de projectgroep A5, tevens zal dit project worden begeleid door Dr. R. Ishihara. Dr. R. Ishihara zal hiernaast fungeren als onze tutor. Deze opdracht zal binnen de Technische Universiteit Delft worden verwerkt. Dit project speelt in op de in college naar voren gekomen onderdelen, waaronder 'Programmeren in C' en 'Digitale systemen'. Het dient als doel onze kennis te verdiepen en te verbreden in de elektrotechniek. De uiteindelijke stakeholders zijn behalve de opdrachtgevers, daardoor ook de projectnemers. Deze opdracht is een onderdeel en vereiste voor het behalen van de Bachelor opleiding 'Electrical Engineering'.
+
+\section{Projectresultaat}
+Tijdens het EPO-3 project 'Ontwerp een chip' dient een chip ontworpen te worden, dit kan bijvoorbeeld het implementeren van een spelletje of een Infrarood-Besturing op een chip zijn. Deze opdracht mag door de projectgroep gekozen worden. Bij het ontwerp van de chip dient gebruik gemaakt te worden van Sea-of-gates technologie.
+
+\subsection{Doelstellingen van het project}
+Allereerst is het doel van het project, het succesvol uitvoeren van de opdracht gekregen van de opdrachtgever. Belangrijk hierbij is het ontwerpen aan de hand van globale productspecificaties met randvoorwaarden. Daarnaast, zeker niet onbelangrijk, zijn de vaardigheden die universiteit ons mee wilt geven. Deze vaardigheden komen gaandeweg het project steeds meer naar voren.  Hierbij speelt projectmatig werken in een groep een grote rol. Ook worden de projectnemers middels dit project getraind in vergaderen, overleggen en plannen. Als laatst worden verschillende technische vaardigheden in de praktijk getraind waaronder programmeren, simuleren en het bouwen van verschillende schakelingen. Er moet tijdens dit EPO-3 project strikt worden gelet op het combineren en testen van de verschillende ontwerpen, hierbij kan worden gebruik gemaakt van moderne computerhulpmiddelen. De projectleden zullen gaande weg dit project hierin gesteund en getest worden.  
+
+\subsection{Eindresultaat}
+Als eindresultaat zal er een chip moeten worden ontworpen, daarnaast moet er een verslag worden geschreven.
+De chip moet aan een aantal eisen voldoen, namelijk:
+\begin{enumerate}
+\item Op de chip moet een spelcomputer gebouwd worden, deze spelcomputer dient spelletjes van een SD-kaart te kunnen weergeven op een beeldscherm.
+\item Ultrasone sensoren moeten de besturing vormen voor de spelcomputer.
+\item Er moet minimaal een spel ontworpen worden (Pong). Mocht er tijd over zijn dan kunnen er meer spelletjes ontworpen worden.
+\item Het beeld dient te worden weergegeven met VGA op een beeldscherm.
+\end{enumerate}
+Ook het verslag moet aan een aantal eisen voldoen:
+\begin{enumerate}
+\item Het verslag bestaat uit twee delen, het technische verslag en het procesverslag.
+\item Het technisch verslag documenteert de ontwerpkeuzes en de prestaties van de chip.
+\item De weekverslagen/notulen vormen een basis voor het procesverslag.
+\item Het verslag dient te worden geschreven volgens het format van de projecthandleiding.
+\end{enumerate}
+
+\section{Projectactiviteiten}
+Het project kan worden opgedeeld in het uitvoeren van de volgende taken:
+\begin{enumerate}
+\item Opstellen plan van aanpak
+\begin{itemize}
+\item verzamelen en bestuderen informatie
+\item maken van concept plan van aanpak
+\item bespreken plan van aanpak met opdrachtgever
+\end{itemize}
+\item Ontwerpen en bouwen besturing
+\item Ontwerpen microprocessor
+\item Ontwerpen en bouwen geheugenelement (SD)
+\item Ontwerpen VGA + SRAM module
+\item Schrijven Pong (spelletje)
+\end{enumerate}
+
+\section{Projectgrenzen}
+In dit project is veel vrijheid gegeven door de opdrachtgever. Dat neemt niet weg dat er aan een aantal eisen moet worden voldaan, voornamelijk de beperkingen die de chip met zich mee brengt. Deze eisen staan beschreven in de projecthandleiding, en zijn hieronder even kort samengevat.
+\begin{enumerate}
+\item Het ontwerp dient klaar te zijn binnen het 2e kwartaal.
+\item De schakeling dient te werken op een klokfrequentie van 6.144 MHz.
+\item Elke projectgroep heeft 0.4 $cm^2$ ruimte op de chip, dit komt overeen met 40.000 transistor paren.
+\item Per groep zijn er 32 aansluitpinnen beschikbaar.
+\item Voor de FSM's mogen alleen die van het type Moore gebruikt worden, daarnaast moet er altijd een reset aanwezig zijn.
+\item Het streven is om zo weinig mogelijk componenten extern te gebruiken.
+\end{enumerate}
+
+\subsection{Tussenresultaten}
+De tussenresultaten van dit project worden uitgebreid beschreven in het gehele tussentijdse ontwerprapport en dus niet verder behandeld in het plan van aanpak.
+
+\subsection{Kwaliteitsbewaking}
+\textbf{Eindproduct}\\
+Het eindproduct van het derde project van de bachelor Electrical Engineering moet een goed werkende chip zijn die aan enkelen eisen voldoet, deze eisen zijn door de projectgroep zelf opgesteld:\
+\begin{itemize}
+\item Op de chip moet een spelcomputer gebouwd worden, deze spelcomputer dient spelletjes van een SD-kaart te kunnen weergeven op een beeldscherm.
+\item Ultrasone sensoren moeten de besturing vormen voor de spelcomputer.
+\item Er moet minimaal een spel ontworpen worden (Pong). Mocht er tijd over zijn dan kunnen er meer spelletjes ontworpen worden.
+\item Het beeld dient te worden weergegeven met VGA op een beeldscherm.
+\end{itemize}
+\textbf{Controles}\\
+Tussendoor zullen er een aantal controles worden uitgevoerd om de kwaliteit te blijven bewaken, namelijk:
+\begin{itemize}
+\item Is het haalbaar om spelletjes extern te laden?
+\item Werkt de uitlees module van de SD-kaart?
+\item Is de ultrasone sensor besturing bruikbaar voor het eindresultaat?
+\item Lukt het om met de VGA een beeld op een scherm te printen? 
+\end{itemize}
+Deze punten zullen voornamelijk worden gecontroleerd door de groep zelf. Hierbij is er duidelijk een leider aangewezen die het overzicht behoud en zo de voortgang van het project controleert. Daarnaast vindt er nog een docentcontrole gaande weg tijdens het project plaats om de kwaliteit te bewaken, deze kan worden gedaan door de hoofddocent of door een van zijn assistenten.
+
+\section{Projectorganisatie}
+\textbf{Organisatie}\\
+De projectgroep EPO-3 A5 bestaat uit acht leden. Om het overzicht te behouden is er een voorzitter benoemd. De voorzitter is Ern\'e Bronkhorst.
+Verder bestaat de projectgroep uit:
+\begin{itemize}
+\item Marc Zwalua (Notulist)
+\item Niels de Winter
+\item Wietse Bouwmeester
+\item Bauke Meekes
+\item Job Tijhuis
+\item Hans Okkerman
+\item Jordy van der Horst
+\end{itemize}
+\textbf{Onderlinge afspraken:}
+\begin{itemize}
+\item Om de voortgang te bewaken zal er wekelijks een evaluatie plaatsvinden waarin dit wordt bekeken. Hierin wordt zo nodig de planning voor de komende weken bijgesteld.
+\item Als groepsleden horen wij altijd op tijd en verplicht aanwezig te zijn bij elke geplande bijeenkomst. Als dit onverwachts niet mogelijk is, zal hier zo snel mogelijk melding van gemaakt moeten worden. 
+\item Als er onderlinge geschillen zijn, dan worden deze besproken met de hoofddocent. Dit zorgt ervoor dat de voortgang niet in gevaar komt.
+\item Alle groepsleden moeten garant staan voor een gelijke bijdrage aan het project.
+\end{itemize}
+\textbf{Verantwoording}\\
+Er zal constant tijdens de project middagen mondeling gerapporteerd worden over de voortgang van het project. Schriftelijk wordt er halverwege de periode een mid-term rapport geschreven, hierin wordt de voortgang opgenomen. De verantwoording zal bij Dr. R. Ishihara worden gedaan. 
+
+\subsection{Planning}
+Een duidelijk schema van onze planning is toegevoegd als bijlage.
+
+\subsection{Risicoanalyse}
+Hier volgt een overzicht van de eventuele risico's die we tijdens EPO-3 tegen zouden kunnen komen. Door middel van deze analyse worden deze risico's zoveel mogelijk vermeden.
+\textbf{Externe risico's:}
+\begin{itemize}
+\item Onduidelijke informatie voorziening.
+\item Onvoldoende feedback vanuit de docenten
+\end{itemize}
+\textbf{Interne risico's:}
+\begin{itemize}
+\item Verliezen van meetresultaten.
+\item Botsing tussen de groepsleden.
+\item Het eventueel ontbreken van kennis of inzet onder de groepsleden.
+\item Het project niet af kunnen ronden door een tekort aan tijd.
+\end{itemize}
+Een aantal interne risico's kunnen worden vermeden door het aanstellen van de voorzitter, deze zal de voortgang bewaken en alle resultaten netjes beheren. Voor de externe risico's zal er vooral zelf moeten worden gezocht naar oplossingen in combinatie met de docenten.
+
+\newpage
+\section{Bijlage}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15.5cm,  angle=-90]{Planning}
+    \caption{Planning A5} 
+\end{figure}
+
+
+\chapter{Bijlage}
+
+
 
 \end{document}
