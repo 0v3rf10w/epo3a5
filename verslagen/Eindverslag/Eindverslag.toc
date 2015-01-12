@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {5.2}Buttons}{4}{section.5.2}
 \contentsline {section}{\numberline {5.3}SPI-communicatie}{4}{section.5.3}
 \contentsline {section}{\numberline {5.4}Detectie SPI}{4}{section.5.4}
-\contentsline {section}{\numberline {5.5}Simulatie}{5}{section.5.5}
+\contentsline {section}{\numberline {5.5}Simulatie}{4}{section.5.5}
 \contentsline {chapter}{\numberline {6}Blackbox}{6}{chapter.6}
 \contentsline {section}{\numberline {6.1}Functionele beschrijving}{6}{section.6.1}
 \contentsline {section}{\numberline {6.2}Inputs en outputs}{6}{section.6.2}

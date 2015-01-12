@@ -1,0 +1,73 @@
+library IEEE;
+use IEEE.std_logic_1164.ALL;
+
+entity rgb is
+port(
+deler_out_in : in std_logic; --vertraagde klok van de deler
+von : in std_logic; --signaal naar rgb om aan te geven dat er vid geschreven mag worden
+counter_out_in : in std_logic_vector (5 downto 0);
+vidcount_out_in : in std_logic_vector (9 downto 0);
+rgb_out : out std_logic_vector (2 downto 0)
+);
+
+end rgb;
+
+architecture behaviour of rgb is
+begin
+process(von, deler_out_in, vidcount_out_in)
+begin
+if(rising_edge(deler_out_in)) then
+
+if(von = '0') then
+	rgb_out <="000";
+else
+
+if (vidcount_out_in = "0000010000") then
+	rgb_out <= "010";
+elsif (vidcount_out_in = "0010100000") then
+	rgb_out <= "011";
+else
+
+if (counter_out_in = "001001") then
+	rgb_out <="100";	
+elsif (counter_out_in = "001010") then
+	rgb_out <="010";	
+elsif (counter_out_in = "001011") then
+	rgb_out <="001";	
+elsif (counter_out_in = "001101") then
+	rgb_out <="111";	
+elsif (counter_out_in = "001111") then
+	rgb_out <="000";	
+elsif (counter_out_in = "010010") then
+	rgb_out <="110";	
+elsif (counter_out_in = "010011") then
+	rgb_out <="101";
+elsif (counter_out_in = "010100") then
+	rgb_out <="111";
+elsif (counter_out_in = "010101") then
+	rgb_out <="100";
+	
+end if;
+end if;
+end if;
+end if;
+
+end process;
+end behaviour;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
