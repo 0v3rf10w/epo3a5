@@ -1,7 +1,7 @@
 ms_sate     clr     c
             ld      input
-            xor     0010111
-            add     0000001
+            xor     00101111
+            add     00000001
             bc      add_state
             ld      input
             xor     00011111
