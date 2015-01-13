@@ -27,7 +27,9 @@ Dit ontwerprapport is geschreven naar aanleiding van het project EPO-3 van het t
 
 Van het uiteindelijke ontwerp wordt in de laatste periode van dit jaar een chip gemaakt, tijdens het ontwerpproces is er daarom met een FPGA development board gewerkt. Deze is geleverd door de TU Delft. Het grootste deel van het systeem bevindt zich op de chip zelf, toch zijn er nog drie losse componenten gebruikt om dit ontwerp te realiseren. Het idee achter de spelcomputer is dat hij meerdere spellen kan spelen, deze moeten extern aangeleverd worden. Er is hier gekozen voor een SD-kaart uitlezing met SPI, het spel is in assembly geschreven. Ook de besturing moest extern geregeld worden, met ultrasone sensoren bleek dit systeem het best te controleren. Als back-up plan is er hiernaast voor gekozen om ook enkele knoppen te implementeren. Om het spel te kunnen spelen is er tot slot ook een beeldscherm nodig.\\
 
-Het belangrijkste deel van dit ontwerp bevindt zich op de chip. In de CPU wordt de informatie verwerkt die via SPI van de SD-kaart binnen komt. In de CPU wordt daarnaast ook de besturing van het spel verwerkt. De CPU kan dus gezien worden als het brein van de chip, alles wordt hier verwerkt en doorgegeven aan de GPU. Deze maakt er vervolgens een beeld van. Om vertraging op het scherm te voorkomen is er een 'Blackbox' geïmplementeerd, de zorgt ervoor dat er gewisseld kan worden tussen twee SRAM geheugens. Hierdoor kan er op de ene SRAM geschreven worden door de GPU en kan de ander worden uit gelezen door de VGA. De VGA produceert vervolgens het beeld op een beeldscherm. Alleen beide SRAM geheugen bevinden zich niet op de chip, maar ziten extern in het systeem verwerkt.
+Het belangrijkste deel van dit ontwerp bevindt zich op de chip. In de CPU wordt de informatie verwerkt die via SPI van de SD-kaart binnen komt. In de CPU wordt daarnaast ook de besturing van het spel verwerkt. De CPU kan dus gezien worden als het brein van de chip, alles wordt hier verwerkt en doorgegeven aan de GPU. Deze maakt er vervolgens een beeld van. Om vertraging op het scherm te voorkomen is er een 'Blackbox' geïmplementeerd, de zorgt ervoor dat er gewisseld kan worden tussen twee SRAM geheugens. Hierdoor kan er op de ene SRAM geschreven worden door de GPU en kan de ander worden uit gelezen door de VGA. De VGA produceert vervolgens het beeld op een beeldscherm. Alleen beide SRAM geheugen bevinden zich niet op de chip, maar ziten extern in het systeem verwerkt.\\
+
+Tot in de laatste week is er hard gewerkt om alles op tijd werkend te krijgen, dit is helaas niet gelukt. Er is daarom besloten met de werkende onderdelen verder te gaan, van de ROM, CPU en de SPI decoder is een simpele rekenmachine ontworpen. De besturing loopt nog steeds via de sensoren in combinatie met enkele drukknoppen. De chip is nu in staat om enkele simpele berekeningen te doen, namelijk optellen, aftrekken en vermenigvuldigen.
 
 
 \tableofcontents
@@ -111,7 +113,7 @@ Deze waarde kwam precies zoals verwacht op de ledjes op de FPGA. Echter na ongev
 
 \chapter{Blackbox}
 \section{Functionele beschrijving}
-Voor het genereren van de beelden worden twee SRAM chips gebruikt. De ene chip wordt uitgelezen door de VGA generator en er wordt naar de andere chip geschreven door de GPU. Als een frame geschreven is naar de SRAM chip wordt de chip waar net naar geschreven is verbonden met de VGA generator zodat deze uitgelezen kan worden. De chip die voorheen verbonden was met de VGA wordt doorverbonden met de GPU zodat daar vervolgens naar geschreven kan worden. Door deze techniek toe te passen blijft het beeld op het scherm stabiel. De BlackBox is de schakeling die dat mogelijk maakt.
+Voor het genereren van de beelden worden twee SRAM chips gebruikt. De ene chip wordt uitgelezen door de VGA generator en er wordt naar de andere chip geschreven door de GPU. Als een frame geschreven is naar de SRAM chip wordt de chip waar net naar geschreven is verbonden met de VGA generator zodat deze uitgelezen kan worden. De chip die voorheen verbonden was met de VGA wordt doorverbonden met de GPU zodat daar vervolgens naar geschreven kan worden. Door deze techniek toe te passen blijft het beeld op het scherm stabiel. De BlackBox is de schakeling die dat mogelijk maakt. De specificaties van deze schakeling zijn dus dat er binnen de refresh rate van 60 Hz geschakeld kan worden tussen de 2 sram chips. Omdat het scherm uit 32 x 24 blokken bestaat, moeten er in het sram 768 bits, oftewel 96 bytes opgeslagen worden. Deze moeten kunnen worden uitgelezen met een frequentie van 60 Hz dus de snelheid van het SRAM moet 96 bytes * 60 Hz = 5760 bytes per seconde zijn. De schrijfsnelheid maakt in principe niet uit, er wordt immers pas van chip gewisseld als de GPU klaar is met schrijven. Om een enigszins bewegend beeld te krijgen zouden er rond de 10 frames per seconde geschreven moeten worden. Dit komt neer op 960 bytes per seconde.
 \section{Inputs en outputs}
 De SRAM chips, de VGA en de GPU communiceren met elkaar met behulp van SPI. De schakeling heeft dus twee SPI master aansluitingen voor VGA en de GPU en twee SPI slave aansluitingen voor de twee SRAM chips. Een SPI aansluiting bestaat uit vier signaallijnen. Dit zijn de serial clock (SCLK), master in slave out (MISO), master out slave in (MOSI) en slave select (SS). Ook heeft de schakeling nog een ingang om te selecteren welke SRAM chip verbonden is met de VGA generator en welke met de GPU.
 
@@ -144,32 +146,34 @@ Om programma’s uit te kunnen voeren wordt gebruik gemaakt van een door de Delt
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{CPU-toplevel}
+\includegraphics[width=9cm]{CPU-toplevel2}
 \caption{Toplevel beschrijving}
 \label{CPU}
 \end{figure}
 
 \section{Inputs en outputs}
-De processor heeft in totaal 5 ingangen. Dit zijn de 12-bits instructie-bus waarop de instructies staan die vanaf de SD kaart worden afgelezen, een 8-bits signaal waar alle externe inputs op komen te staan, de klok, de reset en het CPU-enable signaal. Het CPU-enable signaal geeft door aan de processor dat een nieuwe instructie klaar staat om uitgevoerd te worden. Op het 8-bits signaal waar alle inputsinformatie op staat, staat bijvoorbeeld de positie van de aansturing.
-Verder beschikt de CPU over 2 uitgangen: Eén 8-bits signaal dat data naar de VGA controller stuurt en een 8-bits signaal dat het adres van de volgende instructie doorgeeft aan de SD-kaart uitlezer. 
+De processor heeft in totaal vijf ingangen. Dit zijn de 12-bits instructie-bus waarop de instructies staan die vanaf de SD kaart worden afgelezen, een 8-bits signaal waar alle externe inputs op komen te staan, de reset en het CPU-enable signaal. Het CPU-enable signaal geeft door aan de processor dat een nieuwe instructie klaar staat om uitgevoerd te worden. Op het 8-bits signaal waar alle inputsinformatie op staat, staat bijvoorbeeld de positie van de aansturing.
+We hebben besloten om de CPU niet te laten draaien op een kloksignaal, maar op het enable signaal. Op deze manier maakt de CPU een berekening iedereen keer dat er een instructie op de ingang wordt aangeboden. Zo gaat de CPU geen ongewenste stappen ondernemen met verkeerde/verouderde ingangswaardes. 
+
+Verder beschikt de CPU over twee uitgangen: Eén 8-bits signaal dat data naar de VGA controller stuurt en een 8-bits signaal dat het adres van de volgende instructie doorgeeft aan de SD-kaart uitlezer. 
 
 \section{Implementatie}
-De totale processor is opgebouwd uit 5 verschillende sub-schakelingen: Registers, buffers, een rekenkern, een program-counter en een instructie-decoder.
+De totale processor is opgebouwd uit vijf verschillende sub-schakelingen: Registers, buffers, een rekenkern, een program-counter en een instructie-decoder.
 
-De processor beschikt in totaal over 11 registers. Wanneer het enable-signaal vanaf de decoder van een register hoog is, slaat deze de waarde die op dat moment aan zijn ingang staat op en kan deze data bij een later bewerking weer uitgelezen worden. Hiervan worden er 9 gebruikt om waarden op te slaan voor volgende bewerkingen, één om data aan de data-uitgang van de processor te zetten en één aan de uitgang van de rekenkern om direct een volgende bewerking op uit te kunnen voeren.
+De processor beschikt in totaal over elf registers. Wanneer het enable-signaal vanaf de decoder van een register hoog is, slaat deze de waarde die op dat moment aan zijn ingang staat op en kan deze data bij een latere bewerking weer uitgelezen worden. Hiervan worden er negen gebruikt om waarden op te slaan voor volgende bewerkingen, één om data aan de data-uitgang van de processor te zetten en één aan de uitgang van de rekenkern om direct een volgende bewerking op uit te kunnen voeren. Het enable-signaal staat in een 5-bits vector, waarmee ook de registers waarin je data wilt opslaan geselecteerd worden. De most-significant bit bepaald of de register enabled is. De overige vier bits is het adres van het register dat je wilt selecteren.
 
-Verder zijn er 13 buffers aanwezig. Deze buffers laten data van hun ingang door naar hun uitgang wanneer hun enable-signaal vanaf de decoder hoog is, en geven 'high-Z' door wanneer dit niet zo is. Negen van deze 8-bits buffers staan tussen de uitgangen van de opslag-registers en de databus, één aan de controller-input, één tussen het rekenkern-register en de databus, één die vanuit de decoder een numerieke waarde op de databus kan zetten en één 12-bits buffer aan de instructie-ingang van de CPU.
+Verder zijn er dertien buffers aanwezig. Deze buffers laten data van hun ingang door naar hun uitgang wanneer hun enable-signaal vanaf de decoder hoog is, en geven 'high-Z' aan de output door wanneer dit niet zo is. Ze maken dus data beschikbaar aan de bus, zodat er verder mee gerekend kan worden. Negen van deze 8-bits buffers staan tussen de uitgangen van de opslag-registers en de databus, één aan de controller-input, één tussen het rekenkern-register en de databus, één die vanuit de decoder een numerieke waarde op de databus kan zetten en één 12-bits buffer aan de instructie-ingang van de CPU. De negen buffers achter de opslag-registers worden op dezelfde manier geselecteerd als de registers, maar dan op hun eigen data-bus.
 
-De rekenkern heeft één 3-bits instructie-ingang vanuit de decoder, twee 8-bits data ingangen waarvan er een van de databus komt en een het resultaat van de vorige bewerking bevat, een 1-bit carry uitgang die aangeeft wanneer er een overflow optreedt bij een optel-operatie, een 1-bit zero uitgang die aangeeft wanneer een 'AND' operatie enkel nullen oplevert en een 8-bits uitgang waar het resultaat van de bewerkingen op staat. Afhankelijk van het instructie-signaal wordt een andere operatie uitgevoerd met de data op de twee ingangen. 
+De Arithmetic Logic Unit (ALU) heeft één 3-bits instructie-ingang vanuit de decoder, twee 8-bits data ingangen waarvan er een van de databus komt en een het resultaat van de vorige bewerking bevat, een 1-bit carry uitgang die aangeeft wanneer er een overflow optreedt bij een optel-operatie, een 1-bit zero uitgang die aangeeft wanneer een 'AND' operatie enkel nullen oplevert en een 8-bits uitgang waar het resultaat van de bewerkingen op staat. Afhankelijk van het instructie-signaal wordt een andere operatie uitgevoerd met de data op de twee ingangen.
+Op basis van de Opcode selecteert de ALU middels 'when' statements welke functie hij moet uitvoeren.
 
-De program counter krijgt na elke instructie van de decoder een signaal om ofwel één instructie verder te gaan, of om naar een specifieke instructie te 'springen'. Dit wordt gedaan met behulp van een 1-bit increment en -jump signaal. Zolang de increment ingang hoog is wordt er telkens één opgeteld bij iedere instructie, en als het jump signaal hoog is wordt het nieuwe instructie-nummer vanaf de databus uitgelezen. Het 8-bits uitgangssignaal bevat het adres van de volgende instructie en wordt doorgegeven naar de SD-kaart uitlezer.
+De Program counter krijgt na elke instructie van de decoder een signaal om ofwel één instructie verder te gaan, of om naar een specifieke instructie te 'springen'. Dit wordt gedaan met behulp van een 1-bit increment en -jump signaal. Zolang de increment ingang hoog is wordt er telkens één opgeteld bij iedere instructie, en als het jump signaal hoog is wordt het nieuwe instructie-nummer vanaf de databus uitgelezen. Het 8-bits uitgangssignaal bevat het adres van de volgende instructie en wordt doorgegeven naar de SD-kaart uitlezer. De program counter zal bij elk opgaand enable signaal een stap verder gaan, dus bij iedere nieuwe instructie wordt gekeken wat de volgende instructie gaat zijn.
 
-Aan de kern van de processor bevindt zich de instructie decoder. Deze decoder stuurt naar aanleiding van een 12-bits instructie de overige componenten binnen de CPU aan. Dit wordt gedaan door eerst het 12-bits signaal op te delen in een 4-bits instructie en een 8-bits argument. Hierna wordt afhankelijk van de instructie een enable-signaal naar een relevant register of buffer, een instructie-code naar de rekenkern en een increment of jump signaal naar de program counter gestuurd. Het 8-bits argument kan ofwel als waarde op de databus gezet worden of als enable-signaal omgezet worden voor een register of buffer. De mogelijke instructies met bijbehorende uitgangssignalen van de decoder zijn te zien in tabel [figuur 6.2]
-
+Aan het hoofd van de processor bevindt zich de instructie decoder. Deze decoder stuurt naar aanleiding van een 12-bits instructie de overige componenten binnen de CPU aan. Dit wordt gedaan door eerst het 12-bits signaal op te delen in een 4-bits instructie en een 8-bits argument. Hierna wordt afhankelijk van de instructie een enable-signaal naar een relevant register of buffer, een instructie-code naar de rekenkern en een increment of jump signaal naar de program counter gestuurd. Het 8-bits argument kan ofwel als waarde op de databus gezet worden of als enable-signaal omgezet worden voor een register of buffer. De mogelijke instructies met bijbehorende uitgangssignalen van de decoder zijn te zien in tabel [figuur 6.2]. In de tabel is te zien bij welke ingangssignalen de output hoog moet zijn. Met dit in gedachten kan door middel van logische combinatoriek voor iedere uitgang een logische functie worden gedefinieerd.
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{tabel}
+\includegraphics[width=12cm]{tabel}
 \caption{Instructies met bijbehorende uitgangssignalen}
 \label{CPU}
 \end{figure}
@@ -468,6 +472,9 @@ xxxxxx
 
 Over het eindontwerp is nog geen discussie mogelijk. Voor het schrijven van dit tussentijdse ontwerprapport zijn er nog wel een aantal dingen naar voren gekomen. Voorop staat het feit dat alles minder snel en soepel verloopt als dat we gehoopt hadden. Het testen van de hardware op het FPGA bord bracht veel oponthoud met zich mee. Ook bleken de stappen die tot het eindproduct moesten lijden niet compleet bedacht, tijdens het ontwerpproces kwamen er extra stappen naar voren die veel tijd hebben gekost. Ondanks dat de einddatum steeds dichterbij komt denken we dat alles binnen de tijd realiseerbaar is.
 
+<<<<<<< HEAD
+\end{document}
+=======
 \appendix
 \chapter{Plan van aanpak}
 \section{Achtergronden}
@@ -611,3 +618,4 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 
 
 \end{document}
+>>>>>>> origin/master

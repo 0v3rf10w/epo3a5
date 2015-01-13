@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.23)  12 JAN 2015 23:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.23)  13 JAN 2015 13:41
 entering extended mode
 **Eindverslag.tex
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\Eindverslag.tex
@@ -1606,11 +1606,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.33 \tableofcontents
+l.35 \tableofcontents
                       [1
 
 ]
@@ -1628,237 +1633,237 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 \chapter
+l.41 \chapter
              {Probleemstelling} [1
 
 
 ]
 Hoofdstuk 3.
 LaTeX Font Info:    Font shape `T1/futs/bx/sc' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/sc' tried instead on input line 40.
+(Font)              Font shape `T1/futs/b/sc' tried instead on input line 42.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.57 \chapter
+l.59 \chapter
              {Systeemoverzicht} [2
 
 ]
 Hoofdstuk 4.
-<hele-systeem.png, id=489, 418.56375pt x 325.215pt>
+<hele-systeem.png, id=495, 418.56375pt x 325.215pt>
 File: hele-systeem.png Graphic file (type png)
  <use hele-systeem.png>
-Package pdftex.def Info: hele-systeem.png used on input line 62.
+Package pdftex.def Info: hele-systeem.png used on input line 64.
 (pdftex.def)             Requested size: 256.0748pt x 198.96146pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.73 \chapter
+l.75 \chapter
              {Besturing} [3
 
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/hele-systeem.png
 >]
 Hoofdstuk 5.
-<Screenshot.png, id=495, 1927.2pt x 1084.05pt>
+<Screenshot.png, id=501, 1927.2pt x 1084.05pt>
 File: Screenshot.png Graphic file (type png)
  <use Screenshot.png>
-Package pdftex.def Info: Screenshot.png used on input line 94.
+Package pdftex.def Info: Screenshot.png used on input line 96.
 (pdftex.def)             Requested size: 256.0748pt x 144.0412pt.
  [4
 
 ]
-<TEK0001.JPG, id=500, 642.4pt x 481.8pt>
+<TEK0001.JPG, id=506, 642.4pt x 481.8pt>
 File: TEK0001.JPG Graphic file (type jpg)
  <use TEK0001.JPG>
-Package pdftex.def Info: TEK0001.JPG used on input line 102.
+Package pdftex.def Info: TEK0001.JPG used on input line 104.
 (pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
  [5 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/Screenshot.pn
 g> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/TEK0001.JPG>]
 Hoofdstuk 6.
-<./BlackBox_Circuit.png, id=507, 282.30469pt x 284.56313pt>
+<./BlackBox_Circuit.png, id=513, 282.30469pt x 284.56313pt>
 File: ./BlackBox_Circuit.png Graphic file (type png)
 
 <use ./BlackBox_Circuit.png>
-Package pdftex.def Info: ./BlackBox_Circuit.png used on input line 120.
+Package pdftex.def Info: ./BlackBox_Circuit.png used on input line 122.
 (pdftex.def)             Requested size: 256.0748pt x 258.14087pt.
  [6
 
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/BlackBox_Circuit
 .png>]
-<./BlackBox_SLS.png, id=515, 389.20406pt x 367.3725pt>
+<./BlackBox_SLS.png, id=521, 389.20406pt x 367.3725pt>
 File: ./BlackBox_SLS.png Graphic file (type png)
 
 <use ./BlackBox_SLS.png>
-Package pdftex.def Info: ./BlackBox_SLS.png used on input line 132.
+Package pdftex.def Info: ./BlackBox_SLS.png used on input line 134.
 (pdftex.def)             Requested size: 256.0748pt x 241.71542pt.
  [7 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/BlackBox_SLS.
 png>]
 Hoofdstuk 7.
-<CPU-toplevel.png, id=521, 914.41624pt x 817.0525pt>
+<CPU-toplevel.png, id=527, 914.41624pt x 817.0525pt>
 File: CPU-toplevel.png Graphic file (type png)
  <use CPU-toplevel.png>
-Package pdftex.def Info: CPU-toplevel.png used on input line 147.
+Package pdftex.def Info: CPU-toplevel.png used on input line 149.
 (pdftex.def)             Requested size: 256.0748pt x 228.81055pt.
 
 [8
 
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/CPU-toplevel.png
->] <tabel.png, id=529, 548.0475pt x 243.91125pt>
+>] <tabel.png, id=535, 548.0475pt x 243.91125pt>
 File: tabel.png Graphic file (type png)
  <use tabel.png>
-Package pdftex.def Info: tabel.png used on input line 172.
+Package pdftex.def Info: tabel.png used on input line 174.
 (pdftex.def)             Requested size: 256.0748pt x 113.96837pt.
  [9 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/tabel.png>]
 Hoofdstuk 8.
-<FSM_GPU.png, id=536, 431.81325pt x 393.8715pt>
+<FSM_GPU.png, id=542, 431.81325pt x 393.8715pt>
 File: FSM_GPU.png Graphic file (type png)
  <use FSM_GPU.png>
-Package pdftex.def Info: FSM_GPU.png used on input line 185.
+Package pdftex.def Info: FSM_GPU.png used on input line 187.
 (pdftex.def)             Requested size: 256.0748pt x 233.59016pt.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 190.
+(Font)              scaled to size 9.19998pt on input line 192.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 190.
+(Font)              scaled to size 6.99199pt on input line 192.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 190.
+(Font)              scaled to size 5.51999pt on input line 192.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 190.
+(Font)              scaled to size 9.19998pt on input line 192.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 190.
+(Font)              scaled to size 6.99199pt on input line 192.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 190.
+(Font)              scaled to size 5.51999pt on input line 192.
  [10
 
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM_GPU.png>] [1
 1]
 Hoofdstuk 9.
-<vga2arcade.png, id=548, 346.896pt x 180.07275pt>
+<vga2arcade.png, id=554, 346.896pt x 180.07275pt>
 File: vga2arcade.png Graphic file (type png)
  <use vga2arcade.png>
-Package pdftex.def Info: vga2arcade.png used on input line 197.
+Package pdftex.def Info: vga2arcade.png used on input line 199.
 (pdftex.def)             Requested size: 256.0748pt x 132.93301pt.
 
-<totaal-overzicht.png, id=549, 846.16125pt x 493.0922pt>
+<totaal-overzicht.png, id=555, 846.16125pt x 493.0922pt>
 File: totaal-overzicht.png Graphic file (type png)
 
 <use totaal-overzicht.png>
-Package pdftex.def Info: totaal-overzicht.png used on input line 206.
+Package pdftex.def Info: totaal-overzicht.png used on input line 208.
 (pdftex.def)             Requested size: 256.0748pt x 149.22292pt.
  [12
 
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/vga2arcade.png> 
 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/totaal-overzicht.
 png>]
-<VGA_signal_format.png, id=558, 564.8471pt x 418.40526pt>
+<VGA_signal_format.png, id=564, 564.8471pt x 418.40526pt>
 File: VGA_signal_format.png Graphic file (type png)
 
 <use VGA_signal_format.png>
-Package pdftex.def Info: VGA_signal_format.png used on input line 219.
+Package pdftex.def Info: VGA_signal_format.png used on input line 221.
 (pdftex.def)             Requested size: 256.0748pt x 189.68517pt.
 LaTeX Font Info:    Font shape `T1/futs/bx/sc' in size <12> not available
-(Font)              Font shape `T1/futs/b/sc' tried instead on input line 232.
- <tabel-VGA-1.png, id=559, 464.937pt x 72.27pt>
+(Font)              Font shape `T1/futs/b/sc' tried instead on input line 234.
+ <tabel-VGA-1.png, id=565, 464.937pt x 72.27pt>
 File: tabel-VGA-1.png Graphic file (type png)
 
 <use tabel-VGA-1.png>
-Package pdftex.def Info: tabel-VGA-1.png used on input line 237.
+Package pdftex.def Info: tabel-VGA-1.png used on input line 239.
 (pdftex.def)             Requested size: 256.0748pt x 39.80595pt.
  [13 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/VGA_signal_f
 ormat.png>]
-<tabel-VGA-2.png, id=566, 466.1415pt x 72.87225pt>
+<tabel-VGA-2.png, id=572, 466.1415pt x 72.87225pt>
 File: tabel-VGA-2.png Graphic file (type png)
  <use tabel-VGA-2.png>
-Package pdftex.def Info: tabel-VGA-2.png used on input line 247.
+Package pdftex.def Info: tabel-VGA-2.png used on input line 249.
 (pdftex.def)             Requested size: 256.0748pt x 40.03316pt.
 
-<schema-zonder-SRAM.png, id=567, 951.555pt x 590.205pt>
+<schema-zonder-SRAM.png, id=573, 951.555pt x 590.205pt>
 File: schema-zonder-SRAM.png Graphic file (type png)
 
 <use schema-zonder-SRAM.png>
-Package pdftex.def Info: schema-zonder-SRAM.png used on input line 265.
+Package pdftex.def Info: schema-zonder-SRAM.png used on input line 267.
 (pdftex.def)             Requested size: 256.0748pt x 158.82613pt.
 
-<FSM-H-sync.png, id=568, 1008.76875pt x 572.1375pt>
+<FSM-H-sync.png, id=574, 1008.76875pt x 572.1375pt>
 File: FSM-H-sync.png Graphic file (type png)
  <use FSM-H-sync.png>
-Package pdftex.def Info: FSM-H-sync.png used on input line 281.
+Package pdftex.def Info: FSM-H-sync.png used on input line 283.
 (pdftex.def)             Requested size: 256.0748pt x 145.23401pt.
 
 [14 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/tabel-VGA-1.p
 ng> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/tabel-VGA-2.p
 ng> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/schema-zonder
--SRAM.png>] <FSM-V-sync.png, id=577, 1008.76875pt x 572.1375pt>
+-SRAM.png>] <FSM-V-sync.png, id=583, 1008.76875pt x 572.1375pt>
 File: FSM-V-sync.png Graphic file (type png)
 
 <use FSM-V-sync.png>
-Package pdftex.def Info: FSM-V-sync.png used on input line 294.
+Package pdftex.def Info: FSM-V-sync.png used on input line 296.
 (pdftex.def)             Requested size: 256.0748pt x 145.23401pt.
- <FSM-rgb.png, id=578, 636.87938pt x 285.31593pt>
+ <FSM-rgb.png, id=584, 636.87938pt x 285.31593pt>
 File: FSM-rgb.png Graphic file (type png)
 
 <use FSM-rgb.png>
-Package pdftex.def Info: FSM-rgb.png used on input line 304.
+Package pdftex.def Info: FSM-rgb.png used on input line 306.
 (pdftex.def)             Requested size: 256.0748pt x 114.71643pt.
  [15 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-H-sync.p
 ng> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-V-sync.pn
 g> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-rgb.png>] 
-<schema-met-SRAM.png, id=588, 1472.50125pt x 590.205pt>
+<schema-met-SRAM.png, id=594, 1472.50125pt x 590.205pt>
 File: schema-met-SRAM.png Graphic file (type png)
 
 <use schema-met-SRAM.png>
-Package pdftex.def Info: schema-met-SRAM.png used on input line 318.
+Package pdftex.def Info: schema-met-SRAM.png used on input line 320.
 (pdftex.def)             Requested size: 256.0748pt x 102.63899pt.
- <FSM-Ssync.png, id=589, 632.3625pt x 274.02374pt>
+ <FSM-Ssync.png, id=595, 632.3625pt x 274.02374pt>
 File: FSM-Ssync.png Graphic file (type png)
 
 <use FSM-Ssync.png>
-Package pdftex.def Info: FSM-Ssync.png used on input line 331.
+Package pdftex.def Info: FSM-Ssync.png used on input line 333.
 (pdftex.def)             Requested size: 256.0748pt x 110.96646pt.
- <resultaat.png, id=590, 3276.24pt x 2457.18pt>
+ <resultaat.png, id=596, 3276.24pt x 2457.18pt>
 File: resultaat.png Graphic file (type png)
 
 <use resultaat.png>
-Package pdftex.def Info: resultaat.png used on input line 352.
+Package pdftex.def Info: resultaat.png used on input line 354.
 (pdftex.def)             Requested size: 256.0748pt x 192.0417pt.
  [16 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/schema-met-S
 RAM.png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-Ssyn
 c.png>] [17 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/resul
 taat.png>]
 Hoofdstuk 10.
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 366
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 368
 .
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\ts1futs.fd"
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 )
-<./spi_diagram.png, id=606, 1013.28563pt x 528.47438pt>
+<./spi_diagram.png, id=612, 1013.28563pt x 528.47438pt>
 File: ./spi_diagram.png Graphic file (type png)
 
 <use ./spi_diagram.png>
-Package pdftex.def Info: ./spi_diagram.png used on input line 379.
+Package pdftex.def Info: ./spi_diagram.png used on input line 381.
 (pdftex.def)             Requested size: 256.0748pt x 133.55363pt.
  [18
 
 ]
-<./shift_register_diagram.png, id=615, 841.64438pt x 651.93562pt>
+<./shift_register_diagram.png, id=621, 841.64438pt x 651.93562pt>
 File: ./shift_register_diagram.png Graphic file (type png)
 
 <use ./shift_register_diagram.png>
-Package pdftex.def Info: ./shift_register_diagram.png used on input line 398.
+Package pdftex.def Info: ./shift_register_diagram.png used on input line 400.
 (pdftex.def)             Requested size: 153.6447pt x 119.00461pt.
 
-<./control_diagram.png, id=616, 794.97pt x 396.7322pt>
+<./control_diagram.png, id=622, 794.97pt x 396.7322pt>
 File: ./control_diagram.png Graphic file (type png)
 
 <use ./control_diagram.png>
-Package pdftex.def Info: ./control_diagram.png used on input line 404.
+Package pdftex.def Info: ./control_diagram.png used on input line 406.
 (pdftex.def)             Requested size: 221.93158pt x 110.75735pt.
 
-<./spi_system_diagram.png, id=617, 1291.82625pt x 686.565pt>
+<./spi_system_diagram.png, id=623, 1291.82625pt x 686.565pt>
 File: ./spi_system_diagram.png Graphic file (type png)
 
 <use ./spi_system_diagram.png>
-Package pdftex.def Info: ./spi_system_diagram.png used on input line 412.
+Package pdftex.def Info: ./spi_system_diagram.png used on input line 414.
 (pdftex.def)             Requested size: 324.36124pt x 172.38463pt.
  [19 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/spi_diagram.
 png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/shift_regist
@@ -1866,10 +1871,10 @@ er_diagram.png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/c
 ontrol_diagram.png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindversl
 ag/spi_system_diagram.png>]
 Hoofdstuk 11.
-<./sd_diagram.png, id=627, 931.98187pt x 484.81125pt>
+<./sd_diagram.png, id=633, 931.98187pt x 484.81125pt>
 File: ./sd_diagram.png Graphic file (type png)
  <use ./sd_diagram.png>
-Package pdftex.def Info: ./sd_diagram.png used on input line 430.
+Package pdftex.def Info: ./sd_diagram.png used on input line 432.
 (pdftex.def)             Requested size: 256.0748pt x 133.20883pt.
 
 [20
@@ -1887,11 +1892,11 @@ Hoofdstuk 13.
 B"ylage A.
 [24
 
-] [25] [26] [27] <Planning.png, id=684, 866.63776pt x 499.26524pt>
+] [25] [26] [27] <Planning.png, id=690, 866.63776pt x 499.26524pt>
 File: Planning.png Graphic file (type png)
 
 <use Planning.png>
-Package pdftex.def Info: Planning.png used on input line 594.
+Package pdftex.def Info: Planning.png used on input line 596.
 (pdftex.def)             Requested size: 441.01772pt x 254.06578pt.
  [28 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/Planning.png
 >]
@@ -1900,7 +1905,7 @@ B"ylage B.
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 602.
+nput line 604.
 
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/blackbox.vhd
 )
@@ -1911,31 +1916,25 @@ aviour.vhd [29
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/stream.vhd)
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/stream-behav
 iour.vhd [31]) [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 613.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 613.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 615.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 615.
 
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\Eindverslag.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 613.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 613.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 615.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 615.
+Package rerunfilecheck Info: File `Eindverslag.out' has not changed.
+(rerunfilecheck)             Checksum: ED5CBF876CFC21414A7915ED823EDF62;4657.
 
-
-Package rerunfilecheck Warning: File `Eindverslag.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Eindverslag.out':
-(rerunfilecheck)             Before: 29B09B42BE4DE8587145EB68669025B1;4605
-(rerunfilecheck)             After:  ED5CBF876CFC21414A7915ED823EDF62;4657.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 613.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 615.
  ) 
 Here is how much of TeX's memory you used:
- 23437 strings out of 493921
- 407196 string characters out of 3144875
+ 23438 strings out of 493921
+ 407209 string characters out of 3144875
  513282 words of memory out of 3000000
- 25862 multiletter control sequences out of 15000+200000
+ 25863 multiletter control sequences out of 15000+200000
  137699 words of font info for 118 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  62i,12n,75p,1252b,1862s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1947,9 +1946,9 @@ ts/type1/public/lm/lmss17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ad
 obe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utop
 ia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putri
 8a.pfb>
-Output written on Eindverslag.pdf (36 pages, 9011838 bytes).
+Output written on Eindverslag.pdf (36 pages, 9012705 bytes).
 PDF statistics:
- 983 PDF objects out of 1000 (max. 8388607)
+ 988 PDF objects out of 1000 (max. 8388607)
  338 named destinations out of 1000 (max. 500000)
- 751 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 759 words of extra memory for PDF output out of 10000 (max. 10000000)
 

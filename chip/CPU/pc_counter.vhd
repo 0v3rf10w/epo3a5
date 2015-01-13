@@ -7,19 +7,19 @@ port ( pc_in  : in  std_logic_vector(7 downto 0);
       pc_inc  : in  std_logic;
       pc_ld   : in  std_logic;
       pc_rst  : in  std_logic;
-      pc_clk  : in  std_logic;
+      pc_en  : in  std_logic;
       pc_out  : out std_logic_vector(7 downto 0));
 end entity pc_counter;
 
 architecture behaviour of pc_counter is
 signal count : std_logic_vector(7 downto 0);
 begin
-  process(pc_rst, pc_clk)
+  process(pc_rst, pc_en)
   begin
     if (pc_rst='1') then
       count <= "00000000";
     else
-      if (pc_clk'event AND pc_clk='1') then
+      if (pc_en'event AND pc_en='1') then
         if (pc_inc='1') then
           count <= unsigned(count) + 1;
         elsif (pc_ld='1') then

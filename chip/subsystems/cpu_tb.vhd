@@ -5,9 +5,8 @@ entity cpu_tb is
 end entity cpu_tb;
 
 architecture behaviour of cpu_tb is
-component cpu1
-	port (	cpu_clk	:	in	std_logic;
-		cpu_rst	:	in	std_logic;
+component cpu
+	port (	cpu_rst	:	in	std_logic;
 		cpu_en	:	in	std_logic;
 		cpu_in	:	in	std_logic_vector(7 downto 0);
 		cpu_instr:	in	std_logic_vector(11 downto 0);
@@ -15,7 +14,6 @@ component cpu1
 		cpu_out	:	out	std_logic_vector(7 downto 0));
 end component;
 
-signal cpu_clk	:	std_logic;
 signal cpu_rst	:	std_logic;
 signal cpu_en	:	std_logic;
 signal cpu_in	:	std_logic_vector(7 downto 0);
@@ -24,13 +22,11 @@ signal cpu_pc	:	std_logic_vector(7 downto 0);
 signal cpu_out	:	std_logic_vector(7 downto 0);
 
 begin
-lbl1: cpu1 port map(cpu_clk, cpu_rst, cpu_en, cpu_in, cpu_instr, cpu_pc, cpu_out);
-cpu_clk <= '1' after 0 ns,
-	'0' after 50 ns when cpu_clk/= '0' else '1' after 50 ns;
+lbl1: cpu port map(cpu_rst, cpu_en, cpu_in, cpu_instr, cpu_pc, cpu_out);
+cpu_en <= '1' after 0 ns,
+	'0' after 10 ns when cpu_en/= '0' else '1' after 40 ns;
 cpu_rst <= '1' after 0 ns,
 	'0' after 50 ns;
-cpu_en <= '0' after 0 ns,
-	'1' after 50 ns;
 cpu_in <= "00000000" after 0 ns,
 	"00000010" after 950 ns;
 cpu_instr <= "000000000000" after 0 ns,
