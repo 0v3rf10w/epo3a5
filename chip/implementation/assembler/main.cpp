@@ -86,16 +86,16 @@ int main()
         {
         case jp:
             if(is_bitcode(argument))
-                bitfile << "00000001 " << argument << endl;
+                bitfile << "0001 " << argument << endl;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "00000010 10000000" << endl;
+                    bitfile << "001010000000" << endl;
                 }
                 else
                 {
-                    bitfile << "00000010 ";
+                    bitfile << "0010 ";
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
@@ -109,23 +109,23 @@ int main()
             }
             break;
         case bz:
-            bitfile << "00000011 " << argument << endl;
+            bitfile << "0011" << argument << endl;
             break;
         case bc:
-            bitfile << "00000100 " << argument << endl;
+            bitfile << "0100" << argument << endl;
             break;
         case ld:
             if(is_bitcode(argument))
-                bitfile << "00000101 " << argument << endl;
+                bitfile << "0101" << argument << endl;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "00000110 10000000" << endl;
+                    bitfile << "011010000000" << endl;
                 }
                 else
                 {
-                    bitfile << "00000110 ";
+                    bitfile << "0110 ";
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
@@ -139,7 +139,7 @@ int main()
             }
             break;
         case st:
-            bitfile << "00000111 ";
+            bitfile << "0111";
             if(argument[0] == 'R')
             {
                 argument.erase(0,1);
@@ -152,16 +152,16 @@ int main()
             break;
         case add:
             if(is_bitcode(argument))
-                bitfile << "00001000 " << argument << endl;
+                bitfile << "1000 " << argument << endl;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "00001001 10000000" << endl;
+                    bitfile << "100110000000" << endl;
                 }
                 else
                 {
-                    bitfile << "00001001 ";
+                    bitfile << "1001";
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
@@ -176,16 +176,16 @@ int main()
             break;
         case i_xor:
             if(is_bitcode(argument))
-                bitfile << "00001010 " << argument << endl;
+                bitfile << "1010" << argument << endl;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "00001011 10000000" << endl;
+                    bitfile << "101110000000" << endl;
                 }
                 else
                 {
-                    bitfile << "00001011 ";
+                    bitfile << "1011";
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
@@ -200,16 +200,16 @@ int main()
             break;
         case i_and:
             if(is_bitcode(argument))
-                bitfile << "00001100 " << argument << endl;
+                bitfile << "1100" << argument << endl;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "00001101 10000000" << endl;
+                    bitfile << "110110000000" << endl;
                 }
                 else
                 {
-                    bitfile << "00001101 ";
+                    bitfile << "1101";
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
@@ -223,10 +223,10 @@ int main()
             }
             break;
         case i_set:
-            bitfile << "00001110 00000000" << endl;
+            bitfile << "111000000000" << endl;
             break;
         case i_clr:
-            bitfile << "00001111 00000000" << endl;
+            bitfile << "111100000000" << endl;
             break;
         default:
             assert(3);
