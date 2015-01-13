@@ -15,14 +15,17 @@ architecture Behavioral of gate is
 begin
 
 
-process(sw, input)
-begin
-if (sw = '1') then
-output <= input;
-else
-output <= '0';
-end if;
-end process;
+
+output <= input when (sw = '1') else '0';
+
+--process(sw, input)
+--begin
+--if (sw = '1') then
+--output <= input;
+--else
+--output <= '0';
+--end if;
+--end process;
 
 end Behavioral;
 
