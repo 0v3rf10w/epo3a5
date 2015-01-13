@@ -1,0 +1,283 @@
+|top_de1
+vga_hsync <= vga:inst2.hsync_out
+clock_50mhz => gen6mhz:inst1.clk50mhz
+reset => inst3.IN0
+reset => inst3.IN1
+vga_vsync <= vga:inst2.vsync_out
+vga[0] <= vga:inst2.rgb_out[0]
+vga[1] <= vga:inst2.rgb_out[1]
+vga[2] <= vga:inst2.rgb_out[2]
+
+
+|top_de1|vga:inst2
+clk => deler:cmp1.clk
+reset => counter:cmp2.reset
+reset => hsync:cmp3.reset
+reset => vidcounter:cmp4.reset
+reset => vsync:cmp5.reset
+hsync_out <= hsync:cmp3.hsync_out
+vsync_out <= vsync:cmp5.vsync_out
+counter_out_out[0] <= counter:cmp2.counter_out_out[0]
+counter_out_out[1] <= counter:cmp2.counter_out_out[1]
+counter_out_out[2] <= counter:cmp2.counter_out_out[2]
+counter_out_out[3] <= counter:cmp2.counter_out_out[3]
+counter_out_out[4] <= counter:cmp2.counter_out_out[4]
+counter_out_out[5] <= counter:cmp2.counter_out_out[5]
+rgb_out[0] <= rgb:cmp6.rgb_out[0]
+rgb_out[1] <= rgb:cmp6.rgb_out[1]
+rgb_out[2] <= rgb:cmp6.rgb_out[2]
+
+
+|top_de1|vga:inst2|deler:cmp1
+clk => deler_out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+deler_out <= deler_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|vga:inst2|counter:cmp2
+clk_in => count[0].CLK
+clk_in => count[1].CLK
+clk_in => count[2].CLK
+clk_in => count[3].CLK
+clk_in => count[4].CLK
+clk_in => count[5].CLK
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+counter_out[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+counter_out[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+counter_out[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+counter_out[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+counter_out[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+counter_out[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+counter_out_out[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+counter_out_out[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+counter_out_out[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+counter_out_out[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+counter_out_out[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+counter_out_out[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|vga:inst2|hsync:cmp3
+hsync_in[0] => Equal0.IN5
+hsync_in[0] => Equal1.IN5
+hsync_in[0] => Equal2.IN3
+hsync_in[0] => Equal3.IN4
+hsync_in[0] => Equal4.IN3
+hsync_in[1] => Equal0.IN4
+hsync_in[1] => Equal1.IN4
+hsync_in[1] => Equal2.IN5
+hsync_in[1] => Equal3.IN3
+hsync_in[1] => Equal4.IN2
+hsync_in[2] => Equal0.IN3
+hsync_in[2] => Equal1.IN3
+hsync_in[2] => Equal2.IN4
+hsync_in[2] => Equal3.IN2
+hsync_in[2] => Equal4.IN1
+hsync_in[3] => Equal0.IN2
+hsync_in[3] => Equal1.IN2
+hsync_in[3] => Equal2.IN2
+hsync_in[3] => Equal3.IN5
+hsync_in[3] => Equal4.IN5
+hsync_in[4] => Equal0.IN1
+hsync_in[4] => Equal1.IN1
+hsync_in[4] => Equal2.IN1
+hsync_in[4] => Equal3.IN1
+hsync_in[4] => Equal4.IN0
+hsync_in[5] => Equal0.IN0
+hsync_in[5] => Equal1.IN0
+hsync_in[5] => Equal2.IN0
+hsync_in[5] => Equal3.IN0
+hsync_in[5] => Equal4.IN4
+deler_out_in => von~reg0.CLK
+deler_out_in => nline_out~reg0.CLK
+deler_out_in => hsync_out~reg0.CLK
+reset => hsync_out.OUTPUTSELECT
+reset => nline_out.OUTPUTSELECT
+reset => von.OUTPUTSELECT
+line_on_in => von.DATAB
+hsync_out <= hsync_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+nline_out <= nline_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+von <= von~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|vga:inst2|vidcounter:cmp4
+nline_in => count[0].CLK
+nline_in => count[1].CLK
+nline_in => count[2].CLK
+nline_in => count[3].CLK
+nline_in => count[4].CLK
+nline_in => count[5].CLK
+nline_in => count[6].CLK
+nline_in => count[7].CLK
+nline_in => count[8].CLK
+nline_in => count[9].CLK
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+reset => count.OUTPUTSELECT
+vidcount_out[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+vidcount_out[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+vidcount_out[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+vidcount_out[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+vidcount_out[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+vidcount_out[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+vidcount_out[6] <= count[6].DB_MAX_OUTPUT_PORT_TYPE
+vidcount_out[7] <= count[7].DB_MAX_OUTPUT_PORT_TYPE
+vidcount_out[8] <= count[8].DB_MAX_OUTPUT_PORT_TYPE
+vidcount_out[9] <= count[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|vga:inst2|vsync:cmp5
+reset => vsync_out.OUTPUTSELECT
+reset => line_on_out.OUTPUTSELECT
+vidcount_in[0] => Equal0.IN9
+vidcount_in[0] => Equal1.IN9
+vidcount_in[0] => Equal2.IN9
+vidcount_in[0] => Equal3.IN6
+vidcount_in[1] => Equal0.IN8
+vidcount_in[1] => Equal1.IN8
+vidcount_in[1] => Equal2.IN6
+vidcount_in[1] => Equal3.IN5
+vidcount_in[2] => Equal0.IN7
+vidcount_in[2] => Equal1.IN6
+vidcount_in[2] => Equal2.IN8
+vidcount_in[2] => Equal3.IN9
+vidcount_in[3] => Equal0.IN6
+vidcount_in[3] => Equal1.IN7
+vidcount_in[3] => Equal2.IN7
+vidcount_in[3] => Equal3.IN8
+vidcount_in[4] => Equal0.IN5
+vidcount_in[4] => Equal1.IN5
+vidcount_in[4] => Equal2.IN5
+vidcount_in[4] => Equal3.IN4
+vidcount_in[5] => Equal0.IN4
+vidcount_in[5] => Equal1.IN4
+vidcount_in[5] => Equal2.IN4
+vidcount_in[5] => Equal3.IN7
+vidcount_in[6] => Equal0.IN3
+vidcount_in[6] => Equal1.IN3
+vidcount_in[6] => Equal2.IN3
+vidcount_in[6] => Equal3.IN3
+vidcount_in[7] => Equal0.IN2
+vidcount_in[7] => Equal1.IN2
+vidcount_in[7] => Equal2.IN2
+vidcount_in[7] => Equal3.IN2
+vidcount_in[8] => Equal0.IN1
+vidcount_in[8] => Equal1.IN1
+vidcount_in[8] => Equal2.IN1
+vidcount_in[8] => Equal3.IN1
+vidcount_in[9] => Equal0.IN0
+vidcount_in[9] => Equal1.IN0
+vidcount_in[9] => Equal2.IN0
+vidcount_in[9] => Equal3.IN0
+line_on_out <= line_on_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+deler_out_in => line_on_out~reg0.CLK
+deler_out_in => vsync_out~reg0.CLK
+vsync_out <= vsync_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|vga:inst2|rgb:cmp6
+deler_out_in => rgb_out[0]~reg0.CLK
+deler_out_in => rgb_out[1]~reg0.CLK
+deler_out_in => rgb_out[2]~reg0.CLK
+von => rgb_out.OUTPUTSELECT
+von => rgb_out.OUTPUTSELECT
+von => rgb_out.OUTPUTSELECT
+counter_out_in[0] => Equal2.IN5
+counter_out_in[0] => Equal3.IN3
+counter_out_in[0] => Equal4.IN5
+counter_out_in[0] => Equal5.IN5
+counter_out_in[0] => Equal6.IN5
+counter_out_in[0] => Equal7.IN3
+counter_out_in[0] => Equal8.IN5
+counter_out_in[0] => Equal9.IN3
+counter_out_in[0] => Equal10.IN5
+counter_out_in[1] => Equal2.IN3
+counter_out_in[1] => Equal3.IN5
+counter_out_in[1] => Equal4.IN4
+counter_out_in[1] => Equal5.IN2
+counter_out_in[1] => Equal6.IN4
+counter_out_in[1] => Equal7.IN5
+counter_out_in[1] => Equal8.IN4
+counter_out_in[1] => Equal9.IN2
+counter_out_in[1] => Equal10.IN2
+counter_out_in[2] => Equal2.IN2
+counter_out_in[2] => Equal3.IN2
+counter_out_in[2] => Equal4.IN2
+counter_out_in[2] => Equal5.IN4
+counter_out_in[2] => Equal6.IN3
+counter_out_in[2] => Equal7.IN2
+counter_out_in[2] => Equal8.IN2
+counter_out_in[2] => Equal9.IN5
+counter_out_in[2] => Equal10.IN4
+counter_out_in[3] => Equal2.IN4
+counter_out_in[3] => Equal3.IN4
+counter_out_in[3] => Equal4.IN3
+counter_out_in[3] => Equal5.IN3
+counter_out_in[3] => Equal6.IN2
+counter_out_in[3] => Equal7.IN1
+counter_out_in[3] => Equal8.IN1
+counter_out_in[3] => Equal9.IN1
+counter_out_in[3] => Equal10.IN1
+counter_out_in[4] => Equal2.IN1
+counter_out_in[4] => Equal3.IN1
+counter_out_in[4] => Equal4.IN1
+counter_out_in[4] => Equal5.IN1
+counter_out_in[4] => Equal6.IN1
+counter_out_in[4] => Equal7.IN4
+counter_out_in[4] => Equal8.IN3
+counter_out_in[4] => Equal9.IN4
+counter_out_in[4] => Equal10.IN3
+counter_out_in[5] => Equal2.IN0
+counter_out_in[5] => Equal3.IN0
+counter_out_in[5] => Equal4.IN0
+counter_out_in[5] => Equal5.IN0
+counter_out_in[5] => Equal6.IN0
+counter_out_in[5] => Equal7.IN0
+counter_out_in[5] => Equal8.IN0
+counter_out_in[5] => Equal9.IN0
+counter_out_in[5] => Equal10.IN0
+vidcount_out_in[0] => Equal0.IN8
+vidcount_out_in[0] => Equal1.IN7
+vidcount_out_in[1] => Equal0.IN7
+vidcount_out_in[1] => Equal1.IN6
+vidcount_out_in[2] => Equal0.IN6
+vidcount_out_in[2] => Equal1.IN5
+vidcount_out_in[3] => Equal0.IN5
+vidcount_out_in[3] => Equal1.IN4
+vidcount_out_in[4] => Equal0.IN9
+vidcount_out_in[4] => Equal1.IN3
+vidcount_out_in[5] => Equal0.IN4
+vidcount_out_in[5] => Equal1.IN9
+vidcount_out_in[6] => Equal0.IN3
+vidcount_out_in[6] => Equal1.IN2
+vidcount_out_in[7] => Equal0.IN2
+vidcount_out_in[7] => Equal1.IN8
+vidcount_out_in[8] => Equal0.IN1
+vidcount_out_in[8] => Equal1.IN1
+vidcount_out_in[9] => Equal0.IN0
+vidcount_out_in[9] => Equal1.IN0
+rgb_out[0] <= rgb_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rgb_out[1] <= rgb_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rgb_out[2] <= rgb_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de1|gen6mhz:inst1
+clk50mhz => count[0].CLK
+clk50mhz => count[1].CLK
+clk50mhz => count[2].CLK
+clk6mhz <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+
+

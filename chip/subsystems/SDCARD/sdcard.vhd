@@ -48,6 +48,9 @@ architecture behavioural of sdcard is
 				read_response_cmd55,start_receive_response_cmd55,receive_response_cmd55,
 				load_acmd41,start_send_acmd41,send_acmd41,
 				read_response_acmd41,start_receive_response_acmd41,receive_response_acmd41,
+				
+				send_reset_sd_clk_rampup,start_sd_clk_rampup,sd_clk_rampup,
+				
 				load_cmd16,start_send_cmd16,send_cmd16,
 				read_response_cmd16,start_receive_response_cmd16,receive_response_cmd16,
 				idle,
@@ -84,6 +87,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 	output <= output_reg;
 	
 	sd_clk <= div_clk when (divide_clock = '1') else clk;
+	--sd_clk <= div_clk;
 	
 	address_change <= '0' when (((address_buf and address) = address) and ((not address_buf and not address) = not address)) else
 				'1';
@@ -136,12 +140,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 	if(went_to_next = '1') then
 		go_to_next <= '0';
 	else
-		if(state_debug_sig(6) = '0') then
-			go_to_next <= '1';
-		else
 		if(rising_edge(next_state)) then
 			go_to_next <= '1';
-		end if;
 		end if;
 	end if;
 	end process;
@@ -152,9 +152,10 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 			send_cnt <= (others => '0');
 		else
 			if(rising_edge(sd_clk)) then
-			--if(go_to_next = '1') then
+			--if(go_to_next = '1' or state_debug_sig(6) = '0') then
+			if(go_to_next = '1') then
 				send_cnt <= new_send_cnt;
-			--end if;
+			end if;
 			end if;
 		end if;
 	end process;
@@ -166,10 +167,8 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 			address_buf <= (others => '0');
 			went_to_next <= '0';
 		else
-		--if(go_to_next = '0') then
-		--	state <= state;
-		--	went_to_next <= '0';
-		--else
+		--if(go_to_next = '1' or state_debug_sig(6) = '0') then
+		--if(go_to_next = '1') then
 			if rising_edge(sd_clk)  then
 				went_to_next <= '1';
 				address_buf <= address;
@@ -278,7 +277,7 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						if(spi_output = "00000001") then
 							state <= load_cmd55;
 						elsif(spi_output = "00000000") then
-							state <= load_cmd16;
+							state <= send_reset_sd_clk_rampup;
 						elsif(spi_output = "11111111") then
 							state <= start_receive_response_acmd41;
 						else
@@ -291,6 +290,17 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 							state <= read_response_acmd41;
 						else
 							state <= receive_response_acmd41;
+						end if;
+						
+					when send_reset_sd_clk_rampup =>
+						state <= start_sd_clk_rampup;
+					when start_sd_clk_rampup =>
+						state <= sd_clk_rampup;						
+					when sd_clk_rampup =>
+						if(busy_spi = '0') then
+							state <= load_cmd16;
+						else
+							state <= sd_clk_rampup;
 						end if;
 						
 					when load_cmd16 =>
@@ -400,11 +410,14 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 						state <= failure_state;
 				end case;	
 			end if;	
+		--else 
+		--	state <= state;
+		--	went_to_next <= '0';
 		--end if;
 		end if;
 	end process;
 	
-	process(state,send_cnt,output_reg,address,spi_output)
+	process(state,send_cnt,output_reg,address,spi_output,state_debug_sig)
 	begin
 		case state is 
 			when reset_state =>
@@ -778,6 +791,49 @@ spi5:	spi port map(sd_clk,send,reset,write_enable,write_in,spi_output,busy_spi,s
 				divide_clock <= '1';
 				state_debug_sig <= "0100000";
 				in_failure <= '0';
+				
+				when send_reset_sd_clk_rampup =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '0';
+				send_reset <= '1';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt;
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= (others => '0');
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug_sig <= "0100010";
+				in_failure <= '1';
+			when start_sd_clk_rampup =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt;
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= (others => '0');
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug_sig <= "0100010";
+				in_failure <= '1';
+			when sd_clk_rampup =>
+				slave_select <= '0';
+				mosi_high <= '1';
+				sig_send <= '1';
+				send_reset <= '0';
+				write_enable <= '0';
+				new_send_cnt <= send_cnt;
+				write_in <= "11111111";
+				busy <= '1';
+				new_output_reg <= (others => '0');
+				data_read <= '0';
+				divide_clock <= '0';
+				state_debug_sig <= "0100001";
+				in_failure <= '1';
 				
 			when load_cmd16 =>
 				slave_select <= '0';

@@ -1,0 +1,349 @@
+Quartus II
+Version 10.0 Build 262 08/18/2010 Service Pack 1 SJ Full Version
+12
+985
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+counter
+# storage
+db|top_de1.(3).cnf
+db|top_de1.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|home|mzwalua|Documents|vga2|VHDL|counter-behaviour.vhd
+d0b47239843cf0185ac5dbc5dea2f4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(counter_out)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(counter_out_out)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+vga:inst2|counter:cmp2
+}
+# lmf
+|data|public|common|software|altera|10.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+hsync
+# storage
+db|top_de1.(4).cnf
+db|top_de1.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|home|mzwalua|Documents|vga2|VHDL|hsync-behaviour.vhd
+aea2b227878580d47357935a68df31a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(hsync_in)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+vga:inst2|hsync:cmp3
+}
+# lmf
+|data|public|common|software|altera|10.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+vidcounter
+# storage
+db|top_de1.(5).cnf
+db|top_de1.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|home|mzwalua|Documents|vga2|VHDL|vidcounter-behaviour.vhd
+79d014e2c629f2967077d6b8e9cbb3
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(vidcount_out)
+9 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+vga:inst2|vidcounter:cmp4
+}
+# lmf
+|data|public|common|software|altera|10.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+vsync
+# storage
+db|top_de1.(6).cnf
+db|top_de1.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|home|mzwalua|Documents|vga2|VHDL|vsync-behaviour.vhd
+72c1f8493dcfd62906ef64fa6e9afcd
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(vidcount_in)
+9 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+vga:inst2|vsync:cmp5
+}
+# lmf
+|data|public|common|software|altera|10.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+gen6mhz
+# storage
+db|top_de1.(8).cnf
+db|top_de1.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+gen6mhz.vhd
+e8587db6b02423b1edcb757f202973
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+gen6mhz:inst1
+}
+# lmf
+|data|public|common|software|altera|10.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+top_de1
+# storage
+db|top_de1.(0).cnf
+db|top_de1.(0).cnf
+# case_insensitive
+# source_file
+top_de1.bdf
+76f9e84c9d06eb1df3185d7cc9b
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+deler
+# storage
+db|top_de1.(2).cnf
+db|top_de1.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|home|mzwalua|Documents|vga2|VHDL|deler-behaviour.vhd
+11fe8d918a19b83fea7d4c3cb3ef934a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+vga:inst2|deler:cmp1
+}
+# lmf
+|data|public|common|software|altera|10.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+vga
+# storage
+db|top_de1.(1).cnf
+db|top_de1.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|home|mzwalua|Documents|vga2|VHDL|vga.vhd
+df66c0e44f1988022bfba4cefb374c4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+vga:inst2
+}
+# lmf
+|data|public|common|software|altera|10.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+rgb
+# storage
+db|top_de1.(7).cnf
+db|top_de1.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|home|mzwalua|Documents|vga2|VHDL|rgb-behaviour.vhd
+b0a54cb25c69e5eecb9e7a16c18382a1
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(counter_out_in)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(vidcount_out_in)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(rgb_out)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+vga:inst2|rgb:cmp6
+}
+# lmf
+|data|public|common|software|altera|10.0|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# complete
+

@@ -1,0 +1,465 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.23)  12 JAN 2015 22:58
+entering extended mode
+**spi-module-report.tex
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\spi\spi-module-report.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\a4wide\a4wide.sty"
+Package: a4wide 1994/08/30
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ntgclass\a4.sty"
+Package: a4 2004/04/15 v1.2g A4 based page layout
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen106
+\captionmargin@=\dimen107
+\captionwidth=\dimen108
+\caption@tempdima=\dimen109
+\caption@indent=\dimen110
+\caption@parindent=\dimen111
+\caption@hangindent=\dimen112
+)
+\c@ContinuedFloat=\count89
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count90
+\c@subtable=\count91
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count92
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count93
+\lst@currlwidth=\dimen113
+\lst@column=\count94
+\lst@pos=\count95
+\lst@lostspace=\dimen114
+\lst@width=\dimen115
+\lst@newlines=\count96
+\lst@lineno=\count97
+\lst@maxwidth=\dimen116
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count98
+\lst@skipnumbers=\count99
+\lst@framebox=\box27
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count100
+\float@exts=\toks16
+\float@box=\box28
+\@float@everytoks=\toks17
+\@floatcapt=\box29
+)
+No file spi-module-report.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 17.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count101
+\scratchdimen=\dimen117
+\scratchbox=\box30
+\nofMPsegments=\count102
+\nofMParguments=\count103
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count104
+\MPscratchDim=\dimen118
+\MPnumerator=\count105
+\makeMPintoPDFobject=\count106
+\everyMPtoPDFconversion=\toks19
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count107
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 18.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 22.
+ [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+No file spi-module-report.toc.
+\tf@toc=\write3
+[2
+
+]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 37.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
+
+<./spi_diagram.png, id=10, 1291.82625pt x 686.565pt>
+File: ./spi_diagram.png Graphic file (type png)
+ <use ./spi_diagram.png>
+Package pdftex.def Info: ./spi_diagram.png used on input line 48.
+(pdftex.def)             Requested size: 398.33858pt x 211.70152pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3
+
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+
+
+LaTeX Warning: Reference `control-fsm' on page 4 undefined on input line 54.
+
+
+LaTeX Warning: Reference `control-states' on page 4 undefined on input line 55.
+
+
+<./control_diagram.png, id=16, 794.97pt x 396.7322pt>
+File: ./control_diagram.png Graphic file (type png)
+
+<use ./control_diagram.png>
+Package pdftex.def Info: ./control_diagram.png used on input line 61.
+(pdftex.def)             Requested size: 199.16928pt x 99.39467pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 64.
+
+<./control_fsm.png, id=17, 787.44188pt x 787.44188pt>
+File: ./control_fsm.png Graphic file (type png)
+ <use ./control_fsm.png>
+Package pdftex.def Info: ./control_fsm.png used on input line 67.
+(pdftex.def)             Requested size: 142.26378pt x 142.2621pt.
+
+
+LaTeX Warning: Reference `shift-register' on page 4 undefined on input line 89.
+
+
+
+LaTeX Warning: Reference `shift-reg-vhdl' on page 4 undefined on input line 89.
+
+
+[4 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/spi/spi_diagram.png> <C:/U
+sers/jordy/Documents/GitHub/epo3a5/verslagen/spi/control_diagram.png> <C:/Users
+/jordy/Documents/GitHub/epo3a5/verslagen/spi/control_fsm.png>]
+<./shift_register_diagram.png, id=23, 841.64438pt x 651.93562pt>
+File: ./shift_register_diagram.png Graphic file (type png)
+
+<use ./shift_register_diagram.png>
+Package pdftex.def Info: ./shift_register_diagram.png used on input line 93.
+(pdftex.def)             Requested size: 142.26378pt x 110.19093pt.
+
+
+LaTeX Warning: Reference `counter-vhdl' on page 5 undefined on input line 99.
+
+
+LaTeX Warning: Reference `spi-modelsim' on page 5 undefined on input line 102.
+
+
+LaTeX Warning: Reference `switch-level' on page 5 undefined on input line 102.
+
+
+LaTeX Warning: Reference `spi-layout' on page 5 undefined on input line 102.
+
+<./modelsim_sim.png, id=24, 1416.04031pt x 622.57594pt>
+File: ./modelsim_sim.png Graphic file (type png)
+
+<use ./modelsim_sim.png>
+Package pdftex.def Info: ./modelsim_sim.png used on input line 106.
+(pdftex.def)             Requested size: 455.24408pt x 200.14984pt.
+
+Overfull \hbox (12.59033pt too wide) in paragraph at lines 106--107
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/spi/shift_register_diagra
+m.png>]
+<./switch_level.png, id=28, 1184.92688pt x 541.27219pt>
+File: ./switch_level.png Graphic file (type png)
+
+<use ./switch_level.png>
+Package pdftex.def Info: ./switch_level.png used on input line 113.
+(pdftex.def)             Requested size: 455.24408pt x 207.95682pt.
+
+Overfull \hbox (12.59033pt too wide) in paragraph at lines 113--114
+ [] 
+ []
+
+<./spi_layout.png, id=29, 578.91281pt x 541.27219pt>
+File: ./spi_layout.png Graphic file (type png)
+ <use ./spi_layout.png>
+Package pdftex.def Info: ./spi_layout.png used on input line 120.
+(pdftex.def)             Requested size: 199.16928pt x 186.21878pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/spi/modelsim_sim.png> <C:
+/Users/jordy/Documents/GitHub/epo3a5/verslagen/spi/switch_level.png>]
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\spi\control.vhd
+Overfull \hbox (30.39008pt too wide) in paragraph at lines 8--9
+[][][][][][][][][][][][][][][][] 
+ []
+
+[7 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/spi/spi_layout.png>]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 23.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlptm.fd"
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 23.
+
+Overfull \hbox (4.10986pt too wide) in paragraph at lines 28--29
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.24997pt too wide) in paragraph at lines 29--30
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (63.24034pt too wide) in paragraph at lines 31--32
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (43.53018pt too wide) in paragraph at lines 35--36
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.24997pt too wide) in paragraph at lines 37--38
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.67992pt too wide) in paragraph at lines 40--41
+[][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.24997pt too wide) in paragraph at lines 41--42
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (43.53018pt too wide) in paragraph at lines 43--44
+[][][][][][][][][] 
+ []
+
+[8]) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\spi\counter.vhd
+Overfull \hbox (10.67989pt too wide) in paragraph at lines 8--9
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.67989pt too wide) in paragraph at lines 21--22
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[9]
+LaTeX Font Info:    Font shape `OML/ptm/m/it' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 32.
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\spi\shift_reg.vhd
+Overfull \hbox (36.96011pt too wide) in paragraph at lines 10--11
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (36.96013pt too wide) in paragraph at lines 11--12
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (4.10986pt too wide) in paragraph at lines 17--19
+[][][][][][][][][][][][][][][][][] 
+ []
+
+[10]) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\spi\spi.vhd
+Overfull \hbox (17.24997pt too wide) in paragraph at lines 9--10
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.24995pt too wide) in paragraph at lines 10--11
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.67989pt too wide) in paragraph at lines 22--23
+[][][][][][][][][][][][][][][][] 
+ []
+
+[11]
+Overfull \hbox (69.8104pt too wide) in paragraph at lines 58--59
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (56.67029pt too wide) in paragraph at lines 59--61
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\spi\spi_tb.vhd
+Overfull \hbox (17.24997pt too wide) in paragraph at lines 14--15
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.24995pt too wide) in paragraph at lines 15--16
+[][][][][][][][][][][][][][][][] 
+ []
+
+[12]
+Overfull \hbox (43.53018pt too wide) in paragraph at lines 32--33
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [13]
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\spi\spi-module-report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4123 strings out of 493921
+ 62606 string characters out of 3144875
+ 151132 words of memory out of 3000000
+ 7369 multiletter control sequences out of 15000+200000
+ 19116 words of font info for 41 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 36i,7n,43p,1083b,1555s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on spi-module-report.pdf (13 pages, 279239 bytes).
+PDF statistics:
+ 76 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+
