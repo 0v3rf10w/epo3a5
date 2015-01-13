@@ -66,23 +66,23 @@ bit_22      ld      input
             and     00100000
             bz      bit_23
             ld      R3
-            add     00000001
+            add     00000010
             st      R3
 bit_23      ld      input
             and     01000000
             bz      bit_24
             ld      R3
-            add     00000001
+            add     00000100
             st      R3
 bit_24      ld      input
             and     10000000
             bz      calc_state1
             ld      R3
-            add     00000001
+            add     00001000
             st      R3
 calc_state1 ld      R3
             xor     11111111
-            set     c
+            add     00000001
             add     R2
             st      R1
             clr     c
@@ -104,19 +104,19 @@ bit_32      ld      input
             and     00100000
             bz      bit_33
             ld      R3
-            add     00000001
+            add     00000010
             st      R3
 bit_33      ld      input
             and     01000000
             bz      bit_34
             ld      R3
-            add     00000001
+            add     00000100
             st      R3
 bit_34      ld      input
             and     10000000
             bz      calc_state2
             ld      R3
-            add     00000001
+            add     00001000
             st      R3
 calc_state2 ld      R2
             and     00000001
