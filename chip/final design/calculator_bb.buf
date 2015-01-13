@@ -1,0 +1,32 @@
+t1  INPUT  XI
+t2  DIRECT XO
+t3  INPUT  top_reset
+t4  INPUT  top_sclk
+t5  INPUT  top_mosi
+t6  INPUT  top_ss
+t7  OUTPUT top_out_7_0_7
+t8  OUTPUT top_out_7_0_6
+t9  OUTPUT top_out_7_0_5
+t10 OUTPUT top_out_7_0_4
+t11 OUTPUT top_out_7_0_3
+t12 OUTPUT top_out_7_0_2
+t13 OUTPUT top_out_7_0_1
+t14 OUTPUT top_out_7_0_0
+t15 NC
+t16 NC
+t17 NC
+t18 NC
+t19 NC
+t20 NC
+t21 NC
+t22 NC
+t23 NC
+t24 NC
+t25 NC
+t26 NC
+t27 NC
+t28 NC
+t29 NC
+t30 NC
+t31 NC
+t32 NC
