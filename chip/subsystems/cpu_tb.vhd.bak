@@ -24,11 +24,12 @@ signal cpu_out	:	std_logic_vector(7 downto 0);
 begin
 lbl1: cpu port map(cpu_rst, cpu_en, cpu_in, cpu_instr, cpu_pc, cpu_out);
 cpu_en <= '1' after 0 ns,
-	'0' after 10 ns when cpu_clk/= '0' else '1' after 40 ns;
+	'0' after 10 ns when cpu_en/= '0' else '1' after 40 ns;
 cpu_rst <= '1' after 0 ns,
 	'0' after 50 ns;
 cpu_in <= "00000000" after 0 ns,
-	"00000010" after 950 ns;
+	"00000010" after 950 ns,
+	"11110000" after 1550 ns;
 cpu_instr <= "000000000000" after 0 ns,
 	"010100001100" after 50 ns,         -- load argument w1=12
         "011100000001" after 100 ns,        -- Store to adress R1
@@ -48,11 +49,27 @@ cpu_instr <= "000000000000" after 0 ns,
         "011100001010" after 800 ns,        -- Store to adress R10
 	"000100010001" after 850 ns,	-- jump to hold (18)
 	"111100000000" after 900 ns,	-- Clear c
-	"011000000000" after 950 ns,	-- load inputvector cpu_in
+	"011000000001" after 950 ns,	-- load inputvector cpu_in
 	"101000001000" after 1000 ns,	-- XOR 00001000
 	"100011111000" after 1050 ns,	-- ADD 11111000
 	"011100000001" after 1100 ns,	-- St R1 (R1 to output)
 	"010000010111" after 1150 ns,	-- bc start
-	"000100010001" after 1200 ns;	-- jump to hold (18)
+	"000100010001" after 1200 ns,	-- jump to hold (18)
+	"000000000000" after 1250 ns,
+	"000100110011" after 1300 ns,
+	"001000010001" after 1350 ns,
+	"001100000010" after 1400 ns,
+	"010000000011" after 1450 ns,
+	"010111001100" after 1500 ns,
+	"011000000110" after 1550 ns,
+	"011100001000" after 1600 ns,
+	"100000000001" after 1650 ns,
+	"100101100011" after 1700 ns,
+	"101011111111" after 1750 ns,
+	"101100000011" after 1800 ns,
+	"110010101010" after 1850 ns,
+	"110101001001" after 1900 ns,
+	"111000000000" after 1950 ns,
+	"111100000000" after 2000 ns;
 
 end architecture;
