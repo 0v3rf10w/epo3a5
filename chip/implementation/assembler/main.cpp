@@ -76,30 +76,31 @@ int main()
     {
         assert(2);
     }
-
+	int linecount = 0;
     while(!input.eof())
     {
         string opcode,argument;
         input >> opcode;
         input >> argument;
+        bitfile << "\"";
         switch(hashit(opcode))
         {
         case jp:
             if(is_bitcode(argument))
-                bitfile << "0001 " << argument << endl;
+                bitfile << "0001" << argument;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "001010000000" << endl;
+                    bitfile << "001000000001";
                 }
                 else
                 {
-                    bitfile << "0010 ";
+                    bitfile << "0010";
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
-                        bitfile << to_bitstring(atoi(argument.c_str()),8) << endl;
+                        bitfile << to_bitstring(atoi(argument.c_str()),8);
                     }
                     else
                     {
@@ -109,27 +110,27 @@ int main()
             }
             break;
         case bz:
-            bitfile << "0011" << argument << endl;
+            bitfile << "0011" << argument;
             break;
         case bc:
-            bitfile << "0100" << argument << endl;
+            bitfile << "0100" << argument;
             break;
         case ld:
             if(is_bitcode(argument))
-                bitfile << "0101" << argument << endl;
+                bitfile << "0101" << argument;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "011010000000" << endl;
+                    bitfile << "011010000000";
                 }
                 else
                 {
-                    bitfile << "0110 ";
+                    bitfile << "0110";
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
-                        bitfile << to_bitstring(atoi(argument.c_str()),8) << endl;
+                        bitfile << to_bitstring(atoi(argument.c_str()),8);
                     }
                     else
                     {
@@ -143,7 +144,7 @@ int main()
             if(argument[0] == 'R')
             {
                 argument.erase(0,1);
-                bitfile << to_bitstring(atoi(argument.c_str()),8) << endl;
+                bitfile << to_bitstring(atoi(argument.c_str()),8);
             }
             else
             {
@@ -152,12 +153,12 @@ int main()
             break;
         case add:
             if(is_bitcode(argument))
-                bitfile << "1000 " << argument << endl;
+                bitfile << "1000" << argument;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "100110000000" << endl;
+                    bitfile << "100110000000";
                 }
                 else
                 {
@@ -165,7 +166,7 @@ int main()
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
-                        bitfile << to_bitstring(atoi(argument.c_str()),8) << endl;
+                        bitfile << to_bitstring(atoi(argument.c_str()),8);
                     }
                     else
                     {
@@ -176,12 +177,12 @@ int main()
             break;
         case i_xor:
             if(is_bitcode(argument))
-                bitfile << "1010" << argument << endl;
+                bitfile << "1010" << argument;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "101110000000" << endl;
+                    bitfile << "101110000000";
                 }
                 else
                 {
@@ -189,7 +190,7 @@ int main()
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
-                        bitfile << to_bitstring(atoi(argument.c_str()),8) << endl;
+                        bitfile << to_bitstring(atoi(argument.c_str()),8);
                     }
                     else
                     {
@@ -200,12 +201,12 @@ int main()
             break;
         case i_and:
             if(is_bitcode(argument))
-                bitfile << "1100" << argument << endl;
+                bitfile << "1100" << argument;
             else
             {
                 if(argument == "input")
                 {
-                    bitfile << "110110000000" << endl;
+                    bitfile << "110110000000";
                 }
                 else
                 {
@@ -213,7 +214,7 @@ int main()
                     if(argument[0] == 'R')
                     {
                         argument.erase(0,1);
-                        bitfile << to_bitstring(atoi(argument.c_str()),8) << endl;
+                        bitfile << to_bitstring(atoi(argument.c_str()),8);
                     }
                     else
                     {
@@ -223,14 +224,16 @@ int main()
             }
             break;
         case i_set:
-            bitfile << "111000000000" << endl;
+            bitfile << "111000000000";
             break;
         case i_clr:
-            bitfile << "111100000000" << endl;
+            bitfile << "111100000000";
             break;
         default:
             assert(3);
         }
+		bitfile << "\" when \"" << to_bitstring(linecount,8) << "\"," << endl;
+		linecount++;
     }
     bitfile.close();
 
