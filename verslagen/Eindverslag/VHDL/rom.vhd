@@ -1,15 +1,18 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity ROM is
+entity rom is
 port
 (
     rom_a:    in std_logic_vector (7 DOWNTO 0);     -- address
     rom_d:    out std_logic_vector (11 DOWNTO 0)    -- instruction
 );
-end ROM;
+end rom;
 
-architecture behavioural OF ROM IS
+
+
+
+architecture behavioural OF rom IS
 begin
     with rom_a select
     rom_d <=
@@ -192,4 +195,8 @@ begin
 
 "000000000000" when others;
 end behavioural;
+
+
+
+
 
