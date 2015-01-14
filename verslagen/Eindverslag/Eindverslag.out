@@ -69,19 +69,24 @@
 \BOOKMARK [0][-]{chapter.13}{Discussie}{}% 69
 \BOOKMARK [1][-]{section.13.1}{Reflectie op het eindontwerp}{chapter.13}% 70
 \BOOKMARK [1][-]{section.13.2}{Reflectie op het groepsproces}{chapter.13}% 71
-\BOOKMARK [0][-]{appendix.A}{Plan van aanpak}{}% 72
-\BOOKMARK [1][-]{section.A.1}{Achtergronden}{appendix.A}% 73
-\BOOKMARK [1][-]{section.A.2}{Projectresultaat}{appendix.A}% 74
-\BOOKMARK [2][-]{subsection.A.2.1}{Doelstellingen van het project}{section.A.2}% 75
-\BOOKMARK [2][-]{subsection.A.2.2}{Eindresultaat}{section.A.2}% 76
-\BOOKMARK [1][-]{section.A.3}{Projectactiviteiten}{appendix.A}% 77
-\BOOKMARK [1][-]{section.A.4}{Projectgrenzen}{appendix.A}% 78
-\BOOKMARK [2][-]{subsection.A.4.1}{Tussenresultaten}{section.A.4}% 79
-\BOOKMARK [2][-]{subsection.A.4.2}{Kwaliteitsbewaking}{section.A.4}% 80
-\BOOKMARK [1][-]{section.A.5}{Projectorganisatie}{appendix.A}% 81
-\BOOKMARK [2][-]{subsection.A.5.1}{Planning}{section.A.5}% 82
-\BOOKMARK [2][-]{subsection.A.5.2}{Risicoanalyse}{section.A.5}% 83
-\BOOKMARK [1][-]{section.A.6}{Bijlage}{appendix.A}% 84
-\BOOKMARK [0][-]{appendix.B}{Bijlage}{}% 85
-\BOOKMARK [1][-]{section.B.1}{Blackbox}{appendix.B}% 86
-\BOOKMARK [1][-]{section.B.2}{SPI}{appendix.B}% 87
+\BOOKMARK [0][-]{chapter*.31}{Bibliografie}{}% 72
+\BOOKMARK [0][-]{appendix.A}{Plan van aanpak}{}% 73
+\BOOKMARK [1][-]{section.A.1}{Achtergronden}{appendix.A}% 74
+\BOOKMARK [1][-]{section.A.2}{Projectresultaat}{appendix.A}% 75
+\BOOKMARK [2][-]{subsection.A.2.1}{Doelstellingen van het project}{section.A.2}% 76
+\BOOKMARK [2][-]{subsection.A.2.2}{Eindresultaat}{section.A.2}% 77
+\BOOKMARK [1][-]{section.A.3}{Projectactiviteiten}{appendix.A}% 78
+\BOOKMARK [1][-]{section.A.4}{Projectgrenzen}{appendix.A}% 79
+\BOOKMARK [2][-]{subsection.A.4.1}{Tussenresultaten}{section.A.4}% 80
+\BOOKMARK [2][-]{subsection.A.4.2}{Kwaliteitsbewaking}{section.A.4}% 81
+\BOOKMARK [1][-]{section.A.5}{Projectorganisatie}{appendix.A}% 82
+\BOOKMARK [2][-]{subsection.A.5.1}{Planning}{section.A.5}% 83
+\BOOKMARK [2][-]{subsection.A.5.2}{Risicoanalyse}{section.A.5}% 84
+\BOOKMARK [1][-]{section.A.6}{Bijlage}{appendix.A}% 85
+\BOOKMARK [0][-]{appendix.B}{Bijlage - VHDL bestanden}{}% 86
+\BOOKMARK [1][-]{section.B.1}{Blackbox}{appendix.B}% 87
+\BOOKMARK [1][-]{section.B.2}{ROM}{appendix.B}% 88
+\BOOKMARK [1][-]{section.B.3}{CPU}{appendix.B}% 89
+\BOOKMARK [1][-]{section.B.4}{Buffers}{appendix.B}% 90
+\BOOKMARK [1][-]{section.B.5}{Registers}{appendix.B}% 91
+\BOOKMARK [1][-]{section.B.6}{Calculator}{appendix.B}% 92

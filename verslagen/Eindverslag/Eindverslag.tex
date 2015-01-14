@@ -190,13 +190,43 @@ De volledige layout is te zien in \autoref{CPU}, en de mogelijke instructies met
 
 
 \chapter{GPU}
-De GPU is een component dat via de outputbuffer van de CPU 2 8 bit commando’s zal ontvangen met daarom achtereenvolgens de X en Y positie van de in te kleuren pixel op het scherm. Tevens zal er een commando bestaan om het volledige scherm schoon te vegen (Alle pixels uitzetten). De GPU ontvangt deze coördinaten en rekent dit om naar het adres waar de waarde ‘1’ of ‘0’ ingevuld zal moeten worden in het SRAM. Tevens bevind zich in de GPU de aansturing van het SRAM, via SPI. Deze zal bestaan uit een 8 bits instructiecode voor de schrijf handeling, gevolgd door een 16 bits adres waar de waarde geschreven zal moeten worden en uiteindelijk de waarde zelf. Op deze manier kan het SRAM geschreven worden vanuit de CPU en is het mogelijk om beeld te genereren.
+\section{Doelstelling}
+De GPU dient als vertaalslag tussen de 8-bit commando’s welke worden ontvangen vanuit de output buffer van de CPU, en de pixelmap welke opgeslagen is in het SRAM. Door het gebruik van 2 wisselende SRAM chips kan de GPU in de ene SRAM chip schrijven, terwijl de VGA-module uit de andere SRAM chip aan het lezen is. De GPU ontvangt vanuit de CPU achtereenvolgens commando’s met hierin data van de X en Y posities van de in te kleuren pixel. Tevens is er een commando aanwezig om het volledige scherm leeg te vegen.
 
-De GPU is ontworpen aan de hand van een FSM, deze bevat 5 states en staat hieronder weergegeven.
+\section{I/O}
+De I/O van de GPU zal bestaan uit de communicatie met de CPU, SPI uitgang naar het SRAM en klok- en resetsignalen ten behoeve van het realiseren van de FSM’s.
+
+
+
+\subsection{Input CPU}
+De ingang van de CPU zal bestaan achtereenvolgens 8 bit commando’s welke zullen worden opgesplitst in een 2 bit commando, en een 6 bit datavector. Zie onderstaande tabel.\\
+
+
+\begin{tabular}{| c | c | c | c | c | c | c | c | }
+ \hline			
+  7 & 6 & 5 & 4 & 3 & 2 & 1 & 0  \\ \hline
+instruction(1) & instruction(0) & data(5) & data(4) & data(3) & data(2) & data(1) & data(0) \\
+  \hline  
+\end{tabular} \\
+\\
+
+De instruciteset van de GPU worst als volgt gedefinieerd:
+\begin{description}
+\item ["01"]
+	Read X: Deze instructie beschrijft dat de CPU in de databits de x-coördinaat van de in te kleuren pixel weergeeft. 
+\item ["10"]
+	Read Y: Deze instructie beschtijft dat de CPU in de databits de y-coordinaat weergeeft van de in te kleuren pixel.
+\item ["11"]
+	Clear screen: Deze instructie geeft aan dat de volledige pixelmap in het SRAM leeggemaakt kan worden.
+\end{description}
+
+
+\subsection{SPI}
+De uitgang van de GPU zal bestaan uit SPI signalen om te comminuceren met het SRAM. Gedurende het project is gebleken dat het noodzakelijk blijkt te zijn dat de GPU zowel kan lezen als schrijven vanuit het SRAM. Dit betekend dat er een volledig bidirectionele comminucatie vereist is tussen SRAM en GPU. De comminucatie met het gekozen SRAM zal worden gerealiseerd volgens de door de datasheet van het SRAM opgegeven commando's. Voor de GPU zijn de lees en schrijf commando's van belang. Deze zijn te vinden in figuur \ref{sram}.
+
 
 \begin{figure}[H]
 \center
-<<<<<<< HEAD
 \includegraphics[width=15cm]{sramcomm}
 \caption{SPI specificatie volgens datasheet SRAM}
 \label{sram}
@@ -266,14 +296,6 @@ In blok B wordt het y-coordinaat ontvangen en zal de FSM berekenen in welke byte
 
 
 
-=======
-\includegraphics[width=9cm]{FSM_GPU}
-\caption{Final State Machine van de GPU}
-\label{sub-GPU}
-\end{figure}
-
-In de eerste state kan de GPU drie richtingen op gaan. Als de eerste twee bits van de 8-bits vector '11' zijn gaat de GPU naar Clr-screen,hier zal de VGA zijn scherm leeg maken. De GPU gaat zijn X-data inlezen en springt naar de volgende state (Y-Hold) als de eerste twee bits van de 8-bits vector '01' is. Voor iedere andere waarde op de eerste twee bits van de 8-bits vector blijft de GPU in de int state. Vanuit de Clr-screen state kan de GPU alleen nog maar terug naar de int state en begint de FSM opnieuw. In de Y-Hold state wacht de GPU op Y-Data, de GPU blijft in deze state totdat de eerste twee bits van de 8-bits vector '10' aangeven (Duurt 20 klokslagen). Op dat moment leest de GPU de Y-Data in en stapt over naar de Calc. state. In deze state wordt het adres berekend voor de VGA, dit gebeurd met de formule $32*Y+X =$ adres. Als deze berekening voor het bepalen van zijn adres is voltooid springt de GPU automatisch naar de volgende state, de Write state. In de Write state schrijft de GPU data uit de buffers weg via SPI. Automatisch zal de GPU terug springen naar zijn eerste state, het proces begint dan opnieuw. 
->>>>>>> FETCH_HEAD
 
 \chapter{VGA}
 De VGA-controller zorgt ervoor dat een beeldscherm van de juiste signalen wordt voorzien om een beeld te kunnen opbouwen. Hierbij wordt een serieel signaal vanuit het SRAM omgezet naar een signaal dat voor een monitor is te begrijpen. Hiervoor zijn vijf signalen nodig. Drie signalen voor respectievelijk rood, groen en blauw, een voor H-Sync en een voor V-Sync. 
