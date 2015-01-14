@@ -14,7 +14,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{siunitx}
-
+\captionsetup{justification=centering}
 
 
 \title{\sffamily\Huge Final report}
@@ -285,6 +285,8 @@ In blok B wordt het y-coordinaat ontvangen en zal de FSM berekenen in welke byte
 	Blok F verzend de nieuwe byte via SPI naar het SRAM. Tevens door gebruik te maken van de counter.
 \item [Blok G]
 	Gedurende de periode waarin SPI aan het schrijven is wordt het slave-select signaal naar '0' getrokken door de FSM. State[12] zet dit signaal weer terug op '1' en zorgt ervoor dat eventuele timers en buffers gereset worden.
+\item [Blok H]
+	Blok H schrijft naar het SRAM de instructie om te mogen schrijven en daarna enkel '0' om het volledige scherm leeg te maken.
 \end{description}
 
 \begin{figure}[H]
@@ -294,6 +296,15 @@ In blok B wordt het y-coordinaat ontvangen en zal de FSM berekenen in welke byte
 \label{fsmgpu}
 \end{figure}
 
+\section{Simulatie}
+Om de volledige gpu te testen is gebruik gemaalt van een testbench welke SPI reactie simuleert. in figuur \ref{gpusim} is ze zien hoe de GPU data ontvangt, vergelijkt en weer wegschrijft naar het SRAM.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{gpusim}
+\caption{Simulatie GPU}
+\label{gpusim}
+\end{figure}
 
 
 
@@ -575,9 +586,22 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 
 \chapter{Conclusie en Aanbevelingen}
 \section{Conclusie}
-Het EPO-3 project van de bachelor opleiding Electrical Engineering begon in tegen stelling tot voorgaande projecten vrij soepel. Als groep waren we het snel met elkaar eens, het zou een spelcomputer worden met een ultrasone besturing. Gaande weg liepen we tegen steeds meer dingen aan. \\
+Het EPO-3 project van de bachelor opleiding Electrical Engineering begon in tegen stelling tot voorgaande projecten vrij soepel. Als groep waren we het snel met elkaar eens, het zou een spelcomputer worden met een ultrasone besturing. Gaande weg liepen we tegen steeds meer complicaties aan. \\
 
-Ons plan, het bouwen en ontwerpen van een spelcomputer, is achteraf niet haalbaar geweest. Het is ons niet gelukt alle individuele onderdelen op tijd werkend te krijgen. Beide opslag units zorgden hier voor het grootste probleem. De SD-kaart uitlezing leek telkens te werken, maar stopte er telkens tijdens het testen mee. Omdat op de SD-kaart de spellen opgeslagen worden en dit dus de basis vormt voor de spelcomputer. Bleek dit niet realiseerbaar meer en zijn we overgestapt op een ander plan. Met de componenten die werkend zijn gekregen is een simpele rekenmachine ontworpen. 
+
+\subsection{Complicaties}
+Gedurende de uitvoering van het project is gebleken dat er een aantal problemen zijn ontstaan met betrekking tot de comminucatie met externe geheugenmodues. Zo is de comminucatie met de SD kaart niet op gang gekomen wegens een incorrecte VHDL code. Tevens het SRAM heeft op geen enkele manier gereageerd op de SPI signalen. Mogelijke oorzaken van het niet functioneren van het SRAM en de SD-kaart zouden kunnen liggen bij het uitgangssignaal van de FPGA. In figuur \ref{kutbeeld} is een foto te zien met daarop de uitgangssignalen van de FPGA. Deze signalen vertonen duidleijk geen correcte blokvorm. Voor onderzoek naar het oplossen van dit probleem bleek te weinig tijd te zijn.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=5cm]{scope}
+\caption{Uitgang FPGA}
+\label{kutbeeld}
+\end{figure}
+
+\subsection{Resultaten}
+Door het wegvallen van het SRAM en de SD-kaart is besloten om de volledige VGA output te laten vallen, tevens de externe ROM (in de vorm van de SD kaart) is niet gebruikt bij het uiteindelijke design. Er is besloten om met de werkende componenten een rekenmachine te maken. Deze zal zijn ingang ontvangen via een externe microcontroller over SPI. Er zal gebruik worden gemaakt van de 8-bit CPU en on-board ROM. In de bijlage is de gebruikte assambly code te vinden welke de operaties optellen, aftrekken en vermenigvuldigen realiseert.
+
 
 \section{Aanbevelingen}
 Achter af is het natuurlijk simpeler gezegd als gedaan, maar het is bij dit EPO-3 project belangrijk een duidelijk doel te stellen. Er moet daarbij vooral gelet worden op de haalbaarheid van het ontwerp. Het is met deze vrijheid in keuze dan ook gevaarlijk om te veel te willen realiseren. Dit heeft bij onze project groep voor veel stress gezorgd, wat zeker niet ideaal is aan het einde van een periode. 
@@ -799,6 +823,10 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \section{Calculator}
 \lstinputlisting[language=VHDL]{VHDL/calculator.vhd}
 \lstinputlisting[language=VHDL]{VHDL/tb.vhd}
+
+\section{Assambly}
+
+
 
 
 \end{document}
