@@ -90,5 +90,7 @@
 \contentsline {section}{\numberline {B.3}CPU}{42}{section.B.3}
 \contentsline {section}{\numberline {B.4}Buffers}{67}{section.B.4}
 \contentsline {section}{\numberline {B.5}Registers}{72}{section.B.5}
-\contentsline {section}{\numberline {B.6}Calculator}{83}{section.B.6}
+\contentsline {section}{\numberline {B.6}Gate}{83}{section.B.6}
+\contentsline {section}{\numberline {B.7}GPU}{84}{section.B.7}
+\contentsline {section}{\numberline {B.8}Calculator}{89}{section.B.8}
 \contentsfinish 

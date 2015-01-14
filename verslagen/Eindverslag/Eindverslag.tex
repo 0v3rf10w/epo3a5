@@ -285,6 +285,8 @@ In blok B wordt het y-coordinaat ontvangen en zal de FSM berekenen in welke byte
 	Blok F verzend de nieuwe byte via SPI naar het SRAM. Tevens door gebruik te maken van de counter.
 \item [Blok G]
 	Gedurende de periode waarin SPI aan het schrijven is wordt het slave-select signaal naar '0' getrokken door de FSM. State[12] zet dit signaal weer terug op '1' en zorgt ervoor dat eventuele timers en buffers gereset worden.
+\item [Blok H]
+	Blok H schrijft naar het SRAM de instructie om te mogen schrijven en daarna enkel '0' om het volledige scherm leeg te maken.
 \end{description}
 
 \begin{figure}[H]
@@ -294,6 +296,15 @@ In blok B wordt het y-coordinaat ontvangen en zal de FSM berekenen in welke byte
 \label{fsmgpu}
 \end{figure}
 
+\section{Simulatie}
+Om de volledige gpu te testen is gebruik gemaalt van een testbench welke SPI reactie simuleert. in figuur \ref{gpusim} is ze zien hoe de GPU data ontvangt, vergelijkt en weer wegschrijft naar het SRAM.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{gpusim}
+\caption{Simulatie GPU}
+\label{gpusim}
+\end{figure}
 
 
 
