@@ -219,10 +219,71 @@ De uitgang van de GPU zal bestaan uit SPI signalen om te comminuceren met het SR
 \begin{figure}[H]
 \center
 \includegraphics[width=15cm]{sramcomm}
-\caption{hoi}
+\caption{SPI specificatie volgens datasheet SRAM}
 \label{sram}
 \end{figure}
 
+\section{Randvoorwaarden}
+Tijdens het ontwerpen van de FSM ten behoeve van de GPU zal het noodzakelijk zijn om deze te laten voldoen aan een aantal gestelde randvoorwaarden met betrekking tot de comminucatie met andere compnoneten.
+\subsection{Indeling beeldscherm}
+De indeling van het uiteindelijke beeldscherm wordt deels bepaald door de GPU, gedurende het ontwerpprocess is er uit gegaan van de volgende beeldschermspecificaties.
+\begin{description}
+\item[Pixeldefinitie]
+	De resolutie van het scherm is vastgesteld op 32 bij 24 pixels. Dit betekend dat de maximale ingangswaarde van de databits van de CPU 32 zal zijn, en dit getal prima in de 6 bit vector past.
+
+\item[Kleuren]
+	Er is tijdens het ontwerp besloten om geen gebruik te maken van kleuren, dus enkel zwart en witte pixels.
+
+\item[Bits in Bytes]
+	De pixelmap van het beelscherm zal in het geheugen worden als bytes, waarin elke bit een ingekleurde pixel voorsteld. Bij de logische waarde '1' zal de pixel ingekleurd worden. Zie figuur \ref{pixelmap} voor een grafische representatie van de pixelmap in bytes, en figuur \ref{bit} een representatie van de indeling van 1 individuele byte. In de pixelmap is te zien dat er exact 1 byte buiten het scherm valt in verband met de back proch van het beeldscherm.
+\end{description}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=15cm]{pixelmap}
+\caption{Pixelmap, rood kader is beelscherm}
+\label{pixelmap}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=9cm]{byte}
+\caption{Indeling byte}
+\label{byte}
+\end{figure}
+
+
+\section{Processes}
+De CHDL code van de GPU bestaat uit een drietal processes welke voor de verwerking van de gegevens zorgen.
+\subsection{Process 1 : State-Renew}
+Het state renew process heeft als taak om bij elke opgaande klokflank de nieuwe state toe te wijzen aan het register waar de huidige state in is opgeslagen. Tevens heeft dit proces als doel om te reageren op een actief reset signaal, waarin er voor de nieuwe state een specefieke resetstate wordt toegewezen (State[0]).
+\subsection{Process 2 : Counter}
+De counter wordt gerealiseerd door een 11 bits unsigned waarde welke gebruikt kan worden binnen de FSM om bijvoorbeel het aantal onvangen bits via SPI te tellen. De teller reageeert net zoals voorgaan process op de opgaande klokflank.
+\subsection{Process 3 : FSM}
+De FSM van de GPU doet de daadwerkelijke berekeningen en vertaalslagen. In figuur \ref{fsmgpu} is een overzicht te vinden van de volledige FSM. Onderstaand zullen de verschillende functieblokken besproken worden.
+\begin{description}
+\item [Blok A]
+	Blok A is de resetstate van de volledige FSM. In blok A is de FSM gevoelig voor veranderingen op de instructieingang van de CPU. Zo kan de FSM overgaan naar state[13] wanneer het commando voor 'clear screen' gegeven wordt, of naar stat[1] wanneer deze een x-coordinaat ontvangt. Voor het tijdelijk opslaan van x en y waarden van de CPU wordt gebruik gemaakt van 2 8-bit buffers, welke gedurende state[0] worden gereset om te garanderen dat de volgende berekening geen oude resultaten meedraagt.
+\item [Blok B]
+In blok B wordt het y-coordinaat ontvangen en zal de FSM berekenen in welke byte in het geheugen de pixel weggeschreven zal worden. Tevens wordt hier de instructie klaargemaakt om data vanuit het SRAM te lezen.
+\item [Blok C] 
+	Blok C zal met behulp van de counter het sclk signaal genereren, en de lees instructie, met daarin tevens het adres van de te lezen byte verzenden naar het SRAM.
+\item [Blok D]
+	Blok D zal de 8-bit byte van het SRAM ontvangen en deze opslaan in een daarvoor bestemde buffer.
+\item [Blok E]
+	Blok E berekend op welke plaats in de byte een '1' geschreven zal moeten worden en vergelijkt dit met wat er reeds in de ontvangen byte staat. Op deze manier wordt weer een instructie klaargemaakt om de nieuwe data te schrijven naar het SRAM.
+\item [Blok F]
+	Blok F verzend de nieuwe byte via SPI naar het SRAM. Tevens door gebruik te maken van de counter.
+\item [Blok G]
+	Gedurende de periode waarin SPI aan het schrijven is wordt het slave-select signaal naar '0' getrokken door de FSM. State[12] zet dit signaal weer terug op '1' en zorgt ervoor dat eventuele timers en buffers gereset worden.
+\end{description}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{fsmgpu}
+\caption{FSM ten behoeve van de GPU}
+\label{fsmgpu}
+\end{figure}
 
 
 

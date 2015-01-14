@@ -29,37 +29,59 @@
 \BOOKMARK [1][-]{section.8.2}{I/O}{chapter.8}% 29
 \BOOKMARK [2][-]{subsection.8.2.1}{Input CPU}{section.8.2}% 30
 \BOOKMARK [2][-]{subsection.8.2.2}{SPI}{section.8.2}% 31
-\BOOKMARK [0][-]{chapter.9}{VGA}{}% 32
-\BOOKMARK [1][-]{section.9.1}{RGB}{chapter.9}% 33
-\BOOKMARK [1][-]{section.9.2}{H-Sync}{chapter.9}% 34
-\BOOKMARK [1][-]{section.9.3}{V-Sync}{chapter.9}% 35
-\BOOKMARK [1][-]{section.9.4}{Timing}{chapter.9}% 36
-\BOOKMARK [2][-]{subsection.9.4.1}{H-Sync}{section.9.4}% 37
-\BOOKMARK [2][-]{subsection.9.4.2}{V-Sync}{section.9.4}% 38
-\BOOKMARK [1][-]{section.9.5}{VHDL}{chapter.9}% 39
-\BOOKMARK [2][-]{subsection.9.5.1}{Deler}{section.9.5}% 40
-\BOOKMARK [2][-]{subsection.9.5.2}{Counter}{section.9.5}% 41
-\BOOKMARK [2][-]{subsection.9.5.3}{H-Sync}{section.9.5}% 42
-\BOOKMARK [2][-]{subsection.9.5.4}{Vidcounter}{section.9.5}% 43
-\BOOKMARK [2][-]{subsection.9.5.5}{V-Sync}{section.9.5}% 44
-\BOOKMARK [2][-]{subsection.9.5.6}{RGB}{section.9.5}% 45
-\BOOKMARK [1][-]{section.9.6}{Videosignaal}{chapter.9}% 46
-\BOOKMARK [2][-]{subsection.9.6.1}{S-synccounter}{section.9.6}% 47
-\BOOKMARK [2][-]{subsection.9.6.2}{S-Sync}{section.9.6}% 48
-\BOOKMARK [1][-]{section.9.7}{Conclusie}{chapter.9}% 49
-\BOOKMARK [1][-]{section.9.8}{Resultaten}{chapter.9}% 50
-\BOOKMARK [0][-]{chapter.10}{SPI}{}% 51
-\BOOKMARK [1][-]{section.10.1}{Functionele beschrijving}{chapter.10}% 52
-\BOOKMARK [1][-]{section.10.2}{Inputs en outputs}{chapter.10}% 53
-\BOOKMARK [1][-]{section.10.3}{Implementatie}{chapter.10}% 54
-\BOOKMARK [0][-]{chapter.11}{SD-kaart}{}% 55
-\BOOKMARK [1][-]{section.11.1}{SD communicatie}{chapter.11}% 56
-\BOOKMARK [1][-]{section.11.2}{SD commando's \046 responses}{chapter.11}% 57
-\BOOKMARK [1][-]{section.11.3}{Functionele omschrijving}{chapter.11}% 58
-\BOOKMARK [1][-]{section.11.4}{Inputs en outputs}{chapter.11}% 59
-\BOOKMARK [0][-]{chapter.12}{Conclusie en Aanbevelingen}{}% 60
-\BOOKMARK [1][-]{section.12.1}{Conclusie}{chapter.12}% 61
-\BOOKMARK [1][-]{section.12.2}{Aanbevelingen}{chapter.12}% 62
-\BOOKMARK [0][-]{chapter.13}{Discussie}{}% 63
-\BOOKMARK [1][-]{section.13.1}{Reflectie op het eindontwerp}{chapter.13}% 64
-\BOOKMARK [1][-]{section.13.2}{Reflectie op het groepsproces}{chapter.13}% 65
+\BOOKMARK [1][-]{section.8.3}{Randvoorwaarden}{chapter.8}% 32
+\BOOKMARK [2][-]{subsection.8.3.1}{Indeling beeldscherm}{section.8.3}% 33
+\BOOKMARK [1][-]{section.8.4}{Processes}{chapter.8}% 34
+\BOOKMARK [2][-]{subsection.8.4.1}{Process 1 : State-Renew}{section.8.4}% 35
+\BOOKMARK [2][-]{subsection.8.4.2}{Process 2 : Counter}{section.8.4}% 36
+\BOOKMARK [2][-]{subsection.8.4.3}{Process 3 : FSM}{section.8.4}% 37
+\BOOKMARK [0][-]{chapter.9}{VGA}{}% 38
+\BOOKMARK [1][-]{section.9.1}{RGB}{chapter.9}% 39
+\BOOKMARK [1][-]{section.9.2}{H-Sync}{chapter.9}% 40
+\BOOKMARK [1][-]{section.9.3}{V-Sync}{chapter.9}% 41
+\BOOKMARK [1][-]{section.9.4}{Timing}{chapter.9}% 42
+\BOOKMARK [2][-]{subsection.9.4.1}{H-Sync}{section.9.4}% 43
+\BOOKMARK [2][-]{subsection.9.4.2}{V-Sync}{section.9.4}% 44
+\BOOKMARK [1][-]{section.9.5}{VHDL}{chapter.9}% 45
+\BOOKMARK [2][-]{subsection.9.5.1}{Deler}{section.9.5}% 46
+\BOOKMARK [2][-]{subsection.9.5.2}{Counter}{section.9.5}% 47
+\BOOKMARK [2][-]{subsection.9.5.3}{H-Sync}{section.9.5}% 48
+\BOOKMARK [2][-]{subsection.9.5.4}{Vidcounter}{section.9.5}% 49
+\BOOKMARK [2][-]{subsection.9.5.5}{V-Sync}{section.9.5}% 50
+\BOOKMARK [2][-]{subsection.9.5.6}{RGB}{section.9.5}% 51
+\BOOKMARK [1][-]{section.9.6}{Videosignaal}{chapter.9}% 52
+\BOOKMARK [2][-]{subsection.9.6.1}{S-synccounter}{section.9.6}% 53
+\BOOKMARK [2][-]{subsection.9.6.2}{S-Sync}{section.9.6}% 54
+\BOOKMARK [1][-]{section.9.7}{Conclusie}{chapter.9}% 55
+\BOOKMARK [1][-]{section.9.8}{Resultaten}{chapter.9}% 56
+\BOOKMARK [0][-]{chapter.10}{SPI}{}% 57
+\BOOKMARK [1][-]{section.10.1}{Functionele beschrijving}{chapter.10}% 58
+\BOOKMARK [1][-]{section.10.2}{Inputs en outputs}{chapter.10}% 59
+\BOOKMARK [1][-]{section.10.3}{Implementatie}{chapter.10}% 60
+\BOOKMARK [0][-]{chapter.11}{SD-kaart}{}% 61
+\BOOKMARK [1][-]{section.11.1}{SD communicatie}{chapter.11}% 62
+\BOOKMARK [1][-]{section.11.2}{SD commando's \046 responses}{chapter.11}% 63
+\BOOKMARK [1][-]{section.11.3}{Functionele omschrijving}{chapter.11}% 64
+\BOOKMARK [1][-]{section.11.4}{Inputs en outputs}{chapter.11}% 65
+\BOOKMARK [0][-]{chapter.12}{Conclusie en Aanbevelingen}{}% 66
+\BOOKMARK [1][-]{section.12.1}{Conclusie}{chapter.12}% 67
+\BOOKMARK [1][-]{section.12.2}{Aanbevelingen}{chapter.12}% 68
+\BOOKMARK [0][-]{chapter.13}{Discussie}{}% 69
+\BOOKMARK [1][-]{section.13.1}{Reflectie op het eindontwerp}{chapter.13}% 70
+\BOOKMARK [1][-]{section.13.2}{Reflectie op het groepsproces}{chapter.13}% 71
+\BOOKMARK [0][-]{appendix.A}{Plan van aanpak}{}% 72
+\BOOKMARK [1][-]{section.A.1}{Achtergronden}{appendix.A}% 73
+\BOOKMARK [1][-]{section.A.2}{Projectresultaat}{appendix.A}% 74
+\BOOKMARK [2][-]{subsection.A.2.1}{Doelstellingen van het project}{section.A.2}% 75
+\BOOKMARK [2][-]{subsection.A.2.2}{Eindresultaat}{section.A.2}% 76
+\BOOKMARK [1][-]{section.A.3}{Projectactiviteiten}{appendix.A}% 77
+\BOOKMARK [1][-]{section.A.4}{Projectgrenzen}{appendix.A}% 78
+\BOOKMARK [2][-]{subsection.A.4.1}{Tussenresultaten}{section.A.4}% 79
+\BOOKMARK [2][-]{subsection.A.4.2}{Kwaliteitsbewaking}{section.A.4}% 80
+\BOOKMARK [1][-]{section.A.5}{Projectorganisatie}{appendix.A}% 81
+\BOOKMARK [2][-]{subsection.A.5.1}{Planning}{section.A.5}% 82
+\BOOKMARK [2][-]{subsection.A.5.2}{Risicoanalyse}{section.A.5}% 83
+\BOOKMARK [1][-]{section.A.6}{Bijlage}{appendix.A}% 84
+\BOOKMARK [0][-]{appendix.B}{Bijlage}{}% 85
+\BOOKMARK [1][-]{section.B.1}{Blackbox}{appendix.B}% 86
+\BOOKMARK [1][-]{section.B.2}{SPI}{appendix.B}% 87
