@@ -2,7 +2,7 @@
             ld      input
             xor     00101111
             add     00000001
-            bc      00000000
+            bc      00001110
             ld      input
             xor     00011111
             add     00000001
@@ -44,8 +44,8 @@
             ld      R3
             add     00001000
             st      R3
-			ld      R2
-            add     R3
+			ld      R3
+            add     R2
             st      R1
             jp      00000000
 			clr     c
@@ -66,23 +66,23 @@
             and     00100000
             bz      01000110
             ld      R3
-            add     00000001
+            add     00000010
             st      R3
 			ld      input
             and     01000000
             bz      01001100
             ld      R3
-            add     00000001
+            add     00000100
             st      R3
 			ld      input
             and     10000000
             bz      01010010
             ld      R3
-            add     00000001
+            add     00001000
             st      R3
 			ld		R3
             xor     11111111
-            set     c
+            add		00000001
             add     R2
             st      R1
             clr     c
@@ -104,19 +104,19 @@
             and     00100000
             bz      01101100
             ld      R3
-            add     00000001
+            add     00000010
             st      R3
 			ld      input
             and     01000000
             bz      01110010
             ld      R3
-            add     00000001
+            add     00000100
             st      R3
 			ld      input
             and     10000000
             bz      01111000
             ld      R3
-            add     00000001
+            add     00001000
             st      R3
 			ld      R2
             and     00000001
