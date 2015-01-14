@@ -70,7 +70,7 @@ De spelcomputer ontworpen en gebouwd door EPO-3 groep A5 bestaat uit veel versch
 \end{figure}
 
 \section{Toplevel}
-De toplevel beschrijving bestaat uit een entity en een behaviour. In de code van de entity staan alle poorten beschreven die de chip verbinden met de externe componenten die het systeem bevat. In de behaviour worden alle interne componenten aan elkaar verbonden. In figuur 4.1 staat schematisch weergegeven op welke manier dit gebeurd. De losse onderdelen van dit systeem worden individueel beschreven in dit verslag.
+De toplevel beschrijving bestaat uit een entity en een behaviour. In de code van de entity staan alle poorten beschreven die de chip verbinden met de externe componenten die het systeem bevat. In de behaviour worden alle interne componenten aan elkaar verbonden. In figuur \ref{Systeemoverzicht} staat schematisch weergegeven op welke manier dit gebeurd. De losse onderdelen van dit systeem worden individueel beschreven in dit verslag.
 
 \section{Externe componenten}
 Het systeem dat ontworpen is door EPO-3 groep A5 bevat kort gezegd drie aparte externe componenten, twee daarvan zijn inputs en een is een output. De inputs van dit systeem zijn de besturing en de opslag van het spel. Dit laatste gebeurd door middel van SD uitlezing met SPI. De output van dit systeem wordt aangestuurd door de VGA en kan een beeld produceren op een willekeurig beeldscherm.
@@ -176,7 +176,7 @@ Op basis van de Opcode selecteert de ALU middels 'when' statements welke functie
 De Program counter krijgt na elke instructie van de decoder een signaal om ofwel één instructie verder te gaan, of om naar een specifieke instructie te 'springen'. Dit wordt gedaan met behulp van een 1-bit increment en -jump signaal. Zolang de increment ingang hoog is wordt er telkens één opgeteld bij iedere instructie, en als het jump signaal hoog is wordt het nieuwe instructie-nummer vanaf de databus uitgelezen. Het 8-bits uitgangssignaal bevat het adres van de volgende instructie en wordt doorgegeven naar de SD-kaart uitlezer. De program counter zal bij elk opgaand enable signaal een stap verder gaan, dus bij iedere nieuwe instructie wordt gekeken wat de volgende instructie gaat zijn.
 
 
-Aan het hoofd van de processor bevindt zich de instructie decoder. Deze decoder stuurt naar aanleiding van een 12-bits instructie de overige componenten binnen de CPU aan. Dit wordt gedaan door eerst het 12-bits signaal op te delen in een 4-bits instructie en een 8-bits argument. Hierna wordt afhankelijk van de instructie een enable-signaal naar een relevant register of buffer, een instructie-code naar de rekenkern en een increment of jump signaal naar de program counter gestuurd. Het 8-bits argument kan ofwel als waarde op de databus gezet worden of als enable-signaal omgezet worden voor een register of buffer. De mogelijke instructies met bijbehorende uitgangssignalen van de decoder zijn te zien in tabel [figuur 6.2]. In de tabel is te zien bij welke ingangssignalen de output hoog moet zijn. Met dit in gedachten kan door middel van logische combinatoriek voor iedere uitgang een logische functie worden gedefinieerd.
+Aan het hoofd van de processor bevindt zich de instructie decoder. Deze decoder stuurt naar aanleiding van een 12-bits instructie de overige componenten binnen de CPU aan. Dit wordt gedaan door eerst het 12-bits signaal op te delen in een 4-bits instructie en een 8-bits argument. Hierna wordt afhankelijk van de instructie een enable-signaal naar een relevant register of buffer, een instructie-code naar de rekenkern en een increment of jump signaal naar de program counter gestuurd. Het 8-bits argument kan ofwel als waarde op de databus gezet worden of als enable-signaal omgezet worden voor een register of buffer. De mogelijke instructies met bijbehorende uitgangssignalen van de decoder zijn te zien in tabel [figuur \ref{Instructie}]. In de tabel is te zien bij welke ingangssignalen de output hoog moet zijn. Met dit in gedachten kan door middel van logische combinatoriek voor iedere uitgang een logische functie worden gedefinieerd.
 
 De volledige layout is te zien in \autoref{CPU}, en de mogelijke instructies met bijhorende interne signalen zijn te zien in \autoref{Instructies}
 
@@ -235,7 +235,7 @@ H-Sync vertelt de monitor wanneer een regel klaar. Als H-Sync laag is, betekent 
 \label{VGA}
 \end{figure}
 
-Video Line is het RGB signaal. Zoals te zien is in figuur 2, zit er tijd voor en na de dip van de H-sync. Deze tijd heet de front-porch en de back-porch. 
+Video Line is het RGB signaal. Zoals te zien is in figuur \ref{VGA}, zit er tijd voor en na de dip van de H-sync. Deze tijd heet de front-porch en de back-porch. 
 
 \section{V-Sync}
 V-Sync is het signaal dat aan de monitor vertelt dat een volledig scherm is volgeschreven. Als V-Sync laag wordt, begint het scherm weer links bovenin met pixels vullen. Net als bij de H-Sync is er sprake van een Front-porch en een Back-porch. Deze zijn bij de V-Sync een stuk langer dan bij de H-sync. Dit komt omdat de monitor de elektronenstraal van rechts onderin naar links bovenin moet sturen. Deze afstand is een stuk groter dan terug van rechts naar links. 
