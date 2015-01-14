@@ -64,50 +64,41 @@
 \BOOKMARK [1][-]{section.11.2}{SD commando's \046 responses}{chapter.11}% 64
 \BOOKMARK [1][-]{section.11.3}{Functionele omschrijving}{chapter.11}% 65
 \BOOKMARK [1][-]{section.11.4}{Inputs en outputs}{chapter.11}% 66
-\BOOKMARK [0][-]{chapter.12}{Conclusie en Aanbevelingen}{}% 67
-\BOOKMARK [1][-]{section.12.1}{Conclusie}{chapter.12}% 68
-\BOOKMARK [2][-]{subsection.12.1.1}{Complicaties}{section.12.1}% 69
-\BOOKMARK [2][-]{subsection.12.1.2}{Resultaten}{section.12.1}% 70
-\BOOKMARK [1][-]{section.12.2}{Aanbevelingen}{chapter.12}% 71
-\BOOKMARK [0][-]{chapter.13}{Discussie}{}% 72
-\BOOKMARK [1][-]{section.13.1}{Reflectie op het eindontwerp}{chapter.13}% 73
-\BOOKMARK [1][-]{section.13.2}{Reflectie op het groepsproces}{chapter.13}% 74
-\BOOKMARK [0][-]{chapter*.33}{Bibliografie}{}% 75
-\BOOKMARK [0][-]{appendix.A}{Plan van aanpak}{}% 76
-\BOOKMARK [1][-]{section.A.1}{Achtergronden}{appendix.A}% 77
-\BOOKMARK [1][-]{section.A.2}{Projectresultaat}{appendix.A}% 78
-\BOOKMARK [2][-]{subsection.A.2.1}{Doelstellingen van het project}{section.A.2}% 79
-\BOOKMARK [2][-]{subsection.A.2.2}{Eindresultaat}{section.A.2}% 80
-\BOOKMARK [1][-]{section.A.3}{Projectactiviteiten}{appendix.A}% 81
-\BOOKMARK [1][-]{section.A.4}{Projectgrenzen}{appendix.A}% 82
-\BOOKMARK [2][-]{subsection.A.4.1}{Tussenresultaten}{section.A.4}% 83
-\BOOKMARK [2][-]{subsection.A.4.2}{Kwaliteitsbewaking}{section.A.4}% 84
-\BOOKMARK [1][-]{section.A.5}{Projectorganisatie}{appendix.A}% 85
-\BOOKMARK [2][-]{subsection.A.5.1}{Planning}{section.A.5}% 86
-\BOOKMARK [2][-]{subsection.A.5.2}{Risicoanalyse}{section.A.5}% 87
-\BOOKMARK [1][-]{section.A.6}{Bijlage}{appendix.A}% 88
-\BOOKMARK [0][-]{appendix.B}{Bijlage - VHDL bestanden}{}% 89
-\BOOKMARK [1][-]{section.B.1}{Blackbox}{appendix.B}% 90
-\BOOKMARK [1][-]{section.B.2}{ROM}{appendix.B}% 91
-<<<<<<< HEAD
-\BOOKMARK [1][-]{section.B.3}{SD-kaart}{appendix.B}% 92
-\BOOKMARK [1][-]{section.B.4}{CPU}{appendix.B}% 93
-\BOOKMARK [2][-]{subsection.B.4.1}{Decoder}{section.B.4}% 94
-\BOOKMARK [2][-]{subsection.B.4.2}{ALU}{section.B.4}% 95
-\BOOKMARK [2][-]{subsection.B.4.3}{Program Counter}{section.B.4}% 96
-\BOOKMARK [2][-]{subsection.B.4.4}{Testbench}{section.B.4}% 97
-\BOOKMARK [1][-]{section.B.5}{Buffers}{appendix.B}% 98
-\BOOKMARK [1][-]{section.B.6}{Registers}{appendix.B}% 99
-\BOOKMARK [1][-]{section.B.7}{Gate}{appendix.B}% 100
-\BOOKMARK [1][-]{section.B.8}{GPU}{appendix.B}% 101
-\BOOKMARK [1][-]{section.B.9}{Calculator}{appendix.B}% 102
-\BOOKMARK [1][-]{section.B.10}{Assambly}{appendix.B}% 103
-=======
-\BOOKMARK [1][-]{section.B.3}{CPU}{appendix.B}% 92
-\BOOKMARK [1][-]{section.B.4}{Buffers}{appendix.B}% 93
-\BOOKMARK [1][-]{section.B.5}{Registers}{appendix.B}% 94
-\BOOKMARK [1][-]{section.B.6}{Gate}{appendix.B}% 95
-\BOOKMARK [1][-]{section.B.7}{GPU}{appendix.B}% 96
-\BOOKMARK [1][-]{section.B.8}{Calculator}{appendix.B}% 97
-\BOOKMARK [1][-]{section.B.9}{Assambly}{appendix.B}% 98
->>>>>>> 0542466eb287dfd9dc8fa627a09ec50ce15ad7e4
+\BOOKMARK [1][-]{section.11.5}{Implementatie}{chapter.11}% 67
+\BOOKMARK [0][-]{chapter.12}{Conclusie en Aanbevelingen}{}% 68
+\BOOKMARK [1][-]{section.12.1}{Conclusie}{chapter.12}% 69
+\BOOKMARK [2][-]{subsection.12.1.1}{Complicaties}{section.12.1}% 70
+\BOOKMARK [2][-]{subsection.12.1.2}{Resultaten}{section.12.1}% 71
+\BOOKMARK [1][-]{section.12.2}{Aanbevelingen}{chapter.12}% 72
+\BOOKMARK [0][-]{chapter.13}{Discussie}{}% 73
+\BOOKMARK [1][-]{section.13.1}{Reflectie op het eindontwerp}{chapter.13}% 74
+\BOOKMARK [1][-]{section.13.2}{Reflectie op het groepsproces}{chapter.13}% 75
+\BOOKMARK [0][-]{chapter*.33}{Bibliografie}{}% 76
+\BOOKMARK [0][-]{appendix.A}{Plan van aanpak}{}% 77
+\BOOKMARK [1][-]{section.A.1}{Achtergronden}{appendix.A}% 78
+\BOOKMARK [1][-]{section.A.2}{Projectresultaat}{appendix.A}% 79
+\BOOKMARK [2][-]{subsection.A.2.1}{Doelstellingen van het project}{section.A.2}% 80
+\BOOKMARK [2][-]{subsection.A.2.2}{Eindresultaat}{section.A.2}% 81
+\BOOKMARK [1][-]{section.A.3}{Projectactiviteiten}{appendix.A}% 82
+\BOOKMARK [1][-]{section.A.4}{Projectgrenzen}{appendix.A}% 83
+\BOOKMARK [2][-]{subsection.A.4.1}{Tussenresultaten}{section.A.4}% 84
+\BOOKMARK [2][-]{subsection.A.4.2}{Kwaliteitsbewaking}{section.A.4}% 85
+\BOOKMARK [1][-]{section.A.5}{Projectorganisatie}{appendix.A}% 86
+\BOOKMARK [2][-]{subsection.A.5.1}{Planning}{section.A.5}% 87
+\BOOKMARK [2][-]{subsection.A.5.2}{Risicoanalyse}{section.A.5}% 88
+\BOOKMARK [1][-]{section.A.6}{Bijlage}{appendix.A}% 89
+\BOOKMARK [0][-]{appendix.B}{Bijlage - VHDL bestanden}{}% 90
+\BOOKMARK [1][-]{section.B.1}{Blackbox}{appendix.B}% 91
+\BOOKMARK [1][-]{section.B.2}{ROM}{appendix.B}% 92
+\BOOKMARK [1][-]{section.B.3}{SD-kaart}{appendix.B}% 93
+\BOOKMARK [1][-]{section.B.4}{CPU}{appendix.B}% 94
+\BOOKMARK [2][-]{subsection.B.4.1}{Decoder}{section.B.4}% 95
+\BOOKMARK [2][-]{subsection.B.4.2}{ALU}{section.B.4}% 96
+\BOOKMARK [2][-]{subsection.B.4.3}{Program Counter}{section.B.4}% 97
+\BOOKMARK [2][-]{subsection.B.4.4}{Testbench}{section.B.4}% 98
+\BOOKMARK [1][-]{section.B.5}{Buffers}{appendix.B}% 99
+\BOOKMARK [1][-]{section.B.6}{Registers}{appendix.B}% 100
+\BOOKMARK [1][-]{section.B.7}{Gate}{appendix.B}% 101
+\BOOKMARK [1][-]{section.B.8}{GPU}{appendix.B}% 102
+\BOOKMARK [1][-]{section.B.9}{Calculator}{appendix.B}% 103
+\BOOKMARK [1][-]{section.B.10}{Assambly}{appendix.B}% 104
