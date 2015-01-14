@@ -66,11 +66,11 @@ De spelcomputer ontworpen en gebouwd door EPO-3 groep A5 bestaat uit veel versch
 \center
 \includegraphics[width=9cm]{hele-systeem}
 \caption{Totale systeem weergave}
-\label{Systeemoverzicht}
+\label{Systeemoverzicht_img}
 \end{figure}
 
 \section{Toplevel}
-De toplevel beschrijving bestaat uit een entity en een behaviour. In de code van de entity staan alle poorten beschreven die de chip verbinden met de externe componenten die het systeem bevat. In de behaviour worden alle interne componenten aan elkaar verbonden. In figuur \ref{Systeemoverzicht} staat schematisch weergegeven op welke manier dit gebeurd. De losse onderdelen van dit systeem worden individueel beschreven in dit verslag.
+De toplevel beschrijving bestaat uit een entity en een behaviour. In de code van de entity staan alle poorten beschreven die de chip verbinden met de externe componenten die het systeem bevat. In de behaviour worden alle interne componenten aan elkaar verbonden. In figuur \ref{Systeemoverzicht_img} staat schematisch weergegeven op welke manier dit gebeurd. De losse onderdelen van dit systeem worden individueel beschreven in dit verslag.
 
 \section{Externe componenten}
 Het systeem dat ontworpen is door EPO-3 groep A5 bevat kort gezegd drie aparte externe componenten, twee daarvan zijn inputs en een is een output. De inputs van dit systeem zijn de besturing en de opslag van het spel. Dit laatste gebeurd door middel van SD uitlezing met SPI. De output van dit systeem wordt aangestuurd door de VGA en kan een beeld produceren op een willekeurig beeldscherm.
@@ -176,7 +176,7 @@ Op basis van de Opcode selecteert de ALU middels 'when' statements welke functie
 De Program counter krijgt na elke instructie van de decoder een signaal om ofwel één instructie verder te gaan, of om naar een specifieke instructie te 'springen'. Dit wordt gedaan met behulp van een 1-bit increment en -jump signaal. Zolang de increment ingang hoog is wordt er telkens één opgeteld bij iedere instructie, en als het jump signaal hoog is wordt het nieuwe instructie-nummer vanaf de databus uitgelezen. Het 8-bits uitgangssignaal bevat het adres van de volgende instructie en wordt doorgegeven naar de SD-kaart uitlezer. De program counter zal bij elk opgaand enable signaal een stap verder gaan, dus bij iedere nieuwe instructie wordt gekeken wat de volgende instructie gaat zijn.
 
 
-Aan het hoofd van de processor bevindt zich de instructie decoder. Deze decoder stuurt naar aanleiding van een 12-bits instructie de overige componenten binnen de CPU aan. Dit wordt gedaan door eerst het 12-bits signaal op te delen in een 4-bits instructie en een 8-bits argument. Hierna wordt afhankelijk van de instructie een enable-signaal naar een relevant register of buffer, een instructie-code naar de rekenkern en een increment of jump signaal naar de program counter gestuurd. Het 8-bits argument kan ofwel als waarde op de databus gezet worden of als enable-signaal omgezet worden voor een register of buffer. De mogelijke instructies met bijbehorende uitgangssignalen van de decoder zijn te zien in tabel [figuur \ref{Instructie}]. In de tabel is te zien bij welke ingangssignalen de output hoog moet zijn. Met dit in gedachten kan door middel van logische combinatoriek voor iedere uitgang een logische functie worden gedefinieerd.
+Aan het hoofd van de processor bevindt zich de instructie decoder. Deze decoder stuurt naar aanleiding van een 12-bits instructie de overige componenten binnen de CPU aan. Dit wordt gedaan door eerst het 12-bits signaal op te delen in een 4-bits instructie en een 8-bits argument. Hierna wordt afhankelijk van de instructie een enable-signaal naar een relevant register of buffer, een instructie-code naar de rekenkern en een increment of jump signaal naar de program counter gestuurd. Het 8-bits argument kan ofwel als waarde op de databus gezet worden of als enable-signaal omgezet worden voor een register of buffer. De mogelijke instructies met bijbehorende uitgangssignalen van de decoder zijn te zien in tabel [figuur \ref{Instructies}]. In de tabel is te zien bij welke ingangssignalen de output hoog moet zijn. Met dit in gedachten kan door middel van logische combinatoriek voor iedere uitgang een logische functie worden gedefinieerd.
 
 De volledige layout is te zien in \autoref{CPU}, en de mogelijke instructies met bijhorende interne signalen zijn te zien in \autoref{Instructies}
 
@@ -244,7 +244,7 @@ De indeling van het uiteindelijke beeldscherm wordt deels bepaald door de GPU, g
 	Er is tijdens het ontwerp besloten om geen gebruik te maken van kleuren, dus enkel zwart en witte pixels.
 
 \item[Bits in Bytes]
-	De pixelmap van het beelscherm zal in het geheugen worden als bytes, waarin elke bit een ingekleurde pixel voorsteld. Bij de logische waarde '1' zal de pixel ingekleurd worden. Zie figuur \ref{pixelmap} voor een grafische representatie van de pixelmap in bytes, en figuur \ref{bit} een representatie van de indeling van 1 individuele byte. In de pixelmap is te zien dat er exact 1 byte buiten het scherm valt in verband met de back proch van het beeldscherm.
+	De pixelmap van het beelscherm zal in het geheugen worden als bytes, waarin elke bit een ingekleurde pixel voorsteld. Bij de logische waarde '1' zal de pixel ingekleurd worden. Zie figuur \ref{pixelmap} voor een grafische representatie van de pixelmap in bytes, en figuur \ref{byte} een representatie van de indeling van 1 individuele byte. In de pixelmap is te zien dat er exact 1 byte buiten het scherm valt in verband met de back proch van het beeldscherm.
 \end{description}
 
 \begin{figure}[H]
@@ -534,7 +534,7 @@ Deze drie subsystemen zijn aan elkaar verbonden volgens het schema in figuur \re
 \chapter{SD-kaart}
 Voor het opslaan van de instructies voor de CPU is gekozen voor een SD-kaart. Voor het uitlezen van een SD-kaart zijn er drie verschillende modes, twee hiervan zijn echter gebaseerd op een zelf ontworpen systeem van SanDisk. De derde mode is echter gebaseerd op SPI waarvan al een module is die al ontworpen is, daarom is hier ook voor gekozen. 
 \section{SD communicatie}
-Aangezien SPI niets zegt over hoe de communicatie verloopt of wat de betekenis van de overgebrachte data is, definieert SanDisk in de SD specificatie een aantal commando’s die naar de SD-kaart gestuurd kunnen worden. De specificatie die gebruikt is is uit 2003, dit is omdat dit de enige volledige specificatie is die te vinden was. Dit is omdat je een licentie bij SanDisk moet hebben om toegang te hebben tot de meest recente en volledige specificaties.
+Aangezien SPI niets zegt over hoe de communicatie verloopt of wat de betekenis van de overgebrachte data is, definieert SanDisk in de SD specificatie een aantal commando’s die naar de SD-kaart gestuurd kunnen worden. De specificatie die gebruikt is is uit 2003 \cite{SanDisk}, dit is omdat dit de enige volledige specificatie is die te vinden was. Dit is omdat je een licentie bij SanDisk moet hebben om toegang te hebben tot de meest recente en volledige specificaties.
 \section{SD commando's \& responses}
 De communicatie met de SD-kaart verloopt als volgt: er wordt een commando naar de SD-kaart verstuurt, de SD-kaart geeft antwoordt of het een correct commando is en of het commando verwerkt kan worden, daarna komt eventueel nog, bij het lezen, data van de SD-kaart of, bij het schrijven, data naar de SD-kaart. Zodra alles is afgehandeld kan er een nieuw commando gestuurd worden. Hoe dit precies verloopt is te zien in figuur \ref{sd-cmd-diagram} hierin is data versturen naar de SD-kaart weggelaten omdat hier geen gebruik van wordt gemaakt.
 
@@ -589,9 +589,11 @@ Zoals eerder in het verslag al aangegeven is het ons niet gelukt om een werkende
 \section{Reflectie op het groepsproces}
 EPO-3 groep A5 begon dit project sterk en georganiseerd, dit was grotendeels te danken aan onze voorzitter Erné Bronkhorst. Beslissingen konden gezamenlijk en snel worden genomen, dit gaf ons een goede voorsprong. Ook de taakverdeling en planning leek erg soepel te lopen. Gaande weg het project werd steeds meer duidelijk dat niet alle onderdelen evenveel tijd kosten, dit had tot gevolg dat er achteraf in moest worden gesprongen in onderdelen en dat koste erg veel tijd. De besturing was daar een goed voorbeeld van, deze kon eigenlijk vrij snel gerealiseerd worden. Hierdoor kwamen er twee mensen zonder taak te zitten, gelukkig kon dit vrij snel worden opgelost. Er moest nog een plan van aanpak worden geschreven en een toplevel beschrijving ontworpen. In de laatste fase van het project heeft de taakverdeling ervoor gezorgd dat we dit toch nog met een goed resultaat konden beëindigen. 
 
- \begin{thebibliography}{1}
+ \begin{thebibliography}{2}
 
   \bibitem{motorola} SPI Block Guide, http://www.ee.nmt.edu/~teare/ee308l/datasheets/S12SPIV3.pdf, benaderd in oktober en november. 2014.
+
+  \bibitem{SanDisk} SanDisk Secure Digital Card Product Manual Version 1.9, http://alumni.cs.ucr.edu/~amitra/sdcard/ProdManualSDCardv1.9.pdf, benaderd in november en december. 2014.
 
   \end{thebibliography}
 
@@ -735,23 +737,25 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \label{Stream behaviour}
 \lstinputlisting[language=VHDL]{VHDL/stream-behaviour.vhd}
 
+\newpage
 \section{ROM}
 \label{ROM}
 \lstinputlisting[language=VHDL]{VHDL/rom.vhd}
 
+\newpage
 \section{CPU}
-\label{}
-\lstinputlisting[language=VHDL]{VHDL/alu.vhd}
-\label{}
 \lstinputlisting[language=VHDL]{VHDL/cpu.vhd}
-\label{}
-\lstinputlisting[language=VHDL]{VHDL/cpu_EXTR.vhd}
-\label{}
-\lstinputlisting[language=VHDL]{VHDL/cpu_tb.vhd}
-\lstinputlisting[language=VHDL]{VHDL/pc_counter.vhd}
+\subsection{Decoder}
 \lstinputlisting[language=VHDL]{VHDL/decoder.vhd}
-\lstinputlisting[language=VHDL]{VHDL/gates.vhd}
+\newpage
+\subsection{ALU}
+\lstinputlisting[language=VHDL]{VHDL/alu.vhd}
+\subsection{Program Counter} 
+\lstinputlisting[language=VHDL]{VHDL/pc_counter.vhd}
+\subsection{Testbench}
+\lstinputlisting[language=VHDL]{VHDL/cpu_tb.vhd}
 
+\newpage
 \section{Buffers}
 \lstinputlisting[language=VHDL]{VHDL/buf_2.vhd}
 \lstinputlisting[language=VHDL]{VHDL/buf_3.vhd}
@@ -767,6 +771,7 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \lstinputlisting[language=VHDL]{VHDL/buf_i.vhd}
 \lstinputlisting[language=VHDL]{VHDL/instr_buf.vhd}
 
+\newpage
 \section{Registers}
 \lstinputlisting[language=VHDL]{VHDL/reg_2.vhd}
 \lstinputlisting[language=VHDL]{VHDL/reg_3.vhd}
@@ -775,7 +780,8 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \lstinputlisting[language=VHDL]{VHDL/reg_5.vhd}
 \lstinputlisting[language=VHDL]{VHDL/reg_6.vhd}
 \lstinputlisting[language=VHDL]{VHDL/reg_7.vhd}
-\lstinputlisting[language=VHDL]{VHDL/reg_8.vhd.vhd}\lstinputlisting[language=VHDL]{VHDL/reg_9.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_8.vhd.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_9.vhd}
 \lstinputlisting[language=VHDL]{VHDL/reg_10.vhd}
 \lstinputlisting[language=VHDL]{VHDL/reg_a.vhd}
 \lstinputlisting[language=VHDL]{VHDL/reg_cluster.vhd}
@@ -785,8 +791,11 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \section{Gate}
 \lstinputlisting[language=VHDL]{VHDL/gate.vhd}
 
+\newpage
 \section{GPU}
 \lstinputlisting[language=VHDL]{VHDL/gpu.vhd}
+
+\newpage
 \section{Calculator}
 \lstinputlisting[language=VHDL]{VHDL/calculator.vhd}
 \lstinputlisting[language=VHDL]{VHDL/tb.vhd}
