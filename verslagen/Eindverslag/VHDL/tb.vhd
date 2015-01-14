@@ -1,12 +1,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-
-
 entity tb is
 end tb;
-
-
 
 architecture behavior of tb is
 
@@ -29,17 +25,14 @@ begin
 
 lib01: calculator port map( XI, open, top_reset, top_sclk, top_mosi, top_ss, top_out);
 
-
 XI <= 	'0' after 0 ns, 
-				'1' after 170 ns when XI /= '1' else '0' after 170 ns; 
+           	'1' after 170 ns when XI /= '1' else '0' after 170 ns; 
 				
-top_mosi <= '0' after 0 ns;
-top_sclk <= '0' after 0 ns;
-top_reset <= 	'1' after 0 ns,
-					'0' after 200 ns;
-top_ss <= '0' after 0 ns;
-	
-
+top_mosi <= 	'0' after 0 ns;
+top_sclk <= 	'0' after 0 ns;
+top_reset <=   	'1' after 0 ns,
+				'0' after 200 ns;
+top_ss <=    	'0' after 0 ns;
 
 end behavior;
 

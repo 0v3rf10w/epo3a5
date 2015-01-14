@@ -87,87 +87,87 @@ end component;
 
 -- Signals --
 
-signal cpu_dec_instr	       :	std_logic_vector(11 downto 0);	   -- instruction from SPI
-signal cpu_dec_o		          :	std_logic_vector(7 downto 0);	    -- operand to buf_i
-signal cpu_dec_ibufoe	      :	std_logic;			                     -- ibuf_oe
-signal cpu_dec_pc_inc	      :	std_logic;			                     -- program counter increment
-signal cpu_dec_pc_ld	       :	std_logic;			                     -- program counter load
-signal cpu_dec_abufoe	      :	std_logic;			                     -- abuf_oe 
-signal cpu_dec_aregld	      :	std_logic;			                     -- areg_ld
-signal cpu_dec_bbufoe	      :	std_logic_vector(4 downto 0);	    -- bbuf_oe
-signal cpu_dec_bregld	      :	std_logic_vector(4 downto 0);	    -- breg_ld
-signal cpu_bus		            :	std_logic_vector(7 downto 0);	    -- operand in bus
-signal cpu_alu_c	           :	std_logic;			                     -- alu carry
-signal cpu_alu_z	           :	std_logic;			                     -- alu z-flag
-signal cpu_alu_out	         :	std_logic_vector(7 downto 0);	    -- alu output
-signal cpu_alu_op	          :	std_logic_vector(2 downto 0);	    -- alu opcode
-signal cpu_areg_out	        :	std_logic_vector(7 downto 0);	    -- output reg_A
-signal cpu_reg_out          : std_logic_vector(7 downto 0);     -- output reg_out
+signal cpu_dec_instr 	:	std_logic_vector(11 downto 0);	-- instruction from SPI
+signal cpu_dec_o     	:	std_logic_vector(7 downto 0);	-- operand to buf_i
+signal cpu_dec_ibufoe	:	std_logic;                   	-- ibuf_oe
+signal cpu_dec_pc_inc   :	std_logic;                   	-- program counter increment
+signal cpu_dec_pc_ld	:	std_logic;                   	-- program counter load
+signal cpu_dec_abufoe	:	std_logic;                   	-- abuf_oe 
+signal cpu_dec_aregld	:	std_logic;                   	-- areg_ld
+signal cpu_dec_bbufoe	:	std_logic_vector(4 downto 0);	-- bbuf_oe
+signal cpu_dec_bregld	:	std_logic_vector(4 downto 0);	-- breg_ld
+signal cpu_bus        	:	std_logic_vector(7 downto 0);	-- operand in bus
+signal cpu_alu_c      	:	std_logic;                   	-- alu carry
+signal cpu_alu_z     	:	std_logic;                   	-- alu z-flag
+signal cpu_alu_out    	:	std_logic_vector(7 downto 0);	-- alu output
+signal cpu_alu_op     	:	std_logic_vector(2 downto 0);	-- alu opcode
+signal cpu_areg_out   	:	std_logic_vector(7 downto 0);	-- output reg_A
+signal cpu_reg_out   	:	std_logic_vector(7 downto 0);	-- output reg_out
 
 begin
 
-lbl_instrbuf:	    instr_buf	port map(
-					     buf_in => cpu_instr,
-					     buf_oe => cpu_en,
-					     buf_out => cpu_dec_instr);
+lbl_instrbuf:	instr_buf	port map(
+                        buf_in => cpu_instr,
+                        buf_oe => cpu_en,
+                        buf_out => cpu_dec_instr);
 
-lbl_decoder:  decoder	port map(
-						        decoder_in => cpu_dec_instr,
-      				    	decoder_c => cpu_alu_c,
-    					     decoder_z => cpu_alu_z,
-    					     decoder_pc_inc => cpu_dec_pc_inc,
-    					     decoder_pc_ld => cpu_dec_pc_ld,
- 					          decoder_ibufoe => cpu_dec_ibufoe,
-    					      decoder_aregld => cpu_dec_aregld,
-      					    decoder_abufoe => cpu_dec_abufoe,
-      					    decoder_bregld => cpu_dec_bregld,
-      					    decoder_bbufoe => cpu_dec_bbufoe,
-      					    decoder_alu => cpu_alu_op,
-      					    decoder_argout => cpu_dec_o);
+lbl_decoder: 	decoder 	port map(
+                        decoder_in => cpu_dec_instr,
+                        decoder_c => cpu_alu_c,
+                        decoder_z => cpu_alu_z,
+                        decoder_pc_inc => cpu_dec_pc_inc,
+                        decoder_pc_ld => cpu_dec_pc_ld,
+                        decoder_ibufoe => cpu_dec_ibufoe,
+                        decoder_aregld => cpu_dec_aregld,
+                        decoder_abufoe => cpu_dec_abufoe,
+                        decoder_bregld => cpu_dec_bregld,
+                        decoder_bbufoe => cpu_dec_bbufoe,
+                        decoder_alu => cpu_alu_op,
+                        decoder_argout => cpu_dec_o);
 
-lbl_cpu_ibuf:	    buf_arg		port map(
-					      buf_in => cpu_dec_o,
-					      buf_oe => cpu_dec_ibufoe,
-					      buf_out => cpu_bus);
+lbl_cpu_ibuf:	buf_arg  	port map(
+                        buf_in => cpu_dec_o,
+                        buf_oe => cpu_dec_ibufoe,
+                        buf_out => cpu_bus);
 
-lbl_cpu_pc:     	pc_counter	port map(
-					       pc_in => cpu_bus,
- 					       pc_inc => cpu_dec_pc_inc,
-    					       pc_ld => cpu_dec_pc_ld,
-    					       pc_rst => cpu_rst,
-    					       pc_en => cpu_en,
-    					       pc_out => cpu_pc);
+lbl_cpu_pc:  	pc_counter	port map(
+                        pc_in => cpu_bus,
+                        pc_inc => cpu_dec_pc_inc,
+                        pc_ld => cpu_dec_pc_ld,
+                        pc_rst => cpu_rst,
+                        pc_en => cpu_en,
+                        pc_out => cpu_pc);
 
-lbl_cpu_alu:	    alu		port map(
-					       alu_A => cpu_bus,
- 				         alu_B => cpu_areg_out,
-   				         opcode => cpu_alu_op,
- 				         alu_clk => cpu_en,
- 				         alu_c => cpu_alu_c,
-   				         alu_z => cpu_alu_z,
-   				         alu_y => cpu_alu_out);
+lbl_cpu_alu: 	alu      	port map(
+                        alu_A => cpu_bus,
+                        alu_B => cpu_areg_out,
+                        opcode => cpu_alu_op,
+                        alu_clk => cpu_en,
+                        alu_c => cpu_alu_c,
+                        alu_z => cpu_alu_z,
+                        alu_y => cpu_alu_out);
 
-lbl_cpu_reg_A:	  reg_A		port map(
-					reg_in => cpu_alu_out,
-					reg_clk => cpu_en,
-					reg_rst => cpu_rst,
-					reg_ld => cpu_dec_aregld,
-					reg_out => cpu_areg_out);
+lbl_cpu_reg_A:	reg_A    	port map(
+                        reg_in => cpu_alu_out,
+                        reg_clk => cpu_en,
+                        reg_rst => cpu_rst,
+                        reg_ld => cpu_dec_aregld,
+                        reg_out => cpu_areg_out);
 
-lbl_cpu_buf_A:	   buf_A		port map(
-					buf_in => cpu_areg_out,
-					buf_oe => cpu_dec_abufoe,
-					buf_out => cpu_bus);
+lbl_cpu_buf_A:	buf_A     	port map(
+                        buf_in => cpu_areg_out,
+                        buf_oe => cpu_dec_abufoe,
+                        buf_out => cpu_bus);
 
-lbl_bregs:      reg_cluster port map(
-                    reg_in      => cpu_bus,
-                    reg_clk     => cpu_en,
-                    reg_rst     => cpu_rst,
-                    reg_select  => cpu_dec_bregld,
-                    buf_select  => cpu_dec_bbufoe,
-                    buf_in      => cpu_in,
-                    buf_out     => cpu_bus,
-                    reg_out     => cpu_out);
+lbl_bregs:   	reg_cluster port map(
+                        reg_in      => cpu_bus,
+                        reg_clk     => cpu_en,
+                        reg_rst     => cpu_rst,
+                        reg_select  => cpu_dec_bregld,
+                        buf_select  => cpu_dec_bbufoe,
+                        buf_in      => cpu_in,
+                        buf_out     => cpu_bus,
+                        reg_out     => cpu_out);
 
 end behaviour;
 

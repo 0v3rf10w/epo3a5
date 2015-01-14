@@ -1,9 +1,7 @@
-
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned;
 use IEEE.numeric_std.all;
-
 
 entity gpu is
 port (
@@ -20,9 +18,7 @@ test_data : out std_logic_vector(7 downto 0)
 );
 end gpu;
 
-
 architecture behavoural of gpu is
-
 
 -- definition of state machine states
 type statetype is (  state0, 
@@ -42,21 +38,16 @@ state13,
 state14
 );
 
-
 signal state, next_state : statetype;
-
 
 -- definition of x and y coordinate buffers
 signal x_buf, y_buf : std_logic_vector(5 downto 0);
 
-
 -- definition of z vector
 signal z : std_logic_vector(15 downto 0);
 
-
 -- non used signal
 signal sclk : std_logic;
-
 
 signal instruction : std_logic_vector(23 downto 0);
 signal instruction8 : std_logic_vector(7 downto 0);
@@ -65,9 +56,7 @@ signal data : std_logic_vector(7 downto 0);
 signal bitplace : unsigned(3 downto 0);
 signal sig : std_logic_vector(7 downto 0);
 
-
 signal count, new_count : unsigned (10 downto 0);
-
 
 begin
 test_xbuf <= x_buf;
@@ -89,11 +78,7 @@ else
 state <= state;
 end if;
 end if;
-
-
 end process;
-
-
 -- counter 1
 process (clk) 
 begin 
@@ -107,15 +92,9 @@ begin
 	end if; 
 end process;
 
-
-
-
-
 -- Finite state machine
 process(gpu_in, clk)
 begin
-
-
 case state is
 when state0 =>
 new_count <= to_unsigned(0,11);
@@ -136,8 +115,6 @@ mosi <= '0';
 --data <= "ZZZZZZZZ";
 cs <= '1';
 
-
-
 when state1 =>
 	if(gpu_in(7 downto 6) = "10") then
 		y_buf <= gpu_in(5 downto 0);
@@ -152,18 +129,11 @@ mosi <= '0';
 new_count <= to_unsigned(0,11);
 cs <= '1';
 
-
-
-
-
 when state2 =>
 instruction(23 downto 16) <= "00000011"; -- read instruction
 instruction(15 downto 0) <= std_logic_vector(resize(unsigned(x_buf) / 8 + 5 * unsigned(y_buf), 16));
 next_state <= state3;
 new_count <= to_unsigned(0,11);
-
-
-
 
 when state3 =>
 cs <= '0';
@@ -182,12 +152,10 @@ new_count <= to_unsigned(0,11);
 next_state <= state5;
 end if;
 
-
 when state4 =>
 sclk <= '1';
 new_count <= count + 1;
 next_state <= state3;
-
 
 when state5 =>
 sclk <= '0';
@@ -201,12 +169,10 @@ next_state <= state7;
 new_count <= to_unsigned(0,11);
 end if;
 
-
 when state6 =>
 sclk <= '1';
 new_count <= count + 1;
 next_state <= state5;
-
 
 when state7 =>
 cs <= '1';
@@ -214,12 +180,10 @@ cs <= '1';
 new_count <= to_unsigned(0,11);
 next_state <= state8;
 
-
 when state8 =>
 data(to_integer(7 - unsigned(unsigned(x_buf) - ((unsigned(x_buf) / 8) * 8)))) <= '1';
 new_count <= to_unsigned(0,11);
 next_state <= state9;
-
 
 when state9 =>
 send(31 downto 24) <= "00000010";
@@ -227,8 +191,6 @@ send(23 downto 8) <= std_logic_vector(resize(unsigned(x_buf) / 8 + 5 * unsigned(
 send(7 downto 0) <= data;
 new_count <= to_unsigned(0,11);
 next_state <= state10;
-
-
 
 when state10 =>
 cs <= '0';
@@ -246,21 +208,15 @@ new_count <= to_unsigned(0,11);
 next_state <= state12;
 end if;
 
-
 when state11 =>
 sclk <= '1';
 new_count <= count + 1;
 next_state <= state10;
 
-
 when state12 => 
 cs <= '1';
 new_count <= to_unsigned(0,11);
 next_state <= state0;
-
-
-
-
 
 when state13 =>
 cs <= '0';
@@ -279,26 +235,15 @@ mosi <= '0';
 next_state <= state0;
 end if;
 
-
-
 when state14 =>
 sclk <= '1';
 new_count <= count + 1;
 next_state <= state13;
 
-
-
 when others =>
 new_count <= to_unsigned(0,11);
 next_state <= state0;
 
-
 end case;
 end process;
-
-
-
-
-
-
 end architecture;
