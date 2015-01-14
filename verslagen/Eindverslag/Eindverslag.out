@@ -89,6 +89,7 @@
 \BOOKMARK [0][-]{appendix.B}{Bijlage - VHDL bestanden}{}% 89
 \BOOKMARK [1][-]{section.B.1}{Blackbox}{appendix.B}% 90
 \BOOKMARK [1][-]{section.B.2}{ROM}{appendix.B}% 91
+<<<<<<< HEAD
 \BOOKMARK [1][-]{section.B.3}{SD-kaart}{appendix.B}% 92
 \BOOKMARK [1][-]{section.B.4}{CPU}{appendix.B}% 93
 \BOOKMARK [2][-]{subsection.B.4.1}{Decoder}{section.B.4}% 94
@@ -101,3 +102,12 @@
 \BOOKMARK [1][-]{section.B.8}{GPU}{appendix.B}% 101
 \BOOKMARK [1][-]{section.B.9}{Calculator}{appendix.B}% 102
 \BOOKMARK [1][-]{section.B.10}{Assambly}{appendix.B}% 103
+=======
+\BOOKMARK [1][-]{section.B.3}{CPU}{appendix.B}% 92
+\BOOKMARK [1][-]{section.B.4}{Buffers}{appendix.B}% 93
+\BOOKMARK [1][-]{section.B.5}{Registers}{appendix.B}% 94
+\BOOKMARK [1][-]{section.B.6}{Gate}{appendix.B}% 95
+\BOOKMARK [1][-]{section.B.7}{GPU}{appendix.B}% 96
+\BOOKMARK [1][-]{section.B.8}{Calculator}{appendix.B}% 97
+\BOOKMARK [1][-]{section.B.9}{Assambly}{appendix.B}% 98
+>>>>>>> 0542466eb287dfd9dc8fa627a09ec50ce15ad7e4
