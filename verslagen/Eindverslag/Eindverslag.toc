@@ -76,4 +76,5 @@
 \contentsline {chapter}{\numberline {B}Bijlage}{30}{appendix.B}
 \contentsline {section}{\numberline {B.1}Blackbox}{30}{section.B.1}
 \contentsline {section}{\numberline {B.2}ROM}{33}{section.B.2}
+\contentsline {section}{\numberline {B.3}CPU}{37}{section.B.3}
 \contentsfinish 
