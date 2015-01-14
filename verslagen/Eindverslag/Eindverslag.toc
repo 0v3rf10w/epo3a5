@@ -26,13 +26,6 @@
 \contentsline {section}{\numberline {7.2}Inputs en outputs}{8}{section.7.2}
 \contentsline {section}{\numberline {7.3}Implementatie}{9}{section.7.3}
 \contentsline {chapter}{\numberline {8}GPU}{11}{chapter.8}
-<<<<<<< HEAD
-\contentsline {section}{\numberline {8.1}Doelstelling}{11}{section.8.1}
-\contentsline {section}{\numberline {8.2}I/O}{11}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Input CPU}{11}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}SPI}{11}{subsection.8.2.2}
-=======
->>>>>>> FETCH_HEAD
 \contentsline {chapter}{\numberline {9}VGA}{13}{chapter.9}
 \contentsline {section}{\numberline {9.1}RGB}{13}{section.9.1}
 \contentsline {section}{\numberline {9.2}H-Sync}{14}{section.9.2}
@@ -67,8 +60,6 @@
 \contentsline {chapter}{\numberline {13}Discussie}{24}{chapter.13}
 \contentsline {section}{\numberline {13.1}Reflectie op het eindontwerp}{24}{section.13.1}
 \contentsline {section}{\numberline {13.2}Reflectie op het groepsproces}{24}{section.13.2}
-<<<<<<< HEAD
-=======
 \contentsline {chapter}{\numberline {A}Plan van aanpak}{25}{appendix.A}
 \contentsline {section}{\numberline {A.1}Achtergronden}{25}{section.A.1}
 \contentsline {section}{\numberline {A.2}Projectresultaat}{25}{section.A.2}
@@ -85,5 +76,4 @@
 \contentsline {chapter}{\numberline {B}Bijlage}{30}{appendix.B}
 \contentsline {section}{\numberline {B.1}Blackbox}{30}{section.B.1}
 \contentsline {section}{\numberline {B.2}SPI}{33}{section.B.2}
->>>>>>> FETCH_HEAD
 \contentsfinish 
