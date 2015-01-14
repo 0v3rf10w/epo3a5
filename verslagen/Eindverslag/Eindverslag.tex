@@ -360,10 +360,17 @@ Op de foto is een testscherm te zien. Hierbij zijn enkele pixels te zien in vers
 \end{figure}
 
 \chapter{SPI}
-Serial Peripheral Interface in het kort ook SPI genoemd is een de facto-standaard die ooit door Motorola bedacht is voor het communiceren met randapparatuur, zoals embedded systems, sensors en memory cards. Bij SPI heb je de master en de slave deze communiceren met elkaar via twee seriële datalijnen daarnaast is er nog een kloklijn die aangeeft wanneer er data overgedragen wordt. De kloklijn wordt aangestuurd door de master, dit houdt in dat de slave niet kan pauzeren en altijd data aan de master aan moet bieden. De standaard definieert enkel hoe de data van de master naar de slave en vice versa over wordt gedragen, niet hoe de data verwerkt wordt, dit heeft als gevolgd dat randapparatuur zelf nog moet definiëren hoe de communicatie verloopt.
+Serial Peripheral Interface in het kort ook SPI genoemd is een de facto-standaard die ooit door Motorola bedacht is voor het communiceren met randapparatuur, zoals embedded systems, sensors en memory cards. Omdat SPI niet een officiële standaard is er geen specificatie om aan te houden bij het ontwerpen, om toch een refentie te hebben is er gebruikt gemaakt van \cite{motorola} waarin het ontwerp van een SPI module wordt omschreven. Bij SPI heb je de master en de slave deze communiceren met elkaar via twee seriële datalijnen daarnaast is er nog een kloklijn die aangeeft wanneer er data overgedragen wordt. De kloklijn wordt aangestuurd door de master, dit houdt in dat de slave niet kan pauzeren en altijd data aan de master aan moet bieden. De standaard definieert enkel hoe de data van de master naar de slave en vice versa over wordt gedragen, niet hoe de data verwerkt wordt, dit heeft als gevolgd dat randapparatuur zelf nog moet definiëren hoe de communicatie verloopt.
 
 \section{Functionele beschrijving}
-De SPI module begint met zenden/ontvangen zodra het send signaal hoog is en stopt zodra er acht bits zijn verzonden/ontvangen, daarna kunnen de ontvangen bits uitgelezen worden en nieuwe bits in worden geladen om te verzenden. Het overbrengen van het shift register dat in de master zit naar de slave en vice versa deze shift registers zijn in een kring op elkaar aangesloten, waarbij altijd de meest significante bit wordt verzonden. Voor de communicatie met de slave wordt een slave klok signaal gegenereerd, de data overdracht is gesynchroniseerd ten opzicht van dit signaal. Data wordt gesampled op de opgaande klokflank en de data wordt geshift op de neergaande klokflank.
+De SPI module begint met zenden/ontvangen zodra het send signaal hoog is en stopt zodra er acht bits zijn verzonden/ontvangen, daarna kunnen de ontvangen bits uitgelezen worden en nieuwe bits in worden geladen om te verzenden. Het overbrengen van het shift register dat in de master zit naar de slave en vice versa deze shift registers zijn in een kring op elkaar aangesloten, waarbij altijd de meest significante bit wordt verzonden. Voor de communicatie met de slave wordt een slave klok signaal gegenereerd, de data overdracht is gesynchroniseerd ten opzicht van dit signaal. Data wordt gesampled op de opgaande klokflank en de data wordt geshift op de neergaande klokflank, een verduidelijking van hoe deze timing precies werkt is te zien in figuur \ref{spi-timing-diagram}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=15cm]{./spi_timing_diagram}
+\caption{Diagram van SPI timing}
+\label{spi-timing-diagram}
+\end{figure}
 
 \section{Inputs en outputs}
 Hieronder een beschrijving van alle in- en outputs van de SPI module zoals te zien in figuur \ref{spi-diagram}.
@@ -381,8 +388,8 @@ Hieronder een beschrijving van alle in- en outputs van de SPI module zoals te zi
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{./spi_diagram}
-\caption{Diagram of SPI circuit}
+\includegraphics[width=7cm]{./spi_diagram}
+\caption{Diagram van SPI circuit}
 \label{spi-diagram}
 \end{figure}
 
@@ -424,16 +431,24 @@ Deze drie subsystemen zijn aan elkaar verbonden volgens het schema in figuur \re
 \chapter{SD-kaart}
 Voor het opslaan van de instructies voor de CPU is gekozen voor een SD-kaart. Voor het uitlezen van een SD-kaart zijn er drie verschillende modes, twee hiervan zijn echter gebaseerd op een zelf ontworpen systeem van SanDisk. De derde mode is echter gebaseerd op SPI waarvan al een module is die al ontworpen is, daarom is hier ook voor gekozen. 
 \section{SD communicatie}
-Aangezien SPI niets zegt over hoe de communicatie verloopt of wat de betekenis van de overgebrachte data is, definieert SanDisk in de SD specificatie een aantal commando’s die naar de SD-kaart gestuurd kunnen worden. Er zal niet specifiek in worden gegaan op wat deze commando’s zijn, je moet denken aan: reset, lezen en schrijven commando’s, er zal wel ingegaan worden op hoe deze commando’s worden gestuurd en wat de reacties hier op zijn.
+Aangezien SPI niets zegt over hoe de communicatie verloopt of wat de betekenis van de overgebrachte data is, definieert SanDisk in de SD specificatie een aantal commando’s die naar de SD-kaart gestuurd kunnen worden. De specificatie die gebruikt is is uit 2003, dit is omdat dit de enige volledige specificatie is die te vinden was. Dit is omdat je een licentie bij SanDisk moet hebben om toegang te hebben tot de meest recente en volledige specificaties.
 \section{SD commando's \& responses}
-De communicatie met de SD-kaart verloopt als volgt: er wordt een commando naar de SD-kaart verstuurt, de SD-kaart geeft antwoordt of het een correct commando is en of het commando verwerkt kan worden, daarna komt eventueel nog, bij het lezen, data van de SD-kaart of, bij het schrijven, data naar de SD-kaart. Zodra alles is afgehandeld kan er een nieuw commando gestuurd worden.
+De communicatie met de SD-kaart verloopt als volgt: er wordt een commando naar de SD-kaart verstuurt, de SD-kaart geeft antwoordt of het een correct commando is en of het commando verwerkt kan worden, daarna komt eventueel nog, bij het lezen, data van de SD-kaart of, bij het schrijven, data naar de SD-kaart. Zodra alles is afgehandeld kan er een nieuw commando gestuurd worden. Hoe dit precies verloopt is te zien in figuur \ref{sd-cmd-diagram} hierin is data versturen naar de SD-kaart weggelaten omdat hier geen gebruik van wordt gemaakt.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{./sd_cmd_diagram}
+\caption{Commando communicatie van SD-kaart}
+\label{sd-cmd-diagram}
+\end{figure}
+
 \section{Functionele omschrijving}
 De SD module is zo ontworpen dat deze een adres binnen krijgt van de program counter van de CPU deze uitleest vanaf de SD-kaart en deze vervolgens aanbiedt aan de CPU. Zolang de SD module nog bezig is met het uitlezen van het adres zal het busy signaal hoog zijn.
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{./sd_diagram}
-\caption{Diagram of SD circuit}
+\includegraphics[width=7cm]{./sd_diagram}
+\caption{Diagram van SD-kaart}
 \label{sd-diagram}
 \end{figure}
 
@@ -447,7 +462,7 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 \item Setup clock: het kloksignaal dat tijdens de initialisatie gebruikt zal worden, deze moet tussen de 100 en 400 kHz liggen
 \item Reset: het algemene reset signaal 
 \item Address: het adres dat van de SD-kaart zal worden afgelezen
-\item Output(8): dit zal de waarde zijn die op het adres staat zodra deze is uitgelezen
+\item Output(12): dit zal de waarde zijn die op het adres staat zodra deze is uitgelezen
 \item Busy: dit signaal geeft aan of de SD module bezig is
 \item Slave clock: het slave kloksignaal dat de SD-kaart aanstuurd
 \item MOSI: de datalijn van de SD module naar de SD-kaart
@@ -467,6 +482,12 @@ Zoals eerder in het verslag al aangegeven is het ons niet gelukt om een werkende
 
 \section{Reflectie op het groepsproces}
 EPO-3 groep A5 begon dit project sterk en georganiseerd, dit was grotendeels te danken aan onze voorzitter Erné Bronkhorst. Beslissingen konden gezamenlijk en snel worden genomen, dit gaf ons een goede voorsprong. Ook de taakverdeling en planning leek erg soepel te lopen. Gaande weg het project werd steeds meer duidelijk dat niet alle onderdelen evenveel tijd kosten, dit had tot gevolg dat er achteraf in moest worden gesprongen in onderdelen en dat koste erg veel tijd. De besturing was daar een goed voorbeeld van, deze kon eigenlijk vrij snel gerealiseerd worden. Hierdoor kwamen er twee mensen zonder taak te zitten, gelukkig kon dit vrij snel worden opgelost. Er moest nog een plan van aanpak worden geschreven en een toplevel beschrijving ontworpen. In de laatste fase van het project heeft de taakverdeling ervoor gezorgd dat we dit toch nog met een goed resultaat konden beëindigen. 
+
+ \begin{thebibliography}{1}
+
+  \bibitem{motorola} SPI Block Guide, http://www.ee.nmt.edu/~teare/ee308l/datasheets/S12SPIV3.pdf, benaderd in oktober en november. 2014.
+
+  \end{thebibliography}
 
 \appendix
 
