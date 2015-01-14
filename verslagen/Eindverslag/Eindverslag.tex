@@ -11,6 +11,9 @@
 \usepackage{blindtext}
 \usepackage{listings}
 \usepackage{caption}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{siunitx}
 
 
 
@@ -23,7 +26,7 @@
 \maketitle
 
 \chapter{Samenvatting}
-Dit ontwerprapport is geschreven naar aanleiding van het project EPO-3 van het tweede jaar van de bacheloropleiding Electrical Engineering. In dit project staat het beschrijven van hardware centraal, met als doel het ontwerpen van een chip. In de keuze van een ontwerp zijn de studenten door de TU geheel vrij gelaten, er moest natuurlijk wel rekening worden gehouden met de grootte van de chip en het tijdsbestek waarin het ontwerp gerealiseerd kon worden. Er is hier door de EPO-3 groep A5 gekozen voor het ontwerpen van een spelcomputer, hierop kunnen meerdere spellen gespeeld worden. Om binnen het tijdsbestek te blijven is gekozen voor 'Pong', meerdere spellen kunnen eventueel achteraf simpel toegevoegd worden.\\
+Dit ontwerprapport is geschreven naar aanleiding van het project EPO-3 van het tweede jaar van de bacheloropleiding Electrical Engineering. In dit project staat het beschrijven van hardware centraal, met als doel het ontwerpen van een chip. In de keuze van een ontwerp zijn de studenten door de TU geheel vrij gelaten, er moest natuurlijk wel rekening worden gehouden met de grootte van de chip en het tijdsbestek waarin het ontwerp gerealiseerd kon worden. Er is hier door de EPO-3 groep A5 gekozen voor het ontwerpen van een spelcomputer, hierop kunnen meerdere spellen gespeeld worden. Om binnen het tijdsbestek te blijven is gekozen voor 'Pong', meerdere spellen kunnen eventueel achteraf simpel toegevoegd worden.
 
 Van het uiteindelijke ontwerp wordt in de laatste periode van dit jaar een chip gemaakt, tijdens het ontwerpproces is er daarom met een FPGA development board gewerkt. Deze is geleverd door de TU Delft. Het grootste deel van het systeem bevindt zich op de chip zelf, toch zijn er nog drie losse componenten gebruikt om dit ontwerp te realiseren. Het idee achter de spelcomputer is dat hij meerdere spellen kan spelen, deze moeten extern aangeleverd worden. Er is hier gekozen voor een SD-kaart uitlezing met SPI, het spel is in assembly geschreven. Ook de besturing moest extern geregeld worden, met ultrasone sensoren bleek dit systeem het best te controleren. Als back-up plan is er hiernaast voor gekozen om ook enkele knoppen te implementeren. Om het spel te kunnen spelen is er tot slot ook een beeldscherm nodig.\\
 
@@ -142,7 +145,15 @@ Er valt te zien dat voordat het signaal s hoog wordt de SPI signalen van master 
 
 \chapter{CPU}
 \section{Functionele beschrijving}
-Om programma’s uit te kunnen voeren wordt gebruik gemaakt van een door de Delta-1 [INSERT BRON HIER] geïnspireerde microprocessor. Deze 8-bits processor krijgt instructies binnen die via SPI van een SD-kaart worden afgelezen. Vervolgens voert de processor bewerkingen uit, waarvan de resultaten doorgestuurd wordt naar de overige componenten op de chip. De data die uit de processor komt wordt hierna door de VGA-controller omgezet naar beelden op het scherm.
+Om programma’s uit te kunnen voeren wordt gebruik gemaakt van een door de Delta-1 [INSERT BRON HIER] geïnspireerde microprocessor. Deze 8-bits processor krijgt instructies binnen die via SPI van een SD-kaart worden afgelezen. Vervolgens voert de processor bewerkingen uit, waarvan de resultaten doorgestuurd worden naar de overige componenten op de chip. De data die uit de processor komt wordt hierna door de VGA-controller omgezet naar beelden op het scherm.
+
+
+
+\section{Inputs en outputs}
+De processor heeft in totaal vijf ingangen. Dit zijn de 12-bits instructie-bus waarop de instructies staan die vanaf de SD kaart worden afgelezen, een 8-bits signaal waar alle externe inputs op komen te staan, de reset en het CPU-enable signaal. Het CPU-enable signaal geeft door aan de processor dat een nieuwe instructie klaar staat om uitgevoerd te worden. Op het 8-bits signaal waar alle inputsinformatie op staat, staat bijvoorbeeld welke knoppen ingedrukt zijn bij de besturing.
+We hebben besloten om de CPU niet te laten draaien op een kloksignaal, maar op het enable signaal. Op deze manier voert de CPU iedere keer dat er een instructie op de ingang wordt aangeboden één enkele instructie uit. Zo gaat de CPU geen ongewenste stappen ondernemen met verkeerde/verouderde ingangswaardes. 
+
+Verder beschikt de CPU over twee uitgangen: Eén 8-bits signaal dat data naar de VGA controller stuurt en een 8-bits signaal dat het adres van de volgende instructie doorgeeft aan de SD-kaart uitlezer. 
 
 \begin{figure}[H]
 \center
@@ -151,11 +162,6 @@ Om programma’s uit te kunnen voeren wordt gebruik gemaakt van een door de Delt
 \label{CPU}
 \end{figure}
 
-\section{Inputs en outputs}
-De processor heeft in totaal vijf ingangen. Dit zijn de 12-bits instructie-bus waarop de instructies staan die vanaf de SD kaart worden afgelezen, een 8-bits signaal waar alle externe inputs op komen te staan, de reset en het CPU-enable signaal. Het CPU-enable signaal geeft door aan de processor dat een nieuwe instructie klaar staat om uitgevoerd te worden. Op het 8-bits signaal waar alle inputsinformatie op staat, staat bijvoorbeeld de positie van de aansturing.
-We hebben besloten om de CPU niet te laten draaien op een kloksignaal, maar op het enable signaal. Op deze manier maakt de CPU een berekening iedereen keer dat er een instructie op de ingang wordt aangeboden. Zo gaat de CPU geen ongewenste stappen ondernemen met verkeerde/verouderde ingangswaardes. 
-
-Verder beschikt de CPU over twee uitgangen: Eén 8-bits signaal dat data naar de VGA controller stuurt en een 8-bits signaal dat het adres van de volgende instructie doorgeeft aan de SD-kaart uitlezer. 
 
 \section{Implementatie}
 De totale processor is opgebouwd uit vijf verschillende sub-schakelingen: Registers, buffers, een rekenkern, een program-counter en een instructie-decoder.
@@ -172,52 +178,25 @@ De Program counter krijgt na elke instructie van de decoder een signaal om ofwel
 
 Aan het hoofd van de processor bevindt zich de instructie decoder. Deze decoder stuurt naar aanleiding van een 12-bits instructie de overige componenten binnen de CPU aan. Dit wordt gedaan door eerst het 12-bits signaal op te delen in een 4-bits instructie en een 8-bits argument. Hierna wordt afhankelijk van de instructie een enable-signaal naar een relevant register of buffer, een instructie-code naar de rekenkern en een increment of jump signaal naar de program counter gestuurd. Het 8-bits argument kan ofwel als waarde op de databus gezet worden of als enable-signaal omgezet worden voor een register of buffer. De mogelijke instructies met bijbehorende uitgangssignalen van de decoder zijn te zien in tabel [figuur 6.2]. In de tabel is te zien bij welke ingangssignalen de output hoog moet zijn. Met dit in gedachten kan door middel van logische combinatoriek voor iedere uitgang een logische functie worden gedefinieerd.
 
+De volledige layout is te zien in \autoref{CPU}, en de mogelijke instructies met bijhorende interne signalen zijn te zien in \autoref{Instructies}
+
 \begin{figure}[H]
-\center
+\begin{center}
 \includegraphics[width=12cm]{tabel}
 \caption{Instructies met bijbehorende uitgangssignalen}
-\label{CPU}
+\label{Instructies}
+\end{center}
 \end{figure}
 
 
 \chapter{GPU}
+De GPU is een component dat via de outputbuffer van de CPU 2 8 bit commando’s zal ontvangen met daarom achtereenvolgens de X en Y positie van de in te kleuren pixel op het scherm. Tevens zal er een commando bestaan om het volledige scherm schoon te vegen (Alle pixels uitzetten). De GPU ontvangt deze coördinaten en rekent dit om naar het adres waar de waarde ‘1’ of ‘0’ ingevuld zal moeten worden in het SRAM. Tevens bevind zich in de GPU de aansturing van het SRAM, via SPI. Deze zal bestaan uit een 8 bits instructiecode voor de schrijf handeling, gevolgd door een 16 bits adres waar de waarde geschreven zal moeten worden en uiteindelijk de waarde zelf. Op deze manier kan het SRAM geschreven worden vanuit de CPU en is het mogelijk om beeld te genereren.
 
-\section{Doelstelling}
-De GPU dient als vertaalslag tussen de 8-bit commando’s welke worden ontvangen vanuit de output buffer van de CPU, en de pixelmap welke opgeslagen is in het SRAM. Door het gebruik van 2 wisselende SRAM chips kan de GPU in de ene SRAM chip schrijven, terwijl de VGA-module uit de andere SRAM chip aan het lezen is. De GPU ontvangt vanuit de CPU achtereenvolgens commando’s met hierin data van de X en Y posities van de in te kleuren pixel. Tevens is er een commando aanwezig om het volledige scherm leeg te vegen.
-
-\section{I/O}
-De I/O van de GPU zal bestaan uit de communicatie met de CPU, SPI uitgang naar het SRAM en klok- en resetsignalen ten behoeve van het realiseren van de FSM’s.
-
-
-
-\subsection{Input CPU}
-De ingang van de CPU zal bestaan achtereenvolgens 8 bit commando’s welke zullen worden opgesplitst in een 2 bit commando, en een 6 bit datavector. Zie onderstaande tabel.\\
-
-
-\begin{tabular}{| c | c | c | c | c | c | c | c | }
-  \hline			
-  7 & 6 & 5 & 4 & 3 & 2 & 1 & 0  \\ \hline
-instruction(1) & instruction(0) & data(5) & data(4) & data(3) & data(2) & data(1) & data(0) \\
-  \hline  
-\end{tabular} \\
-\\
-
-De instruciteset van de GPU worst als volgt gedefinieerd:
-\begin{description}
-\item ["01"]
-	Read X: Deze instructie beschrijft dat de CPU in de databits de x-coördinaat van de in te kleuren pixel weergeeft. 
-\item ["10"]
-	Read Y: Deze instructie beschtijft dat de CPU in de databits de y-coordinaat weergeeft van de in te kleuren pixel.
-\item ["11"]
-	Clear screen: Deze instructie geeft aan dat de volledige pixelmap in het SRAM leeggemaakt kan worden.
-\end{description}
-
-
-\subsection{SPI}
-De uitgang van de GPU zal bestaan uit SPI signalen om te comminuceren met het SRAM. Gedurende het project is gebleken dat het noodzakelijk blijkt te zijn dat de GPU zowel kan lezen als schrijven vanuit het SRAM. Dit betekend dat er een volledig bidirectionele comminucatie vereist is tussen SRAM en GPU. De comminucatie met het gekozen SRAM zal worden gerealiseerd volgens de door de datasheet van het SRAM opgegeven commando's. Voor de GPU zijn de lees en schrijf commando's van belang. Deze zijn te vinden in figuur \ref{sram}.
+De GPU is ontworpen aan de hand van een FSM, deze bevat 5 states en staat hieronder weergegeven.
 
 \begin{figure}[H]
 \center
+<<<<<<< HEAD
 \includegraphics[width=15cm]{sramcomm}
 \caption{SPI specificatie volgens datasheet SRAM}
 \label{sram}
@@ -287,6 +266,14 @@ In blok B wordt het y-coordinaat ontvangen en zal de FSM berekenen in welke byte
 
 
 
+=======
+\includegraphics[width=9cm]{FSM_GPU}
+\caption{Final State Machine van de GPU}
+\label{sub-GPU}
+\end{figure}
+
+In de eerste state kan de GPU drie richtingen op gaan. Als de eerste twee bits van de 8-bits vector '11' zijn gaat de GPU naar Clr-screen,hier zal de VGA zijn scherm leeg maken. De GPU gaat zijn X-data inlezen en springt naar de volgende state (Y-Hold) als de eerste twee bits van de 8-bits vector '01' is. Voor iedere andere waarde op de eerste twee bits van de 8-bits vector blijft de GPU in de int state. Vanuit de Clr-screen state kan de GPU alleen nog maar terug naar de int state en begint de FSM opnieuw. In de Y-Hold state wacht de GPU op Y-Data, de GPU blijft in deze state totdat de eerste twee bits van de 8-bits vector '10' aangeven (Duurt 20 klokslagen). Op dat moment leest de GPU de Y-Data in en stapt over naar de Calc. state. In deze state wordt het adres berekend voor de VGA, dit gebeurd met de formule $32*Y+X =$ adres. Als deze berekening voor het bepalen van zijn adres is voltooid springt de GPU automatisch naar de volgende state, de Write state. In de Write state schrijft de GPU data uit de buffers weg via SPI. Automatisch zal de GPU terug springen naar zijn eerste state, het proces begint dan opnieuw. 
+>>>>>>> FETCH_HEAD
 
 \chapter{VGA}
 De VGA-controller zorgt ervoor dat een beeldscherm van de juiste signalen wordt voorzien om een beeld te kunnen opbouwen. Hierbij wordt een serieel signaal vanuit het SRAM omgezet naar een signaal dat voor een monitor is te begrijpen. Hiervoor zijn vijf signalen nodig. Drie signalen voor respectievelijk rood, groen en blauw, een voor H-Sync en een voor V-Sync. 
@@ -454,13 +441,20 @@ Op de foto is een testscherm te zien. Hierbij zijn enkele pixels te zien in vers
 \end{figure}
 
 \chapter{SPI}
-Serial Peripheral Interface in het kort ook SPI genoemd is een de facto-standaard die ooit door Motorola bedacht is voor het communiceren met randapparatuur, zoals embedded systems, sensors en memory cards. Bij SPI heb je de master en de slave deze communiceren met elkaar via twee seriële datalijnen daarnaast is er nog een kloklijn die aangeeft wanneer er data overgedragen wordt. De kloklijn wordt aangestuurd door de master, dit houdt in dat de slave niet kan pauzeren en altijd data aan de master aan moet bieden. De standaard definieert enkel hoe de data van de master naar de slave en vice versa over wordt gedragen, niet hoe de data verwerkt wordt, dit heeft als gevolgd dat randapparatuur zelf nog moet definiëren hoe de communicatie verloopt.
+Serial Peripheral Interface in het kort ook SPI genoemd is een de facto-standaard die ooit door Motorola bedacht is voor het communiceren met randapparatuur, zoals embedded systems, sensors en memory cards. Omdat SPI niet een officiële standaard is er geen specificatie om aan te houden bij het ontwerpen, om toch een refentie te hebben is er gebruikt gemaakt van \cite{motorola} waarin het ontwerp van een SPI module wordt omschreven. Bij SPI heb je de master en de slave deze communiceren met elkaar via twee seriële datalijnen daarnaast is er nog een kloklijn die aangeeft wanneer er data overgedragen wordt. De kloklijn wordt aangestuurd door de master, dit houdt in dat de slave niet kan pauzeren en altijd data aan de master aan moet bieden. De standaard definieert enkel hoe de data van de master naar de slave en vice versa over wordt gedragen, niet hoe de data verwerkt wordt, dit heeft als gevolgd dat randapparatuur zelf nog moet definiëren hoe de communicatie verloopt.
 
 \section{Functionele beschrijving}
-De SPI module begint met zenden/ontvangen zodra het send signaal hoog is en stopt zodra er acht bits zijn verzonden/ontvangen, daarna kunnen de ontvangen bits uitgelezen worden en nieuwe bits in worden geladen om te verzenden. Het overbrengen van het shift register dat in de master zit naar de slave en vice versa deze shift registers zijn in een kring op elkaar aangesloten, waarbij altijd de meest significante bit wordt verzonden. Voor de communicatie met de slave wordt een slave klok signaal gegenereerd, de data overdracht is gesynchroniseerd ten opzicht van dit signaal. Data wordt gesampled op de opgaande klokflank en de data wordt geshift op de neergaande klokflank.
+De SPI module begint met zenden/ontvangen zodra het send signaal hoog is en stopt zodra er acht bits zijn verzonden/ontvangen, daarna kunnen de ontvangen bits uitgelezen worden en nieuwe bits in worden geladen om te verzenden. Het overbrengen van het shift register dat in de master zit naar de slave en vice versa deze shift registers zijn in een kring op elkaar aangesloten, waarbij altijd de meest significante bit wordt verzonden. Voor de communicatie met de slave wordt een slave klok signaal gegenereerd, de data overdracht is gesynchroniseerd ten opzicht van dit signaal. Data wordt gesampled op de opgaande klokflank en de data wordt geshift op de neergaande klokflank, een verduidelijking van hoe deze timing precies werkt is te zien in figuur \ref{spi-timing-diagram}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=15cm]{./spi_timing_diagram}
+\caption{Diagram van SPI timing}
+\label{spi-timing-diagram}
+\end{figure}
 
 \section{Inputs en outputs}
-Hieronder een beschrijving van alle in- en outputs van de SPI module zoals te zien in figuur {spi-diagram}.
+Hieronder een beschrijving van alle in- en outputs van de SPI module zoals te zien in figuur \ref{spi-diagram}.
 \begin{itemize}
 \item Clock: het kloksignaal waarop de SPI draait, het slave clock signaal zal dezelfde frequency hebben als dit kloksignaal
 \item Reset: de hoofd reset van de SPI
@@ -475,8 +469,8 @@ Hieronder een beschrijving van alle in- en outputs van de SPI module zoals te zi
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{./spi_diagram}
-\caption{Diagram of SPI circuit}
+\includegraphics[width=7cm]{./spi_diagram}
+\caption{Diagram van SPI circuit}
 \label{spi-diagram}
 \end{figure}
 
@@ -518,16 +512,24 @@ Deze drie subsystemen zijn aan elkaar verbonden volgens het schema in figuur \re
 \chapter{SD-kaart}
 Voor het opslaan van de instructies voor de CPU is gekozen voor een SD-kaart. Voor het uitlezen van een SD-kaart zijn er drie verschillende modes, twee hiervan zijn echter gebaseerd op een zelf ontworpen systeem van SanDisk. De derde mode is echter gebaseerd op SPI waarvan al een module is die al ontworpen is, daarom is hier ook voor gekozen. 
 \section{SD communicatie}
-Aangezien SPI niets zegt over hoe de communicatie verloopt of wat de betekenis van de overgebrachte data is, definieert SanDisk in de SD specificatie een aantal commando’s die naar de SD-kaart gestuurd kunnen worden. Er zal niet specifiek in worden gegaan op wat deze commando’s zijn, je moet denken aan: reset, lezen en schrijven commando’s, er zal wel ingegaan worden op hoe deze commando’s worden gestuurd en wat de reacties hier op zijn.
+Aangezien SPI niets zegt over hoe de communicatie verloopt of wat de betekenis van de overgebrachte data is, definieert SanDisk in de SD specificatie een aantal commando’s die naar de SD-kaart gestuurd kunnen worden. De specificatie die gebruikt is is uit 2003, dit is omdat dit de enige volledige specificatie is die te vinden was. Dit is omdat je een licentie bij SanDisk moet hebben om toegang te hebben tot de meest recente en volledige specificaties.
 \section{SD commando's \& responses}
-De communicatie met de SD-kaart verloopt als volgt: er wordt een commando naar de SD-kaart verstuurt, de SD-kaart geeft antwoordt of het een correct commando is en of het commando verwerkt kan worden, daarna komt eventueel nog, bij het lezen, data van de SD-kaart of, bij het schrijven, data naar de SD-kaart. Zodra alles is afgehandeld kan er een nieuw commando gestuurd worden.
+De communicatie met de SD-kaart verloopt als volgt: er wordt een commando naar de SD-kaart verstuurt, de SD-kaart geeft antwoordt of het een correct commando is en of het commando verwerkt kan worden, daarna komt eventueel nog, bij het lezen, data van de SD-kaart of, bij het schrijven, data naar de SD-kaart. Zodra alles is afgehandeld kan er een nieuw commando gestuurd worden. Hoe dit precies verloopt is te zien in figuur \ref{sd-cmd-diagram} hierin is data versturen naar de SD-kaart weggelaten omdat hier geen gebruik van wordt gemaakt.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{./sd_cmd_diagram}
+\caption{Commando communicatie van SD-kaart}
+\label{sd-cmd-diagram}
+\end{figure}
+
 \section{Functionele omschrijving}
 De SD module is zo ontworpen dat deze een adres binnen krijgt van de program counter van de CPU deze uitleest vanaf de SD-kaart en deze vervolgens aanbiedt aan de CPU. Zolang de SD module nog bezig is met het uitlezen van het adres zal het busy signaal hoog zijn.
 
 \begin{figure}[H]
 \center
-\includegraphics[width=9cm]{./sd_diagram}
-\caption{Diagram of SD circuit}
+\includegraphics[width=7cm]{./sd_diagram}
+\caption{Diagram van SD-kaart}
 \label{sd-diagram}
 \end{figure}
 
@@ -541,7 +543,7 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 \item Setup clock: het kloksignaal dat tijdens de initialisatie gebruikt zal worden, deze moet tussen de 100 en 400 kHz liggen
 \item Reset: het algemene reset signaal 
 \item Address: het adres dat van de SD-kaart zal worden afgelezen
-\item Output(8): dit zal de waarde zijn die op het adres staat zodra deze is uitgelezen
+\item Output(12): dit zal de waarde zijn die op het adres staat zodra deze is uitgelezen
 \item Busy: dit signaal geeft aan of de SD module bezig is
 \item Slave clock: het slave kloksignaal dat de SD-kaart aanstuurd
 \item MOSI: de datalijn van de SD module naar de SD-kaart
@@ -551,9 +553,12 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 
 \chapter{Conclusie en Aanbevelingen}
 \section{Conclusie}
-Het EPO-3 project van de bachelor opleiding Electrical Engineering begon in tegen stelling tot eerder projecten vrij soepel. Als groep waren we het snel met elkaar eens, het zou een spelcomputer worden met een ultrasone besturing. Gaande weg liepen we tegen steeds meer dingen aan. 
+Het EPO-3 project van de bachelor opleiding Electrical Engineering begon in tegen stelling tot voorgaande projecten vrij soepel. Als groep waren we het snel met elkaar eens, het zou een spelcomputer worden met een ultrasone besturing. Gaande weg liepen we tegen steeds meer dingen aan. \\
+
+Ons plan, het bouwen en ontwerpen van een spelcomputer, is achteraf niet haalbaar geweest. Het is ons niet gelukt alle individuele onderdelen op tijd werkend te krijgen. Beide opslag units zorgden hier voor het grootste probleem. De SD-kaart uitlezing leek telkens te werken, maar stopte er telkens tijdens het testen mee. Omdat op de SD-kaart de spellen opgeslagen worden en dit dus de basis vormt voor de spelcomputer. Bleek dit niet realiseerbaar meer en zijn we overgestapt op een ander plan. Met de componenten die werkend zijn gekregen is een simpele rekenmachine ontworpen. 
 
 \section{Aanbevelingen}
+Achter af is het natuurlijk simpeler gezegd als gedaan, maar het is bij dit EPO-3 project belangrijk een duidelijk doel te stellen. Er moet daarbij vooral gelet worden op de haalbaarheid van het ontwerp. Het is met deze vrijheid in keuze dan ook gevaarlijk om te veel te willen realiseren. Dit heeft bij onze project groep voor veel stress gezorgd, wat zeker niet ideaal is aan het einde van een periode. 
 
 \chapter{Discussie}
 \section{Reflectie op het eindontwerp}
@@ -561,6 +566,12 @@ Zoals eerder in het verslag al aangegeven is het ons niet gelukt om een werkende
 
 \section{Reflectie op het groepsproces}
 EPO-3 groep A5 begon dit project sterk en georganiseerd, dit was grotendeels te danken aan onze voorzitter Erné Bronkhorst. Beslissingen konden gezamenlijk en snel worden genomen, dit gaf ons een goede voorsprong. Ook de taakverdeling en planning leek erg soepel te lopen. Gaande weg het project werd steeds meer duidelijk dat niet alle onderdelen evenveel tijd kosten, dit had tot gevolg dat er achteraf in moest worden gesprongen in onderdelen en dat koste erg veel tijd. De besturing was daar een goed voorbeeld van, deze kon eigenlijk vrij snel gerealiseerd worden. Hierdoor kwamen er twee mensen zonder taak te zitten, gelukkig kon dit vrij snel worden opgelost. Er moest nog een plan van aanpak worden geschreven en een toplevel beschrijving ontworpen. In de laatste fase van het project heeft de taakverdeling ervoor gezorgd dat we dit toch nog met een goed resultaat konden beëindigen. 
+
+ \begin{thebibliography}{1}
+
+  \bibitem{motorola} SPI Block Guide, http://www.ee.nmt.edu/~teare/ee308l/datasheets/S12SPIV3.pdf, benaderd in oktober en november. 2014.
+
+  \end{thebibliography}
 
 \appendix
 
@@ -691,7 +702,7 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \end{figure}
 
 
-\chapter{Bijlage}
+\chapter{Bijlage - VHDL bestanden}
 \section{Blackbox}
 \label{Blackbox entity}
 \lstinputlisting[language=VHDL]{VHDL/blackbox.vhd} 
@@ -702,8 +713,56 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \label{Stream behaviour}
 \lstinputlisting[language=VHDL]{VHDL/stream-behaviour.vhd}
 
-\section{SPI}
+\section{ROM}
+\label{ROM}
+\lstinputlisting[language=VHDL]{VHDL/rom.vhd}
 
+\section{CPU}
+\label{}
+\lstinputlisting[language=VHDL]{VHDL/alu.vhd}
+\label{}
+\lstinputlisting[language=VHDL]{VHDL/cpu.vhd}
+\label{}
+\lstinputlisting[language=VHDL]{VHDL/cpu_EXTR.vhd}
+\label{}
+\lstinputlisting[language=VHDL]{VHDL/cpu_tb.vhd}
+\lstinputlisting[language=VHDL]{VHDL/pc_counter.vhd}
+\lstinputlisting[language=VHDL]{VHDL/decoder.vhd}
+\lstinputlisting[language=VHDL]{VHDL/gates.vhd}
+
+\section{Buffers}
+\lstinputlisting[language=VHDL]{VHDL/buf_2.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_3.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_4.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_5.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_6.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_7.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_8.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_9.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_10.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_A.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_arg.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_i.vhd}
+\lstinputlisting[language=VHDL]{VHDL/instr_buf.vhd}
+
+\section{Registers}
+\lstinputlisting[language=VHDL]{VHDL/reg_2.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_3.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_4.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_5.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_5.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_6.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_7.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_8.vhd.vhd}\lstinputlisting[language=VHDL]{VHDL/reg_9.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_10.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_a.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_cluster.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_o.vhd}
+\lstinputlisting[language=VHDL]{VHDL/shift_reg.vhd}
+
+\section{Calculator}
+\lstinputlisting[language=VHDL]{VHDL/calculator.vhd}
+\lstinputlisting[language=VHDL]{VHDL/tb.vhd}
 
 \end{document}
 >>>>>>> origin/master

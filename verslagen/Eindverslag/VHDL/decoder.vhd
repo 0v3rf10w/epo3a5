@@ -4,23 +4,32 @@ use IEEE.numeric_std.all;
 
 entity decoder is
 port( decoder_in  : in std_logic_vector(11 downto 0);
-      decoder_c   : in  std_logic;
-      decoder_z   : in  std_logic;
-      decoder_pc_inc  	: out std_logic;
-      decoder_pc_ld   	: out std_logic;
-      decoder_ibufoe 	: out std_logic;
-      decoder_aregld   	: out std_logic;
-      decoder_abufoe  	: out std_logic;
-      decoder_bregld  	: out std_logic_vector(4 downto 0);
-      decoder_bbufoe  	: out std_logic_vector(4 downto 0);
-      decoder_alu       : out std_logic_vector(2 downto 0);
-      decoder_argout    : out std_logic_vector(7 downto 0));
+ decoder_c   : in  std_logic;
+ decoder_z   : in  std_logic;
+ decoder_pc_inc  	: out std_logic;
+ decoder_pc_ld   	: out std_logic;
+ decoder_ibufoe 	: out std_logic;
+ decoder_aregld   	: out std_logic;
+ decoder_abufoe  	: out std_logic;
+ decoder_bregld  	: out std_logic_vector(4 downto 0);
+ decoder_bbufoe  	: out std_logic_vector(4 downto 0);
+ decoder_alu       : out std_logic_vector(2 downto 0);
+ decoder_argout    : out std_logic_vector(7 downto 0));
 end decoder;
 
+
+
+
 architecture behaviour of decoder is
+
+--Signals--
+
+
 signal  opcode : std_logic_vector(3 downto 0);
 signal  argument  : std_logic_vector(7 downto 0);
 signal  o0, o1, o2, o3: std_logic;
+
+
 begin
   opcode <= decoder_in(11 downto 8);
   argument <= decoder_in(7 downto 0);
@@ -91,5 +100,10 @@ begin
                         (o3 AND o2 AND o1 AND (NOT o0));                                  -- Set c
 	decoder_argout <= argument;
 end architecture;
+
+
+
+
+
 
 

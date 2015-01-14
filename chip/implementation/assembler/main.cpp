@@ -63,6 +63,8 @@ int main()
     unsigned int max_int = ~0;
     cout << max_int << endl;
 
+
+
     ifstream input;
     input.open("input.md",fstream::in);
     if(!input.is_open())
@@ -71,11 +73,12 @@ int main()
     }
 
     ofstream bitfile;
-    bitfile.open("bit.md",fstream::out|fstream::in);
+    bitfile.open("test.md",fstream::out);
     if(!bitfile.is_open())
     {
         assert(2);
     }
+
 	int linecount = 0;
     while(!input.eof())
     {
@@ -122,7 +125,7 @@ int main()
             {
                 if(argument == "input")
                 {
-                    bitfile << "011010000000";
+                    bitfile << "011000000001";
                 }
                 else
                 {
@@ -158,7 +161,7 @@ int main()
             {
                 if(argument == "input")
                 {
-                    bitfile << "100110000000";
+                    bitfile << "100100000001";
                 }
                 else
                 {
@@ -182,7 +185,7 @@ int main()
             {
                 if(argument == "input")
                 {
-                    bitfile << "101110000000";
+                    bitfile << "101100000001";
                 }
                 else
                 {
@@ -206,7 +209,7 @@ int main()
             {
                 if(argument == "input")
                 {
-                    bitfile << "110110000000";
+                    bitfile << "110100000001";
                 }
                 else
                 {
