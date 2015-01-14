@@ -1,0 +1,35 @@
+# Tabular Link File created on Tue 13 Jan 2015 23:08:24
+# By Program: design_flow
+# From Source: /home/bmeekes/CPU_2/calculator.lst
+# Clock_column: 0
+INP xi;
+INOUT xo;
+INP top_reset;
+INP top_sclk;
+INP top_mosi;
+INP top_ss;
+OUT top_out_7_0_7;
+OUT top_out_7_0_6;
+OUT top_out_7_0_5;
+OUT top_out_7_0_4;
+OUT top_out_7_0_3;
+OUT top_out_7_0_2;
+OUT top_out_7_0_1;
+OUT top_out_7_0_0;
+PERIOD 340ns;
+TIME_UNIT 1.0e-10s;
+TABLE_FORMAT D<14c;
+DATA_SECTION
+             00<LxHLLLllllllll
+           1700<HxHLLLllllllll
+           2000<HxLLLLllllllll
+           3400<LxLLLLllllllll
+           5100<HxLLLLllllllll
+           6800<LxLLLLllllllll
+           8500<HxLLLLllllllll
+          10200<LxLLLLllllllll
+          11900<HxLLLLllllllll
+          13600<LxLLLLllllllll
+          15000<LxLLLLllllllll
+
+
