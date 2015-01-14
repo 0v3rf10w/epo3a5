@@ -38,66 +38,66 @@ begin
   o2 <= opcode(2);
   o3 <= opcode(3); 
 
-      decoder_pc_ld <=
-                        ((NOT o3) AND (NOT o2) AND (NOT o1) AND o0) OR                  -- Jp #
-                        ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR                  -- Jp Ri
-                        ((NOT o3) AND (NOT o2) AND o1 AND o0 AND decoder_z) OR          -- Bz
-                        ((NOT o3) AND o2 AND (NOT o1) AND (NOT o0) AND decoder_c);      -- Bc
+    decoder_pc_ld <=
+        ((NOT o3) AND (NOT o2) AND (NOT o1) AND o0) OR          	-- Jp #
+        ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR          	-- Jp Ri
+        ((NOT o3) AND (NOT o2) AND o1 AND o0 AND decoder_z) OR    	-- Bz
+        ((NOT o3) AND o2 AND (NOT o1) AND (NOT o0) AND decoder_c);	-- Bc
                         
-      decoder_pc_inc <= NOT(
-                        ((NOT o3) AND (NOT o2) AND (NOT o1) AND o0) OR                  -- Not Jp #
-                        ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR                  -- Not Jp Ri
-                        ((NOT o3) AND (NOT o2) AND o1 AND o0 AND decoder_z) OR          -- Not Bz
-                        ((NOT o3) AND o2 AND (NOT o1) AND (NOT o0) AND decoder_c));     -- Not Bc
-      decoder_ibufoe <=
-                        ((NOT o3) AND (NOT o2) AND (NOT o1) and o0) OR                  -- Jp #
-                        ((NOT o3) AND (NOT o2) AND o1 AND o0) OR                        -- Bz
-                        ((NOT o3) AND o2 AND (NOT o1) AND (NOT o0)) OR                   -- Bc
-                        ((NOT o3) AND o2 AND (NOT o1) AND o0) OR                        -- Ld #
-                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR                   -- ADD #
-                        (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR                         -- XOR #
-                        (o3 AND o2 AND (NOT o1) AND (NOT o0));                           -- AND #
-      decoder_aregld <=
-                        ((NOT o3) AND o2 AND (NOT o1) AND o0) OR                        -- Ld #
-                        ((NOT o3) AND o2 AND o1 AND (NOT o0)) OR                         -- Ld Ri
-                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR                   -- ADD #
-                        (o3 AND (NOT o2) AND (NOT o1) AND o0) OR                        -- ADD Ri
-                        (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR                        -- XOR #
-                        (o3 AND (NOT o2) AND o1 AND o0) OR                              -- XOR Ri
-                        (o3 AND o2 AND (NOT o1) AND (NOT o0)) OR                        -- AND #
-                        (o3 AND o2 AND (NOT o1) AND o0);                                -- AND Ri
-      decoder_abufoe <=
-                        ((NOT o3) AND o2 AND o1 AND o0);                                -- st Ri
-      decoder_bregld(4) <=
-                        ((NOT o3) AND o2 AND o1 AND o0);                                -- st Ri
-      decoder_bregld(3) <= argument(3);
-      decoder_bregld(2) <= argument(2);
-      decoder_bregld(1) <= argument(1);
-      decoder_bregld(0) <= argument(0);
-      decoder_bbufoe(4) <=
-                        ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR                  -- jp Ri
-                        ((NOT o3) AND o2 AND o1 AND (NOT o0)) OR                        -- ld Ri
-                        (o3 AND (NOT o2) AND (NOT o1) AND o0) OR                        -- ADD Ri
-                        (o3 AND (NOT o2) AND o1 AND o0) OR                              -- XOR Ri
-                        (o3 AND o2 AND (NOT o1) AND o0);                                -- AND Ri
-      decoder_bbufoe(3) <= argument(3);
-      decoder_bbufoe(2) <= argument(2);
-      decoder_bbufoe(1) <= argument(1);
-      decoder_bbufoe(0) <= argument(0);
-      decoder_alu(2) <= 
-                        (o3 AND o2 AND o1 AND o0) OR                                      -- Clr c
-                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR                    -- ADD #
-                        (o3 AND (NOT o2) AND (NOT o1) AND o0);                            -- ADD Ri
-      decoder_alu(1) <=
-                        (o3 AND o2 AND (NOT o1) AND (NOT o0)) OR                          -- AND #
-                        (o3 AND o2 AND (NOT o1) AND o0) OR                                -- AND Ri
-                        (o3 AND o2 AND o1 AND (NOT o0));                                  -- Set c
-      decoder_alu(0) <=
-                        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR                    -- ADD #
-                        (o3 AND (NOT o2) AND (NOT o1) AND o0) OR                          -- ADD Ri
-                        (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR                          -- XOR #
-                        (o3 AND (NOT o2) AND o1 AND o0) OR                                -- XOR Ri
-                        (o3 AND o2 AND o1 AND (NOT o0));                                  -- Set c
+    decoder_pc_inc <= NOT(
+        ((NOT o3) AND (NOT o2) AND (NOT o1) AND o0) OR          	-- Not Jp #
+        ((NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR          	-- Not Jp Ri
+        ((NOT o3) AND (NOT o2) AND o1 AND o0 AND decoder_z) OR    	-- Not Bz
+        ((NOT o3) AND o2 AND (NOT o1) AND (NOT o0) AND decoder_c));	-- Not Bc
+    decoder_ibufoe <=
+        ((NOT o3) AND (NOT o2) AND (NOT o1) and o0) OR             	-- Jp #
+        ((NOT o3) AND (NOT o2) AND o1 AND o0) OR             	 	-- Bz
+        ((NOT o3) AND o2 AND (NOT o1) AND (NOT o0)) OR       	 	-- Bc
+        ((NOT o3) AND o2 AND (NOT o1) AND o0) OR             	 	-- Ld #
+        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR         	 	-- ADD #
+        (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR             	 	-- XOR #
+        (o3 AND o2 AND (NOT o1) AND (NOT o0));               	 	-- AND #
+    decoder_aregld <=
+        ((NOT o3) AND o2 AND (NOT o1) AND o0) OR               	 	-- Ld #
+        ((NOT o3) AND o2 AND o1 AND (NOT o0)) OR               	 	-- Ld Ri
+        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR        	 	-- ADD #
+        (o3 AND (NOT o2) AND (NOT o1) AND o0) OR               	 	-- ADD Ri
+        (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR               	 	-- XOR #
+        (o3 AND (NOT o2) AND o1 AND o0) OR                  	 	-- XOR Ri
+        (o3 AND o2 AND (NOT o1) AND (NOT o0)) OR               	 	-- AND #
+        (o3 AND o2 AND (NOT o1) AND o0);                    	 	-- AND Ri
+    decoder_abufoe <= 
+        ((NOT o3) AND o2 AND o1 AND o0);                    	 	-- st Ri
+    decoder_bregld(4) <=
+        ((NOT o3) AND o2 AND o1 AND o0);                    	 	-- st Ri
+    decoder_bregld(3) <= argument(3);
+    decoder_bregld(2) <= argument(2);
+    decoder_bregld(1) <= argument(1);
+    decoder_bregld(0) <= argument(0);
+    decoder_bbufoe(4) <=
+        (NOT o3) AND (NOT o2) AND o1 AND (NOT o0)) OR         	 	-- jp Ri
+        ((NOT o3) AND o2 AND o1 AND (NOT o0)) OR            	 	-- ld Ri
+        (o3 AND (NOT o2) AND (NOT o1) AND o0) OR            	 	-- ADD Ri
+        (o3 AND (NOT o2) AND o1 AND o0) OR                    	 	-- XOR Ri
+        (o3 AND o2 AND (NOT o1) AND o0);                      	 	-- AND Ri
+    decoder_bbufoe(3) <= argument(3);
+    decoder_bbufoe(2) <= argument(2);
+    decoder_bbufoe(1) <= argument(1);
+    decoder_bbufoe(0) <= argument(0);
+    decoder_alu(2) <= 
+        (o3 AND o2 AND o1 AND o0) OR                        	 	-- Clr c
+        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR         	 	-- ADD #
+        (o3 AND (NOT o2) AND (NOT o1) AND o0);               	 	-- ADD Ri
+    decoder_alu(1) <= 
+        (o3 AND o2 AND (NOT o1) AND (NOT o0)) OR               	 	-- AND #
+        (o3 AND o2 AND (NOT o1) AND o0) OR                   	 	-- AND Ri
+        (o3 AND o2 AND o1 AND (NOT o0));                      	 	-- Set c
+    decoder_alu(0) <=
+        (o3 AND (NOT o2) AND (NOT o1) AND (NOT o0)) OR         	 	-- ADD #
+        (o3 AND (NOT o2) AND (NOT o1) AND o0) OR             	 	-- ADD Ri
+        (o3 AND (NOT o2) AND o1 AND (NOT o0)) OR             	 	-- XOR #
+        (o3 AND (NOT o2) AND o1 AND o0) OR                     	 	-- XOR Ri
+        (o3 AND o2 AND o1 AND (NOT o0));                      	 	-- Set c
 	decoder_argout <= argument;
 end architecture;
 

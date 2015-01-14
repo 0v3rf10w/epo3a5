@@ -9,9 +9,6 @@ port
 );
 end rom;
 
-
-
-
 architecture behavioural OF rom IS
 begin
     with rom_a select
@@ -190,9 +187,6 @@ begin
 "010100000000" when "10101011",
 "011100000111" when "10101100",
 "000110011000" when "10101101",
-
-
-
 "000000000000" when others;
 end behavioural;
 

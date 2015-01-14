@@ -18,13 +18,13 @@ signal alu_add: std_logic_vector(8 downto 0);
 
 begin
   with opcode select
-  alu_y <=  alu_A                                                         	when "000",     -- pass input_A
-            alu_A xor alu_B                                               	when "001",     -- xor
-            alu_A and alu_B                                              	when "010",     -- and
-            "00000000"                                                    	when "011",     -- set C
-            "00000000"                                                    	when "100",     -- clr C
-            alu_A + alu_B						 							when "101",     -- add
-            "00000000"                                                    	when others;
+  alu_y <=  alu_A               when "000",     -- pass input_A
+            alu_A xor alu_B     when "001",     -- xor
+            alu_A and alu_B     when "010",     -- and
+            "00000000"          when "011",     -- set C
+            "00000000"          when "100",     -- clr C
+            alu_A + alu_B       when "101",     -- add
+            "00000000"          when others;
   
   op0 <= opcode(0);
   op1 <= opcode(1);
