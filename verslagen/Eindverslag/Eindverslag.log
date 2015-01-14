@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.23)  14 JAN 2015 16:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.23)  14 JAN 2015 16:47
 entering extended mode
 **Eindverslag.tex
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\Eindverslag.tex
@@ -1429,6 +1429,18 @@ LaTeX Warning: Label `VGA' multiply defined.
 
 LaTeX Warning: Label `VGA' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
@@ -1650,7 +1662,7 @@ l.59 \chapter
 
 ]
 Hoofdstuk 4.
-<hele-systeem.png, id=501, 418.56375pt x 325.215pt>
+<hele-systeem.png, id=519, 418.56375pt x 325.215pt>
 File: hele-systeem.png Graphic file (type png)
  <use hele-systeem.png>
 Package pdftex.def Info: hele-systeem.png used on input line 64.
@@ -1665,7 +1677,7 @@ l.75 \chapter
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/hele-systeem.png
 >]
 Hoofdstuk 5.
-<Screenshot.png, id=507, 1927.2pt x 1084.05pt>
+<Screenshot.png, id=525, 1927.2pt x 1084.05pt>
 File: Screenshot.png Graphic file (type png)
  <use Screenshot.png>
 Package pdftex.def Info: Screenshot.png used on input line 96.
@@ -1673,7 +1685,7 @@ Package pdftex.def Info: Screenshot.png used on input line 96.
  [4
 
 ]
-<TEK0001.JPG, id=512, 642.4pt x 481.8pt>
+<TEK0001.JPG, id=530, 642.4pt x 481.8pt>
 File: TEK0001.JPG Graphic file (type jpg)
  <use TEK0001.JPG>
 Package pdftex.def Info: TEK0001.JPG used on input line 104.
@@ -1681,7 +1693,7 @@ Package pdftex.def Info: TEK0001.JPG used on input line 104.
  [5 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/Screenshot.pn
 g> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/TEK0001.JPG>]
 Hoofdstuk 6.
-<./BlackBox_Circuit.png, id=519, 282.30469pt x 284.56313pt>
+<./BlackBox_Circuit.png, id=537, 282.30469pt x 284.56313pt>
 File: ./BlackBox_Circuit.png Graphic file (type png)
 
 <use ./BlackBox_Circuit.png>
@@ -1691,7 +1703,7 @@ Package pdftex.def Info: ./BlackBox_Circuit.png used on input line 122.
 
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/BlackBox_Circuit
 .png>]
-<./BlackBox_SLS.png, id=527, 389.20406pt x 367.3725pt>
+<./BlackBox_SLS.png, id=545, 389.20406pt x 367.3725pt>
 File: ./BlackBox_SLS.png Graphic file (type png)
 
 <use ./BlackBox_SLS.png>
@@ -1700,7 +1712,7 @@ Package pdftex.def Info: ./BlackBox_SLS.png used on input line 134.
  [7 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/BlackBox_SLS.
 png>]
 Hoofdstuk 7.
-<CPU-toplevel2.png, id=533, 914.41624pt x 817.0525pt>
+<CPU-toplevel2.png, id=551, 914.41624pt x 817.0525pt>
 File: CPU-toplevel2.png Graphic file (type png)
  <use CPU-toplevel2.png>
 Package pdftex.def Info: CPU-toplevel2.png used on input line 149.
@@ -1709,7 +1721,7 @@ Package pdftex.def Info: CPU-toplevel2.png used on input line 149.
 [8
 
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/CPU-toplevel2.pn
-g>] <tabel.png, id=541, 548.0475pt x 243.91125pt>
+g>] <tabel.png, id=559, 548.0475pt x 243.91125pt>
 File: tabel.png Graphic file (type png)
  <use tabel.png>
 Package pdftex.def Info: tabel.png used on input line 177.
@@ -1717,7 +1729,7 @@ Package pdftex.def Info: tabel.png used on input line 177.
  [9]
 [10 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/tabel.png>]
 Hoofdstuk 8.
-<FSM_GPU.png, id=552, 431.81325pt x 393.8715pt>
+<FSM_GPU.png, id=570, 431.81325pt x 393.8715pt>
 File: FSM_GPU.png Graphic file (type png)
  <use FSM_GPU.png>
 Package pdftex.def Info: FSM_GPU.png used on input line 190.
@@ -1739,13 +1751,13 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM_GPU.png>] [1
 2]
 Hoofdstuk 9.
-<vga2arcade.png, id=564, 346.896pt x 180.07275pt>
+<vga2arcade.png, id=582, 346.896pt x 180.07275pt>
 File: vga2arcade.png Graphic file (type png)
  <use vga2arcade.png>
 Package pdftex.def Info: vga2arcade.png used on input line 202.
 (pdftex.def)             Requested size: 256.0748pt x 132.93301pt.
 
-<totaal-overzicht.png, id=565, 846.16125pt x 493.0922pt>
+<totaal-overzicht.png, id=583, 846.16125pt x 493.0922pt>
 File: totaal-overzicht.png Graphic file (type png)
 
 <use totaal-overzicht.png>
@@ -1756,7 +1768,7 @@ Package pdftex.def Info: totaal-overzicht.png used on input line 211.
  <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/vga2arcade.png> 
 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/totaal-overzicht.
 png>]
-<VGA_signal_format.png, id=574, 564.8471pt x 418.40526pt>
+<VGA_signal_format.png, id=592, 564.8471pt x 418.40526pt>
 File: VGA_signal_format.png Graphic file (type png)
 
 <use VGA_signal_format.png>
@@ -1764,7 +1776,7 @@ Package pdftex.def Info: VGA_signal_format.png used on input line 224.
 (pdftex.def)             Requested size: 256.0748pt x 189.68517pt.
 LaTeX Font Info:    Font shape `T1/futs/bx/sc' in size <12> not available
 (Font)              Font shape `T1/futs/b/sc' tried instead on input line 237.
- <tabel-VGA-1.png, id=575, 464.937pt x 72.27pt>
+ <tabel-VGA-1.png, id=593, 464.937pt x 72.27pt>
 File: tabel-VGA-1.png Graphic file (type png)
 
 <use tabel-VGA-1.png>
@@ -1772,20 +1784,20 @@ Package pdftex.def Info: tabel-VGA-1.png used on input line 242.
 (pdftex.def)             Requested size: 256.0748pt x 39.80595pt.
  [14 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/VGA_signal_f
 ormat.png>]
-<tabel-VGA-2.png, id=582, 466.1415pt x 72.87225pt>
+<tabel-VGA-2.png, id=600, 466.1415pt x 72.87225pt>
 File: tabel-VGA-2.png Graphic file (type png)
  <use tabel-VGA-2.png>
 Package pdftex.def Info: tabel-VGA-2.png used on input line 252.
 (pdftex.def)             Requested size: 256.0748pt x 40.03316pt.
 
-<schema-zonder-SRAM.png, id=583, 951.555pt x 590.205pt>
+<schema-zonder-SRAM.png, id=601, 951.555pt x 590.205pt>
 File: schema-zonder-SRAM.png Graphic file (type png)
 
 <use schema-zonder-SRAM.png>
 Package pdftex.def Info: schema-zonder-SRAM.png used on input line 270.
 (pdftex.def)             Requested size: 256.0748pt x 158.82613pt.
 
-<FSM-H-sync.png, id=584, 1008.76875pt x 572.1375pt>
+<FSM-H-sync.png, id=602, 1008.76875pt x 572.1375pt>
 File: FSM-H-sync.png Graphic file (type png)
  <use FSM-H-sync.png>
 Package pdftex.def Info: FSM-H-sync.png used on input line 286.
@@ -1794,13 +1806,13 @@ Package pdftex.def Info: FSM-H-sync.png used on input line 286.
 [15 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/tabel-VGA-1.p
 ng> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/tabel-VGA-2.p
 ng> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/schema-zonder
--SRAM.png>] <FSM-V-sync.png, id=594, 1008.76875pt x 572.1375pt>
+-SRAM.png>] <FSM-V-sync.png, id=612, 1008.76875pt x 572.1375pt>
 File: FSM-V-sync.png Graphic file (type png)
 
 <use FSM-V-sync.png>
 Package pdftex.def Info: FSM-V-sync.png used on input line 299.
 (pdftex.def)             Requested size: 256.0748pt x 145.23401pt.
- <FSM-rgb.png, id=595, 636.87938pt x 285.31593pt>
+ <FSM-rgb.png, id=613, 636.87938pt x 285.31593pt>
 File: FSM-rgb.png Graphic file (type png)
 
 <use FSM-rgb.png>
@@ -1809,19 +1821,19 @@ Package pdftex.def Info: FSM-rgb.png used on input line 309.
  [16 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-H-sync.p
 ng> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-V-sync.pn
 g> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-rgb.png>] 
-<schema-met-SRAM.png, id=604, 1472.50125pt x 590.205pt>
+<schema-met-SRAM.png, id=622, 1472.50125pt x 590.205pt>
 File: schema-met-SRAM.png Graphic file (type png)
 
 <use schema-met-SRAM.png>
 Package pdftex.def Info: schema-met-SRAM.png used on input line 323.
 (pdftex.def)             Requested size: 256.0748pt x 102.63899pt.
- <FSM-Ssync.png, id=605, 632.3625pt x 274.02374pt>
+ <FSM-Ssync.png, id=623, 632.3625pt x 274.02374pt>
 File: FSM-Ssync.png Graphic file (type png)
 
 <use FSM-Ssync.png>
 Package pdftex.def Info: FSM-Ssync.png used on input line 336.
 (pdftex.def)             Requested size: 256.0748pt x 110.96646pt.
- <resultaat.png, id=606, 3276.24pt x 2457.18pt>
+ <resultaat.png, id=624, 3276.24pt x 2457.18pt>
 File: resultaat.png Graphic file (type png)
 
 <use resultaat.png>
@@ -1837,7 +1849,7 @@ LaTeX Font Info:    Try loading font information for TS1+futs on input line 371
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\ts1futs.fd"
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 )
-<./spi_diagram.png, id=622, 1013.28563pt x 528.47438pt>
+<./spi_diagram.png, id=640, 1013.28563pt x 528.47438pt>
 File: ./spi_diagram.png Graphic file (type png)
 
 <use ./spi_diagram.png>
@@ -1846,21 +1858,21 @@ Package pdftex.def Info: ./spi_diagram.png used on input line 384.
  [19
 
 ]
-<./shift_register_diagram.png, id=631, 841.64438pt x 651.93562pt>
+<./shift_register_diagram.png, id=649, 841.64438pt x 651.93562pt>
 File: ./shift_register_diagram.png Graphic file (type png)
 
 <use ./shift_register_diagram.png>
 Package pdftex.def Info: ./shift_register_diagram.png used on input line 403.
 (pdftex.def)             Requested size: 153.6447pt x 119.00461pt.
 
-<./control_diagram.png, id=632, 794.97pt x 396.7322pt>
+<./control_diagram.png, id=650, 794.97pt x 396.7322pt>
 File: ./control_diagram.png Graphic file (type png)
 
 <use ./control_diagram.png>
 Package pdftex.def Info: ./control_diagram.png used on input line 409.
 (pdftex.def)             Requested size: 221.93158pt x 110.75735pt.
 
-<./spi_system_diagram.png, id=633, 1291.82625pt x 686.565pt>
+<./spi_system_diagram.png, id=651, 1291.82625pt x 686.565pt>
 File: ./spi_system_diagram.png Graphic file (type png)
 
 <use ./spi_system_diagram.png>
@@ -1872,7 +1884,7 @@ er_diagram.png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/c
 ontrol_diagram.png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindversl
 ag/spi_system_diagram.png>]
 Hoofdstuk 11.
-<./sd_diagram.png, id=643, 931.98187pt x 484.81125pt>
+<./sd_diagram.png, id=661, 931.98187pt x 484.81125pt>
 File: ./sd_diagram.png Graphic file (type png)
  <use ./sd_diagram.png>
 Package pdftex.def Info: ./sd_diagram.png used on input line 435.
@@ -1898,7 +1910,7 @@ Hoofdstuk 13.
 B"ylage A.
 [25
 
-] [26] [27] [28] <Planning.png, id=700, 866.63776pt x 499.26524pt>
+] [26] [27] [28] <Planning.png, id=718, 866.63776pt x 499.26524pt>
 File: Planning.png Graphic file (type png)
 
 <use Planning.png>
@@ -1923,29 +1935,828 @@ aviour.vhd [30
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/stream-behav
 iour.vhd [32])
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/rom.vhd
-[33] [34] [35] [36]) [37]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 620.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 620.
+[33] [34] [35] [36])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/alu.vhd
+Overfull \hbox (58.75336pt too wide) in paragraph at lines 21--22
+[][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (58.75336pt too wide) in paragraph at lines 22--23
+[][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (58.75336pt too wide) in paragraph at lines 23--24
+[][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (58.75337pt too wide) in paragraph at lines 24--25
+[][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (58.75337pt too wide) in paragraph at lines 25--26
+[][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (227.71461pt too wide) in paragraph at lines 26--27
+[][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (37.6332pt too wide) in paragraph at lines 27--29
+[][][][][][][][][][][][][][] 
+ []
+
+[37]
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 53--54
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/cpu.vhd
+[38]
+Overfull \hbox (69.31342pt too wide) in paragraph at lines 90--91
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (95.71365pt too wide) in paragraph at lines 91--92
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (0.67284pt too wide) in paragraph at lines 92--93
+[][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (0.67284pt too wide) in paragraph at lines 93--94
+[][][][][][][][][][][][][][][][][]
+ []
+
+[39]
+Overfull \hbox (42.91316pt too wide) in paragraph at lines 94--95
+[][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (0.67284pt too wide) in paragraph at lines 95--96
+[][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (0.67284pt too wide) in paragraph at lines 96--97
+[][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (42.91321pt too wide) in paragraph at lines 99--100
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (42.91316pt too wide) in paragraph at lines 100--101
+[][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (42.91316pt too wide) in paragraph at lines 101--102
+[][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (21.79303pt too wide) in paragraph at lines 102--103
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 103--104
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 104--105
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[40])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/cpu_EXTR.vhd
+[41] [42] [43]
+Overfull \hbox (64.03342pt too wide) in paragraph at lines 181--182
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.03342pt too wide) in paragraph at lines 182--183
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.03342pt too wide) in paragraph at lines 183--184
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.03342pt too wide) in paragraph at lines 184--185
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.03342pt too wide) in paragraph at lines 185--186
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.03342pt too wide) in paragraph at lines 186--187
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.03342pt too wide) in paragraph at lines 187--188
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.03342pt too wide) in paragraph at lines 188--189
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 189--190
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 190--191
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 191--192
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 192--193
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 193--194
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 194--195
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[44]
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 195--196
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 196--197
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 229--230
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 230--231
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 231--232
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 232--233
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 233--234
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 234--235
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 235--236
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 236--237
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[45]
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 277--278
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 278--279
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 279--280
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 280--281
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 281--282
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 282--283
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 283--284
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 284--285
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 293--294
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 294--295
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 295--296
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 296--297
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 297--298
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 298--299
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 299--300
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 300--301
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 301--302
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 302--303
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.35315pt too wide) in paragraph at lines 303--304
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 304--305
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[46] [47] [48] [49] [50] [51]
+Overfull \hbox (11.23297pt too wide) in paragraph at lines 637--638
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 639--640
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[52]
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 698--699
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[53]
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 700--701
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 702--703
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 705--706
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 708--709
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 740--741
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 741--742
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 742--743
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 743--744
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 744--745
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 745--746
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 746--747
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 747--748
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[54]
+Overfull \hbox (48.19328pt too wide) in paragraph at lines 757--758
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[55]
+Overfull \hbox (11.23297pt too wide) in paragraph at lines 844--845
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 845--846
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (58.75337pt too wide) in paragraph at lines 865--866
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[56]
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 875--876
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 876--877
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 877--878
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (79.87355pt too wide) in paragraph at lines 878--879
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (53.47333pt too wide) in paragraph at lines 880--881
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (143.23409pt too wide) in paragraph at lines 881--882
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (137.95404pt too wide) in paragraph at lines 882--883
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (143.23409pt too wide) in paragraph at lines 885--886
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (143.23409pt too wide) in paragraph at lines 891--892
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/cpu_tb.vhd
+[57])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/pc_counter.v
+hd [58])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/decoder.vhd
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 42--43
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 43--44
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+[59]
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 44--45
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 45--47
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 48--49
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 49--50
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 50--51
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 51--52
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 53--54
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 54--55
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 55--56
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 56--57
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 57--58
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 58--59
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 59--60
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 61--62
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 62--63
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (21.79306pt too wide) in paragraph at lines 63--64
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 64--65
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 65--66
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 66--67
+[][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 67--68
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 68--69
+[][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 70--71
+[][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 72--73
+[][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+[60]
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 78--79
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 79--80
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 80--81
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 81--82
+[][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (16.51302pt too wide) in paragraph at lines 82--83
+[][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 88--89
+[][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 89--90
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 90--91
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 92--93
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 93--94
+[][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 94--95
+[][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 96--97
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 97--98
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 98--99
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 99--100
+[][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (27.0731pt too wide) in paragraph at lines 100--101
+[][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/gates.vhd
+[61])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_2.vhd)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_3.vhd
+[62])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_4.vhd)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_5.vhd)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_6.vhd
+[63])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_7.vhd)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_8.vhd
+[64])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_9.vhd)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_10.vhd)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_A.vhd
+[65])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_arg.vhd)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/buf_i.vhd)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/instr_buf.vh
+d [66])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_2.vhd
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_3.vhd
+[67]
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_4.vhd
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_5.vhd
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[68])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_5.vhd
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_6.vhd
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_7.vhd
+[69]
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_8.vhd.vh
+d
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_9.vhd
+[70]
+Overfull \hbox (85.1536pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_10.vhd
+
+Overfull \hbox (90.43364pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_a.vhd
+Overfull \hbox (79.87355pt too wide) in paragraph at lines 5--6
+[][][][][] 
+ []
+
+
+Overfull \hbox (79.87355pt too wide) in paragraph at lines 6--7
+[][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (79.87355pt too wide) in paragraph at lines 7--8
+[][][][][] 
+ []
+
+[71])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_cluster.
+vhd [72] [73] [74]
+Overfull \hbox (0.67288pt too wide) in paragraph at lines 174--176
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[75] [76])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/reg_o.vhd
+Overfull \hbox (106.27377pt too wide) in paragraph at lines 19--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/shift_reg.vh
+d [77])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/calculator.v
+hd [78] [79])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/tb.vhd
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 30--33
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.95293pt too wide) in paragraph at lines 34--36
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[80]) [81]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 665.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 665.
 
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\Eindverslag.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 620.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 620.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 665.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 665.
 Package rerunfilecheck Info: File `Eindverslag.out' has not changed.
-(rerunfilecheck)             Checksum: 1E6244394CDA9B2979EEC3DB647D8795;4709.
+(rerunfilecheck)             Checksum: 5ED39442F46B6620C27E1729150EDB0C;4899.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 620.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 665.
  ) 
 Here is how much of TeX's memory you used:
- 23652 strings out of 493921
- 410540 string characters out of 3144875
- 517314 words of memory out of 3000000
- 25871 multiletter control sequences out of 15000+200000
+ 27783 strings out of 493921
+ 482204 string characters out of 3144875
+ 562465 words of memory out of 3000000
+ 27426 multiletter control sequences out of 15000+200000
  141816 words of font info for 120 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 62i,12n,75p,1252b,1862s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,12n,75p,1252b,1866s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files (x86)/M
 iKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files (x86)/MiK
@@ -1954,9 +2765,9 @@ ts/type1/public/lm/lmss17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ad
 obe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utop
 ia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putri
 8a.pfb>
-Output written on Eindverslag.pdf (41 pages, 9053253 bytes).
+Output written on Eindverslag.pdf (85 pages, 9486326 bytes).
 PDF statistics:
- 1251 PDF objects out of 1440 (max. 8388607)
- 539 named destinations out of 1000 (max. 500000)
- 767 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4371 PDF objects out of 5155 (max. 8388607)
+ 3008 named destinations out of 3580 (max. 500000)
+ 791 words of extra memory for PDF output out of 10000 (max. 10000000)
 

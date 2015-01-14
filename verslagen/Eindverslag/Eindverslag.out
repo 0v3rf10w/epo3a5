@@ -72,7 +72,10 @@
 \BOOKMARK [2][-]{subsection.A.5.1}{Planning}{section.A.5}% 72
 \BOOKMARK [2][-]{subsection.A.5.2}{Risicoanalyse}{section.A.5}% 73
 \BOOKMARK [1][-]{section.A.6}{Bijlage}{appendix.A}% 74
-\BOOKMARK [0][-]{appendix.B}{Bijlage}{}% 75
+\BOOKMARK [0][-]{appendix.B}{Bijlage - VHDL bestanden}{}% 75
 \BOOKMARK [1][-]{section.B.1}{Blackbox}{appendix.B}% 76
 \BOOKMARK [1][-]{section.B.2}{ROM}{appendix.B}% 77
 \BOOKMARK [1][-]{section.B.3}{CPU}{appendix.B}% 78
+\BOOKMARK [1][-]{section.B.4}{Buffers}{appendix.B}% 79
+\BOOKMARK [1][-]{section.B.5}{Registers}{appendix.B}% 80
+\BOOKMARK [1][-]{section.B.6}{Calculator}{appendix.B}% 81

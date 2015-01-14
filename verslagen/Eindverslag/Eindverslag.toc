@@ -73,8 +73,11 @@
 \contentsline {subsection}{\numberline {A.5.1}Planning}{28}{subsection.A.5.1}
 \contentsline {subsection}{\numberline {A.5.2}Risicoanalyse}{28}{subsection.A.5.2}
 \contentsline {section}{\numberline {A.6}Bijlage}{29}{section.A.6}
-\contentsline {chapter}{\numberline {B}Bijlage}{30}{appendix.B}
+\contentsline {chapter}{\numberline {B}Bijlage - VHDL bestanden}{30}{appendix.B}
 \contentsline {section}{\numberline {B.1}Blackbox}{30}{section.B.1}
 \contentsline {section}{\numberline {B.2}ROM}{33}{section.B.2}
 \contentsline {section}{\numberline {B.3}CPU}{37}{section.B.3}
+\contentsline {section}{\numberline {B.4}Buffers}{62}{section.B.4}
+\contentsline {section}{\numberline {B.5}Registers}{67}{section.B.5}
+\contentsline {section}{\numberline {B.6}Calculator}{78}{section.B.6}
 \contentsfinish 
