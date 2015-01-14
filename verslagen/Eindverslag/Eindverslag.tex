@@ -472,9 +472,12 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 
 \chapter{Conclusie en Aanbevelingen}
 \section{Conclusie}
-Het EPO-3 project van de bachelor opleiding Electrical Engineering begon in tegen stelling tot eerder projecten vrij soepel. Als groep waren we het snel met elkaar eens, het zou een spelcomputer worden met een ultrasone besturing. Gaande weg liepen we tegen steeds meer dingen aan. 
+Het EPO-3 project van de bachelor opleiding Electrical Engineering begon in tegen stelling tot voorgaande projecten vrij soepel. Als groep waren we het snel met elkaar eens, het zou een spelcomputer worden met een ultrasone besturing. Gaande weg liepen we tegen steeds meer dingen aan. \\
+
+Ons plan, het bouwen en ontwerpen van een spelcomputer, is achteraf niet haalbaar geweest. Het is ons niet gelukt alle individuele onderdelen op tijd werkend te krijgen. Beide opslag units zorgden hier voor het grootste probleem. De SD-kaart uitlezing leek telkens te werken, maar stopte er telkens tijdens het testen mee. Omdat op de SD-kaart de spellen opgeslagen worden en dit dus de basis vormt voor de spelcomputer. Bleek dit niet realiseerbaar meer en zijn we overgestapt op een ander plan. Met de componenten die werkend zijn gekregen is een simpele rekenmachine ontworpen. 
 
 \section{Aanbevelingen}
+Achter af is het natuurlijk simpeler gezegd als gedaan, maar het is bij dit EPO-3 project belangrijk een duidelijk doel te stellen. Er moet daarbij vooral gelet worden op de haalbaarheid van het ontwerp. Het is met deze vrijheid in keuze dan ook gevaarlijk om te veel te willen realiseren. Dit heeft bij onze project groep voor veel stress gezorgd, wat zeker niet ideaal is aan het einde van een periode. 
 
 \chapter{Discussie}
 \section{Reflectie op het eindontwerp}
@@ -618,7 +621,7 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \end{figure}
 
 
-\chapter{Bijlage}
+\chapter{Bijlage - VHDL bestanden}
 \section{Blackbox}
 \label{Blackbox entity}
 \lstinputlisting[language=VHDL]{VHDL/blackbox.vhd} 
@@ -629,8 +632,56 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \label{Stream behaviour}
 \lstinputlisting[language=VHDL]{VHDL/stream-behaviour.vhd}
 
-\section{SPI}
+\section{ROM}
+\label{ROM}
+\lstinputlisting[language=VHDL]{VHDL/rom.vhd}
 
+\section{CPU}
+\label{}
+\lstinputlisting[language=VHDL]{VHDL/alu.vhd}
+\label{}
+\lstinputlisting[language=VHDL]{VHDL/cpu.vhd}
+\label{}
+\lstinputlisting[language=VHDL]{VHDL/cpu_EXTR.vhd}
+\label{}
+\lstinputlisting[language=VHDL]{VHDL/cpu_tb.vhd}
+\lstinputlisting[language=VHDL]{VHDL/pc_counter.vhd}
+\lstinputlisting[language=VHDL]{VHDL/decoder.vhd}
+\lstinputlisting[language=VHDL]{VHDL/gates.vhd}
+
+\section{Buffers}
+\lstinputlisting[language=VHDL]{VHDL/buf_2.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_3.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_4.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_5.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_6.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_7.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_8.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_9.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_10.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_A.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_arg.vhd}
+\lstinputlisting[language=VHDL]{VHDL/buf_i.vhd}
+\lstinputlisting[language=VHDL]{VHDL/instr_buf.vhd}
+
+\section{Registers}
+\lstinputlisting[language=VHDL]{VHDL/reg_2.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_3.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_4.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_5.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_5.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_6.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_7.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_8.vhd.vhd}\lstinputlisting[language=VHDL]{VHDL/reg_9.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_10.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_a.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_cluster.vhd}
+\lstinputlisting[language=VHDL]{VHDL/reg_o.vhd}
+\lstinputlisting[language=VHDL]{VHDL/shift_reg.vhd}
+
+\section{Calculator}
+\lstinputlisting[language=VHDL]{VHDL/calculator.vhd}
+\lstinputlisting[language=VHDL]{VHDL/tb.vhd}
 
 \end{document}
 >>>>>>> origin/master
