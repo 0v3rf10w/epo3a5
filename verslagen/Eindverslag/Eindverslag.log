@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.23)  14 JAN 2015 14:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.23)  14 JAN 2015 15:11
 entering extended mode
 **Eindverslag.tex
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\Eindverslag.tex
@@ -1916,27 +1916,35 @@ aviour.vhd [30
 ] [31])
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/stream.vhd)
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/stream-behav
-iour.vhd [32]) [33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 614.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 614.
+iour.vhd [32])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/rom.vhd
+[33] [34] [35] [36]) [37]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 615.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 615.
 
 (C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\Eindverslag.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 614.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 614.
-Package rerunfilecheck Info: File `Eindverslag.out' has not changed.
-(rerunfilecheck)             Checksum: ED5CBF876CFC21414A7915ED823EDF62;4657.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 615.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 615.
 
+
+Package rerunfilecheck Warning: File `Eindverslag.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Eindverslag.out':
+(rerunfilecheck)             Before: ED5CBF876CFC21414A7915ED823EDF62;4657
+(rerunfilecheck)             After:  9944311C7AB9A9BABA49D4515171CA12;4657.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 614.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 615.
  ) 
 Here is how much of TeX's memory you used:
- 23439 strings out of 493921
- 407221 string characters out of 3144875
- 513283 words of memory out of 3000000
- 25863 multiletter control sequences out of 15000+200000
- 137699 words of font info for 118 fonts, out of 3000000 for 9000
+ 23650 strings out of 493921
+ 410516 string characters out of 3144875
+ 517283 words of memory out of 3000000
+ 25870 multiletter control sequences out of 15000+200000
+ 141816 words of font info for 120 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  62i,12n,75p,1252b,1862s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Progra
@@ -1947,9 +1955,9 @@ ts/type1/public/lm/lmss17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ad
 obe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utop
 ia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putri
 8a.pfb>
-Output written on Eindverslag.pdf (37 pages, 9018383 bytes).
+Output written on Eindverslag.pdf (41 pages, 9051655 bytes).
 PDF statistics:
- 995 PDF objects out of 1000 (max. 8388607)
- 339 named destinations out of 1000 (max. 500000)
+ 1245 PDF objects out of 1440 (max. 8388607)
+ 538 named destinations out of 1000 (max. 500000)
  759 words of extra memory for PDF output out of 10000 (max. 10000000)
 

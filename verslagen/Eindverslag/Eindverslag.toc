@@ -75,5 +75,5 @@
 \contentsline {section}{\numberline {A.6}Bijlage}{29}{section.A.6}
 \contentsline {chapter}{\numberline {B}Bijlage}{30}{appendix.B}
 \contentsline {section}{\numberline {B.1}Blackbox}{30}{section.B.1}
-\contentsline {section}{\numberline {B.2}SPI}{33}{section.B.2}
+\contentsline {section}{\numberline {B.2}ROM}{33}{section.B.2}
 \contentsfinish 
