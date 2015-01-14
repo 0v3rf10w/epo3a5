@@ -583,7 +583,23 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 \end{itemize}
 
 \section{Implementatie} 
-Voor de implementatie van de sd-kaart module is een Finite State Machine gemaakt. Deze kan opgesplitst worden in twee delen: initializatie en het daadwerkelijke uitlezen van de data. Deze FSM is echter te comlex om in zijn geheel te beschrijven, daarom zal de FSM worden omschreven in de commando's die worden verstuurd en de voorwaarden wanneer er begonnen wordt met het sturen van het volgende commando.
+Voor de implementatie van de sd-kaart module is een Finite State Machine gemaakt. Deze kan opgesplitst worden in twee delen: initializatie en het daadwerkelijke uitlezen van de data. Deze FSM is echter te comlex om in zijn geheel te beschrijven, daarom zal de FSM worden omschreven in de commando's die worden verstuurd en de voorwaarden wanneer er begonnen wordt met het sturen van het volgende commando. De initializatie verloopt volgens het diagram in figuur \ref{sd-fsm-init}, dan komt de FSM in de idle state en zal het diagram in figuur \ref{sd-fsm-read} worden doorlopen zodra er een nieuw adres is ontvangen.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=6cm]{./SD_FSM_init}
+  \captionof{figure}{Finite state diagram van SD-kaart initializatie}
+  \label{sd-fsm-init}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=5cm]{./SD_FSM_read}
+  \captionof{figure}{Finite state diagram van het lezen van de SD-kaart} 
+  \label{sd-fsm-read}
+\end{minipage}
+\end{figure}
 
 
 

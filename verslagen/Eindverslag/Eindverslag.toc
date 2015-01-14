@@ -66,41 +66,41 @@
 \contentsline {section}{\numberline {11.3}Functionele omschrijving}{25}{section.11.3}
 \contentsline {section}{\numberline {11.4}Inputs en outputs}{26}{section.11.4}
 \contentsline {section}{\numberline {11.5}Implementatie}{26}{section.11.5}
-\contentsline {chapter}{\numberline {12}Conclusie en Aanbevelingen}{27}{chapter.12}
-\contentsline {section}{\numberline {12.1}Conclusie}{27}{section.12.1}
-\contentsline {subsection}{\numberline {12.1.1}Complicaties}{27}{subsection.12.1.1}
-\contentsline {subsection}{\numberline {12.1.2}Resultaten}{27}{subsection.12.1.2}
-\contentsline {section}{\numberline {12.2}Aanbevelingen}{28}{section.12.2}
-\contentsline {chapter}{\numberline {13}Discussie}{29}{chapter.13}
-\contentsline {section}{\numberline {13.1}Reflectie op het eindontwerp}{29}{section.13.1}
-\contentsline {section}{\numberline {13.2}Reflectie op het groepsproces}{29}{section.13.2}
-\contentsline {chapter}{Bibliografie}{30}{chapter*.33}
-\contentsline {chapter}{\numberline {A}Plan van aanpak}{31}{appendix.A}
-\contentsline {section}{\numberline {A.1}Achtergronden}{31}{section.A.1}
-\contentsline {section}{\numberline {A.2}Projectresultaat}{31}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Doelstellingen van het project}{31}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Eindresultaat}{31}{subsection.A.2.2}
-\contentsline {section}{\numberline {A.3}Projectactiviteiten}{32}{section.A.3}
-\contentsline {section}{\numberline {A.4}Projectgrenzen}{32}{section.A.4}
-\contentsline {subsection}{\numberline {A.4.1}Tussenresultaten}{32}{subsection.A.4.1}
-\contentsline {subsection}{\numberline {A.4.2}Kwaliteitsbewaking}{33}{subsection.A.4.2}
-\contentsline {section}{\numberline {A.5}Projectorganisatie}{33}{section.A.5}
-\contentsline {subsection}{\numberline {A.5.1}Planning}{34}{subsection.A.5.1}
-\contentsline {subsection}{\numberline {A.5.2}Risicoanalyse}{34}{subsection.A.5.2}
-\contentsline {section}{\numberline {A.6}Bijlage}{35}{section.A.6}
-\contentsline {chapter}{\numberline {B}Bijlage - VHDL bestanden}{36}{appendix.B}
-\contentsline {section}{\numberline {B.1}Blackbox}{36}{section.B.1}
-\contentsline {section}{\numberline {B.2}ROM}{39}{section.B.2}
-\contentsline {section}{\numberline {B.3}SD-kaart}{43}{section.B.3}
-\contentsline {section}{\numberline {B.4}CPU}{64}{section.B.4}
-\contentsline {subsection}{\numberline {B.4.1}Decoder}{67}{subsection.B.4.1}
-\contentsline {subsection}{\numberline {B.4.2}ALU}{69}{subsection.B.4.2}
-\contentsline {subsection}{\numberline {B.4.3}Program Counter}{70}{subsection.B.4.3}
-\contentsline {subsection}{\numberline {B.4.4}Testbench}{70}{subsection.B.4.4}
-\contentsline {section}{\numberline {B.5}Buffers}{72}{section.B.5}
-\contentsline {section}{\numberline {B.6}Registers}{77}{section.B.6}
-\contentsline {section}{\numberline {B.7}Gate}{88}{section.B.7}
-\contentsline {section}{\numberline {B.8}GPU}{89}{section.B.8}
-\contentsline {section}{\numberline {B.9}Calculator}{94}{section.B.9}
-\contentsline {section}{\numberline {B.10}Assambly}{96}{section.B.10}
+\contentsline {chapter}{\numberline {12}Conclusie en Aanbevelingen}{28}{chapter.12}
+\contentsline {section}{\numberline {12.1}Conclusie}{28}{section.12.1}
+\contentsline {subsection}{\numberline {12.1.1}Complicaties}{28}{subsection.12.1.1}
+\contentsline {subsection}{\numberline {12.1.2}Resultaten}{28}{subsection.12.1.2}
+\contentsline {section}{\numberline {12.2}Aanbevelingen}{29}{section.12.2}
+\contentsline {chapter}{\numberline {13}Discussie}{30}{chapter.13}
+\contentsline {section}{\numberline {13.1}Reflectie op het eindontwerp}{30}{section.13.1}
+\contentsline {section}{\numberline {13.2}Reflectie op het groepsproces}{30}{section.13.2}
+\contentsline {chapter}{Bibliografie}{31}{chapter*.34}
+\contentsline {chapter}{\numberline {A}Plan van aanpak}{32}{appendix.A}
+\contentsline {section}{\numberline {A.1}Achtergronden}{32}{section.A.1}
+\contentsline {section}{\numberline {A.2}Projectresultaat}{32}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Doelstellingen van het project}{32}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Eindresultaat}{32}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}Projectactiviteiten}{33}{section.A.3}
+\contentsline {section}{\numberline {A.4}Projectgrenzen}{33}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Tussenresultaten}{33}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}Kwaliteitsbewaking}{34}{subsection.A.4.2}
+\contentsline {section}{\numberline {A.5}Projectorganisatie}{34}{section.A.5}
+\contentsline {subsection}{\numberline {A.5.1}Planning}{35}{subsection.A.5.1}
+\contentsline {subsection}{\numberline {A.5.2}Risicoanalyse}{35}{subsection.A.5.2}
+\contentsline {section}{\numberline {A.6}Bijlage}{36}{section.A.6}
+\contentsline {chapter}{\numberline {B}Bijlage - VHDL bestanden}{37}{appendix.B}
+\contentsline {section}{\numberline {B.1}Blackbox}{37}{section.B.1}
+\contentsline {section}{\numberline {B.2}ROM}{40}{section.B.2}
+\contentsline {section}{\numberline {B.3}SD-kaart}{44}{section.B.3}
+\contentsline {section}{\numberline {B.4}CPU}{65}{section.B.4}
+\contentsline {subsection}{\numberline {B.4.1}Decoder}{68}{subsection.B.4.1}
+\contentsline {subsection}{\numberline {B.4.2}ALU}{70}{subsection.B.4.2}
+\contentsline {subsection}{\numberline {B.4.3}Program Counter}{71}{subsection.B.4.3}
+\contentsline {subsection}{\numberline {B.4.4}Testbench}{71}{subsection.B.4.4}
+\contentsline {section}{\numberline {B.5}Buffers}{73}{section.B.5}
+\contentsline {section}{\numberline {B.6}Registers}{78}{section.B.6}
+\contentsline {section}{\numberline {B.7}Gate}{89}{section.B.7}
+\contentsline {section}{\numberline {B.8}GPU}{90}{section.B.8}
+\contentsline {section}{\numberline {B.9}Calculator}{95}{section.B.9}
+\contentsline {section}{\numberline {B.10}Assambly}{97}{section.B.10}
 \contentsfinish 
