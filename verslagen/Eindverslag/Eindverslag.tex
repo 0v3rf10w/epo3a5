@@ -559,17 +559,15 @@ De communicatie met de SD-kaart verloopt als volgt: er wordt een commando naar d
 \section{Functionele omschrijving}
 De SD module is zo ontworpen dat deze een adres binnen krijgt van de program counter van de CPU deze uitleest vanaf de SD-kaart en deze vervolgens aanbiedt aan de CPU. Zolang de SD module nog bezig is met het uitlezen van het adres zal het busy signaal hoog zijn.
 
+\section{Inputs en outputs}
+Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zien in figuur \ref{sd-diagram}.
+
 \begin{figure}[H]
 \center
-\includegraphics[width=7cm]{./sd_diagram}
+\includegraphics[width=8cm]{./sd_diagram}
 \caption{Diagram van SD-kaart}
 \label{sd-diagram}
 \end{figure}
-
-\newpage
-
-\section{Inputs en outputs}
-Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zien in figuur \ref{sd-diagram}.
 
 \begin{itemize}
 \item Clock: het kloksignaal waar de SD module op draait, dit is ook het kloksignaal waar de SPI na initialisatie op zal draaien
@@ -583,6 +581,11 @@ Hieronder een beschrijving van alle in- en outputs van de SD module zoals te zie
 \item MISO: de datalijn van de SD-kaart naar de SD module
 \item SS: het slave select signaal, dit signaal wordt gebruikt om de SD-kaart in SPI mode te krijgen en om aan te geven dat de SD-kaart geselecteerd is.
 \end{itemize}
+
+\section{Implementatie} 
+Voor de implementatie van de sd-kaart module is een Finite State Machine gemaakt. Deze kan opgesplitst worden in twee delen: initializatie en het daadwerkelijke uitlezen van de data. Deze FSM is echter te comlex om in zijn geheel te beschrijven, daarom zal de FSM worden omschreven in de commando's die worden verstuurd en de voorwaarden wanneer er begonnen wordt met het sturen van het volgende commando.
+
+
 
 \chapter{Conclusie en Aanbevelingen}
 \section{Conclusie}
@@ -765,6 +768,11 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \section{ROM}
 \label{ROM}
 \lstinputlisting[language=VHDL]{VHDL/rom.vhd}
+
+\newpage
+\section{SD-kaart}
+\label{SD_kaart}
+\lstinputlisting[language=VHDL]{VHDL/sdcard.vhd}
 
 \newpage
 \section{CPU}
