@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.27)  14 JAN 2015 14:34
+=======
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.23)  14 JAN 2015 11:53
+>>>>>>> FETCH_HEAD
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1725,11 +1729,15 @@ l.59 \chapter
 
 ]
 Hoofdstuk 4.
+<<<<<<< HEAD
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 59.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 59.
 <hele-systeem.png, id=426, 418.56375pt x 325.215pt>
+=======
+<hele-systeem.png, id=399, 418.56375pt x 325.215pt>
+>>>>>>> FETCH_HEAD
 File: hele-systeem.png Graphic file (type png)
  <use hele-systeem.png>
 Package pdftex.def Info: hele-systeem.png used on input line 64.
@@ -1759,6 +1767,7 @@ l.75 \chapter
 
  <./hele-systeem.png>]
 Hoofdstuk 5.
+<<<<<<< HEAD
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 75.
 Package babel Info: Redefining dutch shorthand "~
@@ -1784,6 +1793,9 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 92.
 <Screenshot.png, id=432, 1927.2pt x 1084.05pt>
+=======
+<Screenshot.png, id=405, 1927.2pt x 1084.05pt>
+>>>>>>> FETCH_HEAD
 File: Screenshot.png Graphic file (type png)
  <use Screenshot.png>
 Package pdftex.def Info: Screenshot.png used on input line 96.
@@ -1799,7 +1811,11 @@ Package babel Info: Redefining dutch shorthand "~
  [4
 
 ]
+<<<<<<< HEAD
 <TEK0001.JPG, id=437, 642.4pt x 481.8pt>
+=======
+<TEK0001.JPG, id=410, 642.4pt x 481.8pt>
+>>>>>>> FETCH_HEAD
 File: TEK0001.JPG Graphic file (type jpg)
  <use TEK0001.JPG>
 Package pdftex.def Info: TEK0001.JPG used on input line 104.
@@ -1814,6 +1830,7 @@ Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 111.
  [5 <./Screenshot.png> <./TEK0001.JPG>]
 Hoofdstuk 6.
+<<<<<<< HEAD
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 114.
 Package babel Info: Redefining dutch shorthand "~
@@ -1827,6 +1844,9 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 117.
 <./BlackBox_Circuit.png, id=444, 282.30469pt x 284.56313pt>
+=======
+<./BlackBox_Circuit.png, id=417, 282.30469pt x 284.56313pt>
+>>>>>>> FETCH_HEAD
 File: ./BlackBox_Circuit.png Graphic file (type png)
 
 <use ./BlackBox_Circuit.png>
@@ -1846,6 +1866,7 @@ Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 129.
  [6
 
+<<<<<<< HEAD
  <./BlackBox_Circuit.png>]
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 129.
@@ -1853,6 +1874,11 @@ Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 129.
 
 <./BlackBox_SLS.png, id=452, 389.20406pt x 367.3725pt>
+=======
+ <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/BlackBox_Circuit
+.png>]
+<./BlackBox_SLS.png, id=425, 389.20406pt x 367.3725pt>
+>>>>>>> FETCH_HEAD
 File: ./BlackBox_SLS.png Graphic file (type png)
 
 <use ./BlackBox_SLS.png>
@@ -1868,6 +1894,7 @@ Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 141.
  [7 <./BlackBox_SLS.png>]
 Hoofdstuk 7.
+<<<<<<< HEAD
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 143.
 Package babel Info: Redefining dutch shorthand "~
@@ -1877,6 +1904,9 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 144.
 <CPU-toplevel2.png, id=458, 914.41624pt x 817.0525pt>
+=======
+<CPU-toplevel2.png, id=431, 914.41624pt x 817.0525pt>
+>>>>>>> FETCH_HEAD
 File: CPU-toplevel2.png Graphic file (type png)
  <use CPU-toplevel2.png>
 Package pdftex.def Info: CPU-toplevel2.png used on input line 149.
@@ -1896,6 +1926,7 @@ Package babel Info: Redefining dutch shorthand "~
 
 [8
 
+<<<<<<< HEAD
  <./CPU-toplevel2.png>]
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 160.
@@ -2080,12 +2111,83 @@ Package babel Info: Redefining dutch shorthand "~
 File: tabel-VGA-2.png Graphic file (type png)
  <use tabel-VGA-2.png>
 Package pdftex.def Info: tabel-VGA-2.png used on input line 285.
+=======
+ <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/CPU-toplevel2.pn
+g>] <tabel.png, id=439, 548.0475pt x 243.91125pt>
+File: tabel.png Graphic file (type png)
+ <use tabel.png>
+Package pdftex.def Info: tabel.png used on input line 177.
+(pdftex.def)             Requested size: 341.43306pt x 151.96031pt.
+ [9]
+[10 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/tabel.png>]
+Hoofdstuk 8.
+<FSM_GPU.png, id=450, 431.81325pt x 393.8715pt>
+File: FSM_GPU.png Graphic file (type png)
+ <use FSM_GPU.png>
+Package pdftex.def Info: FSM_GPU.png used on input line 190.
+(pdftex.def)             Requested size: 256.0748pt x 233.59016pt.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 195.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 195.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 195.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 195.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 195.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 195.
+ [11
+
+ <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM_GPU.png>] [1
+2]
+Hoofdstuk 9.
+<vga2arcade.png, id=462, 346.896pt x 180.07275pt>
+File: vga2arcade.png Graphic file (type png)
+ <use vga2arcade.png>
+Package pdftex.def Info: vga2arcade.png used on input line 202.
+(pdftex.def)             Requested size: 256.0748pt x 132.93301pt.
+
+<totaal-overzicht.png, id=463, 846.16125pt x 493.0922pt>
+File: totaal-overzicht.png Graphic file (type png)
+
+<use totaal-overzicht.png>
+Package pdftex.def Info: totaal-overzicht.png used on input line 211.
+(pdftex.def)             Requested size: 256.0748pt x 149.22292pt.
+ [13
+
+ <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/vga2arcade.png> 
+<C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/totaal-overzicht.
+png>]
+<VGA_signal_format.png, id=472, 564.8471pt x 418.40526pt>
+File: VGA_signal_format.png Graphic file (type png)
+
+<use VGA_signal_format.png>
+Package pdftex.def Info: VGA_signal_format.png used on input line 224.
+(pdftex.def)             Requested size: 256.0748pt x 189.68517pt.
+LaTeX Font Info:    Font shape `T1/futs/bx/sc' in size <12> not available
+(Font)              Font shape `T1/futs/b/sc' tried instead on input line 237.
+ <tabel-VGA-1.png, id=473, 464.937pt x 72.27pt>
+File: tabel-VGA-1.png Graphic file (type png)
+
+<use tabel-VGA-1.png>
+Package pdftex.def Info: tabel-VGA-1.png used on input line 242.
+(pdftex.def)             Requested size: 256.0748pt x 39.80595pt.
+ [14 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/VGA_signal_f
+ormat.png>]
+<tabel-VGA-2.png, id=480, 466.1415pt x 72.87225pt>
+File: tabel-VGA-2.png Graphic file (type png)
+ <use tabel-VGA-2.png>
+Package pdftex.def Info: tabel-VGA-2.png used on input line 252.
+>>>>>>> FETCH_HEAD
 (pdftex.def)             Requested size: 256.0748pt x 40.03316pt.
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 292.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 292.
 
+<<<<<<< HEAD
 <schema-zonder-SRAM.png, id=508, 951.555pt x 590.205pt>
 File: schema-zonder-SRAM.png Graphic file (type png)
 
@@ -2223,10 +2325,68 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 401.
 LaTeX Font Info:    Try loading font information for TS1+futs on input line 404
+=======
+<schema-zonder-SRAM.png, id=481, 951.555pt x 590.205pt>
+File: schema-zonder-SRAM.png Graphic file (type png)
+
+<use schema-zonder-SRAM.png>
+Package pdftex.def Info: schema-zonder-SRAM.png used on input line 270.
+(pdftex.def)             Requested size: 256.0748pt x 158.82613pt.
+
+<FSM-H-sync.png, id=482, 1008.76875pt x 572.1375pt>
+File: FSM-H-sync.png Graphic file (type png)
+ <use FSM-H-sync.png>
+Package pdftex.def Info: FSM-H-sync.png used on input line 286.
+(pdftex.def)             Requested size: 256.0748pt x 145.23401pt.
+
+[15 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/tabel-VGA-1.p
+ng> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/tabel-VGA-2.p
+ng> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/schema-zonder
+-SRAM.png>] <FSM-V-sync.png, id=492, 1008.76875pt x 572.1375pt>
+File: FSM-V-sync.png Graphic file (type png)
+
+<use FSM-V-sync.png>
+Package pdftex.def Info: FSM-V-sync.png used on input line 299.
+(pdftex.def)             Requested size: 256.0748pt x 145.23401pt.
+ <FSM-rgb.png, id=493, 636.87938pt x 285.31593pt>
+File: FSM-rgb.png Graphic file (type png)
+
+<use FSM-rgb.png>
+Package pdftex.def Info: FSM-rgb.png used on input line 309.
+(pdftex.def)             Requested size: 256.0748pt x 114.71643pt.
+ [16 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-H-sync.p
+ng> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-V-sync.pn
+g> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-rgb.png>] 
+<schema-met-SRAM.png, id=502, 1472.50125pt x 590.205pt>
+File: schema-met-SRAM.png Graphic file (type png)
+
+<use schema-met-SRAM.png>
+Package pdftex.def Info: schema-met-SRAM.png used on input line 323.
+(pdftex.def)             Requested size: 256.0748pt x 102.63899pt.
+ <FSM-Ssync.png, id=503, 632.3625pt x 274.02374pt>
+File: FSM-Ssync.png Graphic file (type png)
+
+<use FSM-Ssync.png>
+Package pdftex.def Info: FSM-Ssync.png used on input line 336.
+(pdftex.def)             Requested size: 256.0748pt x 110.96646pt.
+ <resultaat.png, id=504, 3276.24pt x 2457.18pt>
+File: resultaat.png Graphic file (type png)
+
+<use resultaat.png>
+Package pdftex.def Info: resultaat.png used on input line 357.
+(pdftex.def)             Requested size: 256.0748pt x 192.0417pt.
+ [17 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/schema-met-S
+RAM.png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/FSM-Ssyn
+c.png>] [18 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/resul
+taat.png>]
+Hoofdstuk 10.
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 371
+>>>>>>> FETCH_HEAD
 .
 (/usr/local/texlive/2014/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 )
+<<<<<<< HEAD
 <./spi_diagram.png, id=547, 1013.28563pt x 528.47438pt>
 File: ./spi_diagram.png Graphic file (type png)
 
@@ -2381,10 +2541,107 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 510.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 510.
 Package rerunfilecheck Info: File `Eindverslag.out' has not changed.
 (rerunfilecheck)             Checksum: D016559AF547633CAEAF6544AE8207AA;3809.
+=======
+<./spi_diagram.png, id=520, 1013.28563pt x 528.47438pt>
+File: ./spi_diagram.png Graphic file (type png)
 
+<use ./spi_diagram.png>
+Package pdftex.def Info: ./spi_diagram.png used on input line 384.
+(pdftex.def)             Requested size: 256.0748pt x 133.55363pt.
+ [19
+
+]
+<./shift_register_diagram.png, id=529, 841.64438pt x 651.93562pt>
+File: ./shift_register_diagram.png Graphic file (type png)
+
+<use ./shift_register_diagram.png>
+Package pdftex.def Info: ./shift_register_diagram.png used on input line 403.
+(pdftex.def)             Requested size: 153.6447pt x 119.00461pt.
+
+<./control_diagram.png, id=530, 794.97pt x 396.7322pt>
+File: ./control_diagram.png Graphic file (type png)
+
+<use ./control_diagram.png>
+Package pdftex.def Info: ./control_diagram.png used on input line 409.
+(pdftex.def)             Requested size: 221.93158pt x 110.75735pt.
+
+<./spi_system_diagram.png, id=531, 1291.82625pt x 686.565pt>
+File: ./spi_system_diagram.png Graphic file (type png)
+
+<use ./spi_system_diagram.png>
+Package pdftex.def Info: ./spi_system_diagram.png used on input line 417.
+(pdftex.def)             Requested size: 324.36124pt x 172.38463pt.
+ [20 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/spi_diagram.
+png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/shift_regist
+er_diagram.png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/c
+ontrol_diagram.png> <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindversl
+ag/spi_system_diagram.png>]
+Hoofdstuk 11.
+<./sd_diagram.png, id=541, 931.98187pt x 484.81125pt>
+File: ./sd_diagram.png Graphic file (type png)
+ <use ./sd_diagram.png>
+Package pdftex.def Info: ./sd_diagram.png used on input line 435.
+(pdftex.def)             Requested size: 256.0748pt x 133.20883pt.
+
+[21
+
+ <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/sd_diagram.png>]
+ [22]
+Hoofdstuk 12.
+[23
+
+]
+Hoofdstuk 13.
+[24
+
+]
+B"ylage A.
+[25
+
+] [26] [27] [28] <Planning.png, id=610, 866.63776pt x 499.26524pt>
+File: Planning.png Graphic file (type png)
+
+<use Planning.png>
+Package pdftex.def Info: Planning.png used on input line 595.
+(pdftex.def)             Requested size: 441.01772pt x 254.06578pt.
+ [29 <C:/Users/jordy/Documents/GitHub/epo3a5/verslagen/Eindverslag/Planning.png
+>]
+B"ylage B.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 603.
+
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/blackbox.vhd
+)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/blackbox-beh
+aviour.vhd [30
+
+] [31])
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/stream.vhd)
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\VHDL/stream-behav
+iour.vhd [32]) [33]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 614.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 614.
+
+(C:\Users\jordy\Documents\GitHub\epo3a5\verslagen\Eindverslag\Eindverslag.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 614.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 614.
+
+
+Package rerunfilecheck Warning: File `Eindverslag.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+>>>>>>> FETCH_HEAD
+
+Package rerunfilecheck Info: Checksums for `Eindverslag.out':
+(rerunfilecheck)             Before: 891D09C8B49FCC198AA1F0B099D6ACA3;3641
+(rerunfilecheck)             After:  ED5CBF876CFC21414A7915ED823EDF62;4657.
 
 LaTeX Warning: There were multiply-defined labels.
 
+<<<<<<< HEAD
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 510.
  ) 
 Here is how much of TeX's memory you used:
@@ -2407,4 +2664,29 @@ PDF statistics:
  491 compressed objects within 5 object streams
  115 named destinations out of 1000 (max. 500000)
  658 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 614.
+ ) 
+Here is how much of TeX's memory you used:
+ 23423 strings out of 493921
+ 406985 string characters out of 3144875
+ 513113 words of memory out of 3000000
+ 25847 multiletter control sequences out of 15000+200000
+ 137699 words of font info for 118 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 62i,12n,75p,1252b,1862s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/lm/lmss17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ad
+obe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utop
+ia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putri
+8a.pfb>
+Output written on Eindverslag.pdf (37 pages, 9010516 bytes).
+PDF statistics:
+ 915 PDF objects out of 1000 (max. 8388607)
+ 339 named destinations out of 1000 (max. 500000)
+ 631 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> FETCH_HEAD
 
