@@ -1,0 +1,94 @@
+\select@language {dutch}
+\contentsline {chapter}{\numberline {1}Samenvatting}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Inleiding}{1}{chapter.2}
+\contentsline {chapter}{\numberline {3}Probleemstelling}{2}{chapter.3}
+\contentsline {section}{\numberline {3.1}Projectopgave: 'Ontwerp een chip'}{2}{section.3.1}
+\contentsline {section}{\numberline {3.2}Beschikbare infrastructuur}{2}{section.3.2}
+\contentsline {section}{\numberline {3.3}Functionele eisen}{2}{section.3.3}
+\contentsline {section}{\numberline {3.4}Randvoorwaarden}{2}{section.3.4}
+\contentsline {section}{\numberline {3.5}Plan van aanpak}{2}{section.3.5}
+\contentsline {chapter}{\numberline {4}Systeemoverzicht}{3}{chapter.4}
+\contentsline {section}{\numberline {4.1}Toplevel}{3}{section.4.1}
+\contentsline {section}{\numberline {4.2}Externe componenten}{3}{section.4.2}
+\contentsline {chapter}{\numberline {5}Besturing}{4}{chapter.5}
+\contentsline {section}{\numberline {5.1}Ultrasone}{4}{section.5.1}
+\contentsline {section}{\numberline {5.2}Buttons}{4}{section.5.2}
+\contentsline {section}{\numberline {5.3}SPI-communicatie}{4}{section.5.3}
+\contentsline {section}{\numberline {5.4}Detectie SPI}{4}{section.5.4}
+\contentsline {section}{\numberline {5.5}Simulatie}{5}{section.5.5}
+\contentsline {chapter}{\numberline {6}Blackbox}{6}{chapter.6}
+\contentsline {section}{\numberline {6.1}Functionele beschrijving}{6}{section.6.1}
+\contentsline {section}{\numberline {6.2}Inputs en outputs}{6}{section.6.2}
+\contentsline {section}{\numberline {6.3}Implementatie}{7}{section.6.3}
+\contentsline {section}{\numberline {6.4}Simulatie}{7}{section.6.4}
+\contentsline {chapter}{\numberline {7}CPU}{8}{chapter.7}
+\contentsline {section}{\numberline {7.1}Functionele beschrijving}{8}{section.7.1}
+\contentsline {section}{\numberline {7.2}Inputs en outputs}{8}{section.7.2}
+\contentsline {section}{\numberline {7.3}Implementatie}{9}{section.7.3}
+\contentsline {chapter}{\numberline {8}GPU}{11}{chapter.8}
+\contentsline {section}{\numberline {8.1}Doelstelling}{11}{section.8.1}
+\contentsline {section}{\numberline {8.2}I/O}{11}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Input CPU}{11}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}SPI}{11}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Randvoorwaarden}{12}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Indeling beeldscherm}{12}{subsection.8.3.1}
+\contentsline {section}{\numberline {8.4}Processes}{13}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Process 1 : State-Renew}{13}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}Process 2 : Counter}{13}{subsection.8.4.2}
+\contentsline {subsection}{\numberline {8.4.3}Process 3 : FSM}{13}{subsection.8.4.3}
+\contentsline {chapter}{\numberline {9}VGA}{15}{chapter.9}
+\contentsline {section}{\numberline {9.1}RGB}{15}{section.9.1}
+\contentsline {section}{\numberline {9.2}H-Sync}{16}{section.9.2}
+\contentsline {section}{\numberline {9.3}V-Sync}{16}{section.9.3}
+\contentsline {section}{\numberline {9.4}Timing}{16}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}H-Sync}{16}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}V-Sync}{17}{subsection.9.4.2}
+\contentsline {section}{\numberline {9.5}VHDL}{17}{section.9.5}
+\contentsline {subsection}{\numberline {9.5.1}Deler}{17}{subsection.9.5.1}
+\contentsline {subsection}{\numberline {9.5.2}Counter}{17}{subsection.9.5.2}
+\contentsline {subsection}{\numberline {9.5.3}H-Sync}{17}{subsection.9.5.3}
+\contentsline {subsection}{\numberline {9.5.4}Vidcounter}{18}{subsection.9.5.4}
+\contentsline {subsection}{\numberline {9.5.5}V-Sync}{18}{subsection.9.5.5}
+\contentsline {subsection}{\numberline {9.5.6}RGB}{18}{subsection.9.5.6}
+\contentsline {section}{\numberline {9.6}Videosignaal}{19}{section.9.6}
+\contentsline {subsection}{\numberline {9.6.1}S-synccounter}{19}{subsection.9.6.1}
+\contentsline {subsection}{\numberline {9.6.2}S-Sync}{19}{subsection.9.6.2}
+\contentsline {section}{\numberline {9.7}Conclusie}{19}{section.9.7}
+\contentsline {section}{\numberline {9.8}Resultaten}{19}{section.9.8}
+\contentsline {chapter}{\numberline {10}SPI}{21}{chapter.10}
+\contentsline {section}{\numberline {10.1}Functionele beschrijving}{21}{section.10.1}
+\contentsline {section}{\numberline {10.2}Inputs en outputs}{22}{section.10.2}
+\contentsline {section}{\numberline {10.3}Implementatie}{22}{section.10.3}
+\contentsline {chapter}{\numberline {11}SD-kaart}{24}{chapter.11}
+\contentsline {section}{\numberline {11.1}SD communicatie}{24}{section.11.1}
+\contentsline {section}{\numberline {11.2}SD commando's \& responses}{24}{section.11.2}
+\contentsline {section}{\numberline {11.3}Functionele omschrijving}{24}{section.11.3}
+\contentsline {section}{\numberline {11.4}Inputs en outputs}{26}{section.11.4}
+\contentsline {chapter}{\numberline {12}Conclusie en Aanbevelingen}{27}{chapter.12}
+\contentsline {section}{\numberline {12.1}Conclusie}{27}{section.12.1}
+\contentsline {section}{\numberline {12.2}Aanbevelingen}{27}{section.12.2}
+\contentsline {chapter}{\numberline {13}Discussie}{28}{chapter.13}
+\contentsline {section}{\numberline {13.1}Reflectie op het eindontwerp}{28}{section.13.1}
+\contentsline {section}{\numberline {13.2}Reflectie op het groepsproces}{28}{section.13.2}
+\contentsline {chapter}{Bibliografie}{29}{chapter*.31}
+\contentsline {chapter}{\numberline {A}Plan van aanpak}{30}{appendix.A}
+\contentsline {section}{\numberline {A.1}Achtergronden}{30}{section.A.1}
+\contentsline {section}{\numberline {A.2}Projectresultaat}{30}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Doelstellingen van het project}{30}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Eindresultaat}{30}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}Projectactiviteiten}{31}{section.A.3}
+\contentsline {section}{\numberline {A.4}Projectgrenzen}{31}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Tussenresultaten}{31}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}Kwaliteitsbewaking}{32}{subsection.A.4.2}
+\contentsline {section}{\numberline {A.5}Projectorganisatie}{32}{section.A.5}
+\contentsline {subsection}{\numberline {A.5.1}Planning}{33}{subsection.A.5.1}
+\contentsline {subsection}{\numberline {A.5.2}Risicoanalyse}{33}{subsection.A.5.2}
+\contentsline {section}{\numberline {A.6}Bijlage}{34}{section.A.6}
+\contentsline {chapter}{\numberline {B}Bijlage - VHDL bestanden}{35}{appendix.B}
+\contentsline {section}{\numberline {B.1}Blackbox}{35}{section.B.1}
+\contentsline {section}{\numberline {B.2}ROM}{38}{section.B.2}
+\contentsline {section}{\numberline {B.3}CPU}{42}{section.B.3}
+\contentsline {section}{\numberline {B.4}Buffers}{67}{section.B.4}
+\contentsline {section}{\numberline {B.5}Registers}{72}{section.B.5}
+\contentsline {section}{\numberline {B.6}Calculator}{83}{section.B.6}
+\contentsfinish 
