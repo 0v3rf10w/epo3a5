@@ -1,0 +1,98 @@
+\BOOKMARK [0][-]{chapter.1}{Samenvatting}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Inleiding}{}% 2
+\BOOKMARK [0][-]{chapter.3}{Probleemstelling}{}% 3
+\BOOKMARK [1][-]{section.3.1}{Projectopgave: 'Ontwerp een chip'}{chapter.3}% 4
+\BOOKMARK [1][-]{section.3.2}{Beschikbare infrastructuur}{chapter.3}% 5
+\BOOKMARK [1][-]{section.3.3}{Functionele eisen}{chapter.3}% 6
+\BOOKMARK [1][-]{section.3.4}{Randvoorwaarden}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.5}{Plan van aanpak}{chapter.3}% 8
+\BOOKMARK [0][-]{chapter.4}{Systeemoverzicht}{}% 9
+\BOOKMARK [1][-]{section.4.1}{Toplevel}{chapter.4}% 10
+\BOOKMARK [1][-]{section.4.2}{Externe componenten}{chapter.4}% 11
+\BOOKMARK [0][-]{chapter.5}{Besturing}{}% 12
+\BOOKMARK [1][-]{section.5.1}{Ultrasone}{chapter.5}% 13
+\BOOKMARK [1][-]{section.5.2}{Buttons}{chapter.5}% 14
+\BOOKMARK [1][-]{section.5.3}{SPI-communicatie}{chapter.5}% 15
+\BOOKMARK [1][-]{section.5.4}{Detectie SPI}{chapter.5}% 16
+\BOOKMARK [1][-]{section.5.5}{Simulatie}{chapter.5}% 17
+\BOOKMARK [0][-]{chapter.6}{Blackbox}{}% 18
+\BOOKMARK [1][-]{section.6.1}{Functionele beschrijving}{chapter.6}% 19
+\BOOKMARK [1][-]{section.6.2}{Inputs en outputs}{chapter.6}% 20
+\BOOKMARK [1][-]{section.6.3}{Implementatie}{chapter.6}% 21
+\BOOKMARK [1][-]{section.6.4}{Simulatie}{chapter.6}% 22
+\BOOKMARK [0][-]{chapter.7}{CPU}{}% 23
+\BOOKMARK [1][-]{section.7.1}{Functionele beschrijving}{chapter.7}% 24
+\BOOKMARK [1][-]{section.7.2}{Inputs en outputs}{chapter.7}% 25
+\BOOKMARK [1][-]{section.7.3}{Implementatie}{chapter.7}% 26
+\BOOKMARK [0][-]{chapter.8}{GPU}{}% 27
+\BOOKMARK [1][-]{section.8.1}{Doelstelling}{chapter.8}% 28
+\BOOKMARK [1][-]{section.8.2}{I/O}{chapter.8}% 29
+\BOOKMARK [2][-]{subsection.8.2.1}{Input CPU}{section.8.2}% 30
+\BOOKMARK [2][-]{subsection.8.2.2}{SPI}{section.8.2}% 31
+\BOOKMARK [1][-]{section.8.3}{Randvoorwaarden}{chapter.8}% 32
+\BOOKMARK [2][-]{subsection.8.3.1}{Indeling beeldscherm}{section.8.3}% 33
+\BOOKMARK [1][-]{section.8.4}{Processes}{chapter.8}% 34
+\BOOKMARK [2][-]{subsection.8.4.1}{Process 1 : State-Renew}{section.8.4}% 35
+\BOOKMARK [2][-]{subsection.8.4.2}{Process 2 : Counter}{section.8.4}% 36
+\BOOKMARK [2][-]{subsection.8.4.3}{Process 3 : FSM}{section.8.4}% 37
+\BOOKMARK [1][-]{section.8.5}{Simulatie}{chapter.8}% 38
+\BOOKMARK [0][-]{chapter.9}{VGA}{}% 39
+\BOOKMARK [1][-]{section.9.1}{RGB}{chapter.9}% 40
+\BOOKMARK [1][-]{section.9.2}{H-Sync}{chapter.9}% 41
+\BOOKMARK [1][-]{section.9.3}{V-Sync}{chapter.9}% 42
+\BOOKMARK [1][-]{section.9.4}{Timing}{chapter.9}% 43
+\BOOKMARK [2][-]{subsection.9.4.1}{H-Sync}{section.9.4}% 44
+\BOOKMARK [2][-]{subsection.9.4.2}{V-Sync}{section.9.4}% 45
+\BOOKMARK [1][-]{section.9.5}{VHDL}{chapter.9}% 46
+\BOOKMARK [2][-]{subsection.9.5.1}{Deler}{section.9.5}% 47
+\BOOKMARK [2][-]{subsection.9.5.2}{Counter}{section.9.5}% 48
+\BOOKMARK [2][-]{subsection.9.5.3}{H-Sync}{section.9.5}% 49
+\BOOKMARK [2][-]{subsection.9.5.4}{Vidcounter}{section.9.5}% 50
+\BOOKMARK [2][-]{subsection.9.5.5}{V-Sync}{section.9.5}% 51
+\BOOKMARK [2][-]{subsection.9.5.6}{RGB}{section.9.5}% 52
+\BOOKMARK [1][-]{section.9.6}{Videosignaal}{chapter.9}% 53
+\BOOKMARK [2][-]{subsection.9.6.1}{S-synccounter}{section.9.6}% 54
+\BOOKMARK [2][-]{subsection.9.6.2}{S-Sync}{section.9.6}% 55
+\BOOKMARK [1][-]{section.9.7}{Conclusie}{chapter.9}% 56
+\BOOKMARK [1][-]{section.9.8}{Resultaten}{chapter.9}% 57
+\BOOKMARK [0][-]{chapter.10}{SPI}{}% 58
+\BOOKMARK [1][-]{section.10.1}{Functionele beschrijving}{chapter.10}% 59
+\BOOKMARK [1][-]{section.10.2}{Inputs en outputs}{chapter.10}% 60
+\BOOKMARK [1][-]{section.10.3}{Implementatie}{chapter.10}% 61
+\BOOKMARK [0][-]{chapter.11}{SD-kaart}{}% 62
+\BOOKMARK [1][-]{section.11.1}{SD communicatie}{chapter.11}% 63
+\BOOKMARK [1][-]{section.11.2}{SD commando's \046 responses}{chapter.11}% 64
+\BOOKMARK [1][-]{section.11.3}{Functionele omschrijving}{chapter.11}% 65
+\BOOKMARK [1][-]{section.11.4}{Inputs en outputs}{chapter.11}% 66
+\BOOKMARK [0][-]{chapter.12}{Conclusie en Aanbevelingen}{}% 67
+\BOOKMARK [1][-]{section.12.1}{Conclusie}{chapter.12}% 68
+\BOOKMARK [2][-]{subsection.12.1.1}{Complicaties}{section.12.1}% 69
+\BOOKMARK [2][-]{subsection.12.1.2}{Resultaten}{section.12.1}% 70
+\BOOKMARK [1][-]{section.12.2}{Aanbevelingen}{chapter.12}% 71
+\BOOKMARK [0][-]{chapter.13}{Discussie}{}% 72
+\BOOKMARK [1][-]{section.13.1}{Reflectie op het eindontwerp}{chapter.13}% 73
+\BOOKMARK [1][-]{section.13.2}{Reflectie op het groepsproces}{chapter.13}% 74
+\BOOKMARK [0][-]{chapter*.33}{Bibliografie}{}% 75
+\BOOKMARK [0][-]{appendix.A}{Plan van aanpak}{}% 76
+\BOOKMARK [1][-]{section.A.1}{Achtergronden}{appendix.A}% 77
+\BOOKMARK [1][-]{section.A.2}{Projectresultaat}{appendix.A}% 78
+\BOOKMARK [2][-]{subsection.A.2.1}{Doelstellingen van het project}{section.A.2}% 79
+\BOOKMARK [2][-]{subsection.A.2.2}{Eindresultaat}{section.A.2}% 80
+\BOOKMARK [1][-]{section.A.3}{Projectactiviteiten}{appendix.A}% 81
+\BOOKMARK [1][-]{section.A.4}{Projectgrenzen}{appendix.A}% 82
+\BOOKMARK [2][-]{subsection.A.4.1}{Tussenresultaten}{section.A.4}% 83
+\BOOKMARK [2][-]{subsection.A.4.2}{Kwaliteitsbewaking}{section.A.4}% 84
+\BOOKMARK [1][-]{section.A.5}{Projectorganisatie}{appendix.A}% 85
+\BOOKMARK [2][-]{subsection.A.5.1}{Planning}{section.A.5}% 86
+\BOOKMARK [2][-]{subsection.A.5.2}{Risicoanalyse}{section.A.5}% 87
+\BOOKMARK [1][-]{section.A.6}{Bijlage}{appendix.A}% 88
+\BOOKMARK [0][-]{appendix.B}{Bijlage - VHDL bestanden}{}% 89
+\BOOKMARK [1][-]{section.B.1}{Blackbox}{appendix.B}% 90
+\BOOKMARK [1][-]{section.B.2}{ROM}{appendix.B}% 91
+\BOOKMARK [1][-]{section.B.3}{CPU}{appendix.B}% 92
+\BOOKMARK [1][-]{section.B.4}{Buffers}{appendix.B}% 93
+\BOOKMARK [1][-]{section.B.5}{Registers}{appendix.B}% 94
+\BOOKMARK [1][-]{section.B.6}{Gate}{appendix.B}% 95
+\BOOKMARK [1][-]{section.B.7}{GPU}{appendix.B}% 96
+\BOOKMARK [1][-]{section.B.8}{Calculator}{appendix.B}% 97
+\BOOKMARK [1][-]{section.B.9}{Assambly}{appendix.B}% 98
