@@ -102,5 +102,6 @@
 \contentsline {section}{\numberline {B.7}Gate}{89}{section.B.7}
 \contentsline {section}{\numberline {B.8}GPU}{90}{section.B.8}
 \contentsline {section}{\numberline {B.9}Calculator}{95}{section.B.9}
-\contentsline {section}{\numberline {B.10}Assambly}{97}{section.B.10}
+\contentsline {section}{\numberline {B.10}VGA}{98}{section.B.10}
+\contentsline {section}{\numberline {B.11}Assembly}{107}{section.B.11}
 \contentsfinish 

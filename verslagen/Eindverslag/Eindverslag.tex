@@ -145,7 +145,7 @@ Er valt te zien dat voordat het signaal s hoog wordt de SPI signalen van master 
 
 \chapter{CPU}
 \section{Functionele beschrijving}
-Om programma’s uit te kunnen voeren wordt gebruik gemaakt van een door de Delta-1 [INSERT BRON HIER] geïnspireerde microprocessor. Deze 8-bits processor krijgt instructies binnen die via SPI van een SD-kaart worden afgelezen. Vervolgens voert de processor bewerkingen uit, waarvan de resultaten doorgestuurd worden naar de overige componenten op de chip. De data die uit de processor komt wordt hierna door de VGA-controller omgezet naar beelden op het scherm.
+Om programma’s uit te kunnen voeren wordt gebruik gemaakt van een door de Delta-1 geïnspireerde microprocessor. Deze 8-bits processor krijgt instructies binnen die via SPI van een SD-kaart worden afgelezen. Vervolgens voert de processor bewerkingen uit, waarvan de resultaten doorgestuurd worden naar de overige componenten op de chip. De data die uit de processor komt wordt hierna door de VGA-controller omgezet naar beelden op het scherm.
 
 
 
@@ -848,20 +848,21 @@ Een aantal interne risico's kunnen worden vermeden door het aanstellen van de vo
 \lstinputlisting[language=VHDL]{VHDL/calculator.vhd}
 \lstinputlisting[language=VHDL]{VHDL/tb.vhd}
 
+\newpage
 \section{VGA}
-\lstinputlisting[language=VHDL]{VHDL/counter-behaviour.vhd}
-\lstinputlisting[language=VHDL]{VHDL/deler-behaviour.vhd}
-\lstinputlisting[language=VHDL]{VHDL/hsync-behaviour.vhd}
-\lstinputlisting[language=VHDL]{VHDL/rgb-behaviour.vhd}
-\lstinputlisting[language=VHDL]{VHDL/scount-behaviour.vhd}
-\lstinputlisting[language=VHDL]{VHDL/ssync-behaviour.vhd}
-\lstinputlisting[language=VHDL]{VHDL/verticaltel.vhd}
-\lstinputlisting[language=VHDL]{VHDL/vga-behaviour.vhd}
-\lstinputlisting[language=VHDL]{VHDL/vidcounter-behaviour.vhd}
-\lstinputlisting[language=VHDL]{VHDL/vsync-behaviour.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/counter-behaviour.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/deler-behaviour.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/hsync-behaviour.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/rgb-behaviour.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/scount-behaviour.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/ssync-behaviour.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/verticaltel.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/vga-behaviour.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/vidcounter-behaviour.vhd}
+\lstinputlisting[language=VHDL]{VHDL/VGA/vsync-behaviour.vhd}
 
-\section{Assambly}
-
+\section{Assembly}
+\lstinputlisting{assambly.md}
 
 
 

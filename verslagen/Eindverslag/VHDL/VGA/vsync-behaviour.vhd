@@ -24,7 +24,6 @@ if(reset = '1') then
 	ssync_out <= '0';
 else
 
-
 if (vidcount_in = "0000000000") then --Vsync hoog | schrijven laag (0)
 	vsync_out <= '1'; --0
 	line_on_out <= '0';
@@ -41,7 +40,6 @@ elsif (vidcount_in = "0000101100") then--Vsync hoog | schrijven hoog
 elsif (vidcount_in = "1000001100") then--Vsync hoog | schrijven hoog
 	ssync_out <= '1';		
 end if;
-
 
 end if;
 end if;
