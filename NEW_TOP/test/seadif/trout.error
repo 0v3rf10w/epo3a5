@@ -1,0 +1,21 @@
+This is the file 'seadif/trout.error' which was created by
+the program 'trout' on Mon Jan 19 17:09:55 2015
+Trout was verifying the netlist description of
+your circuit circuit 'reg_cluster' with the current layout in seadali.
+The following nets in the layout are not according to
+the netlist description of circuit 'reg_cluster'. They are also
+marked in the layout.
+------------------------- list of errors -------------------------
+@@@@@ partially unconnected net: 'buf_select_4_0_0' (1 unconnects among 10)
+@@@@@ partially unconnected net: 'reg_in_7_0_7' (1 unconnects among 10)
+@@@@@ partially unconnected net: 'reg_in_7_0_0' (1 unconnects among 10)
+@@@@@ partially unconnected net: 'buf_select_4_0_3' (1 unconnects among 10)
+@@@@@ partially unconnected net: 'reg_in_7_0_6' (1 unconnects among 10)
+@@@@@ entirely unconnected net:  'reg_buf_8_5_port' (2 terminals)
+@@@@@ entirely unconnected net:  'reg_buf_8_6_port' (2 terminals)
+
+WARNING: 7 out of the 118 nets are not properly connected.
+         In the layout each of the unconnects is marked by
+         an arrow followed by the name of the net: <=-<net_name>
+------------------------------------------------------------------
+lock

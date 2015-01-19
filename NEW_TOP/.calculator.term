@@ -1,0 +1,14 @@
+I XI XI
+B XO XO
+I top_reset top_reset
+I top_sclk top_sclk
+I top_mosi top_mosi
+I top_ss top_ss
+O top_out_7_0_7 top_out(7)
+O top_out_7_0_6 top_out(6)
+O top_out_7_0_5 top_out(5)
+O top_out_7_0_4 top_out(4)
+O top_out_7_0_3 top_out(3)
+O top_out_7_0_2 top_out(2)
+O top_out_7_0_1 top_out(1)
+O top_out_7_0_0 top_out(0)

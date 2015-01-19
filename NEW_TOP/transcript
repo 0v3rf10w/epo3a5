@@ -1,0 +1,89 @@
+# //  ModelSim SE 10.1b Apr 26 2012 Linux 2.6.32-504.1.3.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -do /data/public/common/software/opprog/do_files/init_simulator.do -lib work tb_behavioral_cfg 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: [1] VHDL/calculator.vhd(72): (vopt-3473) Component instance "lbl_osc : osc10" is not bound.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.tb_behavioral_cfg#1
+# Loading work.tb(behavioral)#1
+# Loading work.calculator_behaviour_cfg#1
+# Loading work.calculator(behaviour)#1
+# ** Warning: (vsim-3473) Component instance "lbl_osc : osc10" is not bound.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/lib01 File: VHDL/calculator.vhd
+# Loading work.cpu_behaviour_cfg#1
+# Loading work.cpu(behaviour)#1
+# Loading work.instr_buf_behaviour_cfg#1
+# Loading work.instr_buf(behaviour)#1
+# Loading work.decoder_behaviour_cfg#1
+# Loading work.decoder(behaviour)#1
+# Loading work.buf_arg_behaviour_cfg#1
+# Loading work.buf_arg(behaviour)#1
+# Loading work.pc_counter_behaviour_cfg#1
+# Loading work.pc_counter(behaviour)#1
+# Loading work.alu_behaviour_cfg#1
+# Loading work.alu(behaviour)#1
+# Loading work.reg_a_behaviour_cfg#1
+# Loading work.reg_a(behaviour)#1
+# Loading work.buf_a_behaviour_cfg#1
+# Loading work.buf_a(behaviour)#1
+# Loading work.reg_cluster_behavioural_cfg#1
+# Loading work.reg_cluster(behavioural)#1
+# Loading work.reg_o_behaviour_cfg#1
+# Loading work.reg_o(behaviour)#1
+# Loading work.reg_2_behaviour_cfg#1
+# Loading work.reg_2(behaviour)#1
+# Loading work.reg_3_behaviour_cfg#1
+# Loading work.reg_3(behaviour)#1
+# Loading work.reg_4_behaviour_cfg#1
+# Loading work.reg_4(behaviour)#1
+# Loading work.reg_5_behaviour_cfg#1
+# Loading work.reg_5(behaviour)#1
+# Loading work.reg_6_behaviour_cfg#1
+# Loading work.reg_6(behaviour)#1
+# Loading work.reg_7_behaviour_cfg#1
+# Loading work.reg_7(behaviour)#1
+# Loading work.reg_8_behaviour_cfg#1
+# Loading work.reg_8(behaviour)#1
+# Loading work.reg_9_behaviour_cfg#1
+# Loading work.reg_9(behaviour)#1
+# Loading work.reg_10_behaviour_cfg#1
+# Loading work.reg_10(behaviour)#1
+# Loading work.buf_i_behaviour_cfg#1
+# Loading work.buf_i(behaviour)#1
+# Loading work.buf_2_behaviour_cfg#1
+# Loading work.buf_2(behaviour)#1
+# Loading work.buf_3_behaviour_cfg#1
+# Loading work.buf_3(behaviour)#1
+# Loading work.buf_4_behaviour_cfg#1
+# Loading work.buf_4(behaviour)#1
+# Loading work.buf_5_behaviour_cfg#1
+# Loading work.buf_5(behaviour)#1
+# Loading work.buf_6_behaviour_cfg#1
+# Loading work.buf_6(behaviour)#1
+# Loading work.buf_7_behaviour_cfg#1
+# Loading work.buf_7(behaviour)#1
+# Loading work.buf_8_behaviour_cfg#1
+# Loading work.buf_8(behaviour)#1
+# Loading work.buf_9_behaviour_cfg#1
+# Loading work.buf_9(behaviour)#1
+# Loading work.buf_10_behaviour_cfg#1
+# Loading work.buf_10(behaviour)#1
+# Loading work.gate_behavioral_cfg#1
+# Loading work.gate(behavioral)#1
+# Loading work.rom_behavioural_cfg#1
+# Loading work.rom(behavioural)#1
+# Loading work.shift_reg_behaviour_cfg#1
+# Loading work.shift_reg(behaviour)#1
+# do /data/public/common/software/opprog/do_files/init_simulator.do 

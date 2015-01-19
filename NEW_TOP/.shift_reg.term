@@ -1,0 +1,11 @@
+I clk clk
+I reset reset
+I shift_in shift_in
+O output_7_0_7 output(7)
+O output_7_0_6 output(6)
+O output_7_0_5 output(5)
+O output_7_0_4 output(4)
+O output_7_0_3 output(3)
+O output_7_0_2 output(2)
+O output_7_0_1 output(1)
+O output_7_0_0 output(0)
