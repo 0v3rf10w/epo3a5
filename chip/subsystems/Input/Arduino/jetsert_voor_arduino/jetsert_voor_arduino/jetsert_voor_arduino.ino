@@ -81,8 +81,11 @@ void loop()
     digitalWrite(reset,LOW);
     digitalWrite(ss,LOW);
     delay(1);
-    SPI.transfer(224);
-   delay(1000);
+    SPI.transfer(208);
+    digitalWrite(ss,HIGH);
+    delay(100);
+    digitalWrite(ss,LOW);
+    delay(1000);
     byte test;
     test = byte(plaatsplayer1);
     test = test << 4;
@@ -102,7 +105,10 @@ void loop()
     delay(1);
 
     SPI.transfer(240);
-       delay(1500);
+    digitalWrite(ss,HIGH);
+    delay(100);
+    digitalWrite(ss,LOW);
+    delay(1500);
     byte test;
     test = byte(plaatsplayer1);
     test = test << 4;
@@ -121,7 +127,10 @@ void loop()
     digitalWrite(ss,LOW);
     delay(1);
 
-    SPI.transfer(208);
+    SPI.transfer(224);
+    digitalWrite(ss,HIGH);
+    delay(100);
+    digitalWrite(ss,LOW);
     delay(1000);
     byte test;
     test = byte(plaatsplayer1);
@@ -132,14 +141,15 @@ void loop()
     Serial.println("Min");
     delay(500);
   }
-  Serial.print("plaatsplayer1: ");
+  Serial.print("Value 1: ");
   Serial.print(plaatsplayer1);
-  Serial.print("  plaatsplayer2: ");
+  Serial.print("  Value 2: ");
   Serial.print(plaatsplayer2);
   Serial.println();
   delay(100);
   a++;
 }
+
 
 
 
